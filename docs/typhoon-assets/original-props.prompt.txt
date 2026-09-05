@@ -1,0 +1,19 @@
+Use case: stylized-concept
+Asset type: production 2D casual puzzle game TRANSPARENT PNG sprite atlas.
+Primary request: Generate exactly ONE landscape 4-column x 2-row atlas, ideally 2048x1024 pixels (2:1), containing exactly eight separate game prop sprites. This is usable game art, not a mockup or contact sheet.
+Scene/backdrop: GENUINELY TRANSPARENT background with an alpha channel. All empty pixels around and between sprites must be transparent, NOT painted white, gray, black, or checkerboard. No scene, walls, floors, cards, panels, grids, or background shadows.
+Composition/framing: Four equal-width columns and two equal-height rows, eight equal square invisible cells. The center of each sprite is at the center of its cell. Keep the whole sprite in its own cell with at least 12% transparent padding on all four sides. No sprite bleeds into another cell; no cropping. No visible cell borders or dividers. No text, labels, numbers, logos, watermark.
+Style/medium: Unified attractive casual 2D puzzle game hand-ink illustration. Dark desaturated brown/teal outlines, roughly 4px at a 512px cell size. Restrained simple cel shading. Honey oak, teal, coral, warm cream palette. Subtly elevated front camera except where FRONT-ON specified. Clean readable silhouettes and clean antialiased alpha edges. Absolutely NOT photography, photorealism, glossy 3D, 3D renders, clay, or pixel art.
+
+EXACT CELL CONTENTS, left to right:
+TOP ROW, COLUMN 1: A single compact red terracotta flowerpot with broad green leaves and exactly three small coral flowers. Strong recognizable silhouette. Whole flowerpot and foliage isolated together.
+TOP ROW, COLUMN 2: ONE tall rectangular teal sliding glass window SASH only, vertical width:height ratio 0.48. Slim frame, a small brass handle centered vertically on the RIGHT edge. The entire glass opening must be genuinely transparent alpha, with ONLY two sparse pale diagonal reflection strokes, no opaque glass fill, no background or wall visible through it.
+TOP ROW, COLUMN 3: ONE retractable horizontal metal clothes-drying rail extending LEFT from a wall mount on the RIGHT. Exactly two slim parallel rods. One white T-shirt hangs beneath it, and one small blue cloth hangs beside the T-shirt. Strong readable silhouette; wall mount but NO wall.
+TOP ROW, COLUMN 4: ONE strictly FRONT-ON rectangular honey-oak CUPBOARD DOOR panel only, width:height ratio 0.56, dark outlined rim, one inset rectangular panel, one small brass knob on its LEFT edge and hinges on its RIGHT edge. No cabinet carcass, no cabinet interior, no perspective rotation.
+
+BOTTOM ROW, COLUMN 1: ONE partially open mustard-yellow umbrella in three-quarter profile with canopy low-left and a short curved dark handle. The entire umbrella silhouette is visible.
+BOTTOM ROW, COLUMN 2: ONE teal upholstered sofa seat CUSHION only, viewed from front and a little above. Broad rounded rectangular width:height ratio 1.65, subtle piping seam. No sofa body, legs, arms, or back.
+BOTTOM ROW, COLUMN 3: ONE cream POWER STRIP, horizontal in front/top view, width:height ratio 3:1. Three socket positions in one horizontal row and one tiny red rectangular indicator at RIGHT. ABSOLUTELY NO cord, cable, or connected plug.
+BOTTOM ROW, COLUMN 4: ONE small cream household electrical PLUG with two visible metallic prongs pointing RIGHT and one short cable curling to the LEFT and downward. Entire isolated object, clearly separate from the power strip in the previous cell.
+
+Constraints: Exactly the eight listed sprites in exactly the specified cell ordering. Nothing else. True transparent PNG alpha around every object and inside the window opening; no checkerboard painted into the image; no shadow rectangles. Transparent negative space, no ground shadows. Consistent polished 2D drawn game-art style across all eight sprites.

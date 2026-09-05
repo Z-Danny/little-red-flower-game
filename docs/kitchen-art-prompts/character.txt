@@ -1,0 +1,16 @@
+Use case: illustration-story.
+Asset type: one production-ready 2D mobile-game character expression/full-body sprite atlas.
+Input image 1 is a STYLE AND ADULT FEMALE CHARACTER IDENTITY REFERENCE only. Keep the warm storybook hand-painted 2D illustration, subtle paper-like color texture inside the figure, clean crisp dark-brown outlines, soft warm skin tones, expressive eyes and mobile-game readability. Do not include the child from the reference.
+
+Create ONE square image containing a perfectly regular 2 by 2 atlas on a genuinely transparent RGBA background. No drawn grid, no panel borders, no background, no floor, no objects, no scenery, no text, no UI, no symbols, no checkerboard pattern. Each cell contains exactly ONE isolated FULL-BODY rendering of the SAME adult Chinese woman from the reference. Four instances of one character, never four different women.
+
+Locked identity and outfit across every cell: same adult woman with dark-brown bob hair, same face, height, slim-average build, skin tone and proportions; coral long-sleeved top, teal bib apron, cream trousers and brown flat shoes. Apron design and outfit colors must be identical in all four cells. Every pose faces three-quarter LEFT as if looking toward an off-image stove on her left; do NOT draw a stove.
+
+Atlas layout and alignment: four equal square cells, read left-to-right then top-to-bottom. Align the feet to exactly the same relative baseline within each cell. Keep exactly the same anatomical body scale and character height in all cells. The entire hair, hands, arms, trousers and BOTH shoes must be visible. Generous minimum 10% empty transparent margin on every side of each cell; no limb or hair may touch a cell boundary; no overlaps between cells. Use comfortable spacing suitable for cropping into four equal square sprite cells.
+
+Top-left cell — WORRIED: furrowed brows, concerned eyes, CLOSED small mouth, slight leaning-back posture, hands close to her torso. Quiet concern.
+Top-right cell — PANICKED: very wide eyes, clearly OPEN mouth, high arched eyebrows, BOTH hands raised near shoulder/head level with open palms, visibly leaning back. This must be dramatically and immediately different from the worried cell, even at small mobile size.
+Bottom-left cell — FOCUSED AND ENCOURAGED: brows relaxed, determined alert eyes, small reassuring smile, one hand extended forward toward screen-left in a gentle purposeful gesture, stable posture.
+Bottom-right cell — RELIEVED: warm relaxed smile, shoulders lowered, hands resting naturally, calm upright standing pose.
+
+Output a polished square transparent PNG atlas. Preserve TRUE transparent alpha around and between all four figures. No opaque matte, no fake transparency, no other people, no props, no extra characters, no words, no labels, no watermark.

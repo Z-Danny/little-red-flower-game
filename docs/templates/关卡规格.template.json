@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "1.0.0",
+  "isTemplate": true,
+  "levelId": null,
+  "version": "0.1.0",
+  "title": null,
+  "mechanic": "find-hazard",
+  "engineCompatibility": null,
+  "knowledge": {
+    "learningObjective": null,
+    "summary": null,
+    "safetyNote": null,
+    "sources": [],
+    "review": { "status": "NOT_RUN", "reviewer": null, "reviewedAt": null, "evidencePaths": [] }
+  },
+  "style": {
+    "styleId": null,
+    "referencePaths": [],
+    "camera": null,
+    "palette": [],
+    "outline": null,
+    "lighting": null,
+    "characterIdentity": null
+  },
+  "world": {
+    "width": 720,
+    "height": 960,
+    "coordinateOrigin": "top-left",
+    "coordinateUnit": "design-px",
+    "angleUnit": "radian",
+    "layerOrder": "higher-in-front",
+    "backgroundAssetId": null,
+    "regions": []
+  },
+  "rules": {
+    "goals": [],
+    "minGoalCount": 3,
+    "maxGoalCount": 6,
+    "maxDependencyDepth": 2,
+    "singleActionAtATime": true,
+    "wrongClickPenalty": 0,
+    "actionDurationMs": { "min": 500, "max": 1500 },
+    "risk": {
+      "initial": 8,
+      "max": 100,
+      "growthPerSecond": null,
+      "cues": [],
+      "onMax": { "effectId": null, "message": null, "triggerOnce": true, "canContinue": true }
+    },
+    "pauseWhenHidden": true,
+    "settlement": {
+      "durationMs": 2800,
+      "freezeRisk": true,
+      "freezePlayTime": true,
+      "effectIds": [],
+      "rewardPolicy": null
+    }
+  },
+  "assets": [],
+  "objects": [],
+  "animations": [],
+  "effects": [],
+  "acceptance": {
+    "constraints": [],
+    "keyframeProgress": [0, 0.25, 0.5, 0.75, 1],
+    "includeMilestoneBoundaryFrames": true,
+    "viewports": [
+      { "width": 390, "height": 844 },
+      { "width": 360, "height": 780 },
+      { "width": 569, "height": 640 }
+    ],
+    "requiredChecks": [
+      "specValid", "knowledgeReviewed", "whiteboxPlayable", "assetAlpha",
+      "assetVisual", "silhouetteMatch", "animationFrames", "logicTests",
+      "typecheck", "productionBuild", "pointerPlaythrough", "riskMaxRecovery",
+      "restartAndBackground", "offlineStatic", "offlineBrowser", "releaseIntegrity"
+    ],
+    "performanceBudget": { "maxPackageBytes": null, "maxReadyTimeMs": null, "device": null }
+  },
+  "changes": [],
+  "templateNotes": [
+    "本文件是生产规格草案，不是当前台风游戏能直接加载的配置。空必填项和 isTemplate=true 时禁止发布。",
+    "regions 每项：id、kind、polygon[[x,y],...]。kind 可表达 indoor、outdoor、wall、floor、storage、character-feet 等审核语义。",
+    "assets 每项：id、role(background/sprite)、relativePath、width、height、hasAlpha、sha256、sourceRecordPath、pivot[0..1,0..1]、trimOffset[x,y]。",
+    "objects 每项：id、kind(goal/prerequisite/decoration)、label、spriteId、silhouetteSpriteId、initialPose、finalPose、hit、requires[]、animationId、mountRegionId、texts。",
+    "pose：x、y、w、h、rotation、scaleX、scaleY、opacity、anchorX、anchorY、layer；坐标是设计像素，角度是弧度，比例/透明度为数值。",
+    "hit：mode(alpha/polygon/none)、polygon(必要时)、tolerancePx、blocksPointer、enabledAfter[]。门窗例外命中区域必须符合实际画面。",
+    "texts：during、done、hint、prerequisiteBlocked；普通装饰可无动作文案。",
+    "animations 每项：id、type、durationMs、tracks[]、milestones[]。只允许引擎实际注册的类型，不得用任意脚本作为 JSON 内容。",
+    "track：targetObjectId、property、keyframes[{t,value,easing}]；path 或 hinge 专有参数以 bootstrap 实现的正式 Schema 为准。",
+    "milestone：t、effectId、targetObjectId；同一动画的灯、锁扣和隐藏效果共享时间基准。effects 定义 effectId 的实际实现类型和参数。",
+    "constraints 每项：id、type、subjectIds[]、phase、params、severity、rationale。类型应来自验收器注册表，如 non-overlap、surface-membership、endpoint-region、visibility-final。",
+    "risk.cues 每项：at、unresolvedGoalId、effectId、message。growthPerSecond 是从 initial 开始每秒增加的风险百分点，不与到顶秒数混用。",
+    "rewardPolicy 应声明算法、阈值、奖励范围；没有正式实现的类型不能填写为可用。",
+    "没有设置性能预算时应报告未设置，不能宣称达到任意商业设备性能要求。"
+  ]
+}

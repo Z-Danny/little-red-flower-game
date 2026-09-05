@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "1.0.0",
+  "isTemplate": true,
+  "jobId": null,
+  "mode": "plan",
+  "targetImplementation": "root-react-canvas",
+  "requestSummary": null,
+  "levelIds": [],
+  "specPaths": [],
+  "engineRevision": null,
+  "workspaceBaselinePath": null,
+  "capabilitiesPath": null,
+  "authorization": {
+    "source": null,
+    "allowedWritePaths": [],
+    "imageGeneration": "unknown",
+    "localImageProcessing": "unknown",
+    "browserTesting": "unknown",
+    "dependencyChanges": "unknown",
+    "subagents": "not_allowed",
+    "publishOnline": "not_allowed"
+  },
+  "limits": {
+    "concurrency": 1,
+    "maxRetriesPerRecoverableFailure": 2,
+    "maxNewImageRequestsPerLevel": null,
+    "stageTimeoutSeconds": null,
+    "maxDependencyDepth": 2,
+    "maxPackageBytes": null
+  },
+  "approvalPolicy": {
+    "scopeReviewer": null,
+    "layoutReviewer": null,
+    "knowledgeReviewer": null,
+    "releaseReviewer": null
+  },
+  "status": "NOT_STARTED",
+  "currentStage": "S0",
+  "stages": [
+    { "id": "S0", "name": "环境与基线", "status": "NOT_STARTED", "attempts": 0, "inputFingerprint": null, "outputPaths": [], "evidencePaths": [], "error": null },
+    { "id": "S1", "name": "规格与知识", "status": "NOT_STARTED", "attempts": 0, "inputFingerprint": null, "outputPaths": [], "evidencePaths": [], "error": null },
+    { "id": "S2", "name": "布局动作与白盒", "status": "NOT_STARTED", "attempts": 0, "inputFingerprint": null, "outputPaths": [], "evidencePaths": [], "error": null },
+    { "id": "S3", "name": "分层素材", "status": "NOT_STARTED", "attempts": 0, "inputFingerprint": null, "outputPaths": [], "evidencePaths": [], "error": null },
+    { "id": "S4", "name": "装配", "status": "NOT_STARTED", "attempts": 0, "inputFingerprint": null, "outputPaths": [], "evidencePaths": [], "error": null },
+    { "id": "S5", "name": "自动验收", "status": "NOT_STARTED", "attempts": 0, "inputFingerprint": null, "outputPaths": [], "evidencePaths": [], "error": null },
+    { "id": "S6", "name": "浏览器和离线实测", "status": "NOT_STARTED", "attempts": 0, "inputFingerprint": null, "outputPaths": [], "evidencePaths": [], "error": null },
+    { "id": "S7", "name": "版本化交付", "status": "NOT_STARTED", "attempts": 0, "inputFingerprint": null, "outputPaths": [], "evidencePaths": [], "error": null }
+  ],
+  "levelRuns": [],
+  "checkpoint": {
+    "updatedAt": null,
+    "lastPassedStage": null,
+    "nextSafeAction": null,
+    "pendingToolRequestIds": [],
+    "ownedProcessIds": [],
+    "ownedBrowserTabIds": [],
+    "inputChangesSinceLastRun": []
+  },
+  "blockers": [],
+  "history": [],
+  "templateNotes": [
+    "本模板不是可直接运行的自动化任务。先由 AI 按用户实际授权填写并校验。",
+    "produce 模式必须填写 levelIds、specPaths 和所需能力；mode=plan 不允许自行开始生图或实现引擎。",
+    "null 表示未知或待填写，不表示零或不限额。非生图任务可保留图像预算为 null 并记录不适用。",
+    "permission 字段仅记录用户授权，不能替代工具审批或扩大权限。",
+    "bootstrap 应为 B1 至 B5 建立同结构子阶段；批量每关在 levelRuns 中保存独立阶段和报告路径。",
+    "levelRuns 条目应包含 levelId、attemptId、currentStage、status、stages、reportPath；不得只记录全批成功。"
+  ]
+}
