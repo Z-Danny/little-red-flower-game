@@ -19,6 +19,7 @@
     "typecheck": "tsc --noEmit",
     "verify": "pnpm test && pnpm test:art && pnpm typecheck && pnpm build",
     "export:offline": "node scripts/export-offline.mjs",
+    "build:site": "pnpm export:offline && node scripts/prepare-pages.mjs",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
     "format": "oxfmt"

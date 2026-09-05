@@ -42,7 +42,7 @@ pnpm export:offline
 pnpm verify
 ```
 
-离线导出位于 `outputs/本地离线版/`。`outputs/` 是本地生成目录，不提交到 Git；公开试玩页使用已验收的 `site/index.html`。
+离线导出位于 `outputs/本地离线版/`。`outputs/` 是本地生成目录，不提交到 Git。推送到 `main` 后，GitHub Actions 会重新生成 `site/index.html` 并自动部署公开试玩页；也可在本地执行 `pnpm build:site` 更新它。
 
 ## 主要目录
 
