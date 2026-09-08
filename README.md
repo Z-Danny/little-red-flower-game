@@ -48,6 +48,8 @@ pnpm verify
 
 ```text
 app/game/                 关卡配置、状态模型和规则
+app/game/runtime/         两类新关共用的数据引擎与契约校验
+content/                  原关皮肤、新关规则包、两类模板和清单
 components/game/          关卡 UI、Canvas 渲染与输入
 public/levels/            正式分层美术资源
 tests/                    关卡规则与回归测试
@@ -56,7 +58,17 @@ docs/                     关卡说明、AI 生产规范和模板
 site/                     GitHub Pages 单文件试玩版
 ```
 
-新增或调整关卡时，请优先修改关卡配置与独立状态模型，避免把关卡专用判断写入公共 UI。详细流程见 [AI 关卡生产流水线执行规范](docs/AI关卡生产流水线执行规范.md)。
+## 换画风与批量新增关卡
+
+现在可以独立修改原两关的 `content/presets/*/skin.json`，或用通用引擎建立新的两类关卡。新关规则和皮肤分离；两个配置示例默认隐藏，不影响当前游玩内容。
+
+```powershell
+pnpm levels:create --id my-prevention --kind prevention --title 我的防范关卡 --order 9
+pnpm levels:check
+pnpm test:pipeline
+```
+
+这会建立可运行的模板草稿，不会根据标题自动产生新美术或正确科普知识。换皮肤、前置解锁、关键帧、批量清单、启用、导出和 AI 验收规则，详见 [模块化关卡制作手册](docs/模块化关卡制作手册.md)。旧的 [AI 生产规范](docs/AI关卡生产流水线执行规范.md)仍保留美术和内容审核流程，运行接口以新手册与 `schema.ts` 为准。
 
 ## 协作
 

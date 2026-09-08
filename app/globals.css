@@ -3,6 +3,7 @@
 @import 'shadcn/tailwind.css';
 @import './typhoon.css';
 @import './kitchen.css';
+@import './configured.css';
 
 :root {
   --background: oklch(0.97 0.025 83);

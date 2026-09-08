@@ -9,6 +9,6 @@ const esbuildPath = readdirSync(join(root, 'node_modules/.pnpm')).filter(n => n.
 const { build } = require(esbuildPath);
 const temp = mkdtempSync(join(tmpdir(), 'kitchen-tests-'));
 const outfile = join(temp, 'kitchen.test.mjs');
-await build({ absWorkingDir: root, entryPoints: ['tests/kitchen.test.ts'], bundle: true, platform: 'node', format: 'esm', outfile, logLevel: 'silent' });
+await build({ absWorkingDir: root, entryPoints: ['tests/kitchen.test.ts'], bundle: true, platform: 'node', format: 'esm', outfile, logLevel: 'silent', banner: { js: "import { createRequire as createTestRequire } from 'node:module'; const require = createTestRequire(import.meta.url);" } });
 const result = spawnSync(process.execPath, ['--test', outfile], { stdio: 'inherit' });
 process.exitCode = result.status ?? 1;

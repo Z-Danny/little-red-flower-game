@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "id": "illustrated",
+  "world": {
+    "width": 720,
+    "height": 960
+  },
+  "assets": {
+    "plant": {
+      "src": "/levels/typhoon-v2/plant.png",
+      "alpha": true
+    },
+    "rail": {
+      "src": "/levels/typhoon-v2/rail.png",
+      "alpha": true
+    },
+    "cushion": {
+      "src": "/levels/typhoon-v2/cushion.png",
+      "alpha": true
+    },
+    "powerstrip": {
+      "src": "/levels/typhoon-v2/powerstrip.png",
+      "alpha": true
+    },
+    "plug": {
+      "src": "/levels/typhoon-v2/plug.png",
+      "alpha": true
+    },
+    "socket": {
+      "src": "/levels/typhoon-v2/socket.png",
+      "alpha": true
+    },
+    "umbrella": {
+      "src": "/levels/typhoon-v2/umbrella.png",
+      "alpha": true
+    },
+    "room": {
+      "src": "/levels/typhoon-v2/room.png",
+      "alpha": false
+    }
+  },
+  "background": "room",
+  "poses": {
+    "plant": {
+      "asset": "plant",
+      "x": 223,
+      "y": 339,
+      "w": 101,
+      "h": 112,
+      "depth": 4
+    },
+    "rail": {
+      "asset": "rail",
+      "x": 157,
+      "y": 173,
+      "w": 196,
+      "h": 138,
+      "depth": 2
+    },
+    "strip": {
+      "asset": "powerstrip",
+      "x": 111,
+      "y": 722,
+      "w": 109,
+      "h": 41,
+      "depth": 4
+    },
+    "cushion": {
+      "asset": "cushion",
+      "x": 76,
+      "y": 709,
+      "w": 153,
+      "h": 80,
+      "depth": 7
+    },
+    "plug": {
+      "asset": "plug",
+      "x": 318,
+      "y": 613,
+      "w": 44,
+      "h": 42,
+      "depth": 6
+    },
+    "socket": {
+      "asset": "socket",
+      "x": 323,
+      "y": 610,
+      "w": 36,
+      "h": 36,
+      "depth": 5
+    },
+    "umbrella": {
+      "asset": "umbrella",
+      "x": 275,
+      "y": 371,
+      "w": 90,
+      "h": 94,
+      "depth": 5
+    }
+  },
+  "zones": {},
+  "states": [
+    {
+      "object": "plant",
+      "when": {
+        "all": [
+          "plant-safe"
+        ]
+      },
+      "pose": {
+        "x": 485,
+        "y": 714,
+        "w": 115,
+        "h": 128
+      }
+    },
+    {
+      "object": "rail",
+      "when": {
+        "all": [
+          "rail-safe"
+        ]
+      },
+      "pose": {
+        "x": 157,
+        "y": 253,
+        "opacity": 0
+      }
+    },
+    {
+      "object": "cushion",
+      "when": {
+        "all": [
+          "revealed"
+        ]
+      },
+      "pose": {
+        "y": 665,
+        "opacity": 0
+      }
+    },
+    {
+      "object": "plug",
+      "when": {
+        "all": [
+          "power-safe"
+        ]
+      },
+      "pose": {
+        "x": 278,
+        "rotation": -0.15
+      }
+    },
+    {
+      "object": "strip",
+      "when": {
+        "all": [
+          "power-safe"
+        ]
+      },
+      "pose": {
+        "x": 24,
+        "y": 798
+      }
+    }
+  ],
+  "animations": {
+    "carry": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "plant",
+          "keyframes": [
+            {
+              "at": 1,
+              "x": 485,
+              "y": 714,
+              "w": 115,
+              "h": 128
+            }
+          ]
+        }
+      ]
+    },
+    "stow": {
+      "durationMs": 1000,
+      "tracks": [
+        {
+          "object": "rail",
+          "keyframes": [
+            {
+              "at": 1,
+              "y": 253,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "lift": {
+      "durationMs": 750,
+      "tracks": [
+        {
+          "object": "cushion",
+          "keyframes": [
+            {
+              "at": 1,
+              "y": 665,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "unplug": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "plug",
+          "keyframes": [
+            {
+              "at": 0.45,
+              "x": 278,
+              "rotation": -0.15
+            },
+            {
+              "at": 1,
+              "x": 278,
+              "rotation": -0.15
+            }
+          ]
+        },
+        {
+          "object": "strip",
+          "keyframes": [
+            {
+              "at": 0.45,
+              "x": 111,
+              "y": 722
+            },
+            {
+              "at": 1,
+              "x": 24,
+              "y": 798
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [
+    {
+      "object": "plant",
+      "kind": "wobble",
+      "until": [
+        "plant-safe"
+      ]
+    },
+    {
+      "object": "rail",
+      "kind": "wobble",
+      "until": [
+        "rail-safe"
+      ]
+    }
+  ]
+}

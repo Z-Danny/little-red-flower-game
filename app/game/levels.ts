@@ -1,4 +1,7 @@
 import type { LevelConfig } from './types';
+import { configuredPackages } from './content/generated';
+import { assets as kitchenAssets } from './kitchen/config';
+import { assets as typhoonAssets } from './typhoon/config';
 import { actions as typhoonActions, level as typhoonLevel, placement as typhoonPlacement, riskCues as typhoonRiskCues, type ActionId } from './typhoon/config';
 
 // Compatibility metadata for the shared level catalog. The layered level owns its rules/art.
@@ -14,12 +17,12 @@ const typhoonObjectives: NonNullable<LevelConfig['objectives']> = (Object.keys(t
     riskCue: cue ? { threshold: cue.at, text: cue.text, tone: 'neutral' } : undefined };
 });
 
-export const levels: LevelConfig[] = [
+const builtInLevels: LevelConfig[] = [
   {
-    id: 'typhoon-home', order: 1, kind: 'prevention', title: '台风前的家', shortTitle: '风来之前', location: '客厅 · 阳台',
+    id: 'typhoon-home', engine: 'typhoon-v2', order: 1, kind: 'prevention', title: '台风前的家', shortTitle: '风来之前', location: '客厅 · 阳台',
     knowledge: '台风来临前，及时收回阳台物品，关好门窗，并断开不必要的电源。', task: '找出并处理 5 处台风隐患',
     briefing: '风雨正在靠近。观察客厅和阳台，把可能坠落、进水或漏电的隐患逐一处理。', duration: '约 1 分钟', riskSeconds: typhoonLevel.riskSeconds, accent: '#e95349', sceneRoom: 'living', sceneMood: 'storm', playable: true,
-    previewImage: '/levels/typhoon-v2/room.png',
+    previewImage: typhoonAssets.room,
     goals: ['plant', 'window', 'rail', 'plug', 'cabinet'],
     objectives: typhoonObjectives,
   },
@@ -48,10 +51,10 @@ export const levels: LevelConfig[] = [
     ],
   },
   {
-    id: 'oil-fire', order: 2, kind: 'response', title: '厨房着火了', shortTitle: '灶台十秒钟', location: '厨房',
-    playable: true, previewImage: '/levels/kitchen-v1/room.png',
+    id: 'oil-fire', engine: 'kitchen-v1', order: 2, kind: 'response', title: '厨房着火了', shortTitle: '灶台十秒钟', location: '厨房',
+    playable: true, previewImage: kitchenAssets.room,
     knowledge: '油锅起火时，先关火，再用锅盖盖住，切勿直接泼水。', task: '关火、盖锅盖，然后撤到安全处',
-    briefing: '油锅突然起火。把下方物品拖到正确位置；危险操作会展示后果，但不会阻止你继续。', duration: '约 1 分钟', riskSeconds: 85, accent: '#d87c3f', sceneRoom: 'kitchen', sceneMood: 'fire',
+    briefing: '油锅突然起火。直接拿取厨房中的物品，点击旋钮关火；危险操作会展示后果，但不会阻止你继续。', duration: '约 1 分钟', riskSeconds: 85, accent: '#d87c3f', sceneRoom: 'kitchen', sceneMood: 'fire',
     goals: ['gas-off', 'pan-covered', 'evacuated'],
     zones: [
       { id: 'pan', label: '起火油锅', icon: 'flame', position: { x: 30, y: 58 } },
@@ -119,6 +122,14 @@ export const levels: LevelConfig[] = [
   },
 ];
 
+export const getPackage = (id: string) => configuredPackages.find(pack => pack.rules.id === id);
+export const levels: LevelConfig[] = [...builtInLevels, ...configuredPackages.map(({ rules: r, skin: s }): LevelConfig => ({
+  id: r.id, engine: 'configured-v1', order: r.order, kind: r.kind, title: r.title, shortTitle: r.title,
+  location: r.location, knowledge: r.completion.summary, task: r.description, briefing: r.description,
+  duration: `约 ${r.risk.seconds} 秒`, riskSeconds: r.risk.seconds, accent: '#d7784e', sceneRoom: r.kind === 'prevention' ? 'living' : 'kitchen',
+  sceneMood: r.kind === 'prevention' ? 'storm' : 'fire', goals: r.goals.filter(g => g.showTarget !== false).map(g => g.id),
+  playable: true, previewImage: s.assets[s.background].src,
+}))];
 export const getLevel = (id: string) => levels.find((level) => level.id === id);
 
 function validateLevels(configs: LevelConfig[]) {
@@ -126,6 +137,7 @@ function validateLevels(configs: LevelConfig[]) {
   for (const level of configs) {
     if (levelIds.has(level.id)) throw new Error(`Duplicate level id: ${level.id}`);
     levelIds.add(level.id);
+    if (level.engine === 'configured-v1') continue; // Full data validation happens at package registration.
     const goals = new Set(level.goals);
     if (goals.size !== level.goals.length) throw new Error(`Duplicate goal in ${level.id}`);
     if (level.kind === 'prevention') {

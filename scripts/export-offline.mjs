@@ -5,8 +5,10 @@ import { createRequire } from 'node:module';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Script } from 'node:vm';
+import { execFileSync } from 'node:child_process';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+execFileSync(process.execPath, [join(root, 'scripts/levels.mjs'), 'sync'], { cwd: root, stdio: 'inherit' });
 const output = join(root, 'outputs', '本地离线版');
 const require = createRequire(import.meta.url);
 const esbuildRoot = existsSync(join(root, 'node_modules', 'esbuild'))
@@ -39,6 +41,7 @@ let css = readFileSync(join(root, 'app', 'globals.css'), 'utf8')
   .replace(/^@import\s+[^;]+;\s*/gm, '');
 css += '\n' + readFileSync(join(root, 'app', 'typhoon.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'kitchen.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'configured.css'), 'utf8');
 // The game components use authored CSS, not Tailwind utility classes.
 css = 'html{line-height:1.5;-webkit-text-size-adjust:100%}svg{display:block;vertical-align:middle}button{color:inherit}button:disabled{cursor:default}\n' + css;
 
@@ -46,7 +49,7 @@ const embeddedAssets = [];
 const assetUrls = [...new Set((javascript + css).match(/\/(?:levels\/[A-Za-z0-9_./-]+|emergency-home)\.(?:png|webp)/g) ?? [])];
 for (const assetUrl of assetUrls) {
   const bytes = readFileSync(join(root, 'public', assetUrl.slice(1)));
-  const dataUrl = `data:image/png;base64,${bytes.toString('base64')}`;
+  const dataUrl = `data:image/${assetUrl.endsWith('.webp') ? 'webp' : 'png'};base64,${bytes.toString('base64')}`;
   javascript = javascript.split(assetUrl).join(dataUrl);
   css = css.split(assetUrl).join(dataUrl);
   embeddedAssets.push({ path: assetUrl, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') });
@@ -57,7 +60,7 @@ new Script(javascript, { filename: 'offline-game.js' });
 assert.ok(!/^\s*(?:import|export)\s/m.test(javascript), '离线脚本不能保留模块导入。');
 assert.ok(!/@import\s/.test(css), '离线样式不能保留外部导入。');
 assert.ok(!/url\(\s*['"]?(?:https?:|\/levels\/|\/emergency-home)/i.test(css), '离线样式不能依赖外部图片。');
-assert.ok(!/\/levels\/[\w/.-]+\.png/.test(javascript), '关卡图片必须内嵌。');
+assert.ok(!/\/levels\/[\w/.-]+\.(?:png|webp)/.test(javascript), '关卡图片必须内嵌。');
 
 const html = `<!doctype html>
 <html lang="zh-CN">
@@ -65,7 +68,7 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light">
-<meta name="description" content="小红花应急行动，本地离线版。台风前的家、厨房着火了两关。">
+<meta name="description" content="小红花应急行动，本地离线版。包含当前已启用的训练关卡。">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; font-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <title>小红花应急行动 · 本地离线版</title>
 <style>${css.replace(/<\/style/gi, '<\\/style')}</style>

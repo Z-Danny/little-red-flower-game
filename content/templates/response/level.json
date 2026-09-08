@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "id": "response-template",
+  "kind": "response",
+  "title": "处置类模板",
+  "order": 8,
+  "location": "厨房",
+  "description": "模板复用现有厨房美术，演示双顺序处置、撤离、错误与无关反馈。",
+  "safety": "这是配置教学样例。现实火势失控请立即撤离并拨打 119，儿童不要尝试灭火。",
+  "objects": [
+    {
+      "id": "lid",
+      "label": "锅盖",
+      "input": "drag",
+      "disabledWhen": [
+        "covered"
+      ]
+    },
+    {
+      "id": "gas",
+      "label": "开关",
+      "input": "tap",
+      "disabledWhen": [
+        "gas-off"
+      ]
+    },
+    {
+      "id": "person",
+      "label": "人物",
+      "input": "drag",
+      "disabledWhen": [
+        "evacuated"
+      ]
+    },
+    {
+      "id": "water",
+      "label": "水杯",
+      "input": "drag",
+      "disabledWhen": []
+    },
+    {
+      "id": "plate",
+      "label": "餐盘",
+      "input": "drag",
+      "disabledWhen": []
+    }
+  ],
+  "goals": [
+    {
+      "id": "covered",
+      "label": "盖好锅口",
+      "object": "lid"
+    },
+    {
+      "id": "gas-off",
+      "label": "关闭火源",
+      "object": "gas"
+    },
+    {
+      "id": "evacuated",
+      "label": "安全撤离",
+      "object": "person"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "cover",
+      "source": "lid",
+      "mode": "drop",
+      "target": "pan",
+      "grants": [
+        "covered"
+      ],
+      "outcome": "correct",
+      "animation": "cover"
+    },
+    {
+      "id": "shutoff",
+      "source": "gas",
+      "mode": "tap",
+      "grants": [
+        "gas-off"
+      ],
+      "outcome": "correct",
+      "animation": "shutoff"
+    },
+    {
+      "id": "leave",
+      "source": "person",
+      "mode": "drop",
+      "target": "exit",
+      "grants": [
+        "evacuated"
+      ],
+      "outcome": "correct",
+      "animation": "leave",
+      "requires": [
+        "covered",
+        "gas-off"
+      ]
+    },
+    {
+      "id": "water-error",
+      "source": "water",
+      "mode": "drop",
+      "target": "pan",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "spill",
+      "unless": [
+        "covered"
+      ],
+      "riskDelta": 15,
+      "feedback": "油锅起火不能泼水"
+    }
+  ],
+  "risk": {
+    "seconds": 85,
+    "initial": 22,
+    "warningAt": 65,
+    "peakFeedback": "风险已升高，仍可继续完成训练。"
+  },
+  "completion": {
+    "requires": [
+      "covered",
+      "gas-off",
+      "evacuated"
+    ],
+    "settleMs": 1200,
+    "summary": "油锅起火时，先关火，再用锅盖盖住，切勿直接泼水。"
+  }
+}

@@ -15,7 +15,7 @@ export type Event = { type: 'start' | 'reset' | 'hint' } | { type: 'tick'; ms: n
 export const createRun = (): Run => ({
   phase: 'briefing', elapsed: 0, risk: 22, covered: false, gasOff: false, evacuated: false,
   mistakes: 0, action: null, reaction: null, reactionAge: 0, boost: 0, suppression: 0,
-  notice: { serial: 0, tone: 'neutral', text: '观察火情，拖动物件进行处置。' }, serial: 0,
+  notice: { serial: 0, tone: 'neutral', text: '直接拿取厨房里的物品；点击灶台旋钮可以关火。' }, serial: 0,
   settlingAge: 0, stars: 0, peakReached: false,
 });
 export const controlled = (r: Run) => r.covered && r.gasOff;
@@ -41,7 +41,7 @@ export function reduceRun(r: Run, e: Event): Run {
   if (e.type === 'start') return r.phase === 'briefing' ? { ...r, phase: 'playing' } : r;
   if (e.type === 'hint') {
     if (r.phase !== 'playing' || r.action) return r;
-    return tell(r, !r.gasOff ? '点击灶台面板上的燃气开关，让它原位旋转关闭。' : !r.covered ? '把下方工具架上的锅盖，拖到着火的油锅上。' : '两项处置都完成了，把人物拖到右侧门外安全区。');
+    return tell(r, !r.gasOff ? '点击灶台面板上的燃气开关，让它原位旋转关闭。' : !r.covered ? '锅盖在左下方备菜台上，把它拖到着火的油锅上。' : '两项处置都完成了，把人物拖到右侧门外安全区。');
   }
   if (e.type === 'tick') {
     if (r.phase === 'briefing' || r.phase === 'complete' || !Number.isFinite(e.ms) || e.ms <= 0) return r;

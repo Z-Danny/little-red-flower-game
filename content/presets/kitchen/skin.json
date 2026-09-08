@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "engine": "kitchen-v1",
+  "WORLD": {
+    "width": 720,
+    "height": 1440
+  },
+  "assets": {
+    "room": "/levels/kitchen-v1/room-portrait-v3.png",
+    "pan": "/levels/kitchen-v1/pan.png",
+    "lid": "/levels/kitchen-v1/lid.png",
+    "water": "/levels/kitchen-v1/water.png",
+    "cloth": "/levels/kitchen-v1/cloth.png",
+    "extinguisher": "/levels/kitchen-v1/extinguisher.png",
+    "gas": "/levels/kitchen-v1/gas.png",
+    "plate": "/levels/kitchen-v1/plate.png",
+    "knife": "/levels/kitchen-v1/knife.png",
+    "flame": "/levels/kitchen-v1/flame.png",
+    "worried": "/levels/kitchen-v1/worried.png",
+    "panicked": "/levels/kitchen-v1/panicked.png",
+    "focused": "/levels/kitchen-v1/focused.png",
+    "relieved": "/levels/kitchen-v1/relieved.png"
+  },
+  "layout": {
+    "pan": {
+      "x": 156,
+      "y": 578,
+      "w": 258,
+      "h": 96
+    },
+    "lid": {
+      "x": 156,
+      "y": 564,
+      "w": 188,
+      "h": 82
+    },
+    "gas": {
+      "x": 231,
+      "y": 674,
+      "w": 48,
+      "h": 48
+    },
+    "person": {
+      "x": 305,
+      "y": 533,
+      "w": 438.67,
+      "h": 560
+    },
+    "evacuated": {
+      "x": 484,
+      "y": 540,
+      "w": 260.07,
+      "h": 332
+    },
+    "flame": {
+      "x": 172,
+      "y": 426,
+      "w": 162,
+      "h": 202
+    },
+    "props": {
+      "lid": {
+        "x": 85,
+        "y": 911,
+        "w": 188,
+        "h": 89
+      },
+      "water": {
+        "x": 297,
+        "y": 880,
+        "w": 77,
+        "h": 68
+      },
+      "cloth": {
+        "x": 392,
+        "y": 629,
+        "w": 87,
+        "h": 50
+      },
+      "extinguisher": {
+        "x": 610,
+        "y": 1024,
+        "w": 57,
+        "h": 96
+      },
+      "plate": {
+        "x": 103,
+        "y": 1100,
+        "w": 119,
+        "h": 64
+      },
+      "knife": {
+        "x": 224,
+        "y": 1025,
+        "w": 97,
+        "h": 90
+      }
+    },
+    "zones": {
+      "pan": {
+        "x": 142,
+        "y": 559,
+        "w": 285,
+        "h": 130
+      },
+      "off": {
+        "x": 231,
+        "y": 674,
+        "w": 48,
+        "h": 48
+      },
+      "exit": {
+        "x": 552,
+        "y": 621,
+        "w": 125,
+        "h": 255
+      }
+    }
+  },
+  "cameraSafe": {
+    "width": 620,
+    "height": 1300
+  }
+}

@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef, useState, type RefObject, type PointerEventHandler } from 'react';
 import { WORLD, type ItemId } from '@/app/game/kitchen/config';
+import { cameraFor } from '@/app/game/kitchen/camera';
 import { createRun, type Run } from '@/app/game/kitchen/model';
 import { pickZone } from '@/app/game/kitchen/interaction';
 import { loadArt, type Art } from './asset-loader';
@@ -25,13 +26,20 @@ export function KitchenCanvas(props: Props) {
       const canvas = canvasRef.current, ctx = canvas.getContext('2d'); if (!ctx) { setError('浏览器不支持 2D 绘图'); return; }
       const resize = () => {
         canvas.width = Math.round(canvas.clientWidth * Math.min(2, window.devicePixelRatio || 1));
-        canvas.height = Math.round(canvas.width * WORLD.height / WORLD.width);
-        ctx.setTransform(canvas.width / WORLD.width, 0, 0, canvas.height / WORLD.height, 0, 0);
+        canvas.height = Math.round(canvas.clientHeight * Math.min(2, window.devicePixelRatio || 1));
       };
       resize(); observer = new ResizeObserver(resize); observer.observe(canvas);
       const draw = () => {
         if (!alive) return;
         const p = latest.current, run = p.run ?? initial;
+        let camera = cameraFor(canvas.clientWidth, canvas.clientHeight);
+        if (p.preview) {
+          const scale = Math.max(canvas.clientWidth / WORLD.width, canvas.clientHeight / WORLD.height);
+          camera = { scale, x: (canvas.clientWidth - WORLD.width * scale) / 2, y: (canvas.clientHeight - WORLD.height * scale) * .44 };
+        }
+        const pixelRatio = canvas.width / canvas.clientWidth;
+        ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = '#382e20'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.setTransform(camera.scale * pixelRatio, 0, 0, camera.scale * pixelRatio, camera.x * pixelRatio, camera.y * pixelRatio);
         render(ctx, art, run, { selected: p.selected ?? null, drag: p.drag ?? null, hover: p.drag ? pickZone(p.drag.point) : 'miss', clock: p.preview ? 0 : run.elapsed, reduced });
         if (!p.preview) frame = requestAnimationFrame(draw);
       }; draw();
@@ -39,8 +47,8 @@ export function KitchenCanvas(props: Props) {
     }).catch((err: unknown) => { if (alive) setError(err instanceof Error ? err.message : '素材加载失败'); });
     return () => { alive = false; cancelAnimationFrame(frame); observer?.disconnect(); };
   }, [canvasRef, artRef, retry]);
-  return <div className="kitchen-scene" data-scene="kitchen-v1">
-    <canvas ref={canvasRef} width={720} height={850} aria-label="厨房场景：左侧油锅着火，灶台燃气开关，右侧人物和门外安全区" {...{
+  return <div className="kitchen-scene" data-scene="kitchen-v3">
+    <canvas ref={canvasRef} width={WORLD.width} height={WORLD.height} aria-label="厨房互动场景，可以拖动物品或轻点选取" {...{
       onPointerDown: props.onPointerDown, onPointerMove: props.onPointerMove, onPointerUp: props.onPointerUp, onPointerCancel: props.onPointerCancel,
     }} />
     {!ready && <div className="scene-loading" role="status">{error ? <div>{error}<button type="button" onClick={() => { setError(''); setRetry(n => n + 1); }}>重新加载</button></div> : '厨房训练准备中…'}</div>}

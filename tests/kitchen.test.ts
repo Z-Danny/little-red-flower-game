@@ -1,12 +1,17 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { assets, items, layout, timing, trayItems, WORLD, type ItemId, type ZoneId } from '../app/game/kitchen/config';
+import { assets, items, layout, timing, sceneItems, WORLD, type ItemId, type ZoneId } from '../app/game/kitchen/config';
 import { createRun, reduceRun, controlled, emotion, fireLevel, smokeLevel, type Run } from '../app/game/kitchen/model';
-import { center, movingItem, personBox } from '../app/game/kitchen/animation';
+import { center, itemBox, movingItem, personBox } from '../app/game/kitchen/animation';
 import { toWorld, pickZone, pickSceneItem } from '../app/game/kitchen/interaction';
-import { render, alphaHit } from '../components/game/kitchen/renderer';
+import { render, alphaHit, type Drag } from '../components/game/kitchen/renderer';
 import type { Art } from '../components/game/kitchen/asset-loader';
 import { levels } from '../app/game/levels';
+import { cameraFor } from '../app/game/kitchen/camera';
+import { briefFeedback, riskClock } from '../app/game/kitchen/presentation';
+import { createElement } from 'react';
+import { renderToStaticMarkup } from 'react-dom/server';
+import { KitchenPlayer } from '../components/game/kitchen/kitchen-player';
 
 const start = () => reduceRun(createRun(), { type: 'start' });
 function tick(run: Run, ms: number) { let r = run; for (let i = 0; i < ms; i += 10) r = reduceRun(r, { type: 'tick', ms: Math.min(10, ms - i) }); return r; }
@@ -103,8 +108,8 @@ test('lid animation ends exactly at configured pan cover and remains above pan',
   assert.deepEqual(pose?.box, layout.lid);
 });
 test('catalog opens two distinct modular levels', () => { assert.deepEqual(levels.filter(l => l.playable).map(l => l.id), ['typhoon-home', 'oil-fire']); });
-test('gas is a direct click control and never appears in the draggable tray', () => {
-  assert.equal(trayItems.includes('gas'), false);
+test('gas is a direct click control and never appears in the draggable scene props', () => {
+  assert.equal((sceneItems as readonly ItemId[]).includes('gas'), false);
   assert.match(items.gas.detail, /点击/);
 });
 test('transparent margins are not character hits', () => {
@@ -120,4 +125,90 @@ test('safe renderer draws lid after pan and never draws top flame', () => {
   const r = finish(drop(finish(drop(start(), 'gas', 'off')), 'lid', 'pan'));
   render(ctx as unknown as CanvasRenderingContext2D, art, r, { clock: 0, selected: null, drag: null, hover: 'miss', reduced: false });
   assert.ok(drawn.indexOf('lid') > drawn.indexOf('pan')); assert.ok(!drawn.includes('flame')); assert.ok(drawn.includes('relieved'));
+  assert.ok(drawn.indexOf('cloth') < drawn.indexOf('relieved'), '人物在台面物件之前方，不让抹布盖住手');
+});
+
+// Scene v2 regressions: props, hit regions and return poses share one configuration.
+for (const id of sceneItems) test(`${id} is directly pickable at its configured in-room position`, () => {
+  const b = layout.props[id];
+  assert.ok(b.x >= 0 && b.y >= 0 && b.x + b.w <= WORLD.width && b.y + b.h <= WORLD.height);
+  assert.deepEqual(itemBox(id, start()), b);
+  assert.equal(pickSceneItem(center(b), start(), asset => asset === id), id);
+  assert.equal(pickSceneItem(center(b), start(), () => false), null);
+});
+test('only the physical gas knob is clickable; no hidden label target survives', () => {
+  assert.equal(pickSceneItem(center(layout.gas), start()), 'gas');
+  assert.equal(pickSceneItem(center(layout.gas), start(), () => false), null);
+  const r = finish(drop(start(), 'gas', 'off'));
+  assert.equal(pickSceneItem(center(layout.gas), r), null);
+});
+for (const [id, zone] of [['water', 'pan'], ['cloth', 'pan'], ['extinguisher', 'miss'], ['plate', 'pan'], ['knife', 'pan']] as const) test(`${id} returns to its original scene position after ${zone}`, () => {
+  const r = drop(start(), id, zone), a = r.action!;
+  const result = movingItem({ ...r, action: { ...a, age: a.duration } });
+  assert.deepEqual(result?.box, layout.props[id]); assert.equal(result?.opacity, 1);
+});
+test('premature evacuation smoothly returns the person to the kitchen', () => {
+  const r = drop(start(), 'person', 'exit'), a = r.action!;
+  assert.notDeepEqual(personBox(r), layout.person);
+  assert.deepEqual(personBox({ ...r, action: { ...a, age: a.duration } }), layout.person);
+});
+function drawnAssets(r: Run, drag: Drag | null = null) {
+  const drawn: string[] = [], gradient = { addColorStop() {} };
+  const ctx = new Proxy({ drawImage(image: { id: string }) { drawn.push(image.id); }, createRadialGradient() { return gradient; } }, { get(target, key) { return key in target ? target[key as keyof typeof target] : () => {}; }, set() { return true; } });
+  const art = Object.fromEntries(Object.keys(assets).map(id => [id, { image: { id } }])) as unknown as Art;
+  render(ctx as unknown as CanvasRenderingContext2D, art, r, { clock: 0, selected: drag?.item ?? null, drag, hover: 'miss', reduced: false });
+  return drawn;
+}
+test('dragged props never have a duplicate remaining on the countertop', () => {
+  for (const id of sceneItems) {
+    const home = center(layout.props[id]);
+    const drag: Drag = { item: id, point: { x: 200, y: 400 }, from: home, pointerStart: home, offset: { x: 0, y: 0 }, pointerId: 1, moved: true };
+    assert.equal(drawnAssets(start(), drag).filter(name => name === id).length, 1, id);
+    assert.equal(drawnAssets(drop(start(), id, 'pan')).filter(name => name === id).length, 1, id + ' action');
+  }
+});
+test('covered lid has left the prep counter and is no longer pickable there', () => {
+  const r = finish(drop(start(), 'lid', 'pan'));
+  assert.equal(pickSceneItem(center(layout.props.lid), r), null);
+  assert.equal(drawnAssets(r).filter(name => name === 'lid').length, 1);
+});
+test('dragged character is rendered once, using her current emotion', () => {
+  const r = start(), p = center(personBox(r));
+  const drag: Drag = { item: 'person', point: { x: 500, y: 500 }, from: p, pointerStart: p, offset: { x: 0, y: 0 }, pointerId: 1, moved: true };
+  assert.equal(drawnAssets(r, drag).filter(name => name === emotion(r)).length, 1);
+});
+
+test('successful action narration never appears in the immersive HUD', () => {
+  for (const [item, zone] of [['gas', 'off'], ['lid', 'pan']] as const) {
+    const r = drop(start(), item, zone);
+    assert.equal(briefFeedback(r), null); assert.equal(briefFeedback(finish(r)), null);
+  }
+  assert.equal(briefFeedback(start()), null);
+  assert.equal(briefFeedback(drop(start(), 'plate', 'pan')), null);
+});
+test('danger feedback is one concise cause, not a duplicate action caption', () => {
+  assert.equal(briefFeedback(drop(start(), 'water', 'pan')), '油锅起火不能泼水');
+  assert.equal(briefFeedback(drop(start(), 'cloth', 'pan')), '这块抹布不能盖严锅口');
+  assert.equal(briefFeedback(drop(start(), 'extinguisher', 'miss')), '请对准火焰根部');
+});
+test('risk countdown is derived from remaining risk budget and never goes negative', () => {
+  assert.equal(riskClock(start()), '01:07');
+  assert.equal(riskClock({ ...start(), risk: 100 }), '00:00');
+  assert.equal(riskClock({ ...start(), covered: true, gasOff: true }), '00:00');
+  assert.match(riskClock(tick(start(), 5000)), /^01:0[12]$/);
+});
+test('default screen contains no answer steps, duplicate narration, intro card or footer UI', () => {
+  const html = renderToStaticMarkup(createElement(KitchenPlayer, { totalFlowers: 0, onBack() {}, onFinish() {} }));
+  for (const removed of ['关闭火源', '盖住油锅', '安全撤离', 'kitchen-footer', 'kitchen-goals', 'kitchen-start-card', '正在平稳盖住锅口']) assert.ok(!html.includes(removed), removed);
+  assert.ok(html.includes('LEVEL 02') && html.includes('风险倒计时') && html.includes('暂停游戏'));
+});
+for (const [width, height] of [[320,740], [390,844], [430,932], [400,800], [360,900]]) test(`fullscreen ${width}x${height}: image and input use the same uniform camera`, () => {
+  const c = cameraFor(width, height), rect = { left: 0, top: 0, width, height };
+  for (const b of [...Object.values(layout.props), layout.gas, layout.lid]) {
+    const p = center(b), screen = { x: c.x + p.x * c.scale, y: c.y + p.y * c.scale };
+    const result = toWorld(screen, rect);
+    assert.ok(Math.abs(result.x - p.x) < 1e-8 && Math.abs(result.y - p.y) < 1e-8);
+    assert.ok(c.x + b.x * c.scale >= -1 && c.x + (b.x + b.w) * c.scale <= width + 1);
+    assert.ok(c.y + b.y * c.scale >= 0 && c.y + (b.y + b.h) * c.scale <= height);
+  }
 });

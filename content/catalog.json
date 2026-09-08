@@ -1,0 +1,12 @@
+[
+  {
+    "id": "example-prevention",
+    "skin": "illustrated",
+    "enabled": false
+  },
+  {
+    "id": "example-response",
+    "skin": "illustrated",
+    "enabled": false
+  }
+]

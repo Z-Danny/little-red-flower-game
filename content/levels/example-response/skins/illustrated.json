@@ -1,0 +1,307 @@
+{
+  "schemaVersion": 1,
+  "id": "illustrated",
+  "world": {
+    "width": 720,
+    "height": 1440
+  },
+  "assets": {
+    "pan": {
+      "src": "/levels/kitchen-v1/pan.png",
+      "alpha": true
+    },
+    "lid": {
+      "src": "/levels/kitchen-v1/lid.png",
+      "alpha": true
+    },
+    "gas": {
+      "src": "/levels/kitchen-v1/gas.png",
+      "alpha": true
+    },
+    "worried": {
+      "src": "/levels/kitchen-v1/worried.png",
+      "alpha": true
+    },
+    "panicked": {
+      "src": "/levels/kitchen-v1/panicked.png",
+      "alpha": true
+    },
+    "focused": {
+      "src": "/levels/kitchen-v1/focused.png",
+      "alpha": true
+    },
+    "relieved": {
+      "src": "/levels/kitchen-v1/relieved.png",
+      "alpha": true
+    },
+    "water": {
+      "src": "/levels/kitchen-v1/water.png",
+      "alpha": true
+    },
+    "plate": {
+      "src": "/levels/kitchen-v1/plate.png",
+      "alpha": true
+    },
+    "flame": {
+      "src": "/levels/kitchen-v1/flame.png",
+      "alpha": true
+    },
+    "room": {
+      "src": "/levels/kitchen-v1/room-portrait-v3.png",
+      "alpha": false
+    }
+  },
+  "background": "room",
+  "poses": {
+    "pan": {
+      "asset": "pan",
+      "x": 156,
+      "y": 578,
+      "w": 258,
+      "h": 96,
+      "depth": 3
+    },
+    "lid": {
+      "asset": "lid",
+      "x": 85,
+      "y": 911,
+      "w": 188,
+      "h": 89,
+      "depth": 7
+    },
+    "gas": {
+      "asset": "gas",
+      "x": 231,
+      "y": 674,
+      "w": 48,
+      "h": 48,
+      "depth": 4
+    },
+    "person": {
+      "asset": "worried",
+      "x": 305,
+      "y": 533,
+      "w": 400,
+      "h": 510.64,
+      "depth": 6
+    },
+    "water": {
+      "asset": "water",
+      "x": 297,
+      "y": 880,
+      "w": 77,
+      "h": 68,
+      "depth": 5
+    },
+    "plate": {
+      "asset": "plate",
+      "x": 103,
+      "y": 1100,
+      "w": 119,
+      "h": 64,
+      "depth": 5
+    },
+    "flame": {
+      "asset": "flame",
+      "x": 172,
+      "y": 426,
+      "w": 162,
+      "h": 202,
+      "depth": 4,
+      "blockInput": false
+    }
+  },
+  "zones": {
+    "pan": {
+      "x": 142,
+      "y": 559,
+      "w": 285,
+      "h": 130
+    },
+    "exit": {
+      "x": 552,
+      "y": 621,
+      "w": 125,
+      "h": 255
+    }
+  },
+  "states": [
+    {
+      "object": "lid",
+      "when": {
+        "all": [
+          "covered"
+        ]
+      },
+      "pose": {
+        "x": 156,
+        "y": 564,
+        "w": 188,
+        "h": 82
+      }
+    },
+    {
+      "object": "gas",
+      "when": {
+        "all": [
+          "gas-off"
+        ]
+      },
+      "pose": {
+        "rotation": -1.57
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "emotion": "panicked"
+      },
+      "pose": {
+        "asset": "panicked"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "emotion": "focused"
+      },
+      "pose": {
+        "asset": "focused"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "all": [
+          "covered",
+          "gas-off"
+        ]
+      },
+      "pose": {
+        "asset": "relieved"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "all": [
+          "evacuated"
+        ]
+      },
+      "pose": {
+        "x": 484,
+        "y": 540,
+        "w": 230,
+        "h": 293.62,
+        "asset": "relieved"
+      }
+    },
+    {
+      "object": "flame",
+      "when": {
+        "all": [
+          "gas-off"
+        ]
+      },
+      "pose": {
+        "h": 130,
+        "y": 498
+      }
+    },
+    {
+      "object": "flame",
+      "when": {
+        "all": [
+          "covered"
+        ]
+      },
+      "pose": {
+        "opacity": 0
+      }
+    }
+  ],
+  "animations": {
+    "cover": {
+      "durationMs": 1000,
+      "tracks": [
+        {
+          "object": "lid",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 1,
+              "x": 156,
+              "y": 564,
+              "w": 188,
+              "h": 82
+            }
+          ]
+        }
+      ]
+    },
+    "shutoff": {
+      "durationMs": 800,
+      "tracks": [
+        {
+          "object": "gas",
+          "keyframes": [
+            {
+              "at": 1,
+              "rotation": -1.57
+            }
+          ]
+        }
+      ]
+    },
+    "leave": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "person",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 1,
+              "x": 484,
+              "y": 540,
+              "w": 230,
+              "h": 293.62
+            }
+          ]
+        }
+      ]
+    },
+    "spill": {
+      "durationMs": 1050,
+      "tracks": [
+        {
+          "object": "water",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.45,
+              "x": 208,
+              "y": 514,
+              "rotation": -0.7
+            },
+            {
+              "at": 1,
+              "x": 297,
+              "y": 880,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [
+    {
+      "object": "flame",
+      "kind": "fire",
+      "until": [
+        "covered"
+      ]
+    }
+  ]
+}

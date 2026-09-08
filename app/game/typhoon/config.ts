@@ -1,28 +1,12 @@
+import skin from '../../../content/presets/typhoon/skin.json';
 /** Art placement uses a stable 720 × 960 design space, never viewport pixels. */
 export type Rect = { x: number; y: number; w: number; h: number };
 export type GoalId = 'plant' | 'window' | 'rail' | 'plug' | 'cabinet';
 export type ActionId = GoalId | 'cushion';
 export type AssetId = keyof typeof assets;
 
-export const WORLD = { width: 720, height: 960 } as const;
-export const assets = {
-  room: '/levels/typhoon-v2/room.png',
-  plant: '/levels/typhoon-v2/plant.png',
-  window: '/levels/typhoon-v2/window.png',
-  rail: '/levels/typhoon-v2/rail.png',
-  cabinet: '/levels/typhoon-v2/cabinet.png',
-  umbrella: '/levels/typhoon-v2/umbrella.png',
-  cushion: '/levels/typhoon-v2/cushion.png',
-  powerstrip: '/levels/typhoon-v2/powerstrip.png',
-  plug: '/levels/typhoon-v2/plug.png',
-  cable: '/levels/typhoon-v2/cable.png',
-  socket: '/levels/typhoon-v2/socket.png',
-  latchOpen: '/levels/typhoon-v2/latch-open.png',
-  latchClosed: '/levels/typhoon-v2/latch-closed.png',
-  strap: '/levels/typhoon-v2/strap.png',
-  familyStanding: '/levels/typhoon-v2/family-standing.png',
-  familySeated: '/levels/typhoon-v2/family-seated.png',
-} as const;
+export const WORLD = skin.WORLD;
+export const assets = skin.assets;
 
 export const level = {
   id: 'typhoon-home', title: '台风前的家', riskSeconds: 95,
@@ -46,44 +30,10 @@ export const actions: Record<ActionId, ActionConfig> = {
 };
 
 /** Only this table needs editing after replacing art or changing the room layout. */
-export const placement = {
-  window: { x: 352, y: 101, w: 211, h: 400 },
-  windowClosed: { x: 133, y: 101, w: 222, h: 400 },
-  outside: { x: 137, y: 112, w: 419, h: 380 },
-  rainEntry: { x: 138, y: 390, w: 220, h: 250 },
-  rail: { x: 157, y: 173, w: 196, h: 138 },
-  railSafe: { x: 158, y: 252, w: 211, h: 149 },
-  plant: { x: 223, y: 339, w: 101, h: 112 },
-  plantSafe: { x: 485, y: 714, w: 115, h: 128 },
-  umbrella: { x: 282, y: 392, w: 107, h: 108 },
-  cabinet: { x: 600, y: 337, w: 98, h: 240 },
-  drawer: { x: 605, y: 580, w: 88, h: 90 },
-  strap: { x: 587, y: 449, w: 75, h: 23 },
-  powerstrip: { x: 111, y: 722, w: 109, h: 41 },
-  powerstripSafe: { x: 26, y: 798, w: 98, h: 37 },
-  socket: { x: 323, y: 610, w: 36, h: 36 },
-  plug: { x: 318, y: 613, w: 44, h: 42 },
-  plugSafe: { x: 147, y: 767, w: 40, h: 38 },
-  cushion: { x: 76, y: 709, w: 153, h: 80 },
-  cushionSafe: { x: 48, y: 666, w: 146, h: 76 },
-  family: { x: 366, y: 422, w: 152, h: 362 },
-  familySafe: { x: 78, y: 449, w: 177, h: 310 },
-} satisfies Record<string, Rect>;
+export const placement = skin.placement;
 
 /** Image-space anchors and game-only status colours; no physics is inferred from art. */
-export const powerVisuals = {
-  disconnectAt: .44,
-  insertedVisibleWidth: .735,
-  withdrawalDistance: 44,
-  indicator: { x: .846, y: .345, w: .058, h: .18 },
-  connected: { color: '#36ce7a', glow: '#70ee9e', label: '已接通' },
-  disconnected: { color: '#ed5948', glow: '#f98970', label: '已断开' },
-  // These anchors describe the actual endpoints of the existing transparent PNGs.
-  boardCableAnchor: { x: .99, y: .56 },
-  plugCableAnchor: { x: .25, y: .972 },
-  cableStart: { x: .0073, y: .874 },
-  cableEnd: { x: .991, y: .02 },
-} as const;
+export const powerVisuals = skin.powerVisuals;
 
 export const riskCues = [
   { at: 36, goal: 'plant', text: '风变大了，窗台上的花盆开始晃动。' },

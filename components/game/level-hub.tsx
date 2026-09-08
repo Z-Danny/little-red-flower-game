@@ -1,9 +1,10 @@
 'use client';
 
 import { ChevronRight, Clock3, HeartHandshake, LockKeyhole, Map, RotateCcw, ShieldCheck, Sparkles, Target } from 'lucide-react';
-import { levels } from '@/app/game/levels';
+import { levels, getPackage } from '@/app/game/levels';
 import { SceneCanvas } from './typhoon/scene-canvas';
 import { KitchenCanvas } from './kitchen/scene-canvas';
+import { ConfiguredPreview } from './configured/player';
 import { useState } from 'react';
 
 type Props = { completed: Record<string, number>; onStart: (id: string) => void; onReset: () => void };
@@ -14,7 +15,8 @@ export function LevelHub({ completed, onStart, onReset }: Props) {
   const current = playable.find(level => level.id === previewId) ?? playable[0];
   const stars = playable.reduce((sum, level) => sum + (completed[level.id] ?? 0), 0);
   const futureLevels = levels.filter((level) => !level.playable);
-  const kitchen = current.id === 'oil-fire';
+  const kitchen = current.kind === 'response';
+  const pack = getPackage(current.id);
 
   return (
     <section className="phone-stage hub-stage game-hub">
@@ -31,7 +33,7 @@ export function LevelHub({ completed, onStart, onReset }: Props) {
 
       <div className="mission-picker" aria-label="选择关卡预览">{playable.map(level => <button type="button" key={level.id} className={current.id === level.id ? 'selected' : ''} aria-pressed={current.id === level.id} onClick={() => setPreviewId(level.id)}>{String(level.order).padStart(2, '0')} · {level.title}</button>)}</div>
       <section className="current-mission" style={{ '--mission-image': `url(${current.previewImage})` } as React.CSSProperties}>
-        <div className="mission-image hub-live-preview" aria-hidden="true">{kitchen ? <KitchenCanvas preview /> : <SceneCanvas preview />}</div>
+        <div className="mission-image hub-live-preview" aria-hidden="true">{pack ? <ConfiguredPreview key={current.id} pack={pack} /> : current.engine === 'kitchen-v1' ? <KitchenCanvas preview /> : <SceneCanvas preview />}</div>
         <div className="mission-image-shade" />
         <div className="current-mission-top">
           <span className="live-pill"><i />当前关卡</span>
@@ -40,8 +42,8 @@ export function LevelHub({ completed, onStart, onReset }: Props) {
         <div className="current-mission-copy">
           <span className="mission-kicker">MISSION {String(current.order).padStart(2, '0')} · {current.location}</span>
           <h2>{current.title}</h2>
-          <p>{kitchen ? '关火、盖锅盖，带她安全撤离。每个选择，都能看到变化。' : '台风来临前，找出并处理屋内的 5 处安全隐患。'}</p>
-          <div className="mission-facts"><span><Clock3 />约 1 分钟</span><span><ShieldCheck />{current.goals.length} 个目标</span><span><Sparkles />最多 3 朵花</span></div>
+          <p>{pack ? pack.rules.description : kitchen ? '关火、盖锅盖，带她安全撤离。每个选择，都能看到变化。' : '台风来临前，找出并处理屋内的 5 处安全隐患。'}</p>
+          <div className="mission-facts"><span><Clock3 />{current.duration}</span><span><ShieldCheck />{current.goals.length} 个目标</span><span><Sparkles />最多 3 朵花</span></div>
           <button className="start-level-button" onClick={() => onStart(current.id)}>开始关卡 <ChevronRight /></button>
         </div>
       </section>
@@ -55,7 +57,7 @@ export function LevelHub({ completed, onStart, onReset }: Props) {
             aria-hidden="true"
             style={{ '--map-thumb-image': `url(${level.previewImage})` } as React.CSSProperties}
           />
-          <span className="map-copy"><small>{level.kind === 'response' ? '拖拽处置 · 火情应对' : '找隐患 · 入门训练'}</small><strong>{level.title}</strong><em>{completed[level.id] ? '再次训练' : '等待开始'}</em></span>
+          <span className="map-copy"><small>{level.kind === 'response' ? '处置训练' : '找隐患'} · {level.location}</small><strong>{level.title}</strong><em>{completed[level.id] ? '再次训练' : '等待开始'}</em></span>
           <ChevronRight />
         </button>)}
         <div className="future-level-grid">

@@ -1,11 +1,12 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { getLevel, levels } from '@/app/game/levels';
+import { getLevel, getPackage, levels } from '@/app/game/levels';
 import { LevelHub } from './level-hub';
 import { LevelPlayer } from './level-player';
 import { TyphoonPlayer } from './typhoon/typhoon-player';
 import { KitchenPlayer } from './kitchen/kitchen-player';
+import { ConfiguredPlayer } from './configured/player';
 
 const STORAGE_KEY = 'little-red-flower-emergency-progress-v1';
 
@@ -78,8 +79,9 @@ export function GameApp() {
   }, [completed, totalFlowers]);
 
   if (active) {
-    if (active.id === 'oil-fire') return <main className="game-page"><KitchenPlayer totalFlowers={totalFlowers} onBack={() => setActiveId(null)} onFinish={finishLevel} /></main>;
-    if (active.id === 'typhoon-home') return <main className="game-page"><TyphoonPlayer totalFlowers={totalFlowers} onBack={() => setActiveId(null)} onFinish={finishLevel} onNext={() => setActiveId(null)} /></main>;
+    if (active.engine === 'configured-v1') return <main className="game-page"><ConfiguredPlayer key={active.id} pack={getPackage(active.id)!} onBack={() => setActiveId(null)} onFinish={finishLevel} /></main>;
+    if (active.engine === 'kitchen-v1') return <main className="game-page"><KitchenPlayer totalFlowers={totalFlowers} onBack={() => setActiveId(null)} onFinish={finishLevel} /></main>;
+    if (active.engine === 'typhoon-v2') return <main className="game-page"><TyphoonPlayer totalFlowers={totalFlowers} onBack={() => setActiveId(null)} onFinish={finishLevel} onNext={() => setActiveId(null)} /></main>;
     return (
       <main className="game-page">
         <LevelPlayer

@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "id": "example-prevention",
+  "kind": "prevention",
+  "title": "防范类配置样例",
+  "order": 7,
+  "location": "客厅",
+  "description": "模板复用现有美术，演示寻找、点击、固定处理动画与前置解锁。",
+  "safety": "这是配置教学样例，不是新主题科普内容。实际知识需审核。",
+  "objects": [
+    {
+      "id": "plant",
+      "label": "花盆",
+      "input": "tap",
+      "disabledWhen": [
+        "plant-safe"
+      ]
+    },
+    {
+      "id": "rail",
+      "label": "晾衣杆",
+      "input": "tap",
+      "disabledWhen": [
+        "rail-safe"
+      ]
+    },
+    {
+      "id": "cushion",
+      "label": "坐垫",
+      "input": "tap",
+      "disabledWhen": [
+        "revealed"
+      ]
+    },
+    {
+      "id": "strip",
+      "label": "插线板",
+      "input": "tap",
+      "disabledWhen": [
+        "power-safe"
+      ],
+      "requires": [
+        "revealed"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "plant-safe",
+      "label": "花盆",
+      "object": "plant"
+    },
+    {
+      "id": "rail-safe",
+      "label": "晾衣杆",
+      "object": "rail"
+    },
+    {
+      "id": "power-safe",
+      "label": "插线板",
+      "object": "strip"
+    },
+    {
+      "id": "revealed",
+      "label": "移开坐垫",
+      "object": "cushion",
+      "showTarget": false
+    }
+  ],
+  "interactions": [
+    {
+      "id": "move-plant",
+      "source": "plant",
+      "mode": "tap",
+      "grants": [
+        "plant-safe"
+      ],
+      "outcome": "correct",
+      "animation": "carry"
+    },
+    {
+      "id": "stow-rail",
+      "source": "rail",
+      "mode": "tap",
+      "grants": [
+        "rail-safe"
+      ],
+      "outcome": "correct",
+      "animation": "stow"
+    },
+    {
+      "id": "lift-cushion",
+      "source": "cushion",
+      "mode": "tap",
+      "grants": [
+        "revealed"
+      ],
+      "outcome": "correct",
+      "animation": "lift"
+    },
+    {
+      "id": "disconnect",
+      "source": "strip",
+      "mode": "tap",
+      "grants": [
+        "power-safe"
+      ],
+      "outcome": "correct",
+      "animation": "unplug",
+      "requires": [
+        "revealed"
+      ]
+    }
+  ],
+  "risk": {
+    "seconds": 90,
+    "initial": 8,
+    "warningAt": 65,
+    "peakFeedback": "风险已升高，仍可继续完成训练。"
+  },
+  "completion": {
+    "requires": [
+      "plant-safe",
+      "rail-safe",
+      "revealed",
+      "power-safe"
+    ],
+    "settleMs": 1200,
+    "summary": "本模板演示三个可见目标、一个隐藏目标前置动作。新关请替换为审核后的知识总结。"
+  }
+}

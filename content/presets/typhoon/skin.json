@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "engine": "typhoon-v2",
+  "WORLD": {
+    "width": 720,
+    "height": 960
+  },
+  "assets": {
+    "room": "/levels/typhoon-v2/room.png",
+    "plant": "/levels/typhoon-v2/plant.png",
+    "window": "/levels/typhoon-v2/window.png",
+    "rail": "/levels/typhoon-v2/rail.png",
+    "cabinet": "/levels/typhoon-v2/cabinet.png",
+    "umbrella": "/levels/typhoon-v2/umbrella.png",
+    "cushion": "/levels/typhoon-v2/cushion.png",
+    "powerstrip": "/levels/typhoon-v2/powerstrip.png",
+    "plug": "/levels/typhoon-v2/plug.png",
+    "cable": "/levels/typhoon-v2/cable.png",
+    "socket": "/levels/typhoon-v2/socket.png",
+    "latchOpen": "/levels/typhoon-v2/latch-open.png",
+    "latchClosed": "/levels/typhoon-v2/latch-closed.png",
+    "strap": "/levels/typhoon-v2/strap.png",
+    "familyStanding": "/levels/typhoon-v2/family-standing.png",
+    "familySeated": "/levels/typhoon-v2/family-seated.png"
+  },
+  "placement": {
+    "window": {
+      "x": 352,
+      "y": 101,
+      "w": 211,
+      "h": 400
+    },
+    "windowClosed": {
+      "x": 133,
+      "y": 101,
+      "w": 222,
+      "h": 400
+    },
+    "outside": {
+      "x": 137,
+      "y": 112,
+      "w": 419,
+      "h": 380
+    },
+    "rainEntry": {
+      "x": 138,
+      "y": 390,
+      "w": 220,
+      "h": 250
+    },
+    "rail": {
+      "x": 157,
+      "y": 173,
+      "w": 196,
+      "h": 138
+    },
+    "railSafe": {
+      "x": 158,
+      "y": 252,
+      "w": 211,
+      "h": 149
+    },
+    "plant": {
+      "x": 223,
+      "y": 339,
+      "w": 101,
+      "h": 112
+    },
+    "plantSafe": {
+      "x": 485,
+      "y": 714,
+      "w": 115,
+      "h": 128
+    },
+    "umbrella": {
+      "x": 282,
+      "y": 392,
+      "w": 107,
+      "h": 108
+    },
+    "cabinet": {
+      "x": 600,
+      "y": 337,
+      "w": 98,
+      "h": 240
+    },
+    "drawer": {
+      "x": 605,
+      "y": 580,
+      "w": 88,
+      "h": 90
+    },
+    "strap": {
+      "x": 587,
+      "y": 449,
+      "w": 75,
+      "h": 23
+    },
+    "powerstrip": {
+      "x": 111,
+      "y": 722,
+      "w": 109,
+      "h": 41
+    },
+    "powerstripSafe": {
+      "x": 26,
+      "y": 798,
+      "w": 98,
+      "h": 37
+    },
+    "socket": {
+      "x": 323,
+      "y": 610,
+      "w": 36,
+      "h": 36
+    },
+    "plug": {
+      "x": 318,
+      "y": 613,
+      "w": 44,
+      "h": 42
+    },
+    "plugSafe": {
+      "x": 147,
+      "y": 767,
+      "w": 40,
+      "h": 38
+    },
+    "cushion": {
+      "x": 76,
+      "y": 709,
+      "w": 153,
+      "h": 80
+    },
+    "cushionSafe": {
+      "x": 48,
+      "y": 666,
+      "w": 146,
+      "h": 76
+    },
+    "family": {
+      "x": 366,
+      "y": 422,
+      "w": 152,
+      "h": 362
+    },
+    "familySafe": {
+      "x": 78,
+      "y": 449,
+      "w": 177,
+      "h": 310
+    }
+  },
+  "powerVisuals": {
+    "disconnectAt": 0.44,
+    "insertedVisibleWidth": 0.735,
+    "withdrawalDistance": 44,
+    "indicator": {
+      "x": 0.846,
+      "y": 0.345,
+      "w": 0.058,
+      "h": 0.18
+    },
+    "connected": {
+      "color": "#36ce7a",
+      "glow": "#70ee9e",
+      "label": "已接通"
+    },
+    "disconnected": {
+      "color": "#ed5948",
+      "glow": "#f98970",
+      "label": "已断开"
+    },
+    "boardCableAnchor": {
+      "x": 0.99,
+      "y": 0.56
+    },
+    "plugCableAnchor": {
+      "x": 0.25,
+      "y": 0.972
+    },
+    "cableStart": {
+      "x": 0.0073,
+      "y": 0.874
+    },
+    "cableEnd": {
+      "x": 0.991,
+      "y": 0.02
+    }
+  }
+}

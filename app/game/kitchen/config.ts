@@ -1,14 +1,8 @@
+import skin from '../../../content/presets/kitchen/skin.json';
 /** Art, placement and timing are independent of the state machine. Logical pixels. */
-// Background is 720 × 960; the unused bottom 110px of floor is outside the viewport.
-export const WORLD = { width: 720, height: 850 } as const;
-export const assets = {
-  room: '/levels/kitchen-v1/room.png', pan: '/levels/kitchen-v1/pan.png',
-  lid: '/levels/kitchen-v1/lid.png', water: '/levels/kitchen-v1/water.png',
-  cloth: '/levels/kitchen-v1/cloth.png', extinguisher: '/levels/kitchen-v1/extinguisher.png',
-  gas: '/levels/kitchen-v1/gas.png', plate: '/levels/kitchen-v1/plate.png', knife: '/levels/kitchen-v1/knife.png',
-  flame: '/levels/kitchen-v1/flame.png', worried: '/levels/kitchen-v1/worried.png',
-  panicked: '/levels/kitchen-v1/panicked.png', focused: '/levels/kitchen-v1/focused.png', relieved: '/levels/kitchen-v1/relieved.png',
-} as const;
+// Full room includes a foreground prep counter; all tools live in this coordinate space.
+export const WORLD = skin.WORLD;
+export const assets = skin.assets;
 export type AssetId = keyof typeof assets;
 export type ItemId = 'lid' | 'gas' | 'person' | 'water' | 'cloth' | 'extinguisher' | 'plate' | 'knife';
 export type ZoneId = 'pan' | 'off' | 'exit' | 'miss';
@@ -32,26 +26,15 @@ export const items: Record<ItemId, { label: string; asset: AssetId; w: number; h
   plate: { label: '餐盘', asset: 'plate', w: 111, h: 65, detail: '无关物品，不能代替匹配的锅盖' },
   knife: { label: '菜刀', asset: 'knife', w: 95, h: 94, detail: '无关物品，不能用来灭火' },
 };
-export const trayItems: ItemId[] = ['lid', 'water', 'cloth', 'extinguisher', 'plate', 'knife'];
+export const sceneItems = ['lid', 'water', 'cloth', 'extinguisher', 'plate', 'knife'] as const;
+export type SceneItemId = typeof sceneItems[number];
 export const goals: { id: GoalId; label: string; item: ItemId }[] = [
   { id: 'gasOff', label: '关闭火源', item: 'gas' },
   { id: 'covered', label: '盖住油锅', item: 'lid' },
   { id: 'evacuated', label: '安全撤离', item: 'person' },
 ];
-export const layout = {
-  pan: { x: 87, y: 390, w: 267, h: 94 },
-  lid: { x: 87, y: 376, w: 193, h: 80 },
-  gas: { x: 180, y: 505, w: 73, h: 73 },
-  person: { x: 344, y: 282, w: 310, h: 470 },
-  evacuated: { x: 490, y: 275, w: 207, h: 324 },
-  flame: { x: 103, y: 238, w: 168, h: 202 },
-  // Drop regions are intentionally explicit, not inferred from PNG rectangles.
-  zones: {
-    pan: { x: 75, y: 370, w: 285, h: 130 },
-    off: { x: 277, y: 506, w: 101, h: 73 },
-    exit: { x: 520, y: 335, w: 142, h: 300 },
-  },
-} satisfies Record<string, unknown>;
+export const layout = skin.layout;
+export const cameraSafe = skin.cameraSafe;
 export const timing = { lid: 1000, gas: 800, person: 1200, wrong: 1050, bounce: 450, spray: 950, settling: 1800, reaction: 2500 } as const;
 export const emotionLabels: Record<Emotion, string> = {
   worried: '紧张 · 需要你的帮助', panicked: '惊慌 · 火势正在威胁安全', focused: '镇定一些 · 做对了', relieved: '安心 · 处置已完成',
