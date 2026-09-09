@@ -1,0 +1,414 @@
+[
+  {
+    "id": "kit-room",
+    "mode": "background-resize-webp",
+    "size": [
+      720,
+      1280
+    ]
+  },
+  {
+    "id": "corridor-room",
+    "mode": "background-resize-webp",
+    "size": [
+      720,
+      1280
+    ]
+  },
+  {
+    "id": "lift-room",
+    "mode": "background-resize-webp",
+    "size": [
+      720,
+      1280
+    ]
+  },
+  {
+    "id": "well-room",
+    "mode": "background-resize-webp",
+    "size": [
+      720,
+      1280
+    ]
+  },
+  {
+    "id": "water",
+    "mode": "baked-checker",
+    "atlas": "kit-sprites",
+    "sourceRect": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "tightBounds": [
+      163,
+      48,
+      340,
+      488
+    ],
+    "size": [
+      185,
+      448
+    ],
+    "alphaZeroRatio": 0.22052364864864865
+  },
+  {
+    "id": "food",
+    "mode": "baked-checker",
+    "atlas": "kit-sprites",
+    "sourceRect": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "tightBounds": [
+      41,
+      120,
+      470,
+      449
+    ],
+    "size": [
+      437,
+      337
+    ],
+    "alphaZeroRatio": 0.21568694022503038
+  },
+  {
+    "id": "torch",
+    "mode": "baked-checker",
+    "atlas": "kit-sprites",
+    "sourceRect": [
+      1024,
+      0,
+      1536,
+      470
+    ],
+    "tightBounds": [
+      24,
+      127,
+      472,
+      427
+    ],
+    "size": [
+      456,
+      308
+    ],
+    "alphaZeroRatio": 0.48133116883116883
+  },
+  {
+    "id": "radio",
+    "mode": "baked-checker",
+    "atlas": "kit-sprites",
+    "sourceRect": [
+      0,
+      512,
+      512,
+      1024
+    ],
+    "tightBounds": [
+      63,
+      34,
+      480,
+      449
+    ],
+    "size": [
+      425,
+      423
+    ],
+    "alphaZeroRatio": 0.3661576971214017
+  },
+  {
+    "id": "whistle",
+    "mode": "baked-checker",
+    "atlas": "kit-sprites",
+    "sourceRect": [
+      512,
+      512,
+      1024,
+      1024
+    ],
+    "tightBounds": [
+      50,
+      92,
+      478,
+      441
+    ],
+    "size": [
+      436,
+      357
+    ],
+    "alphaZeroRatio": 0.4943784853390898
+  },
+  {
+    "id": "bag",
+    "mode": "baked-checker",
+    "atlas": "kit-sprites",
+    "sourceRect": [
+      1024,
+      470,
+      1536,
+      1024
+    ],
+    "tightBounds": [
+      33,
+      17,
+      482,
+      514
+    ],
+    "size": [
+      457,
+      505
+    ],
+    "alphaZeroRatio": 0.2658145026756505
+  },
+  {
+    "id": "box",
+    "mode": "baked-checker",
+    "atlas": "corridor-sprites",
+    "sourceRect": [
+      0,
+      0,
+      650,
+      560
+    ],
+    "tightBounds": [
+      115,
+      123,
+      594,
+      531
+    ],
+    "size": [
+      487,
+      416
+    ],
+    "alphaZeroRatio": 0.19461281788027168
+  },
+  {
+    "id": "chair",
+    "mode": "baked-checker",
+    "atlas": "corridor-sprites",
+    "sourceRect": [
+      650,
+      0,
+      1240,
+      585
+    ],
+    "tightBounds": [
+      146,
+      20,
+      447,
+      573
+    ],
+    "size": [
+      309,
+      561
+    ],
+    "alphaZeroRatio": 0.3128659525004471
+  },
+  {
+    "id": "case",
+    "mode": "baked-checker",
+    "atlas": "corridor-sprites",
+    "sourceRect": [
+      0,
+      560,
+      650,
+      1268
+    ],
+    "tightBounds": [
+      137,
+      6,
+      471,
+      624
+    ],
+    "size": [
+      342,
+      626
+    ],
+    "alphaZeroRatio": 0.3556274872484726
+  },
+  {
+    "id": "scooter",
+    "mode": "baked-checker",
+    "atlas": "corridor-sprites",
+    "sourceRect": [
+      650,
+      585,
+      1240,
+      1268
+    ],
+    "tightBounds": [
+      95,
+      41,
+      496,
+      605
+    ],
+    "size": [
+      409,
+      572
+    ],
+    "alphaZeroRatio": 0.7616222408398448
+  },
+  {
+    "id": "citizen-worried",
+    "mode": "baked-checker",
+    "atlas": "citizen-sprites",
+    "sourceRect": [
+      0,
+      0,
+      384,
+      1024
+    ],
+    "tightBounds": [
+      51,
+      19,
+      354,
+      988
+    ],
+    "size": [
+      248,
+      648
+    ],
+    "alphaZeroRatio": 0.5804833731581044
+  },
+  {
+    "id": "citizen-focused",
+    "mode": "baked-checker",
+    "atlas": "citizen-sprites",
+    "sourceRect": [
+      384,
+      0,
+      768,
+      1024
+    ],
+    "tightBounds": [
+      33,
+      20,
+      343,
+      987
+    ],
+    "size": [
+      248,
+      648
+    ],
+    "alphaZeroRatio": 0.5746838908801274
+  },
+  {
+    "id": "citizen-panicked",
+    "mode": "baked-checker",
+    "atlas": "citizen-sprites",
+    "sourceRect": [
+      768,
+      0,
+      1152,
+      1024
+    ],
+    "tightBounds": [
+      35,
+      21,
+      359,
+      989
+    ],
+    "size": [
+      248,
+      648
+    ],
+    "alphaZeroRatio": 0.5721015033851056
+  },
+  {
+    "id": "citizen-relieved",
+    "mode": "baked-checker",
+    "atlas": "citizen-sprites",
+    "sourceRect": [
+      1152,
+      0,
+      1536,
+      1024
+    ],
+    "tightBounds": [
+      34,
+      16,
+      345,
+      991
+    ],
+    "size": [
+      248,
+      648
+    ],
+    "alphaZeroRatio": 0.545866935483871
+  },
+  {
+    "id": "intercom",
+    "mode": "baked-checker",
+    "atlas": "control-sprites",
+    "sourceRect": [
+      0,
+      0,
+      887,
+      887
+    ],
+    "tightBounds": [
+      312,
+      38,
+      630,
+      829
+    ],
+    "size": [
+      265,
+      648
+    ],
+    "alphaZeroRatio": 0.067808059631959
+  },
+  {
+    "id": "phone",
+    "mode": "baked-checker",
+    "atlas": "control-sprites",
+    "sourceRect": [
+      887,
+      0,
+      1774,
+      887
+    ],
+    "tightBounds": [
+      56,
+      47,
+      694,
+      880
+    ],
+    "size": [
+      498,
+      648
+    ],
+    "alphaZeroRatio": 0.3206591799295949
+  },
+  {
+    "id": "lift-door",
+    "mode": "exact-background-hotspot",
+    "sourceRect": [
+      163,
+      226,
+      558,
+      879
+    ],
+    "size": [
+      395,
+      653
+    ]
+  },
+  {
+    "id": "well-opening",
+    "mode": "exact-background-hotspot",
+    "sourceRect": [
+      70,
+      518,
+      391,
+      650
+    ],
+    "size": [
+      321,
+      132
+    ]
+  }
+]

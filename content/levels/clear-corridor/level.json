@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "id": "clear-corridor",
+  "title": "畅通的生命通道",
+  "kind": "prevention",
+  "order": 10,
+  "location": "楼道 · 日常巡查",
+  "description": "平日巡查，把占用楼道的四件物品收进自家储物空间。",
+  "safety": "日常、无火烟时整理轻便自家物品；火灾时不要因收拾物品耽误撤离。不得占用另一条通道或挪动消防设备。",
+  "briefing": "日常整理：找出挡住通路的物品，收进右侧自家储物间。",
+  "objects": [
+    {
+      "id": "box",
+      "label": "纸箱",
+      "input": "tap",
+      "disabledWhen": [
+        "box-stored"
+      ]
+    },
+    {
+      "id": "chair",
+      "label": "折叠椅",
+      "input": "tap",
+      "disabledWhen": [
+        "chair-stored"
+      ]
+    },
+    {
+      "id": "case",
+      "label": "空行李箱",
+      "input": "tap",
+      "disabledWhen": [
+        "case-stored"
+      ]
+    },
+    {
+      "id": "scooter",
+      "label": "玩具滑板车",
+      "input": "tap",
+      "disabledWhen": [
+        "scooter-stored"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "box-stored",
+      "label": "纸箱",
+      "object": "box"
+    },
+    {
+      "id": "chair-stored",
+      "label": "折叠椅",
+      "object": "chair"
+    },
+    {
+      "id": "case-stored",
+      "label": "空行李箱",
+      "object": "case"
+    },
+    {
+      "id": "scooter-stored",
+      "label": "玩具滑板车",
+      "object": "scooter"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "store-box",
+      "source": "box",
+      "mode": "tap",
+      "grants": [
+        "box-stored"
+      ],
+      "outcome": "correct",
+      "animation": "store-box"
+    },
+    {
+      "id": "store-chair",
+      "source": "chair",
+      "mode": "tap",
+      "grants": [
+        "chair-stored"
+      ],
+      "outcome": "correct",
+      "animation": "store-chair"
+    },
+    {
+      "id": "store-case",
+      "source": "case",
+      "mode": "tap",
+      "grants": [
+        "case-stored"
+      ],
+      "outcome": "correct",
+      "animation": "store-case"
+    },
+    {
+      "id": "store-scooter",
+      "source": "scooter",
+      "mode": "tap",
+      "grants": [
+        "scooter-stored"
+      ],
+      "outcome": "correct",
+      "animation": "store-scooter"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 90,
+    "initial": 0,
+    "warningAt": 65,
+    "peakFeedback": "本关没有灾害倒数，请继续练习。"
+  },
+  "completion": {
+    "requires": [
+      "box-stored",
+      "chair-stored",
+      "case-stored",
+      "scooter-stored"
+    ],
+    "settleMs": 1800,
+    "title": "通道，畅通了",
+    "status": "完成",
+    "summary": "楼道和安全出口不能堆放物品。日常及时整理，不把杂物搬到另一条通道；发生火灾时，人员安全优先。"
+  }
+}

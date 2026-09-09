@@ -1,0 +1,325 @@
+{
+  "schemaVersion": 1,
+  "id": "paperbook",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "well-room": {
+      "src": "/levels/transcript-v1/well-room.webp",
+      "alpha": false
+    },
+    "well-opening": {
+      "src": "/levels/transcript-v1/well-opening.png",
+      "alpha": true
+    },
+    "citizen-worried": {
+      "src": "/levels/transcript-v1/citizen-worried.png",
+      "alpha": true
+    },
+    "citizen-focused": {
+      "src": "/levels/transcript-v1/citizen-focused.png",
+      "alpha": true
+    },
+    "citizen-panicked": {
+      "src": "/levels/transcript-v1/citizen-panicked.png",
+      "alpha": true
+    },
+    "citizen-relieved": {
+      "src": "/levels/transcript-v1/citizen-relieved.png",
+      "alpha": true
+    },
+    "phone": {
+      "src": "/levels/transcript-v1/phone.png",
+      "alpha": true
+    },
+    "screen-tile": {
+      "src": "/levels/transcript-v1/screen-tile.png",
+      "alpha": false
+    }
+  },
+  "background": "well-room",
+  "poses": {
+    "well": {
+      "asset": "well-opening",
+      "x": 70,
+      "y": 518,
+      "w": 321,
+      "h": 132,
+      "depth": 1
+    },
+    "person": {
+      "asset": "citizen-worried",
+      "x": 439,
+      "y": 423,
+      "w": 148,
+      "h": 386.7096774193548,
+      "depth": 3
+    },
+    "phone": {
+      "asset": "phone",
+      "x": 0,
+      "y": 799,
+      "w": 369,
+      "h": 480.144578313253,
+      "depth": 8
+    },
+    "fire-call": {
+      "asset": "screen-tile",
+      "x": 145,
+      "y": 960,
+      "w": 161,
+      "h": 86,
+      "depth": 9
+    },
+    "medical-call": {
+      "asset": "screen-tile",
+      "x": 145,
+      "y": 1056,
+      "w": 161,
+      "h": 86,
+      "depth": 9
+    }
+  },
+  "zones": {
+    "perimeter": {
+      "x": 418,
+      "y": 877,
+      "w": 252,
+      "h": 349
+    },
+    "well": {
+      "x": 70,
+      "y": 518,
+      "w": 321,
+      "h": 152
+    }
+  },
+  "states": [
+    {
+      "object": "person",
+      "when": {
+        "emotion": "worried"
+      },
+      "pose": {
+        "asset": "citizen-worried"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "emotion": "focused"
+      },
+      "pose": {
+        "asset": "citizen-focused"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "emotion": "panicked"
+      },
+      "pose": {
+        "asset": "citizen-panicked"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "emotion": "relieved"
+      },
+      "pose": {
+        "asset": "citizen-relieved"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "all": [
+          "bystander-back"
+        ]
+      },
+      "pose": {
+        "x": 450,
+        "y": 761,
+        "w": 170,
+        "h": 444.19354838709677
+      }
+    }
+  ],
+  "animations": {
+    "back": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "person",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "x": 444,
+              "y": 602,
+              "w": 159,
+              "h": 415.45
+            },
+            {
+              "at": 1,
+              "x": 450,
+              "y": 761,
+              "w": 170,
+              "h": 444.19354838709677
+            }
+          ]
+        }
+      ]
+    },
+    "no-entry": {
+      "durationMs": 700,
+      "tracks": [
+        {
+          "object": "person",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.025
+            },
+            {
+              "at": 0.65,
+              "rotation": 0.025
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "dial-119": {
+      "durationMs": 1000,
+      "tracks": [
+        {
+          "object": "fire-call",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "x": 147,
+              "y": 962,
+              "w": 157,
+              "h": 82
+            },
+            {
+              "at": 1,
+              "x": 145,
+              "y": 960,
+              "w": 161,
+              "h": 86
+            }
+          ]
+        }
+      ]
+    },
+    "dial-120": {
+      "durationMs": 1000,
+      "tracks": [
+        {
+          "object": "medical-call",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "x": 147,
+              "y": 1058,
+              "w": 157,
+              "h": 82
+            },
+            {
+              "at": 1,
+              "x": 145,
+              "y": 1056,
+              "w": 161,
+              "h": 86
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [
+    {
+      "object": "fire-call",
+      "text": "119\n消防救援",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 24,
+      "color": "#25473e",
+      "when": {
+        "not": [
+          "fire-called"
+        ]
+      },
+      "background": "#e8d4a7"
+    },
+    {
+      "object": "fire-call",
+      "text": "119\n已联络",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 24,
+      "color": "#25473e",
+      "when": {
+        "all": [
+          "fire-called"
+        ]
+      },
+      "background": "#9ab6a3"
+    },
+    {
+      "object": "medical-call",
+      "text": "120\n医疗急救",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 24,
+      "color": "#25473e",
+      "when": {
+        "not": [
+          "medical-called"
+        ]
+      },
+      "background": "#e8d4a7"
+    },
+    {
+      "object": "medical-call",
+      "text": "120\n已联络",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 24,
+      "color": "#25473e",
+      "when": {
+        "all": [
+          "medical-called"
+        ]
+      },
+      "background": "#9ab6a3"
+    },
+    {
+      "object": "phone",
+      "text": "模拟求助",
+      "x": 0.61,
+      "y": 0.27,
+      "size": 27,
+      "color": "#25473e"
+    },
+    {
+      "object": "phone",
+      "text": "不会真实拨号",
+      "x": 0.61,
+      "y": 0.77,
+      "size": 18,
+      "color": "#25473e"
+    }
+  ],
+  "zoneLabels": {
+    "perimeter": "退到更远处 · 劝阻靠近"
+  }
+}

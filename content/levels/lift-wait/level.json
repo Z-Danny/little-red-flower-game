@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "id": "lift-wait",
+  "title": "电梯停住了",
+  "kind": "response",
+  "order": 11,
+  "location": "轿厢 · 故障停梯",
+  "description": "电梯停止运行，门没有打开。用报警通话装置联络，在轿厢内耐心等待。",
+  "safety": "本关无下坠、无烟火、无人受伤，报警装置有效。若联络无回应，可使用手机等通信设备求助，不扒门、不攀爬。训练计时不是救援到达时间。",
+  "briefing": "电梯停住了，门打不开。报警通话装置仍可使用；请留在轿厢内求助。",
+  "objects": [
+    {
+      "id": "door",
+      "label": "轿门",
+      "input": "tap"
+    },
+    {
+      "id": "bell",
+      "label": "报警通话按钮",
+      "input": "tap",
+      "disabledWhen": [
+        "alarm-contacted"
+      ]
+    },
+    {
+      "id": "person",
+      "label": "被困乘客",
+      "input": "drag",
+      "disabledWhen": [
+        "person-waiting"
+      ]
+    },
+    {
+      "id": "floor-1",
+      "label": "楼层按钮1",
+      "input": "tap"
+    },
+    {
+      "id": "floor-2",
+      "label": "楼层按钮2",
+      "input": "tap"
+    }
+  ],
+  "goals": [
+    {
+      "id": "alarm-contacted",
+      "label": "报警通话按钮",
+      "object": "bell"
+    },
+    {
+      "id": "person-waiting",
+      "label": "被困乘客",
+      "object": "person"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "call",
+      "source": "bell",
+      "mode": "tap",
+      "grants": [
+        "alarm-contacted"
+      ],
+      "outcome": "correct",
+      "animation": "call",
+      "feedback": "模拟通话：阳光小区1栋2号梯，有1人被困，无人受伤。已联络，请等待专业救援。"
+    },
+    {
+      "id": "wait",
+      "source": "person",
+      "mode": "drop",
+      "target": "wait",
+      "grants": [
+        "person-waiting"
+      ],
+      "outcome": "correct",
+      "animation": "wait"
+    },
+    {
+      "id": "pry",
+      "source": "door",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "stay-inside",
+      "feedback": "不要扒撬轿门。使用报警装置与外界联络，留在轿厢内等待。"
+    },
+    {
+      "id": "leave-door",
+      "source": "person",
+      "mode": "drop",
+      "target": "door",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "stay-inside",
+      "feedback": "不要尝试从门缝离开，可能坠入井道。请留在轿厢内等候专业救援。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 90,
+    "initial": 0,
+    "warningAt": 65,
+    "peakFeedback": "本关没有灾害倒数，请继续练习。"
+  },
+  "completion": {
+    "requires": [
+      "alarm-contacted",
+      "person-waiting"
+    ],
+    "settleMs": 1800,
+    "title": "已联络，安心等待",
+    "status": "待援",
+    "summary": "普通故障被困时，用报警装置或手机与外界联络，说明位置。不要扒门、攀爬或跳跃；留在轿厢内等待专业人员救援。"
+  }
+}

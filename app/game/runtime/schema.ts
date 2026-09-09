@@ -12,11 +12,11 @@ export type Interaction = {
 };
 export type Rules = {
   schemaVersion: 1; id: string; kind: 'prevention' | 'response'; title: string;
-  order: number; location: string; description: string; safety: string;
+  order: number; location: string; description: string; safety: string; briefing?: string;
   objects: ObjectSpec[]; goals: { id: string; label: string; object: string; showTarget?: boolean }[];
   interactions: Interaction[];
-  risk: { seconds: number; initial: number; warningAt: number; peakFeedback: string };
-  completion: { requires: string[]; settleMs: number; summary: string };
+  risk: { mode?: 'risk' | 'elapsed'; seconds: number; initial: number; warningAt: number; peakFeedback: string };
+  completion: { requires: string[]; settleMs: number; summary: string; title?: string; status?: string };
 };
 export type Pose = Box & { asset: string; depth: number; rotation?: number; opacity?: number; pivot?: Point; blockInput?: boolean };
 export type Keyframe = Partial<Omit<Pose, 'asset' | 'depth' | 'pivot' | 'blockInput'>> & { at: number; asset?: string };
@@ -28,6 +28,10 @@ export type Skin = {
   states: { object: string; when: Condition; pose: Partial<Pose> }[];
   animations: Record<string, Motion>;
   effects: { object: string; kind: 'fire' | 'wobble'; until: string[] }[];
+  /** Text belongs to actual in-world panels/signs; never a second task HUD. */
+  labels?: { object: string; text: string; x: number; y: number; size: number; color: string; background?: string; when?: Condition }[];
+  /** Only shown while carrying/selecting an object; keys reference zones. */
+  zoneLabels?: Record<string, string>;
 };
 export type LevelPackage = { rules: Rules; skin: Skin };
 export type Notice = { text: string; remaining: number };

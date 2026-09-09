@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "id": "well-call",
+  "title": "井口边的求助",
+  "kind": "response",
+  "order": 12,
+  "location": "社区 · 污水井外围",
+  "description": "发现有人在污水井内遇险。留在外围联系专业救援，也提醒旁人别靠近。",
+  "safety": "你是不具备救援装备和能力的旁观者。保持自身安全，不进入有限空间；及时联系119、120。这里的电话仅为离线演示，不会真实拨出。",
+  "briefing": "污水井内有人遇险。你没有救援装备：留在外围报警，提醒旁人别靠近。",
+  "objects": [
+    {
+      "id": "well",
+      "label": "危险井口",
+      "input": "tap"
+    },
+    {
+      "id": "person",
+      "label": "旁观者",
+      "input": "drag",
+      "disabledWhen": [
+        "bystander-back"
+      ]
+    },
+    {
+      "id": "fire-call",
+      "label": "模拟联系119",
+      "input": "tap",
+      "disabledWhen": [
+        "fire-called"
+      ]
+    },
+    {
+      "id": "medical-call",
+      "label": "模拟联系120",
+      "input": "tap",
+      "disabledWhen": [
+        "medical-called"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "bystander-back",
+      "label": "旁观者",
+      "object": "person"
+    },
+    {
+      "id": "fire-called",
+      "label": "模拟联系119",
+      "object": "fire-call"
+    },
+    {
+      "id": "medical-called",
+      "label": "模拟联系120",
+      "object": "medical-call"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "back",
+      "source": "person",
+      "mode": "drop",
+      "target": "perimeter",
+      "grants": [
+        "bystander-back"
+      ],
+      "outcome": "correct",
+      "animation": "back"
+    },
+    {
+      "id": "enter",
+      "source": "well",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "no-entry",
+      "feedback": "井内可能缺氧或存在有毒有害气体。无防护不要下井，及时联系119、120。"
+    },
+    {
+      "id": "pull-in",
+      "source": "person",
+      "mode": "drop",
+      "target": "well",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "no-entry",
+      "feedback": "不要进入井内施救。先保证自己安全，由专业人员救援。"
+    },
+    {
+      "id": "dial-119",
+      "source": "fire-call",
+      "mode": "tap",
+      "grants": [
+        "fire-called"
+      ],
+      "outcome": "correct",
+      "animation": "dial-119",
+      "feedback": "模拟119通话：阳光小区东侧污水井，有1人井内遇险。已报告地点与险情，留在外围等候。"
+    },
+    {
+      "id": "dial-120",
+      "source": "medical-call",
+      "mode": "tap",
+      "grants": [
+        "medical-called"
+      ],
+      "outcome": "correct",
+      "animation": "dial-120",
+      "feedback": "模拟120通话：阳光小区东侧污水井，有1人井内遇险。已报告地点与险情，留在外围等候。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 90,
+    "initial": 0,
+    "warningAt": 65,
+    "peakFeedback": "本关没有灾害倒数，请继续练习。"
+  },
+  "completion": {
+    "requires": [
+      "bystander-back",
+      "fire-called",
+      "medical-called"
+    ],
+    "settleMs": 1800,
+    "title": "求助已发出",
+    "status": "待援",
+    "summary": "不具备安全救援条件时，不要进入污水井等有限空间。联系119、120，说明位置和险情，劝阻旁人靠近，在外围等待专业救援。井口仍然危险。"
+  }
+}

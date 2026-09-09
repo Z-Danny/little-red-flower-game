@@ -27,7 +27,7 @@ export function LevelHub({ completed, onStart, onReset, onLeaderboard, playerNam
       </header>
 
       <div className="hub-progress-row">
-        <div><span>训练册 · 第一章</span><strong>家庭安全</strong></div>
+        <div><span>训练册 · 生活中的安全</span><strong>家庭与社区</strong></div>
         <div className="flower-wallet"><span>✦</span><b>{stars}</b><small>/ {playable.length * 3}</small></div>
       </div>
 
@@ -39,7 +39,7 @@ export function LevelHub({ completed, onStart, onReset, onLeaderboard, playerNam
         <div className="mission-image-shade" />
         <div className="current-mission-top">
           <span className="live-pill"><i />当前关卡</span>
-          <span className="mission-type"><Target />{kitchen ? '拖拽处置' : '找隐患'}</span>
+          <span className="mission-type"><Target />{kitchen ? '处置训练' : '防范训练'}</span>
         </div>
         <div className="current-mission-copy">
           <span className="mission-kicker">MISSION {String(current.order).padStart(2, '0')} · {current.location}</span>
@@ -51,7 +51,7 @@ export function LevelHub({ completed, onStart, onReset, onLeaderboard, playerNam
       </section>
 
       <section className="level-map-section">
-        <div className="map-title"><div><span><Map />关卡地图</span><h3>家庭应急训练</h3></div><small>{playable.length} / {levels.length} 已开放</small></div>
+        <div className="map-title"><div><span><Map />关卡地图</span><h3>把安全练成日常</h3></div><small>{playable.length} / {levels.length} 已开放</small></div>
         {playable.map(level => <button key={level.id} className={`map-level active ${level.kind === 'response' ? 'kitchen-map' : ''}`} onClick={() => onStart(level.id)}>
           <span className="map-node"><b>{String(level.order).padStart(2, '0')}</b><i>{completed[level.id] ? '✦'.repeat(completed[level.id]) : 'GO'}</i></span>
           <span

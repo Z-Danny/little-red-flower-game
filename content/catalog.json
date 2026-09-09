@@ -8,5 +8,25 @@
     "id": "example-response",
     "skin": "illustrated",
     "enabled": false
+  },
+  {
+    "id": "flood-kit",
+    "skin": "paperbook",
+    "enabled": true
+  },
+  {
+    "id": "clear-corridor",
+    "skin": "paperbook",
+    "enabled": true
+  },
+  {
+    "id": "lift-wait",
+    "skin": "paperbook",
+    "enabled": true
+  },
+  {
+    "id": "well-call",
+    "skin": "paperbook",
+    "enabled": true
   }
 ]

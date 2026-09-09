@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "id": "flood-kit",
+  "title": "汛期应急包",
+  "kind": "prevention",
+  "order": 9,
+  "location": "家中 · 事前准备",
+  "description": "平日备灾，找齐五类物品，把应急包准备好。",
+  "safety": "这是事前准备。五件物品不是完整储备清单；按家庭需要补足。收到转移通知应及时行动，不因收拾物品拖延。",
+  "briefing": "平日备灾：观察剪影，把五件物品收到应急包里。",
+  "objects": [
+    {
+      "id": "water",
+      "label": "饮用水",
+      "input": "tap",
+      "disabledWhen": [
+        "water-packed"
+      ]
+    },
+    {
+      "id": "food",
+      "label": "即食食品",
+      "input": "tap",
+      "disabledWhen": [
+        "food-packed"
+      ]
+    },
+    {
+      "id": "torch",
+      "label": "手电筒",
+      "input": "tap",
+      "disabledWhen": [
+        "torch-packed"
+      ]
+    },
+    {
+      "id": "radio",
+      "label": "收音机",
+      "input": "tap",
+      "disabledWhen": [
+        "radio-packed"
+      ]
+    },
+    {
+      "id": "whistle",
+      "label": "救生哨",
+      "input": "tap",
+      "disabledWhen": [
+        "whistle-packed"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "water-packed",
+      "label": "饮用水",
+      "object": "water"
+    },
+    {
+      "id": "food-packed",
+      "label": "即食食品",
+      "object": "food"
+    },
+    {
+      "id": "torch-packed",
+      "label": "手电筒",
+      "object": "torch"
+    },
+    {
+      "id": "radio-packed",
+      "label": "收音机",
+      "object": "radio"
+    },
+    {
+      "id": "whistle-packed",
+      "label": "救生哨",
+      "object": "whistle"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "pack-water",
+      "source": "water",
+      "mode": "tap",
+      "grants": [
+        "water-packed"
+      ],
+      "outcome": "correct",
+      "animation": "pack-water"
+    },
+    {
+      "id": "pack-food",
+      "source": "food",
+      "mode": "tap",
+      "grants": [
+        "food-packed"
+      ],
+      "outcome": "correct",
+      "animation": "pack-food"
+    },
+    {
+      "id": "pack-torch",
+      "source": "torch",
+      "mode": "tap",
+      "grants": [
+        "torch-packed"
+      ],
+      "outcome": "correct",
+      "animation": "pack-torch"
+    },
+    {
+      "id": "pack-radio",
+      "source": "radio",
+      "mode": "tap",
+      "grants": [
+        "radio-packed"
+      ],
+      "outcome": "correct",
+      "animation": "pack-radio"
+    },
+    {
+      "id": "pack-whistle",
+      "source": "whistle",
+      "mode": "tap",
+      "grants": [
+        "whistle-packed"
+      ],
+      "outcome": "correct",
+      "animation": "pack-whistle"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 90,
+    "initial": 0,
+    "warningAt": 65,
+    "peakFeedback": "本关没有灾害倒数，请继续练习。"
+  },
+  "completion": {
+    "requires": [
+      "water-packed",
+      "food-packed",
+      "torch-packed",
+      "radio-packed",
+      "whistle-packed"
+    ],
+    "settleMs": 1800,
+    "title": "准备好了",
+    "status": "完成",
+    "summary": "提前准备饮水、方便食品、照明和联络工具，并按家庭需要补足应急物资。收到转移通知，及时行动，不因收拾物品拖延。"
+  }
+}

@@ -126,7 +126,7 @@ export const getPackage = (id: string) => configuredPackages.find(pack => pack.r
 export const levels: LevelConfig[] = [...builtInLevels, ...configuredPackages.map(({ rules: r, skin: s }): LevelConfig => ({
   id: r.id, engine: 'configured-v1', order: r.order, kind: r.kind, title: r.title, shortTitle: r.title,
   location: r.location, knowledge: r.completion.summary, task: r.description, briefing: r.description,
-  duration: `约 ${r.risk.seconds} 秒`, riskSeconds: r.risk.seconds, accent: '#d7784e', sceneRoom: r.kind === 'prevention' ? 'living' : 'kitchen',
+  duration: r.risk.mode === 'elapsed' ? '从容练习 · 不限时' : `约 ${r.risk.seconds} 秒`, riskSeconds: r.risk.seconds, accent: '#d7784e', sceneRoom: r.kind === 'prevention' ? 'living' : 'kitchen',
   sceneMood: r.kind === 'prevention' ? 'storm' : 'fire', goals: r.goals.filter(g => g.showTarget !== false).map(g => g.id),
   playable: true, previewImage: s.assets[s.background].src,
 }))];

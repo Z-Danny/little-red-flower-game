@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "id": "paperbook",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "kit-room": {
+      "src": "/levels/transcript-v1/kit-room.webp",
+      "alpha": false
+    },
+    "bag": {
+      "src": "/levels/transcript-v1/bag.png",
+      "alpha": true
+    },
+    "water": {
+      "src": "/levels/transcript-v1/water.png",
+      "alpha": true
+    },
+    "food": {
+      "src": "/levels/transcript-v1/food.png",
+      "alpha": true
+    },
+    "torch": {
+      "src": "/levels/transcript-v1/torch.png",
+      "alpha": true
+    },
+    "radio": {
+      "src": "/levels/transcript-v1/radio.png",
+      "alpha": true
+    },
+    "whistle": {
+      "src": "/levels/transcript-v1/whistle.png",
+      "alpha": true
+    }
+  },
+  "background": "kit-room",
+  "poses": {
+    "bag": {
+      "asset": "bag",
+      "x": 430,
+      "y": 772,
+      "w": 185,
+      "h": 204.43107221006565,
+      "depth": 8
+    },
+    "water": {
+      "asset": "water",
+      "x": 350,
+      "y": 335,
+      "w": 50,
+      "h": 121.08108108108108,
+      "depth": 10
+    },
+    "food": {
+      "asset": "food",
+      "x": 146,
+      "y": 785,
+      "w": 132,
+      "h": 101.79405034324942,
+      "depth": 10
+    },
+    "torch": {
+      "asset": "torch",
+      "x": 587,
+      "y": 669,
+      "w": 106,
+      "h": 71.59649122807018,
+      "depth": 10
+    },
+    "radio": {
+      "asset": "radio",
+      "x": 280,
+      "y": 494,
+      "w": 94,
+      "h": 93.55764705882353,
+      "depth": 10
+    },
+    "whistle": {
+      "asset": "whistle",
+      "x": 328,
+      "y": 891,
+      "w": 85,
+      "h": 69.59862385321101,
+      "depth": 10
+    }
+  },
+  "zones": {},
+  "states": [
+    {
+      "object": "water",
+      "when": {
+        "all": [
+          "water-packed"
+        ]
+      },
+      "pose": {
+        "x": 494,
+        "y": 791,
+        "w": 15,
+        "h": 36.32432432432432,
+        "opacity": 0
+      }
+    },
+    {
+      "object": "food",
+      "when": {
+        "all": [
+          "food-packed"
+        ]
+      },
+      "pose": {
+        "x": 494,
+        "y": 791,
+        "w": 39.6,
+        "h": 30.538215102974824,
+        "opacity": 0
+      }
+    },
+    {
+      "object": "torch",
+      "when": {
+        "all": [
+          "torch-packed"
+        ]
+      },
+      "pose": {
+        "x": 494,
+        "y": 791,
+        "w": 31.799999999999997,
+        "h": 21.478947368421053,
+        "opacity": 0
+      }
+    },
+    {
+      "object": "radio",
+      "when": {
+        "all": [
+          "radio-packed"
+        ]
+      },
+      "pose": {
+        "x": 494,
+        "y": 791,
+        "w": 28.2,
+        "h": 28.06729411764706,
+        "opacity": 0
+      }
+    },
+    {
+      "object": "whistle",
+      "when": {
+        "all": [
+          "whistle-packed"
+        ]
+      },
+      "pose": {
+        "x": 494,
+        "y": 791,
+        "w": 25.5,
+        "h": 20.879587155963304,
+        "opacity": 0
+      }
+    },
+    {
+      "object": "bag",
+      "when": {
+        "all": [
+          "water-packed",
+          "food-packed",
+          "torch-packed",
+          "radio-packed",
+          "whistle-packed"
+        ]
+      },
+      "pose": {
+        "rotation": -0.025
+      }
+    }
+  ],
+  "animations": {
+    "pack-water": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "water",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "y": 297,
+              "rotation": -0.08
+            },
+            {
+              "at": 0.74,
+              "x": 475,
+              "y": 734,
+              "w": 35,
+              "h": 84.75675675675676,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "x": 494,
+              "y": 791,
+              "w": 15,
+              "h": 36.32432432432432,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "pack-food": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "food",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "y": 747,
+              "rotation": -0.08
+            },
+            {
+              "at": 0.74,
+              "x": 475,
+              "y": 734,
+              "w": 92.39999999999999,
+              "h": 71.25583524027459,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "x": 494,
+              "y": 791,
+              "w": 39.6,
+              "h": 30.538215102974824,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "pack-torch": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "torch",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "y": 631,
+              "rotation": -0.08
+            },
+            {
+              "at": 0.74,
+              "x": 475,
+              "y": 734,
+              "w": 74.19999999999999,
+              "h": 50.117543859649125,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "x": 494,
+              "y": 791,
+              "w": 31.799999999999997,
+              "h": 21.478947368421053,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "pack-radio": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "radio",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "y": 456,
+              "rotation": -0.08
+            },
+            {
+              "at": 0.74,
+              "x": 475,
+              "y": 734,
+              "w": 65.8,
+              "h": 65.49035294117647,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "x": 494,
+              "y": 791,
+              "w": 28.2,
+              "h": 28.06729411764706,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "pack-whistle": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "whistle",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "y": 853,
+              "rotation": -0.08
+            },
+            {
+              "at": 0.74,
+              "x": 475,
+              "y": 734,
+              "w": 59.49999999999999,
+              "h": 48.7190366972477,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "x": 494,
+              "y": 791,
+              "w": 25.5,
+              "h": 20.879587155963304,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [],
+  "zoneLabels": {}
+}

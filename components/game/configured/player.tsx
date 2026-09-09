@@ -82,7 +82,8 @@ export function ConfiguredPlayer({ pack, onBack, onFinish }: Props) {
     interact({ source: d.id, mode: 'drop', target: pickZone(pack, point), point: { x: point.x - d.offset.x + pose.w / 2, y: point.y - d.offset.y + pose.h / 2 } });
   };
   const replay = () => { drag.current = null; reported.current = false; setSelected(null); setPaused(false); setRun(createRun(pack)); };
-  const seconds = Math.max(0, Math.ceil((100 - run.risk) * pack.rules.risk.seconds / 100));
+  const elapsedClock=pack.rules.risk.mode==='elapsed';
+  const seconds = elapsedClock ? Math.floor(run.elapsed/1000) : Math.max(0, Math.ceil((100 - run.risk) * pack.rules.risk.seconds / 100));
   return <section className="configured-player" data-level={pack.rules.id} data-engine="configured-v1" data-phase={run.phase} data-emotion={emotion(pack, run)} data-action={run.action?.rule ?? ''} data-resolved={run.resolved.join(',')}>
     <div className="configured-world" inert={modal}>
       <canvas ref={canvas} aria-label={`${pack.rules.title}互动场景`} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={() => { drag.current = null; setSelected(null); }} />
@@ -90,17 +91,17 @@ export function ConfiguredPlayer({ pack, onBack, onFinish }: Props) {
     </div>
     <header className="configured-hud" inert={modal}>
       <button onClick={onBack} aria-label="返回关卡">‹</button><span><small>LEVEL {String(pack.rules.order).padStart(2, '0')}</small>{pack.rules.title}</span>
-      <time aria-label="风险倒计时">{run.phase !== 'playing' ? '安全' : `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`}</time>
+      <time aria-label={elapsedClock?'训练用时（不是救援到达时间）':'风险倒计时'}>{run.phase !== 'playing' ? (pack.rules.completion.status ?? '安全') : `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`}</time>
       <button aria-label="暂停" onClick={() => setPaused(true)}>Ⅱ</button>
     </header>
     {pack.rules.kind === 'prevention' && <div className="configured-targets" inert={modal} aria-label="需要寻找的物件">{pack.rules.goals.filter(g => g.showTarget !== false).map(goal => <div key={goal.id} className={run.resolved.includes(goal.id) ? 'done' : ''} aria-label={`${goal.label}${run.resolved.includes(goal.id) ? '已完成' : '待寻找'}`}><img src={pack.skin.assets[pack.skin.poses[goal.object].asset].src} alt={goal.label} draggable={false} />{run.resolved.includes(goal.id) && <b>✓</b>}</div>)}</div>}
     {run.notice && !modal && <div className="configured-notice" role="status">{run.notice.text}</div>}
     <nav className="configured-keyboard" aria-label="键盘辅助操作" inert={modal}>
       {pack.rules.objects.filter(o => enabled(o, run)).map(o => <button key={o.id} disabled={!ready || !!run.action || run.phase !== 'playing'} onClick={() => o.input === 'tap' ? interact({ source: o.id, mode: 'tap' }) : setSelected(o.id)}>{o.label}</button>)}
-      {selected && Object.entries(pack.skin.zones).map(([id, box]) => <button key={id} onClick={() => interact({ source: selected, mode: 'drop', target: id, point: { x: box.x + box.w / 2, y: box.y + box.h / 2 } })}>放到 {id}</button>)}
+      {selected && Object.entries(pack.skin.zones).map(([id, box]) => <button key={id} onClick={() => interact({ source: selected, mode: 'drop', target: id, point: { x: box.x + box.w / 2, y: box.y + box.h / 2 } })}>放到 {pack.skin.zoneLabels?.[id] ?? id}</button>)}
     </nav>
     {modal && <div className="configured-shade"><div className="configured-dialog" ref={dialog} role="dialog" aria-modal="true" aria-labelledby="configured-dialog-title">
-      <h2 id="configured-dialog-title">{paused ? '暂停训练' : '这一关，安全了'}</h2>
+      <h2 id="configured-dialog-title">{paused ? '暂停训练' : (pack.rules.completion.title ?? '这一关，安全了')}</h2>
       {paused ? <><button onClick={() => setPaused(false)}>继续游戏</button><button onClick={() => { setPaused(false); setRun(r => reduceRun(pack, r, { type: 'hint' })); }}>需要提示</button></> : <><div className="configured-flowers" aria-label={`获得 ${run.stars} 朵小红花`}>{'✿'.repeat(run.stars)}</div><p>{pack.rules.completion.summary}</p></>}
       <button onClick={replay}>重新开始</button><button onClick={onBack}>返回关卡</button>{paused && <small>{pack.rules.safety}</small>}
     </div></div>}

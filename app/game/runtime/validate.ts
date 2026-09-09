@@ -35,11 +35,12 @@ function box(value: unknown, p: string, partial = false) {
 /** Fail closed, before a package is registered or exported. All messages include a JSON field path. */
 export function validatePackage(rulesInput: unknown, skinInput: unknown, options: { embedded?: boolean } = {}): LevelPackage {
   const r = obj(rulesInput, 'level'), s = obj(skinInput, 'skin');
-  exactKeys(r, ['schemaVersion','id','kind','title','order','location','description','safety','objects','goals','interactions','risk','completion'], 'level');
-  exactKeys(s, ['schemaVersion','id','world','assets','background','poses','zones','states','animations','effects'], 'skin');
+  exactKeys(r, ['schemaVersion','id','kind','title','order','location','description','safety','briefing','objects','goals','interactions','risk','completion'], 'level');
+  exactKeys(s, ['schemaVersion','id','world','assets','background','poses','zones','states','animations','effects','labels','zoneLabels'], 'skin');
   oneOf(r.schemaVersion, [1], 'level.schemaVersion'); oneOf(s.schemaVersion, [1], 'skin.schemaVersion');
   id(r.id, 'level.id'); id(s.id, 'skin.id'); oneOf(r.kind, ['prevention', 'response'], 'level.kind');
   ['title','location','description','safety'].forEach(k => text(r[k], `level.${k}`));
+  if (r.briefing !== undefined) text(r.briefing, 'level.briefing');
   number(r.order, 'level.order', 1, 9999); if (!Number.isInteger(r.order)) fail('level.order', '必须是整数');
   const objects = array(r.objects, 'level.objects'), goals = array(r.goals, 'level.goals'), rules = array(r.interactions, 'level.interactions');
   if (!objects.length || objects.length > 40) fail('level.objects', '每关 1～40 个对象');
@@ -132,12 +133,29 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
     if (rule.feedback !== undefined) text(rule.feedback, `${p}.feedback`);
     if (rule.riskDelta !== undefined) number(rule.riskDelta, `${p}.riskDelta`, rule.outcome === 'danger' ? 0 : -100, 100);
   }
-  const risk = obj(r.risk, 'level.risk'); exactKeys(risk, ['seconds','initial','warningAt','peakFeedback'], 'level.risk');
+  const risk = obj(r.risk, 'level.risk'); exactKeys(risk, ['mode','seconds','initial','warningAt','peakFeedback'], 'level.risk');
+  if (risk.mode !== undefined) oneOf(risk.mode, ['risk','elapsed'], 'risk.mode');
+  if (risk.mode === 'elapsed' && risk.initial !== 0) fail('risk.initial', '无风险倒计时的关卡必须从0开始');
   number(risk.seconds, 'risk.seconds', 5, 3600); number(risk.initial, 'risk.initial', 0, 99); number(risk.warningAt, 'risk.warningAt', 1, 100); text(risk.peakFeedback, 'risk.peakFeedback');
-  const completion = obj(r.completion, 'level.completion'); exactKeys(completion, ['requires','settleMs','summary'], 'level.completion');
+  const completion = obj(r.completion, 'level.completion'); exactKeys(completion, ['requires','settleMs','summary','title','status'], 'level.completion');
+  for (const k of ['title','status']) if (completion[k] !== undefined) text(completion[k], `completion.${k}`);
   const required = refs(completion.requires, goalIds, 'completion.requires', false); if (!required.length) fail('completion.requires', '通关条件不能为空');
   if (required.length !== goals.length) fail('completion.requires', '所有声明的目标都必须参与通关，避免剪影未完成却结算');
   number(completion.settleMs, 'completion.settleMs', 0, 5000); text(completion.summary, 'completion.summary');
+  for (const [key,value] of Object.entries(s.zoneLabels === undefined ? {} : obj(s.zoneLabels,'skin.zoneLabels'))) { refs([key],zoneIds,`zoneLabels.${key}`); text(value,`zoneLabels.${key}`); }
+  const hexColor = (v: unknown,p: string) => { if (!/^#[0-9a-fA-F]{6}(?:[0-9a-fA-F]{2})?$/.test(text(v,p))) fail(p,'颜色必须为6或8位十六进制'); };
+  for (const [i,raw] of array(s.labels ?? [],'skin.labels').entries()) {
+    const p=`labels[${i}]`,l=obj(raw,p); exactKeys(l,['object','text','x','y','size','color','background','when'],p);
+    refs([l.object],poseIds,`${p}.object`); text(l.text,`${p}.text`);
+    number(l.x,`${p}.x`,0,1); number(l.y,`${p}.y`,0,1); number(l.size,`${p}.size`,4,100); hexColor(l.color,`${p}.color`);
+    if(l.background!==undefined)hexColor(l.background,`${p}.background`);
+    if(l.when!==undefined){
+      const c=obj(l.when,`${p}.when`); exactKeys(c,['all','any','not','emotion','riskAtLeast'],`${p}.when`);
+      for(const k of ['all','any','not'])refs(c[k],goalIds,`${p}.when.${k}`);
+      if(c.emotion!==undefined)oneOf(c.emotion,['worried','panicked','focused','relieved'],`${p}.when.emotion`);
+      if(c.riskAtLeast!==undefined)number(c.riskAtLeast,`${p}.when.riskAtLeast`,0,100);
+    }
+  }
   for (const [i, raw] of array(s.effects, 'skin.effects').entries()) {
     const e = obj(raw, `effects[${i}]`); exactKeys(e, ['object','kind','until'], `effects[${i}]`);
     refs([e.object], poseIds, `effects[${i}].object`); oneOf(e.kind, ['fire','wobble'], `effects[${i}].kind`); refs(e.until, goalIds, `effects[${i}].until`, false);

@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "id": "paperbook",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "corridor-room": {
+      "src": "/levels/transcript-v1/corridor-room.webp",
+      "alpha": false
+    },
+    "box": {
+      "src": "/levels/transcript-v1/box.png",
+      "alpha": true
+    },
+    "chair": {
+      "src": "/levels/transcript-v1/chair.png",
+      "alpha": true
+    },
+    "case": {
+      "src": "/levels/transcript-v1/case.png",
+      "alpha": true
+    },
+    "scooter": {
+      "src": "/levels/transcript-v1/scooter.png",
+      "alpha": true
+    }
+  },
+  "background": "corridor-room",
+  "poses": {
+    "box": {
+      "asset": "box",
+      "x": 226,
+      "y": 654,
+      "w": 173,
+      "h": 147.7782340862423,
+      "depth": 10
+    },
+    "chair": {
+      "asset": "chair",
+      "x": 387,
+      "y": 600,
+      "w": 108,
+      "h": 196.07766990291262,
+      "depth": 10
+    },
+    "case": {
+      "asset": "case",
+      "x": 241,
+      "y": 819,
+      "w": 105,
+      "h": 192.19298245614036,
+      "depth": 10
+    },
+    "scooter": {
+      "asset": "scooter",
+      "x": 404,
+      "y": 836,
+      "w": 149,
+      "h": 208.38141809290954,
+      "depth": 10
+    }
+  },
+  "zones": {},
+  "states": [
+    {
+      "object": "box",
+      "when": {
+        "all": [
+          "box-stored"
+        ]
+      },
+      "pose": {
+        "x": 668,
+        "y": 845,
+        "w": 77.85000000000001,
+        "h": 66.50020533880904,
+        "opacity": 0
+      }
+    },
+    {
+      "object": "chair",
+      "when": {
+        "all": [
+          "chair-stored"
+        ]
+      },
+      "pose": {
+        "x": 668,
+        "y": 845,
+        "w": 48.6,
+        "h": 88.23495145631068,
+        "opacity": 0
+      }
+    },
+    {
+      "object": "case",
+      "when": {
+        "all": [
+          "case-stored"
+        ]
+      },
+      "pose": {
+        "x": 668,
+        "y": 845,
+        "w": 47.25,
+        "h": 86.48684210526316,
+        "opacity": 0
+      }
+    },
+    {
+      "object": "scooter",
+      "when": {
+        "all": [
+          "scooter-stored"
+        ]
+      },
+      "pose": {
+        "x": 668,
+        "y": 845,
+        "w": 67.05,
+        "h": 93.77163814180929,
+        "opacity": 0
+      }
+    }
+  ],
+  "animations": {
+    "store-box": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "box",
+          "keyframes": [
+            {
+              "at": 0.2,
+              "y": 636
+            },
+            {
+              "at": 0.65,
+              "x": 578,
+              "y": 763.8887063655031,
+              "w": 138.4,
+              "h": 118.22258726899383
+            },
+            {
+              "at": 1,
+              "x": 668,
+              "y": 845,
+              "w": 77.85000000000001,
+              "h": 66.50020533880904,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "store-chair": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "chair",
+          "keyframes": [
+            {
+              "at": 0.2,
+              "y": 582
+            },
+            {
+              "at": 0.65,
+              "x": 578,
+              "y": 744.568932038835,
+              "w": 86.4,
+              "h": 156.8621359223301
+            },
+            {
+              "at": 1,
+              "x": 668,
+              "y": 845,
+              "w": 48.6,
+              "h": 88.23495145631068,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "store-case": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "case",
+          "keyframes": [
+            {
+              "at": 0.2,
+              "y": 801
+            },
+            {
+              "at": 0.65,
+              "x": 578,
+              "y": 746.1228070175439,
+              "w": 84,
+              "h": 153.7543859649123
+            },
+            {
+              "at": 1,
+              "x": 668,
+              "y": 845,
+              "w": 47.25,
+              "h": 86.48684210526316,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "store-scooter": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "scooter",
+          "keyframes": [
+            {
+              "at": 0.2,
+              "y": 818
+            },
+            {
+              "at": 0.65,
+              "x": 578,
+              "y": 739.6474327628362,
+              "w": 119.2,
+              "h": 166.70513447432765
+            },
+            {
+              "at": 1,
+              "x": 668,
+              "y": 845,
+              "w": 67.05,
+              "h": 93.77163814180929,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [],
+  "zoneLabels": {}
+}

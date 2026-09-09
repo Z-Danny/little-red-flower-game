@@ -1,0 +1,1441 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-09-09",
+  "sourceCount": 53,
+  "missingSourceNumber": 14,
+  "scope": "全量筛选与设计去留，首批4关精做；其余未通过专业审核不得启用",
+  "notCertification": "两轮由同一AI执行的资料与规则复核，不是两个独立专家审核或商用认证。正式公共教育投放前仍建议消防/急救专业人员复审。",
+  "reviewRounds": [
+    {
+      "round": 1,
+      "scope": "53篇OCR文字的主题筛选、危险断言及不明确条件识别；首批原稿OCR与ASR交叉阅读",
+      "result": "仅筛选清楚的低门槛行为，合并重复主题，医护及复杂逃生单列阻断"
+    },
+    {
+      "round": 2,
+      "scope": "首批场景前提、动作、错误反馈、替代合法顺序、结算措辞与官方出处逐项对照",
+      "result": "移除等待救援死亡倒数；前期准备不强迫火场收拾；不把已报警写成已获救；任何危险动作都不能授予目标"
+    }
+  ],
+  "sources": {
+    "kit": {
+      "title": "应急管理部：全国基础版家庭应急物资储备建议清单",
+      "url": "https://www.mem.gov.cn/kp/shaq/202011/t20201129_372149.shtml",
+      "scope": "仅使用饮用水、方便食品、手电筒、收音机、救生哨五项；不采用其中医疗及火场逃生建议。",
+      "verified": "2026-09-09"
+    },
+    "kit2024": {
+      "title": "应急管理部：应急抢险救灾物资保障指导意见解读",
+      "url": "https://www.mem.gov.cn/gk/zcjd/202410/t20241023_506025.shtml",
+      "scope": "家庭储备需按家庭需要扩充，五个游戏物品不代表完整清单。",
+      "verified": "2026-09-09"
+    },
+    "corridor": {
+      "title": "国家消防救援局：身边这些隐患不可忽视",
+      "url": "https://www.119.gov.cn/kp/hzyf/jt/2023/37378.shtml",
+      "scope": "走道、楼梯拐角不得堆放杂物，保持疏散通道、安全出口畅通。",
+      "verified": "2026-09-09"
+    },
+    "corridor2": {
+      "title": "贵州消防：疏散通道莫占用",
+      "url": "https://gz.119.gov.cn/xfkp/xfcs/202502/t20250206_86723583.html",
+      "scope": "通道与出口不得被堆物、锁闭或障碍物占用；不引用尺寸或处罚条款。",
+      "verified": "2026-09-09"
+    },
+    "lift": {
+      "title": "市场监管总局：特种设备乘坐（用）安全提示",
+      "url": "https://www.samr.gov.cn/xw/zj/art/2023/art_db1260bd5bd24bd7866941dbd48b1c87.html",
+      "scope": "普通故障被困时使用报警装置联络并等待救援；不得扒、撬、捶打、踢踹轿门。页面实际发布时间为2021-03-12，不以URL年份判断。",
+      "verified": "2026-09-09"
+    },
+    "confined": {
+      "title": "应急管理部：有限空间作业安全指导手册，5.3",
+      "url": "https://www.mem.gov.cn/gk/tzgg/tz/202010/W020201030650925503111.pdf",
+      "scope": "不具备自主救援条件时及时联系119、120，依靠专业救援，不强行施救。",
+      "verified": "2026-09-09"
+    },
+    "confined2": {
+      "title": "应急管理部：8起有限空间盲目施救导致伤亡扩大事故通报",
+      "url": "https://www.mem.gov.cn/xw/bndt/201806/t20180608_229498.shtml",
+      "scope": "缺乏防护装备和能力的盲目施救会扩大伤亡；不把事故数字当现时统计。",
+      "verified": "2026-09-09"
+    }
+  },
+  "entries": [
+    {
+      "number": 1,
+      "filename": "01_遭遇洪水 这些自救知识你必须知道！.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20210301/t20210301_525424203.html",
+      "sha256": "01b4f02f1441a6b1c46e0348f9b4f64d8f56274258c3d9a0c6eb8d96cfe56ace",
+      "status": "首批",
+      "kind": "防范",
+      "title": "汛期应急包",
+      "scene": "家中平日备灾，尚无紧急转移指令",
+      "actions": [
+        "找到水、即食食品、手电、收音机、哨子，逐件收入应急包"
+      ],
+      "excluded": [
+        "塑料瓶自制救生衣",
+        "木筏涉洪",
+        "爬树围墙",
+        "无条件弃车"
+      ],
+      "acceptance": "五类物品归位；提示按家庭需求补充，转移时不因收拾物品拖延",
+      "verifiedReferences": [
+        "kit",
+        "kit2024"
+      ],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 2,
+      "filename": "02_汽车落水逃生自救攻略.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20210220/t20210220_525417451.html",
+      "sha256": "a5cad15385d8dbe7e8d5c7340f81db6a39988e5b3bf97c0b86b94fd2cf32cafb",
+      "status": "专项复核",
+      "kind": "处置",
+      "title": "落水前先认识逃生工具",
+      "scene": "仅停车状态认识自己车型的逃生装置，不模拟水压",
+      "actions": [
+        "核对车辆手册",
+        "识别车窗材质及可用逃生工具",
+        "保存求救信息"
+      ],
+      "excluded": [
+        "等待灌满水才逃生",
+        "所有侧窗都能砸",
+        "所有车窗落水后正常工作"
+      ],
+      "acceptance": "车型及玻璃条件由车辆安全专业人员确认后才可设计水中动作",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 3,
+      "filename": "03_遭遇地面塌陷怎么办？！快收好这份急救手册.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20210210/t20210210_525412317.html",
+      "sha256": "dced2b8ae9931b68e17b2f16def467cd746423a694f67af8353c723761383ac0",
+      "status": "后续候选",
+      "kind": "处置",
+      "title": "绕开塌陷路面",
+      "scene": "行人尚未进入塌陷边缘，现场道路可后退",
+      "actions": [
+        "人物退至远离塌陷区域",
+        "从安全位置报告地点",
+        "提醒路人绕行"
+      ],
+      "excluded": [
+        "靠近洞口查看",
+        "敲击燃气管",
+        "无条件进入塌陷区设置标识"
+      ],
+      "acceptance": "人留在外围且已报告；不展示通用安全距离数值",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 4,
+      "filename": "04_乘风破浪？小心出门有“风”险.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20210209/t20210209_525411351.html",
+      "sha256": "a730ed1fe4e2a4608dd6dd521d8ec4a1fa368a5b0ea649f8f56a957f87743e6f",
+      "status": "合并",
+      "kind": "防范",
+      "title": "风来之前",
+      "scene": "强风来临前的室内",
+      "actions": [
+        "并入台风关：收纳松散物品",
+        "关窗",
+        "停止外出冒险"
+      ],
+      "excluded": [
+        "车辆加配重",
+        "过时预报与灾害统计"
+      ],
+      "acceptance": "与11、47合并，不重复换标题出关",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 5,
+      "filename": "05_遇到爆炸如何做好防护？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20210127/t20210127_525401363.html",
+      "sha256": "98c8ed1b3b5bdc19a6b3a6e59f9387995e953efb78d2075e4e058c9a0a1bdc3e",
+      "status": "专项复核",
+      "kind": "处置",
+      "title": "远离爆炸危险",
+      "scene": "安全外围，危险源位置已知，不模拟冲击波现场",
+      "actions": [
+        "远离窗边与危险源",
+        "循明确安全路线撤离",
+        "报告"
+      ],
+      "excluded": [
+        "跳入水池",
+        "湿布防毒气",
+        "任何情况下紧锁门窗"
+      ],
+      "acceptance": "需爆炸/化学事故专业审核后再确定动作，不开放",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 6,
+      "filename": "06_谨防煤气罐变“炸弹”.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20201121/t20201121_525337814.html",
+      "sha256": "1fb4199448569fdbe1532a896c068efa4fa18fdeda3fc13a1881ed8a395f2b98",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "气瓶使用先检查",
+      "scene": "未泄漏、未起火的日常检查；成年操作者",
+      "actions": [
+        "识别合规气瓶和软管",
+        "发现问题停用",
+        "联系有资质人员"
+      ],
+      "excluded": [
+        "搬运燃烧气瓶",
+        "儿童关火灭火",
+        "任意向气瓶浇水"
+      ],
+      "acceptance": "不允许玩家修气瓶或进入燃烧场所",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 7,
+      "filename": "07_夏季毒虫出没 学点急救知识很重要.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20201121/t20201121_525337813.html",
+      "sha256": "533f41ff9f47a28b51ea5dcb5105fa9c44d15785efddd9d8dc99d880c83d8968",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "草地出游准备",
+      "scene": "出发前，尚未叮咬",
+      "actions": [
+        "穿合适衣物",
+        "选择有维护步道",
+        "知道遇伤需专业帮助"
+      ],
+      "excluded": [
+        "酒精或火烫逼蜱脱落",
+        "蛇伤扎止血带",
+        "自服蛇药"
+      ],
+      "acceptance": "不制作取蜱、蛇伤包扎操作；需医疗审核",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 8,
+      "filename": "08_世界杯来啦 安全看球了解一下.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20201121/t20201121_525337810.html",
+      "sha256": "b49bdcb6cc0a893a08c5f397593eb80f66623a32e851642edec463d106698dbf",
+      "status": "拆分候选",
+      "kind": "防范",
+      "title": "散场前看出口",
+      "scene": "赛场人流尚通畅，指定可用出口",
+      "actions": [
+        "识别出口与工作人员",
+        "收起落地行李",
+        "随指引有序离场"
+      ],
+      "excluded": [
+        "看球疲劳驾驶、钓鱼链接混成一关",
+        "一套姿势应对所有挤压"
+      ],
+      "acceptance": "只模拟平时准备；真实拥挤逃生另审",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 9,
+      "filename": "09_夏季暴雨生存指南.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255412.html",
+      "sha256": "2682d66cca360cfe23d0d5267e33fe11376561b35b087c11e4f2ceae5523b040",
+      "status": "合并",
+      "kind": "防范",
+      "title": "汛期应急包",
+      "scene": "同01",
+      "actions": [
+        "准备照明、食品、饮水、预警接收工具"
+      ],
+      "excluded": [
+        "试探水深后涉水",
+        "靠画面“这个深度”",
+        "公交必然更安全"
+      ],
+      "acceptance": "并入01；不出现涉水可通行绿色路径",
+      "verifiedReferences": [
+        "kit",
+        "kit2024"
+      ],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 10,
+      "filename": "10_防暑降温的正确打开方式.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255411.html",
+      "sha256": "3ebb7ab7eec3044ba259b66b6a6abc8b8d94eb3928ae9c98a1f2a9efb9c0eabe",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "高温出门前",
+      "scene": "正常健康成人尚未发生热射病",
+      "actions": [
+        "调整到凉爽时段",
+        "准备饮水",
+        "选择阴凉休息场所"
+      ],
+      "excluded": [
+        "无剂量自制补液",
+        "通用清凉药",
+        "体温不到40度就安全"
+      ],
+      "acceptance": "预防版可后续细化；意识异常中暑处置不作为小游戏猜题",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 11,
+      "filename": "11_超强台风“尼伯特”来袭，如何拒绝被扑倒？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255410.html",
+      "sha256": "c99099c3080cda19f9021f02ab934b19a3ca9ba94590f617e9142a9ae32690ad",
+      "status": "合并",
+      "kind": "防范",
+      "title": "台风前的家",
+      "scene": "台风来临前，与已有关卡条件统一",
+      "actions": [
+        "收回阳台物品",
+        "关闭门窗",
+        "断开不必要电源",
+        "固定物品"
+      ],
+      "excluded": [
+        "玻璃贴X保证安全",
+        "封死排水口",
+        "过时尼伯特预报"
+      ],
+      "acceptance": "沿用已有关卡，不增重复关卡",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 12,
+      "filename": "12_感觉自己要窒息？防霾啊！防霾！.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255409.html",
+      "sha256": "4822d1eb76879cf1a41fa2e6660488ae13753b18c24a27ba6d83e37b594b3c09",
+      "status": "后续候选",
+      "kind": "防范",
+      "title": "空气质量提醒",
+      "scene": "室内，收到当日本地空气质量提示",
+      "actions": [
+        "查看提示",
+        "调整户外活动",
+        "按个人情况选择防护"
+      ],
+      "excluded": [
+        "绿植等同净化器",
+        "旧口罩标准",
+        "孕妇哮喘一律不能戴口罩"
+      ],
+      "acceptance": "健康特殊人群只提示遵医嘱，不强制统一防护品",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 13,
+      "filename": "13_江湖告急！洪灾面前我们如何自救？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255408.html",
+      "sha256": "44d7aa649f79484865ba53be15e195fd6d0f0ec12182d385a2dbd982f18f9f6a",
+      "status": "合并",
+      "kind": "防范",
+      "title": "汛期应急包",
+      "scene": "同01",
+      "actions": [
+        "事先备物并关注预警，不进入洪水"
+      ],
+      "excluded": [
+        "齐腰才危险",
+        "拉手涉洪",
+        "塑料瓶漂浮逃生"
+      ],
+      "acceptance": "并入01，不复刻错误水中路线",
+      "verifiedReferences": [
+        "kit",
+        "kit2024"
+      ],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 15,
+      "filename": "15_世界狂犬病日，人手一份安全手册！.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255406.html",
+      "sha256": "f5a0f636f8cbd7345d43464f696baa1bc7ae6aa9d527048fecfb8e5a9341ad6d",
+      "status": "专项复核",
+      "kind": "处置",
+      "title": "动物抓咬后及时就医",
+      "scene": "明确被动物抓咬；不先猜有无病毒",
+      "actions": [
+        "清洁伤口和及时就医仅形成待医审流程"
+      ],
+      "excluded": [
+        "排毒说法",
+        "一律注射免疫球蛋白",
+        "旧死亡统计及错误疗程"
+      ],
+      "acceptance": "暂不开放，需医疗人员复核清洗、就医、疫苗适应证",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 16,
+      "filename": "16_手机变炸弹，我们该如何自保？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255405.html",
+      "sha256": "552c791c90ac1e5678a4ecd40e34f6eec165695c3af1bb4307b408b7c44a98bb",
+      "status": "后续候选",
+      "kind": "防范",
+      "title": "充电也要留空间",
+      "scene": "手机完好，尚未发热冒烟",
+      "actions": [
+        "将充电手机移出被褥",
+        "远离热源和水",
+        "使用适配合格充电器"
+      ],
+      "excluded": [
+        "指定品牌事故",
+        "触碰冒烟电池",
+        "边用边充必然爆炸"
+      ],
+      "acceptance": "异常电池只停用求助，不拆卸处理",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 17,
+      "filename": "17_一分钟告诉你冬季露脚踝真要命.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255404.html",
+      "sha256": "c82de41b484966ecf55e30c1f1dd088ce97b2e7958cfa1f42acd8ddffb04d7fe",
+      "status": "剔除",
+      "kind": "不独立成关",
+      "title": "不采用未经证实的因果",
+      "scene": "无",
+      "actions": [
+        "不制作；天气适宜穿衣可作为美术背景细节"
+      ],
+      "excluded": [
+        "露脚踝直接导致肠炎、风湿、发热等因果断言"
+      ],
+      "acceptance": "没有可核验的单一应急动作，不用恐吓补成关卡",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 18,
+      "filename": "18_一分钟教你预防低温烫伤.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255403.html",
+      "sha256": "9b90458bcc061b7c2f985602093686f4a3d2f572f079ec3f6c0120bc4e7a7534",
+      "status": "后续候选",
+      "kind": "防范",
+      "title": "取暖后再入睡",
+      "scene": "睡前无受伤，无电器故障",
+      "actions": [
+        "按说明关闭电热毯",
+        "移开贴身热水袋",
+        "检查接触处"
+      ],
+      "excluded": [
+        "45度30分钟绝对安全线",
+        "包毛巾就永远安全"
+      ],
+      "acceptance": "必须按具体设备说明建立可见状态；不处理已烫伤皮肤",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 19,
+      "filename": "19_出国旅游遇到暴恐或抢劫怎么办？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255402.html",
+      "sha256": "f9a0f5e80707431825af4d50d46bb9d0af60f91edb1ae63ce64c60a90b7d0db6",
+      "status": "专项复核",
+      "kind": "处置",
+      "title": "旅行先备联络信息",
+      "scene": "出发前，模拟设备不读真实身份",
+      "actions": [
+        "保存当地求助及领保信息",
+        "识别安全集合点"
+      ],
+      "excluded": [
+        "所有抢劫都呼喊反抗或都顺从",
+        "爆炸现场盲从人群"
+      ],
+      "acceptance": "地区电话需按目的地更新；不做暴恐战术关卡",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 20,
+      "filename": "20_山体滑坡泥石流来了你该怎么办？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255401.html",
+      "sha256": "1f70410af0748071a4a9430083a3a97bd9e38afbd8458d9bb152fa2337d75b6c",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "山地预警先撤离",
+      "scene": "收到官方转移通知，尚在安全驻地",
+      "actions": [
+        "取消进山",
+        "按已确认安全路线撤离",
+        "联系同行人员"
+      ],
+      "excluded": [
+        "饮尿",
+        "24小时获救保证",
+        "滑坡与泥石流一套方向",
+        "穿越泥流"
+      ],
+      "acceptance": "地质灾害专业确认路线，不能让玩家现场猜山体运动",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 21,
+      "filename": "21_遭遇校园暴力怎么办？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255400.html",
+      "sha256": "023be6feda00044da16df94edf51df27d630ba5dde839d105382ebe0e03b7cf8",
+      "status": "后续候选",
+      "kind": "处置",
+      "title": "向可信的大人求助",
+      "scene": "事件结束后的安全地点，不进行暴力对抗",
+      "actions": [
+        "远离施害者",
+        "向可信成人说明",
+        "保存不涉隐私的求助线索"
+      ],
+      "excluded": [
+        "责怪受害者",
+        "以打赢为胜利",
+        "未经更新的法律定性"
+      ],
+      "acceptance": "求助未获响应可继续换渠道，不以单次求助保证问题解决",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 22,
+      "filename": "22_遇到离岸流怎么办？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255399.html",
+      "sha256": "d967609f4b60030fa66e5c2452de2663c675e31392a7905126f9a22cd9c551a7",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "先看海滩警示",
+      "scene": "岸上，救生员与警示旗明确存在",
+      "actions": [
+        "了解警示",
+        "避开禁止下水区域",
+        "向救生员询问"
+      ],
+      "excluded": [
+        "凭浪花空隙必能识别",
+        "未受训者下水救人",
+        "游法包治所有离岸流"
+      ],
+      "acceptance": "海中脱困动作另交水上救援人员审核",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 23,
+      "filename": "23_高楼火灾自救指南.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255398.html",
+      "sha256": "7e58ee6e026472c5385038a1e6329415fcb7e37cd5090c7caf0eb5c89839a2d6",
+      "status": "专项复核",
+      "kind": "处置",
+      "title": "烟来了，先判断路线",
+      "scene": "明确区分通道无烟可用与出口烟热阻断的两个场景",
+      "actions": [
+        "无烟可用才经楼梯撤离；阻断时退回隔烟并报位置"
+      ],
+      "excluded": [
+        "低层跳楼",
+        "湿被冲浓烟",
+        "火在楼下固定往某层跑"
+      ],
+      "acceptance": "消防人员审核分支后才实现，不给无条件唯一出口答案",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 24,
+      "filename": "24_网购有风险，如何才能安全地买买买.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255397.html",
+      "sha256": "4773075de71ba455953f21febdc6d9d3cf0f0957919532c381a56595dd5440d7",
+      "status": "合并候选",
+      "kind": "处置",
+      "title": "可疑链接别点开",
+      "scene": "纯虚构购物短信，离线模拟屏幕",
+      "actions": [
+        "关闭可疑链接",
+        "从已知官方入口核实",
+        "保护付款凭据"
+      ],
+      "excluded": [
+        "要求玩家输入真密码",
+        "所有自动登录都危险",
+        "机械定期换密"
+      ],
+      "acceptance": "与39、53合并；不调用外部支付或真实账号",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 25,
+      "filename": "25_遇到地震怎么办？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255396.html",
+      "sha256": "64586bfa472a5ea120b5701852cc0f1604f6229732d74abc734821e1073827ff",
+      "status": "专项复核",
+      "kind": "处置",
+      "title": "震动时保护自己",
+      "scene": "室内、桌子明确牢固、没有贴近窗户的路径",
+      "actions": [
+        "就近伏地",
+        "遮挡",
+        "抓牢，以权威地区指南复核动作"
+      ],
+      "excluded": [
+        "生命三角",
+        "低楼层就往外跑",
+        "震时冲出室外",
+        "无条件弃车"
+      ],
+      "acceptance": "先完成防震专项审核，不将死亡统计作为风险倒计时",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 26,
+      "filename": "26_溺水原来是这样的.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255395.html",
+      "sha256": "7f11f00a9f124eca596816be0db069d67c69d5aadd2c0fdb9dbc0333b1e13a71",
+      "status": "专项复核",
+      "kind": "处置",
+      "title": "岸上呼救不盲目下水",
+      "scene": "未受训旁观者处在稳固岸上，可联系救生员",
+      "actions": [
+        "呼叫救生员和急救",
+        "安全情况下提供漂浮物",
+        "等待指引"
+      ],
+      "excluded": [
+        "后方接近溺者下水拖拽",
+        "先查脉搏拖延",
+        "5或10分钟绝对结局"
+      ],
+      "acceptance": "水上救援及医疗审核；CPR不采用点击一下即治愈",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 27,
+      "filename": "27_雪天出行，这些技巧给你稳稳的幸福.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255394.html",
+      "sha256": "5534473ac02b89915f2b9ed5cc47345c54307efe764738f570840fbbefc9aaed",
+      "status": "后续候选",
+      "kind": "防范",
+      "title": "雪后步行出门",
+      "scene": "行人出门前，未处车流中",
+      "actions": [
+        "选择防滑鞋",
+        "规划清理过的步道",
+        "收起遮挡视线物品"
+      ],
+      "excluded": [
+        "轮胎放气",
+        "猛踩油门脱困",
+        "湿雪必然更安全"
+      ],
+      "acceptance": "不把驾驶技巧混入行人关卡",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 28,
+      "filename": "28_道路千万条 千万别堵生命通道这一条.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255393.html",
+      "sha256": "c43c43d9b48294b513e9a44c8fceb4812e4de9245491a255f427de42c3bd7f0f",
+      "status": "首批",
+      "kind": "防范",
+      "title": "畅通的生命通道",
+      "scene": "日常巡查无火烟；成年人收纳自家轻便物品",
+      "actions": [
+        "移走纸箱、折叠椅、行李箱、玩具滑板车",
+        "收入室内储物空间"
+      ],
+      "excluded": [
+        "火场还收拾东西",
+        "过时96119",
+        "消防车道与楼道尺寸混用"
+      ],
+      "acceptance": "通道全净，物品未挪到另一出口；不打开或撑住防火门",
+      "verifiedReferences": [
+        "corridor",
+        "corridor2"
+      ],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 29,
+      "filename": "29_大口吃肉大碗喝酒 小心身体被掏空.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255392.html",
+      "sha256": "f697d565f20ae54951a7b27586f99a73f549104a94ca62ca4b775eea3e53a568",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "吃饭慢一点",
+      "scene": "进餐前，无噎食和鱼刺卡喉",
+      "actions": [
+        "坐稳",
+        "小口进食",
+        "避免含食打闹，形成待医审候选"
+      ],
+      "excluded": [
+        "吞饭压鱼刺",
+        "盲用手指镊子",
+        "等半天",
+        "酒量安全阈值"
+      ],
+      "acceptance": "分开噎食、鱼刺、酒精三个主题；无临床操作放行",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 30,
+      "filename": "30_过敏别大意 你需要预防的知识都在这儿.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255391.html",
+      "sha256": "eda1b70105b1bba2219ce820ac3bd0b99fe8f91bc2e53b9f16b5ed32e3fea45f",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "已知过敏原要避开",
+      "scene": "本人已明确过敏原，食品标签清楚",
+      "actions": [
+        "检查配料",
+        "排除已知过敏原",
+        "告知照护者"
+      ],
+      "excluded": [
+        "所有过敏机制一样",
+        "药物一吃就好",
+        "未核实百分比"
+      ],
+      "acceptance": "不靠小游戏诊断过敏；严重反应处置需医疗审核",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 31,
+      "filename": "31_高速公路突发车祸该怎样处理才能救命.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255390.html",
+      "sha256": "7287a794db9d0127b2e4e0ed4b0bd8747ea102349eda96dd11ddd5850c0dc1da",
+      "status": "专项复核",
+      "kind": "处置",
+      "title": "事故后先保人",
+      "scene": "车已停稳、护栏外是已确认安全地面而非桥外悬空",
+      "actions": [
+        "在安全条件下撤到路外",
+        "报警报位置",
+        "等待救援"
+      ],
+      "excluded": [
+        "一律翻护栏",
+        "任何路况走150米放牌",
+        "绝对死亡时间"
+      ],
+      "acceptance": "需道路安全专业复核道路类型、二次碰撞与放牌条件",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 32,
+      "filename": "32_防灾减灾 广播同行.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255389.html",
+      "sha256": "44c3a17d79d28247feaadef2bc217c418c2894c9a977e0b5fdc94644a81ea3fb",
+      "status": "合并",
+      "kind": "防范",
+      "title": "汛期应急包",
+      "scene": "家中备灾",
+      "actions": [
+        "将能接收预警的收音机加入应急准备"
+      ],
+      "excluded": [
+        "广播宣传片直接变成独立问答题",
+        "暗示官方联合出品"
+      ],
+      "acceptance": "并入01，不使用未经许可官方标志",
+      "verifiedReferences": [
+        "kit",
+        "kit2024"
+      ],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 33,
+      "filename": "33_客车事故如何逃生 牢记这些救命知识.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255388.html",
+      "sha256": "1561686895bc6f0ce4d384b74e20fe2fbfb1585501a44b80b5c6a9edf0983cb7",
+      "status": "专项复核",
+      "kind": "处置",
+      "title": "停稳客车有序撤离",
+      "scene": "车辆停稳、车门已开、门外路线明确可用",
+      "actions": [
+        "听从司机指引",
+        "有序经可用车门离开",
+        "远离车辆"
+      ],
+      "excluded": [
+        "所有按钮相同",
+        "所有车窗可锤碎",
+        "乘客必须先灭火",
+        "50米必安全"
+      ],
+      "acceptance": "车型与路线必须由交通安全人员确认",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 34,
+      "filename": "34_粉尘爆炸威力惊人 但很多人还不知道.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255387.html",
+      "sha256": "29c7a027697bf1cedae2b07a8f64bd9e7764a1c99ac17609ba8e7d3fe145bf54",
+      "status": "后续候选",
+      "kind": "防范",
+      "title": "面粉远离火源",
+      "scene": "厨房烹饪前，面粉密封无扬尘",
+      "actions": [
+        "封好粉料",
+        "移离点火区",
+        "采用不扬尘的清理方式"
+      ],
+      "excluded": [
+        "所有粉尘都可以泼水",
+        "粉尘着火加水或盐通用"
+      ],
+      "acceptance": "只做预防扬尘，不制作工业粉尘事故扑救",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 35,
+      "filename": "35_户外探险陷入绝境 如何才能荒野求生.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255386.html",
+      "sha256": "71c457f8c233a1c4ff3e11e58297802cce05436370d56934c04b9595455d43d5",
+      "status": "合并候选",
+      "kind": "防范",
+      "title": "出发前做足准备",
+      "scene": "正规路线出发前",
+      "actions": [
+        "告知行程",
+        "检查天气",
+        "准备通信照明",
+        "遵守封闭标志"
+      ],
+      "excluded": [
+        "喝生水或尿",
+        "禁火区生火",
+        "蛇伤扎带",
+        "随意搬运脊柱伤"
+      ],
+      "acceptance": "和37、52组成出游准备，不做荒野极限生存",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 36,
+      "filename": "36_大出血可危及生命 学点外伤止血法很有必要.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255385.html",
+      "sha256": "952dea5f2ea97474d86ab978371d96ed95d36542a9869300b417057592cf6671",
+      "status": "专项复核",
+      "kind": "处置",
+      "title": "严重出血立即求助",
+      "scene": "明确外伤现场，等待专业急救",
+      "actions": [
+        "仅保留呼叫急救的设计意图，止血操作待医疗审核"
+      ],
+      "excluded": [
+        "细绳电线藤条止血带",
+        "颈部环扎",
+        "游戏点击等同掌握止血"
+      ],
+      "acceptance": "医疗专家确认部位、持续压迫及器材后才能细化",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 37,
+      "filename": "37_滑雪季来了 不要让滑雪场成为“夺命场所”.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255384.html",
+      "sha256": "1f7cfe2d1f5b91ca5bbe23bb7a805f93bdf4be6885e98e3b3a0f5e95958715a4",
+      "status": "合并候选",
+      "kind": "防范",
+      "title": "上雪道之前",
+      "scene": "正规开放雪场，未发生受伤事故",
+      "actions": [
+        "按要求戴头盔",
+        "选择能力匹配雪道",
+        "关注关闭提示",
+        "记住巡逻求助点"
+      ],
+      "excluded": [
+        "万能主动摔倒姿势",
+        "所有伤员自行移动",
+        "躺平就安全"
+      ],
+      "acceptance": "与35、52合并；不替代教练教学或山地救援",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 38,
+      "filename": "38_注意家里这个隐形杀手 煤气中毒真的很可怕.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255383.html",
+      "sha256": "ca66e40658266cbb2fd6cce9e38091d33e75b9c720be7973fcf97df53ff061fe",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "别在屋里烧炭",
+      "scene": "尚未燃烧的室内炭炉场景",
+      "actions": [
+        "移除室内燃炭计划",
+        "采用合规室外使用",
+        "认识报警与撤离"
+      ],
+      "excluded": [
+        "湿布可防CO",
+        "凭气味判断CO",
+        "无防护回屋救人",
+        "冷刺激"
+      ],
+      "acceptance": "室外具体距离按设备说明；疑似中毒场景另审",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 39,
+      "filename": "39_能让手机偷偷转账的“伪基站”该如何预防.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255382.html",
+      "sha256": "0ff026fcb2d3ea9e679b71e08ae08128dd7e8b4c87d6c9670b6234fc51a7de1b",
+      "status": "合并候选",
+      "kind": "处置",
+      "title": "可疑链接别点开",
+      "scene": "纯虚构信息界面",
+      "actions": [
+        "不输入验证码",
+        "从可信渠道核实",
+        "报告可疑信息"
+      ],
+      "excluded": [
+        "凭信号格确定伪基站",
+        "过时2G技术当普遍现状"
+      ],
+      "acceptance": "并入24、53，诈骗手法作为例子而非全部特征",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 40,
+      "filename": "40_遭遇猛兽 该如何“虎口逃生”.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255381.html",
+      "sha256": "2432a21356b7170fadbcf9f79de89c85d7318cc4e05c4b918f3d9a7d1ed7220c",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "动物园里守规则",
+      "scene": "标识明确的车行野生动物园，车窗可关闭",
+      "actions": [
+        "车内停留",
+        "关闭车窗",
+        "收起投喂食物"
+      ],
+      "excluded": [
+        "同一招应对所有猛兽",
+        "之字跑必胜",
+        "火能吓走所有动物"
+      ],
+      "acceptance": "只做园区明确规则；野外遭遇交由物种专家审核",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 41,
+      "filename": "41_大货车有个“吃人盲区”，如何才能正确避开？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255380.html",
+      "sha256": "df75744327292c0eca97cb5590d1d8f10154259a23bf150ab62cbe51ed0ed3c2",
+      "status": "后续候选",
+      "kind": "处置",
+      "title": "让转弯货车先走",
+      "scene": "行人在路缘后等待，无车流穿越需求",
+      "actions": [
+        "退离货车转弯区",
+        "等待车辆通过",
+        "按信号安全过街"
+      ],
+      "excluded": [
+        "用快跑抢行考反应",
+        "掉货时急超车",
+        "固定几米绝对安全"
+      ],
+      "acceptance": "车辆轨迹与遮挡需道路安全审核，不模拟贴车通过",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 42,
+      "filename": "42_突遇森林火灾，如何逃生自救？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255379.html",
+      "sha256": "20215aac85ae951dcb31c664831569783a28ae16a0e0a5372813c08dd7807f54",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "森林入口的防火提醒",
+      "scene": "林区入口，尚未起火，禁火标识明确",
+      "actions": [
+        "收起火种并遵规存放",
+        "取消野炊点火",
+        "发现烟情从安全处报告"
+      ],
+      "excluded": [
+        "冲火线",
+        "湿布防CO",
+        "挖坑埋身",
+        "未受训扑火"
+      ],
+      "acceptance": "逃生方向受风向地形影响，未审不做动态逃生关",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 43,
+      "filename": "43_雷雨天气出行，如何防止“遭雷劈”.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255378.html",
+      "sha256": "42e94e669b1e52bc1e6e54c34ceebe5eecbd6cf551dc1cd9fcc4b816a6e1642d",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "雷雨到来之前",
+      "scene": "雷电尚未开始的室内准备",
+      "actions": [
+        "提前关注预警",
+        "取消室外活动",
+        "依指南远离窗边与管线"
+      ],
+      "excluded": [
+        "树下45度安全区",
+        "雷雨中拔插头",
+        "所有洞穴安全",
+        "手机引雷"
+      ],
+      "acceptance": "防雷专业复核后细化；不让玩家在打雷时碰插头",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 44,
+      "filename": "44_电梯惊魂，这些知识教你化险为夷.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255377.html",
+      "sha256": "7315c7e7397493f39761e520d38d8250fb18eaa2cf7e5426008e0350a06f7712",
+      "status": "首批",
+      "kind": "处置",
+      "title": "电梯停住了",
+      "scene": "轿厢已停止，门闭合，无火烟、无下坠；报警器有效",
+      "actions": [
+        "按报警通话装置说明位置",
+        "人物离开门边在轿厢内等待，顺序不限"
+      ],
+      "excluded": [
+        "按所有楼层能止坠",
+        "扒开门逃跑",
+        "等待会窒息的倒计时",
+        "扶梯知识混入"
+      ],
+      "acceptance": "已联络且远离门边，门仍关闭；是等待救援，不是假装已被救出",
+      "verifiedReferences": [
+        "lift"
+      ],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 45,
+      "filename": "45_游乐场变事故现场，遭遇意外怎么办？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255376.html",
+      "sha256": "285b7b64d7f7fbb5aab98d33e72c15e2b7f4dbaea7901861605f3967b9da0b15",
+      "status": "后续候选",
+      "kind": "防范",
+      "title": "上游乐设施之前",
+      "scene": "正规设施乘坐前，规则说明可见",
+      "actions": [
+        "检查乘坐限制",
+        "确认约束装置",
+        "听从工作人员启闭"
+      ],
+      "excluded": [
+        "双电源保证绝对安全",
+        "自行打开约束",
+        "事故一律湿布遮脸"
+      ],
+      "acceptance": "不把身高限制套用所有设施，具体设备另配规则",
+      "verifiedReferences": [
+        "lift"
+      ],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 46,
+      "filename": "46_如何应对来势汹汹的流感？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255375.html",
+      "sha256": "2b28434808589d0db79b5bdab8aa6c8d401b9bfb0c6ca0c1861008e642eecd48",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "咳嗽时照顾彼此",
+      "scene": "日常卫生，无严重症状",
+      "actions": [
+        "遮挡咳嗽",
+        "手部清洁",
+        "身体不适休息求助"
+      ],
+      "excluded": [
+        "GBS绝对禁忌",
+        "每10年必大流行",
+        "简化抗病毒用药"
+      ],
+      "acceptance": "依据最新疾控和医疗审核，不让玩家给自己开药",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 47,
+      "filename": "47_高空抛物伤人害命，如何应对这颗头顶炸弹？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255374.html",
+      "sha256": "f56c0d4e6835680fcd9d00c8be2eeda2bdd525a6a162137255ae9df548a8755f",
+      "status": "合并",
+      "kind": "防范",
+      "title": "台风前的家",
+      "scene": "室内事先排查高处松散物品",
+      "actions": [
+        "收纳阳台可坠物",
+        "检查固定状态"
+      ],
+      "excluded": [
+        "贴墙一定安全",
+        "发现落物还冲过去",
+        "肋骨伤环胸绑扎"
+      ],
+      "acceptance": "合并台风防坠物，不增加现场躲坠物反应跑酷",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 48,
+      "filename": "48_“电老虎”不好惹，发生触电怎么办？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255373.html",
+      "sha256": "887e6582a7bc453a77f3a827e17d895383f0f568ef34198c8c793a34e820b9fe",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "用电前看看周围",
+      "scene": "干燥、无触电者的日常场景",
+      "actions": [
+        "移开水源",
+        "停用明显破损设备",
+        "找成人或专业人员处理"
+      ],
+      "excluded": [
+        "徒手抓绝缘外皮",
+        "猛抽身体脱险",
+        "任意木棍都绝缘"
+      ],
+      "acceptance": "不能让儿童检修电器；带电救援需电气和医疗双审",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 49,
+      "filename": "49_注意安全，不要让有限空间成为“死亡空间”！.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255372.html",
+      "sha256": "fc3c0ebe2fc37fa906ae2ab52d3de2cb79ba5bd0c10d90f279988121ddf62ffa",
+      "status": "首批",
+      "kind": "处置",
+      "title": "井口边的求助",
+      "scene": "室外外围发现有人在污水井内遇险；玩家无救援装备，不进入现场",
+      "actions": [
+        "在外围模拟联系119、120",
+        "劝阻旁人接近；三项顺序不限"
+      ],
+      "excluded": [
+        "无检测进井",
+        "普通口罩可救人",
+        "打开未知空间照明",
+        "00米/400米识别冲突"
+      ],
+      "acceptance": "联络与劝阻完成后留在外围等待，井仍危险；不宣告遇险者已获救",
+      "verifiedReferences": [
+        "confined",
+        "confined2"
+      ],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 50,
+      "filename": "50_灾害来了哪里躲？快速找到避难场所.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255371.html",
+      "sha256": "acbd0fbdc4f429e79a7fd235c1a5ef32025cdc7f764ca7106e8ffa664813c507",
+      "status": "合并候选",
+      "kind": "防范",
+      "title": "出发前确认避难信息",
+      "scene": "灾前准备，展示官方开放信息而非只看地图最近点",
+      "actions": [
+        "核实避难场所开放及灾种适用性",
+        "确认路线可用",
+        "按通知转移"
+      ],
+      "excluded": [
+        "最近的场地一定安全",
+        "所有灾害相同避难地"
+      ],
+      "acceptance": "预警接收工具并入01；路线关需当地实际信息审核",
+      "verifiedReferences": [
+        "kit2024"
+      ],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 51,
+      "filename": "51_药能治病也能致命 这些安全用药知识要知道.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255370.html",
+      "sha256": "6c5b4fc136acf46d204084083463b51c4454701138d235ccefddbe680cb90c43",
+      "status": "专项复核",
+      "kind": "防范",
+      "title": "药品收进安全柜",
+      "scene": "家中尚未误服，成年照护者收纳",
+      "actions": [
+        "保留原包装",
+        "区分处方",
+        "上锁存放，远离儿童可及处"
+      ],
+      "excluded": [
+        "在家催吐或导泻",
+        "猜吃多少才要就医",
+        "旧死亡统计"
+      ],
+      "acceptance": "误服处置不发布；收纳版经药师审核再细化",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 52,
+      "filename": "52_“白色妖魔”威力惊人，遇到它如何逃生？.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255369.html",
+      "sha256": "9077815892e205f5d4d961952c7d518d8913a940ffae8aea8cb9384e27bac863",
+      "status": "合并候选",
+      "kind": "防范",
+      "title": "出发前查看雪道关闭",
+      "scene": "雪场入口，不在雪崩运动区",
+      "actions": [
+        "识别关闭公告",
+        "取消进入",
+        "向专业巡逻人员求助"
+      ],
+      "excluded": [
+        "2至3天必安全",
+        "低于30度绝对安全",
+        "吐口水即可挖出",
+        "树木保证安全"
+      ],
+      "acceptance": "与35、37合并；雪崩脱困与搜索须专业审核",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 53,
+      "filename": "53_保护信息安全，别让手机出卖你！.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20200915/t20200915_525255368.html",
+      "sha256": "981e51e0e16baf3182347b499be974dd2733fbd5f0ecf1b3edfe016fec28068a",
+      "status": "合并候选",
+      "kind": "处置",
+      "title": "可疑链接别点开",
+      "scene": "离线虚构手机，无真实权限或账号",
+      "actions": [
+        "识别索取密码验证码",
+        "拒绝",
+        "可信渠道核实"
+      ],
+      "excluded": [
+        "索要真实密码演示",
+        "固定旧银行冻结流程"
+      ],
+      "acceptance": "并入24、39；不外发数据",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    },
+    {
+      "number": 54,
+      "filename": "54_国家应急广播宣传片.md",
+      "sourceUrl": "https://www.cneb.gov.cn/kepu/tuxingdonghua/dsp_all/20220427/t20220427_525808428.html",
+      "sha256": "dd03f14949a2bde775c5ce6983fc508330c1c5c545587019fc8d08a959683250",
+      "status": "剔除",
+      "kind": "不独立成关",
+      "title": "宣传片不强做题",
+      "scene": "无",
+      "actions": [
+        "不制作独立关卡，可提炼关注权威预警的中性提示"
+      ],
+      "excluded": [
+        "照搬宣传口号、官方标志或虚构联合出品"
+      ],
+      "acceptance": "仅保留出处记录，不新增可玩关",
+      "verifiedReferences": [],
+      "review": "首批有范围限定与官方资料交叉核对；其余是设计去留和约束，不等于专业审核通过。"
+    }
+  ],
+  "firstBatch": [
+    {
+      "id": "flood-kit",
+      "title": "汛期应急包",
+      "kind": "prevention",
+      "sources": [
+        1,
+        9,
+        13,
+        32,
+        50
+      ],
+      "goals": [
+        "water-packed",
+        "food-packed",
+        "torch-packed",
+        "radio-packed",
+        "whistle-packed"
+      ],
+      "conditions": [
+        "平日家中准备，无进水、无即时撤离指令",
+        "物品在桌面、搁架、椅子等自然位置，不设底部物品栏",
+        "五件物品为示例，实际需按人数、健康需要和当地指南补足"
+      ],
+      "actions": [
+        "点击水瓶：抬起、向应急包移动、缩入包口并消失",
+        "点击食品盒：同上",
+        "点击手电筒：同上",
+        "点击收音机：同上",
+        "点击哨子：同上"
+      ],
+      "orders": "5! = 120 种正确顺序均可，不以准备时间扣花",
+      "wrong": "点击普通书、玩具或空白处仅轻反馈，不说这些物品永远没用",
+      "end": "包整理好仍留室内；文案提醒应急包只是事前准备，转移不要因收拾而拖延",
+      "visualChecks": [
+        "剪影直接取对应道具原图",
+        "包口与道具落点对齐",
+        "小哨子实际画布可点击面积不小于手机约28px；可用提示辅助",
+        "没有数量或剂量数字"
+      ],
+      "refs": [
+        "kit",
+        "kit2024"
+      ]
+    },
+    {
+      "id": "clear-corridor",
+      "title": "畅通的生命通道",
+      "kind": "prevention",
+      "sources": [
+        28
+      ],
+      "goals": [
+        "box-stored",
+        "chair-stored",
+        "case-stored",
+        "scooter-stored"
+      ],
+      "conditions": [
+        "平日无火、无烟的楼道",
+        "玩家代替成年住户整理轻便的自家物品",
+        "有明确独立室内储物门，不与出口、楼梯间或消防设备相混"
+      ],
+      "actions": [
+        "点击纸箱：抬起后移入自家储物门内消失",
+        "点击折叠椅：移入同一储物空间",
+        "点击空行李箱：滚入储物空间",
+        "点击玩具滑板车：推入储物空间"
+      ],
+      "orders": "4! = 24 种正确顺序均可",
+      "wrong": "点击消防设备、指示标识不移动、不发奖；不鼓励拆消防设施",
+      "end": "整条疏散走道畅通；防火门不被撑开；场景不突然发生火灾",
+      "visualChecks": [
+        "四物件遮挡程度适中且处于实际通行区域",
+        "储物间清晰位于独立门内",
+        "不得把电动自行车移入住宅",
+        "安全出口、消防箱和通路不被HUD挡住"
+      ],
+      "refs": [
+        "corridor",
+        "corridor2"
+      ]
+    },
+    {
+      "id": "lift-wait",
+      "title": "电梯停住了",
+      "kind": "response",
+      "sources": [
+        44
+      ],
+      "goals": [
+        "alarm-contacted",
+        "person-waiting"
+      ],
+      "conditions": [
+        "普通垂直电梯静止困人，无坠落、火烟和伤员",
+        "报警通话按钮工作正常",
+        "人物一直留在轿厢内，侧方等待位置可见"
+      ],
+      "actions": [
+        "点击报警通话按钮：按压回弹、指示灯变化；在一处通话气泡确认位置与人数",
+        "拖动人物至侧方远离门的位置：平稳移动、表情放松但不欢呼"
+      ],
+      "orders": "两种顺序都可；不把先移动后报警判错",
+      "wrong": "尝试撬门：门不打开，人物惊慌，提示不要扒撬轿门；楼层按钮无关反馈",
+      "end": "显示“已联络，安心等待”，门保持关闭；不以快速救出为胜利条件",
+      "visualChecks": [
+        "按钮标记是场景真实面板的一部分",
+        "人物脚底落地，路径全在轿厢内",
+        "等待区不在门缝或井道内",
+        "没有风险倒数或虚构到达时限"
+      ],
+      "refs": [
+        "lift"
+      ]
+    },
+    {
+      "id": "well-call",
+      "title": "井口边的求助",
+      "kind": "response",
+      "sources": [
+        49
+      ],
+      "goals": [
+        "fire-called",
+        "medical-called",
+        "bystander-back"
+      ],
+      "conditions": [
+        "旁观者已在室外外围，无资格装备进入污水井",
+        "井内有人遇险，以非血腥提示说明，不要求玩家靠近查看",
+        "电话是离线模拟，不触发真实拨号、不收集姓名电话定位"
+      ],
+      "actions": [
+        "点击模拟电话上的119：短拨号动效，确认地点和井内遇险情况",
+        "点击120：同样确认急救需要",
+        "拖动旁观者至更远的步道：人物退后、摆手劝阻，不跨越井口"
+      ],
+      "orders": "三项6种顺序均可；不把报警锁在摆锥桶之后",
+      "wrong": "点击井口或拖人到井口：阻止进入并回弹，提示无防护不要下井；井口不冒有色气体假装可目视识毒",
+      "end": "显示“求助已发出，请在外围等待”，井口仍为危险区；绝不“全场安全、伤者治愈”",
+      "visualChecks": [
+        "电话界面与场景物体一体，不另设答案步骤栏",
+        "靠近井口不会发生实际进入动画",
+        "等待区是场景特定位置，不标通用米数安全半径",
+        "错误后仍能完成三项动作"
+      ],
+      "refs": [
+        "confined",
+        "confined2"
+      ]
+    }
+  ]
+}

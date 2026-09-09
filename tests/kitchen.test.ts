@@ -107,7 +107,10 @@ test('lid animation ends exactly at configured pan cover and remains above pan',
   const r = drop(start(), 'lid', 'pan'); const pose = movingItem({ ...r, action: { ...r.action!, age: r.action!.duration } });
   assert.deepEqual(pose?.box, layout.lid);
 });
-test('catalog opens two distinct modular levels', () => { assert.deepEqual(levels.filter(l => l.playable).map(l => l.id), ['typhoon-home', 'oil-fire']); });
+test('catalog retains both original modular levels alongside data-driven additions', () => {
+  assert.deepEqual(levels.filter(l => l.playable && l.engine !== 'configured-v1').map(l => l.id), ['typhoon-home', 'oil-fire']);
+  assert.equal(new Set(levels.map(l=>l.id)).size,levels.length);
+});
 test('gas is a direct click control and never appears in the draggable scene props', () => {
   assert.equal((sceneItems as readonly ItemId[]).includes('gas'), false);
   assert.match(items.gas.detail, /点击/);

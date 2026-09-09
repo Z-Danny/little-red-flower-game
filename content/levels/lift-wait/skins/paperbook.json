@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "id": "paperbook",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "lift-room": {
+      "src": "/levels/transcript-v1/lift-room.webp",
+      "alpha": false
+    },
+    "lift-door": {
+      "src": "/levels/transcript-v1/lift-door.png",
+      "alpha": false
+    },
+    "intercom": {
+      "src": "/levels/transcript-v1/intercom.png",
+      "alpha": true
+    },
+    "bell": {
+      "src": "/levels/transcript-v1/bell.png",
+      "alpha": false
+    },
+    "citizen-worried": {
+      "src": "/levels/transcript-v1/citizen-worried.png",
+      "alpha": true
+    },
+    "citizen-focused": {
+      "src": "/levels/transcript-v1/citizen-focused.png",
+      "alpha": true
+    },
+    "citizen-panicked": {
+      "src": "/levels/transcript-v1/citizen-panicked.png",
+      "alpha": true
+    },
+    "citizen-relieved": {
+      "src": "/levels/transcript-v1/citizen-relieved.png",
+      "alpha": true
+    },
+    "screen-tile": {
+      "src": "/levels/transcript-v1/screen-tile.png",
+      "alpha": false
+    }
+  },
+  "background": "lift-room",
+  "poses": {
+    "door": {
+      "asset": "lift-door",
+      "x": 163,
+      "y": 226,
+      "w": 395,
+      "h": 653,
+      "depth": 1
+    },
+    "panel": {
+      "asset": "intercom",
+      "x": 563,
+      "y": 329,
+      "w": 150,
+      "h": 366.79245283018867,
+      "depth": 2
+    },
+    "bell": {
+      "asset": "bell",
+      "x": 586.2075471698113,
+      "y": 580.3207547169811,
+      "w": 78.67924528301887,
+      "h": 82.64150943396226,
+      "depth": 3
+    },
+    "person": {
+      "asset": "citizen-worried",
+      "x": 327,
+      "y": 596,
+      "w": 172,
+      "h": 449.4193548387097,
+      "depth": 6
+    },
+    "floor-1": {
+      "asset": "screen-tile",
+      "x": 576,
+      "y": 720,
+      "w": 48,
+      "h": 44,
+      "depth": 3
+    },
+    "floor-2": {
+      "asset": "screen-tile",
+      "x": 637,
+      "y": 720,
+      "w": 48,
+      "h": 44,
+      "depth": 3
+    }
+  },
+  "zones": {
+    "wait": {
+      "x": 58,
+      "y": 786,
+      "w": 220,
+      "h": 390
+    },
+    "door": {
+      "x": 163,
+      "y": 226,
+      "w": 395,
+      "h": 530
+    }
+  },
+  "states": [
+    {
+      "object": "person",
+      "when": {
+        "emotion": "worried"
+      },
+      "pose": {
+        "asset": "citizen-worried"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "emotion": "focused"
+      },
+      "pose": {
+        "asset": "citizen-focused"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "emotion": "panicked"
+      },
+      "pose": {
+        "asset": "citizen-panicked"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "emotion": "relieved"
+      },
+      "pose": {
+        "asset": "citizen-relieved"
+      }
+    },
+    {
+      "object": "person",
+      "when": {
+        "all": [
+          "person-waiting"
+        ]
+      },
+      "pose": {
+        "x": 81,
+        "y": 719,
+        "w": 177,
+        "h": 462.48387096774195
+      }
+    }
+  ],
+  "animations": {
+    "call": {
+      "durationMs": 1000,
+      "tracks": [
+        {
+          "object": "bell",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "x": 588.2075471698113,
+              "y": 582.3207547169811,
+              "w": 74.67924528301887,
+              "h": 78.64150943396226
+            },
+            {
+              "at": 1,
+              "x": 586.2075471698113,
+              "y": 580.3207547169811,
+              "w": 78.67924528301887,
+              "h": 82.64150943396226
+            }
+          ]
+        }
+      ]
+    },
+    "wait": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "person",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "x": 203,
+              "y": 655
+            },
+            {
+              "at": 1,
+              "x": 81,
+              "y": 719,
+              "w": 177,
+              "h": 462.48387096774195
+            }
+          ]
+        }
+      ]
+    },
+    "stay-inside": {
+      "durationMs": 700,
+      "tracks": [
+        {
+          "object": "person",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.03
+            },
+            {
+              "at": 0.65,
+              "rotation": 0.03
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [
+    {
+      "object": "panel",
+      "text": "1栋2号梯\n报警通话",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#25473e",
+      "when": {
+        "not": [
+          "alarm-contacted"
+        ]
+      }
+    },
+    {
+      "object": "panel",
+      "text": "已联络\n等候救援",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#25473e",
+      "when": {
+        "all": [
+          "alarm-contacted"
+        ]
+      }
+    },
+    {
+      "object": "floor-1",
+      "text": "1",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 24,
+      "color": "#25473e"
+    },
+    {
+      "object": "floor-2",
+      "text": "2",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 24,
+      "color": "#25473e"
+    }
+  ],
+  "zoneLabels": {
+    "wait": "远离门边 · 留在轿厢内"
+  }
+}

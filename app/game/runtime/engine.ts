@@ -13,7 +13,8 @@ export const enabled = (object: ObjectSpec, run: Run) => object.input !== 'none'
   && !(object.disabledWhen ?? []).some(id => run.resolved.includes(id));
 export function createRun(pack: LevelPackage): Run {
   return { phase: 'playing', resolved: [], action: null, elapsed: 0, risk: pack.rules.risk.initial, mistakes: 0,
-    peakSeen: false, settleAge: 0, reaction: null, reactionMs: 0, boost: 0, notice: null, stars: 0 };
+    peakSeen: false, settleAge: 0, reaction: null, reactionMs: 0, boost: 0,
+    notice: pack.rules.briefing ? { text: pack.rules.briefing, remaining: 5500 } : null, stars: 0 };
 }
 export function findRule(pack: LevelPackage, run: Run, input: Input) {
   const object = pack.rules.objects.find(o => o.id === input.source);
@@ -43,7 +44,7 @@ export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
       if (next.settleAge >= pack.rules.completion.settleMs) next.phase = 'complete';
       return next;
     }
-    next.risk = Math.min(100, run.risk + ms / (pack.rules.risk.seconds * 10));
+    next.risk = pack.rules.risk.mode === 'elapsed' ? 0 : Math.min(100, run.risk + ms / (pack.rules.risk.seconds * 10));
     if (run.action) {
       next.action = { ...run.action, age: run.action.age + ms };
       if (next.action.age >= next.action.duration) {
@@ -52,7 +53,8 @@ export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
         if (rule?.outcome === 'correct') {
           next.resolved = [...new Set([...run.resolved, ...rule.grants])];
           next.reaction = 'focused'; next.reactionMs = 1800;
-          next.risk = Math.max(0, Math.min(100, next.risk + (rule.riskDelta ?? -8)));
+          next.risk = pack.rules.risk.mode === 'elapsed' ? 0 : Math.max(0, Math.min(100, next.risk + (rule.riskDelta ?? -8)));
+          if (rule.feedback) next.notice = { text: rule.feedback, remaining: 4000 };
         }
       }
     }
@@ -71,7 +73,7 @@ export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
   if (!rule) return { ...run, action };
   const danger = rule.outcome === 'danger';
   return { ...run, action, mistakes: run.mistakes + Number(danger),
-    risk: danger ? Math.max(0, Math.min(100, run.risk + (rule.riskDelta ?? 15))) : run.risk,
+    risk: pack.rules.risk.mode === 'elapsed' ? 0 : danger ? Math.max(0, Math.min(100, run.risk + (rule.riskDelta ?? 15))) : run.risk,
     reaction: danger ? 'panicked' : run.reaction, reactionMs: danger ? 2500 : run.reactionMs,
     boost: danger ? Math.min(1, run.boost + .7) : run.boost,
     notice: rule.outcome !== 'correct' && rule.feedback ? { text: rule.feedback, remaining: 2300 } : null };
