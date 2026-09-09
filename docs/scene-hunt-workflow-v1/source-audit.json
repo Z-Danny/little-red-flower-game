@@ -1,0 +1,121 @@
+{
+  "at": "2026-09-09T13:50:29.451Z",
+  "source": "D:\\中关村\\小红花\\小红花游戏",
+  "head": "7541b39cb1da79e7257c9fcf184fbe05c7ea0feb",
+  "dirtyWorktree": false,
+  "meaning": "Current working-tree evidence, not proof that all contents are committed or professionally certified.",
+  "files": [
+    {
+      "path": "app/game/scene-hunt/model.ts",
+      "sha256": "4d45294e9783a18a170d0ba89fa4c82b1a744b6d36e488470a501218ea4bd683"
+    },
+    {
+      "path": "app/game/scene-hunt/schema.ts",
+      "sha256": "0642d8d47a35b1d1d13919cfa34a271598d140704b149f0844b4c2266e355331"
+    },
+    {
+      "path": "app/game/scene-hunt/registry.ts",
+      "sha256": "7ed549523417d9483af5b1e7350356fe7f44aa715801544a14631f7da80bb803"
+    },
+    {
+      "path": "app/game/scene-hunt/sound.ts",
+      "sha256": "cc2f13b0290692fee8e1263f9ed41e8f574bc641d09a0331c24b765fadfe5be2"
+    },
+    {
+      "path": "components/game/scene-hunt/player.tsx",
+      "sha256": "bbbd22dc8fe4ff882c7aff30024041d48f23cff8ce324ed46116a5e90f252f4c"
+    },
+    {
+      "path": "components/game/scene-hunt/renderer.ts",
+      "sha256": "822850803f8a87a49f2356a089db3ea846efbeb1d1d9dacfc660243a746eed57"
+    },
+    {
+      "path": "components/game/scene-hunt/art.ts",
+      "sha256": "ea7d03688a193afe920d332382eba19259c7e5168a55b79e967e396a44967b57"
+    },
+    {
+      "path": "components/game/game-app.tsx",
+      "sha256": "a4bf1410cae9358ad77b96e75b65e57dc0b1a372db80af9cb64f19bd84cd6a38"
+    },
+    {
+      "path": "components/game/level-hub.tsx",
+      "sha256": "1ca7c5a892e79fc64e583cdabf7af4fdb22c671f5075fb0912ea4864d5c83253"
+    },
+    {
+      "path": "app/game/levels.ts",
+      "sha256": "6d189939020021b8d9c6ada53d3e57d54a0eef7406b6bfb278bf04373f505aa6"
+    },
+    {
+      "path": "content/scenes/typhoon-home/rules.json",
+      "sha256": "f53d6a865fc5b5610cf6e956b9b9ab52e403d97d5a06378938b2d2b82cea0f33"
+    },
+    {
+      "path": "content/scenes/typhoon-home/skin.json",
+      "sha256": "2d8c3da8a3e36949a0c2c5046543bc547c689a11efdbbe455a1213dc706916e6"
+    },
+    {
+      "path": "scripts/prepare-typhoon-scene.py",
+      "sha256": "95ea337a60cc8f6ba3daa1ddf9fee0b2673549b1a9a2bdd1c7a920bb4f23b6dd"
+    },
+    {
+      "path": "scripts/check-scene-hunt-art.py",
+      "sha256": "5feb999f59629923fa2b763f851e3a970889c1df24e6eb459fac42bce94ea666"
+    },
+    {
+      "path": "scripts/export-offline.mjs",
+      "sha256": "64d459247755c17713c3eef86968c417531ad69c310b7387839ac048c068ed26"
+    },
+    {
+      "path": "docs/typhoon-immersion-v2/验收记录.md",
+      "sha256": "af0817ee64b12be07a9505495be02713e957b71365f095c81efc51b2c597caa6"
+    }
+  ],
+  "references": [
+    {
+      "source": "public/levels/paperbook-kitchen-v1/room.png",
+      "kit": "reference/style-reference.png",
+      "sha256": "cf8eba0554fdc08191817f050ef66306afa04e304cd92d28dfb1395871e03cca"
+    },
+    {
+      "source": "art-source/typhoon-immersion-v2/unsafe.png",
+      "kit": "reference/unsafe.png",
+      "sha256": "dd578b1f1f35e788b88fea84621ff67be89be955bc4d68231296f84dfadbdcbd"
+    },
+    {
+      "source": "art-source/typhoon-immersion-v2/mask-generated.png",
+      "kit": "reference/mask-generated.png",
+      "sha256": "1b57301e97e68047ae5a3111e64da0021173430e985eda1d1a9ef902168623e8"
+    },
+    {
+      "source": "art-source/typhoon-immersion-v2/clean-generated.png",
+      "kit": "reference/clean-generated.png",
+      "sha256": "47537828eb8c12557aff9a2cfe91abe1439fe1473a37df90811ad1242a501d9a"
+    },
+    {
+      "source": "art-source/typhoon-immersion-v2/safe.png",
+      "kit": "reference/safe.png",
+      "sha256": "c10d48526261cd5db074ad7c22861553e16e74b66e28baf47c7332ade52403ba"
+    },
+    {
+      "source": "public/levels/typhoon-scene-v3/targets-mask.png",
+      "kit": "reference/targets-mask.png",
+      "sha256": "85d0b77f318c8f60e404e43601957479ef3fb819d89d4ee3e11f2585bbfca126"
+    },
+    {
+      "source": "public/levels/typhoon-scene-v3/family.png",
+      "kit": "reference/family.png",
+      "sha256": "1b3cd33ced7df67a8c7367d54f40a3710dcc7144bea71a8fef932cd2383aae2c"
+    },
+    {
+      "source": "art-source/typhoon-immersion-v2/mask-proof.png",
+      "kit": "reference/mask-proof.png",
+      "sha256": "9a70abdb66236c5a5aed0c60810411877c90ee81ae77ffe3eba2a8a37e53f1cd"
+    },
+    {
+      "source": "art-source/typhoon-immersion-v2/prompts.json",
+      "kit": "prompts.original.json",
+      "sha256": "e9e62a66ce818a80132a382189c6d398cdc8258307054ebbdffed0c599cf48ef"
+    }
+  ],
+  "offlineBefore": "34c155d175e8176f116021aeb5b537a9e8be152f533d6faf67f66d10789e8fc0"
+}

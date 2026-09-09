@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "at": "2026-09-09T13:55:41.709Z",
+  "scope": "Reusable documentation and prompt-text compiler; no generated game",
+  "files": [
+    {
+      "path": "01_台风关实际实现.md",
+      "bytes": 9373,
+      "sha256": "9b88d4d3a34ea3c4d87330d38d33c39759043dcf09a2d78af005558cc1c79e27"
+    },
+    {
+      "path": "02_逐步生产与验收.md",
+      "bytes": 9214,
+      "sha256": "b32213feca32420ab8b1c9af0f94ef674ba2e02eab6b7139198118438e00eb62"
+    },
+    {
+      "path": "generate-prompts.mjs",
+      "bytes": 13310,
+      "sha256": "1dbe56e6ec5da5f84a9bbe1342af969ba7b8ff449244a634e768df7cc5fb397b"
+    },
+    {
+      "path": "production.spec.example.json",
+      "bytes": 6039,
+      "sha256": "07372469521b84171fd8e72300a6fa707d7ada46934cff2d43d67d498fca489c"
+    },
+    {
+      "path": "prompts.original.json",
+      "bytes": 5944,
+      "sha256": "e9e62a66ce818a80132a382189c6d398cdc8258307054ebbdffed0c599cf48ef"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5610,
+      "sha256": "ce14d9633672b5fde49aed79a0698c47aa198c58142c426919c7c0cb93010b0f"
+    },
+    {
+      "path": "reference/clean-generated.png",
+      "bytes": 2124179,
+      "sha256": "47537828eb8c12557aff9a2cfe91abe1439fe1473a37df90811ad1242a501d9a"
+    },
+    {
+      "path": "reference/family.png",
+      "bytes": 170933,
+      "sha256": "1b3cd33ced7df67a8c7367d54f40a3710dcc7144bea71a8fef932cd2383aae2c"
+    },
+    {
+      "path": "reference/mask-generated.png",
+      "bytes": 622860,
+      "sha256": "1b57301e97e68047ae5a3111e64da0021173430e985eda1d1a9ef902168623e8"
+    },
+    {
+      "path": "reference/mask-proof.png",
+      "bytes": 1498342,
+      "sha256": "9a70abdb66236c5a5aed0c60810411877c90ee81ae77ffe3eba2a8a37e53f1cd"
+    },
+    {
+      "path": "reference/safe.png",
+      "bytes": 2185632,
+      "sha256": "c10d48526261cd5db074ad7c22861553e16e74b66e28baf47c7332ade52403ba"
+    },
+    {
+      "path": "reference/style-reference.png",
+      "bytes": 1879350,
+      "sha256": "cf8eba0554fdc08191817f050ef66306afa04e304cd92d28dfb1395871e03cca"
+    },
+    {
+      "path": "reference/targets-mask.png",
+      "bytes": 6758,
+      "sha256": "85d0b77f318c8f60e404e43601957479ef3fb819d89d4ee3e11f2585bbfca126"
+    },
+    {
+      "path": "reference/unsafe.png",
+      "bytes": 2180203,
+      "sha256": "dd578b1f1f35e788b88fea84621ff67be89be955bc4d68231296f84dfadbdcbd"
+    },
+    {
+      "path": "source-audit.json",
+      "bytes": 4564,
+      "sha256": "43ca538208f2a5c125dce24ab0deb90e2152cd568da1bfed74e8055dbe06d07e"
+    },
+    {
+      "path": "test-workflow.mjs",
+      "bytes": 3078,
+      "sha256": "d4d49e4ea2fa6cc4ab2485704bac79769d1a05c9124c6a249886a4eeb5e3030d"
+    },
+    {
+      "path": "工具校验日志.txt",
+      "bytes": 1105,
+      "sha256": "a1a50fe57da3d9084a70ab2ba78d20fd6e72087831d810bd223c07ff41fca4b7"
+    },
+    {
+      "path": "工具校验结果.json",
+      "bytes": 130,
+      "sha256": "67b14806d9860a07dd85fc56f9a2a299a41f5f48830c1e4f4baeb3fc8583e3ef"
+    },
+    {
+      "path": "示例输出/01_内容复核.md",
+      "bytes": 1895,
+      "sha256": "f7aa9643609ce0ab6fa19739191925e85f45d65ef595b21a3f36899da7577dae"
+    },
+    {
+      "path": "示例输出/02_完整含隐患场景.md",
+      "bytes": 2736,
+      "sha256": "a6f1d4bbf9a859ac4f08f7b75ce115dae16ec7992c6145957f4fa3a86ab42afe"
+    },
+    {
+      "path": "示例输出/03_局部纠错_仅需要时.md",
+      "bytes": 834,
+      "sha256": "d4350eb8893ecb6b828e5800b32b19e4236763884e62893b45a6448bfc564a2f"
+    },
+    {
+      "path": "示例输出/04_同构ID蒙版.md",
+      "bytes": 1928,
+      "sha256": "174ed86101ea2e966efabbccc9a446533b510ccd71201ffe74bd660c47f4db37"
+    },
+    {
+      "path": "示例输出/05_人物补空底图.md",
+      "bytes": 1691,
+      "sha256": "2a8ab88ce2a1124fda0643a3427bc50155524948fc6f4f92a0b214a4fb0352da"
+    },
+    {
+      "path": "示例输出/06_完整安全结局.md",
+      "bytes": 1446,
+      "sha256": "daaccd5902b38d1acdc8033a540ea85e475a07f767edd057135cec4c84ed99ee"
+    },
+    {
+      "path": "示例输出/07_程序接入.md",
+      "bytes": 1703,
+      "sha256": "dccbea76f2d4713ca59293d2a10fc2d3d8600add67b6050a86afbf7a16641cc7"
+    },
+    {
+      "path": "示例输出/08_验收交付.md",
+      "bytes": 1355,
+      "sha256": "31f83615b434ee9ca5458dd1a5a03faf2ff0578c28f2108ee8144e244e405ee1"
+    },
+    {
+      "path": "示例输出/全部提示词.md",
+      "bytes": 13899,
+      "sha256": "2a7ce57f83ef6c4530697e7133dc044c5a9e77674b4c03133ffe19c0fa4db263"
+    },
+    {
+      "path": "示例输出/输入参数快照.json",
+      "bytes": 6039,
+      "sha256": "07372469521b84171fd8e72300a6fa707d7ada46934cff2d43d67d498fca489c"
+    }
+  ]
+}
