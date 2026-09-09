@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { getLevel } from '../app/game/levels';
+import { assets } from '../app/game/typhoon/config';
 import { completedGoalIds, decideObjective, isLevelComplete } from '../app/game/level-rules';
 
 const level = getLevel('typhoon-home');
@@ -9,7 +10,7 @@ if (!level) throw new Error('typhoon-home level is missing');
 void test('first level exposes five visible goals and a clean layered scene', () => {
   assert.equal(level.playable, true);
   assert.equal(level.goals.length, 5);
-  assert.equal(level.previewImage, '/levels/typhoon-v2/room.png');
+  assert.equal(level.previewImage, assets.room);
   assert.equal(level.safeImage, undefined);
 });
 

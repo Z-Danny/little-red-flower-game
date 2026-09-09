@@ -6,114 +6,114 @@
     "height": 1440
   },
   "assets": {
-    "room": "/levels/kitchen-v1/room-portrait-v3.png",
-    "pan": "/levels/kitchen-v1/pan.png",
-    "lid": "/levels/kitchen-v1/lid.png",
-    "water": "/levels/kitchen-v1/water.png",
-    "cloth": "/levels/kitchen-v1/cloth.png",
-    "extinguisher": "/levels/kitchen-v1/extinguisher.png",
-    "gas": "/levels/kitchen-v1/gas.png",
-    "plate": "/levels/kitchen-v1/plate.png",
-    "knife": "/levels/kitchen-v1/knife.png",
-    "flame": "/levels/kitchen-v1/flame.png",
-    "worried": "/levels/kitchen-v1/worried.png",
-    "panicked": "/levels/kitchen-v1/panicked.png",
-    "focused": "/levels/kitchen-v1/focused.png",
-    "relieved": "/levels/kitchen-v1/relieved.png"
+    "room": "/levels/paperbook-kitchen-v1/room.png",
+    "pan": "/levels/paperbook-kitchen-v1/pan.png",
+    "lid": "/levels/paperbook-kitchen-v1/lid.png",
+    "water": "/levels/paperbook-kitchen-v1/water.png",
+    "cloth": "/levels/paperbook-kitchen-v1/cloth.png",
+    "extinguisher": "/levels/paperbook-kitchen-v1/extinguisher.png",
+    "gas": "/levels/paperbook-kitchen-v1/gas.png",
+    "plate": "/levels/paperbook-kitchen-v1/plate.png",
+    "knife": "/levels/paperbook-kitchen-v1/knife.png",
+    "flame": "/levels/paperbook-kitchen-v1/flame.png",
+    "worried": "/levels/paperbook-kitchen-v1/worried.png",
+    "panicked": "/levels/paperbook-kitchen-v1/panicked.png",
+    "focused": "/levels/paperbook-kitchen-v1/focused.png",
+    "relieved": "/levels/paperbook-kitchen-v1/relieved.png"
   },
   "layout": {
     "pan": {
-      "x": 156,
-      "y": 578,
-      "w": 258,
-      "h": 96
+      "x": 146,
+      "y": 470,
+      "w": 242,
+      "h": 90
     },
     "lid": {
-      "x": 156,
-      "y": 564,
-      "w": 188,
-      "h": 82
+      "x": 146,
+      "y": 456,
+      "w": 176,
+      "h": 78
     },
     "gas": {
       "x": 231,
-      "y": 674,
-      "w": 48,
-      "h": 48
+      "y": 578,
+      "w": 40,
+      "h": 40
     },
     "person": {
-      "x": 305,
-      "y": 533,
-      "w": 438.67,
-      "h": 560
+      "x": 395,
+      "y": 400,
+      "w": 360.33,
+      "h": 460
     },
     "evacuated": {
-      "x": 484,
-      "y": 540,
-      "w": 260.07,
-      "h": 332
+      "x": 485,
+      "y": 347,
+      "w": 235,
+      "h": 300
     },
     "flame": {
-      "x": 172,
-      "y": 426,
-      "w": 162,
-      "h": 202
+      "x": 160,
+      "y": 332,
+      "w": 152,
+      "h": 188
     },
     "props": {
       "lid": {
-        "x": 85,
-        "y": 911,
+        "x": 96,
+        "y": 927,
         "w": 188,
         "h": 89
       },
       "water": {
-        "x": 297,
-        "y": 880,
+        "x": 355,
+        "y": 906,
         "w": 77,
         "h": 68
       },
       "cloth": {
-        "x": 392,
-        "y": 629,
-        "w": 87,
-        "h": 50
+        "x": 397,
+        "y": 518,
+        "w": 82,
+        "h": 42
       },
       "extinguisher": {
         "x": 610,
-        "y": 1024,
-        "w": 57,
-        "h": 96
+        "y": 755,
+        "w": 58,
+        "h": 100
       },
       "plate": {
-        "x": 103,
-        "y": 1100,
+        "x": 93,
+        "y": 1102,
         "w": 119,
         "h": 64
       },
       "knife": {
-        "x": 224,
-        "y": 1025,
+        "x": 272,
+        "y": 1036,
         "w": 97,
         "h": 90
       }
     },
     "zones": {
       "pan": {
-        "x": 142,
-        "y": 559,
-        "w": 285,
-        "h": 130
+        "x": 135,
+        "y": 458,
+        "w": 265,
+        "h": 118
       },
       "off": {
         "x": 231,
-        "y": 674,
-        "w": 48,
-        "h": 48
+        "y": 578,
+        "w": 40,
+        "h": 40
       },
       "exit": {
-        "x": 552,
-        "y": 621,
-        "w": 125,
-        "h": 255
+        "x": 530,
+        "y": 450,
+        "w": 150,
+        "h": 240
       }
     }
   },

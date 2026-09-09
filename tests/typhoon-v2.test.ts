@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
+import skin from '../content/presets/typhoon/skin.json';
 import { actions, assets, goals, level, placement, powerVisuals, type ActionId } from '../app/game/typhoon/config';
 import { createRun, reduceRun, completedCount, hintTarget, type Run } from '../app/game/typhoon/model';
 import { sceneSprites, localPoint, powerStatus, worldPoint } from '../app/game/typhoon/animation';
@@ -10,7 +11,11 @@ function complete(run: Run, id: ActionId) { return tick(reduceRun(run, { type: '
 
 test('five goals share actual alpha sprites with their silhouette cards', () => {
   assert.equal(goals.length, 5);
-  for (const id of goals) assert.match(assets[actions[id].sprite], /typhoon-v2\/.+\.png$/);
+  for (const id of goals) {
+    const key = actions[id].sprite;
+    assert.equal(assets[key], skin.assets[key]);
+    assert.match(assets[key], /^\/levels\/[^/]+\/.+\.png$/);
+  }
   assert.equal(actions.plug.sprite, 'powerstrip');
   assert.equal(new Set(goals.map(id => actions[id].sprite)).size, 5);
 });

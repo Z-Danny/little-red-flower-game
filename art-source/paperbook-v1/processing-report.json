@@ -1,0 +1,272 @@
+[
+  {
+    "id": "typhoon-room",
+    "mode": "opaque-background",
+    "size": [
+      1086,
+      1448
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\room.png"
+  },
+  {
+    "id": "kitchen-worried",
+    "mode": "baked-checker",
+    "size": [
+      470,
+      600
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\worried.png"
+  },
+  {
+    "id": "kitchen-pan",
+    "mode": "baked-checker",
+    "size": [
+      456,
+      163
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\pan.png"
+  },
+  {
+    "id": "kitchen-lid",
+    "mode": "black-matte",
+    "size": [
+      344,
+      163
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\lid.png"
+  },
+  {
+    "id": "typhoon-window",
+    "mode": "baked-checker",
+    "size": [
+      254,
+      359
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\window.png"
+  },
+  {
+    "id": "kitchen-panicked",
+    "mode": "baked-checker",
+    "size": [
+      470,
+      600
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\panicked.png"
+  },
+  {
+    "id": "kitchen-focused",
+    "mode": "chroma-magenta",
+    "size": [
+      470,
+      600
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\focused.png"
+  },
+  {
+    "id": "kitchen-relieved",
+    "mode": "chroma-magenta",
+    "size": [
+      470,
+      600
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\relieved.png"
+  },
+  {
+    "id": "typhoon-family-seated",
+    "mode": "baked-checker",
+    "size": [
+      453,
+      794
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\family-seated.png"
+  },
+  {
+    "id": "typhoon-family-standing",
+    "mode": "baked-checker",
+    "size": [
+      379,
+      902
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\family-standing.png"
+  },
+  {
+    "id": "kitchen-water",
+    "mode": "chroma-magenta",
+    "size": [
+      226,
+      200
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\water.png"
+  },
+  {
+    "id": "kitchen-cloth",
+    "mode": "baked-checker",
+    "size": [
+      249,
+      163
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\cloth.png"
+  },
+  {
+    "id": "kitchen-extinguisher",
+    "mode": "baked-checker",
+    "size": [
+      201,
+      345
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\extinguisher.png"
+  },
+  {
+    "id": "kitchen-gas",
+    "mode": "baked-checker",
+    "size": [
+      211,
+      211
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\gas.png"
+  },
+  {
+    "id": "kitchen-plate",
+    "mode": "baked-checker",
+    "size": [
+      369,
+      198
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\plate.png"
+  },
+  {
+    "id": "kitchen-flame",
+    "mode": "baked-checker",
+    "size": [
+      312,
+      338
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\flame.png"
+  },
+  {
+    "id": "typhoon-plant",
+    "mode": "baked-checker",
+    "size": [
+      290,
+      321
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\plant.png"
+  },
+  {
+    "id": "typhoon-rail",
+    "mode": "baked-checker",
+    "size": [
+      394,
+      277
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\rail.png"
+  },
+  {
+    "id": "typhoon-cabinet",
+    "mode": "black-matte",
+    "size": [
+      280,
+      375
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\cabinet.png"
+  },
+  {
+    "id": "typhoon-umbrella",
+    "mode": "baked-checker",
+    "size": [
+      280,
+      282
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\umbrella.png"
+  },
+  {
+    "id": "typhoon-cushion",
+    "mode": "baked-checker",
+    "size": [
+      410,
+      209
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\cushion.png"
+  },
+  {
+    "id": "typhoon-powerstrip",
+    "mode": "black-matte",
+    "size": [
+      360,
+      135
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\powerstrip.png"
+  },
+  {
+    "id": "typhoon-plug",
+    "mode": "black-matte",
+    "size": [
+      232,
+      219
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\plug.png"
+  },
+  {
+    "id": "typhoon-cable",
+    "mode": "baked-checker",
+    "size": [
+      1643,
+      698
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\cable.png"
+  },
+  {
+    "id": "typhoon-socket",
+    "mode": "baked-checker",
+    "size": [
+      381,
+      375
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\socket.png"
+  },
+  {
+    "id": "typhoon-latch-open",
+    "mode": "baked-checker",
+    "size": [
+      342,
+      390
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\latch-open.png"
+  },
+  {
+    "id": "typhoon-latch-closed",
+    "mode": "baked-checker",
+    "size": [
+      133,
+      412
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\latch-closed.png"
+  },
+  {
+    "id": "typhoon-strap",
+    "mode": "baked-checker",
+    "size": [
+      475,
+      143
+    ],
+    "path": "public\\levels\\paperbook-typhoon-v1\\strap.png"
+  },
+  {
+    "id": "kitchen-room",
+    "mode": "opaque-background",
+    "size": [
+      887,
+      1774
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\room.png"
+  },
+  {
+    "id": "kitchen-knife",
+    "mode": "chroma-magenta",
+    "size": [
+      315,
+      312
+    ],
+    "path": "public\\levels\\paperbook-kitchen-v1\\knife.png"
+  }
+]

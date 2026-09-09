@@ -1,0 +1,45 @@
+/* Leaderboard skin. Standalone from level layouts, also bundled into the offline HTML. */
+.lb-page{color:#304b42;background:radial-gradient(ellipse at 90% 3%,#edddbc80,transparent 42%),#f8f1e4;padding:0 24px 30px;min-height:100svh}
+.lb-page button,.hub-leaderboard-link{font:inherit;cursor:pointer}
+.lb-page button:disabled{opacity:.5;cursor:default}
+.lb-page button:focus-visible,.lb-page input:focus-visible,.hub-leaderboard-link:focus-visible{outline:3px solid #bc6b43;outline-offset:4px}
+.lb-page h1:focus{outline:none}
+.lb-header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:22px 0 10px;font-size:13px;color:#817b68}
+.lb-icon{display:inline-grid;place-items:center;width:40px;height:40px;border:1px solid #d9cfb8;background:#fffaf080;border-radius:50%;flex-shrink:0}
+.lb-icon svg{width:19px;height:19px}
+.lb-local-badge{font-size:11px;letter-spacing:1px;padding:5px 10px;border:1px solid #d9cfb8;border-radius:20px;color:#466f60}
+.lb-hero{position:relative;text-align:center;padding:12px 0 25px}
+.lb-hero-flower{display:grid;place-items:center;margin:0 auto 14px;width:68px;height:68px;border-radius:50%;color:#d9604f;background:#efd9bf;box-shadow:0 0 0 6px #efddbf50}
+.lb-hero-flower svg{width:39px;height:39px;stroke-width:1.5;fill:#d9604f12}
+.lb-eyebrow{font-size:11px;letter-spacing:2px;color:#968866}
+.lb-hero h1{font-family:"STKaiti","KaiTi",serif;font-size:32px;letter-spacing:3px;margin:7px 0 9px;font-weight:700;color:#294d41}
+.lb-hero>p{font-size:12px;color:#8b8673;margin:0}
+.lb-hero-meta{display:flex;align-items:center;justify-content:center;gap:15px;font-size:11px;color:#807b66;margin:18px 0 0}
+.lb-hero-meta span{display:flex;align-items:center;gap:6px}.lb-hero-meta svg{width:14px;height:14px;color:#b69a54}.lb-hero-meta i{width:1px;height:12px;background:#d8c9ae}
+.lb-mine{padding:17px 18px 13px;background:#345b4f;border-radius:18px;color:#fff3da;box-shadow:0 7px 20px #23372c12}
+.lb-mine-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#d0d7bb}
+.lb-mine-top button{border:0;background:none;color:inherit;font-size:11px;display:flex;align-items:center;gap:5px;padding:5px 0}.lb-mine-top svg{width:12px;height:12px}
+.lb-mine-body{display:flex;align-items:center;gap:12px;padding:12px 0}
+.lb-avatar{width:46px;height:46px;display:grid;place-items:center;flex-shrink:0;border-radius:50%;background:#c1c7a4;color:#34594b;font-weight:700;font-size:22px;border:3px solid #6a8470}
+.lb-mine-identity{min-width:0;flex:1}.lb-mine-identity strong{font-size:17px;display:block;overflow-wrap:anywhere}.lb-mine-identity>span{display:flex;align-items:center;gap:3px;font-size:11px;color:#c4cdbb;margin-top:4px;overflow-wrap:anywhere}.lb-mine-identity svg{width:12px;height:12px;flex-shrink:0}
+.lb-mine-score{text-align:right;flex-shrink:0;min-width:45px}.lb-mine-score strong{font-size:30px;line-height:1;display:flex;align-items:center;gap:5px;color:#ffe7b8}.lb-mine-score svg{width:22px;height:22px;color:#efaa80}.lb-mine-score span{font-size:10px;display:block;margin-top:7px;color:#d1d9c2}
+.lb-mine>p{font-size:11px;padding-top:10px;border-top:1px solid #cfdbc02a;color:#ccd4bf;margin:0}
+.lb-list-section{margin-top:26px}.lb-list-title,.lb-editor-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.lb-list-title h2,.lb-editor-title h2{font-size:16px;margin:0;font-weight:700}.lb-list-title h2 small{font-size:11px;color:#8a856e;margin-left:4px;font-weight:400}
+.lb-list-title>button{display:flex;align-items:center;gap:4px;border:0;background:transparent;color:#587562;font-size:12px;padding:8px 0}.lb-list-title svg{width:15px;height:15px}
+.lb-table-wrap{border:1px solid #e3d6bc;border-radius:14px;overflow:hidden;background:#fffcf5a0}
+.lb-table{width:100%;border-collapse:collapse;table-layout:fixed;text-align:left;font-size:13px}
+.lb-table th{background:#eee5d3;color:#92856b;font-weight:400;font-size:11px;padding:11px 5px}.lb-table th:first-child{width:49px;text-align:center}.lb-table th:nth-child(3){width:68px;text-align:right}.lb-table th:last-child{width:32px}
+.lb-table td{height:72px;border-bottom:1px solid #e7ddc955;padding:10px 5px}.lb-table tr:last-child td{border-bottom:0}.lb-current-row{background:#e6ead873}
+.lb-rank{display:flex;align-items:center;justify-content:center;gap:2px;color:#8e907c;font-size:16px;font-weight:700;font-variant-numeric:tabular-nums}.lb-rank svg{width:12px;height:12px}.lb-rank-1{color:#b88633}.lb-rank-2{color:#728c87}.lb-rank-3{color:#b08567}.lb-rank-none{color:#bfb7a3;font-weight:400}
+.lb-row-name{font-size:13px;font-weight:600;overflow-wrap:anywhere;line-height:1.5}.lb-row-name small{display:inline-block;font-size:9px;vertical-align:middle;color:#5d8064;border:1px solid #b7c8ae;border-radius:4px;padding:0 3px;margin-left:6px;font-weight:400}
+.lb-row-region{font-size:10px;color:#96917e;margin-top:4px;overflow-wrap:anywhere}.lb-row-flowers{display:flex;align-items:center;justify-content:flex-end;gap:5px;font-size:20px;color:#be6553;font-weight:600;font-variant-numeric:tabular-nums}.lb-row-flowers svg{width:17px;height:17px;stroke-width:1.8}
+.lb-switch{display:grid;place-items:center;width:30px;height:48px;margin-left:-4px;border:0;background:transparent;color:#939a81}.lb-switch svg{width:17px;height:17px}.lb-current-dot{display:block;background:#6b9076;width:5px;height:5px;border-radius:50%;margin:auto}
+.lb-invite{font-size:11px;text-align:center;color:#a2977d;margin:15px 0 0}.lb-editor{padding:18px;border:1px solid #d8cdb5;background:#fffaf0;border-radius:16px;margin-top:18px}.lb-editor-title .lb-icon{height:30px;width:30px}.lb-editor label{display:block;font-size:12px;margin:15px 0 7px}.lb-editor label small{font-size:10px;color:#94886f;margin-left:8px}.lb-editor input{width:100%;box-sizing:border-box;background:#faf5e9;border:1px solid #daceb5;border-radius:9px;padding:11px 12px;font:inherit;font-size:16px;color:#304b42}.lb-editor input::placeholder{color:#b3a68c;font-size:12px}.lb-editor form>p{font-size:10px;color:#96886f;line-height:1.7;margin:10px 0}
+.lb-primary,.lb-play{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 16px;border-radius:10px;border:0;background:#3e6655;color:#fff0d2;font-size:13px;min-height:46px}.lb-play{margin-top:20px}.lb-play svg{width:16px;height:16px}
+.lb-error,.lb-editor form>.lb-error{color:#ae493a;background:#fce6dd;font-size:12px;padding:12px;border-radius:9px}.lb-warning{font-size:12px;color:#896332;background:#faeccb;padding:12px;border-radius:9px;margin-top:14px}.lb-announcement{font-size:12px;color:#45664e;min-height:0;margin:12px 0 0}.lb-announcement:empty{display:none}
+.lb-rules{border-top:1px solid #dfd2b8;margin-top:24px;padding-top:15px}.lb-rules h2{font-size:12px;color:#8d8065;margin:0 0 8px}.lb-rules p{font-size:10px;line-height:1.9;color:#a3977c;margin:7px 0}
+.lb-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hub-leaderboard-link{display:flex;align-items:center;gap:10px;width:calc(100% - 40px);margin:0 20px 16px;padding:11px 13px;border:1px solid #d6c7a5;border-radius:12px;background:#efe4cc;color:#56694f;text-align:left}.hub-leaderboard-link>svg{width:22px;height:22px;color:#b48a43;flex-shrink:0}.hub-leaderboard-link>span{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}.hub-leaderboard-link strong{font-size:13px;font-weight:600}.hub-leaderboard-link small{font-size:10px;color:#9d8b67;overflow-wrap:anywhere}.hub-leaderboard-link em{font-size:10px;font-style:normal;border:1px solid #d8c7a5;padding:3px 6px;border-radius:12px;flex-shrink:0}.hub-leaderboard-link>svg:last-child{width:15px;height:15px;color:#a3916f}
+.game-save-notice{position:fixed;z-index:90;bottom:12px;left:50%;transform:translateX(-50%);width:min(90%,440px);padding:10px 14px;border-radius:10px;background:#fff1d9;color:#865330;font-size:12px;box-shadow:0 2px 10px #0002}
+.game-loading{display:grid;place-content:center;text-align:center;color:#7b8061;padding:30px;gap:15px}
+@media(max-width:360px){.lb-page{padding-left:16px;padding-right:16px}.lb-hero h1{font-size:28px}.lb-mine{padding:14px}.lb-avatar{width:38px;height:38px}.lb-mine-identity strong{font-size:15px}.lb-mine-body{gap:8px}.lb-table th:first-child{width:41px}.lb-table th:nth-child(3){width:60px}}

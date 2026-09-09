@@ -42,6 +42,7 @@ let css = readFileSync(join(root, 'app', 'globals.css'), 'utf8')
 css += '\n' + readFileSync(join(root, 'app', 'typhoon.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'kitchen.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'configured.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'leaderboard.css'), 'utf8');
 // The game components use authored CSS, not Tailwind utility classes.
 css = 'html{line-height:1.5;-webkit-text-size-adjust:100%}svg{display:block;vertical-align:middle}button{color:inherit}button:disabled{cursor:default}\n' + css;
 
@@ -59,6 +60,7 @@ for (const assetUrl of assetUrls) {
 new Script(javascript, { filename: 'offline-game.js' });
 assert.ok(!/^\s*(?:import|export)\s/m.test(javascript), '离线脚本不能保留模块导入。');
 assert.ok(!/@import\s/.test(css), '离线样式不能保留外部导入。');
+assert.ok(css.includes('.lb-page') && javascript.includes('little-red-flower-leaderboard-v1'), '离线版必须包含排行榜及其样式。');
 assert.ok(!/url\(\s*['"]?(?:https?:|\/levels\/|\/emergency-home)/i.test(css), '离线样式不能依赖外部图片。');
 assert.ok(!/\/levels\/[\w/.-]+\.(?:png|webp)/.test(javascript), '关卡图片必须内嵌。');
 

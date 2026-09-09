@@ -6,22 +6,22 @@
     "height": 960
   },
   "assets": {
-    "room": "/levels/typhoon-v2/room.png",
-    "plant": "/levels/typhoon-v2/plant.png",
-    "window": "/levels/typhoon-v2/window.png",
-    "rail": "/levels/typhoon-v2/rail.png",
-    "cabinet": "/levels/typhoon-v2/cabinet.png",
-    "umbrella": "/levels/typhoon-v2/umbrella.png",
-    "cushion": "/levels/typhoon-v2/cushion.png",
-    "powerstrip": "/levels/typhoon-v2/powerstrip.png",
-    "plug": "/levels/typhoon-v2/plug.png",
-    "cable": "/levels/typhoon-v2/cable.png",
-    "socket": "/levels/typhoon-v2/socket.png",
-    "latchOpen": "/levels/typhoon-v2/latch-open.png",
-    "latchClosed": "/levels/typhoon-v2/latch-closed.png",
-    "strap": "/levels/typhoon-v2/strap.png",
-    "familyStanding": "/levels/typhoon-v2/family-standing.png",
-    "familySeated": "/levels/typhoon-v2/family-seated.png"
+    "room": "/levels/paperbook-typhoon-v1/room.png",
+    "plant": "/levels/paperbook-typhoon-v1/plant.png",
+    "window": "/levels/paperbook-typhoon-v1/window.png",
+    "rail": "/levels/paperbook-typhoon-v1/rail.png",
+    "cabinet": "/levels/paperbook-typhoon-v1/cabinet.png",
+    "umbrella": "/levels/paperbook-typhoon-v1/umbrella.png",
+    "cushion": "/levels/paperbook-typhoon-v1/cushion.png",
+    "powerstrip": "/levels/paperbook-typhoon-v1/powerstrip.png",
+    "plug": "/levels/paperbook-typhoon-v1/plug.png",
+    "cable": "/levels/paperbook-typhoon-v1/cable.png",
+    "socket": "/levels/paperbook-typhoon-v1/socket.png",
+    "latchOpen": "/levels/paperbook-typhoon-v1/latch-open.png",
+    "latchClosed": "/levels/paperbook-typhoon-v1/latch-closed.png",
+    "strap": "/levels/paperbook-typhoon-v1/strap.png",
+    "familyStanding": "/levels/paperbook-typhoon-v1/family-standing.png",
+    "familySeated": "/levels/paperbook-typhoon-v1/family-seated.png"
   },
   "placement": {
     "window": {
@@ -156,10 +156,10 @@
     "insertedVisibleWidth": 0.735,
     "withdrawalDistance": 44,
     "indicator": {
-      "x": 0.846,
-      "y": 0.345,
-      "w": 0.058,
-      "h": 0.18
+      "x": 0.836,
+      "y": 0.333,
+      "w": 0.073,
+      "h": 0.224
     },
     "connected": {
       "color": "#36ce7a",
