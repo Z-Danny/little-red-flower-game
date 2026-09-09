@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/typhoon-scene-v3/scene.webp",
+  "safe": "/levels/typhoon-scene-v3/safe.webp",
+  "clean": "/levels/typhoon-scene-v3/clean.webp",
+  "mask": "/levels/typhoon-scene-v3/targets-mask.png",
+  "family": "/levels/typhoon-scene-v3/family.png",
+  "familyBox": {
+    "x": 393,
+    "y": 357,
+    "w": 197,
+    "h": 477
+  },
+  "outside": {
+    "x": 225,
+    "y": 79,
+    "w": 323,
+    "h": 452
+  },
+  "entry": {
+    "x": 235,
+    "y": 511,
+    "w": 166,
+    "h": 109
+  },
+  "targets": {
+    "plant": {
+      "color": [255, 0, 0],
+      "bounds": {
+        "x": 431,
+        "y": 250,
+        "w": 80,
+        "h": 108
+      },
+      "icon": "/levels/typhoon-scene-v3/plant-icon.png"
+    },
+    "window": {
+      "color": [0, 255, 0],
+      "bounds": {
+        "x": 105,
+        "y": 44,
+        "w": 117,
+        "h": 523
+      },
+      "icon": "/levels/typhoon-scene-v3/window-icon.png"
+    },
+    "rail": {
+      "color": [0, 0, 255],
+      "bounds": {
+        "x": 222,
+        "y": 158,
+        "w": 109,
+        "h": 190
+      },
+      "icon": "/levels/typhoon-scene-v3/rail-icon.png"
+    },
+    "powerstrip": {
+      "color": [255, 255, 0],
+      "bounds": {
+        "x": 127,
+        "y": 984,
+        "w": 132,
+        "h": 78
+      },
+      "icon": "/levels/typhoon-scene-v3/powerstrip-icon.png"
+    },
+    "cabinet": {
+      "color": [255, 0, 255],
+      "bounds": {
+        "x": 585,
+        "y": 175,
+        "w": 66,
+        "h": 327
+      },
+      "icon": "/levels/typhoon-scene-v3/cabinet-icon.png"
+    }
+  }
+}

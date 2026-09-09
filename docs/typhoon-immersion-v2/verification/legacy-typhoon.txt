@@ -1,0 +1,36 @@
+✔ five goals share actual alpha sprites with their silhouette cards (1.8037ms)
+✔ every action lasts 0.5–1.5 seconds and only commits at its end (1.1543ms)
+✔ intro cannot award progress, start risk, or accept hidden controls (0.4247ms)
+✔ double taps cannot overlap treatments or create duplicated goals (0.1501ms)
+✔ cushion is a prerequisite, not one of the five goals (0.3063ms)
+✔ wrong clicks do not increase risk or take flowers (0.16ms)
+✔ unknown action names and prototype keys cannot crash or award progress (0.6051ms)
+✔ risk reaches 100, shows consequence once, and never prevents completion (0.3862ms)
+✔ all goals settle before the result, with frozen risk and elapsed time (0.2125ms)
+✔ all legal objective orders can complete (cushion may be interleaved) (6.1278ms)
+✔ restart discards active treatments, risk consequences, hints and settlement (0.2845ms)
+✔ plant trajectory lifts the pot and ends indoors without swapping backgrounds (1.0522ms)
+✔ latest feedback: no floating umbrella; rail moves inward/downward then disappears (0.3014ms)
+✔ closed window, disconnected plug, and cabinet strap persist in safe states (0.2479ms)
+✔ family ends seated on sofa instead of cutting into the room background (0.2196ms)
+✔ alpha picking coordinates invert transformed doors correctly (0.2804ms)
+✔ invalid timer values cannot corrupt a run (0.1707ms)
+✔ wall socket stays above the skirting and stowed power strip avoids seated feet (0.2883ms)
+✔ plug starts inserted with hidden prongs and exposes them while pulling out (0.2933ms)
+✔ power status is green when connected and red at disconnection, including replay (0.1456ms)
+✔ cushion lifts and fades out, remaining absent after the family sits down (0.3054ms)
+✔ both cable endpoints follow the strip and moving plug throughout unplugging (2.683ms)
+✔ first level exposes five visible goals and a clean layered scene (0.8158ms)
+✔ every catalog goal has a distinct 0.5–1.5 second treatment, with no repair crop (0.8042ms)
+✔ power strip requires the recoverable cushion reveal step (0.2279ms)
+✔ all five hazard actions complete the level without counting the reveal step (0.1402ms)
+✔ unknown and repeated objectives never create progress (0.1213ms)
+✔ risk feedback is staged before the non-blocking consequence (0.1507ms)
+ℹ tests 28
+ℹ suites 0
+ℹ pass 28
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 231.9361

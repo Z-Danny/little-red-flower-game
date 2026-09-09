@@ -10,7 +10,8 @@
   "scripts": {
     "dev": "node scripts/levels.mjs sync && vinext dev",
     "build": "node scripts/levels.mjs sync && vinext build",
-    "test": "node scripts/test-kitchen.mjs && node scripts/test-typhoon.mjs && node scripts/test-pipeline.mjs && node scripts/test-leaderboard.mjs && node scripts/test-transcripts.mjs",
+    "test": "node scripts/test-kitchen.mjs && node scripts/test-typhoon.mjs && node scripts/test-pipeline.mjs && node scripts/test-leaderboard.mjs && node scripts/test-transcripts.mjs && node scripts/test-scene-hunt.mjs",
+    "test:scene-hunt": "node scripts/test-scene-hunt.mjs",
     "test:transcripts": "node scripts/test-transcripts.mjs",
     "test:leaderboard": "node scripts/test-leaderboard.mjs",
     "test:pipeline": "node scripts/test-pipeline.mjs",

@@ -1,0 +1,37 @@
+{
+  "file": "Gossip Harbor®_ Merge & Story-2026-09-02-397f8eebb1e9a6778170cafc2aa7c953-0.html",
+  "sha256": "5d315fb2ac1cb228a7f3a53cd84436ac589557fbd725104a00357045227639a6",
+  "bytes": 4881238,
+  "title": "",
+  "markers": {
+    "spine": 0,
+    "dragonBones": 0,
+    "PIXI": 0,
+    "Phaser": 0,
+    "gsap": 0,
+    "Howler": 0,
+    "AudioContext": 0,
+    "createGain": 0,
+    "playSound": 0,
+    "animation": 0,
+    "skeleton": 0,
+    "tween": 0,
+    "shake": 0,
+    "particle": 0,
+    "mraid": 0,
+    "fetch": 0,
+    "XMLHttpRequest": 0
+  },
+  "extensions": {
+    "mp3": 0,
+    "ogg": 0,
+    "wav": 1,
+    "png": 0,
+    "webp": 0,
+    "atlas": 0,
+    "skel": 0,
+    "json": 0
+  },
+  "observedShell": ["GameCanvas", "Cocos2dGameContainer", "window.cc", "cc.assetManager", "cocos:loadSceneEnd", "CCGameStarted"],
+  "notes": "Static inspection only. Cocos full-screen shell verified. Main code is packed/obfuscated: zero marker matches do not prove feature absence. Exact skeletal/audio framework not established. No third-party code executed, no network calls or copyrighted assets copied."
+}

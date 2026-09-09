@@ -7,6 +7,8 @@ import { LevelPlayer } from './level-player';
 import { TyphoonPlayer } from './typhoon/typhoon-player';
 import { KitchenPlayer } from './kitchen/kitchen-player';
 import { ConfiguredPlayer } from './configured/player';
+import { SceneHuntPlayer } from './scene-hunt/player';
+import { getHunt } from '@/app/game/scene-hunt/registry';
 import { useLeaderboard } from './leaderboard/use-leaderboard';
 import { LeaderboardPage } from './leaderboard/leaderboard-page';
 
@@ -79,6 +81,8 @@ export function GameApp() {
 
   if (active) {
     const saveNotice = notice ? <div className="game-save-notice" role="status">{notice}</div> : null;
+    const hunt=getHunt(active.id);
+    if(hunt) return <main className="game-page"><SceneHuntPlayer key={active.id} pack={hunt} onBack={()=>setActiveId(null)} onFinish={finishLevel}/>{saveNotice}</main>;
     if (active.engine === 'configured-v1') return <main className="game-page"><ConfiguredPlayer key={active.id} pack={getPackage(active.id)!} onBack={() => setActiveId(null)} onFinish={finishLevel} />{saveNotice}</main>;
     if (active.engine === 'kitchen-v1') return <main className="game-page"><KitchenPlayer totalFlowers={totalFlowers} onBack={() => setActiveId(null)} onFinish={finishLevel} />{saveNotice}</main>;
     if (active.engine === 'typhoon-v2') return <main className="game-page"><TyphoonPlayer totalFlowers={totalFlowers} onBack={() => setActiveId(null)} onFinish={finishLevel} onNext={() => setActiveId(null)} />{saveNotice}</main>;

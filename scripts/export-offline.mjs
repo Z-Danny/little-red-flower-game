@@ -43,14 +43,16 @@ css += '\n' + readFileSync(join(root, 'app', 'typhoon.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'kitchen.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'configured.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'leaderboard.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'scene-hunt.css'), 'utf8');
 // The game components use authored CSS, not Tailwind utility classes.
 css = 'html{line-height:1.5;-webkit-text-size-adjust:100%}svg{display:block;vertical-align:middle}button{color:inherit}button:disabled{cursor:default}\n' + css;
 
 const embeddedAssets = [];
-const assetUrls = [...new Set((javascript + css).match(/\/(?:levels\/[A-Za-z0-9_./-]+|emergency-home)\.(?:png|webp)/g) ?? [])];
+const assetUrls = [...new Set((javascript + css).match(/\/(?:(?:levels|audio)\/[A-Za-z0-9_./-]+|emergency-home)\.(?:png|webp|wav|mp3|ogg)/g) ?? [])];
 for (const assetUrl of assetUrls) {
   const bytes = readFileSync(join(root, 'public', assetUrl.slice(1)));
-  const dataUrl = `data:image/${assetUrl.endsWith('.webp') ? 'webp' : 'png'};base64,${bytes.toString('base64')}`;
+  const extension=assetUrl.split('.').at(-1),mime={png:'image/png',webp:'image/webp',wav:'audio/wav',mp3:'audio/mpeg',ogg:'audio/ogg'}[extension];
+  const dataUrl = `data:${mime};base64,${bytes.toString('base64')}`;
   javascript = javascript.split(assetUrl).join(dataUrl);
   css = css.split(assetUrl).join(dataUrl);
   embeddedAssets.push({ path: assetUrl, bytes: bytes.length, sha256: createHash('sha256').update(bytes).digest('hex') });
@@ -63,6 +65,8 @@ assert.ok(!/@import\s/.test(css), '离线样式不能保留外部导入。');
 assert.ok(css.includes('.lb-page') && javascript.includes('little-red-flower-leaderboard-v1'), '离线版必须包含排行榜及其样式。');
 assert.ok(!/url\(\s*['"]?(?:https?:|\/levels\/|\/emergency-home)/i.test(css), '离线样式不能依赖外部图片。');
 assert.ok(!/\/levels\/[\w/.-]+\.(?:png|webp)/.test(javascript), '关卡图片必须内嵌。');
+assert.ok(!/\/audio\/[\w/.-]+\.(?:wav|mp3|ogg)/.test(javascript), '语音必须内嵌。');
+assert.ok(!embeddedAssets.some(a=>a.path.startsWith('/audio/typhoon-v2/')), '台风关禁止打包 AI 朗读。');
 
 const html = `<!doctype html>
 <html lang="zh-CN">
@@ -98,7 +102,7 @@ const manifest = {
   selfContained: true,
   networkPolicy: 'connect-src none',
   embeddedAssets,
-  checks: ['JavaScript syntax', 'No external module imports', 'No CSS imports', 'Embedded scene images', 'Single inline script', 'No external HTML resource references'],
+  checks: ['JavaScript syntax', 'No external module imports', 'No CSS imports', 'Embedded scene images', 'Single inline script', 'No external HTML resource references', 'No typhoon AI narration assets'],
 };
 writeFileSync(join(output, '导出校验.json'), JSON.stringify(manifest, null, 2) + '\n', 'utf8');
 console.log(JSON.stringify({ htmlPath, bytes: manifest.bytes, sha256: manifest.sha256, checks: manifest.checks.length }, null, 2));

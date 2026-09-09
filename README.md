@@ -2,7 +2,7 @@
 
 面向手机竖屏的公益应急科普 HTML 游戏。当前本地版本包含六个可完整游玩的关卡：
 
-- 《台风前的家》：在风险持续上升的场景中寻找并处理 5 处隐患。
+- 《台风前的家》：在一幅完整绘本场景中识别 5 处隐患，以红圈标记；找齐后展示规范处置后的安全效果图。
 - 《厨房着火了》：点击关闭燃气、拖动锅盖覆盖油锅，再将人物撤离到门外安全区。
 - 《汛期应急包》：找到五类备灾物品，逐件收入应急包。
 - 《畅通的生命通道》：日常清理楼道，将四件杂物收进自家储物间。
@@ -66,7 +66,9 @@ site/                     GitHub Pages 单文件试玩版
 
 ## 换画风与批量新增关卡
 
-现在可以独立修改原两关的 `content/presets/*/skin.json`，或用通用引擎建立新的两类关卡。新关规则和皮肤分离；两个配置示例默认隐藏，不影响当前游玩内容。
+台风关现使用 `content/scenes/typhoon-home/{rules,skin}.json` 与 `app/game/scene-hunt/`。完整原画、ID 蒙版、同源人物、安全结局独立配置；目标不再移动，人物后方的风雨随时间增强，音频不含 AI 朗读。具体步骤、验收与禁止事项见 [台风整场景 AI 执行工作流](docs/typhoon-immersion-v2/AI执行工作流.md)。
+
+厨房仍修改 `content/presets/kitchen/skin.json`；通用新关使用 `content/levels/`。旧 `content/presets/typhoon/skin.json` 仅对应保留的历史实现，不是当前台风入口。新关规则和皮肤分离；两个配置示例默认隐藏，不影响当前游玩内容。
 
 ```powershell
 pnpm levels:create --id my-prevention --kind prevention --title 我的防范关卡 --order 9

@@ -1,0 +1,132 @@
+{
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "targets": {
+    "plant": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 431,
+        "y": 250,
+        "w": 80,
+        "h": 108
+      },
+      "icon": "/levels/typhoon-scene-v3/plant-icon.png"
+    },
+    "window": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 105,
+        "y": 44,
+        "w": 117,
+        "h": 523
+      },
+      "icon": "/levels/typhoon-scene-v3/window-icon.png"
+    },
+    "rail": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 222,
+        "y": 158,
+        "w": 109,
+        "h": 190
+      },
+      "icon": "/levels/typhoon-scene-v3/rail-icon.png"
+    },
+    "powerstrip": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 127,
+        "y": 984,
+        "w": 132,
+        "h": 78
+      },
+      "icon": "/levels/typhoon-scene-v3/powerstrip-icon.png"
+    },
+    "cabinet": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 585,
+        "y": 175,
+        "w": 66,
+        "h": 327
+      },
+      "icon": "/levels/typhoon-scene-v3/cabinet-icon.png"
+    }
+  },
+  "familyBounds": [
+    393,
+    357,
+    590,
+    834
+  ],
+  "unchangedOutsideFamilyRepair": true,
+  "runtimeBytes": 3272198,
+  "files": [
+    {
+      "name": "cabinet-icon.png",
+      "sha256": "930950cda2ee5ae87cd84641d48f4a9bead259b9737df20f7b1cfa89a79fb7ae"
+    },
+    {
+      "name": "clean.webp",
+      "sha256": "5d22a6f8407b731efea8091ed1d51d8d063981d7121222474ea45410a6a70b7c"
+    },
+    {
+      "name": "family.png",
+      "sha256": "1b3cd33ced7df67a8c7367d54f40a3710dcc7144bea71a8fef932cd2383aae2c"
+    },
+    {
+      "name": "plant-icon.png",
+      "sha256": "348d1fc3708f980a1a2a358104a0bdada8863d195bf596279158380f4d4de38c"
+    },
+    {
+      "name": "powerstrip-icon.png",
+      "sha256": "8fe846013d50eec110e0f3d06373c3357d0c60cec0a422ca4e90b5075778997d"
+    },
+    {
+      "name": "rail-icon.png",
+      "sha256": "7e03372bf05ddb8c4df63e6d0ffd2dbcee1205b3227669144724b5f364320f6e"
+    },
+    {
+      "name": "safe.webp",
+      "sha256": "7c1547d1df2766645a9bb76b8a5f03d3cdc38f65f3772a3d168062012fb1966a"
+    },
+    {
+      "name": "scene.webp",
+      "sha256": "9e1d7caeb997aa19a8d7a6c598e4db1f2d048ce504264cd09f140972da539c21"
+    },
+    {
+      "name": "targets-mask.png",
+      "sha256": "85d0b77f318c8f60e404e43601957479ef3fb819d89d4ee3e11f2585bbfca126"
+    },
+    {
+      "name": "window-icon.png",
+      "sha256": "5cd707d0c6227e9644283112aa37460ab5c0d148ebebc15bdcb55fc1daecfb70"
+    }
+  ]
+}

@@ -1,0 +1,283 @@
+.hunt-player {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 480px;
+  overflow: hidden;
+  color: #fff5df;
+  background: #222b2c;
+  font-family: 'Microsoft YaHei', sans-serif;
+  isolation: isolate;
+}
+.hunt-world,
+.hunt-world canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}
+.hunt-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: calc(12px + env(safe-area-inset-top)) 14px 14px;
+  background: linear-gradient(#142321e6, #14232180, transparent);
+  z-index: 3;
+}
+.hunt-hud button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff3cc60;
+  border-radius: 50%;
+  background: #172b3060;
+  color: #fff6e3;
+  font-size: 27px;
+  cursor: pointer;
+}
+.hunt-hud h1 {
+  margin: 0;
+  flex: 1;
+  font-size: 17px;
+  line-height: 1.35;
+  text-shadow: 0 2px 5px #122b25;
+}
+.hunt-hud small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  color: #ebd8ad;
+  font-weight: 500;
+}
+.hunt-hud > span {
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  font-weight: 700;
+}
+.hunt-hud .urgent {
+  color: #ffd899;
+}
+.hunt-targets {
+  position: absolute;
+  z-index: 2;
+  top: calc(79px + env(safe-area-inset-top));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+}
+.hunt-targets > span {
+  width: 43px;
+  height: 47px;
+  padding: 5px;
+  position: relative;
+  background: #fff1d6ee;
+  border: 1px solid #fff8e9;
+  border-radius: 13px;
+  box-shadow: 0 3px 8px #182d2524;
+}
+.hunt-targets img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0);
+  opacity: 0.8;
+}
+.hunt-targets .found {
+  background: #f9ddd3;
+  border-color: #e7796b;
+}
+.hunt-targets .found img {
+  opacity: 0.2;
+}
+.hunt-targets b {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  color: #dc4f43;
+}
+.hunt-entry {
+  position: absolute;
+  bottom: calc(25px + env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(360px, calc(100% - 32px));
+  padding: 19px;
+  border-radius: 24px;
+  background: #fff2dcec;
+  color: #375249;
+  box-shadow: 0 8px 36px #18302f55;
+  display: grid;
+  gap: 10px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+.hunt-entry > span {
+  font-size: 13px;
+}
+.hunt-entry button,
+.hunt-primary {
+  background: #dc5946;
+  color: #fff7e5 !important;
+  border: 0;
+  border-bottom: 4px solid #ab4036;
+  border-radius: 14px;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.hunt-entry button b {
+  padding-left: 12px;
+  font-size: 23px;
+}
+.hunt-entry small {
+  font-size: 10px;
+  opacity: 0.75;
+}
+.hunt-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #263a31;
+}
+.hunt-caption {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  max-width: calc(100% - 34px);
+  width: max-content;
+  background: #20342df0;
+  border: 1px solid #f0dca366;
+  color: #fff1d4;
+  padding: 10px 17px;
+  border-radius: 15px;
+  font-size: 13px;
+  line-height: 1.65;
+  text-align: center;
+  z-index: 4;
+  pointer-events: none;
+}
+.hunt-shade {
+  position: absolute;
+  inset: 0;
+  background: #14261f69;
+  z-index: 8;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+}
+.hunt-dialog {
+  background: #fff3d9;
+  color: #355448;
+  width: min(420px, 100%);
+  max-height: 90svh;
+  overflow: auto;
+  padding: 23px;
+  border-radius: 26px;
+  box-shadow: 0 15px 60px #15372b45;
+}
+.hunt-dialog > small {
+  font-size: 11px;
+  color: #897657;
+}
+.hunt-dialog h2 {
+  font-size: 23px;
+  margin: 7px 0 17px;
+}
+.hunt-dialog p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #657665;
+}
+.hunt-dialog button {
+  cursor: pointer;
+  color: #325f52;
+  border: 1px solid #c9cdb9;
+  border-radius: 12px;
+  padding: 11px;
+  font-size: 13px;
+  background: #fff9eb;
+}
+.hunt-dialog .hunt-primary {
+  width: 100%;
+  background: #d95546;
+  color: white;
+}
+.hunt-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 12px;
+}
+.hunt-footer {
+  display: flex;
+  gap: 9px;
+  margin-top: 18px;
+}
+.hunt-footer button {
+  flex: 1;
+  background: #456f5f;
+  color: #fff6df;
+  border: 0;
+}
+.hunt-flowers {
+  font-size: 43px;
+  color: #e85e4b;
+  text-shadow: 0 3px #f4cc9c;
+  margin: 3px 0 10px;
+}
+.hunt-keyboard {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 7;
+}
+.hunt-keyboard button {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.hunt-keyboard button:focus-visible {
+  position: relative;
+  width: auto;
+  height: auto;
+  clip-path: none;
+  padding: 12px;
+  background: #fff3da;
+  color: #244c3b;
+}
+.hunt-player button:focus-visible {
+  outline: 3px solid #ffc96e;
+  outline-offset: 3px;
+}
+@media (min-width: 600px) {
+  .hunt-hud {
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(520px, 100%);
+  }
+  .hunt-caption {
+    max-width: 430px;
+  }
+  .hunt-entry {
+    bottom: 28px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hunt-player * {
+    scroll-behavior: auto !important;
+  }
+}

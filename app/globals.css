@@ -5,6 +5,7 @@
 @import './kitchen.css';
 @import './configured.css';
 @import './leaderboard.css';
+@import './scene-hunt.css';
 
 :root {
   --background: oklch(0.97 0.025 83);
