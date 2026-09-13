@@ -1,0 +1,17 @@
+{
+  "worried": {
+    "mode": "chroma-magenta",
+    "width": 612,
+    "height": 1108
+  },
+  "cough": {
+    "mode": "native-alpha-halo-cleanup",
+    "width": 858,
+    "height": 1030
+  },
+  "signal": {
+    "mode": "chroma-magenta",
+    "width": 858,
+    "height": 952
+  }
+}

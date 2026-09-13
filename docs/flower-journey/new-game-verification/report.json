@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "sha256": "5a8fb21fa40b43981014787d05b7c7847bfb9ea8197b8d85d60e3f77dd692049",
+  "checks": [
+    "cancel new game preserves all save and bookmark bytes",
+    "continue retains 35 flowers",
+    "stale-player reset is rejected and remains on title with an error",
+    "confirmed new game clears current flowers, completion and locks; returns to first node",
+    "other player and bookmark unchanged; current profile retained",
+    "new zero-progress save survives reload and continue",
+    "other player still continues their own six-flower game"
+  ],
+  "errors": [],
+  "network": [],
+  "browserClosed": true,
+  "confirmation": "要为「重新出发」开始新游戏吗？\n\n当前的 35 朵小红花、关卡完成记录和解锁进度将清空，地图从起点重新开始。昵称和其他玩家的记录会保留。\n\n此操作不可撤销。"
+}

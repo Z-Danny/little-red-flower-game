@@ -1,0 +1,400 @@
+{
+  "framing": {
+    "sceneBounds": { "x": -40, "y": -281, "w": 760, "h": 1561 },
+    "backdrop": "/levels/display-adaptation/flood-house-response-v1-backdrop.webp",
+    "critical": { "x": 0, "y": 143, "w": 718, "h": 1062 },
+    "criticalRegions": [
+      { "x": 237, "y": 242, "w": 116, "h": 113 },
+      { "x": 163, "y": 537, "w": 109, "h": 322 },
+      { "x": 236, "y": 629, "w": 111, "h": 206 },
+      { "x": 235, "y": 804, "w": 96, "h": 63 },
+      { "x": 229, "y": 478, "w": 44, "h": 22 },
+      { "x": 282, "y": 472, "w": 52, "h": 23 },
+      { "x": 275, "y": 530, "w": 25, "h": 69 },
+      { "x": 335, "y": 333, "w": 160, "h": 555 },
+      { "x": 448, "y": 628, "w": 160, "h": 206 },
+      { "x": 473, "y": 778, "w": 245, "h": 427 },
+      { "x": 493, "y": 170, "w": 174, "h": 140 },
+      { "x": 500, "y": 393, "w": 188, "h": 410 },
+      { "x": 29, "y": 201, "w": 85, "h": 118 },
+      { "x": 17, "y": 439, "w": 126, "h": 53 },
+      { "x": 0, "y": 381, "w": 150, "h": 455 },
+      { "x": 518, "y": 218, "w": 112, "h": 388 },
+      { "x": 552, "y": 143, "w": 77, "h": 264 }
+    ]
+  },
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/rain-flood-v1/flood/scene.webp",
+  "clean": "/levels/rain-flood-v1/flood/clean.webp",
+  "ending": "/levels/rain-flood-v1/flood/ending.webp",
+  "mask": "/levels/rain-flood-v1/flood/mask.png",
+  "sprites": {
+    "breaker": {
+      "src": "/levels/rain-flood-v1/flood/breaker.png",
+      "icon": "/levels/rain-flood-v1/flood/breaker-icon.png",
+      "box": {
+        "x": 237,
+        "y": 242,
+        "w": 116,
+        "h": 113
+      },
+      "color": [
+        255,
+        0,
+        128
+      ],
+      "label": "干燥墙上的电闸",
+      "input": "tap",
+      "fixed": true
+    },
+    "panel": {
+      "src": "/levels/rain-flood-v1/flood/panel.png",
+      "icon": "/levels/rain-flood-v1/flood/panel-icon.png",
+      "box": {
+        "x": 163,
+        "y": 537,
+        "w": 109,
+        "h": 322
+      },
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "label": "备用木门板",
+      "input": "drag",
+      "fixed": false,
+      "repair": {
+        "src": "/levels/rain-flood-v1/flood/panel-repair.png",
+        "box": {
+          "x": 147,
+          "y": 521,
+          "w": 141,
+          "h": 354
+        }
+      }
+    },
+    "foam": {
+      "src": "/levels/rain-flood-v1/flood/foam.png",
+      "icon": "/levels/rain-flood-v1/flood/foam-icon.png",
+      "box": {
+        "x": 236,
+        "y": 629,
+        "w": 111,
+        "h": 206
+      },
+      "color": [
+        0,
+        255,
+        255
+      ],
+      "label": "泡沫板",
+      "input": "drag",
+      "fixed": false,
+      "repair": {
+        "src": "/levels/rain-flood-v1/flood/foam-repair.png",
+        "box": {
+          "x": 220,
+          "y": 613,
+          "w": 143,
+          "h": 238
+        }
+      }
+    },
+    "rope": {
+      "src": "/levels/rain-flood-v1/flood/rope.png",
+      "icon": "/levels/rain-flood-v1/flood/rope-icon.png",
+      "box": {
+        "x": 235,
+        "y": 804,
+        "w": 96,
+        "h": 63
+      },
+      "color": [
+        255,
+        128,
+        0
+      ],
+      "label": "绳子",
+      "input": "drag",
+      "fixed": false,
+      "repair": {
+        "src": "/levels/rain-flood-v1/flood/rope-repair.png",
+        "box": {
+          "x": 219,
+          "y": 788,
+          "w": 128,
+          "h": 95
+        }
+      }
+    },
+    "phone": {
+      "src": "/levels/rain-flood-v1/flood/phone.png",
+      "icon": "/levels/rain-flood-v1/flood/phone-icon.png",
+      "box": {
+        "x": 229,
+        "y": 478,
+        "w": 44,
+        "h": 22
+      },
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "label": "手机",
+      "input": "drag",
+      "fixed": false,
+      "repair": {
+        "src": "/levels/rain-flood-v1/flood/phone-repair.png",
+        "box": {
+          "x": 213,
+          "y": 462,
+          "w": 76,
+          "h": 54
+        }
+      }
+    },
+    "flashlight": {
+      "src": "/levels/rain-flood-v1/flood/flashlight.png",
+      "icon": "/levels/rain-flood-v1/flood/flashlight-icon.png",
+      "box": {
+        "x": 282,
+        "y": 472,
+        "w": 52,
+        "h": 23
+      },
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "label": "手电筒",
+      "input": "drag",
+      "fixed": false,
+      "repair": {
+        "src": "/levels/rain-flood-v1/flood/flashlight-repair.png",
+        "box": {
+          "x": 266,
+          "y": 456,
+          "w": 84,
+          "h": 55
+        }
+      }
+    },
+    "water": {
+      "src": "/levels/rain-flood-v1/flood/water.png",
+      "icon": "/levels/rain-flood-v1/flood/water-icon.png",
+      "box": {
+        "x": 275,
+        "y": 530,
+        "w": 25,
+        "h": 69
+      },
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "label": "饮用水",
+      "input": "drag",
+      "fixed": false,
+      "repair": {
+        "src": "/levels/rain-flood-v1/flood/water-repair.png",
+        "box": {
+          "x": 259,
+          "y": 514,
+          "w": 57,
+          "h": 101
+        }
+      }
+    },
+    "person": {
+      "src": "/levels/rain-flood-v1/flood/person.png",
+      "icon": "/levels/rain-flood-v1/flood/person-icon.png",
+      "box": {
+        "x": 335,
+        "y": 333,
+        "w": 160,
+        "h": 555
+      },
+      "color": [
+        255,
+        255,
+        255
+      ],
+      "label": "被困家人",
+      "input": "drag",
+      "fixed": false,
+      "repair": {
+        "src": "/levels/rain-flood-v1/flood/person-repair.png",
+        "box": {
+          "x": 319,
+          "y": 317,
+          "w": 192,
+          "h": 587
+        }
+      }
+    },
+    "bag": {
+      "src": "/levels/rain-flood-v1/flood/bag.png",
+      "icon": "/levels/rain-flood-v1/flood/bag-icon.png",
+      "box": {
+        "x": 448,
+        "y": 628,
+        "w": 160,
+        "h": 206
+      },
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "label": "应急背包",
+      "input": "drag",
+      "fixed": false,
+      "repair": {
+        "src": "/levels/rain-flood-v1/flood/bag-repair.png",
+        "box": {
+          "x": 432,
+          "y": 612,
+          "w": 192,
+          "h": 238
+        }
+      }
+    },
+    "chair": {
+      "src": "/levels/rain-flood-v1/flood/chair.png",
+      "icon": "/levels/rain-flood-v1/flood/chair-icon.png",
+      "box": {
+        "x": 473,
+        "y": 778,
+        "w": 245,
+        "h": 427
+      },
+      "color": [
+        128,
+        0,
+        255
+      ],
+      "label": "普通椅子",
+      "input": "drag",
+      "fixed": false,
+      "repair": {
+        "src": "/levels/rain-flood-v1/flood/chair-repair.png",
+        "box": {
+          "x": 457,
+          "y": 762,
+          "w": 263,
+          "h": 459
+        }
+      }
+    }
+  },
+  "zones": {
+    "roof": {
+      "box": {
+        "x": 493,
+        "y": 170,
+        "w": 174,
+        "h": 140
+      },
+      "label": "楼上安全出口"
+    },
+    "stairs": {
+      "box": {
+        "x": 500,
+        "y": 393,
+        "w": 188,
+        "h": 410
+      },
+      "label": "干燥楼梯"
+    },
+    "wire": {
+      "box": {
+        "x": 29,
+        "y": 201,
+        "w": 85,
+        "h": 118
+      },
+      "label": "门外断线",
+      "danger": true
+    },
+    "car": {
+      "box": {
+        "x": 17,
+        "y": 439,
+        "w": 126,
+        "h": 53
+      },
+      "label": "被淹汽车",
+      "danger": true
+    },
+    "outside": {
+      "box": {
+        "x": 0,
+        "y": 381,
+        "w": 150,
+        "h": 455
+      },
+      "label": "门外洪水",
+      "danger": true
+    }
+  },
+  "poses": {
+    "personStairs": {
+      "x": 518,
+      "y": 218,
+      "w": 112,
+      "h": 388
+    },
+    "personRoof": {
+      "x": 552,
+      "y": 143,
+      "w": 77,
+      "h": 264
+    },
+    "panelStored": {
+      "x": 330,
+      "y": 615,
+      "w": 65.4,
+      "h": 193.2
+    },
+    "foamStored": {
+      "x": 373.8,
+      "y": 670.2,
+      "w": 66.6,
+      "h": 123.6
+    },
+    "ropeStored": {
+      "x": 373.2,
+      "y": 775.2,
+      "w": 57.6,
+      "h": 37.8
+    }
+  },
+  "weather": [
+    [
+      {
+        "x": 0,
+        "y": 61
+      },
+      {
+        "x": 167,
+        "y": 154
+      },
+      {
+        "x": 145,
+        "y": 822
+      },
+      {
+        "x": 0,
+        "y": 911
+      }
+    ]
+  ],
+  "faces": {
+    "alert": "/levels/rain-flood-v1/flood/person-alert.png"
+  }
+}

@@ -1,4 +1,4 @@
-import { level, timing, type Emotion, type GoalId, type ItemId, type Point, type ZoneId } from './config';
+import { level, timing, isPlayableItem, type Emotion, type GoalId, type ItemId, type Point, type ZoneId } from './config';
 
 export type ActionKind = 'cover' | 'shutoff' | 'evacuate' | 'water' | 'cloth' | 'spray' | 'miss-spray' | 'bounce';
 export type Action = { kind: ActionKind; item: ItemId; from: Point; at: Point; age: number; duration: number; goal?: GoalId };
@@ -13,7 +13,7 @@ export type Event = { type: 'start' | 'reset' | 'hint' } | { type: 'tick'; ms: n
   | { type: 'drop'; item: ItemId; zone: ZoneId; at: Point; from: Point };
 
 export const createRun = (): Run => ({
-  phase: 'briefing', elapsed: 0, risk: 22, covered: false, gasOff: false, evacuated: false,
+  phase: 'briefing', elapsed: 0, risk: level.initialRisk, covered: false, gasOff: false, evacuated: false,
   mistakes: 0, action: null, reaction: null, reactionAge: 0, boost: 0, suppression: 0,
   notice: { serial: 0, tone: 'neutral', text: '直接拿取厨房里的物品；点击灶台旋钮可以关火。' }, serial: 0,
   settlingAge: 0, stars: 0, peakReached: false,
@@ -36,7 +36,7 @@ function tell(r: Run, text: string, tone: Notice['tone'] = 'neutral'): Run {
 function begin(r: Run, e: Extract<Event, { type: 'drop' }>, kind: ActionKind, duration: number, text: string, goal?: GoalId): Run {
   return tell({ ...r, action: { kind, item: e.item, at: e.at, from: e.from, age: 0, duration, goal } }, text, goal ? 'success' : 'neutral');
 }
-export function reduceRun(r: Run, e: Event): Run {
+export function reduceRun(r: Run, e: Event, presentation?:{settleMs:number}): Run {
   if (e.type === 'reset') return createRun();
   if (e.type === 'start') return r.phase === 'briefing' ? { ...r, phase: 'playing' } : r;
   if (e.type === 'hint') {
@@ -46,7 +46,12 @@ export function reduceRun(r: Run, e: Event): Run {
   if (e.type === 'tick') {
     if (r.phase === 'briefing' || r.phase === 'complete' || !Number.isFinite(e.ms) || e.ms <= 0) return r;
     const ms = Math.min(e.ms, 100), safe = controlled(r);
-    let n: Run = { ...r, elapsed: r.elapsed + ms, risk: safe ? Math.max(0, r.risk - ms / 25) : Math.min(100, r.risk + ms / (level.riskSeconds * 10)),
+    const elapsed = r.elapsed + ms;
+    // Exactly 50 active seconds to the training peak. Correct/incorrect actions
+    // change the fire, never refill or shorten the separate countdown clock.
+    const risk = safe ? Math.max(0, r.risk - ms / 25) : elapsed >= level.riskSeconds * 1000 ? 100
+      : Math.min(100, r.risk + ms * (100 - level.initialRisk) / (level.riskSeconds * 1000));
+    let n: Run = { ...r, elapsed, risk,
       boost: Math.max(0, r.boost - ms / 14000), suppression: Math.max(0, r.suppression - ms / 9000),
       reactionAge: Math.max(0, r.reactionAge - ms), reaction: r.reactionAge > ms ? r.reaction : null,
       settlingAge: safe ? r.settlingAge + ms : 0 };
@@ -73,10 +78,11 @@ export function reduceRun(r: Run, e: Event): Run {
         }
       }
     }
-    if (r.phase === 'settling' && n.settlingAge >= timing.settling) n.phase = 'complete';
+    if (r.phase === 'settling' && n.settlingAge >= (presentation?.settleMs??timing.settling)) n.phase = 'complete';
     return n;
   }
   if (e.type !== 'drop' || r.phase !== 'playing' || r.action) return r;
+  if (!isPlayableItem(e.item)) return r;
   if ((e.item === 'lid' && r.covered) || (e.item === 'gas' && r.gasOff) || (e.item === 'person' && r.evacuated)) return r;
   if (e.item === 'lid' && e.zone === 'pan') return begin(r, e, 'cover', timing.lid, '正在平稳盖住锅口…', 'covered');
   if (e.item === 'gas' && e.zone === 'off') return begin(r, e, 'shutoff', timing.gas, '正在关闭燃气开关…', 'gasOff');

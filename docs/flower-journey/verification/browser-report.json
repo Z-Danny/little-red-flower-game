@@ -1,0 +1,141 @@
+{
+  "html": "D:\\中关村\\小红花\\test1\\work\\flower-journey-20260911\\outputs\\本地离线版\\小红花应急行动.html",
+  "sha256": "cbe20eb9c6f83d822672b9f224002786760145fedf1c5dafc27c9490fb682cd7",
+  "browser": "152.0.4191.66",
+  "checks": [
+    {
+      "name": "map geometry 320x568",
+      "status": "passed"
+    },
+    {
+      "name": "map geometry 375x667",
+      "status": "passed"
+    },
+    {
+      "name": "map geometry 390x844",
+      "status": "passed"
+    },
+    {
+      "name": "map geometry 430x932",
+      "status": "passed"
+    },
+    {
+      "name": "map geometry 540x960",
+      "status": "passed"
+    },
+    {
+      "name": "map geometry 1440x900",
+      "status": "passed"
+    },
+    {
+      "name": "five categories and honest pending destinations preserve progress",
+      "status": "passed"
+    },
+    {
+      "name": "locked node cannot enter or award",
+      "status": "passed"
+    },
+    {
+      "name": "leaving unfinished scene does not award or unlock",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting typhoon-home",
+      "status": "passed"
+    },
+    {
+      "name": "reload and replay preserve progress without duplicate reward",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting flood-kit",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting quake-bedroom-v2",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting storm-street-check-v2",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting thunder-park-v2",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting forest-fire-sources-v2",
+      "status": "passed"
+    },
+    {
+      "name": "timed failure does not reward or unlock next node",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting rain-street-preparation-v1",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting flood-house-response-v1",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting clear-corridor",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting lift-wait",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting well-call",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting clear-corridor-check-v2",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting oil-fire",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting charging-bedroom",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting bedroom-night-check-v2",
+      "status": "passed"
+    },
+    {
+      "name": "real pointer completion +3 and planting kitchen-before-cooking-v2",
+      "status": "passed"
+    },
+    {
+      "name": "all regions restored and archive medals persist",
+      "status": "passed"
+    },
+    {
+      "name": "final refresh retains 48 flowers and 16 planted nodes",
+      "status": "passed"
+    },
+    {
+      "name": "new local player has independent flowers and locks",
+      "status": "passed"
+    },
+    {
+      "name": "refresh during reduced-motion planting keeps committed reward",
+      "status": "passed"
+    },
+    {
+      "name": "switching back restores original 48 flowers",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "status": "passed",
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "browserClosed": true
+}

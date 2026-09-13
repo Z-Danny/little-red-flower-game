@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "id": "lift-contact-practice",
+  "kind": "response",
+  "title": "电梯被困：定位与等待",
+  "order": 29,
+  "location": "稳定停滞的客梯",
+  "description": "普通客梯停在两层之间，轿厢稳定、无火灾进水和重伤，紧急通话可用。",
+  "safety": "情境训练，不是真实求救。现场条件不符或出现新险情时，应遵从当地应急与专业人员指引。",
+  "briefing": "情境训练｜普通客梯停在两层之间，轿厢稳定、无火灾进水和重伤，紧急通话可用。",
+  "objects": [
+    {
+      "id": "family",
+      "label": "成人与孩子",
+      "input": "drag",
+      "disabledWhen": [
+        "standing-back"
+      ]
+    },
+    {
+      "id": "alarm-intercom",
+      "label": "报警与紧急通话",
+      "input": "tap",
+      "disabledWhen": [
+        "contact-established"
+      ]
+    },
+    {
+      "id": "location-info",
+      "label": "设备内位置编号",
+      "input": "drag",
+      "requires": [
+        "contact-established"
+      ],
+      "disabledWhen": [
+        "location-reported"
+      ]
+    },
+    {
+      "id": "people-info",
+      "label": "设备内人员情况",
+      "input": "drag",
+      "requires": [
+        "contact-established"
+      ],
+      "disabledWhen": [
+        "people-reported"
+      ]
+    },
+    {
+      "id": "flashlight",
+      "label": "随身手电",
+      "input": "drag",
+      "disabledWhen": [
+        "floor-lit"
+      ]
+    },
+    {
+      "id": "lift-door",
+      "label": "电梯门",
+      "input": "tap"
+    },
+    {
+      "id": "ordinary-button",
+      "label": "普通楼层键",
+      "input": "tap"
+    }
+  ],
+  "goals": [
+    {
+      "id": "contact-established",
+      "label": "建立紧急联系",
+      "object": "alarm-intercom",
+      "showTarget": false
+    },
+    {
+      "id": "location-reported",
+      "label": "报告位置与电梯编号",
+      "object": "location-info",
+      "showTarget": false
+    },
+    {
+      "id": "people-reported",
+      "label": "报告人数与身体情况",
+      "object": "people-info",
+      "showTarget": false
+    },
+    {
+      "id": "floor-lit",
+      "label": "照亮脚下地面",
+      "object": "flashlight",
+      "showTarget": false
+    },
+    {
+      "id": "standing-back",
+      "label": "远离门口稳定等待",
+      "object": "family",
+      "showTarget": false
+    }
+  ],
+  "interactions": [
+    {
+      "id": "establish-contact",
+      "source": "alarm-intercom",
+      "mode": "tap",
+      "grants": [
+        "contact-established"
+      ],
+      "outcome": "correct",
+      "animation": "establish-contact",
+      "feedback": "已模拟接通本楼值守；轿门保持关闭。"
+    },
+    {
+      "id": "report-location",
+      "source": "location-info",
+      "mode": "drop",
+      "target": "intercom-report",
+      "requires": [
+        "contact-established"
+      ],
+      "grants": [
+        "location-reported"
+      ],
+      "outcome": "correct",
+      "animation": "report-location",
+      "feedback": "训练示例：红花小区3栋，02号梯。"
+    },
+    {
+      "id": "report-people",
+      "source": "people-info",
+      "mode": "drop",
+      "target": "intercom-report",
+      "requires": [
+        "contact-established"
+      ],
+      "grants": [
+        "people-reported"
+      ],
+      "outcome": "correct",
+      "animation": "report-people",
+      "feedback": "模拟报告：2人被困，当前无明显伤情；不适应如实说明。"
+    },
+    {
+      "id": "light-floor",
+      "source": "flashlight",
+      "mode": "drop",
+      "target": "floor-light",
+      "grants": [
+        "floor-lit"
+      ],
+      "outcome": "correct",
+      "animation": "light-floor",
+      "feedback": "用手边照明看清脚下和近侧地面。"
+    },
+    {
+      "id": "stand-back",
+      "source": "family",
+      "mode": "drop",
+      "target": "stand-back",
+      "grants": [
+        "standing-back"
+      ],
+      "outcome": "correct",
+      "animation": "stand-back",
+      "feedback": "两人远离门口站稳，保持可接听状态。"
+    },
+    {
+      "id": "pry-door-error",
+      "source": "lift-door",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "pry-door-error",
+      "feedback": "错误后果示意｜不扒门，层间位置可能有剪切与坠落风险。"
+    },
+    {
+      "id": "crawl-gap-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "door-gap",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "crawl-gap-error",
+      "feedback": "错误后果示意｜不要钻门缝，等待专业人员处理。"
+    },
+    {
+      "id": "climb-hatch-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "ceiling-hatch",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "climb-hatch-error",
+      "feedback": "错误后果示意｜不要攀爬检修口或自行脱困。"
+    },
+    {
+      "id": "ordinary-button-neutral",
+      "source": "ordinary-button",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "ordinary-button-neutral",
+      "feedback": "本题普通楼层键无效，使用紧急通话并稳定等待。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 300,
+    "initial": 0,
+    "warningAt": 100,
+    "peakFeedback": "演出已达训练上限；仍可继续正确处置，不以等待时间判失败。"
+  },
+  "completion": {
+    "requires": [
+      "contact-established",
+      "location-reported",
+      "people-reported",
+      "floor-lit",
+      "standing-back"
+    ],
+    "settleMs": 1200,
+    "observeMs": 4000,
+    "fixedStars": 3,
+    "summary": "已建立联系并报告情况，等待专业救援",
+    "title": "已建立联系并报告情况，等待专业救援",
+    "status": "训练完成；继续关注现场变化与专业指引。"
+  }
+}

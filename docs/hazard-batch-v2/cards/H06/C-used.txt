@@ -1,0 +1,15 @@
+输入唯一已批准的scene-original.png及其SHA。为H06制作同构语义分区候选，不改变尺寸、相机、透视、位置和遮挡，不美化、不重新摆放物件。
+精确颜色映射：
+- #FF0000 → blocked_path：堵路纸箱。
+- #00FF00 → ebike_charging：车体、充电器及其电线为同一ID。
+- #0000FF → wedged_fire_door：门扇和门楔；不包含门洞后整条走廊。
+- #FFFF00 → locked_exit：链锁及相连门把手、门扇实际可见轮廓；不扩展到墙面。
+- #FF00FF → blocked_hydrant：造成遮挡的柜体为目标；不可把正常消火栓本身单独判危险。
+黑=#000000为非目标，白=#FFFFFF仅供候选人物分区，运行时映射为非目标。
+先输出object-mask.png：只覆盖各目标真实可见实体，背景、墙面、目标空洞保持黑。每像素只有一个归属。
+再派生id-mask.png：默认与实体相同。仅本卡明确允许的窗扇、亭体内部空隙可经审核填充；禁止任意外扩到背景。运行ID图用精确RGB，禁用JPEG、渐变、柔边近似色和运行时猜色。
+对每目标导出原图50%叠色证明，检查误吞邻物、漏掉关键部件、人物遮挡与空隙。不允许用目标外接矩形代替像素命中。相同尺寸不算配准证据。
+如原画中不存在某目标或关键证据不清楚，回B修原画，不能在蒙版里画出原图没有的物体。
+额外生成效果允许区与目标关键判据保护区；它们不是目标ID。H12命中与图标只取固定火源载体，不取动态烟、火焰外缘或飞散火花；始终有稳定可点实体。
+
+Output ONE precisely registered object-mask image only. Exact solid five RGB colors on pure black background; white only all visible people. No shading, labels, texture or guides. Do not move or invent any object. Preserve actual silhouette contours and holes. Keep same full frame and same dimensions. H06 green includes electric bicycle AND its brick and two connecting cables/plug, not floor; blue only wedged middle door+actualwedge, yellow the back exit doors including their visible door leaves, handles and chain/padlock, but not surrounding ordinary walls. H09 red only actual underpass entrance/rim/stairs/interior flooded opening as one clearly bounded structure, not unrelated standing street water. Green actual power box with actual contiguous base water danger footprint, not broad whole street. Blue only the manhole opening rim and adjacent removed lid, not cones or water around it. Yellow rigid loose shop sign and its detached connector hardware only, NOT building. Magenta unstable fence physical panels/posts/feet, NOT foreground house wall or concrete street. Preserve people white and all unrelated scenery black.

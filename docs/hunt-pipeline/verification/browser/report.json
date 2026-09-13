@@ -1,0 +1,1208 @@
+{
+  "status": "passed",
+  "htmlSha256": "ebe164c8154451d42d8bac0313bdd229d5ee5220f2076ed07760fcff27c4f04f",
+  "checks": [
+    {
+      "id": "typhoon-home",
+      "viewport": [
+        320,
+        568
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      }
+    },
+    {
+      "id": "typhoon-home",
+      "viewport": [
+        375,
+        667
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667,
+        "top": 0,
+        "right": 375,
+        "bottom": 667,
+        "left": 0
+      }
+    },
+    {
+      "id": "typhoon-home",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "id": "typhoon-home",
+      "viewport": [
+        430,
+        932
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932,
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0
+      }
+    },
+    {
+      "id": "typhoon-home",
+      "viewport": [
+        540,
+        960
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 540,
+        "height": 960,
+        "top": 0,
+        "right": 540,
+        "bottom": 960,
+        "left": 0
+      }
+    },
+    {
+      "id": "typhoon-home",
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900,
+        "top": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "left": 466.875
+      }
+    },
+    {
+      "id": "typhoon-home",
+      "viewport": [
+        390,
+        650
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 650,
+        "top": 0,
+        "right": 390,
+        "bottom": 650,
+        "left": 0
+      }
+    },
+    {
+      "id": "typhoon-home",
+      "status": "passed",
+      "pointerTargets": 5,
+      "complete": true,
+      "replay": true
+    },
+    {
+      "id": "charging-bedroom",
+      "viewport": [
+        320,
+        568
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      }
+    },
+    {
+      "id": "charging-bedroom",
+      "viewport": [
+        375,
+        667
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667,
+        "top": 0,
+        "right": 375,
+        "bottom": 667,
+        "left": 0
+      }
+    },
+    {
+      "id": "charging-bedroom",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "id": "charging-bedroom",
+      "viewport": [
+        430,
+        932
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932,
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0
+      }
+    },
+    {
+      "id": "charging-bedroom",
+      "viewport": [
+        540,
+        960
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 540,
+        "height": 960,
+        "top": 0,
+        "right": 540,
+        "bottom": 960,
+        "left": 0
+      }
+    },
+    {
+      "id": "charging-bedroom",
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900,
+        "top": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "left": 466.875
+      }
+    },
+    {
+      "id": "charging-bedroom",
+      "viewport": [
+        390,
+        650
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 650,
+        "top": 0,
+        "right": 390,
+        "bottom": 650,
+        "left": 0
+      }
+    },
+    {
+      "id": "charging-bedroom",
+      "status": "passed",
+      "pointerTargets": 3,
+      "complete": true,
+      "replay": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "viewport": [
+        320,
+        568
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      }
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "viewport": [
+        375,
+        667
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667,
+        "top": 0,
+        "right": 375,
+        "bottom": 667,
+        "left": 0
+      }
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "viewport": [
+        430,
+        932
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932,
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0
+      }
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "viewport": [
+        540,
+        960
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 540,
+        "height": 960,
+        "top": 0,
+        "right": 540,
+        "bottom": 960,
+        "left": 0
+      }
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900,
+        "top": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "left": 466.875
+      }
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "viewport": [
+        390,
+        650
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 650,
+        "top": 0,
+        "right": 390,
+        "bottom": 650,
+        "left": 0
+      }
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "status": "passed",
+      "pointerTargets": 5,
+      "complete": true,
+      "replay": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "viewport": [
+        320,
+        568
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      }
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "viewport": [
+        375,
+        667
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667,
+        "top": 0,
+        "right": 375,
+        "bottom": 667,
+        "left": 0
+      }
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "viewport": [
+        430,
+        932
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932,
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0
+      }
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "viewport": [
+        540,
+        960
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 540,
+        "height": 960,
+        "top": 0,
+        "right": 540,
+        "bottom": 960,
+        "left": 0
+      }
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900,
+        "top": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "left": 466.875
+      }
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "viewport": [
+        390,
+        650
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 650,
+        "top": 0,
+        "right": 390,
+        "bottom": 650,
+        "left": 0
+      }
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "status": "passed",
+      "pointerTargets": 5,
+      "complete": true,
+      "replay": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "viewport": [
+        320,
+        568
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      }
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "viewport": [
+        375,
+        667
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667,
+        "top": 0,
+        "right": 375,
+        "bottom": 667,
+        "left": 0
+      }
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "viewport": [
+        430,
+        932
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932,
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0
+      }
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "viewport": [
+        540,
+        960
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 540,
+        "height": 960,
+        "top": 0,
+        "right": 540,
+        "bottom": 960,
+        "left": 0
+      }
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900,
+        "top": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "left": 466.875
+      }
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "viewport": [
+        390,
+        650
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 650,
+        "top": 0,
+        "right": 390,
+        "bottom": 650,
+        "left": 0
+      }
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "status": "passed",
+      "pointerTargets": 5,
+      "complete": true,
+      "replay": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "viewport": [
+        320,
+        568
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      }
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "viewport": [
+        375,
+        667
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667,
+        "top": 0,
+        "right": 375,
+        "bottom": 667,
+        "left": 0
+      }
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "viewport": [
+        430,
+        932
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932,
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0
+      }
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "viewport": [
+        540,
+        960
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 540,
+        "height": 960,
+        "top": 0,
+        "right": 540,
+        "bottom": 960,
+        "left": 0
+      }
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900,
+        "top": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "left": 466.875
+      }
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "viewport": [
+        390,
+        650
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 650,
+        "top": 0,
+        "right": 390,
+        "bottom": 650,
+        "left": 0
+      }
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "status": "passed",
+      "pointerTargets": 5,
+      "complete": true,
+      "replay": true
+    },
+    {
+      "id": "storm-street-check-v2",
+      "viewport": [
+        320,
+        568
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      }
+    },
+    {
+      "id": "storm-street-check-v2",
+      "viewport": [
+        375,
+        667
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667,
+        "top": 0,
+        "right": 375,
+        "bottom": 667,
+        "left": 0
+      }
+    },
+    {
+      "id": "storm-street-check-v2",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "id": "storm-street-check-v2",
+      "viewport": [
+        430,
+        932
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932,
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0
+      }
+    },
+    {
+      "id": "storm-street-check-v2",
+      "viewport": [
+        540,
+        960
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 540,
+        "height": 960,
+        "top": 0,
+        "right": 540,
+        "bottom": 960,
+        "left": 0
+      }
+    },
+    {
+      "id": "storm-street-check-v2",
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900,
+        "top": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "left": 466.875
+      }
+    },
+    {
+      "id": "storm-street-check-v2",
+      "viewport": [
+        390,
+        650
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 650,
+        "top": 0,
+        "right": 390,
+        "bottom": 650,
+        "left": 0
+      }
+    },
+    {
+      "id": "storm-street-check-v2",
+      "status": "passed",
+      "pointerTargets": 5,
+      "complete": true,
+      "replay": true
+    },
+    {
+      "id": "thunder-park-v2",
+      "viewport": [
+        320,
+        568
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      }
+    },
+    {
+      "id": "thunder-park-v2",
+      "viewport": [
+        375,
+        667
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667,
+        "top": 0,
+        "right": 375,
+        "bottom": 667,
+        "left": 0
+      }
+    },
+    {
+      "id": "thunder-park-v2",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "id": "thunder-park-v2",
+      "viewport": [
+        430,
+        932
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932,
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0
+      }
+    },
+    {
+      "id": "thunder-park-v2",
+      "viewport": [
+        540,
+        960
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 540,
+        "height": 960,
+        "top": 0,
+        "right": 540,
+        "bottom": 960,
+        "left": 0
+      }
+    },
+    {
+      "id": "thunder-park-v2",
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900,
+        "top": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "left": 466.875
+      }
+    },
+    {
+      "id": "thunder-park-v2",
+      "viewport": [
+        390,
+        650
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 650,
+        "top": 0,
+        "right": 390,
+        "bottom": 650,
+        "left": 0
+      }
+    },
+    {
+      "id": "thunder-park-v2",
+      "status": "passed",
+      "pointerTargets": 5,
+      "complete": true,
+      "replay": true
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "viewport": [
+        320,
+        568
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      }
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "viewport": [
+        375,
+        667
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667,
+        "top": 0,
+        "right": 375,
+        "bottom": 667,
+        "left": 0
+      }
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      }
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "viewport": [
+        430,
+        932
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932,
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0
+      }
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "viewport": [
+        540,
+        960
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 540,
+        "height": 960,
+        "top": 0,
+        "right": 540,
+        "bottom": 960,
+        "left": 0
+      }
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "viewport": [
+        1440,
+        900
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900,
+        "top": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "left": 466.875
+      }
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "viewport": [
+        390,
+        650
+      ],
+      "status": "passed",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 650,
+        "top": 0,
+        "right": 390,
+        "bottom": 650,
+        "left": 0
+      }
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "status": "passed",
+      "pointerTargets": 5,
+      "complete": true,
+      "replay": true
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "browserClosed": true
+}

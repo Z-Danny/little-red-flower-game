@@ -1,0 +1,3 @@
+# Rules, masks and source audit records use exact byte hashes.
+# Preserve authored bytes on Windows and Linux; do not auto-convert line endings.
+* -text

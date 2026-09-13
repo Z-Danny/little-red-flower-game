@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "provenance": "Original deterministic DSP music, environment and nonverbal Foley. No speech, TTS, narrated text, downloaded music or third-party reference assets. Replace samples by stable ID, never gameplay IDs.",
+  "assets": {
+    "fear-inhale": { "src": "/audio/kitchen-fear-v2/fear-inhale.wav", "bus": "character" },
+    "fear-tremble": { "src": "/audio/kitchen-fear-v2/fear-tremble.wav", "bus": "character" },
+    "fear-startle": { "src": "/audio/kitchen-fear-v2/fear-startle.wav", "bus": "character" },
+    "music-bed": { "src": "/audio/response-v1/music-bed.wav", "bus": "music", "loop": true },
+    "music-pulse": { "src": "/audio/response-v1/music-pulse.wav", "bus": "music", "loop": true },
+    "music-high": { "src": "/audio/response-v1/music-high.wav", "bus": "music", "loop": true },
+    "fire": { "src": "/audio/response-v1/fire.wav", "bus": "ambience", "loop": true },
+    "draft": { "src": "/audio/response-v1/draft.wav", "bus": "ambience", "loop": true },
+    "breathing": { "src": "/audio/response-v1/breathing.wav", "bus": "character", "loop": true },
+    "pickup": { "src": "/audio/response-v1/pickup.wav", "bus": "sfx" },
+    "fx-lid": { "src": "/audio/response-v1/lid.wav", "bus": "sfx" },
+    "fx-gas": { "src": "/audio/response-v1/gas.wav", "bus": "sfx" },
+    "fx-water": { "src": "/audio/response-v1/water.wav", "bus": "sfx" },
+    "cloth": { "src": "/audio/response-v1/cloth.wav", "bus": "sfx" },
+    "flare": { "src": "/audio/response-v1/flare.wav", "bus": "sfx" },
+    "spray": { "src": "/audio/response-v1/spray.wav", "bus": "sfx" },
+    "bounce": { "src": "/audio/response-v1/bounce.wav", "bus": "sfx" },
+    "steps": { "src": "/audio/response-v1/steps.wav", "bus": "character" },
+    "gasp": { "src": "/audio/response-v1/gasp.wav", "bus": "character" },
+    "relief": { "src": "/audio/response-v1/relief.wav", "bus": "character" },
+    "success": { "src": "/audio/response-v1/success.wav", "bus": "sfx" }
+  }
+}

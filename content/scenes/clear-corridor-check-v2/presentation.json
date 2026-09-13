@@ -1,0 +1,16 @@
+{
+  "location": "住宅公共楼道",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "平时巡查：找出楼道里的五处隐患。",
+  "reveal": "识别完成。通道畅通，防火门正常闭合。",
+  "completeTitle": "五处已识别，让通道畅通",
+  "pauseNote": "这是平时的楼道隐患识别，不是火场撤离演练。发现问题应告知成人或物业，不自行操作消防、电气设施。误点只表示未命中本关目标；计时仅为训练用时。",
+  "endingNote": "图示为物业和相关责任人整改后的另一个时点。常闭防火门恢复正常闭合但能按疏散方向开启，安全出口解除链锁；不是要求所有门始终敞开。",
+  "preview": "巡查一段住宅公共楼道，圈出五处影响通行、消防设施使用或用电安全的问题。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}

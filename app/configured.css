@@ -13,3 +13,9 @@
 .configured-keyboard{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);z-index:5}.configured-keyboard:focus-within{left:8px;bottom:10px;width:calc(100% - 16px);height:auto;clip-path:none;background:#292822;padding:10px;border-radius:12px}.configured-keyboard button{margin:3px;padding:8px;background:#fff2d4;color:#243e32;border-radius:8px;border:0}.configured-player button:focus-visible{outline:3px solid #ffc875;outline-offset:3px}
 .mission-picker{overflow-x:auto;justify-content:flex-start!important;scrollbar-width:thin;scroll-snap-type:x proximity}.mission-picker>button{flex:0 0 auto!important;scroll-snap-align:start;white-space:nowrap}
 @media(max-width:359px){.configured-hud{gap:6px;padding-inline:8px}.configured-hud span{font-size:13px}.configured-hud button{width:34px;height:34px}.configured-hud time{font-size:14px}}
+/* Only response players opt in. Unrelated prevention layouts retain their existing fit. */
+.configured-player[data-game-surface]{width:100%;height:100vh;height:100dvh;isolation:isolate}
+.configured-player[data-game-surface] .configured-hud button{width:44px;height:44px;min-width:44px;min-height:44px;flex:0 0 44px}
+.configured-player[data-game-surface] .configured-hud span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.configured-player[data-game-surface] .configured-hud time{white-space:nowrap;flex-shrink:0}
+.configured-player[data-game-surface] :is(.configured-dialog,.configured-loading,.configured-keyboard) button{min-width:44px;min-height:44px}

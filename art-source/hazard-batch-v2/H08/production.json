@@ -1,0 +1,196 @@
+{
+  "id": "quake-bedroom-v2",
+  "authorId": "H08",
+  "sourceSha256": "4c0a5d608b7648158289e9709e0c42d1ea82ca46e2e0c7c2ac06f30eee3ec7ee",
+  "targets": [
+    {
+      "id": "unsecured_cabinet",
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "heavy_top",
+      "color": [
+        0,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "overbed_frame",
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "exit_boxes",
+      "color": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "blocked_shelter",
+      "color": [
+        255,
+        0,
+        255
+      ]
+    }
+  ],
+  "corrections": {
+    "targets": {
+      "unsecured_cabinet": {
+        "keepPolygons": [
+          [
+            [
+              543,
+              145
+            ],
+            [
+              585,
+              94
+            ],
+            [
+              645,
+              93
+            ],
+            [
+              663,
+              104
+            ],
+            [
+              663,
+              606
+            ],
+            [
+              572,
+              630
+            ],
+            [
+              545,
+              635
+            ],
+            [
+              543,
+              576
+            ]
+          ],
+          [
+            [
+              643,
+              90
+            ],
+            [
+              686,
+              73
+            ],
+            [
+              697,
+              73
+            ],
+            [
+              697,
+              123
+            ],
+            [
+              680,
+              126
+            ],
+            [
+              686,
+              156
+            ],
+            [
+              708,
+              195
+            ],
+            [
+              708,
+              210
+            ],
+            [
+              690,
+              214
+            ],
+            [
+              668,
+              181
+            ],
+            [
+              651,
+              145
+            ]
+          ]
+        ],
+        "excludePolygons": [
+          [
+            [
+              661,
+              463
+            ],
+            [
+              681,
+              462
+            ],
+            [
+              704,
+              464
+            ],
+            [
+              720,
+              493
+            ],
+            [
+              720,
+              538
+            ],
+            [
+              693,
+              539
+            ],
+            [
+              644,
+              517
+            ],
+            [
+              638,
+              506
+            ],
+            [
+              644,
+              491
+            ]
+          ]
+        ],
+        "reason": "原候选把左侧书柜、门、床头柜和灯、桌子等非目标误涂红色；仅与候选红色相交保留右侧固定带脱开的高柜及墙面连接件，排除桌灯。该裁切不新增目标像素。"
+      },
+      "overbed_frame": {
+        "fillEnclosedHoles": true,
+        "reason": "逐图审核原物体为完整的厚重镜子；蓝色外框包围的黑区是实心镜面，不是可穿透的实体孔洞。仅对这个镜子目标封闭漏涂内部，不填桌腿、把手或柜间真实空隙。"
+      }
+    },
+    "characters": {}
+  },
+  "world": [
+    720,
+    1280
+  ],
+  "effects": {
+    "weatherPolygons": [],
+    "waterPolygons": [],
+    "skyPolygons": [],
+    "firePolygons": [],
+    "smokePolygons": [],
+    "fireSources": [],
+    "smokeDrift": 1
+  },
+  "output": "public/levels/hazard-batch-v2/quake-bedroom-v2",
+  "skin": "content/scenes/quake-bedroom-v2/skin.json"
+}

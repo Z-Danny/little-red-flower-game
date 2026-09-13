@@ -2,7 +2,8 @@
   "id": "typhoon-home",
   "title": "台风前的家",
   "order": 1,
-  "seconds": 90,
+  "seconds": 50,
+  "timeout": "fail",
   "markMs": 800,
   "revealMs": 5500,
   "targets": [

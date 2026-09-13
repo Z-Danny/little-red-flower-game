@@ -1,0 +1,148 @@
+{
+  "frameSchedule": "controlled 10fps via test-only rAF scheduling; real input and state machine; full realtime audio tested separately",
+  "at": "2026-09-12T19:34:14.845Z",
+  "status": "passed",
+  "htmlSha256": "903c166d7b217fe4536ba77e5e6365b5a116465d44a3d935c9f09da23fde2b30",
+  "checks": [
+    {
+      "id": "typhoon-home",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "typhoon-home",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "charging-bedroom",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "charging-bedroom",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "storm-street-check-v2",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "storm-street-check-v2",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "thunder-park-v2",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "thunder-park-v2",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "name": "original collection/circle interactions complete via real pointer after retry",
+      "status": "passed"
+    },
+    {
+      "id": "flood-kit",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "flood-kit",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "flood-kit",
+      "name": "original collection/circle interactions complete via real pointer after retry",
+      "status": "passed"
+    },
+    {
+      "id": "clear-corridor",
+      "name": "3 viewports: hidden/toggle clues, 44px buttons, full-row bar, no seconds",
+      "status": "passed"
+    },
+    {
+      "id": "clear-corridor",
+      "name": "50-second deadline, amber/red phases, pause, no failure award, one-click retry",
+      "status": "passed"
+    },
+    {
+      "id": "clear-corridor",
+      "name": "original collection/circle interactions complete via real pointer after retry",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "physicalPhone": "not_run",
+  "humanListening": "not_run",
+  "closed": true
+}

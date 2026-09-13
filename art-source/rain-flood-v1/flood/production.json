@@ -1,0 +1,221 @@
+{
+  "id": "flood-house-response-v1",
+  "objects": {
+    "breaker": {
+      "label": "干燥墙上的电闸",
+      "color": [
+        255,
+        0,
+        128
+      ],
+      "input": "tap",
+      "fixed": true,
+      "fillHoles": true,
+      "clip": [
+        [
+          225,
+          235
+        ],
+        [
+          360,
+          235
+        ],
+        [
+          360,
+          364
+        ],
+        [
+          225,
+          364
+        ]
+      ]
+    },
+    "panel": {
+      "label": "备用木门板",
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "input": "drag"
+    },
+    "foam": {
+      "label": "泡沫板",
+      "color": [
+        0,
+        255,
+        255
+      ],
+      "input": "drag"
+    },
+    "rope": {
+      "label": "绳子",
+      "color": [
+        255,
+        128,
+        0
+      ],
+      "input": "drag"
+    },
+    "phone": {
+      "label": "手机",
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "input": "drag",
+      "fillHoles": true
+    },
+    "flashlight": {
+      "label": "手电筒",
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "input": "drag",
+      "fillHoles": true
+    },
+    "water": {
+      "label": "饮用水",
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "input": "drag",
+      "fillHoles": true
+    },
+    "person": {
+      "label": "被困家人",
+      "color": [
+        255,
+        255,
+        255
+      ],
+      "input": "drag"
+    },
+    "bag": {
+      "label": "应急背包",
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "input": "drag",
+      "fillHoles": true
+    },
+    "chair": {
+      "label": "普通椅子",
+      "color": [
+        128,
+        0,
+        255
+      ],
+      "input": "drag"
+    }
+  },
+  "poses": {
+    "personStairs": {
+      "x": 518,
+      "y": 218,
+      "w": 112,
+      "h": 388
+    },
+    "personRoof": {
+      "x": 552,
+      "y": 143,
+      "w": 77,
+      "h": 264
+    },
+    "panelStored": {
+      "x": 330,
+      "y": 615,
+      "w": 65.4,
+      "h": 193.2
+    },
+    "foamStored": {
+      "x": 373.8,
+      "y": 670.2,
+      "w": 66.6,
+      "h": 123.6
+    },
+    "ropeStored": {
+      "x": 373.2,
+      "y": 775.2,
+      "w": 57.6,
+      "h": 37.8
+    }
+  },
+  "zones": {
+    "roof": {
+      "box": {
+        "x": 493,
+        "y": 170,
+        "w": 174,
+        "h": 140
+      },
+      "label": "楼上安全出口"
+    },
+    "stairs": {
+      "box": {
+        "x": 500,
+        "y": 393,
+        "w": 188,
+        "h": 410
+      },
+      "label": "干燥楼梯"
+    },
+    "wire": {
+      "box": {
+        "x": 29,
+        "y": 201,
+        "w": 85,
+        "h": 118
+      },
+      "label": "门外断线",
+      "danger": true
+    },
+    "car": {
+      "box": {
+        "x": 17,
+        "y": 439,
+        "w": 126,
+        "h": 53
+      },
+      "label": "被淹汽车",
+      "danger": true
+    },
+    "outside": {
+      "box": {
+        "x": 0,
+        "y": 381,
+        "w": 150,
+        "h": 455
+      },
+      "label": "门外洪水",
+      "danger": true
+    }
+  },
+  "weather": [
+    [
+      {
+        "x": 0,
+        "y": 61
+      },
+      {
+        "x": 167,
+        "y": 154
+      },
+      {
+        "x": 145,
+        "y": 822
+      },
+      {
+        "x": 0,
+        "y": 911
+      }
+    ]
+  ]
+}

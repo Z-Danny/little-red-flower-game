@@ -1,0 +1,11 @@
+{
+  "at": "2026-09-10T03:40:24.730Z",
+  "htmlSha256": "3cf948b295062ae374a9b5df8395583a7288428565ccfe9178878801af195048",
+  "backup": "D:/中关村/小红花/test1/work/edge-fit-backup-2026-09-10T03-40-13-646Z",
+  "filesUpdated": 66,
+  "immutableFiles": 295,
+  "regressionTests": 1650,
+  "mobileLayoutChecks": 133,
+  "safeAreaAndZoomChecks": 21,
+  "remotePublished": false
+}

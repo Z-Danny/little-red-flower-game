@@ -1,5 +1,9 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
+// Shared game-surface overrides must follow every legacy player stylesheet.
+import './game-viewport.css';
+
+export const viewport: Viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover' };
 
 export const metadata: Metadata = {
   title: '小红花应急行动｜把正确的选择练成反应',

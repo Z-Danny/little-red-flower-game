@@ -1,0 +1,9 @@
+{
+  "compiler": "prepare-hazard-batch.py",
+  "version": 1,
+  "id": "bedroom-night-check-v2",
+  "sourceSha256": "21442b1e147c0ff05445efd3b4e985062e66710eaa51589d6f8730429f2ce1ae",
+  "specPath": "art-source/hazard-batch-v2/H02/production.json",
+  "skinSha256": "0a642f8e8af48472105d2318da58468844443072c40db3bb2888621374cb360d",
+  "createdAt": "2026-09-09T17:04:04.643077+00:00"
+}

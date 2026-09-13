@@ -1,0 +1,613 @@
+{
+  "schemaVersion": 1,
+  "id": "illustrated",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "background": {
+      "src": "/levels/reference-storybook-v2/collapse-signal-practice/background.webp",
+      "alpha": false
+    },
+    "trapped-initial": {
+      "src": "/levels/reference-storybook-v2/collapse-signal-practice/trapped-initial.webp",
+      "alpha": true
+    },
+    "trapped-legs": {
+      "src": "/levels/reference-storybook-v2/collapse-signal-practice/trapped-legs.webp",
+      "alpha": true
+    },
+    "cloth-initial": {
+      "src": "/levels/reference-storybook-v2/collapse-signal-practice/cloth-initial.webp",
+      "alpha": true
+    },
+    "phone-initial": {
+      "src": "/levels/reference-storybook-v2/collapse-signal-practice/phone-initial.webp",
+      "alpha": true
+    },
+    "small-tapper-initial": {
+      "src": "/levels/reference-storybook-v2/collapse-signal-practice/small-tapper-initial.webp",
+      "alpha": true
+    },
+    "large-stone-initial": {
+      "src": "/levels/reference-storybook-v2/collapse-signal-practice/large-stone-initial.webp",
+      "alpha": true
+    },
+    "trapped-head": {
+      "src": "/levels/reference-storybook-v2/collapse-signal-practice/trapped-head.webp",
+      "alpha": true
+    },
+    "trapped-cloth": {
+      "src": "/levels/reference-storybook-v2/collapse-signal-practice/trapped-cloth.webp",
+      "alpha": true
+    },
+    "trapped-both": {
+      "src": "/levels/reference-storybook-v2/collapse-signal-practice/trapped-both.webp",
+      "alpha": true
+    },
+    "device": {
+      "src": "/levels/response-practice-v1/r03/device.webp",
+      "alpha": true
+    }
+  },
+  "background": "background",
+  "poses": {
+    "trapped-person": {
+      "asset": "trapped-initial",
+      "x": 71.15834218916046,
+      "y": 431.88097768331556,
+      "w": 589.1604675876727,
+      "h": 434.6014877789586,
+      "depth": 40
+    },
+    "fixed-legs": {
+      "asset": "trapped-legs",
+      "x": 219.596174282678,
+      "y": 792.2635494155154,
+      "w": 337.42826780021255,
+      "h": 166.80127523910733,
+      "depth": 29,
+      "blockInput": false
+    },
+    "cloth": {
+      "asset": "cloth-initial",
+      "x": 0,
+      "y": 581.8490967056323,
+      "w": 114.77151965993625,
+      "h": 122.42295430393199,
+      "depth": 45
+    },
+    "phone": {
+      "asset": "phone-initial",
+      "x": 11.477151965993624,
+      "y": 710.3931987247609,
+      "w": 140.7863974495218,
+      "h": 78.80977683315622,
+      "depth": 45
+    },
+    "small-tapper": {
+      "asset": "small-tapper-initial",
+      "x": 550.9032943676939,
+      "y": 777.7258235919235,
+      "w": 114.00637619553666,
+      "h": 70.3931987247609,
+      "depth": 45
+    },
+    "large-stone": {
+      "asset": "large-stone-initial",
+      "x": 421.5940488841658,
+      "y": 798.7247608926673,
+      "w": 298.4059511158342,
+      "h": 481.27523910733265,
+      "depth": 55
+    },
+    "trapped-rest": {
+      "asset": "trapped-head",
+      "x": 175,
+      "y": 413,
+      "w": 416,
+      "h": 480,
+      "depth": 40,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "call-device": {
+      "asset": "device",
+      "x": 38,
+      "y": 180,
+      "w": 250,
+      "h": 336,
+      "depth": 80,
+      "opacity": 0,
+      "blockInput": false
+    }
+  },
+  "zones": {
+    "face-cover": {
+      "x": 343,
+      "y": 453,
+      "w": 178,
+      "h": 192
+    },
+    "solid-wall": {
+      "x": 562,
+      "y": 459,
+      "w": 148,
+      "h": 259
+    },
+    "rest-zone": {
+      "x": 173,
+      "y": 660,
+      "w": 377,
+      "h": 287
+    },
+    "pit-edge": {
+      "x": 204,
+      "y": 85,
+      "w": 354,
+      "h": 245
+    },
+    "excavate-wall": {
+      "x": 30,
+      "y": 304,
+      "w": 197,
+      "h": 234
+    }
+  },
+  "zoneConditions": {},
+  "zoneLabels": {
+    "face-cover": "口鼻前方",
+    "solid-wall": "近处坚实侧壁",
+    "rest-zone": "原位节省体力",
+    "pit-edge": "松散坑缘",
+    "excavate-wall": "凿挖侧壁"
+  },
+  "states": [
+    {
+      "object": "trapped-person",
+      "when": {
+        "all": [
+          "dust-reduced"
+        ]
+      },
+      "pose": {
+        "asset": "trapped-cloth",
+        "x": 175,
+        "y": 413,
+        "w": 416,
+        "h": 480,
+        "depth": 40
+      }
+    },
+    {
+      "object": "trapped-person",
+      "when": {
+        "all": [
+          "head-protected"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "trapped-rest",
+      "when": {
+        "all": [
+          "head-protected"
+        ]
+      },
+      "pose": {
+        "opacity": 1,
+        "blockInput": true
+      }
+    },
+    {
+      "object": "trapped-rest",
+      "when": {
+        "all": [
+          "dust-reduced"
+        ]
+      },
+      "pose": {
+        "asset": "trapped-both"
+      }
+    },
+    {
+      "object": "trapped-rest",
+      "when": {
+        "all": [
+          "head-protected",
+          "dust-reduced"
+        ]
+      },
+      "pose": {
+        "asset": "trapped-both"
+      }
+    },
+    {
+      "object": "cloth",
+      "when": {
+        "all": [
+          "dust-reduced"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "trapped-rest",
+      "when": {
+        "all": [
+          "conserving-energy"
+        ]
+      },
+      "pose": {
+        "rotation": 0
+      }
+    }
+  ],
+  "animations": {
+    "protect-head": {
+      "durationMs": 800,
+      "tracks": [
+        {
+          "object": "trapped-person",
+          "keyframes": [
+            {
+              "at": 0.55,
+              "opacity": 0.5
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "trapped-rest",
+          "keyframes": [
+            {
+              "at": 0.55,
+              "opacity": 0.5
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "reduce-dust": {
+      "durationMs": 800,
+      "tracks": [
+        {
+          "object": "cloth",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.5,
+              "x": 382,
+              "y": 508,
+              "w": 102,
+              "h": 110
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "trapped-person",
+          "keyframes": [
+            {
+              "at": 1,
+              "asset": "trapped-cloth",
+              "x": 175,
+              "y": 413,
+              "w": 416,
+              "h": 480
+            }
+          ]
+        },
+        {
+          "object": "trapped-rest",
+          "keyframes": [
+            {
+              "at": 1,
+              "asset": "trapped-both"
+            }
+          ]
+        }
+      ]
+    },
+    "request-help": {
+      "durationMs": 1000,
+      "tracks": [
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "object": "call-device",
+          "keyframes": [
+            {
+              "at": 0.12,
+              "opacity": 1
+            },
+            {
+              "at": 0.82,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "tap-signal": {
+      "durationMs": 1000,
+      "tracks": [
+        {
+          "object": "small-tapper",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.2,
+              "x": 602,
+              "y": 592,
+              "rotation": -0.2
+            },
+            {
+              "at": 0.35,
+              "x": 618
+            },
+            {
+              "at": 0.48,
+              "x": 601
+            },
+            {
+              "at": 0.6,
+              "x": 618
+            },
+            {
+              "at": 0.72,
+              "x": 601
+            },
+            {
+              "at": 0.84,
+              "x": 618
+            },
+            {
+              "at": 1,
+              "asset": "small-tapper-initial",
+              "x": 550.9032943676939,
+              "y": 777.7258235919235,
+              "w": 114.00637619553666,
+              "h": 70.3931987247609,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "rest-in-place": {
+      "durationMs": 900,
+      "tracks": [
+        {
+          "object": "trapped-rest",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-rest": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "trapped-rest",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "move-stone-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "large-stone",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "climb-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "trapped-rest",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "excavate-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "small-tapper",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [
+    {
+      "object": "call-device",
+      "text": "花园路塌陷处\n1 人被困，腿部受限\n保持原位等待救援",
+      "x": 0.5,
+      "y": 0.42,
+      "size": 17,
+      "color": "#29423f"
+    }
+  ],
+  "presentation": {
+    "durationMs": 80000,
+    "effects": [
+      {
+        "kind": "dust",
+        "box": {
+          "x": 0,
+          "y": 200,
+          "w": 720,
+          "h": 850
+        },
+        "depth": 60,
+        "color": "#b79b70",
+        "strength": 0.5,
+        "reductions": [
+          {
+            "when": {
+              "all": [
+                "conserving-energy"
+              ]
+            },
+            "factor": 0.45
+          }
+        ]
+      },
+      {
+        "kind": "light",
+        "box": {
+          "x": 187,
+          "y": 76,
+          "w": 390,
+          "h": 200
+        },
+        "depth": 1,
+        "strength": 0.18,
+        "color": "#fff3c5"
+      }
+    ],
+    "actors": [
+      {
+        "object": "trapped-person",
+        "amplitude": 0.12,
+        "until": [
+          "head-protected"
+        ]
+      },
+      {
+        "object": "trapped-rest",
+        "amplitude": 0.1,
+        "until": [
+          "conserving-energy"
+        ]
+      }
+    ],
+    "audio": {
+      "theme": "collapse",
+      "cues": {
+        "pickup": "pickup",
+        "bounce": "bounce",
+        "danger": "impact",
+        "complete": "success",
+        "protect-head": "cloth-move",
+        "reduce-dust": "cloth-move",
+        "request-help": "call-connect",
+        "tap-signal": "wall-tap",
+        "rest-in-place": "waiting-established",
+        "early-rest": "invalid-return",
+        "move-stone-error": "ground-settle",
+        "climb-error": "ground-settle",
+        "excavate-error": "ground-settle"
+      },
+      "calmWhen": [
+        "conserving-energy"
+      ]
+    }
+  }
+}

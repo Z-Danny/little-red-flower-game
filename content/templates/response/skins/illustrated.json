@@ -1,6 +1,15 @@
 {
   "schemaVersion": 1,
   "id": "illustrated",
+  "response": {
+    "kind": "fire", "actor": "person", "smokeOrigin": { "x": 251, "y": 582 }, "smokeDepth": 4,
+    "sealed": "covered", "sourceOff": "gas-off", "controlledBy": ["covered", "gas-off"],
+    "cues": {
+      "opening": "gasp", "critical": "gasp",
+      "actions": { "cover": { "at": 0.6, "sound": "fx-lid" }, "shutoff": { "at": 0.05, "sound": "fx-gas" }, "water-error": { "at": 0.14, "sound": "fx-water", "character": "gasp" }, "leave": { "at": 0.08, "sound": "steps" }, "bounce": { "at": 0.15, "sound": "bounce" } },
+      "milestones": { "controlled": { "character": "relief" }, "evacuated": { "sound": "success" } }
+    }
+  },
   "world": {
     "width": 720,
     "height": 1440

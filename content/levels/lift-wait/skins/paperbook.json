@@ -5,10 +5,22 @@
     "width": 720,
     "height": 1280
   },
+  "framing": {
+    "sceneBounds": { "x": 0, "y": 0, "w": 720, "h": 1440 },
+    "critical": { "x": 58, "y": 226, "w": 607, "h": 956 },
+    "criticalRegions": [
+      { "x": 163, "y": 226, "w": 395, "h": 530 },
+      { "x": 58, "y": 786, "w": 220, "h": 390 },
+      { "x": 586.2075471698113, "y": 580.3207547169811, "w": 78.67924528301887, "h": 82.64150943396226 },
+      { "x": 327, "y": 596, "w": 172, "h": 449.4193548387097 },
+      { "x": 81, "y": 719, "w": 177, "h": 462.48387096774195 }
+    ]
+  },
   "assets": {
     "lift-room": {
-      "src": "/levels/transcript-v1/lift-room.webp",
-      "alpha": false
+      "src": "/levels/display-adaptation/lift-wait-backdrop.webp",
+      "alpha": false,
+      "sceneBounds": { "x": 0, "y": 0, "w": 720, "h": 1440 }
     },
     "lift-door": {
       "src": "/levels/transcript-v1/lift-door.png",

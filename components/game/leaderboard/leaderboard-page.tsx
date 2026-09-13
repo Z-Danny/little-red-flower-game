@@ -1,7 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { ArrowLeft, ChevronRight, Flower2, MapPin, Pencil, Plus, Trophy, X } from 'lucide-react';
+import { ArrowLeft, ChevronRight, MapPin, Pencil, Plus, Trophy, X } from 'lucide-react';
+import {Flower} from '../journey/flower';
+import {journeyCopy} from '@/app/game/journey/presentation';
 import { MAX_PLAYERS, validateProfile } from '@/app/game/leaderboard/model';
 import type { LeaderboardController } from './use-leaderboard';
 
@@ -48,13 +50,13 @@ export function LeaderboardPage({ board, onBack }: Props) {
   return <section className="phone-stage lb-page">
     <header className="lb-header">
       <button className="lb-icon" onClick={onBack} aria-label="返回关卡首页"><ArrowLeft /></button>
-      <span>小红花应急行动</span>
+      <span>{journeyCopy.brand}</span>
       <span className="lb-local-badge">{local ? '本机榜' : '联网榜'}</span>
     </header>
 
     <div className="lb-hero">
-      <div className="lb-hero-flower" aria-hidden="true"><Flower2 /></div>
-      <span className="lb-eyebrow">每一次练习，都值得一朵花</span>
+      <div className="lb-hero-flower" aria-hidden="true"><Flower /></div>
+      <span className="lb-eyebrow">每一处守护，都留下花开的痕迹</span>
       <h1 ref={heading} tabIndex={-1}>小红花排行榜</h1>
       <p>把安全记在心里，让小红花慢慢盛开。</p>
       <div className="lb-hero-meta"><span><Trophy />{rankedCount} 人上榜</span><i /><span>当前最多 {data.maxFlowers} 朵</span></div>
@@ -65,7 +67,7 @@ export function LeaderboardPage({ board, onBack }: Props) {
       <div className="lb-mine-body">
         <span className="lb-avatar" aria-hidden="true">{Array.from(mine.name)[0]}</span>
         <div className="lb-mine-identity"><strong>{mine.name}</strong><span><MapPin />{mine.region || '地区未设置'}</span></div>
-        <div className="lb-mine-score"><strong><Flower2 />{mine.flowers}</strong><span>{mine.rank ? `第 ${mine.rank} 名` : '未上榜'}</span></div>
+        <div className="lb-mine-score"><strong><Flower />{mine.flowers}</strong><span>{mine.rank ? `第 ${mine.rank} 名` : '未上榜'}</span></div>
       </div>
       <p>{mine.rank ? (mine.rank === 1 ? '你正在榜首，继续守护每一份安全。' : `距离榜首还差 ${(leading?.flowers ?? mine.flowers) - mine.flowers} 朵，继续练习吧。`) : '完成任意关卡，收获第一朵小红花。'}</p>
     </section>
@@ -78,7 +80,7 @@ export function LeaderboardPage({ board, onBack }: Props) {
         <tbody>{data.entries.map(player => <tr key={player.id} className={player.id === mine.id ? 'lb-current-row' : ''} aria-current={player.id === mine.id ? 'true' : undefined}>
           <td><span className={`lb-rank lb-rank-${player.rank ?? 'none'}`} aria-label={player.rank ? `第 ${player.rank} 名` : '未上榜'}>{player.rank === 1 && <Trophy aria-hidden="true" />}{player.rank ?? '—'}</span></td>
           <td><div className="lb-row-name">{player.name}{player.id === mine.id && <small>我</small>}</div><div className="lb-row-region">{player.region || '地区未设置'}</div></td>
-          <td><span className="lb-row-flowers"><Flower2 aria-hidden="true" />{player.flowers}</span></td>
+          <td><span className="lb-row-flowers"><Flower />{player.flowers}</span></td>
           <td>{player.id !== mine.id && local ? <button className="lb-switch" disabled={board.busy} aria-label={`切换为 ${player.name}`} onClick={async () => { if (await board.switchPlayer(player.id)) setAnnouncement(`已切换为 ${player.name}，接下来的成绩将记在这位玩家名下。`); }}><ChevronRight /></button> : <span className="lb-current-dot" aria-hidden="true" />}</td>
         </tr>)}</tbody>
       </table></div>
@@ -103,9 +105,9 @@ export function LeaderboardPage({ board, onBack }: Props) {
     <p className="lb-announcement" role="status">{announcement}</p>
     <footer className="lb-rules">
       <h2>小红花怎样计算？</h2>
-      <p>每关取历史最好成绩，总数相加；重复游玩不叠加。同分并列排名，0 朵暂不上榜。</p>
+      <p>每关首次完成获得 3 朵小红花，重复游玩不重复领奖。旧版花数保留。同分并列排名，0 朵暂不上榜。</p>
       <p>{local ? '仅展示此浏览器、此游戏地址保存的玩家，不是全网排名。清理浏览器数据会丢失本机记录；不同设备、浏览器或离线文件不会自动同步。' : '联网榜由服务端更新。'}</p>
     </footer>
-    <button className="lb-play" onClick={onBack}>回到关卡，收集小红花 <ChevronRight /></button>
+    <button className="lb-play" onClick={onBack}>返回地图 <ChevronRight /></button>
   </section>;
 }

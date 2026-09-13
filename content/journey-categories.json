@@ -1,0 +1,36 @@
+{
+  "source": {
+    "title": "用户指定的三类主题",
+    "url": "",
+    "checkedAt": "2026-09-12"
+  },
+  "categories": [
+    {
+      "id": "nature",
+      "name": "自然灾害",
+      "scope": "地震、洪涝、台风、雷雨与森林防火等自然灾害避险",
+      "icon": "mountain",
+      "regionIds": [
+        "nature"
+      ]
+    },
+    {
+      "id": "public",
+      "name": "公共安全",
+      "scope": "公共通道、电梯故障、井口与道路塌陷、车辆落水等公共场景安全",
+      "icon": "building",
+      "regionIds": [
+        "public"
+      ]
+    },
+    {
+      "id": "home",
+      "name": "居家校园办公",
+      "scope": "厨房、卧室、校园与高楼住宅的防火防电、隔烟和撤离",
+      "icon": "home",
+      "regionIds": [
+        "home"
+      ]
+    }
+  ]
+}

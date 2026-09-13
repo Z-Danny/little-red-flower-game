@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "sha256": "25903c29392f9e63739a6a36f165b9a5ccec51d902ae49525217efe8511ba3ed",
+  "checks": [
+    {
+      "name": "three integrated maps; chapter chrome, counts and compass removed",
+      "status": "passed"
+    },
+    {
+      "name": "scene anchored hover effects nature 320",
+      "status": "passed"
+    },
+    {
+      "name": "scene anchored hover effects public 320",
+      "status": "passed"
+    },
+    {
+      "name": "scene anchored hover effects home 320",
+      "status": "passed"
+    },
+    {
+      "name": "scene anchored hover effects nature 390",
+      "status": "passed"
+    },
+    {
+      "name": "scene anchored hover effects public 390",
+      "status": "passed"
+    },
+    {
+      "name": "visible flame geometry changes over time",
+      "status": "passed"
+    },
+    {
+      "name": "scene anchored hover effects home 390",
+      "status": "passed"
+    },
+    {
+      "name": "scene anchored hover effects nature 1440",
+      "status": "passed"
+    },
+    {
+      "name": "scene anchored hover effects public 1440",
+      "status": "passed"
+    },
+    {
+      "name": "scene anchored hover effects home 1440",
+      "status": "passed"
+    },
+    {
+      "name": "visible motion sampled over time typhoon-home",
+      "status": "passed"
+    },
+    {
+      "name": "visible motion sampled over time charging-bedroom",
+      "status": "passed"
+    },
+    {
+      "name": "visible motion sampled over time lift-contact-practice",
+      "status": "passed"
+    },
+    {
+      "name": "keyboard and ordinary entry preserve progress",
+      "status": "passed"
+    },
+    {
+      "name": "reduced motion disables particle animation",
+      "status": "passed"
+    },
+    {
+      "name": "all 24 completed scenes preview on building hover, restore safety on leave and preserve save",
+      "status": "passed"
+    },
+    {
+      "name": "touch press shows fire; release opens real level intro",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "browserClosed": true,
+  "physicalDevice": "not_run"
+}

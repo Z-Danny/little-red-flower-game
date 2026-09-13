@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "id": "collapse-signal-practice",
+  "kind": "response",
+  "title": "塌陷被困：防护与求救",
+  "order": 25,
+  "location": "道路塌陷空隙",
+  "description": "下肢被困无法自行脱身，上身可小幅活动；手机有信号、附近无水火电危险。",
+  "safety": "情境训练，不是真实求救。现场条件不符或出现新险情时，应遵从当地应急与专业人员指引。",
+  "briefing": "情境训练｜下肢被困无法自行脱身，上身可小幅活动；手机有信号、附近无水火电危险。",
+  "objects": [
+    {
+      "id": "trapped-person",
+      "label": "原位护头",
+      "input": "tap",
+      "disabledWhen": [
+        "head-protected"
+      ]
+    },
+    {
+      "id": "trapped-rest",
+      "label": "原位保持待援姿态",
+      "input": "drag",
+      "requires": [
+        "head-protected"
+      ],
+      "disabledWhen": [
+        "conserving-energy"
+      ]
+    },
+    {
+      "id": "cloth",
+      "label": "衣料",
+      "input": "drag",
+      "disabledWhen": [
+        "dust-reduced"
+      ]
+    },
+    {
+      "id": "phone",
+      "label": "随身手机",
+      "input": "tap",
+      "disabledWhen": [
+        "help-requested"
+      ]
+    },
+    {
+      "id": "small-tapper",
+      "label": "小硬物",
+      "input": "drag",
+      "disabledWhen": [
+        "signal-given"
+      ]
+    },
+    {
+      "id": "large-stone",
+      "label": "大石块",
+      "input": "drag"
+    }
+  ],
+  "goals": [
+    {
+      "id": "head-protected",
+      "label": "原位保护头脸",
+      "object": "trapped-person",
+      "showTarget": false
+    },
+    {
+      "id": "dust-reduced",
+      "label": "减少口鼻粉尘刺激",
+      "object": "cloth",
+      "showTarget": false
+    },
+    {
+      "id": "help-requested",
+      "label": "报告被困位置与情况",
+      "object": "phone",
+      "showTarget": false
+    },
+    {
+      "id": "signal-given",
+      "label": "间歇轻敲发出信号",
+      "object": "small-tapper",
+      "showTarget": false
+    },
+    {
+      "id": "conserving-energy",
+      "label": "原位节省体力待援",
+      "object": "trapped-rest",
+      "showTarget": false
+    }
+  ],
+  "interactions": [
+    {
+      "id": "protect-head",
+      "source": "trapped-person",
+      "mode": "tap",
+      "grants": [
+        "head-protected"
+      ],
+      "outcome": "correct",
+      "animation": "protect-head",
+      "feedback": "在原位用前臂保护头脸，不挣扎移动下肢。"
+    },
+    {
+      "id": "reduce-dust",
+      "source": "cloth",
+      "mode": "drop",
+      "target": "face-cover",
+      "grants": [
+        "dust-reduced"
+      ],
+      "outcome": "correct",
+      "animation": "reduce-dust",
+      "feedback": "松适遮住口鼻；衣料不能过滤有毒气体。"
+    },
+    {
+      "id": "request-help",
+      "source": "phone",
+      "mode": "tap",
+      "grants": [
+        "help-requested"
+      ],
+      "outcome": "correct",
+      "animation": "request-help",
+      "feedback": "模拟求助：道路塌陷、红花路与花园路口，1人被困，腿部不能移动。"
+    },
+    {
+      "id": "tap-signal",
+      "source": "small-tapper",
+      "mode": "drop",
+      "target": "solid-wall",
+      "grants": [
+        "signal-given"
+      ],
+      "outcome": "correct",
+      "animation": "tap-signal",
+      "feedback": "间歇轻敲坚实侧壁，发出定位信号，不凿挖。"
+    },
+    {
+      "id": "rest-in-place",
+      "source": "trapped-rest",
+      "mode": "drop",
+      "target": "rest-zone",
+      "requires": [
+        "head-protected",
+        "dust-reduced",
+        "help-requested",
+        "signal-given"
+      ],
+      "grants": [
+        "conserving-energy"
+      ],
+      "outcome": "correct",
+      "animation": "rest-in-place",
+      "feedback": "保持原位，停止无谓挣扎，留意外界回应。"
+    },
+    {
+      "id": "early-rest",
+      "source": "trapped-rest",
+      "mode": "drop",
+      "target": "rest-zone",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-rest",
+      "feedback": "先完成当前可及的防护、求助与定位信号；身体仍留原位。"
+    },
+    {
+      "id": "move-stone-error",
+      "source": "large-stone",
+      "mode": "drop",
+      "target": "rest-zone",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "move-stone-error",
+      "feedback": "错误后果示意｜不扰动周围土石，等待专业救援。"
+    },
+    {
+      "id": "climb-error",
+      "source": "trapped-rest",
+      "mode": "drop",
+      "target": "pit-edge",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "climb-error",
+      "feedback": "错误后果示意｜下肢受困，不强拉身体攀向松散坑缘。"
+    },
+    {
+      "id": "excavate-error",
+      "source": "small-tapper",
+      "mode": "drop",
+      "target": "excavate-wall",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "excavate-error",
+      "feedback": "错误后果示意｜不凿挖或扰动支撑，只在近处坚实侧壁轻敲。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 80,
+    "initial": 0,
+    "warningAt": 100,
+    "peakFeedback": "演出已达训练上限；仍可继续正确处置，不以等待时间判失败。"
+  },
+  "completion": {
+    "requires": [
+      "head-protected",
+      "dust-reduced",
+      "help-requested",
+      "signal-given",
+      "conserving-energy"
+    ],
+    "settleMs": 1200,
+    "observeMs": 4000,
+    "fixedStars": 3,
+    "summary": "已发出求救信号，继续原位待援",
+    "title": "已发出求救信号，继续原位待援",
+    "status": "训练完成；继续关注现场变化与专业指引。"
+  }
+}

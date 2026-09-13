@@ -1,0 +1,166 @@
+{
+  "compilerVersion": 1,
+  "id": "storm-street-check-v2",
+  "authorId": "H09",
+  "sourceSha256": "054aa49f90d54963a9cfb2b8c103c561a80c7c1f96d2b68fb43b16d47bc8722c",
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "inputHashes": {
+    "scene-original.png": "054aa49f90d54963a9cfb2b8c103c561a80c7c1f96d2b68fb43b16d47bc8722c",
+    "mask-candidate.png": "4b2a2517abf3b569abc4f1f373874efd30623a8e17d6dd93014d0cf0fa408e1c",
+    "clean-candidate.png": "a0e6b54f245fe148043056f72a1edeae339abbb493e704cd5cfd0e07a7111a74",
+    "ending.png": "837694bb6d2d7394b10f2fe1b0d626fbb0d4be14a6976ba4abfaa77656f09a8e"
+  },
+  "specSha256": "079cab9d10cc9b50c9406367f9247731fe67f04e24d556b7672be81609f833b1",
+  "corrections": {
+    "targets": {
+      "missing_cover": {
+        "fillEnclosedHoles": true,
+        "reason": "原稿明确井口及可见边缘为组合风险区；原画井内开口与蓝色围边闭合，候选深蓝色漏分的井口需归同一ID，范围不越井沿。"
+      },
+      "loose_sign": {
+        "fillEnclosedHoles": true,
+        "reason": "硬质广告牌板内候选黑色细线只是图案/接缝，实心牌体轮廓不应出现随机命中小孔。"
+      },
+      "leaning_fence": {
+        "closeGapsPx": 1,
+        "fillEnclosedHoles": true,
+        "excludePolygons": [
+          [
+            [
+              294,
+              763
+            ],
+            [
+              299,
+              758
+            ],
+            [
+              307,
+              779
+            ],
+            [
+              301,
+              781
+            ]
+          ]
+        ],
+        "reason": "Fill only corrugated solid panel seams; preserve natural background triangle outside the right support brace."
+      }
+    },
+    "characters": {}
+  },
+  "targetPixels": {
+    "flooded_underpass": 43495,
+    "wet_power_box": 36755,
+    "missing_cover": 12361,
+    "loose_sign": 22561,
+    "leaning_fence": 48295
+  },
+  "hitPixels": {
+    "flooded_underpass": 43495,
+    "wet_power_box": 36755,
+    "missing_cover": 12361,
+    "loose_sign": 22561,
+    "leaning_fence": 48295
+  },
+  "familyBox": {
+    "x": 406,
+    "y": 743,
+    "w": 314,
+    "h": 537
+  },
+  "familyPixels": 128423,
+  "effectsPixels": {
+    "weather": 320873,
+    "water": 10408,
+    "sky": 0,
+    "fire": 0,
+    "smoke": 0
+  },
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "effectMasksExcludeTargetsAndCharacters": true,
+  "objectAndHitMasksIdentical": true,
+  "approval": "draft; semantic visual inspection and runtime tests pending",
+  "files": [
+    {
+      "path": "character-mask.png",
+      "sha256": "d7b717d00550c88c1df5972453f4bd613f3ce0a4c97ba031d1e57a7b934625cc"
+    },
+    {
+      "path": "clean.webp",
+      "sha256": "90fb4f56ad626e8c08748735e3e5ab467f12298d87271616d1131836d3cab3f0"
+    },
+    {
+      "path": "ending.webp",
+      "sha256": "e8a950bcb5446e684557e1a1e2ce18d58723d53110e5e626c1680effbbee3721"
+    },
+    {
+      "path": "family.png",
+      "sha256": "f9dc737e114e768742f7bca7b8e2cfb6bb663df1375d2a18096822437f631075"
+    },
+    {
+      "path": "fire-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "flooded_underpass.png",
+      "sha256": "7e6c479e83decc2c636837244c4c56f6e485915403946793ad0df4e33018c35e"
+    },
+    {
+      "path": "hit-samples.json",
+      "sha256": "ab30967a10fe2bcfde87bec88a14c1c0209f6829aaea20cc147981e4e93ea24a"
+    },
+    {
+      "path": "id-mask.png",
+      "sha256": "ad9a5c64226fadfe9997c9058d556888e9e3ac05e2f34e7f9901ca069a312e88"
+    },
+    {
+      "path": "leaning_fence.png",
+      "sha256": "b8ca597bbff2e47ab63cc1a033a646f1ec4012a50d037d1def57f7757e10b49b"
+    },
+    {
+      "path": "loose_sign.png",
+      "sha256": "9a44924531345e096d86565fca8db2ac795b1ef0a96786dc7973469a37d3967f"
+    },
+    {
+      "path": "missing_cover.png",
+      "sha256": "170c6e9ded949669ae592d9f3f2a217b6506cf0d6c38b18231d8987375fc3dfd"
+    },
+    {
+      "path": "object-mask.png",
+      "sha256": "ad9a5c64226fadfe9997c9058d556888e9e3ac05e2f34e7f9901ca069a312e88"
+    },
+    {
+      "path": "scene.webp",
+      "sha256": "5db5d6cae3fb0f280bc1f8c50634f9b42f7fdeb89f7c0d02d14928cf39e41a38"
+    },
+    {
+      "path": "sky-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "smoke-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "water-mask.png",
+      "sha256": "2f69ce8adcc38c9b82af4272c1ffb6b7c87072c1952ee79bd697826b94c72159"
+    },
+    {
+      "path": "weather-mask.png",
+      "sha256": "f1bad590a56b939bb9e9bb2783accffdb543858935d3a5e3bcd9b3a310c6644d"
+    },
+    {
+      "path": "wet_power_box.png",
+      "sha256": "5ac68ec42dd2d4fba80745d57614c0dc5c66f79bd0b28c42d01cc6b446728d58"
+    }
+  ]
+}

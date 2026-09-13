@@ -1,0 +1,25 @@
+{
+  "at": "2026-09-13T05:53:20.654Z",
+  "previousBaseline": "D:/中关村/小红花/test1/work/flood-rooftop-20260913/baseline-before-refresh-1789278800038.json",
+  "preservedUnrelatedChanges": [
+    {
+      "path": "content/journey-map.json",
+      "before": "f8848fdb697543086f9528a777239868c7e27b756b984dc260f7495c23b8f12c",
+      "next": "d6204a0a5234e97712383c2ba559e6e292783cebbe6b3a5b506502fa355adbf3"
+    },
+    {
+      "path": "docs/flower-journey/MAP-ORDER.md",
+      "next": "565e6336139fae5378666f69c0b29e40fb6174a7476d33c2d2004111997715ad"
+    },
+    {
+      "path": "scripts/test-map-order-browser.mjs",
+      "next": "2781a21acce8bd5f8e951d98b57d6f2a5ef1ce22bb58dd1deee76ee3cb0119b6"
+    },
+    {
+      "path": "tests/journey.test.ts",
+      "before": "a3030530facb231537c22d028efc85d894eb6a219d105ddcc77ab2a38915b19f",
+      "next": "b371ecde17ff7420b2faa2d43398528d4cf376892296166f35b5303e1805ed12"
+    }
+  ],
+  "archiveUnchanged": true
+}

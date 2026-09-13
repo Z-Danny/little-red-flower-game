@@ -1,0 +1,97 @@
+{
+  "guardSourceReconstructionSamples": [
+    {
+      "point": [
+        243,
+        359
+      ],
+      "source": [
+        26,
+        25,
+        28
+      ],
+      "reconstructed": [
+        26,
+        25,
+        28
+      ],
+      "maxDifference": 0
+    },
+    {
+      "point": [
+        235,
+        402
+      ],
+      "source": [
+        240,
+        167,
+        122
+      ],
+      "reconstructed": [
+        240,
+        167,
+        122
+      ],
+      "maxDifference": 0
+    },
+    {
+      "point": [
+        276,
+        465
+      ],
+      "source": [
+        44,
+        43,
+        48
+      ],
+      "reconstructed": [
+        44,
+        43,
+        48
+      ],
+      "maxDifference": 0
+    }
+  ],
+  "streetForbiddenPoints": [
+    {
+      "mask": "weather",
+      "point": [
+        82,
+        812
+      ],
+      "value": 0
+    },
+    {
+      "mask": "weather",
+      "point": [
+        312,
+        894
+      ],
+      "value": 0
+    },
+    {
+      "mask": "water",
+      "point": [
+        522,
+        735
+      ],
+      "value": 0
+    },
+    {
+      "mask": "water",
+      "point": [
+        97,
+        509
+      ],
+      "value": 0
+    },
+    {
+      "mask": "water",
+      "point": [
+        479,
+        730
+      ],
+      "value": 0
+    }
+  ]
+}

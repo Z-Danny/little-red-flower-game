@@ -1,0 +1,9 @@
+{
+  "method": "source RGB GrabCut seeded by original white candidate; remove target encroachment only near actual person; retain 3px compiler protection",
+  "sourceSha256": "e25a99e81d4c036dd57bebf08dad9d8eaecb0187ec6c007dc48a9cda9c26392e",
+  "candidateSha256": "a287da0aee552cb13b686b57f35d540929f9f364e34b99c72babbc75532beb68",
+  "outputSha256": "4c0015a23ace86deba314f1a2ffd7d908ef9975e053e1279220a224d6feb8144",
+  "removedCabinetBoundaryPixels720": 1916,
+  "clearancePx": 5,
+  "sceneArtworkChanged": false
+}

@@ -1,0 +1,260 @@
+{
+  "compilerVersion": 1,
+  "id": "clear-corridor-check-v2",
+  "authorId": "H06",
+  "sourceSha256": "e25a99e81d4c036dd57bebf08dad9d8eaecb0187ec6c007dc48a9cda9c26392e",
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "inputHashes": {
+    "scene-original.png": "e25a99e81d4c036dd57bebf08dad9d8eaecb0187ec6c007dc48a9cda9c26392e",
+    "mask-candidate.png": "4c0015a23ace86deba314f1a2ffd7d908ef9975e053e1279220a224d6feb8144",
+    "clean-candidate.png": "1279bcad54e877c3bea697b15800af8a5a23ee6a6a0304ec80e8b627942e27b5",
+    "ending.png": "2dfe079d6c98b5ed3ba2b92737ee99153a9f695aa53c5e598aea45f425796d67"
+  },
+  "specSha256": "6107a03def2e3af64c93fd248347629ffe54202d09f720520b1b50982332f7a3",
+  "corrections": {
+    "targets": {
+      "blocked_hydrant": {
+        "keepPolygons": [
+          [
+            [
+              177,
+              293
+            ],
+            [
+              330,
+              293
+            ],
+            [
+              330,
+              623
+            ],
+            [
+              177,
+              623
+            ]
+          ]
+        ],
+        "reason": "仅柜体是阻挡目标；删除被候选误分为品红的正常消火栓上方绿植。"
+      },
+      "wedged_fire_door": {
+        "keepPolygons": [
+          [
+            [
+              367,
+              205
+            ],
+            [
+              452,
+              199
+            ],
+            [
+              453,
+              643
+            ],
+            [
+              367,
+              606
+            ]
+          ],
+          [
+            [
+              393,
+              631
+            ],
+            [
+              420,
+              618
+            ],
+            [
+              436,
+              629
+            ],
+            [
+              436,
+              642
+            ],
+            [
+              408,
+              648
+            ]
+          ]
+        ],
+        "reason": "按原画可见门扇透视边缘裁掉外围门框及透过门缝的走廊，保留单独门楔，不新增像素。"
+      },
+      "ebike_charging": {
+        "excludePolygons": [
+          [
+            [
+              696,
+              631
+            ],
+            [
+              715,
+              631
+            ],
+            [
+              715,
+              652
+            ],
+            [
+              696,
+              652
+            ]
+          ],
+          [
+            [
+              698,
+              680
+            ],
+            [
+              716,
+              680
+            ],
+            [
+              716,
+              713
+            ],
+            [
+              698,
+              696
+            ]
+          ],
+          [
+            [
+              702,
+              648
+            ],
+            [
+              716,
+              648
+            ],
+            [
+              716,
+              684
+            ],
+            [
+              702,
+              684
+            ]
+          ]
+        ],
+        "reason": "墙插属于车充电组件，但普通白色墙面插座板不是电动车隐患；排除候选误涂面板边缘，保留黑插头和线。"
+      }
+    },
+    "characters": {}
+  },
+  "targetPixels": {
+    "blocked_path": 148161,
+    "ebike_charging": 51172,
+    "wedged_fire_door": 34274,
+    "locked_exit": 40104,
+    "blocked_hydrant": 24284
+  },
+  "hitPixels": {
+    "blocked_path": 148161,
+    "ebike_charging": 51172,
+    "wedged_fire_door": 34274,
+    "locked_exit": 40104,
+    "blocked_hydrant": 24284
+  },
+  "familyBox": {
+    "x": 32,
+    "y": 337,
+    "w": 256,
+    "h": 408
+  },
+  "familyPixels": 62314,
+  "effectsPixels": {
+    "weather": 0,
+    "water": 0,
+    "sky": 0,
+    "fire": 0,
+    "smoke": 0
+  },
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "effectMasksExcludeTargetsAndCharacters": true,
+  "objectAndHitMasksIdentical": true,
+  "approval": "draft; semantic visual inspection and runtime tests pending",
+  "files": [
+    {
+      "path": "blocked_hydrant.png",
+      "sha256": "c6349e480ae45311b5f3e5aafe239cd77814571c12c1b1ab9b8d29ff7f3cb9b4"
+    },
+    {
+      "path": "blocked_path.png",
+      "sha256": "c4318d946a1b91cbdefd473b9c262f7b459d7e0a16b748ccd71043b5f12ad2c6"
+    },
+    {
+      "path": "character-mask.png",
+      "sha256": "9f1bc2559238e855dea4ff66f55b9fa5f99492dc7023e51e2c000b9f19bb0ef4"
+    },
+    {
+      "path": "clean.webp",
+      "sha256": "775eadd596daa715d7a55ff793155c830a559bb626145c23ed342279c4566f2e"
+    },
+    {
+      "path": "ebike_charging.png",
+      "sha256": "0894b29177960037da08395f53d9685c786180bb922038cee2a0cd7340c6dc09"
+    },
+    {
+      "path": "ending.webp",
+      "sha256": "4454269e9e085fbaf651dc9116c2c24b771f8552945d56ef164d69409a005dfb"
+    },
+    {
+      "path": "family.png",
+      "sha256": "4be6bc96780e71098449bb4186d291d18869344a637c033eecb6a3c8483c56b6"
+    },
+    {
+      "path": "fire-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "hit-samples.json",
+      "sha256": "f430c25e042c4e4251a2eec976c4bd83d8e5eb12534f49c49c40733975863444"
+    },
+    {
+      "path": "id-mask.png",
+      "sha256": "47f8fade8b31ebf21c9d015a4469d550928b98136bb4437f6f712cc6b9be75c1"
+    },
+    {
+      "path": "locked_exit.png",
+      "sha256": "5cbbff31e61a87d8272f4eccde7f35e1128b8be80c1f405f95e91d3901367063"
+    },
+    {
+      "path": "object-mask.png",
+      "sha256": "47f8fade8b31ebf21c9d015a4469d550928b98136bb4437f6f712cc6b9be75c1"
+    },
+    {
+      "path": "scene.webp",
+      "sha256": "efd3da0e8034e51aa6e798f1703d123b6a67ea7f3232c3e6a2ea0534de57495a"
+    },
+    {
+      "path": "sky-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "smoke-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "water-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "weather-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "wedged_fire_door.png",
+      "sha256": "c0450c5183ba9e37e11a8ec4e9223a9d5e6c42878a05ee7508b6619a07618c42"
+    }
+  ]
+}

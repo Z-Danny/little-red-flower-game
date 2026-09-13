@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "id": "flood-highground-practice",
+  "kind": "response",
+  "title": "洪水围困：沿干燥楼梯转移至屋顶高处",
+  "order": 28,
+  "location": "干燥楼层、完整楼梯与有围栏的屋顶待援区",
+  "description": "外部洪水上涨，母亲和孩子仍在干燥楼层。楼梯完整，通往有坚固围栏和遮雨处的屋顶；完好的总电闸及已有物资都在干燥、安全可达的位置。",
+  "safety": "仅模拟这一特定安全条件：成人双手、地面和完整电闸均干燥，且不涉水即可关闸。电闸潮湿、损坏或需要涉水时，不靠近、不操作，立即转移并遵从专业指引。关闭本户电闸不代表外部电线或积水断电；远离断线及洪水，不游泳、不盲目涉水、不留在被淹车辆中。漂浮辅助物仅作备用，不是救生保证，不可据此下水。不为物资停留或返回低处。电话和位置发送均为离线模拟，不会真实联络救援。",
+  "briefing": "先带孩子到干燥楼梯旁。仅在双手、地面、电闸均干燥完好时关闸；随时可以沿完整楼梯先到有围栏的屋顶高处。",
+  "objects": [
+    { "id": "family", "label": "母亲与孩子", "input": "drag", "disabledWhen": ["at-rooftop"] },
+    { "id": "breaker", "label": "干燥完好的总电闸", "input": "tap", "disabledWhen": ["power-off"] },
+    { "id": "phone", "label": "手机：模拟发送位置", "input": "tap", "disabledWhen": ["rescue-contacted"] },
+    { "id": "bottled-water", "label": "已有饮用水", "input": "drag", "disabledWhen": ["water-packed"] },
+    { "id": "flashlight", "label": "手电", "input": "drag", "disabledWhen": ["light-packed"] },
+    { "id": "foam", "label": "轻质泡沫板", "input": "drag", "disabledWhen": ["float-ready"] },
+    { "id": "panel", "label": "备用轻质板材", "input": "none" },
+    { "id": "backpack", "label": "应急背包", "input": "none" },
+    { "id": "stool", "label": "普通凳子", "input": "drag" },
+    { "id": "car", "label": "错误选择：留在被淹车辆中", "input": "tap" }
+  ],
+  "goals": [
+    { "id": "at-stairs", "label": "先到干燥楼梯旁", "object": "family", "showTarget": false },
+    { "id": "power-off", "label": "在安全干燥条件下关闸", "object": "breaker", "showTarget": false },
+    { "id": "rescue-contacted", "label": "模拟报告位置与人数", "object": "phone", "showTarget": false },
+    { "id": "water-packed", "label": "饮用水放入背包", "object": "bottled-water", "showTarget": false },
+    { "id": "light-packed", "label": "手电放入背包", "object": "flashlight", "showTarget": false },
+    { "id": "float-ready", "label": "组合备用漂浮辅助物", "object": "foam", "showTarget": false },
+    { "id": "at-rooftop", "label": "携物资沿干燥楼梯转移到屋顶高处", "object": "family", "showTarget": false }
+  ],
+  "interactions": [
+    {
+      "id": "approach-stairs", "source": "family", "mode": "drop", "target": "stairs-approach",
+      "unless": ["at-stairs"], "grants": ["at-stairs"], "outcome": "correct", "animation": "approach-stairs",
+      "feedback": "母亲带孩子来到干燥楼梯旁，转移通道保持畅通。"
+    },
+    {
+      "id": "turn-off-power", "source": "breaker", "mode": "tap", "requires": ["at-stairs"],
+      "grants": ["power-off"], "outcome": "correct", "animation": "turn-off-power",
+      "feedback": "本户电闸已关闭；外部断线与积水仍可能带电，不能靠近。"
+    },
+    {
+      "id": "send-location", "source": "phone", "mode": "tap", "requires": ["power-off"],
+      "grants": ["rescue-contacted"], "outcome": "correct", "animation": "send-location",
+      "feedback": "模拟已发送：红花小区3栋，2人被洪水围困，正沿干燥楼梯转移至屋顶有围栏待援区。保留手机联络。"
+    },
+    {
+      "id": "pack-water", "source": "bottled-water", "mode": "drop", "target": "bag-zone", "requires": ["power-off"],
+      "grants": ["water-packed"], "outcome": "correct", "animation": "pack-water",
+      "feedback": "把手边已有饮用水放入背包，不去低处另找物资。"
+    },
+    {
+      "id": "pack-light", "source": "flashlight", "mode": "drop", "target": "bag-zone", "requires": ["power-off"],
+      "grants": ["light-packed"], "outcome": "correct", "animation": "pack-light",
+      "feedback": "手电已装入背包，可在高处待援时照明或示意。"
+    },
+    {
+      "id": "combine-float", "source": "foam", "mode": "drop", "target": "panel-zone", "requires": ["power-off"],
+      "grants": ["float-ready"], "outcome": "correct", "animation": "combine-float",
+      "feedback": "组合好的轻质漂浮辅助物仅作备用，不是救生保证，不能据此下水。"
+    },
+    {
+      "id": "evacuate-roof", "source": "family", "mode": "drop", "target": "roof-exit",
+      "requires": ["at-stairs", "power-off", "rescue-contacted", "water-packed", "light-packed", "float-ready"],
+      "grants": ["at-rooftop"], "outcome": "correct", "animation": "evacuate-roof",
+      "feedback": "母亲带孩子和已有物资沿干燥完整楼梯到达有围栏、可遮雨的屋顶待援处，远离边缘保持联系。"
+    },
+    {
+      "id": "early-roof-escape", "source": "family", "mode": "drop", "target": "roof-exit", "requires": ["at-stairs"],
+      "grants": [], "outcome": "neutral", "animation": "early-roof-escape", "escape": true,
+      "feedback": "已先行到达有坚固围栏与遮雨处的屋顶高处。安全优先，不为物资停留或返回低处，继续关注专业指引。"
+    },
+    {
+      "id": "enter-flood", "source": "family", "mode": "drop", "target": "flood-zone",
+      "grants": [], "outcome": "danger", "animation": "enter-flood", "failure": true,
+      "feedback": "错误后果示意：洪流可能迅速冲走涉水者，本次训练失败。不要下水游泳或盲目涉水，应沿干燥完整楼梯转移高处。"
+    },
+    {
+      "id": "touch-wire", "source": "family", "mode": "drop", "target": "wire-zone",
+      "grants": [], "outcome": "danger", "animation": "touch-wire", "failure": true,
+      "feedback": "错误后果示意：断裂电线及附近积水可能带电，本次训练失败。即使关闭本户电闸，也必须远离外部电线，不接近、不操作。"
+    },
+    {
+      "id": "stay-in-car", "source": "car", "mode": "tap",
+      "grants": [], "outcome": "danger", "animation": "stay-in-car", "failure": true,
+      "feedback": "错误后果示意：被淹车辆可能快速进水、被冲走，本次训练失败。不要把被淹车辆当作安全待援点；本场景应沿干燥完整楼梯转移高处。"
+    },
+    {
+      "id": "blocked-breaker", "source": "breaker", "mode": "tap", "unless": ["at-stairs"],
+      "grants": [], "outcome": "neutral", "animation": "blocked-breaker", "feedback": "先带孩子到干燥楼梯旁，确认转移通道。"
+    },
+    {
+      "id": "blocked-phone", "source": "phone", "mode": "tap", "unless": ["power-off"],
+      "grants": [], "outcome": "neutral", "animation": "blocked-phone", "feedback": "本场景电闸干燥且安全可达，先完成安全关闸；也可先沿楼梯转移高处。"
+    },
+    {
+      "id": "blocked-water", "source": "bottled-water", "mode": "drop", "target": "bag-zone", "unless": ["power-off"],
+      "grants": [], "outcome": "neutral", "animation": "blocked-water", "feedback": "先完成本场景的安全关闸；不要为装物资耽误转移。"
+    },
+    {
+      "id": "blocked-light", "source": "flashlight", "mode": "drop", "target": "bag-zone", "unless": ["power-off"],
+      "grants": [], "outcome": "neutral", "animation": "blocked-light", "feedback": "先完成本场景的安全关闸；不要为装物资耽误转移。"
+    },
+    {
+      "id": "blocked-foam", "source": "foam", "mode": "drop", "target": "panel-zone", "unless": ["power-off"],
+      "grants": [], "outcome": "neutral", "animation": "blocked-foam", "feedback": "先完成本场景的安全关闸；漂浮辅助物不能代替安全转移。"
+    },
+    {
+      "id": "blocked-roof", "source": "family", "mode": "drop", "target": "roof-exit", "unless": ["at-stairs"],
+      "grants": [], "outcome": "neutral", "animation": "blocked-roof", "feedback": "先把母子带到干燥楼梯旁，再沿完整楼梯向屋顶转移。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed", "timeout": "continue", "seconds": 90, "initial": 0, "warningAt": 100,
+    "peakFeedback": "水位演出已达训练上限。不要涉水或为物资停留，优先沿干燥完整楼梯转移高处。"
+  },
+  "completion": {
+    "requires": ["at-stairs", "power-off", "rescue-contacted", "water-packed", "light-packed", "float-ready", "at-rooftop"],
+    "settleMs": 1200, "observeMs": 4000, "fixedStars": 3,
+    "summary": "沿干燥完整楼梯转移高处，报告位置与人数；物资就近取用，不涉水、不靠近断线、不为取物耽误撤离。",
+    "title": "已到屋顶高处，保持联系待援",
+    "status": "七项情境训练完成；现实中应持续关注险情并遵从专业指引。"
+  }
+}

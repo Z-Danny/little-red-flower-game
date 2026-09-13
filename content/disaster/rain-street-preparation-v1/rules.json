@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "id": "rain-street-preparation-v1",
+  "title": "暴雨前的街道",
+  "order": 21,
+  "kind": "prevention",
+  "seconds": 50,
+  "missPenalty": 5,
+  "goals": [
+    {
+      "id": "pool",
+      "label": "低洼积水路段",
+      "lesson": "绕开低洼积水，选择高处安全路线。"
+    },
+    {
+      "id": "manhole",
+      "label": "异常井盖",
+      "lesson": "积水可能掩盖井口，发现异常立即绕行并报告。"
+    },
+    {
+      "id": "cable",
+      "label": "低垂断线",
+      "lesson": "远离落地或低垂电线，不碰触、不靠近积水电力设施。"
+    },
+    {
+      "id": "sign",
+      "label": "松动广告牌",
+      "lesson": "避开松动广告牌及其下方区域，不自行攀爬处理。"
+    },
+    {
+      "id": "car",
+      "label": "树下停放的车",
+      "lesson": "应在暴雨前安全移车；车辆已被淹时，不得冒险返回取车。"
+    },
+    {
+      "id": "garage",
+      "label": "地下车库入口",
+      "lesson": "管理方应提前封控低洼地下入口，不进入积水车库。"
+    },
+    {
+      "id": "person",
+      "label": "准备涉水的行人",
+      "lesson": "不要贸然涉水，返回近旁坚固建筑避险。"
+    }
+  ],
+  "actions": [
+    {
+      "id": "mark-pool",
+      "source": "pool",
+      "target": "pool",
+      "input": "tap",
+      "goal": "pool",
+      "duration": 800,
+      "outcome": "correct",
+      "feedback": "绕开低洼积水，选择高处安全路线。",
+      "motion": "mark"
+    },
+    {
+      "id": "mark-manhole",
+      "source": "manhole",
+      "target": "manhole",
+      "input": "tap",
+      "goal": "manhole",
+      "duration": 800,
+      "outcome": "correct",
+      "feedback": "积水可能掩盖井口，发现异常立即绕行并报告。",
+      "motion": "mark"
+    },
+    {
+      "id": "mark-cable",
+      "source": "cable",
+      "target": "cable",
+      "input": "tap",
+      "goal": "cable",
+      "duration": 800,
+      "outcome": "correct",
+      "feedback": "远离落地或低垂电线，不碰触、不靠近积水电力设施。",
+      "motion": "mark"
+    },
+    {
+      "id": "mark-sign",
+      "source": "sign",
+      "target": "sign",
+      "input": "tap",
+      "goal": "sign",
+      "duration": 800,
+      "outcome": "correct",
+      "feedback": "避开松动广告牌及其下方区域，不自行攀爬处理。",
+      "motion": "mark"
+    },
+    {
+      "id": "mark-car",
+      "source": "car",
+      "target": "car",
+      "input": "tap",
+      "goal": "car",
+      "duration": 800,
+      "outcome": "correct",
+      "feedback": "应在暴雨前安全移车；车辆已被淹时，不得冒险返回取车。",
+      "motion": "mark"
+    },
+    {
+      "id": "mark-garage",
+      "source": "garage",
+      "target": "garage",
+      "input": "tap",
+      "goal": "garage",
+      "duration": 800,
+      "outcome": "correct",
+      "feedback": "管理方应提前封控低洼地下入口，不进入积水车库。",
+      "motion": "mark"
+    },
+    {
+      "id": "mark-person",
+      "source": "person",
+      "target": "person",
+      "input": "tap",
+      "goal": "person",
+      "duration": 800,
+      "outcome": "correct",
+      "feedback": "不要贸然涉水，返回近旁坚固建筑避险。",
+      "motion": "mark"
+    }
+  ],
+  "summary": "暴雨时尽量不出行；必须出行时避开深积水、井盖、电线、广告牌和低洼地下空间。",
+  "opening": "90 秒内圈出 7 处隐患。误点扣 5 秒；重复点已发现目标不扣时。",
+  "safety": "圈选与结局是灾前安全方案示意，不代表洪水被消除。现实中非必要不外出，遵从当地预警与疏散指令。",
+  "timeout": "时间到了，还有隐患未找到。再挑战一次吧。",
+  "finishTitle": "把危险留在安全距离之外",
+  "revealMs": 3200
+}

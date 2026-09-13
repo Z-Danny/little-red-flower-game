@@ -1,0 +1,58 @@
+{
+  "description": "Frozen from the current Canonical read-only snapshot, 2026-09-11. Display-only integration may not change these mechanics, geometry or non-background asset bytes.",
+  "levels": {
+    "lift-wait": {
+      "skinSemanticSha256": "31b21e1c3940d524dd8db1ef8e3402e176b9a3a5423fb66ea3c6862de376e332",
+      "approvedFramingSha256": "c75a3596155f2c1aa42b7fa0277690ff2e3b3dd4171acaaf729c51627e30611d",
+      "rulesSha256": "9c2cb79f252754a09345e5f222a854dea6486a47a877d43351e791c34effd15b",
+      "logical": {
+        "world": "957b7b9150e751b65049e4bba66da614944d8d6f014aa701c5ffd1356c4e10f3",
+        "poses": "4b34570fbfc0e159ab7b230533cb777e9b1383a7948452121251b0dd5e024b83",
+        "zones": "ae72dcadc4702fddd104c63394725712539c694bbadd5b382b293f85d21ec2cb",
+        "states": "54e49ac2ce3c7eab6b6cb51dc16b3ae50ce0786a78264da68d6bc20d782ff834",
+        "animations": "9a7829a97277ef3b724401ea943b4f9f2aac7f30a7b7f97075f3afbf2dba1bcb",
+        "effects": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "labels": "e3d0c04e94f583763aa58cb1198e75699ca4e23af6c348bcb3111aed0e35cc3a",
+        "zoneLabels": "4b441ceb11343edfbcb666633b77dfdbc25c3f2f5d9db812c7cb12b40a1540d8"
+      },
+      "nonBackgroundAssets": "6e2fa227606a8aa96c208d8a5bcdc6c51aee135fd45dd1e7ff9c44ffcf63e5f3"
+    },
+    "well-call": {
+      "skinSemanticSha256": "dfe5af8520d720b34b26615cbf3816cc745bc77dbb699dedb9afd07fa2eb9c48",
+      "approvedFramingSha256": "ef648e46ade1a73dc9022aebc1d56b57963e82e6b73b51d2d318482fb844fc2c",
+      "rulesSha256": "5a28fcafd06d9665f8b9498d4032351c8d3bbd272b533efe160272bc6820d5bf",
+      "logical": {
+        "world": "957b7b9150e751b65049e4bba66da614944d8d6f014aa701c5ffd1356c4e10f3",
+        "poses": "aabebe7d56c314082486fd94482cd48266a92cc4abe47cb4c43a813b8bffd403",
+        "zones": "2d04d3d198c8ed02130e20b024491a5adb8614f7d4dbcc08a3c30d091be95f94",
+        "states": "4c85c2f530182cd56f8bdc1e572f5a6178684d2611f10c0af6cc44233d70473a",
+        "animations": "cc27b1b76ada0577a02c884bbb7ac0c85ea9fff44b5b5844bd50af492f25ebec",
+        "effects": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "labels": "648a330ab2eac65479d3dd5f282d718df5428c7653015b3a99b8251b2f39cb32",
+        "zoneLabels": "e70c8d29139c0dfd1aab18bb1d2e80c39d24f696371bdf3c2c5003d70f1d6e35"
+      },
+      "nonBackgroundAssets": "f2a475c3860ec0d5a57816c6153ff4631576e510f7f18c8d4abfbd6ec185716f"
+    }
+  },
+  "assetBytes": {
+    "/levels/transcript-v1/lift-door.png": "a0a843430bd616bb4549c8584742a54ac292f8374d873da4f367b7b1bea3fca0",
+    "/levels/transcript-v1/intercom.png": "00b0cc4e2f43abd745324ff4ef4686e3e190be2c2493058c9029077ae57b8bcf",
+    "/levels/transcript-v1/bell.png": "b06c3bdd04edc5f683e7d421df2d2c45d06718a1380b70862e69d83cf10d5ee0",
+    "/levels/transcript-v1/citizen-worried.png": "041315ccae7136a3d190863369bed37e35a59d2c80b8757db96c1a60a3e1aabe",
+    "/levels/transcript-v1/citizen-focused.png": "c3071440424fa2348c1e73556d440262d117a5914b6fbb2469d562f381406a5c",
+    "/levels/transcript-v1/citizen-panicked.png": "dc87c093d3149b9164918ff529b27f23315519b721005ebf23dd67eec6bcb323",
+    "/levels/transcript-v1/citizen-relieved.png": "a39c19a80d36dde148067518d6ac18536402fadeb3ec6424aa7c280dc5ae77c7",
+    "/levels/transcript-v1/screen-tile.png": "afbb3653808b5c7b0391f5a98b36207693bba090cef412c11b92ed132e844961",
+    "/levels/transcript-v1/well-opening.png": "2b632559dc85fad2bc95dbddeb46beebe64e04432d905dcea18bb6dfbd494e81",
+    "/levels/transcript-v1/phone.png": "61e1802b08dbb53e8eae1f3b33e5697313e0f672b79a3644a6f9286f1f9a6356"
+  },
+  "unchanged": {
+    "app/game/runtime/engine.ts": "2df4542d8330e6f3cdf142c6d32d606ebe6a47efbb80716ecaf845a9d74be2c9",
+    "content/catalog.json": "220b121663f46e4816e10409909c4934c2834bb6487e1b16f9e88954e00b6e28",
+    "app/game/content/generated.ts": "153868080bf75d64643ce3d3f2fe2abe2802e888ba2321e57e1db24fed88a24f",
+    "content/levels/flood-kit/level.json": "50f1b8a5dc129822895fe7d53a069f6b80d354bbae1657d160e094e3a9b31f0c",
+    "content/levels/flood-kit/skins/paperbook.json": "fd45bfdbe99ac79e5712243ebf89e0b9b8ea922e0cf62eea400d3b86753c4121",
+    "content/levels/clear-corridor/level.json": "2bbe9033d4283e9b54c58953912587c58f1fe849016a946a9f11aa60998ffd15",
+    "content/levels/clear-corridor/skins/paperbook.json": "b7c87ee7bf12e1bc400b00d9cadac78e28fe70b4a11314ea1713e2a20ede274b"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "at": "2026-09-09T16:13:26.047Z",
+  "syntax": "passed",
+  "unitTests": "not_run",
+  "reason": "Syntax-only mode. No assertions, registry readiness, generated assets or browser checks executed."
+}

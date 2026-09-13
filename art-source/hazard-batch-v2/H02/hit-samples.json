@@ -1,0 +1,42 @@
+{
+  "world": [
+    720,
+    1280
+  ],
+  "targets": {
+    "covered_phone": [
+      51,
+      223
+    ],
+    "damaged_lead": [
+      67,
+      778
+    ],
+    "swollen_bank": [
+      626,
+      351
+    ],
+    "folded_blanket": [
+      318,
+      262
+    ],
+    "covered_heater": [
+      634,
+      839
+    ]
+  },
+  "background": [
+    144,
+    1035
+  ],
+  "targetInteriorRadius": {
+    "covered_phone": 51.62363799656123,
+    "damaged_lead": 18.0,
+    "swollen_bank": 23.600847442411894,
+    "folded_blanket": 42.05948168962618,
+    "covered_heater": 85.58621384311844
+  },
+  "backgroundRadius": 144.2497833620557,
+  "method": "max Euclidean distance to exterior of real object-mask; no bbox centers",
+  "visualStatus": "samples require browser/semantic confirmation"
+}

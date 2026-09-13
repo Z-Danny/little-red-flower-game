@@ -1,0 +1,25 @@
+{
+  "date": "2026-09-13",
+  "tool": "built-in image_gen",
+  "model": "not selectable or verified by tool",
+  "reference": "public/levels/character-continuity-v3/flood-highground-practice/family-calm.webp",
+  "alphaCleanup": "Generated checkerboards required deterministic cutout; see prepare-flood-performance-art.mjs and art-audit.json.",
+  "prompts": [
+    {
+      "name": "calling",
+      "prompt": "Use case: identity-preserve. Asset type: transparent full-body game character sprite. Input image 1 is the identity, clothing and warm paper-gouache picture-book style reference. Create one complete mother-and-son pair, both feet planted firmly on the same level indoor ground (do not draw ground). Keep coral red sweater, cream trousers, black flats, brown bob hairstyle; son yellow sweatshirt, teal trousers, gray sneakers. Mother is making an emergency phone call, holding ONE small black smartphone firmly against her RIGHT ear; left arm rests protectively on child's shoulder. Concerned yet controlled concentrated facial expression, lips slightly parted, not screaming. Child close beside her looks attentively toward her. Modest natural proportions like reference. Mother left, child right. Whole bodies and all fingers and shoes inside frame, no cropping. Actual alpha-transparent background, no checkerboard, no room, no drop shadow, no floating props, no lettering or extra people. Portrait 1024x1536 composition with 8 percent transparent padding. Warm textured painted edges with no white halo. This is one character-pair asset only."
+    },
+    {
+      "name": "signaling",
+      "prompt": "Use case: identity-preserve. Asset type: transparent full-body game character sprite. Input image 1 gives identities, clothing and warm paper-textured gouache style. Create exactly one mother-and-son pair facing slightly toward image LEFT to signal through a window while remaining indoors. Both sets of feet planted flat on the same level ground (ground not drawn). Mother LEFT in coral sweater, cream trousers and black flats, brown bob. Child RIGHT in yellow sweatshirt, teal trousers and gray sneakers holds mother's lowered right hand. Mother extends her LEFT arm upward toward image LEFT at shoulder-to-head height and visibly grips the corner of ONE bright coral-red unfurled piece of clothing in that hand. Cloth hangs from hand and billows a little to the left; fingers overlap corner clearly. Do not draw window or furniture. Mother concerned focused closed mouth, looking left toward rescue, not screaming. Child worried but controlled, near mother. Full bodies feet hands and all cloth fit inside frame with padding. No run pose, no bent floating feet. True alpha-transparent background, no checkerboard, no white matte, no shadow or text. One pair only, portrait 1024x1536. Keep reference visual identity and fine paper-gouache grain. This is a waving-held-cloth sprite, NOT a separate floating shirt."
+    },
+    {
+      "name": "waiting",
+      "prompt": "Use case: identity-preserve. Asset type: transparent full-body game character sprite. Reference image provides the exact mother-and-son identities and warm picture-book paper-gouache rendering. Mother LEFT wearing coral sweater, cream trousers and black flats, brown bob; son RIGHT yellow sweatshirt, teal trousers and gray sneakers. New pose: quietly waiting for rescue, mother slightly bends knees and leans protectively toward child; one hand gently resting on his shoulder, other hand lowered holding a neatly gathered red cloth. Son leans close, reassured, looks toward mother. Both are firmly standing on ground on same baseline, full shoes visible. Faces concerned but visibly more calm than reference: closed mouths, relaxed brows, no grin, no panic, no scream. Full-body pair only, all fingers and shoes inside frame with 8 percent padding. True alpha transparency; no scene, furniture, checkerboard, white matte, shadow, phone, lettering. Portrait 1024x1536. Preserve painterly warm paper grain, clothing colors and anatomy."
+    },
+    {
+      "name": "signal-low",
+      "prompt": "Use case: precise-object-edit. Input image is edit target. This is the SECOND FRAME of the same game waving animation. Preserve the ENTIRE mother and son bodies, all clothing colors, head positions, facial expressions, canvas and shoe positions PIXEL-ALIGNED and exactly same scale as input. Change ONLY mother's raised left forearm/hand and the red cloth she grips in upper LEFT: swing held cloth slightly farther left and down, hand moving a small distance only, natural fabric folds. Do not move the shoulder, body, hips or feet. Do not add a second cloth or second person. Keep hand visibly gripping cloth. Warm paper-gouache art. Actual transparent background, not a drawn checkerboard. Full-body sprite, exact original canvas dimensions."
+    }
+  ]
+}

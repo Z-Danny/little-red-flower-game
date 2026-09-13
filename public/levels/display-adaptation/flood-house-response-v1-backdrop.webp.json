@@ -1,0 +1,24 @@
+{
+  "output": "D:\\中关村\\小红花\\test1\\work\\response-batch-20260911\\public\\levels\\display-adaptation\\flood-house-response-v1-backdrop.webp",
+  "candidate": "D:\\中关村\\小红花\\test1\\work\\response-batch-20260911\\art-source\\display-adaptation\\flood\\top-repair\\beam-registered\\asset.webp",
+  "backup": "D:\\中关村\\小红花\\test1\\work\\response-batch-20260911\\art-source\\display-adaptation\\flood\\top-repair\\previous-backdrop.webp",
+  "sceneBounds": {
+    "x": -40,
+    "y": -281,
+    "w": 760,
+    "h": 1561
+  },
+  "region": {
+    "x": 0,
+    "y": 0,
+    "w": 760,
+    "h": 281
+  },
+  "source": "public/levels/rain-flood-v1/flood/scene.webp",
+  "sourceSha256": "d58f2a1736031024cbcfc2dbbe8dfc325b745b33d707d238ccaec914bb704d5b",
+  "basePeripheryReport": "art-source/display-adaptation/flood/matched-affine/report.json",
+  "outsideRegionChangedChannels": 0,
+  "originalCenterChangedChannels": 0,
+  "outputSha256": "6b11d8121f0416c0ef7f9ca7d779cd9622d718676396c277d110100e31c084b5",
+  "status": "frozen after 390x844 actual browser visual review; final offline acceptance pending"
+}

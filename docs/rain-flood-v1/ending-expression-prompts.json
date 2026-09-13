@@ -1,0 +1,10 @@
+[
+  {
+    "key": "flood-ending",
+    "prompt": "Edit this exact flood-house painting into a same-camera safety after-state. Preserve room geometry, canvas, stairs, furniture and the OUTDOOR flood. Woman has safely moved UP the stairs to the upper landing, now smaller in perspective, calm and relieved, visible near the open upper doorway at x78% y24%, with a closed red emergency backpack containing the water, flashlight and phone. The wooden door panel, white foam board and rope coil have been set aside securely at the SIDE of the upper landing as BACKUP flotation material without blocking the steps. Remove those items, the woman and backpack from former downstairs positions; keep stool and table. Wall breaker switches now off; daylight is softer and warmer INSIDE while rain and flood remain outside. No triumphant miraculous flood disappearance. Stair passage must remain clear, dry and obviously going UP. No one outside, no raft, no swimming, no text, circles, icons or UI. Warm paper-texture painted storybook, retain all architectural details exactly."
+  },
+  {
+    "key": "flood-alert",
+    "prompt": "Edit ONLY the woman's facial expression in this exact painting: same character identity, same head position and size, same hair and face outline, same body silhouette, same hands/limbs/clothing and every other pixel composition. Her expression becomes clearly more alarmed: eyebrows raised and knitted, eyes noticeably wider, mouth slightly open in concern. No tears, no screaming horror, no grotesque anatomy. Keep exact same whole-image size, room, camera and layout. This is a registered expression state for a 2D game sprite. Do not move anything, do not change lighting or painted style."
+  }
+]

@@ -1,0 +1,26 @@
+/* One challenge HUD, independent from each engine's camera, art and interactions. */
+[data-challenge='50s'] :is(.configured-hud, .disaster-hud) {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px 44px;
+  align-items: center;
+  gap: 5px 8px;
+  padding-inline: max(8px, env(safe-area-inset-left)) max(8px, env(safe-area-inset-right));
+}
+[data-challenge='50s'] :is(.configured-hud, .disaster-hud) > button {
+  width: 44px; height: 44px; min-width: 44px; min-height: 44px;
+  grid-row: 1;
+}
+[data-challenge='50s'] :is(.configured-hud, .disaster-hud) > button:first-child { grid-column: 1; }
+[data-challenge='50s'] :is(.configured-hud, .disaster-hud) > button:last-of-type { grid-column: 4; }
+[data-challenge='50s'] :is(.configured-hud > span, .disaster-hud > h1) {
+  grid-row: 1; grid-column: 2; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+}
+[data-challenge='50s'] .hunt-hint-toggle { grid-column: 3; display: grid; place-items: center; color: #f8df98; }
+[data-challenge='50s'] .hunt-hint-toggle[aria-expanded='true'] { background: #f5d895; color: #304b40; border-color: #fff0c7; }
+[data-challenge='50s'] :is(.configured-targets, .disaster-clues) { top: calc(88px + env(safe-area-inset-top)); z-index: 4; pointer-events: auto; }
+[data-challenge='50s'] :is(.configured-targets, .disaster-clues)[hidden] { display: none; }
+[data-challenge='50s'] .configured-targets > div { flex-shrink: 1; min-width: 0; }
+[data-challenge='50s'] .disaster-clues > span { flex-shrink: 1; min-width: 0; }
+.configured-entry { --ds-bottom: env(safe-area-inset-bottom, 0px); z-index: 5; max-height: calc(100% - 110px); overflow: auto; }
+.configured-entry button { border: 0; cursor: pointer; }
+[data-challenge='50s'] .configured-dialog button { min-height: 44px; }

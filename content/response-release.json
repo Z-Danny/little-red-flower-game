@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "decisionDate": "2026-09-12",
+  "scope": "local-map",
+  "enabled": ["quake-cover-practice", "quake-exit-practice", "collapse-signal-practice", "car-window-practice", "flood-highground-practice", "lift-contact-practice", "fire-shelter-practice", "fire-stairs-practice"],
+  "deferred": [
+    {"id": "bleeding-pressure-practice", "title": "外伤大出血", "status": "待专业审核", "mapEnabled": false},
+    {"id": "electric-isolate-practice", "title": "触电", "status": "待专业审核", "mapEnabled": false}
+  ],
+  "note": "外伤、触电仅留独立审阅包，不注册到正式关卡目录、地图或奖励池。没有专业签核与用户新授权不得启用。其余关卡为情境训练，技术验收不代表专业认证。"
+}

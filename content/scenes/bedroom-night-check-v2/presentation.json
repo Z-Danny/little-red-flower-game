@@ -1,0 +1,16 @@
+{
+  "location": "卧室 · 取暖与充电",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "睡前检查：找出五处充电和取暖隐患。",
+  "reveal": "识别完成。异常设备停用，交专业人员处理。",
+  "completeTitle": "五处已识别，异常设备停用",
+  "pauseNote": "这是平时的识别训练，只观察、不触碰。儿童发现异常应告诉成人，鼓胀电池由专业人员处理。红圈不代表完成现实处置；未命中也不证明其他位置安全。计时仅为训练用时，不是事故倒计时。",
+  "endingNote": "图示为另一个时点的处理结果。鼓胀电池仍属异常，停用不等于风险消失；破损组件和异常电池须由专业人员处理。",
+  "preview": "冬夜的卧室里有五处充电与取暖隐患。观察同一幅场景，圈出问题，不操作设备。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}

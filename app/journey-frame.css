@@ -1,0 +1,15 @@
+/* Shared entry/map viewport. Both pages keep the same portrait frame. */
+:root {
+  --journey-frame-max-width: 520px;
+}
+.game-page:has(> :is(.title-screen, .garden-shell)) {
+  padding: 0;
+  background: #e5ece5;
+}
+.title-screen,
+.garden-shell {
+  width: min(100%, var(--journey-frame-max-width));
+  height: 100dvh;
+  min-height: 0;
+  box-shadow: 0 0 65px #30493b18;
+}

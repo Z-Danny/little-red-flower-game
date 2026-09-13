@@ -1,0 +1,1966 @@
+{
+  "htmlSha256": "3cf948b295062ae374a9b5df8395583a7288428565ccfe9178878801af195048",
+  "status": "passed",
+  "checks": [
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_phone",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "damaged_lead",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "swollen_bank",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "folded_blanket",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_heater",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_phone",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.3893290418420401,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "damaged_lead",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.492696287279367,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "swollen_bank",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.5188108834397044,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "folded_blanket",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_heater",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.7383670408418346,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_phone",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.6285590492696211,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "damaged_lead",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "swollen_bank",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.8305340947262345,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "folded_blanket",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_heater",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.886438034925661,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_phone",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.5136172319881158,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "damaged_lead",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.8009738283627511,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "swollen_bank",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.7114544843802486,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "folded_blanket",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_heater",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.8212767983620413,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_phone",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.5136172319881158,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "damaged_lead",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.8009738283627511,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "swollen_bank",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.7114544843802486,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "folded_blanket",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_heater",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.8212767983620413,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_phone",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.5136172319881158,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "damaged_lead",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.8009738283627511,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "swollen_bank",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.7114544843802486,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "folded_blanket",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_heater",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.8212767983620413,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_phone",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.4673805397375588,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "damaged_lead",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.6710286062081559,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "swollen_bank",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.6394020826335237,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "folded_blanket",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "bedroom-night-check-v2",
+      "target": "covered_heater",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.7876843596366969,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "gas_hose",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "paper_near_hob",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "greasy_filter",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "sideways_cylinder",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "damaged_kettle",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "gas_hose",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "paper_near_hob",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "greasy_filter",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "sideways_cylinder",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "damaged_kettle",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.9441485024732293,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "gas_hose",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "paper_near_hob",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "greasy_filter",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "sideways_cylinder",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "damaged_kettle",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.9506984834483884,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "gas_hose",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "paper_near_hob",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "greasy_filter",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "sideways_cylinder",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "damaged_kettle",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.9477360439202044,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "gas_hose",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "paper_near_hob",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "greasy_filter",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "sideways_cylinder",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "damaged_kettle",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.9477360439202044,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "gas_hose",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "paper_near_hob",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "greasy_filter",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "sideways_cylinder",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "damaged_kettle",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.9477360439202044,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "gas_hose",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "paper_near_hob",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "greasy_filter",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "sideways_cylinder",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "kitchen-before-cooking-v2",
+      "target": "damaged_kettle",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.9462140566396695,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_path",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "ebike_charging",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "wedged_fire_door",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "locked_exit",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_hydrant",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_path",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.667665580010934,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "ebike_charging",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.8850347846478543,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "wedged_fire_door",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "locked_exit",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.7494514262916417,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_hydrant",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_path",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.8046044505639136,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "ebike_charging",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.939517704994919,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "wedged_fire_door",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "locked_exit",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.9231498104927189,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_hydrant",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_path",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.7413219403216771,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "ebike_charging",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.9183342452903932,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "wedged_fire_door",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "locked_exit",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.8377219230001994,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_hydrant",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_path",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.7413219403216771,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "ebike_charging",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.9183342452903932,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "wedged_fire_door",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "locked_exit",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.8377219230001994,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_hydrant",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_path",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.7413219403216771,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "ebike_charging",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.9183342452903932,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "wedged_fire_door",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "locked_exit",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.8377219230001994,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_hydrant",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_path",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.7140138093020431,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "ebike_charging",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.9117095286484797,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "wedged_fire_door",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "locked_exit",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.7996459206064233,
+      "passed": true
+    },
+    {
+      "level": "clear-corridor-check-v2",
+      "target": "blocked_hydrant",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "unsecured_cabinet",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "heavy_top",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "overbed_frame",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "exit_boxes",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "blocked_shelter",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "unsecured_cabinet",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.7333490703079605,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "heavy_top",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.538259683006193,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "overbed_frame",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "exit_boxes",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.7929823888270728,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "blocked_shelter",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.6939505560671531,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "unsecured_cabinet",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.9696397443346891,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "heavy_top",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.8882124488296421,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "overbed_frame",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "exit_boxes",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.9759237232858842,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "blocked_shelter",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.8813664376283913,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "unsecured_cabinet",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.9016560139453806,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "heavy_top",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.7304502991497849,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "overbed_frame",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "exit_boxes",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.8938725396155469,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "blocked_shelter",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.7945030813912304,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "unsecured_cabinet",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.9016560139453806,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "heavy_top",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.7304502991497849,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "overbed_frame",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "exit_boxes",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.8938725396155469,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "blocked_shelter",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.7945030813912304,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "unsecured_cabinet",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.9016560139453806,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "heavy_top",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.7304502991497849,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "overbed_frame",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "exit_boxes",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.8938725396155469,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "blocked_shelter",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.7945030813912304,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "unsecured_cabinet",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.8331457001743172,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "heavy_top",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.6552954760155348,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "overbed_frame",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "exit_boxes",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.857153819590991,
+      "passed": true
+    },
+    {
+      "level": "quake-bedroom-v2",
+      "target": "blocked_shelter",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.7519480059502727,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "flooded_underpass",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "wet_power_box",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "missing_cover",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "loose_sign",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "leaning_fence",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "flooded_underpass",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.8877112311759973,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "wet_power_box",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.9805468643721943,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "missing_cover",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "loose_sign",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.9441070874517974,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "leaning_fence",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.9240708147841391,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "flooded_underpass",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "wet_power_box",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "missing_cover",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "loose_sign",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "leaning_fence",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "flooded_underpass",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.9658811357627314,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "wet_power_box",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.9980410828458713,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "missing_cover",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "loose_sign",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.9772616462036258,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "leaning_fence",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.9850502122372916,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "flooded_underpass",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.9658811357627314,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "wet_power_box",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.9980410828458713,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "missing_cover",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "loose_sign",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.9772616462036258,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "leaning_fence",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.9850502122372916,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "flooded_underpass",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.9658811357627314,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "wet_power_box",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.9980410828458713,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "missing_cover",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "loose_sign",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.9772616462036258,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "leaning_fence",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.9850502122372916,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "flooded_underpass",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.9365674215427061,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "wet_power_box",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.9942048700857026,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "missing_cover",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "loose_sign",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.9582465316253712,
+      "passed": true
+    },
+    {
+      "level": "storm-street-check-v2",
+      "target": "leaning_fence",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.9627497670566311,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "isolated_tree",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_gazebo",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "pond_platform",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_cart",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "camping_tent",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "isolated_tree",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.8203459610212822,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_gazebo",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "pond_platform",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_cart",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "camping_tent",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.9897594944116098,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "isolated_tree",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.9575683123609682,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_gazebo",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "pond_platform",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_cart",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "camping_tent",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "isolated_tree",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.9011587370098609,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_gazebo",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "pond_platform",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_cart",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "camping_tent",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.9981274504066944,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "isolated_tree",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.9011587370098609,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_gazebo",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "pond_platform",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_cart",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "camping_tent",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.9981274504066944,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "isolated_tree",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.9011587370098609,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_gazebo",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "pond_platform",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_cart",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "camping_tent",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.9981274504066944,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "isolated_tree",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.8735017762873933,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_gazebo",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "pond_platform",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "open_cart",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "thunder-park-v2",
+      "target": "camping_tent",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.9973082099596231,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_grill",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "smouldering_cigarette",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_campfire",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "burning_paper",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_fireworks",
+      "w": 320,
+      "h": 568,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_grill",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.9745808182427901,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "smouldering_cigarette",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.732910639984149,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_campfire",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 0.9020120405576679,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "burning_paper",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_fireworks",
+      "w": 320,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_grill",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "smouldering_cigarette",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.8972987253153689,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_campfire",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 0.9900190114068441,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "burning_paper",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_fireworks",
+      "w": 360,
+      "h": 740,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_grill",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "smouldering_cigarette",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.8396407106531933,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_campfire",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 0.9634822560202788,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "burning_paper",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_fireworks",
+      "w": 390,
+      "h": 844,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_grill",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "smouldering_cigarette",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.8396407106531933,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_campfire",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 0.9634822560202788,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "burning_paper",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_fireworks",
+      "w": 430,
+      "h": 932,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_grill",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "smouldering_cigarette",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.8396407106531933,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_campfire",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 0.9634822560202788,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "burning_paper",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_fireworks",
+      "w": 393,
+      "h": 852,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_grill",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.9991281019450033,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "smouldering_cigarette",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.8093917178521894,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_campfire",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 0.9435994930291508,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "burning_paper",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    },
+    {
+      "level": "forest-fire-sources-v2",
+      "target": "forest_fireworks",
+      "w": 360,
+      "h": 800,
+      "visibleRatio": 1,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,2656 @@
+{
+  "schemaVersion": 1,
+  "id": "illustrated",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "family-message": {
+      "src": "/levels/flood-rooftop-v2/family-message.webp",
+      "alpha": true
+    },
+    "family-prepared": {
+      "src": "/levels/flood-rooftop-v2/family-prepared.webp",
+      "alpha": true
+    },
+    "family-roof": {
+      "src": "/levels/flood-rooftop-v2/family-roof.webp",
+      "alpha": true
+    },
+    "wood-panel": {
+      "src": "/levels/flood-rooftop-v2/wood-panel.webp",
+      "alpha": true
+    },
+    "foam": {
+      "src": "/levels/flood-rooftop-v2/foam.webp",
+      "alpha": true
+    },
+    "float-aid": {
+      "src": "/levels/flood-rooftop-v2/float-aid.webp",
+      "alpha": true
+    },
+    "breaker": {
+      "src": "/levels/flood-rooftop-v2/breaker.webp",
+      "alpha": true
+    },
+    "breaker-off": {
+      "src": "/levels/flood-rooftop-v2/breaker-off.webp",
+      "alpha": true
+    },
+    "roof-background": {
+      "src": "/levels/flood-rooftop-v2/roof-background.webp",
+      "alpha": false
+    },
+    "flood-failure": {
+      "src": "/levels/flood-rooftop-v2/flood-failure.webp",
+      "alpha": false
+    },
+    "electric-failure": {
+      "src": "/levels/flood-rooftop-v2/electric-failure.webp",
+      "alpha": false
+    },
+    "room": {
+      "src": "/levels/reference-storybook-v2/flood-highground-practice/upstairs-background.webp",
+      "alpha": false
+    },
+    "car-failure": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/background.webp",
+      "alpha": false
+    },
+    "family-initial": {
+      "src": "/levels/character-continuity-v3/flood-highground-practice/family-initial.webp",
+      "alpha": true
+    },
+    "family-calm": {
+      "src": "/levels/character-continuity-v3/flood-highground-practice/family-calm.webp",
+      "alpha": true
+    },
+    "phone": {
+      "src": "/levels/reference-storybook-v2/flood-highground-practice/phone-initial.webp",
+      "alpha": true
+    },
+    "water": {
+      "src": "/levels/reference-storybook-v2/flood-highground-practice/bottled-water-initial.webp",
+      "alpha": true
+    },
+    "flashlight": {
+      "src": "/levels/reference-storybook-v2/quake-exit-practice/flashlight-initial.webp",
+      "alpha": true
+    },
+    "bag": {
+      "src": "/levels/transcript-v1/bag.png",
+      "alpha": true
+    },
+    "chair": {
+      "src": "/levels/transcript-v1/chair.png",
+      "alpha": true
+    },
+    "car": {
+      "src": "/levels/reference-storybook-v2/flood-highground-practice/upstairs-background.webp",
+      "alpha": false,
+      "frame": {
+        "x": 231,
+        "y": 580,
+        "w": 78,
+        "h": 40
+      }
+    },
+    "wire": {
+      "src": "/levels/flood-rooftop-v2/wire.webp",
+      "alpha": true
+    }
+  },
+  "background": "room",
+  "poses": {
+    "world-scene": {
+      "asset": "room",
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1280,
+      "depth": 0,
+      "blockInput": false
+    },
+    "family": {
+      "asset": "family-initial",
+      "x": 220,
+      "y": 468,
+      "w": 335,
+      "h": 459.4,
+      "depth": 40
+    },
+    "breaker": {
+      "asset": "breaker",
+      "x": 363,
+      "y": 132,
+      "w": 50,
+      "h": 84.8465,
+      "depth": 25
+    },
+    "phone": {
+      "asset": "phone",
+      "x": 502,
+      "y": 590,
+      "w": 80,
+      "h": 42.74,
+      "depth": 32
+    },
+    "bottled-water": {
+      "asset": "water",
+      "x": 592,
+      "y": 517,
+      "w": 52,
+      "h": 82.07,
+      "depth": 31
+    },
+    "flashlight": {
+      "asset": "flashlight",
+      "x": 646,
+      "y": 596,
+      "w": 62,
+      "h": 26.13,
+      "depth": 33
+    },
+    "backpack": {
+      "asset": "bag",
+      "x": 465,
+      "y": 945,
+      "w": 112,
+      "h": 123.8,
+      "depth": 35
+    },
+    "panel": {
+      "asset": "wood-panel",
+      "x": 135,
+      "y": 722,
+      "w": 75,
+      "h": 180.12,
+      "depth": 25,
+      "rotation": -0.035,
+      "blockInput": false
+    },
+    "foam": {
+      "asset": "foam",
+      "x": 229,
+      "y": 763,
+      "w": 67,
+      "h": 133.345,
+      "depth": 27,
+      "rotation": 0.025
+    },
+    "float-aid": {
+      "asset": "float-aid",
+      "x": 135,
+      "y": 722,
+      "w": 82,
+      "h": 172,
+      "depth": 28,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "stool": {
+      "asset": "chair",
+      "x": 179,
+      "y": 969,
+      "w": 88,
+      "h": 160.7,
+      "depth": 28
+    },
+    "car": {
+      "asset": "car",
+      "x": 176.74814027630183,
+      "y": 444.01913875598086,
+      "w": 59.681190223166844,
+      "h": 30.62200956937799,
+      "depth": 4
+    },
+    "broken-wire": {
+      "asset": "wire",
+      "x": 154,
+      "y": 326,
+      "w": 105,
+      "h": 96,
+      "depth": 5,
+      "blockInput": false
+    },
+    "aftermath": {
+      "asset": "flood-failure",
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1280,
+      "depth": 80,
+      "opacity": 0,
+      "blockInput": false
+    }
+  },
+  "zones": {
+    "stairs-approach": {
+      "x": 445,
+      "y": 370,
+      "w": 175,
+      "h": 209
+    },
+    "roof-exit": {
+      "x": 445,
+      "y": 230,
+      "w": 175,
+      "h": 145
+    },
+    "bag-zone": {
+      "x": 455,
+      "y": 929,
+      "w": 138,
+      "h": 154
+    },
+    "panel-zone": {
+      "x": 126,
+      "y": 710,
+      "w": 91,
+      "h": 207
+    },
+    "wire-zone": {
+      "x": 150,
+      "y": 323,
+      "w": 112,
+      "h": 107
+    },
+    "flood-zone": {
+      "x": 143,
+      "y": 444,
+      "w": 125,
+      "h": 92
+    }
+  },
+  "states": [
+    {
+      "object": "family",
+      "when": {
+        "all": [
+          "at-stairs"
+        ]
+      },
+      "pose": {
+        "asset": "family-calm",
+        "x": 270,
+        "y": 400,
+        "w": 214,
+        "h": 514,
+        "opacity": 1,
+        "rotation": 0
+      }
+    },
+    {
+      "object": "breaker",
+      "when": {
+        "all": [
+          "power-off"
+        ]
+      },
+      "pose": {
+        "asset": "breaker-off"
+      }
+    },
+    {
+      "object": "phone",
+      "when": {
+        "all": [
+          "rescue-contacted"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "bottled-water",
+      "when": {
+        "all": [
+          "water-packed"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "flashlight",
+      "when": {
+        "all": [
+          "light-packed"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "panel",
+      "when": {
+        "all": [
+          "float-ready"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "foam",
+      "when": {
+        "all": [
+          "float-ready"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "float-aid",
+      "when": {
+        "all": [
+          "float-ready"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "family",
+      "when": {
+        "all": [
+          "at-stairs",
+          "power-off",
+          "rescue-contacted",
+          "water-packed",
+          "light-packed",
+          "float-ready"
+        ]
+      },
+      "pose": {
+        "asset": "family-prepared",
+        "x": 222,
+        "y": 410,
+        "w": 350,
+        "h": 525,
+        "opacity": 1,
+        "rotation": 0
+      }
+    },
+    {
+      "object": "backpack",
+      "when": {
+        "all": [
+          "at-stairs",
+          "power-off",
+          "rescue-contacted",
+          "water-packed",
+          "light-packed",
+          "float-ready"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "float-aid",
+      "when": {
+        "all": [
+          "at-stairs",
+          "power-off",
+          "rescue-contacted",
+          "water-packed",
+          "light-packed",
+          "float-ready"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "world-scene",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "asset": "roof-background"
+      }
+    },
+    {
+      "object": "family",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "asset": "family-roof",
+        "x": 217,
+        "y": 495,
+        "w": 380,
+        "h": 570,
+        "opacity": 1,
+        "rotation": 0
+      }
+    },
+    {
+      "object": "breaker",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "phone",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "bottled-water",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "flashlight",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "backpack",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "panel",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "foam",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "float-aid",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "stool",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "car",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "broken-wire",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "float-aid",
+      "when": {
+        "all": [
+          "at-rooftop"
+        ]
+      },
+      "pose": {
+        "x": 150,
+        "y": 956,
+        "w": 58,
+        "h": 121.3,
+        "opacity": 1,
+        "rotation": 0.035
+      }
+    }
+  ],
+  "animations": {
+    "approach-stairs": {
+      "durationMs": 1500,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.2,
+              "x": 325,
+              "y": 449,
+              "w": 270,
+              "h": 370
+            },
+            {
+              "at": 0.34,
+              "x": 340,
+              "y": 421,
+              "rotation": -0.025
+            },
+            {
+              "at": 0.48,
+              "x": 345,
+              "y": 430,
+              "rotation": 0.02
+            },
+            {
+              "at": 0.58,
+              "opacity": 0
+            },
+            {
+              "at": 0.6,
+              "asset": "family-calm",
+              "x": 270,
+              "y": 400,
+              "w": 214,
+              "h": 514,
+              "opacity": 0,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "asset": "family-calm",
+              "x": 270,
+              "y": 400,
+              "w": 214,
+              "h": 514,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "turn-off-power": {
+      "durationMs": 900,
+      "tracks": [
+        {
+          "object": "breaker",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "asset": "breaker"
+            },
+            {
+              "at": 0.55,
+              "asset": "breaker-off"
+            },
+            {
+              "at": 1,
+              "asset": "breaker-off"
+            }
+          ]
+        },
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.026
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.022
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        }
+      ]
+    },
+    "send-location": {
+      "durationMs": 1500,
+      "tracks": [
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.12,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.12,
+              "opacity": 0
+            },
+            {
+              "at": 0.15,
+              "asset": "family-message",
+              "x": 211,
+              "y": 390,
+              "w": 356,
+              "h": 534,
+              "opacity": 0
+            },
+            {
+              "at": 0.28,
+              "opacity": 1
+            },
+            {
+              "at": 0.75,
+              "rotation": 0.014
+            },
+            {
+              "at": 0.84,
+              "opacity": 0
+            },
+            {
+              "at": 0.87,
+              "restoreHome": true,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "restoreHome": true,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "pack-water": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "bottled-water",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.4,
+              "x": 487,
+              "y": 947,
+              "w": 37,
+              "h": 58.4,
+              "rotation": 0
+            },
+            {
+              "at": 0.68,
+              "x": 494,
+              "y": 966,
+              "w": 28,
+              "h": 44.2,
+              "opacity": 0.7
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "backpack",
+          "keyframes": [
+            {
+              "at": 0.55,
+              "rotation": 0.025
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        },
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.026
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.022
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        }
+      ]
+    },
+    "pack-light": {
+      "durationMs": 1000,
+      "tracks": [
+        {
+          "object": "flashlight",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.4,
+              "x": 480,
+              "y": 950,
+              "w": 49,
+              "h": 20.65,
+              "rotation": 0.5
+            },
+            {
+              "at": 0.72,
+              "x": 490,
+              "y": 970,
+              "w": 35,
+              "h": 14.75,
+              "opacity": 0.7
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "backpack",
+          "keyframes": [
+            {
+              "at": 0.55,
+              "rotation": 0.025
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        },
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.026
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.022
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        }
+      ]
+    },
+    "combine-float": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "foam",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.45,
+              "x": 142,
+              "y": 746,
+              "rotation": 0
+            },
+            {
+              "at": 0.64,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "panel",
+          "keyframes": [
+            {
+              "at": 0.64,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "float-aid",
+          "keyframes": [
+            {
+              "at": 0.63,
+              "opacity": 0
+            },
+            {
+              "at": 0.78,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.026
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.022
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        }
+      ]
+    },
+    "evacuate-roof": {
+      "durationMs": 1500,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "x": 414,
+              "y": 328,
+              "w": 218,
+              "h": 327,
+              "rotation": -0.022
+            },
+            {
+              "at": 0.42,
+              "x": 450,
+              "y": 272,
+              "w": 182,
+              "h": 273,
+              "rotation": 0.012,
+              "opacity": 0.8
+            },
+            {
+              "at": 0.52,
+              "opacity": 0
+            },
+            {
+              "at": 0.58,
+              "asset": "family-roof",
+              "x": 217,
+              "y": 495,
+              "w": 380,
+              "h": 570,
+              "opacity": 0,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "asset": "family-roof",
+              "x": 217,
+              "y": 495,
+              "w": 380,
+              "h": 570,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "object": "world-scene",
+          "keyframes": [
+            {
+              "at": 0.54,
+              "asset": "room"
+            },
+            {
+              "at": 0.56,
+              "asset": "roof-background"
+            },
+            {
+              "at": 1,
+              "asset": "roof-background"
+            }
+          ]
+        },
+        {
+          "object": "breaker",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "bottled-water",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "flashlight",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "backpack",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "panel",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "foam",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "float-aid",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 0.58,
+              "x": 150,
+              "y": 956,
+              "w": 58,
+              "h": 121.3,
+              "opacity": 0,
+              "rotation": 0.035
+            },
+            {
+              "at": 1,
+              "x": 150,
+              "y": 956,
+              "w": 58,
+              "h": 121.3,
+              "opacity": 1,
+              "rotation": 0.035
+            }
+          ]
+        },
+        {
+          "object": "stool",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "car",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "broken-wire",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-roof-escape": {
+      "durationMs": 1500,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "x": 414,
+              "y": 328,
+              "w": 145,
+              "h": 348,
+              "rotation": -0.022
+            },
+            {
+              "at": 0.42,
+              "x": 450,
+              "y": 272,
+              "w": 120,
+              "h": 288,
+              "rotation": 0.012,
+              "opacity": 0.8
+            },
+            {
+              "at": 0.52,
+              "opacity": 0
+            },
+            {
+              "at": 0.58,
+              "asset": "family-calm",
+              "x": 267,
+              "y": 495,
+              "w": 235,
+              "h": 564,
+              "opacity": 0,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "asset": "family-calm",
+              "x": 267,
+              "y": 495,
+              "w": 235,
+              "h": 564,
+              "opacity": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "object": "world-scene",
+          "keyframes": [
+            {
+              "at": 0.54,
+              "asset": "room"
+            },
+            {
+              "at": 0.56,
+              "asset": "roof-background"
+            },
+            {
+              "at": 1,
+              "asset": "roof-background"
+            }
+          ]
+        },
+        {
+          "object": "breaker",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "bottled-water",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "flashlight",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "backpack",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "panel",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "foam",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "float-aid",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "stool",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "car",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "broken-wire",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "restoreHome": true
+            },
+            {
+              "at": 0.55,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "enter-flood": {
+      "durationMs": 1500,
+      "tracks": [
+        {
+          "object": "aftermath",
+          "keyframes": [
+            {
+              "at": 0.01,
+              "asset": "flood-failure",
+              "opacity": 0
+            },
+            {
+              "at": 0.18,
+              "asset": "flood-failure",
+              "opacity": 1
+            },
+            {
+              "at": 0.5,
+              "x": -7,
+              "y": -10,
+              "w": 734,
+              "h": 1305
+            },
+            {
+              "at": 0.7,
+              "x": 2,
+              "y": -2,
+              "w": 724,
+              "h": 1287
+            },
+            {
+              "at": 1,
+              "x": 0,
+              "y": 0,
+              "w": 720,
+              "h": 1280,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "world-scene",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "breaker",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "bottled-water",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "flashlight",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "backpack",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "panel",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "foam",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "float-aid",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "stool",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "car",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "broken-wire",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "touch-wire": {
+      "durationMs": 1500,
+      "tracks": [
+        {
+          "object": "aftermath",
+          "keyframes": [
+            {
+              "at": 0.01,
+              "asset": "electric-failure",
+              "opacity": 0
+            },
+            {
+              "at": 0.18,
+              "asset": "electric-failure",
+              "opacity": 1
+            },
+            {
+              "at": 0.5,
+              "x": -7,
+              "y": -10,
+              "w": 734,
+              "h": 1305
+            },
+            {
+              "at": 0.7,
+              "x": 2,
+              "y": -2,
+              "w": 724,
+              "h": 1287
+            },
+            {
+              "at": 1,
+              "x": 0,
+              "y": 0,
+              "w": 720,
+              "h": 1280,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "world-scene",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "breaker",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "bottled-water",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "flashlight",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "backpack",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "panel",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "foam",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "float-aid",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "stool",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "car",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "broken-wire",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "stay-in-car": {
+      "durationMs": 1500,
+      "tracks": [
+        {
+          "object": "aftermath",
+          "keyframes": [
+            {
+              "at": 0.01,
+              "asset": "car-failure",
+              "opacity": 0
+            },
+            {
+              "at": 0.18,
+              "asset": "car-failure",
+              "opacity": 1
+            },
+            {
+              "at": 0.5,
+              "x": -7,
+              "y": -10,
+              "w": 734,
+              "h": 1305
+            },
+            {
+              "at": 0.7,
+              "x": 2,
+              "y": -2,
+              "w": 724,
+              "h": 1287
+            },
+            {
+              "at": 1,
+              "x": 0,
+              "y": 0,
+              "w": 720,
+              "h": 1280,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "world-scene",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "breaker",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "bottled-water",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "flashlight",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "backpack",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "panel",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "foam",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "float-aid",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "stool",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "car",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "broken-wire",
+          "keyframes": [
+            {
+              "at": 0.18,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "blocked-breaker": {
+      "durationMs": 650,
+      "tracks": [
+        {
+          "object": "breaker",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.05
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.04
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        }
+      ]
+    },
+    "blocked-phone": {
+      "durationMs": 650,
+      "tracks": [
+        {
+          "object": "phone",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.05
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.04
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        }
+      ]
+    },
+    "blocked-water": {
+      "durationMs": 650,
+      "tracks": [
+        {
+          "object": "bottled-water",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.05
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.04
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        }
+      ]
+    },
+    "blocked-light": {
+      "durationMs": 650,
+      "tracks": [
+        {
+          "object": "flashlight",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.05
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.04
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        }
+      ]
+    },
+    "blocked-foam": {
+      "durationMs": 650,
+      "tracks": [
+        {
+          "object": "foam",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.05
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.04
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        }
+      ]
+    },
+    "blocked-roof": {
+      "durationMs": 650,
+      "tracks": [
+        {
+          "object": "family",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.05
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.04
+            },
+            {
+              "at": 1,
+              "restoreHome": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [],
+  "zoneLabels": {
+    "stairs-approach": "干燥楼梯旁",
+    "roof-exit": "沿楼梯到屋顶高处",
+    "bag-zone": "放入背包",
+    "panel-zone": "与轻质板材组合",
+    "wire-zone": "靠近断线（危险）",
+    "flood-zone": "下水（危险）"
+  },
+  "zoneConditions": {
+    "stairs-approach": {
+      "not": [
+        "at-stairs"
+      ]
+    },
+    "roof-exit": {
+      "all": [
+        "at-stairs"
+      ]
+    }
+  },
+  "presentation": {
+    "durationMs": 90000,
+    "failureReveal": true,
+    "effects": [
+      {
+        "kind": "rain",
+        "box": {
+          "x": 20,
+          "y": 35,
+          "w": 260,
+          "h": 585
+        },
+        "depth": 3,
+        "color": "#c9e0ee",
+        "strength": 1.5,
+        "whenScene": {
+          "object": "world-scene",
+          "asset": "room"
+        },
+        "clipPolygons": [
+          [
+            {
+              "x": 25.2,
+              "y": 45.2
+            },
+            {
+              "x": 109.4,
+              "y": 80.4
+            },
+            {
+              "x": 109.4,
+              "y": 193.7
+            },
+            {
+              "x": 25.2,
+              "y": 171.5
+            }
+          ],
+          [
+            {
+              "x": 141.6,
+              "y": 94.2
+            },
+            {
+              "x": 268.6,
+              "y": 150
+            },
+            {
+              "x": 268.6,
+              "y": 244.2
+            },
+            {
+              "x": 141.6,
+              "y": 203.6
+            }
+          ],
+          [
+            {
+              "x": 26,
+              "y": 207.5
+            },
+            {
+              "x": 108.7,
+              "y": 230.4
+            },
+            {
+              "x": 108.7,
+              "y": 486.9
+            },
+            {
+              "x": 58.2,
+              "y": 486.9
+            },
+            {
+              "x": 58.2,
+              "y": 349.1
+            },
+            {
+              "x": 26,
+              "y": 349.1
+            }
+          ],
+          [
+            {
+              "x": 143.1,
+              "y": 240.4
+            },
+            {
+              "x": 268.6,
+              "y": 268.7
+            },
+            {
+              "x": 267.8,
+              "y": 522.1
+            },
+            {
+              "x": 143.1,
+              "y": 543.5
+            }
+          ]
+        ]
+      },
+      {
+        "kind": "water",
+        "box": {
+          "x": 20,
+          "y": 365,
+          "w": 260,
+          "h": 240
+        },
+        "depth": 2,
+        "color": "#568ca1",
+        "strength": 1.4,
+        "whenScene": {
+          "object": "world-scene",
+          "asset": "room"
+        },
+        "clipPolygons": [
+          [
+            {
+              "x": 25.2,
+              "y": 45.2
+            },
+            {
+              "x": 109.4,
+              "y": 80.4
+            },
+            {
+              "x": 109.4,
+              "y": 193.7
+            },
+            {
+              "x": 25.2,
+              "y": 171.5
+            }
+          ],
+          [
+            {
+              "x": 141.6,
+              "y": 94.2
+            },
+            {
+              "x": 268.6,
+              "y": 150
+            },
+            {
+              "x": 268.6,
+              "y": 244.2
+            },
+            {
+              "x": 141.6,
+              "y": 203.6
+            }
+          ],
+          [
+            {
+              "x": 26,
+              "y": 207.5
+            },
+            {
+              "x": 108.7,
+              "y": 230.4
+            },
+            {
+              "x": 108.7,
+              "y": 486.9
+            },
+            {
+              "x": 58.2,
+              "y": 486.9
+            },
+            {
+              "x": 58.2,
+              "y": 349.1
+            },
+            {
+              "x": 26,
+              "y": 349.1
+            }
+          ],
+          [
+            {
+              "x": 143.1,
+              "y": 240.4
+            },
+            {
+              "x": 268.6,
+              "y": 268.7
+            },
+            {
+              "x": 267.8,
+              "y": 522.1
+            },
+            {
+              "x": 143.1,
+              "y": 543.5
+            }
+          ]
+        ]
+      },
+      {
+        "kind": "alarm",
+        "box": {
+          "x": 178,
+          "y": 370,
+          "w": 28,
+          "h": 29
+        },
+        "depth": 6,
+        "color": "#ffe7a1",
+        "strength": 0.7,
+        "whenScene": {
+          "object": "world-scene",
+          "asset": "room"
+        },
+        "clipPolygons": [
+          [
+            {
+              "x": 25.2,
+              "y": 45.2
+            },
+            {
+              "x": 109.4,
+              "y": 80.4
+            },
+            {
+              "x": 109.4,
+              "y": 193.7
+            },
+            {
+              "x": 25.2,
+              "y": 171.5
+            }
+          ],
+          [
+            {
+              "x": 141.6,
+              "y": 94.2
+            },
+            {
+              "x": 268.6,
+              "y": 150
+            },
+            {
+              "x": 268.6,
+              "y": 244.2
+            },
+            {
+              "x": 141.6,
+              "y": 203.6
+            }
+          ],
+          [
+            {
+              "x": 26,
+              "y": 207.5
+            },
+            {
+              "x": 108.7,
+              "y": 230.4
+            },
+            {
+              "x": 108.7,
+              "y": 486.9
+            },
+            {
+              "x": 58.2,
+              "y": 486.9
+            },
+            {
+              "x": 58.2,
+              "y": 349.1
+            },
+            {
+              "x": 26,
+              "y": 349.1
+            }
+          ],
+          [
+            {
+              "x": 143.1,
+              "y": 240.4
+            },
+            {
+              "x": 268.6,
+              "y": 268.7
+            },
+            {
+              "x": 267.8,
+              "y": 522.1
+            },
+            {
+              "x": 143.1,
+              "y": 543.5
+            }
+          ]
+        ]
+      },
+      {
+        "kind": "rain",
+        "box": {
+          "x": 20,
+          "y": 90,
+          "w": 480,
+          "h": 400
+        },
+        "depth": 3,
+        "color": "#c9e0ee",
+        "strength": 0.7,
+        "whenScene": {
+          "object": "world-scene",
+          "asset": "roof-background"
+        },
+        "clipPolygons": [
+          [
+            {
+              "x": 25,
+              "y": 102
+            },
+            {
+              "x": 493,
+              "y": 190
+            },
+            {
+              "x": 493,
+              "y": 475
+            },
+            {
+              "x": 25,
+              "y": 490
+            }
+          ]
+        ]
+      }
+    ],
+    "actors": [
+      {
+        "object": "family",
+        "amplitude": 0.7,
+        "performance": {
+          "lean": 0.02,
+          "periodMs": 1250
+        }
+      }
+    ],
+    "audio": {
+      "theme": "flood",
+      "ambientProfile": "flood-window",
+      "calmWhen": [
+        "at-rooftop"
+      ],
+      "emergency": {
+        "alarm": "flood-alert",
+        "alarmUntil": [
+          "at-rooftop"
+        ]
+      },
+      "cues": {
+        "opening": "flood-surge",
+        "pickup": "pickup",
+        "bounce": "bounce",
+        "goal": "soft-tap",
+        "complete": "success",
+        "danger": "warning",
+        "approach-stairs": "flood-high-step",
+        "turn-off-power": "flood-power-off",
+        "send-location": "flood-message-sent",
+        "pack-water": "flood-pack-zip",
+        "pack-light": "flood-pack-zip",
+        "combine-float": "fabric",
+        "evacuate-roof": "flood-high-step",
+        "early-roof-escape": "flood-high-step",
+        "enter-flood": "flood-water-impact",
+        "touch-wire": "electric-warning",
+        "stay-in-car": "flood-water-impact"
+      }
+    }
+  },
+  "framing": {
+    "sceneBounds": {
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1280
+    },
+    "criticalRegions": [
+      {
+        "x": 126,
+        "y": 132,
+        "w": 582,
+        "h": 951
+      }
+    ]
+  }
+}

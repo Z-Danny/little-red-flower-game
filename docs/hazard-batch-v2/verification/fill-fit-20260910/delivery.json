@@ -1,0 +1,11 @@
+{
+  "at": "2026-09-10T03:13:51.288Z",
+  "htmlSha256": "2a70426b1c50965c6c04c688dc06162e3935315ea9950503c2131f657dae2b0b",
+  "backup": "D:/中关村/小红花/test1/work/fill-fit-backup-2026-09-10T03-13-39-353Z",
+  "filesUpdated": 64,
+  "immutableFiles": 295,
+  "regressionTests": 1650,
+  "mobileLayoutChecks": 119,
+  "safeAreaAndZoomChecks": 21,
+  "remotePublished": false
+}

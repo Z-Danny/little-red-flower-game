@@ -1,0 +1,196 @@
+{
+  "sampleRate": 22050,
+  "format": "PCM16 mono",
+  "measurement": "sample peak/RMS, not LUFS or listening approval",
+  "assets": [
+    {
+      "id": "fear-inhale",
+      "src": "/audio/kitchen-fear-v2/fear-inhale.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 0.78,
+      "peakDb": -3.8129703893271447,
+      "rmsDb": -14.895727470327234,
+      "sha256": "e84c7a79dd606858664bf7ac5802b1be41b8ad06df3305c040e7ff83179ab451"
+    },
+    {
+      "id": "fear-tremble",
+      "src": "/audio/kitchen-fear-v2/fear-tremble.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 0.92,
+      "peakDb": -6.169101554941029,
+      "rmsDb": -14.895003079982036,
+      "sha256": "343a8a577bca1a9a7e2b8cfcc378ff6d76a35445bf4173f28bf538d5ea01e375"
+    },
+    {
+      "id": "fear-startle",
+      "src": "/audio/kitchen-fear-v2/fear-startle.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 0.68,
+      "peakDb": -3.8967239252559533,
+      "rmsDb": -14.896011377676029,
+      "sha256": "6d2f4c57710dd22ab0f557196ec4bc67ed0766e4ce38a196506e1388457d8dca"
+    },
+    {
+      "id": "music-bed",
+      "src": "/audio/response-v1/music-bed.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 8,
+      "peakDb": -11.953392640987893,
+      "rmsDb": -19.58350562386438,
+      "sha256": "2869cd640846d4255c48d6d4428add15f08694650ac842c571b86ee353374d96"
+    },
+    {
+      "id": "music-pulse",
+      "src": "/audio/response-v1/music-pulse.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 8,
+      "peakDb": -5.963855181234521,
+      "rmsDb": -19.58434457401011,
+      "sha256": "cd999b3bad9081256237dd09adec4597b6c51f703b03666b94c78b63c8ba4449"
+    },
+    {
+      "id": "music-high",
+      "src": "/audio/response-v1/music-high.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 8,
+      "peakDb": -6.75211401793129,
+      "rmsDb": -19.586519386676027,
+      "sha256": "28ab21c0510ef6220b50909c0a31194bc3f891e2fb9ef678893202749a7edc4e"
+    },
+    {
+      "id": "fire",
+      "src": "/audio/response-v1/fire.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 8,
+      "peakDb": -4.8687126400826575,
+      "rmsDb": -19.586564653146052,
+      "sha256": "79806ea53f765df92c0a496832d04b1b737da8e7173e9fcc3718adff113191df"
+    },
+    {
+      "id": "draft",
+      "src": "/audio/response-v1/draft.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 8,
+      "peakDb": -5.479836740135679,
+      "rmsDb": -19.581629777362856,
+      "sha256": "a4aabd75d2e04e9a836b711d08f163d3585f9f00c7286d73572e71029018aefb"
+    },
+    {
+      "id": "breathing",
+      "src": "/audio/response-v1/breathing.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 8,
+      "peakDb": -2.158108264786931,
+      "rmsDb": -20.72182556898895,
+      "sha256": "7e0fb610af444c95db5a7dcedd2c3eb3b0f865a71211dcf45be7acbe26e9fbfe"
+    },
+    {
+      "id": "pickup",
+      "src": "/audio/response-v1/pickup.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 0.6500226757369615,
+      "peakDb": -4.4536214602165,
+      "rmsDb": -24.37902433968416,
+      "sha256": "0016616470220981c8e9cc988eb4069f2af5d61d0cd9e5a2d4301b9cd587156b"
+    },
+    {
+      "id": "fx-lid",
+      "src": "/audio/response-v1/lid.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 0.6500226757369615,
+      "peakDb": -3.5370623349605887,
+      "rmsDb": -20.189597780921538,
+      "sha256": "532c83dac2f655604e1eab2aa640b41cbe43dd9d057a3db1801ee450fa4a9d7a"
+    },
+    {
+      "id": "fx-gas",
+      "src": "/audio/response-v1/gas.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 0.6500226757369615,
+      "peakDb": -7.496489868275232,
+      "rmsDb": -28.21492268002038,
+      "sha256": "eca817172b52aecb81f202f4ee6df10f78ceab8ac315e9abad75737e5441fae5"
+    },
+    {
+      "id": "fx-water",
+      "src": "/audio/response-v1/water.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 1.5,
+      "peakDb": -2.158108264786931,
+      "rmsDb": -19.912942103527037,
+      "sha256": "23ad0411c62c301d59de6993f820aba2b4e63b36101e3adcaa7e7e420cd347e9"
+    },
+    {
+      "id": "cloth",
+      "src": "/audio/response-v1/cloth.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 1.2,
+      "peakDb": -2.158108264786931,
+      "rmsDb": -22.086945359078705,
+      "sha256": "8ed63a6efefb563865f54cc34e1bc7297b1ed19a3f3ef09a93063c495d204e72"
+    },
+    {
+      "id": "flare",
+      "src": "/audio/response-v1/flare.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 1.3500226757369616,
+      "peakDb": -2.158108264786931,
+      "rmsDb": -17.874679277173172,
+      "sha256": "930fe2b3d393052df26fca17f7095cd016ce08c3195d8e136319e29fa8c84ba9"
+    },
+    {
+      "id": "spray",
+      "src": "/audio/response-v1/spray.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 1,
+      "peakDb": -8.786294133810324,
+      "rmsDb": -17.722563738854447,
+      "sha256": "679d3f08fafa1da53991cc34cbca7a21373627de24a0b00fd9d85bebd62af9c4"
+    },
+    {
+      "id": "bounce",
+      "src": "/audio/response-v1/bounce.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 0.6500226757369615,
+      "peakDb": -3.8135044344175526,
+      "rmsDb": -20.8262185874656,
+      "sha256": "00643909934a0eaaf86200cf40c6ab5eee96d32ae80b1d6ddf1ceb041366e05c"
+    },
+    {
+      "id": "steps",
+      "src": "/audio/response-v1/steps.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 1.2500226757369615,
+      "peakDb": -2.158108264786931,
+      "rmsDb": -23.75386268492271,
+      "sha256": "77ef035f3493f111e041d982ee338bdd19e5be1117283ed57d6cf361b73952a3"
+    },
+    {
+      "id": "gasp",
+      "src": "/audio/response-v1/gasp.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 0.6500226757369615,
+      "peakDb": -2.317961164560354,
+      "rmsDb": -17.721183497590452,
+      "sha256": "83212dd0e8448b8cdf3792c727de24cd566f93a101c7eef28d6bbeb2b9c5b9e5"
+    },
+    {
+      "id": "relief",
+      "src": "/audio/response-v1/relief.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 1.1,
+      "peakDb": -2.158108264786931,
+      "rmsDb": -19.312757067464652,
+      "sha256": "4d8a22c9033503a3fd4987590f5c29b34205d2928535e3d80657fc293680db89"
+    },
+    {
+      "id": "success",
+      "src": "/audio/response-v1/success.wav",
+      "origin": "Original deterministic DSP, no spoken words",
+      "seconds": 1.8,
+      "peakDb": -5.579511147176711,
+      "rmsDb": -17.7275261147907,
+      "sha256": "e74003fd10e369ade0aac48ada48635814e08f11b594158e1f2e839d8021862d"
+    }
+  ]
+}

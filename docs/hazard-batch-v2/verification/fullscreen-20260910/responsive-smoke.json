@@ -1,0 +1,3283 @@
+{
+  "at": "2026-09-10T02:26:14.956Z",
+  "cases": [
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 390,
+      "height": 844,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 454,
+            "height": 908,
+            "top": -32,
+            "right": 422,
+            "bottom": 876,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "908px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 66,
+            "top": 0,
+            "right": 390,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 778px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 73.5,
+            "y": 76,
+            "width": 243,
+            "height": 47,
+            "top": 76,
+            "right": 316.5,
+            "bottom": 123,
+            "left": 73.5
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "76px",
+          "inset": "76px 73.5px 721px"
+        }
+      },
+      "targets": [
+        "covered_phone",
+        "damaged_lead",
+        "swollen_bank",
+        "folded_blanket",
+        "covered_heater"
+      ],
+      "passed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 390,
+      "height": 844,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 454,
+            "height": 908,
+            "top": -32,
+            "right": 422,
+            "bottom": 876,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "908px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 66,
+            "top": 0,
+            "right": 390,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 778px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 73.5,
+            "y": 76,
+            "width": 243,
+            "height": 47,
+            "top": 76,
+            "right": 316.5,
+            "bottom": 123,
+            "left": 73.5
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "76px",
+          "inset": "76px 73.5px 721px"
+        }
+      },
+      "targets": [
+        "gas_hose",
+        "paper_near_hob",
+        "greasy_filter",
+        "sideways_cylinder",
+        "damaged_kettle"
+      ],
+      "passed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 390,
+      "height": 844,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 454,
+            "height": 908,
+            "top": -32,
+            "right": 422,
+            "bottom": 876,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "908px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 66,
+            "top": 0,
+            "right": 390,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 778px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 73.5,
+            "y": 76,
+            "width": 243,
+            "height": 47,
+            "top": 76,
+            "right": 316.5,
+            "bottom": 123,
+            "left": 73.5
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "76px",
+          "inset": "76px 73.5px 721px"
+        }
+      },
+      "targets": [
+        "blocked_path",
+        "ebike_charging",
+        "wedged_fire_door",
+        "locked_exit",
+        "blocked_hydrant"
+      ],
+      "passed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 390,
+      "height": 844,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 454,
+            "height": 908,
+            "top": -32,
+            "right": 422,
+            "bottom": 876,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "908px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 66,
+            "top": 0,
+            "right": 390,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 778px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 73.5,
+            "y": 672,
+            "width": 243,
+            "height": 47,
+            "top": 672,
+            "right": 316.5,
+            "bottom": 719,
+            "left": 73.5
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "672px",
+          "inset": "672px 73.5px 125px"
+        }
+      },
+      "targets": [
+        "unsecured_cabinet",
+        "heavy_top",
+        "overbed_frame",
+        "exit_boxes",
+        "blocked_shelter"
+      ],
+      "passed": true
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 390,
+      "height": 844,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 454,
+            "height": 908,
+            "top": -32,
+            "right": 422,
+            "bottom": 876,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "908px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 66,
+            "top": 0,
+            "right": 390,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 778px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 73.5,
+            "y": 776,
+            "width": 243,
+            "height": 47,
+            "top": 776,
+            "right": 316.5,
+            "bottom": 823,
+            "left": 73.5
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "776px",
+          "inset": "776px 73.5px 21px"
+        }
+      },
+      "targets": [
+        "flooded_underpass",
+        "wet_power_box",
+        "missing_cover",
+        "loose_sign",
+        "leaning_fence"
+      ],
+      "passed": true
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 390,
+      "height": 844,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 454,
+            "height": 908,
+            "top": -32,
+            "right": 422,
+            "bottom": 876,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "908px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 66,
+            "top": 0,
+            "right": 390,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 778px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 73.5,
+            "y": 660,
+            "width": 243,
+            "height": 47,
+            "top": 660,
+            "right": 316.5,
+            "bottom": 707,
+            "left": 73.5
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "660px",
+          "inset": "660px 73.5px 137px"
+        }
+      },
+      "targets": [
+        "isolated_tree",
+        "open_gazebo",
+        "pond_platform",
+        "open_cart",
+        "camping_tent"
+      ],
+      "passed": true
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 390,
+      "height": 844,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 844,
+            "top": 0,
+            "right": 390,
+            "bottom": 844,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "844px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 454,
+            "height": 908,
+            "top": -32,
+            "right": 422,
+            "bottom": 876,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "908px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 66,
+            "top": 0,
+            "right": 390,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 778px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 73.5,
+            "y": 76,
+            "width": 243,
+            "height": 47,
+            "top": 76,
+            "right": 316.5,
+            "bottom": 123,
+            "left": 73.5
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "76px",
+          "inset": "76px 73.5px 721px"
+        }
+      },
+      "targets": [
+        "forest_grill",
+        "smouldering_cigarette",
+        "forest_campfire",
+        "burning_paper",
+        "forest_fireworks"
+      ],
+      "passed": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 360,
+      "height": 640,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 424,
+            "height": 704,
+            "top": -32,
+            "right": 392,
+            "bottom": 672,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "704px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 66,
+            "top": 0,
+            "right": 360,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 574px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 100,
+            "y": 70,
+            "width": 160,
+            "height": 30,
+            "top": 70,
+            "right": 260,
+            "bottom": 100,
+            "left": 100
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "30px",
+          "top": "70px",
+          "inset": "70px 100px 540px"
+        }
+      },
+      "targets": [
+        "covered_phone",
+        "damaged_lead",
+        "swollen_bank",
+        "folded_blanket",
+        "covered_heater"
+      ],
+      "passed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 360,
+      "height": 640,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 424,
+            "height": 704,
+            "top": -32,
+            "right": 392,
+            "bottom": 672,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "704px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 66,
+            "top": 0,
+            "right": 360,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 574px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 8,
+            "y": 116,
+            "width": 243,
+            "height": 47,
+            "top": 116,
+            "right": 251,
+            "bottom": 163,
+            "left": 8
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "116px",
+          "inset": "116px 109px 477px 8px"
+        }
+      },
+      "targets": [
+        "gas_hose",
+        "paper_near_hob",
+        "greasy_filter",
+        "sideways_cylinder",
+        "damaged_kettle"
+      ],
+      "passed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 360,
+      "height": 640,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 424,
+            "height": 704,
+            "top": -32,
+            "right": 392,
+            "bottom": 672,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "704px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 66,
+            "top": 0,
+            "right": 360,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 574px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 8,
+            "y": 70,
+            "width": 160,
+            "height": 30,
+            "top": 70,
+            "right": 168,
+            "bottom": 100,
+            "left": 8
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "30px",
+          "top": "70px",
+          "inset": "70px 192px 540px 8px"
+        }
+      },
+      "targets": [
+        "blocked_path",
+        "ebike_charging",
+        "wedged_fire_door",
+        "locked_exit",
+        "blocked_hydrant"
+      ],
+      "passed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 360,
+      "height": 640,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 424,
+            "height": 704,
+            "top": -32,
+            "right": 392,
+            "bottom": 672,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "704px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 66,
+            "top": 0,
+            "right": 360,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 574px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 58.5,
+            "y": 552,
+            "width": 243,
+            "height": 47,
+            "top": 552,
+            "right": 301.5,
+            "bottom": 599,
+            "left": 58.5
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "552px",
+          "inset": "552px 58.5px 41px"
+        }
+      },
+      "targets": [
+        "unsecured_cabinet",
+        "heavy_top",
+        "overbed_frame",
+        "exit_boxes",
+        "blocked_shelter"
+      ],
+      "passed": true
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 360,
+      "height": 640,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 424,
+            "height": 704,
+            "top": -32,
+            "right": 392,
+            "bottom": 672,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "704px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 66,
+            "top": 0,
+            "right": 360,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 574px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 192,
+            "y": 94,
+            "width": 160,
+            "height": 30,
+            "top": 94,
+            "right": 352,
+            "bottom": 124,
+            "left": 192
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "30px",
+          "top": "94px",
+          "inset": "94px 8px 516px 192px"
+        }
+      },
+      "targets": [
+        "flooded_underpass",
+        "wet_power_box",
+        "missing_cover",
+        "loose_sign",
+        "leaning_fence"
+      ],
+      "passed": true
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 360,
+      "height": 640,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 424,
+            "height": 704,
+            "top": -32,
+            "right": 392,
+            "bottom": 672,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "704px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 66,
+            "top": 0,
+            "right": 360,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 574px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 58.5,
+            "y": 540,
+            "width": 243,
+            "height": 47,
+            "top": 540,
+            "right": 301.5,
+            "bottom": 587,
+            "left": 58.5
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "540px",
+          "inset": "540px 58.5px 53px"
+        }
+      },
+      "targets": [
+        "isolated_tree",
+        "open_gazebo",
+        "pond_platform",
+        "open_cart",
+        "camping_tent"
+      ],
+      "passed": true
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 360,
+      "height": 640,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 640,
+            "top": 0,
+            "right": 360,
+            "bottom": 640,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "640px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 424,
+            "height": 704,
+            "top": -32,
+            "right": 392,
+            "bottom": 672,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "704px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 360,
+            "height": 66,
+            "top": 0,
+            "right": 360,
+            "bottom": 66,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 574px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 8,
+            "y": 272,
+            "width": 243,
+            "height": 47,
+            "top": 272,
+            "right": 251,
+            "bottom": 319,
+            "left": 8
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "47px",
+          "top": "272px",
+          "inset": "272px 109px 321px 8px"
+        }
+      },
+      "targets": [
+        "forest_grill",
+        "smouldering_cigarette",
+        "forest_campfire",
+        "burning_paper",
+        "forest_fireworks"
+      ],
+      "passed": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 768,
+      "height": 1024,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 832,
+            "height": 1088,
+            "top": -32,
+            "right": 800,
+            "bottom": 1056,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1088px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 124,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 644,
+            "bottom": 66,
+            "left": 124
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 958px 384px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 37,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 80,
+            "bottom": 339,
+            "left": 37
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 688px 685px 37px"
+        }
+      },
+      "targets": [
+        "covered_phone",
+        "damaged_lead",
+        "swollen_bank",
+        "folded_blanket",
+        "covered_heater"
+      ],
+      "passed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 768,
+      "height": 1024,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 832,
+            "height": 1088,
+            "top": -32,
+            "right": 800,
+            "bottom": 1056,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1088px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 124,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 644,
+            "bottom": 66,
+            "left": 124
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 958px 384px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 37,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 80,
+            "bottom": 339,
+            "left": 37
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 688px 685px 37px"
+        }
+      },
+      "targets": [
+        "gas_hose",
+        "paper_near_hob",
+        "greasy_filter",
+        "sideways_cylinder",
+        "damaged_kettle"
+      ],
+      "passed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 768,
+      "height": 1024,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 832,
+            "height": 1088,
+            "top": -32,
+            "right": 800,
+            "bottom": 1056,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1088px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 124,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 644,
+            "bottom": 66,
+            "left": 124
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 958px 384px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 37,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 80,
+            "bottom": 339,
+            "left": 37
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 688px 685px 37px"
+        }
+      },
+      "targets": [
+        "blocked_path",
+        "ebike_charging",
+        "wedged_fire_door",
+        "locked_exit",
+        "blocked_hydrant"
+      ],
+      "passed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 768,
+      "height": 1024,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 832,
+            "height": 1088,
+            "top": -32,
+            "right": 800,
+            "bottom": 1056,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1088px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 124,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 644,
+            "bottom": 66,
+            "left": 124
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 958px 384px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 37,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 80,
+            "bottom": 339,
+            "left": 37
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 688px 685px 37px"
+        }
+      },
+      "targets": [
+        "unsecured_cabinet",
+        "heavy_top",
+        "overbed_frame",
+        "exit_boxes",
+        "blocked_shelter"
+      ],
+      "passed": true
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 768,
+      "height": 1024,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 832,
+            "height": 1088,
+            "top": -32,
+            "right": 800,
+            "bottom": 1056,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1088px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 124,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 644,
+            "bottom": 66,
+            "left": 124
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 958px 384px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 37,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 80,
+            "bottom": 339,
+            "left": 37
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 688px 685px 37px"
+        }
+      },
+      "targets": [
+        "flooded_underpass",
+        "wet_power_box",
+        "missing_cover",
+        "loose_sign",
+        "leaning_fence"
+      ],
+      "passed": true
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 768,
+      "height": 1024,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 832,
+            "height": 1088,
+            "top": -32,
+            "right": 800,
+            "bottom": 1056,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1088px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 124,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 644,
+            "bottom": 66,
+            "left": 124
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 958px 384px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 37,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 80,
+            "bottom": 339,
+            "left": 37
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 688px 685px 37px"
+        }
+      },
+      "targets": [
+        "isolated_tree",
+        "open_gazebo",
+        "pond_platform",
+        "open_cart",
+        "camping_tent"
+      ],
+      "passed": true
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 768,
+      "height": 1024,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 768,
+            "height": 1024,
+            "top": 0,
+            "right": 768,
+            "bottom": 1024,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1024px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 832,
+            "height": 1088,
+            "top": -32,
+            "right": 800,
+            "bottom": 1056,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "1088px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 124,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 644,
+            "bottom": 66,
+            "left": 124
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 958px 384px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 37,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 80,
+            "bottom": 339,
+            "left": 37
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 688px 685px 37px"
+        }
+      },
+      "targets": [
+        "forest_grill",
+        "smouldering_cigarette",
+        "forest_campfire",
+        "burning_paper",
+        "forest_fireworks"
+      ],
+      "passed": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 844,
+      "height": 390,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 908,
+            "height": 454,
+            "top": -32,
+            "right": 876,
+            "bottom": 422,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "454px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 162,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 682,
+            "bottom": 66,
+            "left": 162
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 324px 422px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 253.3125,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 296.3125,
+            "bottom": 339,
+            "left": 253.3125
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 547.688px 51px 253.312px"
+        }
+      },
+      "targets": [
+        "covered_phone",
+        "damaged_lead",
+        "swollen_bank",
+        "folded_blanket",
+        "covered_heater"
+      ],
+      "passed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 844,
+      "height": 390,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 908,
+            "height": 454,
+            "top": -32,
+            "right": 876,
+            "bottom": 422,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "454px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 162,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 682,
+            "bottom": 66,
+            "left": 162
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 324px 422px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 253.3125,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 296.3125,
+            "bottom": 339,
+            "left": 253.3125
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 547.688px 51px 253.312px"
+        }
+      },
+      "targets": [
+        "gas_hose",
+        "paper_near_hob",
+        "greasy_filter",
+        "sideways_cylinder",
+        "damaged_kettle"
+      ],
+      "passed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 844,
+      "height": 390,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 908,
+            "height": 454,
+            "top": -32,
+            "right": 876,
+            "bottom": 422,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "454px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 162,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 682,
+            "bottom": 66,
+            "left": 162
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 324px 422px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 253.3125,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 296.3125,
+            "bottom": 339,
+            "left": 253.3125
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 547.688px 51px 253.312px"
+        }
+      },
+      "targets": [
+        "blocked_path",
+        "ebike_charging",
+        "wedged_fire_door",
+        "locked_exit",
+        "blocked_hydrant"
+      ],
+      "passed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 844,
+      "height": 390,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 908,
+            "height": 454,
+            "top": -32,
+            "right": 876,
+            "bottom": 422,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "454px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 162,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 682,
+            "bottom": 66,
+            "left": 162
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 324px 422px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 253.3125,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 296.3125,
+            "bottom": 339,
+            "left": 253.3125
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 547.688px 51px 253.312px"
+        }
+      },
+      "targets": [
+        "unsecured_cabinet",
+        "heavy_top",
+        "overbed_frame",
+        "exit_boxes",
+        "blocked_shelter"
+      ],
+      "passed": true
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 844,
+      "height": 390,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 908,
+            "height": 454,
+            "top": -32,
+            "right": 876,
+            "bottom": 422,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "454px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 162,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 682,
+            "bottom": 66,
+            "left": 162
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 324px 422px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 253.3125,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 296.3125,
+            "bottom": 339,
+            "left": 253.3125
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 547.688px 51px 253.312px"
+        }
+      },
+      "targets": [
+        "flooded_underpass",
+        "wet_power_box",
+        "missing_cover",
+        "loose_sign",
+        "leaning_fence"
+      ],
+      "passed": true
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 844,
+      "height": 390,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 908,
+            "height": 454,
+            "top": -32,
+            "right": 876,
+            "bottom": 422,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "454px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 162,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 682,
+            "bottom": 66,
+            "left": 162
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 324px 422px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 253.3125,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 296.3125,
+            "bottom": 339,
+            "left": 253.3125
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 547.688px 51px 253.312px"
+        }
+      },
+      "targets": [
+        "isolated_tree",
+        "open_gazebo",
+        "pond_platform",
+        "open_cart",
+        "camping_tent"
+      ],
+      "passed": true
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 844,
+      "height": 390,
+      "layout": {
+        ".hunt-player": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "fixed",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-world canvas": {
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 844,
+            "height": 390,
+            "top": 0,
+            "right": 844,
+            "bottom": 390,
+            "left": 0
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "390px",
+          "top": "0px",
+          "inset": "0px"
+        },
+        ".hunt-backdrop": {
+          "box": {
+            "x": -32,
+            "y": -32,
+            "width": 908,
+            "height": 454,
+            "top": -32,
+            "right": 876,
+            "bottom": 422,
+            "left": -32
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "454px",
+          "top": "-32px",
+          "inset": "-32px"
+        },
+        ".hunt-hud": {
+          "box": {
+            "x": 162,
+            "y": 0,
+            "width": 520,
+            "height": 66,
+            "top": 0,
+            "right": 682,
+            "bottom": 66,
+            "left": 162
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "66px",
+          "top": "0px",
+          "inset": "0px 0px 324px 422px"
+        },
+        ".hunt-targets": {
+          "box": {
+            "x": 253.3125,
+            "y": 76,
+            "width": 43,
+            "height": 263,
+            "top": 76,
+            "right": 296.3125,
+            "bottom": 339,
+            "left": 253.3125
+          },
+          "scrollTop": 0,
+          "position": "absolute",
+          "height": "263px",
+          "top": "76px",
+          "inset": "76px 547.688px 51px 253.312px"
+        }
+      },
+      "targets": [
+        "forest_grill",
+        "smouldering_cigarette",
+        "forest_campfire",
+        "burning_paper",
+        "forest_fireworks"
+      ],
+      "passed": true
+    }
+  ],
+  "status": "passed",
+  "browserClosed": true
+}

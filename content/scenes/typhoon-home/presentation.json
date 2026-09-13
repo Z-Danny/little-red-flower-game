@@ -1,0 +1,21 @@
+{
+  "location": "客厅 · 阳台",
+  "environment": "storm",
+  "characters": "storm",
+  "audio": "storm",
+  "timer": "pressure-bar",
+  "clues": "on-demand",
+  "characterAudio": "none",
+  "opening": "在50秒内找齐五处隐患。需要线索时，点右上角灯泡。",
+  "reveal": "五处已识别 · 正在展示规范处置后的情景",
+  "completeTitle": "做好准备，家更安心",
+  "pauseNote": "请在50秒内找齐五处隐患；超时未找齐，本次挑战失败，可重新挑战。暂停不计时。这是识别训练，现实中应提前准备；风雨猛烈或电器周围潮湿时，不要冒险操作。",
+  "endingNote": "画面为规范处置后的效果示意",
+  "preview": "在50秒内找齐五处隐患。需要线索时点灯泡；未找齐可重新挑战。",
+  "warnings": [
+    "风正在增强，还有隐患没有找到。",
+    "雨开始飘入室内，风声更强了。",
+    "时间快到了，再仔细看看还有哪些隐患。"
+  ],
+  "celebration": true
+}

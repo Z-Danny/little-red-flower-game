@@ -1,7 +1,11 @@
 import skin from '../../../content/presets/kitchen/skin.json';
+import experience from '../../../content/response/kitchen-experience.json';
+import type { SceneFraming } from '../display/camera';
 /** Art, placement and timing are independent of the state machine. Logical pixels. */
 // Full room includes a foreground prep counter; all tools live in this coordinate space.
 export const WORLD = skin.WORLD;
+/** Optional authored outer painting. Original world, sprite and hit coordinates never change. */
+export const framing = (skin as typeof skin & { framing?: SceneFraming & { backdrop?: string } }).framing;
 export const assets = skin.assets;
 export type AssetId = keyof typeof assets;
 export type ItemId = 'lid' | 'gas' | 'person' | 'water' | 'cloth' | 'extinguisher' | 'plate' | 'knife';
@@ -11,7 +15,7 @@ export type Emotion = 'worried' | 'panicked' | 'focused' | 'relieved';
 export type Point = { x: number; y: number };
 export type Box = Point & { w: number; h: number };
 export const level = {
-  id: 'oil-fire', title: '厨房着火了', riskSeconds: 85,
+  id: 'oil-fire', title: '厨房着火了', riskSeconds: experience.timing.durationSeconds, initialRisk: experience.timing.initialRisk,
   summary: '油锅起火时，先关火，再用锅盖盖住，切勿直接泼水。',
   safety: '这是初起油锅火的模拟训练。现实中若火势失控，请立即撤离并拨打 119；儿童不要尝试灭火。',
   cooling: '火灭后保持锅盖覆盖，等待充分冷却，不要急着揭盖。',
@@ -26,7 +30,9 @@ export const items: Record<ItemId, { label: string; asset: AssetId; w: number; h
   plate: { label: '餐盘', asset: 'plate', w: 111, h: 65, detail: '无关物品，不能代替匹配的锅盖' },
   knife: { label: '菜刀', asset: 'knife', w: 95, h: 94, detail: '无关物品，不能用来灭火' },
 };
-export const sceneItems = ['lid', 'water', 'cloth', 'extinguisher', 'plate', 'knife'] as const;
+// Stable legacy asset IDs remain available for other templates, not this scene.
+export const sceneItems = ['lid', 'water', 'cloth', 'plate', 'knife'] as const;
+export const isPlayableItem = (id: ItemId) => id === 'gas' || id === 'person' || (sceneItems as readonly string[]).includes(id);
 export type SceneItemId = typeof sceneItems[number];
 export const goals: { id: GoalId; label: string; item: ItemId }[] = [
   { id: 'gasOff', label: '关闭火源', item: 'gas' },
@@ -35,7 +41,7 @@ export const goals: { id: GoalId; label: string; item: ItemId }[] = [
 ];
 export const layout = skin.layout;
 export const cameraSafe = skin.cameraSafe;
-export const timing = { lid: 1000, gas: 800, person: 1200, wrong: 1050, bounce: 450, spray: 950, settling: 1800, reaction: 2500 } as const;
+export const timing = experience.timing.animations;
 export const emotionLabels: Record<Emotion, string> = {
   worried: '紧张 · 需要你的帮助', panicked: '惊慌 · 火势正在威胁安全', focused: '镇定一些 · 做对了', relieved: '安心 · 处置已完成',
 };

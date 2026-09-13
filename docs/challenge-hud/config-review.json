@@ -1,0 +1,25 @@
+{
+  "purpose": "Explicit user-approved challenge timing and disclosure migration; all other semantic fields remain fixed",
+  "files": {
+    "content/levels/clear-corridor/level.json": {
+      "sourceSha256": "2bbe9033d4283e9b54c58953912587c58f1fe849016a946a9f11aa60998ffd15",
+      "unchangedSemanticSha256": "efb22002f1b07981b311cdde2b888ea5e36309d0ee08a3fb12ebf7d0e8d37c1d"
+    },
+    "content/levels/flood-kit/level.json": {
+      "sourceSha256": "50f1b8a5dc129822895fe7d53a069f6b80d354bbae1657d160e094e3a9b31f0c",
+      "unchangedSemanticSha256": "328a27f432d1f2d74ae250ac7495f41ef5d73d5bc34dfd1b92a42e5f3f1bbe55"
+    },
+    "content/scenes/charging-bedroom/presentation.json": {
+      "sourceSha256": "92e22a54384010ed7e19b86bdfdfe4632e2087d552b14d09df045e092302b171",
+      "unchangedSemanticSha256": "4bbc21d9b7b5c85ada7be0ee11c22ea5e1c1ec7d20616a4598db76e24bcec184"
+    },
+    "content/scenes/charging-bedroom/rules.json": {
+      "sourceSha256": "c4c5fa717a5dab243518bb14c66eaf7a8dea4b3a3f74d74a577e4bcef4e8b7ed",
+      "unchangedSemanticSha256": "ceb92146a5ec7b5f93d97938b42d131e1fc33cf43745fb1fc7c2e6f5b6d4e5e0"
+    },
+    "content/scenes/typhoon-home/rules.json": {
+      "sourceSha256": "a8537d94beff315c918f2fee872574f948466703510d603fdf15ab50c0ead9d9",
+      "unchangedSemanticSha256": "d3269b234cc7d6009d380694bab677375187b766d388a78884aadf46cec13dca"
+    }
+  }
+}

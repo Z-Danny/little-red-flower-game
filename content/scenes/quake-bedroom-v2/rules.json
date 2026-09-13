@@ -1,0 +1,38 @@
+{
+  "feedbackVersion": 2,
+  "id": "quake-bedroom-v2",
+  "title": "日常家庭防震准备",
+  "order": 17,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "unsecured_cabinet",
+      "name": "固定连接脱开的高柜",
+      "lesson": "高柜需要可靠固定。"
+    },
+    {
+      "id": "heavy_top",
+      "name": "高处的沉重陶罐",
+      "lesson": "沉重物品应放在低处。"
+    },
+    {
+      "id": "overbed_frame",
+      "name": "床上方的厚重镜框",
+      "lesson": "床上方不要悬挂重物。"
+    },
+    {
+      "id": "exit_boxes",
+      "name": "门口挡路箱",
+      "lesson": "门口通道要保持畅通。"
+    },
+    {
+      "id": "blocked_shelter",
+      "name": "被塞满的坚固桌下",
+      "lesson": "坚固桌下应预留避震空间。"
+    }
+  ],
+  "summary": "平时可靠固定高柜，重物放低处，床上方不挂重物；保持门口畅通，并在远离玻璃和坠物的坚固桌下预留避震空间。",
+  "timeout": "fail"
+}

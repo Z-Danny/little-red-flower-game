@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "id": "fire-stairs-practice",
+  "kind": "response",
+  "title": "高楼火灾：沿可用楼梯撤离",
+  "order": 32,
+  "location": "户门、楼梯口与室外",
+  "description": "上方楼层起火，本题本层至地面楼梯路线已确认可用、无浓烟阻断；成人和孩子已在家门口。",
+  "safety": "情境训练，不是真实求救。现场条件不符或出现新险情时，应遵从当地应急与专业人员指引。",
+  "briefing": "情境训练｜上方楼层起火，本题本层至地面楼梯路线已确认可用、无浓烟阻断；成人和孩子已在家门口。",
+  "objects": [
+    {
+      "id": "family",
+      "label": "母亲和孩子（到安全位置后点击母亲报警）",
+      "input": "both",
+      "disabledWhen": [
+        "fire-reported"
+      ]
+    },
+    {
+      "id": "door-wedge",
+      "label": "门边可移动物",
+      "input": "drag",
+      "requires": [
+        "flat-exited"
+      ],
+      "disabledWhen": [
+        "stairs-used"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "flat-exited",
+      "label": "带孩子出门并随手关门",
+      "object": "family",
+      "showTarget": false
+    },
+    {
+      "id": "stairs-used",
+      "label": "沿可用楼梯出楼",
+      "object": "family",
+      "showTarget": false
+    },
+    {
+      "id": "assembly-reached",
+      "label": "远离外墙到集合处",
+      "object": "family",
+      "showTarget": false
+    },
+    {
+      "id": "fire-reported",
+      "label": "安全位置报警",
+      "object": "family",
+      "showTarget": false
+    }
+  ],
+  "interactions": [
+    {
+      "id": "exit-flat",
+      "source": "family",
+      "mode": "drop",
+      "target": "corridor-zone",
+      "unless": [
+        "flat-exited"
+      ],
+      "grants": [
+        "flat-exited"
+      ],
+      "outcome": "correct",
+      "animation": "exit-flat",
+      "feedback": "带孩子一同出门，随手关上身后户门。继续沿已确认可用的楼梯撤离。"
+    },
+    {
+      "id": "use-stairs",
+      "source": "family",
+      "mode": "drop",
+      "target": "stairs-route",
+      "requires": [
+        "flat-exited"
+      ],
+      "unless": [
+        "stairs-used"
+      ],
+      "grants": [
+        "stairs-used"
+      ],
+      "outcome": "correct",
+      "animation": "use-stairs",
+      "feedback": "沿可用楼梯有序下行。训练转场：已到地面出口。"
+    },
+    {
+      "id": "reach-outside-assembly",
+      "source": "family",
+      "mode": "drop",
+      "target": "assembly-zone",
+      "requires": [
+        "stairs-used"
+      ],
+      "grants": [
+        "assembly-reached"
+      ],
+      "outcome": "correct",
+      "animation": "reach-outside-assembly",
+      "feedback": "已远离楼门与外墙。点击母亲，从口袋取出手机报警。"
+    },
+    {
+      "id": "report-fire",
+      "source": "family",
+      "mode": "tap",
+      "requires": [
+        "assembly-reached"
+      ],
+      "grants": [
+        "fire-reported"
+      ],
+      "outcome": "correct",
+      "animation": "report-fire",
+      "feedback": "母亲从口袋取出手机。模拟119：说明地址与所知火情，两人已撤到室外，不猜测未知被困人数。"
+    },
+    {
+      "id": "ordinary-lift-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "lift-zone",
+      "requires": [
+        "flat-exited"
+      ],
+      "unless": [
+        "stairs-used"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "ordinary-lift-error",
+      "feedback": "错误后果示意｜火灾撤离不乘普通电梯，使用当前可用楼梯。"
+    },
+    {
+      "id": "return-home-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "return-flat",
+      "requires": [
+        "flat-exited"
+      ],
+      "unless": [
+        "stairs-used"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "return-home-error",
+      "feedback": "错误后果示意｜不要返回家中取财物。"
+    },
+    {
+      "id": "smoke-route-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "smoke-zone",
+      "unless": [
+        "stairs-used"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "smoke-route-error",
+      "feedback": "错误后果示意｜不能穿越浓烟，沿当前已确认可用的无烟路线离开。"
+    },
+    {
+      "id": "prop-door-error",
+      "source": "door-wedge",
+      "mode": "drop",
+      "target": "hold-door-open",
+      "requires": [
+        "flat-exited"
+      ],
+      "unless": [
+        "stairs-used"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "prop-door-error",
+      "feedback": "错误后果示意｜不要长期顶开疏散门。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 75,
+    "initial": 0,
+    "warningAt": 100,
+    "peakFeedback": "演出已达训练上限；仍可继续正确处置，不以等待时间判失败。"
+  },
+  "completion": {
+    "requires": [
+      "flat-exited",
+      "stairs-used",
+      "assembly-reached",
+      "fire-reported"
+    ],
+    "settleMs": 1200,
+    "observeMs": 4000,
+    "fixedStars": 3,
+    "summary": "已沿可用楼梯撤至室外并报警",
+    "title": "已沿可用楼梯撤至室外并报警",
+    "status": "训练完成；继续关注现场变化与专业指引。"
+  }
+}

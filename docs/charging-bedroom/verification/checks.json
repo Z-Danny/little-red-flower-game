@@ -1,0 +1,65 @@
+{
+  "at": "2026-09-09T15:48:21.996Z",
+  "results": [
+    {
+      "name": "kitchen",
+      "command": "node scripts/test-kitchen.mjs",
+      "exitCode": 0,
+      "durationMs": 1132
+    },
+    {
+      "name": "typhoon",
+      "command": "node scripts/test-typhoon.mjs",
+      "exitCode": 0,
+      "durationMs": 459
+    },
+    {
+      "name": "pipeline",
+      "command": "node scripts/test-pipeline.mjs",
+      "exitCode": 0,
+      "durationMs": 1489
+    },
+    {
+      "name": "leaderboard",
+      "command": "node scripts/test-leaderboard.mjs",
+      "exitCode": 0,
+      "durationMs": 418
+    },
+    {
+      "name": "transcripts",
+      "command": "node scripts/test-transcripts.mjs",
+      "exitCode": 0,
+      "durationMs": 814
+    },
+    {
+      "name": "scene-hunt",
+      "command": "node scripts/test-scene-hunt.mjs",
+      "exitCode": 0,
+      "durationMs": 472
+    },
+    {
+      "name": "typecheck",
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "exitCode": 0,
+      "durationMs": 12495
+    },
+    {
+      "name": "sync",
+      "command": "node scripts/levels.mjs sync",
+      "exitCode": 0,
+      "durationMs": 1314
+    },
+    {
+      "name": "build",
+      "command": "node node_modules/vinext/dist/cli.js build",
+      "exitCode": 0,
+      "durationMs": 10715
+    },
+    {
+      "name": "offline",
+      "command": "node scripts/export-offline.mjs",
+      "exitCode": 0,
+      "durationMs": 3045
+    }
+  ]
+}

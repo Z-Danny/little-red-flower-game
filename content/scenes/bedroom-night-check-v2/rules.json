@@ -1,0 +1,38 @@
+{
+  "feedbackVersion": 2,
+  "id": "bedroom-night-check-v2",
+  "title": "睡前的卧室",
+  "order": 14,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "covered_phone",
+      "name": "被枕头盖住的充电手机",
+      "lesson": "充电手机不能埋在枕头下。"
+    },
+    {
+      "id": "damaged_lead",
+      "name": "破损充电组件",
+      "lesson": "破损充电线应停用。"
+    },
+    {
+      "id": "swollen_bank",
+      "name": "鼓胀充电宝",
+      "lesson": "鼓胀的充电宝不能继续用。"
+    },
+    {
+      "id": "folded_blanket",
+      "name": "折叠通电的电热毯",
+      "lesson": "电热毯不能折叠通电。"
+    },
+    {
+      "id": "covered_heater",
+      "name": "被衣服覆盖的取暖器",
+      "lesson": "取暖器上不能盖衣服。"
+    }
+  ],
+  "summary": "充电设备不要被枕头覆盖；破损充电组件和鼓胀电池应停用。电热毯不能折叠通电，取暖器上不能覆盖衣服。",
+  "timeout": "fail"
+}

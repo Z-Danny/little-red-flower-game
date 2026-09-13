@@ -1,0 +1,186 @@
+{
+  "id": "clear-corridor-check-v2",
+  "authorId": "H06",
+  "sourceSha256": "e25a99e81d4c036dd57bebf08dad9d8eaecb0187ec6c007dc48a9cda9c26392e",
+  "world": [
+    720,
+    1280
+  ],
+  "output": "public/levels/hazard-batch-v2/clear-corridor-check-v2",
+  "skin": "content/scenes/clear-corridor-check-v2/skin.json",
+  "targets": [
+    {
+      "id": "blocked_path",
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "ebike_charging",
+      "color": [
+        0,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "wedged_fire_door",
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "locked_exit",
+      "color": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "blocked_hydrant",
+      "color": [
+        255,
+        0,
+        255
+      ]
+    }
+  ],
+  "corrections": {
+    "targets": {
+      "blocked_hydrant": {
+        "keepPolygons": [
+          [
+            [
+              177,
+              293
+            ],
+            [
+              330,
+              293
+            ],
+            [
+              330,
+              623
+            ],
+            [
+              177,
+              623
+            ]
+          ]
+        ],
+        "reason": "仅柜体是阻挡目标；删除被候选误分为品红的正常消火栓上方绿植。"
+      },
+      "wedged_fire_door": {
+        "keepPolygons": [
+          [
+            [
+              367,
+              205
+            ],
+            [
+              452,
+              199
+            ],
+            [
+              453,
+              643
+            ],
+            [
+              367,
+              606
+            ]
+          ],
+          [
+            [
+              393,
+              631
+            ],
+            [
+              420,
+              618
+            ],
+            [
+              436,
+              629
+            ],
+            [
+              436,
+              642
+            ],
+            [
+              408,
+              648
+            ]
+          ]
+        ],
+        "reason": "按原画可见门扇透视边缘裁掉外围门框及透过门缝的走廊，保留单独门楔，不新增像素。"
+      },
+      "ebike_charging": {
+        "excludePolygons": [
+          [
+            [
+              696,
+              631
+            ],
+            [
+              715,
+              631
+            ],
+            [
+              715,
+              652
+            ],
+            [
+              696,
+              652
+            ]
+          ],
+          [
+            [
+              698,
+              680
+            ],
+            [
+              716,
+              680
+            ],
+            [
+              716,
+              713
+            ],
+            [
+              698,
+              696
+            ]
+          ],
+          [
+            [
+              702,
+              648
+            ],
+            [
+              716,
+              648
+            ],
+            [
+              716,
+              684
+            ],
+            [
+              702,
+              684
+            ]
+          ]
+        ],
+        "reason": "墙插属于车充电组件，但普通白色墙面插座板不是电动车隐患；排除候选误涂面板边缘，保留黑插头和线。"
+      }
+    },
+    "characters": {}
+  },
+  "effects": {}
+}

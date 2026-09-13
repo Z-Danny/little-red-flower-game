@@ -1,0 +1,129 @@
+{
+  "at": "2026-09-10T01:57:12.142Z",
+  "htmlSha256": "58893ec8ae2c91876892aea6c34bca478c244abd3a2decedfd9a9b07e201c510",
+  "hardwareMuted": true,
+  "humanListening": false,
+  "status": "passed",
+  "cases": [
+    {
+      "id": "bedroom-night-check-v2",
+      "status": "passed",
+      "checks": [
+        "No AudioContext before gesture",
+        "Real analyser reports nonzero generated music/ambience",
+        "Misclick dispatches wrong sound",
+        "Completed recognition dispatches found sound",
+        "Pause fades native analyser to zero",
+        "Mute persists on resume",
+        "Synthetic background lifecycle fades actual signal to zero",
+        "Foreground/unmute restores actual signal",
+        "Every native AudioContext closed after leaving level"
+      ],
+      "pageErrors": [],
+      "contextClosed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "status": "passed",
+      "checks": [
+        "No AudioContext before gesture",
+        "Real analyser reports nonzero generated music/ambience",
+        "Misclick dispatches wrong sound",
+        "Completed recognition dispatches found sound",
+        "Pause fades native analyser to zero",
+        "Mute persists on resume",
+        "Synthetic background lifecycle fades actual signal to zero",
+        "Foreground/unmute restores actual signal",
+        "Every native AudioContext closed after leaving level"
+      ],
+      "pageErrors": [],
+      "contextClosed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "status": "passed",
+      "checks": [
+        "No AudioContext before gesture",
+        "Real analyser reports nonzero generated music/ambience",
+        "Misclick dispatches wrong sound",
+        "Completed recognition dispatches found sound",
+        "Pause fades native analyser to zero",
+        "Mute persists on resume",
+        "Synthetic background lifecycle fades actual signal to zero",
+        "Foreground/unmute restores actual signal",
+        "Every native AudioContext closed after leaving level"
+      ],
+      "pageErrors": [],
+      "contextClosed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "status": "passed",
+      "checks": [
+        "No AudioContext before gesture",
+        "Real analyser reports nonzero generated music/ambience",
+        "Misclick dispatches wrong sound",
+        "Completed recognition dispatches found sound",
+        "Pause fades native analyser to zero",
+        "Mute persists on resume",
+        "Synthetic background lifecycle fades actual signal to zero",
+        "Foreground/unmute restores actual signal",
+        "Every native AudioContext closed after leaving level"
+      ],
+      "pageErrors": [],
+      "contextClosed": true
+    },
+    {
+      "id": "storm-street-check-v2",
+      "status": "passed",
+      "checks": [
+        "No AudioContext before gesture",
+        "Real analyser reports nonzero generated music/ambience",
+        "Misclick dispatches wrong sound",
+        "Completed recognition dispatches found sound",
+        "Pause fades native analyser to zero",
+        "Mute persists on resume",
+        "Synthetic background lifecycle fades actual signal to zero",
+        "Foreground/unmute restores actual signal",
+        "Every native AudioContext closed after leaving level"
+      ],
+      "pageErrors": [],
+      "contextClosed": true
+    },
+    {
+      "id": "thunder-park-v2",
+      "status": "passed",
+      "checks": [
+        "No AudioContext before gesture",
+        "Real analyser reports nonzero generated music/ambience",
+        "Misclick dispatches wrong sound",
+        "Completed recognition dispatches found sound",
+        "Pause fades native analyser to zero",
+        "Mute persists on resume",
+        "Synthetic background lifecycle fades actual signal to zero",
+        "Foreground/unmute restores actual signal",
+        "Every native AudioContext closed after leaving level"
+      ],
+      "pageErrors": [],
+      "contextClosed": true
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "status": "passed",
+      "checks": [
+        "No AudioContext before gesture",
+        "Real analyser reports nonzero generated music/ambience",
+        "Misclick dispatches wrong sound",
+        "Completed recognition dispatches found sound",
+        "Pause fades native analyser to zero",
+        "Mute persists on resume",
+        "Synthetic background lifecycle fades actual signal to zero",
+        "Foreground/unmute restores actual signal",
+        "Every native AudioContext closed after leaving level"
+      ],
+      "pageErrors": [],
+      "contextClosed": true
+    }
+  ],
+  "closed": true
+}

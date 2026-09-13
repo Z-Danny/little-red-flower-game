@@ -1,0 +1,685 @@
+{
+  "schemaVersion": 1,
+  "id": "paper-gouache",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "background": {
+      "src": "/levels/reference-storybook-v2/quake-cover-practice/background.webp",
+      "alpha": false
+    },
+    "adult-initial": {
+      "src": "/levels/character-continuity-v3/quake-cover-practice/adult-initial.webp",
+      "alpha": true
+    },
+    "adult-lower": {
+      "src": "/levels/character-continuity-v3/quake-cover-practice/adult-lower.webp",
+      "alpha": true
+    },
+    "adult-crawl": {
+      "src": "/levels/character-continuity-v3/quake-cover-practice/adult-crawl.webp",
+      "alpha": true
+    },
+    "adult-hold": {
+      "src": "/levels/character-continuity-v3/quake-cover-practice/adult-hold.webp",
+      "alpha": true
+    },
+    "adult-self-check": {
+      "src": "/levels/character-continuity-v3/quake-cover-practice/adult-self-check.webp",
+      "alpha": true
+    },
+    "adult-grip-hand": {
+      "src": "/levels/reference-storybook-v2/quake-cover-practice/adult-grip-hand.webp",
+      "alpha": true
+    },
+    "radio-initial": {
+      "src": "/levels/reference-storybook-v2/quake-cover-practice/radio-initial.webp",
+      "alpha": true
+    },
+    "phone-initial": {
+      "src": "/levels/reference-storybook-v2/quake-cover-practice/phone-initial.webp",
+      "alpha": true
+    },
+    "table-foreground-initial": {
+      "src": "/levels/reference-storybook-v2/quake-cover-practice/table-foreground-initial.webp",
+      "alpha": true
+    },
+    "table-grip-foreground": {
+      "src": "/levels/reference-storybook-v2/quake-cover-practice/table-grip-foreground.webp",
+      "alpha": true
+    }
+  },
+  "background": "background",
+  "poses": {
+    "adult-moving": {
+      "x": 19.8937,
+      "y": 357.6621,
+      "w": 259.3836,
+      "h": 603.6982,
+      "asset": "adult-initial",
+      "depth": 40
+    },
+    "adult-holding": {
+      "asset": "adult-hold",
+      "x": 154,
+      "y": 608,
+      "w": 424.21,
+      "h": 275,
+      "depth": 40,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "self-check": {
+      "asset": "adult-self-check",
+      "x": 279,
+      "y": 607,
+      "w": 254.33,
+      "h": 280,
+      "depth": 40,
+      "opacity": 0
+    },
+    "table-occluder": {
+      "x": 214.2402,
+      "y": 480.8502,
+      "w": 445.3135,
+      "h": 435.3666,
+      "asset": "table-foreground-initial",
+      "depth": 50
+    },
+    "gripping-hand": {
+      "asset": "adult-grip-hand",
+      "x": 200.85152460984392,
+      "y": 675.2222222222222,
+      "w": 89.62900360144057,
+      "h": 67.22222222222223,
+      "depth": 52,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "table-leg": {
+      "x": 220.361347766323,
+      "y": 629.2880214411248,
+      "w": 55.85547336769759,
+      "h": 238.72474376098418,
+      "asset": "table-grip-foreground",
+      "depth": 51
+    },
+    "radio": {
+      "x": 19.8937,
+      "y": 942.9968,
+      "w": 156.8544,
+      "h": 136.9607,
+      "asset": "radio-initial",
+      "depth": 35
+    },
+    "phone": {
+      "x": 477,
+      "y": 966,
+      "w": 100,
+      "h": 99,
+      "asset": "phone-initial",
+      "depth": 35
+    }
+  },
+  "zones": {
+    "table-cover": {
+      "x": 255,
+      "y": 637,
+      "w": 334,
+      "h": 217
+    },
+    "nearby-cover-stance": {
+      "x": 34,
+      "y": 751,
+      "w": 194,
+      "h": 182
+    },
+    "window-zone": {
+      "x": 55,
+      "y": 176,
+      "w": 169,
+      "h": 297
+    },
+    "exit-zone": {
+      "x": 488,
+      "y": 244,
+      "w": 137,
+      "h": 238
+    },
+    "message-zone": {
+      "x": 473,
+      "y": 952,
+      "w": 151,
+      "h": 132
+    }
+  },
+  "zoneLabels": {
+    "table-cover": "桌下",
+    "nearby-cover-stance": "就近护头",
+    "window-zone": "窗边",
+    "exit-zone": "房门",
+    "message-zone": "报告情况 · 模拟"
+  },
+  "states": [
+    {
+      "object": "adult-moving",
+      "when": {
+        "all": [
+          "low-protected"
+        ]
+      },
+      "pose": {
+        "asset": "adult-lower",
+        "x": 0,
+        "y": 690,
+        "w": 408.8,
+        "h": 265,
+        "depth": 40
+      }
+    },
+    {
+      "object": "adult-moving",
+      "when": {
+        "all": [
+          "under-cover"
+        ]
+      },
+      "pose": {
+        "asset": "adult-crawl",
+        "x": 198,
+        "y": 620,
+        "w": 377.94,
+        "h": 245,
+        "depth": 40
+      }
+    },
+    {
+      "object": "adult-moving",
+      "when": {
+        "all": [
+          "holding-cover"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "adult-holding",
+      "when": {
+        "all": [
+          "holding-cover"
+        ],
+        "notStages": [
+          "after-quake"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "adult-holding",
+      "when": {
+        "stages": [
+          "after-quake"
+        ]
+      },
+      "pose": {
+        "opacity": 0
+      }
+    },
+    {
+      "object": "gripping-hand",
+      "when": {
+        "all": [
+          "holding-cover"
+        ],
+        "notStages": [
+          "after-quake"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "gripping-hand",
+      "when": {
+        "stages": [
+          "after-quake"
+        ]
+      },
+      "pose": {
+        "opacity": 0
+      }
+    },
+    {
+      "object": "self-check",
+      "when": {
+        "stages": [
+          "after-quake"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "radio",
+      "when": {
+        "all": [
+          "guidance-checked"
+        ]
+      },
+      "pose": {
+        "rotation": 0
+      }
+    },
+    {
+      "object": "self-check",
+      "when": {
+        "all": [
+          "self-checked"
+        ]
+      },
+      "pose": {
+        "rotation": 0
+      }
+    },
+    {
+      "object": "phone",
+      "when": {
+        "all": [
+          "family-informed"
+        ]
+      },
+      "pose": {
+        "x": 477,
+        "y": 966,
+        "rotation": 0
+      }
+    }
+  ],
+  "animations": {
+    "lower-and-protect": {
+      "durationMs": 700,
+      "tracks": [
+        {
+          "object": "adult-moving",
+          "keyframes": [
+            {
+              "at": 0.12,
+              "asset": "adult-lower"
+            },
+            {
+              "at": 1,
+              "asset": "adult-lower",
+              "x": 0,
+              "y": 690,
+              "w": 408.8,
+              "h": 265
+            }
+          ]
+        }
+      ]
+    },
+    "enter-cover": {
+      "durationMs": 1000,
+      "tracks": [
+        {
+          "object": "adult-moving",
+          "keyframes": [
+            {
+              "at": 0.12,
+              "asset": "adult-crawl"
+            },
+            {
+              "at": 1,
+              "asset": "adult-crawl",
+              "x": 198,
+              "y": 620,
+              "w": 377.94,
+              "h": 245
+            }
+          ]
+        }
+      ]
+    },
+    "combined-cover": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "adult-moving",
+          "keyframes": [
+            {
+              "at": 0.15,
+              "asset": "adult-lower"
+            },
+            {
+              "at": 0.48,
+              "asset": "adult-lower",
+              "x": 0,
+              "y": 690,
+              "w": 408.8,
+              "h": 265
+            },
+            {
+              "at": 0.5,
+              "asset": "adult-crawl"
+            },
+            {
+              "at": 1,
+              "asset": "adult-crawl",
+              "x": 198,
+              "y": 620,
+              "w": 377.94,
+              "h": 245
+            }
+          ]
+        }
+      ]
+    },
+    "grip-cover": {
+      "durationMs": 800,
+      "tracks": [
+        {
+          "object": "adult-moving",
+          "keyframes": [
+            {
+              "at": 0.28,
+              "asset": "adult-hold"
+            },
+            {
+              "at": 1,
+              "asset": "adult-hold",
+              "x": 154,
+              "y": 608,
+              "w": 424.21,
+              "h": 275
+            }
+          ]
+        },
+        {
+          "object": "gripping-hand",
+          "keyframes": [
+            {
+              "at": 0.8,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "check-guidance": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "radio",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": 0.025
+            },
+            {
+              "at": 0.6,
+              "rotation": -0.025
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "check-self": {
+      "durationMs": 800,
+      "tracks": [
+        {
+          "object": "self-check",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.016
+            },
+            {
+              "at": 0.7,
+              "rotation": 0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "inform-family": {
+      "durationMs": 700,
+      "tracks": [
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "x": 490,
+              "y": 940,
+              "rotation": -0.06
+            },
+            {
+              "at": 0.75,
+              "x": 490,
+              "y": 940,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "x": 477,
+              "y": 966,
+              "rotation": 0
+            }
+          ],
+          "fromDrop": true
+        }
+      ]
+    },
+    "early-radio": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "radio",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.65,
+              "rotation": -0.015
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-phone": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.65,
+              "rotation": -0.015
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-grip": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "table-leg",
+          "keyframes": [
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "window-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "adult-moving",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.018
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.018
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "rush-exit-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "adult-moving",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.018
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.018
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "presentation": {
+    "durationMs": 60000,
+    "effects": [
+      {
+        "kind": "dust",
+        "box": {
+          "x": 110,
+          "y": 140,
+          "w": 483,
+          "h": 720
+        },
+        "depth": 30,
+        "color": "#c8b99c",
+        "strength": 0.75,
+        "when": {
+          "notStages": [
+            "after-quake"
+          ]
+        }
+      },
+      {
+        "kind": "machine",
+        "box": {
+          "x": 54,
+          "y": 179,
+          "w": 190,
+          "h": 295
+        },
+        "depth": 20,
+        "color": "#d9c49c",
+        "strength": 0.3,
+        "when": {
+          "notStages": [
+            "after-quake"
+          ]
+        }
+      },
+      {
+        "kind": "light",
+        "box": {
+          "x": 23,
+          "y": 950,
+          "w": 145,
+          "h": 122
+        },
+        "depth": 60,
+        "color": "#ffe0a5",
+        "strength": 0.3,
+        "when": {
+          "all": [
+            "guidance-checked"
+          ]
+        }
+      }
+    ],
+    "actors": [
+      {
+        "object": "adult-moving",
+        "amplitude": 0.55,
+        "until": [
+          "holding-cover"
+        ]
+      }
+    ],
+    "audio": {
+      "theme": "quake",
+      "calmWhen": [
+        "guidance-checked",
+        "self-checked"
+      ],
+      "cues": {
+        "opening": "rumble",
+        "lower-and-protect": "fabric",
+        "enter-cover": "fabric",
+        "combined-cover": "fabric",
+        "grip-cover": "wood-tap",
+        "check-guidance": "radio-static",
+        "check-self": "soft-tap",
+        "inform-family": "send-message",
+        "after-quake": "settle",
+        "danger": "impact",
+        "bounce": "bounce",
+        "pickup": "pickup",
+        "complete": "success"
+      }
+    }
+  }
+}

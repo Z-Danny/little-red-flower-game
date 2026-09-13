@@ -1,0 +1,829 @@
+{
+  "status": "passed",
+  "mode": "full-kitchen-regression",
+  "html": "D:\\中关村\\小红花\\test1\\work\\kitchen-no-character-20260913\\outputs\\本地离线版\\小红花应急行动.html",
+  "sha256": "bae3e88cb1441870445f35c8fc210c2bf6142514d1238337826ce609e90892fe",
+  "checks": [
+    {
+      "name": "full-screen floating HUD 320x568",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568,
+        "top": 0,
+        "right": 320,
+        "bottom": 568,
+        "left": 0
+      },
+      "meter": {
+        "x": 8,
+        "y": 76,
+        "width": 48,
+        "height": 177.109375,
+        "top": 76,
+        "right": 56,
+        "bottom": 253.109375,
+        "left": 8
+      },
+      "buttons": [
+        {
+          "x": 8,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 52,
+          "bottom": 56,
+          "left": 8
+        },
+        {
+          "x": 216,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 260,
+          "bottom": 56,
+          "left": 216
+        },
+        {
+          "x": 268,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 312,
+          "bottom": 56,
+          "left": 268
+        }
+      ],
+      "overflow": false,
+      "fill": "705.731014246368",
+      "noBanner": true
+    },
+    {
+      "name": "no character sources; music/fire beds retained 320",
+      "state": "running",
+      "loaded": 14,
+      "missing": "",
+      "loops": 5,
+      "plays": 0,
+      "cue": "",
+      "rms": 0.03474,
+      "rate": 1.1326591488000002
+    },
+    {
+      "name": "waiting visibly raises thermometer liquid",
+      "initial": 0.5394,
+      "after": 0.6782
+    },
+    {
+      "name": "real tap gas + drag lid/person completion 320x568"
+    },
+    {
+      "name": "native source audit 320: music/environment/interactions retained; zero character sources",
+      "starts": [
+        {
+          "id": "music-bed",
+          "loop": true
+        },
+        {
+          "id": "music-pulse",
+          "loop": true
+        },
+        {
+          "id": "music-high",
+          "loop": true
+        },
+        {
+          "id": "fire",
+          "loop": true
+        },
+        {
+          "id": "draft",
+          "loop": true
+        },
+        {
+          "id": "fx-gas",
+          "loop": false
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "fx-lid",
+          "loop": false
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "success",
+          "loop": false
+        }
+      ]
+    },
+    {
+      "name": "full-screen floating HUD 375x667",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667,
+        "top": 0,
+        "right": 375,
+        "bottom": 667,
+        "left": 0
+      },
+      "meter": {
+        "x": 8,
+        "y": 76,
+        "width": 48,
+        "height": 177.109375,
+        "top": 76,
+        "right": 56,
+        "bottom": 253.109375,
+        "left": 8
+      },
+      "buttons": [
+        {
+          "x": 8,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 52,
+          "bottom": 56,
+          "left": 8
+        },
+        {
+          "x": 271,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 315,
+          "bottom": 56,
+          "left": 271
+        },
+        {
+          "x": 323,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 367,
+          "bottom": 56,
+          "left": 323
+        }
+      ],
+      "overflow": false,
+      "fill": "705.731014246368",
+      "noBanner": true
+    },
+    {
+      "name": "no character sources; music/fire beds retained 375",
+      "state": "running",
+      "loaded": 14,
+      "missing": "",
+      "loops": 5,
+      "plays": 0,
+      "cue": "",
+      "rms": 0.03353,
+      "rate": 1.1326591488000002
+    },
+    {
+      "name": "real tap gas + drag lid/person completion 375x667"
+    },
+    {
+      "name": "native source audit 375: music/environment/interactions retained; zero character sources",
+      "starts": [
+        {
+          "id": "music-bed",
+          "loop": true
+        },
+        {
+          "id": "music-pulse",
+          "loop": true
+        },
+        {
+          "id": "music-high",
+          "loop": true
+        },
+        {
+          "id": "fire",
+          "loop": true
+        },
+        {
+          "id": "draft",
+          "loop": true
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "fx-lid",
+          "loop": false
+        },
+        {
+          "id": "fx-gas",
+          "loop": false
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "success",
+          "loop": false
+        }
+      ]
+    },
+    {
+      "name": "full-screen floating HUD 390x844",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "meter": {
+        "x": 8,
+        "y": 76,
+        "width": 48,
+        "height": 177.109375,
+        "top": 76,
+        "right": 56,
+        "bottom": 253.109375,
+        "left": 8
+      },
+      "buttons": [
+        {
+          "x": 8,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 52,
+          "bottom": 56,
+          "left": 8
+        },
+        {
+          "x": 286,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 330,
+          "bottom": 56,
+          "left": 286
+        },
+        {
+          "x": 338,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 382,
+          "bottom": 56,
+          "left": 338
+        }
+      ],
+      "overflow": false,
+      "fill": "705.731014246368",
+      "noBanner": true
+    },
+    {
+      "name": "no character sources; music/fire beds retained 390",
+      "state": "running",
+      "loaded": 14,
+      "missing": "",
+      "loops": 5,
+      "plays": 0,
+      "cue": "",
+      "rms": 0.06944,
+      "rate": 1.1326591488000002
+    },
+    {
+      "name": "full-screen floating HUD 390x724",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 724,
+        "top": 0,
+        "right": 390,
+        "bottom": 724,
+        "left": 0
+      },
+      "meter": {
+        "x": 8,
+        "y": 76,
+        "width": 48,
+        "height": 177.109375,
+        "top": 76,
+        "right": 56,
+        "bottom": 253.109375,
+        "left": 8
+      },
+      "buttons": [
+        {
+          "x": 8,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 52,
+          "bottom": 56,
+          "left": 8
+        },
+        {
+          "x": 286,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 330,
+          "bottom": 56,
+          "left": 286
+        },
+        {
+          "x": 338,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 382,
+          "bottom": 56,
+          "left": 338
+        }
+      ],
+      "overflow": false,
+      "fill": "683.1071501675513",
+      "noBanner": true
+    },
+    {
+      "name": "full-screen floating HUD 390x844",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "meter": {
+        "x": 8,
+        "y": 76,
+        "width": 48,
+        "height": 177.109375,
+        "top": 76,
+        "right": 56,
+        "bottom": 253.109375,
+        "left": 8
+      },
+      "buttons": [
+        {
+          "x": 8,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 52,
+          "bottom": 56,
+          "left": 8
+        },
+        {
+          "x": 286,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 330,
+          "bottom": 56,
+          "left": 286
+        },
+        {
+          "x": 338,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 382,
+          "bottom": 56,
+          "left": 338
+        }
+      ],
+      "overflow": false,
+      "fill": "682.0298233066552",
+      "noBanner": true
+    },
+    {
+      "name": "pause freezes timer/audio; address-bar-sized resize preserves viewport and time"
+    },
+    {
+      "name": "unmute restores audible signal, not duplicate loops",
+      "state": "running",
+      "loaded": 14,
+      "missing": "",
+      "loops": 5,
+      "plays": 0,
+      "cue": "",
+      "rms": 0.0511,
+      "rate": 1.1385155136000003
+    },
+    {
+      "name": "water retains visible panic and material/flare audio without character cries",
+      "state": "running",
+      "loaded": 14,
+      "missing": "",
+      "loops": 5,
+      "plays": 0,
+      "cue": "",
+      "rms": 0.05561,
+      "rate": 1.2207442368000003
+    },
+    {
+      "name": "cloth retains visible panic and material/flare audio without character cries",
+      "state": "running",
+      "loaded": 14,
+      "missing": "",
+      "loops": 5,
+      "plays": 0,
+      "cue": "",
+      "rms": 0.05998,
+      "rate": 1.24
+    },
+    {
+      "name": "thermometer rises to critical; 50-second internal pressure peak never locks play",
+      "state": "running",
+      "loaded": 14,
+      "missing": "",
+      "loops": 5,
+      "plays": 0,
+      "cue": "",
+      "rms": 0.23963,
+      "rate": 1.24
+    },
+    {
+      "name": "real tap gas + drag lid/person completion 390x844"
+    },
+    {
+      "name": "replay resets full 50 seconds; no duplicate flower reward"
+    },
+    {
+      "name": "native source audit 390: music/environment/interactions retained; zero character sources",
+      "starts": [
+        {
+          "id": "music-bed",
+          "loop": true
+        },
+        {
+          "id": "music-pulse",
+          "loop": true
+        },
+        {
+          "id": "music-high",
+          "loop": true
+        },
+        {
+          "id": "fire",
+          "loop": true
+        },
+        {
+          "id": "draft",
+          "loop": true
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "fx-water",
+          "loop": false
+        },
+        {
+          "id": "flare",
+          "loop": false
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "cloth",
+          "loop": false
+        },
+        {
+          "id": "flare",
+          "loop": false
+        },
+        {
+          "id": "fx-gas",
+          "loop": false
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "fx-lid",
+          "loop": false
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "success",
+          "loop": false
+        },
+        {
+          "id": "music-bed",
+          "loop": true
+        },
+        {
+          "id": "music-pulse",
+          "loop": true
+        },
+        {
+          "id": "music-high",
+          "loop": true
+        },
+        {
+          "id": "fire",
+          "loop": true
+        },
+        {
+          "id": "draft",
+          "loop": true
+        },
+        {
+          "id": "fx-lid",
+          "loop": false
+        },
+        {
+          "id": "fx-gas",
+          "loop": false
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "success",
+          "loop": false
+        }
+      ]
+    },
+    {
+      "name": "full-screen floating HUD 430x932",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932,
+        "top": 0,
+        "right": 430,
+        "bottom": 932,
+        "left": 0
+      },
+      "meter": {
+        "x": 8,
+        "y": 76,
+        "width": 48,
+        "height": 177.109375,
+        "top": 76,
+        "right": 56,
+        "bottom": 253.109375,
+        "left": 8
+      },
+      "buttons": [
+        {
+          "x": 8,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 52,
+          "bottom": 56,
+          "left": 8
+        },
+        {
+          "x": 326,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 370,
+          "bottom": 56,
+          "left": 326
+        },
+        {
+          "x": 378,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 422,
+          "bottom": 56,
+          "left": 378
+        }
+      ],
+      "overflow": false,
+      "fill": "705.731014246368",
+      "noBanner": true
+    },
+    {
+      "name": "no character sources; music/fire beds retained 430",
+      "state": "running",
+      "loaded": 14,
+      "missing": "",
+      "loops": 5,
+      "plays": 0,
+      "cue": "",
+      "rms": 0.0335,
+      "rate": 1.1326591488000002
+    },
+    {
+      "name": "real tap gas + drag lid/person completion 430x932"
+    },
+    {
+      "name": "native source audit 430: music/environment/interactions retained; zero character sources",
+      "starts": [
+        {
+          "id": "music-bed",
+          "loop": true
+        },
+        {
+          "id": "music-pulse",
+          "loop": true
+        },
+        {
+          "id": "music-high",
+          "loop": true
+        },
+        {
+          "id": "fire",
+          "loop": true
+        },
+        {
+          "id": "draft",
+          "loop": true
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "fx-lid",
+          "loop": false
+        },
+        {
+          "id": "fx-gas",
+          "loop": false
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "success",
+          "loop": false
+        }
+      ]
+    },
+    {
+      "name": "full-screen floating HUD 1440x900",
+      "root": {
+        "x": 495,
+        "y": 0,
+        "width": 450,
+        "height": 900,
+        "top": 0,
+        "right": 945,
+        "bottom": 900,
+        "left": 495
+      },
+      "meter": {
+        "x": 503,
+        "y": 76,
+        "width": 48,
+        "height": 177.109375,
+        "top": 76,
+        "right": 551,
+        "bottom": 253.109375,
+        "left": 503
+      },
+      "buttons": [
+        {
+          "x": 503,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 547,
+          "bottom": 56,
+          "left": 503
+        },
+        {
+          "x": 841,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 885,
+          "bottom": 56,
+          "left": 841
+        },
+        {
+          "x": 893,
+          "y": 12,
+          "width": 44,
+          "height": 44,
+          "top": 12,
+          "right": 937,
+          "bottom": 56,
+          "left": 893
+        }
+      ],
+      "overflow": false,
+      "fill": "705.731014246368",
+      "noBanner": true
+    },
+    {
+      "name": "no character sources; music/fire beds retained 1440",
+      "state": "running",
+      "loaded": 14,
+      "missing": "",
+      "loops": 5,
+      "plays": 0,
+      "cue": "",
+      "rms": 0.0266,
+      "rate": 1.1326591488000002
+    },
+    {
+      "name": "real tap gas + drag lid/person completion 1440x900"
+    },
+    {
+      "name": "native source audit 1440: music/environment/interactions retained; zero character sources",
+      "starts": [
+        {
+          "id": "music-bed",
+          "loop": true
+        },
+        {
+          "id": "music-pulse",
+          "loop": true
+        },
+        {
+          "id": "music-high",
+          "loop": true
+        },
+        {
+          "id": "fire",
+          "loop": true
+        },
+        {
+          "id": "draft",
+          "loop": true
+        },
+        {
+          "id": "fx-gas",
+          "loop": false
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "fx-lid",
+          "loop": false
+        },
+        {
+          "id": "pickup",
+          "loop": false
+        },
+        {
+          "id": "success",
+          "loop": false
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "browserClosed": true
+}

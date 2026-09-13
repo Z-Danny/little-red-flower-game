@@ -1,0 +1,9 @@
+{
+  "compiler": "prepare-hazard-batch.py",
+  "version": 1,
+  "id": "quake-bedroom-v2",
+  "sourceSha256": "4c0a5d608b7648158289e9709e0c42d1ea82ca46e2e0c7c2ac06f30eee3ec7ee",
+  "specPath": "art-source/hazard-batch-v2/H08/production.json",
+  "skinSha256": "dd28bd30bdcaa710373d83e4b9ec8ce8c8df5a9c25df37c72e1c744b6531d038",
+  "createdAt": "2026-09-09T16:41:12.733473+00:00"
+}

@@ -1,0 +1,580 @@
+{
+  "at": "2026-09-10T01:46:53.010Z",
+  "scope": "all-seven",
+  "expectedCases": 42,
+  "status": "failed",
+  "browser": "isolated headless Edge",
+  "audio": "--mute-audio; no actual speaker playback or subjective listening",
+  "physicalDevices": "not tested",
+  "visibility": "synthetic document.hidden lifecycle, not OS tab switching",
+  "cases": [
+    {
+      "id": "bedroom-night-check-v2",
+      "authorId": "H02",
+      "protocol": "http",
+      "width": 390,
+      "height": 844,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "0/30/60/90-second browser frames; peak remains playable with speaker muted",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H02-http-390-initial.png",
+        "H02-http-390-miss.png",
+        "H02-http-390-mark.png",
+        "H02-http-390-unfinished.png",
+        "H02-http-390-stage-1.png",
+        "H02-http-390-stage-2.png",
+        "H02-http-390-stage-3.png",
+        "H02-http-390-ending.png",
+        "H02-http-390-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "authorId": "H02",
+      "protocol": "http",
+      "width": 320,
+      "height": 740,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H02-http-320-initial.png",
+        "H02-http-320-ending.png",
+        "H02-http-320-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "authorId": "H02",
+      "protocol": "http",
+      "width": 1440,
+      "height": 900,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "Desktop contain margin cannot identify target",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H02-http-1440-initial.png",
+        "H02-http-1440-ending.png",
+        "H02-http-1440-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "authorId": "H02",
+      "protocol": "file",
+      "width": 390,
+      "height": 844,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H02-file-390-initial.png",
+        "H02-file-390-ending.png",
+        "H02-file-390-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "authorId": "H02",
+      "protocol": "file",
+      "width": 320,
+      "height": 740,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H02-file-320-initial.png",
+        "H02-file-320-ending.png",
+        "H02-file-320-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "authorId": "H02",
+      "protocol": "file",
+      "width": 1440,
+      "height": 900,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "Desktop contain margin cannot identify target",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H02-file-1440-initial.png",
+        "H02-file-1440-ending.png",
+        "H02-file-1440-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "authorId": "H04",
+      "protocol": "http",
+      "width": 390,
+      "height": 844,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "0/30/60/90-second browser frames; peak remains playable with speaker muted",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H04-http-390-initial.png",
+        "H04-http-390-miss.png",
+        "H04-http-390-mark.png",
+        "H04-http-390-unfinished.png",
+        "H04-http-390-stage-1.png",
+        "H04-http-390-stage-2.png",
+        "H04-http-390-stage-3.png",
+        "H04-http-390-ending.png",
+        "H04-http-390-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "authorId": "H04",
+      "protocol": "http",
+      "width": 320,
+      "height": 740,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H04-http-320-initial.png",
+        "H04-http-320-ending.png",
+        "H04-http-320-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "authorId": "H04",
+      "protocol": "http",
+      "width": 1440,
+      "height": 900,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "Desktop contain margin cannot identify target",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H04-http-1440-initial.png",
+        "H04-http-1440-ending.png",
+        "H04-http-1440-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "authorId": "H04",
+      "protocol": "file",
+      "width": 390,
+      "height": 844,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H04-file-390-initial.png",
+        "H04-file-390-ending.png",
+        "H04-file-390-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "authorId": "H04",
+      "protocol": "file",
+      "width": 320,
+      "height": 740,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H04-file-320-initial.png",
+        "H04-file-320-ending.png",
+        "H04-file-320-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "authorId": "H04",
+      "protocol": "file",
+      "width": 1440,
+      "height": 900,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "Desktop contain margin cannot identify target",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H04-file-1440-initial.png",
+        "H04-file-1440-ending.png",
+        "H04-file-1440-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "authorId": "H06",
+      "protocol": "http",
+      "width": 390,
+      "height": 844,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "0/30/60/90-second browser frames; peak remains playable with speaker muted",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H06-http-390-initial.png",
+        "H06-http-390-miss.png",
+        "H06-http-390-mark.png",
+        "H06-http-390-unfinished.png",
+        "H06-http-390-stage-1.png",
+        "H06-http-390-stage-2.png",
+        "H06-http-390-stage-3.png",
+        "H06-http-390-ending.png",
+        "H06-http-390-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "authorId": "H06",
+      "protocol": "http",
+      "width": 320,
+      "height": 740,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H06-http-320-initial.png",
+        "H06-http-320-ending.png",
+        "H06-http-320-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "authorId": "H06",
+      "protocol": "http",
+      "width": 1440,
+      "height": 900,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "Desktop contain margin cannot identify target",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H06-http-1440-initial.png",
+        "H06-http-1440-ending.png",
+        "H06-http-1440-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "authorId": "H06",
+      "protocol": "file",
+      "width": 390,
+      "height": 844,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H06-file-390-initial.png",
+        "H06-file-390-ending.png",
+        "H06-file-390-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "authorId": "H06",
+      "protocol": "file",
+      "width": 320,
+      "height": 740,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H06-file-320-initial.png",
+        "H06-file-320-ending.png",
+        "H06-file-320-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "authorId": "H06",
+      "protocol": "file",
+      "width": 1440,
+      "height": 900,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "Desktop contain margin cannot identify target",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H06-file-1440-initial.png",
+        "H06-file-1440-ending.png",
+        "H06-file-1440-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "authorId": "H08",
+      "protocol": "http",
+      "width": 390,
+      "height": 844,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "0/30/60/90-second browser frames; peak remains playable with speaker muted",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H08-http-390-initial.png",
+        "H08-http-390-miss.png",
+        "H08-http-390-mark.png",
+        "H08-http-390-unfinished.png",
+        "H08-http-390-stage-1.png",
+        "H08-http-390-stage-2.png",
+        "H08-http-390-stage-3.png",
+        "H08-http-390-ending.png",
+        "H08-http-390-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "authorId": "H08",
+      "protocol": "http",
+      "width": 320,
+      "height": 740,
+      "status": "passed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "800ms mark not immediate; busy/repeated taps ignored; pause freezes mark and tier; unfinished freezes and awards nothing",
+        "Synthetic hidden lifecycle freezes and resumes marking; no forced unfinished result",
+        "Ending pause freezes; full-image reveal holds until settlement; exactly 3 flowers persisted",
+        "Reverse-order replay clears run; repeated reward idempotent; old playable maps preserved; player unmounted",
+        "No page errors or external network requests"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H08-http-320-initial.png",
+        "H08-http-320-ending.png",
+        "H08-http-320-complete.png"
+      ],
+      "contextClosed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "authorId": "H08",
+      "protocol": "http",
+      "width": 1440,
+      "height": 900,
+      "status": "failed",
+      "checks": [
+        "New independent ID; five silhouettes; loaded full scene with actual pixel samples; speaker muted",
+        "Misclick neutral; 450ms feedback window exercised (exact boundary in unit tests)",
+        "Desktop contain margin cannot identify target"
+      ],
+      "pageErrors": [],
+      "externalRequests": [],
+      "screenshots": [
+        "H08-http-1440-initial.png"
+      ],
+      "error": "AssertionError [ERR_ASSERTION]: quake-bedroom-v2 target sample is obscured by UI or outside canvas: {\"canvas\":false,\"tag\":\"IMG\",\"className\":\"\"}\n\nfalse !== true\n\n    at clickWorld (file:///D:/%E4%B8%AD%E5%85%B3%E6%9D%91/%E5%B0%8F%E7%BA%A2%E8%8A%B1/test1/work/hazard-batch-v2/scripts/test-hazard-batch-browser.mjs:88:12)\n    at async file:///D:/%E4%B8%AD%E5%85%B3%E6%9D%91/%E5%B0%8F%E7%BA%A2%E8%8A%B1/test1/work/hazard-batch-v2/scripts/test-hazard-batch-browser.mjs:147:37",
+      "contextClosed": true
+    }
+  ],
+  "cleanup": {
+    "browserClosed": true,
+    "serverClosed": true,
+    "contextsClosed": 21
+  },
+  "html": {
+    "path": "D:\\中关村\\小红花\\test1\\work\\hazard-batch-v2\\outputs\\本地离线版\\小红花应急行动.html",
+    "sha256": "8472ff5d262777e6e15d9cbe5530199157401fa84cf01d280aa17fe6a1864002",
+    "bytes": 64025915
+  },
+  "artifacts": "docs/hazard-batch-v2/verification/browser-2026-09-10T01-46-55-243Z",
+  "error": "AssertionError [ERR_ASSERTION]: quake-bedroom-v2 target sample is obscured by UI or outside canvas: {\"canvas\":false,\"tag\":\"IMG\",\"className\":\"\"}\n\nfalse !== true\n\n    at clickWorld (file:///D:/%E4%B8%AD%E5%85%B3%E6%9D%91/%E5%B0%8F%E7%BA%A2%E8%8A%B1/test1/work/hazard-batch-v2/scripts/test-hazard-batch-browser.mjs:88:12)\n    at async file:///D:/%E4%B8%AD%E5%85%B3%E6%9D%91/%E5%B0%8F%E7%BA%A2%E8%8A%B1/test1/work/hazard-batch-v2/scripts/test-hazard-batch-browser.mjs:147:37",
+  "finishedAt": "2026-09-10T01:54:43.610Z",
+  "passedCases": 20
+}

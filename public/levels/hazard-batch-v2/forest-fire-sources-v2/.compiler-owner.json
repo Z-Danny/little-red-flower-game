@@ -1,0 +1,9 @@
+{
+  "compiler": "prepare-hazard-batch.py",
+  "version": 1,
+  "id": "forest-fire-sources-v2",
+  "sourceSha256": "5b8d7b3c321172867ba56d8dd758b71ba396e932a3bd3fb9fa23814d219cb074",
+  "specPath": "art-source/hazard-batch-v2/H12/production.json",
+  "skinSha256": "9318283155357e52cc49184815a474db5ec2eb0a009363c58afb2da7d634a77d",
+  "createdAt": "2026-09-09T16:46:13.315249+00:00"
+}

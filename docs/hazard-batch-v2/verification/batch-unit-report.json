@@ -1,0 +1,10 @@
+{
+  "at": "2026-09-13T06:37:25.299Z",
+  "durationMs": 2211,
+  "exitCode": 0,
+  "signal": null,
+  "tests": 892,
+  "pass": 892,
+  "fail": 0,
+  "status": "passed"
+}

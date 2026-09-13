@@ -1,0 +1,5 @@
+/* Shared surface fallback before hydration. Never add safe-area padding here. */
+[data-game-surface]{box-sizing:border-box;isolation:isolate;touch-action:none;height:100vh;height:100dvh;min-height:0}
+[data-game-canvas]{display:block;touch-action:none}
+[data-game-surface] button{min-width:44px;min-height:44px;flex-shrink:0}
+[data-game-surface] :is(.configured-hud,.kitchen-hud,.hunt-hud,.disaster-hud) {padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}

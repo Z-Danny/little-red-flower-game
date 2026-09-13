@@ -1,0 +1,9 @@
+{
+  "compiler": "prepare-hazard-batch.py",
+  "version": 1,
+  "id": "kitchen-before-cooking-v2",
+  "sourceSha256": "4f41ff6972a569ba7f34ea3321f371d151604700938d5771bf816c5ca240276b",
+  "specPath": "art-source/hazard-batch-v2/H04/production.json",
+  "skinSha256": "f072e65279d1c14842b90a8054a71553a2e6dad60c5f432e64a1a98414768871",
+  "createdAt": "2026-09-10T01:44:52.861258+00:00"
+}

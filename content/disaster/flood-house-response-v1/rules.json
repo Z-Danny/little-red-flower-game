@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "id": "flood-house-response-v1",
+  "title": "洪水围困",
+  "order": 22,
+  "kind": "response",
+  "seconds": 120,
+  "missPenalty": 0,
+  "goals": [
+    {
+      "id": "stairs",
+      "label": "靠近向上转移路线",
+      "lesson": "靠近向上转移路线"
+    },
+    {
+      "id": "power",
+      "label": "安全断电",
+      "lesson": "安全断电"
+    },
+    {
+      "id": "rescue",
+      "label": "发送位置求救",
+      "lesson": "发送位置求救"
+    },
+    {
+      "id": "drinking",
+      "label": "备好饮水",
+      "lesson": "备好饮水"
+    },
+    {
+      "id": "lighting",
+      "label": "备好照明",
+      "lesson": "备好照明"
+    },
+    {
+      "id": "aid",
+      "label": "整理备用浮材",
+      "lesson": "整理备用浮材"
+    },
+    {
+      "id": "roof",
+      "label": "转移至高处",
+      "lesson": "转移至高处"
+    }
+  ],
+  "actions": [
+    {
+      "id": "approach",
+      "source": "person",
+      "target": "stairs",
+      "input": "drop",
+      "goal": "stairs",
+      "requires": [],
+      "duration": 1100,
+      "outcome": "correct",
+      "feedback": "已沿干燥路线靠近楼梯，随时可以继续向高处转移。",
+      "motion": "move"
+    },
+    {
+      "id": "power-off",
+      "source": "breaker",
+      "target": "breaker",
+      "input": "tap",
+      "goal": "power",
+      "duration": 700,
+      "outcome": "correct",
+      "feedback": "在干燥、完好、可安全到达的位置关闭电闸。不能涉水去断电。",
+      "motion": "switch"
+    },
+    {
+      "id": "rescue-call",
+      "source": "phone",
+      "target": "person",
+      "input": "drop",
+      "goal": "rescue",
+      "requires": [
+        "stairs",
+        "power"
+      ],
+      "duration": 1000,
+      "outcome": "correct",
+      "feedback": "模拟求救信息已发出：位置、人数、被困情况。请留在高处等待救援。",
+      "motion": "call"
+    },
+    {
+      "id": "pack-water",
+      "source": "water",
+      "target": "bag",
+      "input": "drop",
+      "goal": "drinking",
+      "requires": [
+        "stairs",
+        "power"
+      ],
+      "duration": 850,
+      "outcome": "correct",
+      "feedback": "饮水已装入背包；不为取物耽误转移。",
+      "motion": "pack"
+    },
+    {
+      "id": "pack-light",
+      "source": "flashlight",
+      "target": "bag",
+      "input": "drop",
+      "goal": "lighting",
+      "requires": [
+        "stairs",
+        "power"
+      ],
+      "duration": 850,
+      "outcome": "correct",
+      "feedback": "照明已备好，不依赖可能中断的室内电源。",
+      "motion": "pack"
+    },
+    {
+      "id": "assemble-foam",
+      "source": "foam",
+      "target": "panel",
+      "input": "drop",
+      "goal": "aid",
+      "requires": [
+        "stairs",
+        "power"
+      ],
+      "duration": 1100,
+      "outcome": "correct",
+      "feedback": "已在干燥处整理备用漂浮材料。留在高处等救援，不能靠它盲目下水。",
+      "motion": "assemble"
+    },
+    {
+      "id": "assemble-panel",
+      "source": "panel",
+      "target": "foam",
+      "input": "drop",
+      "goal": "aid",
+      "requires": [
+        "stairs",
+        "power"
+      ],
+      "duration": 1100,
+      "outcome": "correct",
+      "feedback": "已在干燥处整理备用漂浮材料。留在高处等救援，不能靠它盲目下水。",
+      "motion": "assemble"
+    },
+    {
+      "id": "assemble-rope",
+      "source": "rope",
+      "target": "panel",
+      "input": "drop",
+      "goal": "aid",
+      "requires": [
+        "stairs",
+        "power"
+      ],
+      "duration": 1100,
+      "outcome": "correct",
+      "feedback": "已在干燥处整理备用漂浮材料。留在高处等救援，不能靠它盲目下水。",
+      "motion": "assemble"
+    },
+    {
+      "id": "reach-roof",
+      "source": "person",
+      "target": "roof",
+      "input": "drop",
+      "goal": "roof",
+      "requires": [
+        "stairs",
+        "power",
+        "rescue",
+        "drinking",
+        "lighting",
+        "aid"
+      ],
+      "duration": 1300,
+      "outcome": "correct",
+      "feedback": "人员和随手可取的物资已转移到高处，等待专业救援。",
+      "motion": "exit"
+    },
+    {
+      "id": "early-escape",
+      "source": "person",
+      "target": "roof",
+      "input": "drop",
+      "duration": 1000,
+      "outcome": "escape",
+      "feedback": "已先行转移到高处。训练未全部完成，不发放新花；现实中不能为了取齐物资耽误避险。",
+      "motion": "exit"
+    },
+    {
+      "id": "danger-outside",
+      "source": "person",
+      "target": "outside",
+      "input": "drop",
+      "duration": 900,
+      "outcome": "danger",
+      "feedback": "洪水浑浊、流速和水深难以判断，不要盲目涉水或游泳。",
+      "motion": "move"
+    },
+    {
+      "id": "danger-wire",
+      "source": "person",
+      "target": "wire",
+      "input": "drop",
+      "duration": 900,
+      "outcome": "danger",
+      "feedback": "发现电线落水要立即远离，不能靠近试探。",
+      "motion": "move"
+    },
+    {
+      "id": "danger-car",
+      "source": "person",
+      "target": "car",
+      "input": "drop",
+      "duration": 900,
+      "outcome": "danger",
+      "feedback": "汽车不是洪水中的安全避难处，不要返回被淹车辆或留在车里等待。",
+      "motion": "move"
+    }
+  ],
+  "summary": "洪水来临时向高处转移，准备饮水、照明和通信设备；不要盲目涉水或游泳，发现电线落水要立即远离。",
+  "opening": "拖动物品到场景中的合适位置，点击干燥墙上的电闸关闭电源。随时可把人物移到楼上先行避险。",
+  "safety": "仅在干燥、安全、来得及的条件下准备。不要涉水操作电器，不要为取物耽误转移；游戏时限不代表真实水位变化。",
+  "timeout": "外部水位已达到危险线。停止搜集物资，现实中应立即向高处转移并求救。",
+  "finishTitle": "高处等待，平安相守",
+  "revealMs": 3500
+}

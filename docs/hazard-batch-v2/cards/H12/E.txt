@@ -1,0 +1,4 @@
+输入H12批准原画与object-mask.png，逐目标机械提取原图对应实体的alpha轮廓，并转为单色剪影；保持原物体长宽比。
+图标文件名必须按目标id生成：forest_grill.png, smouldering_cigarette.png, forest_campfire.png, burning_paper.png, forest_fireworks.png。
+禁止另行生成抽象图标，禁止把id-mask填充空洞的点击形状直接当剪影。窗框、亭柱中间空洞保持透明；线、把手与组成部分依据原图保留。若手机顶部无法辨认物体，回B调整主体构图和轮廓，不能用无来源通用图标替代。
+输出RGBA图标、原图叠色来源证明、id到图标路径映射。剪影只做进度提示，不写步骤答案。完成状态应同时用轮廓/填充或勾记区分，避免仅靠红绿颜色。

@@ -1,0 +1,256 @@
+{
+  "compilerVersion": 1,
+  "id": "thunder-park-v2",
+  "authorId": "H11",
+  "sourceSha256": "ec25e800ce6db2f080b8681b890654fa5ce68b09db72c9c3a01a0d14ced71d75",
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "inputHashes": {
+    "scene-original.png": "ec25e800ce6db2f080b8681b890654fa5ce68b09db72c9c3a01a0d14ced71d75",
+    "mask-candidate.png": "6916ede843005f87517fa30fe170d8d038e068ee215c6b983ab171a121957154",
+    "clean-candidate.png": "add496cc6c0b6677b2a1c3ffb9fc5af8893e0029614cc91aab1f83a517a36b0f",
+    "ending.png": "b802da9b4b9d7e2368f8c5430835b4c953cca12e0a856ea9d93b5bb80087e3a1"
+  },
+  "specSha256": "6677ca9d9582d09e5e499dad3c2de61688b8d9a1681b4a00cdeaab7166451851",
+  "corrections": {
+    "targets": {},
+    "characters": {
+      "excludePolygons": [
+        [
+          [
+            705,
+            989
+          ],
+          [
+            720,
+            986
+          ],
+          [
+            720,
+            1090
+          ],
+          [
+            693,
+            1090
+          ],
+          [
+            693,
+            1035
+          ],
+          [
+            692,
+            1014
+          ],
+          [
+            697,
+            1008
+          ],
+          [
+            701,
+            1009
+          ],
+          [
+            701,
+            996
+          ]
+        ],
+        [
+          [
+            637,
+            1060
+          ],
+          [
+            641,
+            1051
+          ],
+          [
+            648,
+            1046
+          ],
+          [
+            654,
+            1044
+          ],
+          [
+            659,
+            1039
+          ],
+          [
+            665,
+            1036
+          ],
+          [
+            672,
+            1037
+          ],
+          [
+            676,
+            1041
+          ],
+          [
+            683,
+            1037
+          ],
+          [
+            690,
+            1035
+          ],
+          [
+            697,
+            1039
+          ],
+          [
+            704,
+            1044
+          ],
+          [
+            714,
+            1048
+          ],
+          [
+            720,
+            1049
+          ],
+          [
+            720,
+            1120
+          ],
+          [
+            595,
+            1120
+          ],
+          [
+            595,
+            1080
+          ],
+          [
+            606,
+            1071
+          ],
+          [
+            616,
+            1064
+          ],
+          [
+            625,
+            1061
+          ]
+        ]
+      ],
+      "reason": "原画前景植物和水杯遮住母亲下缘，候选人物误带了这些静物边缘。按 720x1280 原画坐标排除，并保护静物不参与补空及人物微动。"
+    }
+  },
+  "targetPixels": {
+    "isolated_tree": 30119,
+    "open_gazebo": 11821,
+    "pond_platform": 9385,
+    "open_cart": 12298,
+    "camping_tent": 17089
+  },
+  "hitPixels": {
+    "isolated_tree": 30119,
+    "open_gazebo": 11821,
+    "pond_platform": 9385,
+    "open_cart": 12298,
+    "camping_tent": 17089
+  },
+  "familyBox": {
+    "x": 255,
+    "y": 707,
+    "w": 465,
+    "h": 361
+  },
+  "familyPixels": 116061,
+  "effectsPixels": {
+    "weather": 285281,
+    "water": 18865,
+    "sky": 70951,
+    "fire": 0,
+    "smoke": 0
+  },
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "effectMasksExcludeTargetsAndCharacters": true,
+  "objectAndHitMasksIdentical": true,
+  "approval": "draft; semantic visual inspection and runtime tests pending",
+  "files": [
+    {
+      "path": "camping_tent.png",
+      "sha256": "527a2c8108790f1ab186fd45da9e00abd624323ad5876fb7f3037b6420f8bc22"
+    },
+    {
+      "path": "character-mask.png",
+      "sha256": "1b1aa2ffdb9d5e07f4cfbf2889e070e5a3e1a370ff5a76935e4252f48b01af08"
+    },
+    {
+      "path": "clean.webp",
+      "sha256": "6d340e221d917378d3d9e7080c287a9c18acb4bfade16db6b5935067f5715d8c"
+    },
+    {
+      "path": "ending.webp",
+      "sha256": "5a086b6dc5d812f121264a6826002a40d59118daa7d8a2f5b40d1cebb30a50cd"
+    },
+    {
+      "path": "family.png",
+      "sha256": "ad0dbb19c932b313ceb9210396ebddcbb53dee33a8c63188961c82d7344fefb1"
+    },
+    {
+      "path": "fire-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "hit-samples.json",
+      "sha256": "b080b0ce823c3d4ffda6c9a16369f2a59888fa0fb933fb34cd6a4c15417b831b"
+    },
+    {
+      "path": "id-mask.png",
+      "sha256": "209b0290c9dc03b7441b38a808c487a5ecd26b55396874491e9e3477a2484dfe"
+    },
+    {
+      "path": "isolated_tree.png",
+      "sha256": "9717d079aa4ea76cfd75ab6d11e5f09de02971c36f29f8174fbe581dc72143c7"
+    },
+    {
+      "path": "object-mask.png",
+      "sha256": "209b0290c9dc03b7441b38a808c487a5ecd26b55396874491e9e3477a2484dfe"
+    },
+    {
+      "path": "open_cart.png",
+      "sha256": "ea39b73056bcf25834e99547a42202a86ce2e483433f17b903c9ba2679fb17ab"
+    },
+    {
+      "path": "open_gazebo.png",
+      "sha256": "d7fdef34233efd51e88cdd69fe20f356cd221038cb461dd7a3fec8a59fc99d94"
+    },
+    {
+      "path": "pond_platform.png",
+      "sha256": "a23e77f07079dd21c0c16f593b61896fa1431c447dfcbd254c114c4ef0ed2953"
+    },
+    {
+      "path": "scene.webp",
+      "sha256": "44d01a16ccde0cac1a5d44cdce1678bbeebd0e86645a3971698c4e160537afc0"
+    },
+    {
+      "path": "sky-mask.png",
+      "sha256": "615a1d698e0877d1ac6842e3311734afb84ccf53a29cdab5176696770a81ab26"
+    },
+    {
+      "path": "smoke-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "water-mask.png",
+      "sha256": "cb6c1a697739d4f2248d50f6523287805f8b9a7822065ed4c3a7dfaa48f0bbc7"
+    },
+    {
+      "path": "weather-mask.png",
+      "sha256": "8cc3e405c6b662795667e08505152f44009f43a71d5ec619bb19d22cf2af029b"
+    }
+  ]
+}

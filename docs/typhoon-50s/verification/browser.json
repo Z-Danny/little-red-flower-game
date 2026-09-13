@@ -1,0 +1,87 @@
+{
+  "at": "2026-09-12T16:19:02.092Z",
+  "mode": "full-realtime",
+  "htmlSha256": "e750923d8769ec151d1c91f9247a471a772613beafebdd25d61c373c047fab08",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Mobile/full-frame disclosure 320x568",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 375x667",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 390x844",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 430x932",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 540x960",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 390x650",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 1440x900",
+      "status": "passed"
+    },
+    {
+      "name": "First nonverbal breath with real native audio",
+      "status": "passed",
+      "elapsed": 6715
+    },
+    {
+      "name": "Pause freezes countdown and silences output",
+      "status": "passed"
+    },
+    {
+      "name": "25-second amber phase; optional character mute persists",
+      "status": "passed"
+    },
+    {
+      "name": "Background freezes clock and audio",
+      "status": "passed"
+    },
+    {
+      "name": "40-second red phase and accelerated nonverbal pacing",
+      "status": "passed"
+    },
+    {
+      "name": "50-second empty bar; still playable, all scheduled cue types reached",
+      "status": "passed",
+      "cueCount": 5
+    },
+    {
+      "name": "Master mute stops all channels",
+      "status": "passed"
+    },
+    {
+      "name": "Five real pointer hits after peak; reward and no frightened sound on completion",
+      "status": "passed"
+    },
+    {
+      "name": "Exit disposes native level AudioContext (map channel remains separate)",
+      "status": "passed"
+    },
+    {
+      "name": "Replay resets 50s and hidden clues",
+      "status": "passed"
+    },
+    {
+      "name": "Mouse hover/leave, click pin/toggle, keyboard focus/Escape",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "humanListening": "not_run",
+  "physicalPhone": "not_run",
+  "closed": true
+}

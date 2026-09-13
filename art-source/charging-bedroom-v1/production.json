@@ -1,0 +1,13 @@
+{
+  "level":"charging-bedroom",
+  "sourceSha256":"9108156455e629add0a37df4b231742178649290a0768ecd5d74a0b7417cbcea",
+  "world":[720,1280],
+  "maskCorrections":{"damaged_lead":{"minX":0.122,"minY":0.79,"darkCable":{"maxX":0.265,"maxY":0.842,"maxLuma":115}},"fillEnclosedHoles":["covered_phone","swollen_bank"]},
+  "output":"public/levels/charging-bedroom-v1",
+  "skin":"content/scenes/charging-bedroom/skin.json",
+  "targets":[
+    {"id":"covered_phone","color":[255,0,0]},
+    {"id":"damaged_lead","color":[0,255,0]},
+    {"id":"swollen_bank","color":[0,0,255]}
+  ]
+}

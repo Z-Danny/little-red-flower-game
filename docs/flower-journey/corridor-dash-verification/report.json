@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "sha256": "0ab41d930dcbc23994c6f943cf4f3310b8781f9ec32175fb873d007fa8387321",
+  "checks": [
+    "quake-bedroom-v2 visible motion and entry 320",
+    "quake-cover-practice visible motion and entry 320",
+    "clear-corridor visible motion and entry 320",
+    "quake-bedroom-v2 visible motion and entry 390",
+    "quake-cover-practice visible motion and entry 390",
+    "clear-corridor visible motion and entry 390",
+    "reduced-motion mode",
+    "completed earthquake scene is safe by default and supports hover replay"
+  ],
+  "errors": [],
+  "network": [],
+  "browserClosed": true
+}

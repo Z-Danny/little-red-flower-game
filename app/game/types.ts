@@ -53,7 +53,7 @@ export type ResponseAction = {
 };
 
 export type LevelConfig = {
-  engine?: 'typhoon-v2' | 'kitchen-v1' | 'configured-v1';
+  engine?: 'typhoon-v2' | 'kitchen-v1' | 'configured-v1' | 'scene-hunt' | 'disaster-v1';
   id: string; order: number; kind: LevelKind; title: string; shortTitle: string; location: string;
   knowledge: string; task: string; briefing: string; duration: string; riskSeconds: number; accent: string;
   sceneRoom: SceneRoom; sceneMood: 'storm' | 'fire' | 'smoke' | 'calm'; goals: string[];

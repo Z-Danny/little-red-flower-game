@@ -1,0 +1,62 @@
+[
+  {
+    "command": "node scripts/test-kitchen.mjs",
+    "exitCode": 0,
+    "tests": "51"
+  },
+  {
+    "command": "node scripts/test-response-experience.mjs",
+    "exitCode": 0,
+    "tests": "14"
+  },
+  {
+    "command": "node scripts/test-typhoon.mjs",
+    "exitCode": 0,
+    "tests": "28"
+  },
+  {
+    "command": "node scripts/test-pipeline.mjs",
+    "exitCode": 0,
+    "tests": "49"
+  },
+  {
+    "command": "node scripts/test-leaderboard.mjs",
+    "exitCode": 0,
+    "tests": "29"
+  },
+  {
+    "command": "node scripts/test-transcripts.mjs",
+    "exitCode": 0,
+    "tests": "188"
+  },
+  {
+    "command": "node scripts/test-scene-hunt.mjs",
+    "exitCode": 0,
+    "tests": "312"
+  },
+  {
+    "command": "node scripts/test-hazard-performance.mjs",
+    "exitCode": 0,
+    "tests": "138"
+  },
+  {
+    "command": "node scripts/test-hazard-batch.mjs",
+    "exitCode": 0,
+    "tests": "892"
+  },
+  {
+    "command": "node scripts/test-disaster.mjs",
+    "exitCode": 0,
+    "tests": "31"
+  },
+  {
+    "command": "node scripts/test-hunt-pipeline.mjs",
+    "exitCode": 0,
+    "tests": "73"
+  },
+  {
+    "command": "node scripts/test-journey.mjs",
+    "exitCode": 0,
+    "tests": "17"
+  }
+]

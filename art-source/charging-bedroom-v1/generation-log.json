@@ -1,0 +1,19 @@
+{
+  "tool":"built-in image_gen",
+  "modelVersion":"not exposed by tool; not asserted",
+  "sourceSha256":"9108156455e629add0a37df4b231742178649290a0768ecd5d74a0b7417cbcea",
+  "sourceChain":[
+    {"prompt":"01-scene-prompt.md","file":"scene-candidate-v1.png","generated":"exec-1bcd361a-d835-4ab4-b91f-48d8b052f17f.png","result":"rejected: wall support for power connections unclear"},
+    {"prompt":"02-outlets-edit.md","file":"scene-candidate-v2.png","generated":"exec-a75c35e3-f07c-4e44-8730-c38c6dcc4496.png","result":"superseded by user request for floor strip"},
+    {"prompt":"03-floor-strip-edit.md","file":"scene-candidate-v3.png","generated":"exec-9ca8a03f-bd05-4abf-8496-c3c75ffbd106.png","result":"rejected: white supply cable merged with black plug lead"},
+    {"prompt":"03b-separate-cables-edit.md","file":"scene-original.png","generated":"exec-6f27da80-38c1-41a9-958f-1759f98bc4a1.png","result":"selected: distinct white supply and black damaged lead"}
+  ],
+  "derivedFromFinalSource":[
+    {"prompt":"04-mask-prompt.md","file":"mask-candidate.png","generated":"exec-ffa3e4f8-b264-4c06-9ef8-c0688287bf56.png","review":"white supply misclassified; deterministic reviewed correction in production.json before exact-color compilation"},
+    {"prompt":"05-ending-prompt.md","file":"ending.png","generated":"exec-68bc452b-484f-4f78-b0e1-23f2b549e676.png","review":"devices disconnected, phone on hard table, broken component in pending box, bank remains swollen, family farther away"},
+    {"prompt":"06-clean-prompt.md","file":"clean-candidate.png","generated":"exec-75c8929f-d8e6-405b-a04a-82a71e44d12b.png","review":"candidate used only inside limited person repair mask; all other scene pixels original"}
+  ],
+  "processing":"prepare-scene-hunt.py; production.json; processing.json; proof/",
+  "visualQa":"docs/charging-bedroom/qa and verification/",
+  "oldDerivedCandidates":"mask/ending from v3 discarded after parent cable correction; never included in runtime"
+}

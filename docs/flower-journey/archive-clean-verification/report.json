@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "sha256": "95e03058c23d4023b763f969930a407c359baf86c8c6f9f944414a2c6955e577",
+  "errors": [],
+  "checks": [
+    "archive test-engine entry absent",
+    "leaderboard and reset retained",
+    "390 and 320 portrait layouts",
+    "opening and closing archive preserves save"
+  ],
+  "browserClosed": true
+}

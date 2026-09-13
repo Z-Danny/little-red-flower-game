@@ -1,0 +1,138 @@
+{
+  "baseDirectory": "D:/中关村/小红花/test1/outputs/map-art/v3",
+  "coordinateConvention": "Coordinates normalized by original image width/height; origin top-left. Each x,y is the flower stem/grass BASE landing point on the ground, not the image center. Preserve given bottom-to-top level order. Visual estimates must be checked after browser rendering; do not reorder level IDs.",
+  "generator": "built-in ImageGen",
+  "generationCount": 3,
+  "files": [
+    {
+      "file": "entry-bud-v3.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "ARGB",
+      "cornerAlpha": 0,
+      "promptFile": "entry-bud-v3.prompt.txt",
+      "notes": "Natural tapered closed bud with overlapping petal seams, two leaves and irregular grass tuft. No circle, disc, halo or numeral."
+    },
+    {
+      "file": "natural-real-sites-v3.png",
+      "width": 793,
+      "height": 1983,
+      "promptFile": "natural-real-sites-v3.prompt.txt",
+      "sha256": "B186D3C0B2B60642675ED8EA1009E8522278D74B3410D577DD12DAE50888616F"
+    },
+    {
+      "file": "public-real-sites-v3.png",
+      "width": 941,
+      "height": 1672,
+      "promptFile": "public-real-sites-v3.prompt.txt",
+      "sha256": "567FBB93B017EF1F1AEBD0AE9F6521DE55FAC4A143DD7B6D0107688AD9326DAD"
+    }
+  ],
+  "naturalNodes": [
+    {
+      "sequence": 1,
+      "semantic": "台风家",
+      "x": 0.357,
+      "y": 0.875,
+      "ground": "底部临河封窗阳台住宅的入户台阶下方，靠前门，不是河面。",
+      "evidence": "整面封闭玻璃阳台、普通家门、河岸栏杆。"
+    },
+    {
+      "sequence": 2,
+      "semantic": "应急包",
+      "x": 0.75,
+      "y": 0.77,
+      "ground": "蓝顶备灾棚敞口前的铺装前场，靠近物资但避开背包本体。",
+      "evidence": "可见橙色背包、成组物资箱、瓶装水和货架。"
+    },
+    {
+      "sequence": 3,
+      "semantic": "防震",
+      "x": 0.417,
+      "y": 0.681,
+      "ground": "可见卧室的住宅门口台阶下缘与人行道交接处。",
+      "evidence": "大卧室窗内可见床和床头灯；下层为明确家门。"
+    },
+    {
+      "sequence": 4,
+      "semantic": "风雨街口",
+      "x": 0.775,
+      "y": 0.552,
+      "ground": "右侧转弯街口的铺装路面边缘，靠路灯与斑马线，不放绿地。",
+      "evidence": "明确车道转弯、斑马线、灯杆及沿街住宅。"
+    },
+    {
+      "sequence": 5,
+      "semantic": "雷雨公园",
+      "x": 0.5,
+      "y": 0.491,
+      "ground": "湖岸凉亭外的公园入口小径接主路处，靠石柱门口。",
+      "evidence": "湖水、亭子、大柳树、岸边围栏与入园步道。"
+    },
+    {
+      "sequence": 6,
+      "semantic": "林缘火源",
+      "x": 0.825,
+      "y": 0.353,
+      "ground": "右侧森林入口的土径前端，靠消防设施但不遮住灭火器。",
+      "evidence": "密林入口小径、灭火器架和消防水桶。"
+    },
+    {
+      "sequence": 7,
+      "semantic": "暴雨街道",
+      "x": 0.3,
+      "y": 0.288,
+      "ground": "上部社区街道路缘，靠近排水格栅和汽车，必须落在路面。",
+      "evidence": "汽车、灰色车行道、路缘石和大排水格栅。"
+    },
+    {
+      "sequence": 8,
+      "semantic": "洪水待援",
+      "x": 0.79,
+      "y": 0.145,
+      "ground": "顶部高台河畔住宅的外楼梯下方道路旁，避开住宅本体。",
+      "evidence": "两层住宅、高石台基、外部楼梯、邻接河水。"
+    }
+  ],
+  "publicNodes": [
+    {
+      "sequence": 1,
+      "semantic": "畅通生命通道",
+      "x": 0.34,
+      "y": 0.867,
+      "ground": "最下方敞开公寓主入口的台阶底部外侧铺装。",
+      "evidence": "敞门后清楚可见内部楼梯与通道。"
+    },
+    {
+      "sequence": 2,
+      "semantic": "电梯",
+      "x": 0.72,
+      "y": 0.582,
+      "ground": "右侧玻璃电梯入口台阶脚下的铺装，花身不要遮住电梯门。",
+      "evidence": "外部玻璃电梯井、可见轿厢、底部门厅。"
+    },
+    {
+      "sequence": 3,
+      "semantic": "井口求助",
+      "x": 0.463,
+      "y": 0.468,
+      "ground": "真实圆形检修井安全围挡右侧外部路面，距井盖很近而不覆盖井口。",
+      "evidence": "明显圆井筒、斜靠的圆井盖、三面黄黑安全围挡。"
+    },
+    {
+      "sequence": 4,
+      "semantic": "楼道隐患检查",
+      "x": 0.7,
+      "y": 0.171,
+      "ground": "最上方公寓公共通道入口台阶底部外侧。",
+      "evidence": "明亮敞开穿楼走廊，能看到内部及另一端。"
+    }
+  ],
+  "visualNotes": [
+    "所有八个自然语义和四个公共语义地物在成图中出现，次序均为给定底部到顶部。",
+    "地图中的物资包装、设备和井盖存在微小纹理，未见可读UI标记或关卡文字数字。",
+    "顶端建筑进入了部分顶部10%区域；图片上方叠字应避开建筑或在画面外布局。",
+    "坐标给语义和地面锚点，不代表所有文本标签都已验证无重叠。",
+    "每项只生成一次；原PNG未修改，未修改stage或Sites文件。"
+  ]
+}

@@ -1,0 +1,1223 @@
+{
+  "version": 1,
+  "sourceType": "original generated art; user-authorized local alpha cleanup",
+  "review": {
+    "deepAndLightComposites": "passed_visual_review_2026-09-13",
+    "whiteClothesFoamAndEyeWhites": "retained_visually_checked",
+    "bakedGlowAndColoredFringe": "removed_visually_checked",
+    "gameRuntime": "parent_task",
+    "physicalPhone": "not_run"
+  },
+  "breakerPair": {
+    "sameCanvas": true,
+    "sameCrop": true,
+    "alphaMismatches": 0,
+    "housingColorMismatches": 0,
+    "note": "Only generated indicator and switch-well interiors differ; all housing pixels reused from the on original."
+  },
+  "assets": [
+    {
+      "name": "family-prepared",
+      "kind": "character",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-e9790069-e45f-4fe5-98e6-9b4e61e5a07b.png",
+      "original": "docs/flood-rooftop/originals/family-prepared.png",
+      "sourceSHA256": "da78a16af0f8d79da04b7917d500b6f46f18c3b841b2d57b255f529ad96c32aa",
+      "output": "public/levels/flood-rooftop-v2/family-prepared.webp",
+      "outputSHA256": "88c6c58e769b555abe644e9fa76b177cf7865a31cd23ae9510889d92348323b5",
+      "originalCanvas": [
+        1024,
+        1536
+      ],
+      "outputCanvas": [
+        1024,
+        1536
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 926862,
+      "transparentFraction": 0.5892829895019531,
+      "partialAlphaPixels": 5509,
+      "visibleBounds": [
+        76,
+        68,
+        995,
+        1442
+      ],
+      "crop": null,
+      "manualBackgroundSeeds": [
+        [
+          361,
+          184
+        ],
+        [
+          657,
+          245
+        ],
+        [
+          652,
+          134
+        ],
+        [
+          414,
+          142
+        ],
+        [
+          356,
+          251
+        ]
+      ],
+      "reviewedSilhouettePath": null,
+      "sharedShellSource": null,
+      "isolatedPixelsRemoved": 1,
+      "coloredFringePixelsRemoved": 0,
+      "remainingNeutralComponents": [
+        {
+          "pixels": 8743,
+          "bounds": [
+            372,
+            454,
+            466,
+            730
+          ],
+          "min": 169,
+          "max": 255,
+          "seed": [
+            444,
+            454
+          ]
+        },
+        {
+          "pixels": 1256,
+          "bounds": [
+            571,
+            1202,
+            627,
+            1312
+          ],
+          "min": 99,
+          "max": 249,
+          "seed": [
+            580,
+            1202
+          ]
+        },
+        {
+          "pixels": 815,
+          "bounds": [
+            858,
+            1355,
+            903,
+            1396
+          ],
+          "min": 99,
+          "max": 184,
+          "seed": [
+            893,
+            1355
+          ]
+        },
+        {
+          "pixels": 409,
+          "bounds": [
+            819,
+            1349,
+            860,
+            1389
+          ],
+          "min": 98,
+          "max": 255,
+          "seed": [
+            823,
+            1349
+          ]
+        },
+        {
+          "pixels": 291,
+          "bounds": [
+            150,
+            745,
+            214,
+            756
+          ],
+          "min": 160,
+          "max": 218,
+          "seed": [
+            204,
+            745
+          ]
+        },
+        {
+          "pixels": 149,
+          "bounds": [
+            537,
+            221,
+            557,
+            246
+          ],
+          "min": 150,
+          "max": 255,
+          "seed": [
+            551,
+            221
+          ]
+        },
+        {
+          "pixels": 104,
+          "bounds": [
+            859,
+            565,
+            873,
+            590
+          ],
+          "min": 134,
+          "max": 255,
+          "seed": [
+            863,
+            565
+          ]
+        },
+        {
+          "pixels": 96,
+          "bounds": [
+            612,
+            213,
+            620,
+            237
+          ],
+          "min": 225,
+          "max": 255,
+          "seed": [
+            616,
+            213
+          ]
+        },
+        {
+          "pixels": 93,
+          "bounds": [
+            558,
+            71,
+            581,
+            83
+          ],
+          "min": 125,
+          "max": 251,
+          "seed": [
+            558,
+            71
+          ]
+        },
+        {
+          "pixels": 78,
+          "bounds": [
+            901,
+            1313,
+            923,
+            1326
+          ],
+          "min": 250,
+          "max": 255,
+          "seed": [
+            908,
+            1313
+          ]
+        },
+        {
+          "pixels": 75,
+          "bounds": [
+            597,
+            86,
+            616,
+            96
+          ],
+          "min": 128,
+          "max": 243,
+          "seed": [
+            599,
+            86
+          ]
+        },
+        {
+          "pixels": 67,
+          "bounds": [
+            918,
+            554,
+            925,
+            577
+          ],
+          "min": 202,
+          "max": 255,
+          "seed": [
+            920,
+            554
+          ]
+        },
+        {
+          "pixels": 66,
+          "bounds": [
+            177,
+            426,
+            189,
+            438
+          ],
+          "min": 112,
+          "max": 252,
+          "seed": [
+            184,
+            426
+          ]
+        },
+        {
+          "pixels": 59,
+          "bounds": [
+            134,
+            507,
+            148,
+            514
+          ],
+          "min": 213,
+          "max": 255,
+          "seed": [
+            146,
+            507
+          ]
+        },
+        {
+          "pixels": 58,
+          "bounds": [
+            860,
+            1344,
+            880,
+            1368
+          ],
+          "min": 105,
+          "max": 255,
+          "seed": [
+            880,
+            1344
+          ]
+        },
+        {
+          "pixels": 56,
+          "bounds": [
+            285,
+            343,
+            295,
+            359
+          ],
+          "min": 123,
+          "max": 252,
+          "seed": [
+            289,
+            343
+          ]
+        },
+        {
+          "pixels": 55,
+          "bounds": [
+            325,
+            269,
+            332,
+            287
+          ],
+          "min": 104,
+          "max": 253,
+          "seed": [
+            326,
+            269
+          ]
+        },
+        {
+          "pixels": 46,
+          "bounds": [
+            340,
+            471,
+            361,
+            477
+          ],
+          "min": 245,
+          "max": 255,
+          "seed": [
+            359,
+            471
+          ]
+        }
+      ],
+      "method": "edge-connected neutral checker removal; manual reviewed hair/gap seeds; one-pixel edge alpha cleanup; no crop"
+    },
+    {
+      "name": "family-message",
+      "kind": "character",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-eb2cd5a0-b013-4890-909d-c6074be85c89.png",
+      "original": "docs/flood-rooftop/originals/family-message.png",
+      "sourceSHA256": "76da849dbfde3eab15f9c00e62e6ecd88122625b8108603dde295bf60ce3873f",
+      "output": "public/levels/flood-rooftop-v2/family-message.webp",
+      "outputSHA256": "eeff0e0ea19ec023ce879787d2d4acb30a69948be5c61cb993776648b1f852fc",
+      "originalCanvas": [
+        1024,
+        1536
+      ],
+      "outputCanvas": [
+        1024,
+        1536
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 947074,
+      "transparentFraction": 0.6021334330240885,
+      "partialAlphaPixels": 5615,
+      "visibleBounds": [
+        209,
+        22,
+        871,
+        1497
+      ],
+      "crop": null,
+      "manualBackgroundSeeds": [
+        [
+          597,
+          558
+        ],
+        [
+          275,
+          218
+        ],
+        [
+          278,
+          136
+        ],
+        [
+          558,
+          206
+        ],
+        [
+          278,
+          273
+        ],
+        [
+          548,
+          251
+        ]
+      ],
+      "reviewedSilhouettePath": null,
+      "sharedShellSource": null,
+      "isolatedPixelsRemoved": 2,
+      "coloredFringePixelsRemoved": 0,
+      "remainingNeutralComponents": [
+        {
+          "pixels": 780,
+          "bounds": [
+            820,
+            1396,
+            861,
+            1443
+          ],
+          "min": 98,
+          "max": 187,
+          "seed": [
+            860,
+            1396
+          ]
+        },
+        {
+          "pixels": 628,
+          "bounds": [
+            645,
+            1400,
+            677,
+            1437
+          ],
+          "min": 106,
+          "max": 248,
+          "seed": [
+            656,
+            1400
+          ]
+        },
+        {
+          "pixels": 524,
+          "bounds": [
+            809,
+            1429,
+            840,
+            1467
+          ],
+          "min": 108,
+          "max": 235,
+          "seed": [
+            816,
+            1429
+          ]
+        },
+        {
+          "pixels": 263,
+          "bounds": [
+            666,
+            500,
+            692,
+            521
+          ],
+          "min": 151,
+          "max": 255,
+          "seed": [
+            682,
+            500
+          ]
+        },
+        {
+          "pixels": 189,
+          "bounds": [
+            430,
+            192,
+            450,
+            216
+          ],
+          "min": 155,
+          "max": 255,
+          "seed": [
+            430,
+            192
+          ]
+        },
+        {
+          "pixels": 133,
+          "bounds": [
+            334,
+            206,
+            350,
+            229
+          ],
+          "min": 128,
+          "max": 255,
+          "seed": [
+            343,
+            206
+          ]
+        },
+        {
+          "pixels": 112,
+          "bounds": [
+            329,
+            358,
+            382,
+            363
+          ],
+          "min": 116,
+          "max": 220,
+          "seed": [
+            378,
+            358
+          ]
+        },
+        {
+          "pixels": 87,
+          "bounds": [
+            610,
+            472,
+            624,
+            499
+          ],
+          "min": 122,
+          "max": 255,
+          "seed": [
+            622,
+            472
+          ]
+        },
+        {
+          "pixels": 65,
+          "bounds": [
+            780,
+            1417,
+            801,
+            1421
+          ],
+          "min": 249,
+          "max": 255,
+          "seed": [
+            785,
+            1417
+          ]
+        },
+        {
+          "pixels": 57,
+          "bounds": [
+            462,
+            1286,
+            497,
+            1292
+          ],
+          "min": 253,
+          "max": 255,
+          "seed": [
+            462,
+            1286
+          ]
+        },
+        {
+          "pixels": 52,
+          "bounds": [
+            672,
+            1391,
+            688,
+            1406
+          ],
+          "min": 113,
+          "max": 255,
+          "seed": [
+            672,
+            1391
+          ]
+        }
+      ],
+      "method": "edge-connected neutral checker removal; manual reviewed hair/gap seeds; one-pixel edge alpha cleanup; no crop"
+    },
+    {
+      "name": "roof-background",
+      "kind": "background",
+      "originalCanvas": [
+        941,
+        1672
+      ],
+      "outputCanvas": [
+        941,
+        1672
+      ],
+      "hasAlpha": false,
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-d33de743-cffe-4fef-b1c6-54c52a3f11b5.png",
+      "original": "docs/flood-rooftop/originals/roof-background.png",
+      "sourceSHA256": "f914fdd2fd5facc52b4b937581134663067ea3ad885167764e0dc6dc28269abc",
+      "output": "public/levels/flood-rooftop-v2/roof-background.webp",
+      "outputSHA256": "083c0863d6d682c6d8ac9fd3f3be5e69764a4cea519718490a51b60e0ebc4cf1",
+      "method": "full original canvas; no crop, stretching or repaint"
+    },
+    {
+      "name": "wood-panel",
+      "kind": "prop",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-6ecd47a2-432b-42ea-afdf-85d87826b726.png",
+      "original": "docs/flood-rooftop/originals/wood-panel.png",
+      "sourceSHA256": "2632543cf1b93fd14b2500cc5c48851a501cf163a7fade77475880b592de6b8f",
+      "output": "public/levels/flood-rooftop-v2/wood-panel.webp",
+      "outputSHA256": "17371f3be010af5153258ea386c1f1b54aebe8e2f260a6d9df56f546a3117663",
+      "originalCanvas": [
+        930,
+        1691
+      ],
+      "outputCanvas": [
+        518,
+        1244
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 36700,
+      "transparentFraction": 0.05695291065065985,
+      "partialAlphaPixels": 606693,
+      "visibleBounds": [
+        8,
+        8,
+        509,
+        1235
+      ],
+      "crop": {
+        "left": 214,
+        "top": 230,
+        "width": 518,
+        "height": 1244,
+        "margin": 8
+      },
+      "manualBackgroundSeeds": [],
+      "reviewedSilhouettePath": null,
+      "sharedShellSource": null,
+      "isolatedPixelsRemoved": 0,
+      "coloredFringePixelsRemoved": 9405,
+      "remainingNeutralComponents": [],
+      "method": "preserve source alpha; saturated fringe cleanup; optional reviewed silhouette to remove baked glow; optional identical shell / generated state-interior compositing; transparent bounds crop with 8px margin"
+    },
+    {
+      "name": "foam",
+      "kind": "prop",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-f70ffb78-fd1a-42c1-bc08-b531840ad4e1.png",
+      "original": "docs/flood-rooftop/originals/foam.png",
+      "sourceSHA256": "dfd9e869582de9b817664dc256a99048ea9b273b7e3fd7e06ac82297fc8173ea",
+      "output": "public/levels/flood-rooftop-v2/foam.webp",
+      "outputSHA256": "2ce89a76cff9de09477d7ec777be0e2e0cbf58df7e182e151bfc214143fbbd1b",
+      "originalCanvas": [
+        1024,
+        1536
+      ],
+      "outputCanvas": [
+        722,
+        1437
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 49865,
+      "transparentFraction": 0.04806200205491203,
+      "partialAlphaPixels": 987649,
+      "visibleBounds": [
+        8,
+        8,
+        713,
+        1428
+      ],
+      "crop": {
+        "left": 156,
+        "top": 56,
+        "width": 722,
+        "height": 1437,
+        "margin": 8
+      },
+      "manualBackgroundSeeds": [],
+      "reviewedSilhouettePath": "M235 64 L833 68 Q866 68 870 97 L870 1419 Q870 1438 850 1455 L818 1480 Q813 1485 796 1484 L184 1450 Q164 1448 164 1431 L164 119 Q164 105 174 96 L221 68 Q228 64 235 64Z",
+      "sharedShellSource": null,
+      "isolatedPixelsRemoved": 0,
+      "coloredFringePixelsRemoved": 21965,
+      "remainingNeutralComponents": [],
+      "method": "preserve source alpha; saturated fringe cleanup; optional reviewed silhouette to remove baked glow; optional identical shell / generated state-interior compositing; transparent bounds crop with 8px margin"
+    },
+    {
+      "name": "float-aid",
+      "kind": "prop",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-06f44529-ab45-417f-9e20-5a1e14ae48d2.png",
+      "original": "docs/flood-rooftop/originals/float-aid.png",
+      "sourceSHA256": "15c094b32eebaeb46841e17024fe2d2cceb9b517ffa6926029a3afe831f25f6b",
+      "output": "public/levels/flood-rooftop-v2/float-aid.webp",
+      "outputSHA256": "c1bc5f3fda12e1b56a844368a488ddfaa2a4c9e3208ca21d356b0e55052e29e3",
+      "originalCanvas": [
+        931,
+        1690
+      ],
+      "outputCanvas": [
+        711,
+        1487
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 124038,
+      "transparentFraction": 0.1173205757918841,
+      "partialAlphaPixels": 931846,
+      "visibleBounds": [
+        8,
+        8,
+        702,
+        1478
+      ],
+      "crop": {
+        "left": 111,
+        "top": 102,
+        "width": 711,
+        "height": 1487,
+        "margin": 8
+      },
+      "manualBackgroundSeeds": [],
+      "reviewedSilhouettePath": null,
+      "sharedShellSource": null,
+      "isolatedPixelsRemoved": 0,
+      "coloredFringePixelsRemoved": 11315,
+      "remainingNeutralComponents": [],
+      "method": "preserve source alpha; saturated fringe cleanup; optional reviewed silhouette to remove baked glow; optional identical shell / generated state-interior compositing; transparent bounds crop with 8px margin"
+    },
+    {
+      "name": "breaker",
+      "kind": "prop",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-6490817f-b676-4bd9-8111-3fd3c23ef403.png",
+      "original": "docs/flood-rooftop/originals/breaker.png",
+      "sourceSHA256": "25fbe3633f495ffb4693921e9181ed2e4e7b064d49fb8ec11c99acebad440010",
+      "output": "public/levels/flood-rooftop-v2/breaker.webp",
+      "outputSHA256": "3745e96191c19c3aa3c60ccec1b6d3d72f65b340ccfd35d596392d87d9813391",
+      "originalCanvas": [
+        1024,
+        1536
+      ],
+      "outputCanvas": [
+        749,
+        1271
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 40313,
+      "transparentFraction": 0.04234652234975771,
+      "partialAlphaPixels": 911666,
+      "visibleBounds": [
+        8,
+        8,
+        740,
+        1262
+      ],
+      "crop": {
+        "left": 140,
+        "top": 139,
+        "width": 749,
+        "height": 1271,
+        "margin": 8
+      },
+      "manualBackgroundSeeds": [],
+      "reviewedSilhouettePath": "M226 148 L800 148 Q824 147 844 169 L868 192 Q881 205 881 229 L881 1321 Q881 1355 858 1379 L842 1395 Q834 1402 814 1402 L212 1402 Q188 1400 170 1378 L154 1358 Q149 1350 149 1330 L149 228 Q148 210 160 195 L188 166 Q207 148 226 148Z",
+      "sharedShellSource": null,
+      "isolatedPixelsRemoved": 0,
+      "coloredFringePixelsRemoved": 13595,
+      "remainingNeutralComponents": [],
+      "method": "preserve source alpha; saturated fringe cleanup; optional reviewed silhouette to remove baked glow; optional identical shell / generated state-interior compositing; transparent bounds crop with 8px margin"
+    },
+    {
+      "name": "flood-failure",
+      "kind": "background",
+      "originalCanvas": [
+        941,
+        1672
+      ],
+      "outputCanvas": [
+        941,
+        1672
+      ],
+      "hasAlpha": false,
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-932e7f8f-4c8a-41c6-8f44-6ba99f6349b9.png",
+      "original": "docs/flood-rooftop/originals/flood-failure.png",
+      "sourceSHA256": "5ebfaa338f596b4042c0d911d11b6213811400251495a30c55cd41870eee2154",
+      "output": "public/levels/flood-rooftop-v2/flood-failure.webp",
+      "outputSHA256": "71d87014ef5f176a8c5ba827d84c1c213712f0a28ef56c6d58f51fcae5f810df",
+      "method": "full original canvas; no crop, stretching or repaint"
+    },
+    {
+      "name": "breaker-off",
+      "kind": "prop",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-096be55d-858c-4fea-a609-30f676f5bfb0.png",
+      "original": "docs/flood-rooftop/originals/breaker-off.png",
+      "sourceSHA256": "caaa9032e38a2fb1ab75bdcd2b664745e590b7e748e6f47928c0f09c09c03284",
+      "output": "public/levels/flood-rooftop-v2/breaker-off.webp",
+      "outputSHA256": "b9cee3bfdcd79d52e0e376e7e8e30373c5a427a756ffde27f454f0e12b100b4b",
+      "originalCanvas": [
+        1024,
+        1536
+      ],
+      "outputCanvas": [
+        749,
+        1271
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 40313,
+      "transparentFraction": 0.04234652234975771,
+      "partialAlphaPixels": 911666,
+      "visibleBounds": [
+        8,
+        8,
+        740,
+        1262
+      ],
+      "crop": {
+        "left": 140,
+        "top": 139,
+        "width": 749,
+        "height": 1271,
+        "margin": 8
+      },
+      "manualBackgroundSeeds": [],
+      "reviewedSilhouettePath": "M226 148 L800 148 Q824 147 844 169 L868 192 Q881 205 881 229 L881 1321 Q881 1355 858 1379 L842 1395 Q834 1402 814 1402 L212 1402 Q188 1400 170 1378 L154 1358 Q149 1350 149 1330 L149 228 Q148 210 160 195 L188 166 Q207 148 226 148Z",
+      "sharedShellSource": "exec-6490817f-b676-4bd9-8111-3fd3c23ef403.png",
+      "isolatedPixelsRemoved": 0,
+      "coloredFringePixelsRemoved": 13595,
+      "remainingNeutralComponents": [],
+      "method": "preserve source alpha; saturated fringe cleanup; optional reviewed silhouette to remove baked glow; optional identical shell / generated state-interior compositing; transparent bounds crop with 8px margin"
+    },
+    {
+      "name": "electric-failure",
+      "kind": "background",
+      "originalCanvas": [
+        941,
+        1672
+      ],
+      "outputCanvas": [
+        941,
+        1672
+      ],
+      "hasAlpha": false,
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-2fa11359-b9d4-46d8-8300-de10721358b9.png",
+      "original": "docs/flood-rooftop/originals/electric-failure.png",
+      "sourceSHA256": "9d9443ad133b567781bbcee85c609f59b1fb01f58a019aeca30947dc2fb09d02",
+      "output": "public/levels/flood-rooftop-v2/electric-failure.webp",
+      "outputSHA256": "fd1a70994566199dbc2ad28391ab140e51a407d67b07a62abab62e106d013740",
+      "method": "full original canvas; no crop, stretching or repaint"
+    },
+    {
+      "name": "family-roof",
+      "kind": "character",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-4bb17519-43c6-433f-98fe-6732b814445a.png",
+      "original": "docs/flood-rooftop/originals/family-roof.png",
+      "sourceSHA256": "79b48a57ee4933e439d17169268e20f2d7985a0b50adbabb582b16923b5ba18c",
+      "output": "public/levels/flood-rooftop-v2/family-roof.webp",
+      "outputSHA256": "5872d3da285431be9193f70a6366aaf6518994724f73c1a130ea0d6020a6b9a2",
+      "originalCanvas": [
+        1024,
+        1536
+      ],
+      "outputCanvas": [
+        1024,
+        1536
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 930481,
+      "transparentFraction": 0.5915838877360026,
+      "partialAlphaPixels": 7414,
+      "visibleBounds": [
+        104,
+        62,
+        963,
+        1451
+      ],
+      "crop": null,
+      "manualBackgroundSeeds": [
+        [
+          608,
+          237
+        ],
+        [
+          321,
+          178
+        ],
+        [
+          605,
+          129
+        ],
+        [
+          316,
+          241
+        ],
+        [
+          371,
+          131
+        ],
+        [
+          511,
+          66
+        ],
+        [
+          276,
+          246
+        ],
+        [
+          552,
+          83
+        ],
+        [
+          922,
+          988
+        ]
+      ],
+      "reviewedSilhouettePath": null,
+      "sharedShellSource": null,
+      "isolatedPixelsRemoved": 13,
+      "coloredFringePixelsRemoved": 0,
+      "remainingNeutralComponents": [
+        {
+          "pixels": 377,
+          "bounds": [
+            793,
+            539,
+            821,
+            567
+          ],
+          "min": 137,
+          "max": 255,
+          "seed": [
+            808,
+            539
+          ]
+        },
+        {
+          "pixels": 365,
+          "bounds": [
+            864,
+            1372,
+            902,
+            1397
+          ],
+          "min": 100,
+          "max": 255,
+          "seed": [
+            894,
+            1372
+          ]
+        },
+        {
+          "pixels": 329,
+          "bounds": [
+            483,
+            206,
+            508,
+            231
+          ],
+          "min": 131,
+          "max": 255,
+          "seed": [
+            501,
+            206
+          ]
+        },
+        {
+          "pixels": 227,
+          "bounds": [
+            497,
+            1257,
+            587,
+            1276
+          ],
+          "min": 247,
+          "max": 255,
+          "seed": [
+            585,
+            1257
+          ]
+        },
+        {
+          "pixels": 204,
+          "bounds": [
+            667,
+            1360,
+            693,
+            1386
+          ],
+          "min": 100,
+          "max": 255,
+          "seed": [
+            688,
+            1360
+          ]
+        },
+        {
+          "pixels": 188,
+          "bounds": [
+            230,
+            1266,
+            309,
+            1278
+          ],
+          "min": 252,
+          "max": 255,
+          "seed": [
+            232,
+            1266
+          ]
+        },
+        {
+          "pixels": 119,
+          "bounds": [
+            658,
+            1412,
+            685,
+            1423
+          ],
+          "min": 113,
+          "max": 255,
+          "seed": [
+            659,
+            1412
+          ]
+        },
+        {
+          "pixels": 117,
+          "bounds": [
+            883,
+            1413,
+            918,
+            1426
+          ],
+          "min": 118,
+          "max": 255,
+          "seed": [
+            883,
+            1413
+          ]
+        },
+        {
+          "pixels": 104,
+          "bounds": [
+            726,
+            1371,
+            739,
+            1385
+          ],
+          "min": 101,
+          "max": 195,
+          "seed": [
+            726,
+            1371
+          ]
+        },
+        {
+          "pixels": 95,
+          "bounds": [
+            560,
+            203,
+            568,
+            226
+          ],
+          "min": 197,
+          "max": 255,
+          "seed": [
+            565,
+            203
+          ]
+        },
+        {
+          "pixels": 85,
+          "bounds": [
+            864,
+            529,
+            876,
+            553
+          ],
+          "min": 125,
+          "max": 255,
+          "seed": [
+            866,
+            529
+          ]
+        },
+        {
+          "pixels": 76,
+          "bounds": [
+            726,
+            1416,
+            747,
+            1424
+          ],
+          "min": 119,
+          "max": 255,
+          "seed": [
+            733,
+            1416
+          ]
+        },
+        {
+          "pixels": 74,
+          "bounds": [
+            682,
+            1341,
+            702,
+            1354
+          ],
+          "min": 243,
+          "max": 255,
+          "seed": [
+            693,
+            1341
+          ]
+        },
+        {
+          "pixels": 68,
+          "bounds": [
+            715,
+            1343,
+            733,
+            1354
+          ],
+          "min": 246,
+          "max": 255,
+          "seed": [
+            724,
+            1343
+          ]
+        },
+        {
+          "pixels": 68,
+          "bounds": [
+            906,
+            1373,
+            929,
+            1377
+          ],
+          "min": 246,
+          "max": 255,
+          "seed": [
+            917,
+            1373
+          ]
+        },
+        {
+          "pixels": 64,
+          "bounds": [
+            210,
+            508,
+            220,
+            522
+          ],
+          "min": 113,
+          "max": 255,
+          "seed": [
+            216,
+            508
+          ]
+        },
+        {
+          "pixels": 56,
+          "bounds": [
+            899,
+            1360,
+            921,
+            1365
+          ],
+          "min": 250,
+          "max": 255,
+          "seed": [
+            905,
+            1360
+          ]
+        },
+        {
+          "pixels": 53,
+          "bounds": [
+            216,
+            1253,
+            229,
+            1266
+          ],
+          "min": 245,
+          "max": 255,
+          "seed": [
+            217,
+            1253
+          ]
+        },
+        {
+          "pixels": 53,
+          "bounds": [
+            480,
+            1262,
+            495,
+            1274
+          ],
+          "min": 249,
+          "max": 255,
+          "seed": [
+            481,
+            1262
+          ]
+        },
+        {
+          "pixels": 46,
+          "bounds": [
+            697,
+            1361,
+            718,
+            1365
+          ],
+          "min": 252,
+          "max": 255,
+          "seed": [
+            703,
+            1361
+          ]
+        },
+        {
+          "pixels": 46,
+          "bounds": [
+            925,
+            1397,
+            946,
+            1404
+          ],
+          "min": 123,
+          "max": 254,
+          "seed": [
+            943,
+            1397
+          ]
+        }
+      ],
+      "method": "edge-connected neutral checker removal; manual reviewed hair/gap seeds; one-pixel edge alpha cleanup; no crop"
+    }
+  ]
+}

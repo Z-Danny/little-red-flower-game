@@ -1,0 +1,20 @@
+{
+  "targets": {
+    "covered_phone": [
+      64,
+      357
+    ],
+    "damaged_lead": [
+      243,
+      1090
+    ],
+    "swollen_bank": [
+      619,
+      701
+    ]
+  },
+  "background": [
+    400,
+    1150
+  ]
+}

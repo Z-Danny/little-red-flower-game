@@ -131,10 +131,11 @@
   ],
   "risk": {
     "mode": "elapsed",
-    "seconds": 90,
+    "seconds": 50,
     "initial": 0,
     "warningAt": 65,
-    "peakFeedback": "本关没有灾害倒数，请继续练习。"
+    "peakFeedback": "时间到了，本次未能收齐全部物件。再挑战一次吧。",
+    "timeout": "fail"
   },
   "completion": {
     "requires": [

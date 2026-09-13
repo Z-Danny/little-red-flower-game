@@ -1,0 +1,9 @@
+{
+  "compiler": "prepare-hazard-batch.py",
+  "version": 1,
+  "id": "clear-corridor-check-v2",
+  "sourceSha256": "e25a99e81d4c036dd57bebf08dad9d8eaecb0187ec6c007dc48a9cda9c26392e",
+  "specPath": "art-source/hazard-batch-v2/H06/production.json",
+  "skinSha256": "4531401417d007beaaa05e01f219f659ec6f63e7fedf44e9c2d6e96c3c4afd1c",
+  "createdAt": "2026-09-10T01:44:53.944782+00:00"
+}

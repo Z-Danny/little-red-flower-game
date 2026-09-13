@@ -1,0 +1,38 @@
+{
+  "feedbackVersion": 2,
+  "id": "storm-street-check-v2",
+  "title": "风雨中的街口",
+  "order": 18,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "flooded_underpass",
+      "name": "积水的地下通道",
+      "lesson": "积水的地下通道不要进入。"
+    },
+    {
+      "id": "wet_power_box",
+      "name": "积水中的配电箱",
+      "lesson": "积水电力设施要远离。"
+    },
+    {
+      "id": "missing_cover",
+      "name": "缺失井盖的检查井",
+      "lesson": "缺失井盖，不能靠近。"
+    },
+    {
+      "id": "loose_sign",
+      "name": "连接脱开的广告牌",
+      "lesson": "大风天远离松动广告牌。"
+    },
+    {
+      "id": "leaning_fence",
+      "name": "倾斜的轻质围挡",
+      "lesson": "大风天要远离不稳围挡。"
+    }
+  ],
+  "summary": "暴雨大风时远离积水地下通道、受淹电力设施、缺失井盖、松动广告牌和不稳围挡；不要涉水靠近或自行处理。",
+  "timeout": "fail"
+}

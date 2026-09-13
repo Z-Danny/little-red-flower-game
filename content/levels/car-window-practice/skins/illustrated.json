@@ -1,0 +1,937 @@
+{
+  "schemaVersion": 1,
+  "id": "illustrated",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "background": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/background.webp",
+      "alpha": false
+    },
+    "adult-inside-initial": {
+      "src": "/levels/character-continuity-v3/car-window-practice/adult-inside-initial.webp",
+      "alpha": true
+    },
+    "belt-initial": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/belt-initial.webp",
+      "alpha": true
+    },
+    "buckle-initial": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/buckle-initial.webp",
+      "alpha": true
+    },
+    "window-button-initial": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/window-button-initial.webp",
+      "alpha": true
+    },
+    "bag-initial": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/bag-initial.webp",
+      "alpha": true
+    },
+    "glass-initial": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/glass-initial.webp",
+      "alpha": true
+    },
+    "seat-initial": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/seat-initial.webp",
+      "alpha": true
+    },
+    "door-foreground": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/door-foreground.webp",
+      "alpha": true
+    },
+    "outside": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/outside.webp",
+      "alpha": false
+    },
+    "adult-afloat": {
+      "src": "/levels/character-continuity-v3/car-window-practice/adult-afloat.webp",
+      "alpha": true
+    },
+    "adult-gripping": {
+      "src": "/levels/character-continuity-v3/car-window-practice/adult-gripping.webp",
+      "alpha": true
+    },
+    "adult-signal": {
+      "src": "/levels/character-continuity-v3/car-window-practice/adult-signal.webp",
+      "alpha": true
+    },
+    "adult-buoy": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/adult-buoy.webp",
+      "alpha": true
+    },
+    "buoy-front": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/buoy-front.webp",
+      "alpha": true
+    },
+    "grip-hands": {
+      "src": "/levels/character-continuity-v3/car-window-practice/grip-hands.webp",
+      "alpha": true
+    },
+    "signal-hand": {
+      "src": "/levels/character-continuity-v3/car-window-practice/signal-hand.webp",
+      "alpha": true
+    },
+    "bag-outside": {
+      "src": "/levels/reference-storybook-v2/car-window-practice/bag-outside.webp",
+      "alpha": true
+    }
+  },
+  "background": "background",
+  "poses": {
+    "adult-inside": {
+      "asset": "adult-inside-initial",
+      "x": 55.090329436769366,
+      "y": 211.51965993623799,
+      "w": 664.9096705632306,
+      "h": 683.2731137088205,
+      "depth": 30
+    },
+    "belt": {
+      "asset": "belt-initial",
+      "x": 385.62629202975563,
+      "y": 440.16876684378315,
+      "w": 238.3567268862912,
+      "h": 302.82541976620615,
+      "depth": 45,
+      "blockInput": false,
+      "pivot": {
+        "x": 0.94,
+        "y": 0.945
+      },
+      "rotation": -0.21
+    },
+    "buckle": {
+      "asset": "buckle-initial",
+      "x": 596.0467587672689,
+      "y": 707.3326248671625,
+      "w": 79.57492029755579,
+      "h": 81.87035069075452,
+      "depth": 50
+    },
+    "window-button": {
+      "asset": "window-button-initial",
+      "x": 9,
+      "y": 680,
+      "w": 132,
+      "h": 79,
+      "depth": 50
+    },
+    "bag": {
+      "asset": "bag-initial",
+      "x": 0,
+      "y": 921.5727948990435,
+      "w": 312.1785334750266,
+      "h": 293.0499468650372,
+      "depth": 30,
+      "blockInput": false
+    },
+    "glass": {
+      "asset": "glass-initial",
+      "x": 0,
+      "y": 52.369819341126416,
+      "w": 298.4059511158342,
+      "h": 464.442082890542,
+      "depth": 20,
+      "blockInput": false
+    },
+    "wait-in-car": {
+      "asset": "seat-initial",
+      "x": 0,
+      "y": 1040.510095642933,
+      "w": 669.5005313496281,
+      "h": 239.48990435706696,
+      "depth": 40
+    },
+    "door-foreground": {
+      "asset": "door-foreground",
+      "x": 0,
+      "y": 460.19128586609986,
+      "w": 312.1785334750266,
+      "h": 374.9202975557917,
+      "depth": 25,
+      "blockInput": false
+    },
+    "outside-scene": {
+      "asset": "outside",
+      "x": 0,
+      "y": 0.34,
+      "w": 720,
+      "h": 1279.32,
+      "depth": -20,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "adult-afloat": {
+      "asset": "adult-afloat",
+      "x": 102,
+      "y": 575,
+      "w": 605,
+      "h": 470,
+      "depth": 40,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "lifebuoy": {
+      "asset": "adult-buoy",
+      "x": 428,
+      "y": 1060,
+      "w": 253,
+      "h": 198,
+      "depth": 30,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "buoy-front": {
+      "asset": "buoy-front",
+      "x": 226,
+      "y": 835,
+      "w": 320,
+      "h": 250,
+      "depth": 50,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "support-hand": {
+      "asset": "grip-hands",
+      "x": 102,
+      "y": 575,
+      "w": 605,
+      "h": 470,
+      "depth": 55,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "return-bag": {
+      "asset": "bag-outside",
+      "x": 39.02231668437832,
+      "y": 350.7757066950053,
+      "w": 125.48352816153029,
+      "h": 77.27948990435706,
+      "depth": 10,
+      "opacity": 0,
+      "blockInput": false
+    }
+  },
+  "zones": {
+    "window-exit": {
+      "x": 26,
+      "y": 143,
+      "w": 273,
+      "h": 336
+    },
+    "buoy-grip": {
+      "x": 241,
+      "y": 903,
+      "w": 333,
+      "h": 176
+    }
+  },
+  "zoneConditions": {
+    "window-exit": {
+      "not": [
+        "out-of-car"
+      ]
+    },
+    "buoy-grip": {
+      "all": [
+        "out-of-car"
+      ]
+    }
+  },
+  "zoneLabels": {
+    "window-exit": "可用侧窗开口",
+    "buoy-grip": "前臂可抓握位置"
+  },
+  "states": [
+    {
+      "object": "belt",
+      "when": {
+        "all": [
+          "belt-released"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "glass",
+      "when": {
+        "all": [
+          "window-open"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "adult-inside",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "belt",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "buckle",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "window-button",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "bag",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "glass",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "wait-in-car",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "door-foreground",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "outside-scene",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "adult-afloat",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 1,
+        "blockInput": true
+      }
+    },
+    {
+      "object": "lifebuoy",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 1,
+        "blockInput": true
+      }
+    },
+    {
+      "object": "return-bag",
+      "when": {
+        "all": [
+          "out-of-car"
+        ]
+      },
+      "pose": {
+        "opacity": 1,
+        "blockInput": true
+      }
+    },
+    {
+      "object": "adult-afloat",
+      "when": {
+        "all": [
+          "buoy-held"
+        ]
+      },
+      "pose": {
+        "asset": "adult-gripping"
+      }
+    },
+    {
+      "object": "lifebuoy",
+      "when": {
+        "all": [
+          "buoy-held"
+        ]
+      },
+      "pose": {
+        "x": 226,
+        "y": 835,
+        "w": 320,
+        "h": 250,
+        "depth": 30,
+        "opacity": 1
+      }
+    },
+    {
+      "object": "buoy-front",
+      "when": {
+        "all": [
+          "buoy-held"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "adult-afloat",
+      "when": {
+        "all": [
+          "afloat-signalling"
+        ]
+      },
+      "pose": {
+        "asset": "adult-signal",
+        "rotation": 0
+      }
+    },
+    {
+      "object": "support-hand",
+      "when": {
+        "all": [
+          "buoy-held"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "support-hand",
+      "when": {
+        "all": [
+          "afloat-signalling"
+        ]
+      },
+      "pose": {
+        "asset": "signal-hand",
+        "rotation": 0
+      }
+    }
+  ],
+  "animations": {
+    "release-belt": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "buckle",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "object": "belt",
+          "keyframes": [
+            {
+              "at": 0.6,
+              "x": 350.8412920297556,
+              "y": 362.86876684378313,
+              "w": 171.61684335812967,
+              "h": 218.03430223166845,
+              "opacity": 0.7
+            },
+            {
+              "at": 1,
+              "x": 339.2462920297556,
+              "y": 324.21876684378316,
+              "w": 143.01403613177473,
+              "h": 181.6952518597237,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "open-window": {
+      "durationMs": 800,
+      "tracks": [
+        {
+          "object": "window-button",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "object": "glass",
+          "keyframes": [
+            {
+              "at": 0.92,
+              "y": 461.07885228480336
+            },
+            {
+              "at": 1,
+              "y": 516.8119022316685,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "exit-window": {
+      "durationMs": 1300,
+      "tracks": [
+        {
+          "object": "adult-inside",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.4,
+              "x": 42,
+              "y": 195,
+              "w": 360,
+              "h": 369
+            },
+            {
+              "at": 0.7,
+              "x": 37,
+              "y": 151,
+              "w": 299,
+              "h": 307,
+              "opacity": 0.3
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "outside-scene",
+          "keyframes": [
+            {
+              "at": 0.72,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "adult-afloat",
+          "keyframes": [
+            {
+              "at": 0.8,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "lifebuoy",
+          "keyframes": [
+            {
+              "at": 0.9,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "grip-buoy": {
+      "durationMs": 900,
+      "tracks": [
+        {
+          "object": "lifebuoy",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.55,
+              "x": 226,
+              "y": 835,
+              "w": 320,
+              "h": 250,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "x": 226,
+              "y": 835,
+              "w": 320,
+              "h": 250,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "adult-afloat",
+          "keyframes": [
+            {
+              "at": 0.55,
+              "asset": "adult-gripping"
+            },
+            {
+              "at": 1,
+              "asset": "adult-gripping"
+            }
+          ]
+        },
+        {
+          "object": "buoy-front",
+          "keyframes": [
+            {
+              "at": 0.55,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "support-hand",
+          "keyframes": [
+            {
+              "at": 0.55,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "signal-afloat": {
+      "durationMs": 900,
+      "tracks": [
+        {
+          "object": "adult-afloat",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "asset": "adult-signal",
+              "rotation": -0.008
+            },
+            {
+              "at": 0.72,
+              "rotation": 0.008
+            },
+            {
+              "at": 1,
+              "asset": "adult-signal",
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "object": "support-hand",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "asset": "signal-hand",
+              "rotation": -0.008
+            },
+            {
+              "at": 0.72,
+              "rotation": 0.008
+            },
+            {
+              "at": 1,
+              "asset": "signal-hand",
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-exit": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "adult-inside",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-signal": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "adult-afloat",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "wait-car-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "wait-in-car",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "return-bag-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "return-bag",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.015
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.01
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [],
+  "presentation": {
+    "durationMs": 60000,
+    "effects": [
+      {
+        "kind": "water",
+        "box": {
+          "x": 0,
+          "y": 969,
+          "w": 720,
+          "h": 311
+        },
+        "depth": 18,
+        "strength": 0.9,
+        "color": "#5aa2a4",
+        "when": {
+          "not": [
+            "out-of-car"
+          ]
+        }
+      },
+      {
+        "kind": "water",
+        "box": {
+          "x": 0,
+          "y": 1048,
+          "w": 720,
+          "h": 232
+        },
+        "depth": 44,
+        "strength": 0.6,
+        "color": "#91c8c4",
+        "when": {
+          "all": [
+            "out-of-car"
+          ]
+        },
+        "reductions": [
+          {
+            "when": {
+              "all": [
+                "buoy-held"
+              ]
+            },
+            "factor": 0.6
+          }
+        ]
+      },
+      {
+        "kind": "light",
+        "box": {
+          "x": 450,
+          "y": 0,
+          "w": 270,
+          "h": 500
+        },
+        "depth": 0,
+        "strength": 0.25,
+        "color": "#f6edc4"
+      }
+    ],
+    "actors": [
+      {
+        "object": "adult-inside",
+        "amplitude": 0.18,
+        "until": [
+          "out-of-car"
+        ]
+      },
+      {
+        "object": "adult-afloat",
+        "amplitude": 0.18,
+        "until": [
+          "afloat-signalling"
+        ]
+      }
+    ],
+    "audio": {
+      "theme": "water",
+      "cues": {
+        "pickup": "pickup",
+        "bounce": "bounce",
+        "danger": "impact",
+        "complete": "success",
+        "release-belt": "belt-click",
+        "open-window": "window-motor",
+        "exit-window": "exit-splash",
+        "grip-buoy": "buoy-contact",
+        "signal-afloat": "waiting-established",
+        "early-exit": "invalid-return",
+        "early-signal": "invalid-return",
+        "wait-car-error": "water-warning",
+        "return-bag-error": "water-warning"
+      },
+      "calmWhen": [
+        "afloat-signalling"
+      ]
+    }
+  }
+}

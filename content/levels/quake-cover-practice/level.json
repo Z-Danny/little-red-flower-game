@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 1,
+  "id": "quake-cover-practice",
+  "kind": "response",
+  "title": "地震室内避险",
+  "order": 23,
+  "location": "公寓客厅",
+  "description": "你就在结实木桌旁。强震中就近护头避险；震后时间片再联络。",
+  "safety": "情境训练，不是真实求救。现场条件不符或出现新险情时，应遵从当地应急与专业人员指引。",
+  "briefing": "情境训练｜你就在结实木桌旁。强震中就近护头避险；震后时间片再联络。",
+  "objects": [
+    {
+      "id": "adult-moving",
+      "label": "桌边成人",
+      "input": "drag",
+      "disabledWhen": [
+        "holding-cover"
+      ]
+    },
+    {
+      "id": "adult-holding",
+      "label": "护头抓牢的人物",
+      "input": "none"
+    },
+    {
+      "id": "self-check",
+      "label": "震后自查",
+      "input": "tap",
+      "disabledWhen": [
+        "self-checked"
+      ],
+      "stages": [
+        "after-quake"
+      ]
+    },
+    {
+      "id": "table-leg",
+      "label": "结实桌腿",
+      "input": "tap",
+      "disabledWhen": [
+        "holding-cover"
+      ]
+    },
+    {
+      "id": "radio",
+      "label": "电池收音机",
+      "input": "tap",
+      "disabledWhen": [
+        "guidance-checked"
+      ]
+    },
+    {
+      "id": "phone",
+      "label": "随身手机",
+      "input": "drag",
+      "disabledWhen": [
+        "family-informed"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "low-protected",
+      "label": "就近降低姿态、保护头颈",
+      "object": "adult-moving",
+      "showTarget": false
+    },
+    {
+      "id": "under-cover",
+      "label": "进入身边桌下",
+      "object": "adult-moving",
+      "showTarget": false
+    },
+    {
+      "id": "holding-cover",
+      "label": "抓牢桌腿并护头",
+      "object": "table-leg",
+      "showTarget": false
+    },
+    {
+      "id": "guidance-checked",
+      "label": "震后收听指引",
+      "object": "radio",
+      "showTarget": false
+    },
+    {
+      "id": "self-checked",
+      "label": "震后观察自身状况",
+      "object": "self-check",
+      "showTarget": false
+    },
+    {
+      "id": "family-informed",
+      "label": "报告当前位置与情况",
+      "object": "phone",
+      "showTarget": false
+    }
+  ],
+  "interactions": [
+    {
+      "id": "lower-and-protect",
+      "source": "adult-moving",
+      "mode": "drop",
+      "target": "nearby-cover-stance",
+      "unless": [
+        "low-protected"
+      ],
+      "grants": [
+        "low-protected"
+      ],
+      "outcome": "correct",
+      "animation": "lower-and-protect",
+      "feedback": "先稳住，保护头颈。"
+    },
+    {
+      "id": "enter-cover",
+      "source": "adult-moving",
+      "mode": "drop",
+      "target": "table-cover",
+      "requires": [
+        "low-protected"
+      ],
+      "unless": [
+        "under-cover"
+      ],
+      "grants": [
+        "under-cover"
+      ],
+      "outcome": "correct",
+      "animation": "enter-cover",
+      "feedback": "就近进入桌下，继续保护头颈。"
+    },
+    {
+      "id": "combined-cover",
+      "source": "adult-moving",
+      "mode": "drop",
+      "target": "table-cover",
+      "unless": [
+        "low-protected",
+        "under-cover"
+      ],
+      "grants": [
+        "low-protected",
+        "under-cover"
+      ],
+      "outcome": "correct",
+      "animation": "combined-cover",
+      "feedback": "降低姿态并就近入掩体。"
+    },
+    {
+      "id": "grip-cover",
+      "source": "table-leg",
+      "mode": "tap",
+      "requires": [
+        "under-cover"
+      ],
+      "grants": [
+        "holding-cover"
+      ],
+      "outcome": "correct",
+      "animation": "grip-cover",
+      "feedback": "抓牢桌腿，另一臂继续护头。"
+    },
+    {
+      "id": "check-guidance",
+      "source": "radio",
+      "mode": "tap",
+      "requires": [
+        "holding-cover"
+      ],
+      "stages": [
+        "after-quake"
+      ],
+      "grants": [
+        "guidance-checked"
+      ],
+      "outcome": "correct",
+      "animation": "check-guidance",
+      "feedback": "晃动已停，留意余震和疏散通知。"
+    },
+    {
+      "id": "check-self",
+      "source": "self-check",
+      "mode": "tap",
+      "requires": [
+        "holding-cover"
+      ],
+      "stages": [
+        "after-quake"
+      ],
+      "grants": [
+        "self-checked"
+      ],
+      "outcome": "correct",
+      "animation": "check-self",
+      "feedback": "本题人物清醒、能活动，未发现明显伤情；这不等于医学诊断。"
+    },
+    {
+      "id": "inform-family",
+      "source": "phone",
+      "mode": "drop",
+      "target": "message-zone",
+      "requires": [
+        "self-checked"
+      ],
+      "stages": [
+        "after-quake"
+      ],
+      "grants": [
+        "family-informed"
+      ],
+      "outcome": "correct",
+      "animation": "inform-family",
+      "feedback": "已模拟报告当前位置与当前情况。"
+    },
+    {
+      "id": "early-radio",
+      "source": "radio",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-radio",
+      "feedback": "先保护自己；震后时间片再收听。"
+    },
+    {
+      "id": "early-phone",
+      "source": "phone",
+      "mode": "drop",
+      "target": "message-zone",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-phone",
+      "feedback": "先保护自己，震后自查后再报告情况。"
+    },
+    {
+      "id": "early-grip",
+      "source": "table-leg",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-grip",
+      "feedback": "先就近进入桌下，再抓牢。"
+    },
+    {
+      "id": "window-error",
+      "source": "adult-moving",
+      "mode": "drop",
+      "target": "window-zone",
+      "unless": [
+        "holding-cover"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "window-error",
+      "feedback": "错误后果示意｜晃动时就近避险，别冲向门窗。"
+    },
+    {
+      "id": "rush-exit-error",
+      "source": "adult-moving",
+      "mode": "drop",
+      "target": "exit-zone",
+      "unless": [
+        "holding-cover"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "rush-exit-error",
+      "feedback": "错误后果示意｜晃动时就近避险，别冲向门窗。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 60,
+    "initial": 0,
+    "warningAt": 100,
+    "peakFeedback": "演出已达训练上限；仍可继续正确处置，不以等待时间判失败。"
+  },
+  "completion": {
+    "requires": [
+      "low-protected",
+      "under-cover",
+      "holding-cover",
+      "guidance-checked",
+      "self-checked",
+      "family-informed"
+    ],
+    "settleMs": 1200,
+    "observeMs": 4000,
+    "fixedStars": 3,
+    "summary": "已完成就近避险与震后联络训练",
+    "title": "已完成就近避险与震后联络训练",
+    "status": "训练完成；继续关注现场变化与专业指引。"
+  },
+  "stages": [
+    {
+      "id": "after-quake",
+      "requires": [
+        "holding-cover"
+      ],
+      "afterMs": 4000,
+      "feedback": "训练情境切换：稍后，晃动停止。留意余震与疏散通知。"
+    }
+  ]
+}

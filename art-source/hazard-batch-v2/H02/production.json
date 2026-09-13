@@ -1,0 +1,81 @@
+{
+  "id": "bedroom-night-check-v2",
+  "authorId": "H02",
+  "sourceSha256": "21442b1e147c0ff05445efd3b4e985062e66710eaa51589d6f8730429f2ce1ae",
+  "world": [
+    720,
+    1280
+  ],
+  "output": "public/levels/hazard-batch-v2/bedroom-night-check-v2",
+  "skin": "content/scenes/bedroom-night-check-v2/skin.json",
+  "targets": [
+    {
+      "id": "covered_phone",
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "damaged_lead",
+      "color": [
+        0,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "swollen_bank",
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "folded_blanket",
+      "color": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "covered_heater",
+      "color": [
+        255,
+        0,
+        255
+      ]
+    }
+  ],
+  "corrections": {
+    "targets": {
+      "folded_blanket": {
+        "excludePolygons": [
+          [[465,391],[493,386],[494,406],[489,405],[482,403],[475,407],[474,414],[465,414]],
+          [[491,406],[496,406],[496,434],[486,434],[486,429],[491,425]],
+          [[464,410],[474,410],[474,420],[480,424],[480,430],[464,431]]
+        ],
+        "reason": "逐像素放大核对，原候选把电热毯插头后的墙面插座面板涂黄。仅删面板，保留原画的毯体、控制器、所属线缆和实际插头，不新增蒙版。"
+      },
+      "covered_heater": {
+        "excludePolygons": [
+          [[670,1063],[684,1065],[689,1075],[689,1096],[678,1089],[663,1098],[663,1084],[669,1080]]
+        ],
+        "reason": "原候选取暖器插头上方的插座面板有品红误涂。按原画插头顶面的斜边裁除面板小块，不裁衣物、取暖器、真实插头与线。"
+      }
+    },
+    "characters": {}
+  },
+  "effects": {
+    "weatherPolygons": [],
+    "waterPolygons": [],
+    "skyPolygons": [],
+    "firePolygons": [],
+    "smokePolygons": [],
+    "fireSources": [],
+    "smokeDrift": 1
+  }
+}

@@ -1,0 +1,680 @@
+{
+  "schemaVersion": 1,
+  "id": "paper-gouache",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "background": {
+      "src": "/levels/reference-storybook-v2/fire-stairs-practice/background.webp",
+      "alpha": false
+    },
+    "corridor-open": {
+      "src": "/levels/reference-storybook-v2/fire-stairs-practice/corridor-open.webp",
+      "alpha": false
+    },
+    "corridor-closed": {
+      "src": "/levels/reference-storybook-v2/fire-stairs-practice/corridor-closed.webp",
+      "alpha": false
+    },
+    "outside": {
+      "src": "/levels/reference-storybook-v2/fire-stairs-practice/outside.webp",
+      "alpha": false
+    },
+    "side-table": {
+      "src": "/levels/reference-storybook-v2/fire-stairs-practice/side-table.webp",
+      "alpha": true
+    },
+    "family-initial": {
+      "src": "/levels/character-continuity-v3/fire-stairs-practice/family-initial.webp",
+      "alpha": true
+    },
+    "family-taking-phone": {
+      "src": "/levels/fire-stairs-refinement-v1/family-taking-phone.webp",
+      "alpha": true
+    },
+    "family-calling": {
+      "src": "/levels/fire-stairs-refinement-v1/family-calling.webp",
+      "alpha": true
+    }
+  },
+  "background": "background",
+  "poses": {
+    "family": {
+      "x": 71.9235,
+      "y": 252.8374,
+      "w": 434.6015,
+      "h": 744.4846,
+      "asset": "family-initial",
+      "depth": 40
+    },
+    "world-scene": {
+      "asset": "background",
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1280,
+      "depth": 0,
+      "blockInput": false
+    },
+    "door-wedge": {
+      "asset": "side-table",
+      "x": 34,
+      "y": 864,
+      "w": 139,
+      "h": 122.08,
+      "depth": 32,
+      "opacity": 0
+    }
+  },
+  "zones": {
+    "corridor-zone": {
+      "x": 351,
+      "y": 340,
+      "w": 193,
+      "h": 380
+    },
+    "stairs-route": {
+      "x": 219,
+      "y": 431,
+      "w": 310,
+      "h": 237
+    },
+    "assembly-zone": {
+      "x": 391,
+      "y": 784,
+      "w": 292,
+      "h": 263
+    },
+    "lift-zone": {
+      "x": 603,
+      "y": 296,
+      "w": 114,
+      "h": 357
+    },
+    "return-flat": {
+      "x": 26,
+      "y": 329,
+      "w": 120,
+      "h": 414
+    },
+    "smoke-zone": {
+      "x": 650,
+      "y": 753,
+      "w": 69,
+      "h": 252
+    },
+    "hold-door-open": {
+      "x": 29,
+      "y": 673,
+      "w": 139,
+      "h": 184
+    }
+  },
+  "states": [
+    {
+      "object": "world-scene",
+      "when": {
+        "all": [
+          "flat-exited"
+        ]
+      },
+      "pose": {
+        "asset": "corridor-closed"
+      }
+    },
+    {
+      "object": "world-scene",
+      "when": {
+        "all": [
+          "stairs-used"
+        ]
+      },
+      "pose": {
+        "asset": "outside"
+      }
+    },
+    {
+      "object": "family",
+      "when": {
+        "all": [
+          "flat-exited"
+        ]
+      },
+      "pose": {
+        "asset": "family-initial",
+        "x": 241,
+        "y": 495,
+        "w": 300,
+        "h": 513.91,
+        "depth": 40
+      }
+    },
+    {
+      "object": "family",
+      "when": {
+        "all": [
+          "stairs-used"
+        ]
+      },
+      "pose": {
+        "asset": "family-initial",
+        "x": 130,
+        "y": 516,
+        "w": 300,
+        "h": 513.91,
+        "depth": 40
+      }
+    },
+    {
+      "object": "family",
+      "when": {
+        "all": [
+          "assembly-reached"
+        ]
+      },
+      "pose": {
+        "asset": "family-initial",
+        "x": 371,
+        "y": 499,
+        "w": 300,
+        "h": 514,
+        "depth": 40
+      }
+    },
+    {
+      "object": "door-wedge",
+      "when": {
+        "all": [
+          "flat-exited"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "door-wedge",
+      "when": {
+        "all": [
+          "stairs-used"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "family",
+      "when": {
+        "all": [
+          "fire-reported"
+        ]
+      },
+      "pose": {
+        "asset": "family-calling",
+        "x": 371,
+        "y": 499,
+        "w": 300,
+        "h": 514
+      }
+    }
+  ],
+  "animations": {
+    "exit-flat": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.34,
+              "x": 346,
+              "y": 316,
+              "w": 246,
+              "h": 421.4
+            },
+            {
+              "at": 0.56,
+              "opacity": 0
+            },
+            {
+              "at": 0.62,
+              "asset": "family-initial",
+              "x": 241,
+              "y": 495,
+              "w": 300,
+              "h": 513.91,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "asset": "family-initial",
+              "x": 241,
+              "y": 495,
+              "w": 300,
+              "h": 513.91,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "world-scene",
+          "keyframes": [
+            {
+              "at": 0.6,
+              "asset": "corridor-closed"
+            },
+            {
+              "at": 1,
+              "asset": "corridor-closed"
+            }
+          ]
+        }
+      ]
+    },
+    "use-stairs": {
+      "durationMs": 1500,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.37,
+              "x": 283,
+              "y": 354,
+              "w": 200,
+              "h": 342.61
+            },
+            {
+              "at": 0.57,
+              "opacity": 0
+            },
+            {
+              "at": 0.66,
+              "asset": "family-initial",
+              "x": 130,
+              "y": 516,
+              "w": 300,
+              "h": 513.91,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "asset": "family-initial",
+              "x": 130,
+              "y": 516,
+              "w": 300,
+              "h": 513.91,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "world-scene",
+          "keyframes": [
+            {
+              "at": 0.64,
+              "asset": "outside"
+            },
+            {
+              "at": 1,
+              "asset": "outside"
+            }
+          ]
+        },
+        {
+          "object": "door-wedge",
+          "keyframes": [
+            {
+              "at": 0.64,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "reach-outside-assembly": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 1,
+              "asset": "family-initial",
+              "x": 371,
+              "y": 499,
+              "w": 300,
+              "h": 514
+            }
+          ]
+        }
+      ]
+    },
+    "report-fire": {
+      "durationMs": 1500,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.08,
+              "asset": "family-taking-phone"
+            },
+            {
+              "at": 0.4,
+              "asset": "family-taking-phone"
+            },
+            {
+              "at": 0.68,
+              "asset": "family-calling"
+            },
+            {
+              "at": 1,
+              "asset": "family-calling"
+            }
+          ]
+        }
+      ]
+    },
+    "ordinary-lift-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.018
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.018
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "return-home-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.018
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.018
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "smoke-route-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.018
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.018
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "prop-door-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "door-wedge",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.018
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.018
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [],
+  "zoneLabels": {
+    "corridor-zone": "安全走廊",
+    "stairs-route": "可用楼梯",
+    "assembly-zone": "远离楼体集合",
+    "lift-zone": "普通电梯",
+    "return-flat": "返回屋内",
+    "smoke-zone": "浓烟支路",
+    "hold-door-open": "户门口"
+  },
+  "zoneConditions": {
+    "corridor-zone": {
+      "not": [
+        "flat-exited"
+      ]
+    },
+    "stairs-route": {
+      "all": [
+        "flat-exited"
+      ],
+      "not": [
+        "stairs-used"
+      ]
+    },
+    "assembly-zone": {
+      "all": [
+        "stairs-used"
+      ]
+    },
+    "lift-zone": {
+      "all": [
+        "flat-exited"
+      ],
+      "not": [
+        "stairs-used"
+      ]
+    },
+    "return-flat": {
+      "all": [
+        "flat-exited"
+      ],
+      "not": [
+        "stairs-used"
+      ]
+    },
+    "smoke-zone": {
+      "all": [
+        "flat-exited"
+      ],
+      "not": [
+        "stairs-used"
+      ]
+    },
+    "hold-door-open": {
+      "all": [
+        "flat-exited"
+      ],
+      "not": [
+        "stairs-used"
+      ]
+    }
+  },
+  "presentation": {
+    "durationMs": 60000,
+    "effects": [
+      {
+        "kind": "smoke",
+        "box": {
+          "x": 680,
+          "y": 406,
+          "w": 40,
+          "h": 485
+        },
+        "depth": 31,
+        "color": "#4d4843",
+        "strength": 0.45,
+        "when": {
+          "all": [
+            "flat-exited"
+          ],
+          "not": [
+            "stairs-used"
+          ]
+        }
+      },
+      {
+        "kind": "glow",
+        "box": {
+          "x": 516,
+          "y": 173,
+          "w": 75,
+          "h": 80
+        },
+        "depth": 2,
+        "color": "#f1a44e",
+        "strength": 0.43,
+        "when": {
+          "all": [
+            "stairs-used"
+          ]
+        }
+      },
+      {
+        "kind": "smoke",
+        "box": {
+          "x": 487,
+          "y": 45,
+          "w": 125,
+          "h": 192
+        },
+        "depth": 3,
+        "color": "#565863",
+        "strength": 0.23,
+        "when": {
+          "all": [
+            "stairs-used"
+          ]
+        }
+      },
+      {
+        "kind": "alarm",
+        "box": {
+          "x": 438,
+          "y": 201,
+          "w": 32,
+          "h": 46
+        },
+        "depth": 6,
+        "color": "#eb544b",
+        "strength": 1,
+        "when": {
+          "not": [
+            "flat-exited"
+          ]
+        }
+      },
+      {
+        "kind": "alarm",
+        "box": {
+          "x": 525,
+          "y": 184,
+          "w": 36,
+          "h": 48
+        },
+        "depth": 6,
+        "color": "#eb544b",
+        "strength": 1,
+        "when": {
+          "all": [
+            "flat-exited"
+          ],
+          "not": [
+            "stairs-used"
+          ]
+        }
+      }
+    ],
+    "actors": [
+      {
+        "object": "family",
+        "amplitude": 0.32,
+        "until": [
+          "stairs-used"
+        ],
+        "performance": {
+          "lean": 0.006,
+          "periodMs": 2000
+        }
+      }
+    ],
+    "audio": {
+      "theme": "fire",
+      "cues": {
+        "opening": "fire-alarm",
+        "pickup": "pickup",
+        "bounce": "bounce",
+        "danger": "warning",
+        "goal": "soft-tap",
+        "complete": "success",
+        "exit-flat": "exit-door-latch",
+        "use-stairs": "stairs",
+        "reach-outside-assembly": "footsteps",
+        "report-fire": "telephone-connect",
+        "ordinary-lift-error": "warning",
+        "return-home-error": "warning",
+        "smoke-route-error": "smoke-warning",
+        "prop-door-error": "wood-tap"
+      },
+      "calmWhen": [
+        "stairs-used"
+      ],
+      "emergency": {
+        "alarm": "fire-alarm",
+        "alarmUntil": [
+          "stairs-used"
+        ],
+        "cough": "nonverbal-cough",
+        "coughUntil": [
+          "stairs-used"
+        ]
+      }
+    }
+  }
+}

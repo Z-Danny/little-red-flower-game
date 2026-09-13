@@ -1,0 +1,12 @@
+{
+  "image": "/levels/journey-map/title-screen-v1.png",
+  "title": ["小红花", "应急行动"],
+  "tagline": "把安心，种在每一次行动里",
+  "start": "开始新游戏",
+  "newGameConfirm": "要为「{player}」开始新游戏吗？\n\n当前的 {flowers} 朵小红花、关卡完成记录和解锁进度将清空，地图从起点重新开始。昵称和其他玩家的记录会保留。\n\n此操作不可撤销。",
+  "continue": "继续游戏",
+  "continueHint": "回到上次探索的地图",
+  "emptyHint": "你的安全旅程，从这里开始",
+  "footer": "观察隐患 · 学会应对 · 种下小红花",
+  "colors": { "ink": "#294f42", "accent": "#c95844", "paper": "#faf6e9" }
+}

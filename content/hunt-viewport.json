@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "mobileMaxWidth": 600,
+  "desktopMaxWidth": 520,
+  "clueWidth": 43,
+  "clueHeight": 47,
+  "clueGap": 7,
+  "edgePadding": 8,
+  "headerHeight": 69,
+  "clueTopGap": 10,
+  "acceptanceViewports": [
+    [320, 568],
+    [375, 667],
+    [390, 844],
+    [430, 932],
+    [540, 960],
+    [1440, 900]
+  ]
+}

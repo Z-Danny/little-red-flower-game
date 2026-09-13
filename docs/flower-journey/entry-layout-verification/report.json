@@ -1,0 +1,1454 @@
+{
+  "status": "passed",
+  "sha256": "59cf59b8f8d131f65970b6e194589b10e4f2ed6e1c5b71a61e8b99c2baeafc82",
+  "checks": [
+    "matching frame and complete three-region headers 320x568",
+    "matching frame and complete three-region headers 390x844",
+    "matching frame and complete three-region headers 520x830",
+    "matching frame and complete three-region headers 540x830",
+    "matching frame and complete three-region headers 704x828",
+    "matching frame and complete three-region headers 1440x900",
+    "navigation preserves the 35-flower save fixture",
+    "continue after reload preserves save"
+  ],
+  "geometry": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "title": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568
+      },
+      "map": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568
+      },
+      "regions": [
+        {
+          "region": "nature",
+          "link": {
+            "left": 8,
+            "right": 162.296875,
+            "top": 6,
+            "bottom": 50,
+            "width": 154.296875,
+            "height": 44
+          },
+          "actions": {
+            "left": 167.296875,
+            "right": 312,
+            "top": 6,
+            "bottom": 50,
+            "width": 144.703125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 8,
+              "right": 71,
+              "top": 21.25,
+              "bottom": 34.25,
+              "width": 63,
+              "height": 13
+            },
+            {
+              "text": "自然灾害",
+              "left": 82,
+              "right": 134,
+              "top": 18.90625,
+              "bottom": 36.90625,
+              "width": 52,
+              "height": 18
+            }
+          ],
+          "controls": [
+            {
+              "left": 8,
+              "right": 162.296875,
+              "top": 6,
+              "bottom": 50,
+              "width": 154.296875,
+              "height": 44
+            },
+            {
+              "left": 167.296875,
+              "right": 211.296875,
+              "top": 6,
+              "bottom": 50,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 211.296875,
+              "right": 255.296875,
+              "top": 6,
+              "bottom": 50,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 255.296875,
+              "right": 312,
+              "top": 6,
+              "bottom": 50,
+              "width": 56.703125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "public",
+          "link": {
+            "left": 8,
+            "right": 162.296875,
+            "top": 6,
+            "bottom": 50,
+            "width": 154.296875,
+            "height": 44
+          },
+          "actions": {
+            "left": 167.296875,
+            "right": 312,
+            "top": 6,
+            "bottom": 50,
+            "width": 144.703125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 8,
+              "right": 71,
+              "top": 21.25,
+              "bottom": 34.25,
+              "width": 63,
+              "height": 13
+            },
+            {
+              "text": "公共安全",
+              "left": 82,
+              "right": 134,
+              "top": 18.90625,
+              "bottom": 36.90625,
+              "width": 52,
+              "height": 18
+            }
+          ],
+          "controls": [
+            {
+              "left": 8,
+              "right": 162.296875,
+              "top": 6,
+              "bottom": 50,
+              "width": 154.296875,
+              "height": 44
+            },
+            {
+              "left": 167.296875,
+              "right": 211.296875,
+              "top": 6,
+              "bottom": 50,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 211.296875,
+              "right": 255.296875,
+              "top": 6,
+              "bottom": 50,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 255.296875,
+              "right": 312,
+              "top": 6,
+              "bottom": 50,
+              "width": 56.703125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "home",
+          "link": {
+            "left": 8,
+            "right": 162.296875,
+            "top": 6,
+            "bottom": 50,
+            "width": 154.296875,
+            "height": 44
+          },
+          "actions": {
+            "left": 167.296875,
+            "right": 312,
+            "top": 6,
+            "bottom": 50,
+            "width": 144.703125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 8,
+              "right": 71,
+              "top": 21.25,
+              "bottom": 34.25,
+              "width": 63,
+              "height": 13
+            },
+            {
+              "text": "居家校园办公",
+              "left": 82,
+              "right": 160,
+              "top": 18.90625,
+              "bottom": 36.90625,
+              "width": 78,
+              "height": 18
+            }
+          ],
+          "controls": [
+            {
+              "left": 8,
+              "right": 162.296875,
+              "top": 6,
+              "bottom": 50,
+              "width": 154.296875,
+              "height": 44
+            },
+            {
+              "left": 167.296875,
+              "right": 211.296875,
+              "top": 6,
+              "bottom": 50,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 211.296875,
+              "right": 255.296875,
+              "top": 6,
+              "bottom": 50,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 255.296875,
+              "right": 312,
+              "top": 6,
+              "bottom": 50,
+              "width": 56.703125,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "title": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "map": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "regions": [
+        {
+          "region": "nature",
+          "link": {
+            "left": 17,
+            "right": 216.046875,
+            "top": 8,
+            "bottom": 52,
+            "width": 199.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 221.046875,
+            "right": 373,
+            "top": 8,
+            "bottom": 52,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 17,
+              "right": 87,
+              "top": 22.484375,
+              "bottom": 37.484375,
+              "width": 70,
+              "height": 15
+            },
+            {
+              "text": "自然灾害",
+              "left": 106,
+              "right": 174,
+              "top": 18.09375,
+              "bottom": 41.09375,
+              "width": 68,
+              "height": 23
+            }
+          ],
+          "controls": [
+            {
+              "left": 17,
+              "right": 216.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 199.046875,
+              "height": 44
+            },
+            {
+              "left": 221.046875,
+              "right": 265.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 265.046875,
+              "right": 309.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 309.046875,
+              "right": 373,
+              "top": 8,
+              "bottom": 52,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "public",
+          "link": {
+            "left": 17,
+            "right": 216.046875,
+            "top": 8,
+            "bottom": 52,
+            "width": 199.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 221.046875,
+            "right": 373,
+            "top": 8,
+            "bottom": 52,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 17,
+              "right": 87,
+              "top": 22.484375,
+              "bottom": 37.484375,
+              "width": 70,
+              "height": 15
+            },
+            {
+              "text": "公共安全",
+              "left": 106,
+              "right": 174,
+              "top": 18.09375,
+              "bottom": 41.09375,
+              "width": 68,
+              "height": 23
+            }
+          ],
+          "controls": [
+            {
+              "left": 17,
+              "right": 216.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 199.046875,
+              "height": 44
+            },
+            {
+              "left": 221.046875,
+              "right": 265.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 265.046875,
+              "right": 309.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 309.046875,
+              "right": 373,
+              "top": 8,
+              "bottom": 52,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "home",
+          "link": {
+            "left": 17,
+            "right": 216.046875,
+            "top": 8,
+            "bottom": 52,
+            "width": 199.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 221.046875,
+            "right": 373,
+            "top": 8,
+            "bottom": 52,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 17,
+              "right": 87,
+              "top": 22.484375,
+              "bottom": 37.484375,
+              "width": 70,
+              "height": 15
+            },
+            {
+              "text": "居家校园办公",
+              "left": 106,
+              "right": 208,
+              "top": 18.09375,
+              "bottom": 41.09375,
+              "width": 102,
+              "height": 23
+            }
+          ],
+          "controls": [
+            {
+              "left": 17,
+              "right": 216.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 199.046875,
+              "height": 44
+            },
+            {
+              "left": 221.046875,
+              "right": 265.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 265.046875,
+              "right": 309.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 309.046875,
+              "right": 373,
+              "top": 8,
+              "bottom": 52,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 520,
+        "height": 830
+      },
+      "title": {
+        "x": 0,
+        "y": 0,
+        "width": 520,
+        "height": 830
+      },
+      "map": {
+        "x": 0,
+        "y": 0,
+        "width": 520,
+        "height": 830
+      },
+      "regions": [
+        {
+          "region": "nature",
+          "link": {
+            "left": 17,
+            "right": 346.046875,
+            "top": 8,
+            "bottom": 52,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 351.046875,
+            "right": 503,
+            "top": 8,
+            "bottom": 52,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 17,
+              "right": 87,
+              "top": 22.484375,
+              "bottom": 37.484375,
+              "width": 70,
+              "height": 15
+            },
+            {
+              "text": "自然灾害",
+              "left": 106,
+              "right": 174,
+              "top": 18.09375,
+              "bottom": 41.09375,
+              "width": 68,
+              "height": 23
+            }
+          ],
+          "controls": [
+            {
+              "left": 17,
+              "right": 346.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 351.046875,
+              "right": 395.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 395.046875,
+              "right": 439.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 439.046875,
+              "right": 503,
+              "top": 8,
+              "bottom": 52,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "public",
+          "link": {
+            "left": 17,
+            "right": 346.046875,
+            "top": 8,
+            "bottom": 52,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 351.046875,
+            "right": 503,
+            "top": 8,
+            "bottom": 52,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 17,
+              "right": 87,
+              "top": 22.484375,
+              "bottom": 37.484375,
+              "width": 70,
+              "height": 15
+            },
+            {
+              "text": "公共安全",
+              "left": 106,
+              "right": 174,
+              "top": 18.09375,
+              "bottom": 41.09375,
+              "width": 68,
+              "height": 23
+            }
+          ],
+          "controls": [
+            {
+              "left": 17,
+              "right": 346.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 351.046875,
+              "right": 395.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 395.046875,
+              "right": 439.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 439.046875,
+              "right": 503,
+              "top": 8,
+              "bottom": 52,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "home",
+          "link": {
+            "left": 17,
+            "right": 346.046875,
+            "top": 8,
+            "bottom": 52,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 351.046875,
+            "right": 503,
+            "top": 8,
+            "bottom": 52,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 17,
+              "right": 87,
+              "top": 22.484375,
+              "bottom": 37.484375,
+              "width": 70,
+              "height": 15
+            },
+            {
+              "text": "居家校园办公",
+              "left": 106,
+              "right": 208,
+              "top": 18.09375,
+              "bottom": 41.09375,
+              "width": 102,
+              "height": 23
+            }
+          ],
+          "controls": [
+            {
+              "left": 17,
+              "right": 346.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 351.046875,
+              "right": 395.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 395.046875,
+              "right": 439.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 439.046875,
+              "right": 503,
+              "top": 8,
+              "bottom": 52,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 540,
+        "height": 830
+      },
+      "title": {
+        "x": 10,
+        "y": 0,
+        "width": 520,
+        "height": 830
+      },
+      "map": {
+        "x": 10,
+        "y": 0,
+        "width": 520,
+        "height": 830
+      },
+      "regions": [
+        {
+          "region": "nature",
+          "link": {
+            "left": 27,
+            "right": 356.046875,
+            "top": 8,
+            "bottom": 52,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 361.046875,
+            "right": 513,
+            "top": 8,
+            "bottom": 52,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 27,
+              "right": 97,
+              "top": 22.484375,
+              "bottom": 37.484375,
+              "width": 70,
+              "height": 15
+            },
+            {
+              "text": "自然灾害",
+              "left": 116,
+              "right": 184,
+              "top": 18.09375,
+              "bottom": 41.09375,
+              "width": 68,
+              "height": 23
+            }
+          ],
+          "controls": [
+            {
+              "left": 27,
+              "right": 356.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 361.046875,
+              "right": 405.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 405.046875,
+              "right": 449.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 449.046875,
+              "right": 513,
+              "top": 8,
+              "bottom": 52,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "public",
+          "link": {
+            "left": 27,
+            "right": 356.046875,
+            "top": 8,
+            "bottom": 52,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 361.046875,
+            "right": 513,
+            "top": 8,
+            "bottom": 52,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 27,
+              "right": 97,
+              "top": 22.484375,
+              "bottom": 37.484375,
+              "width": 70,
+              "height": 15
+            },
+            {
+              "text": "公共安全",
+              "left": 116,
+              "right": 184,
+              "top": 18.09375,
+              "bottom": 41.09375,
+              "width": 68,
+              "height": 23
+            }
+          ],
+          "controls": [
+            {
+              "left": 27,
+              "right": 356.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 361.046875,
+              "right": 405.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 405.046875,
+              "right": 449.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 449.046875,
+              "right": 513,
+              "top": 8,
+              "bottom": 52,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "home",
+          "link": {
+            "left": 27,
+            "right": 356.046875,
+            "top": 8,
+            "bottom": 52,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 361.046875,
+            "right": 513,
+            "top": 8,
+            "bottom": 52,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 27,
+              "right": 97,
+              "top": 22.484375,
+              "bottom": 37.484375,
+              "width": 70,
+              "height": 15
+            },
+            {
+              "text": "居家校园办公",
+              "left": 116,
+              "right": 218,
+              "top": 18.09375,
+              "bottom": 41.09375,
+              "width": 102,
+              "height": 23
+            }
+          ],
+          "controls": [
+            {
+              "left": 27,
+              "right": 356.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 361.046875,
+              "right": 405.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 405.046875,
+              "right": 449.046875,
+              "top": 8,
+              "bottom": 52,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 449.046875,
+              "right": 513,
+              "top": 8,
+              "bottom": 52,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 704,
+        "height": 828
+      },
+      "title": {
+        "x": 92,
+        "y": 0,
+        "width": 520,
+        "height": 828
+      },
+      "map": {
+        "x": 92,
+        "y": 0,
+        "width": 520,
+        "height": 828
+      },
+      "regions": [
+        {
+          "region": "nature",
+          "link": {
+            "left": 109,
+            "right": 438.046875,
+            "top": 14,
+            "bottom": 58,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 443.046875,
+            "right": 595,
+            "top": 14,
+            "bottom": 58,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 109,
+              "right": 193,
+              "top": 27,
+              "bottom": 44,
+              "width": 84,
+              "height": 17
+            },
+            {
+              "text": "自然灾害",
+              "left": 212,
+              "right": 292,
+              "top": 23,
+              "bottom": 49,
+              "width": 80,
+              "height": 26
+            }
+          ],
+          "controls": [
+            {
+              "left": 109,
+              "right": 438.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 443.046875,
+              "right": 487.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 487.046875,
+              "right": 531.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 531.046875,
+              "right": 595,
+              "top": 14,
+              "bottom": 58,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "public",
+          "link": {
+            "left": 109,
+            "right": 438.046875,
+            "top": 14,
+            "bottom": 58,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 443.046875,
+            "right": 595,
+            "top": 14,
+            "bottom": 58,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 109,
+              "right": 193,
+              "top": 27,
+              "bottom": 44,
+              "width": 84,
+              "height": 17
+            },
+            {
+              "text": "公共安全",
+              "left": 212,
+              "right": 292,
+              "top": 23,
+              "bottom": 49,
+              "width": 80,
+              "height": 26
+            }
+          ],
+          "controls": [
+            {
+              "left": 109,
+              "right": 438.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 443.046875,
+              "right": 487.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 487.046875,
+              "right": 531.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 531.046875,
+              "right": 595,
+              "top": 14,
+              "bottom": 58,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "home",
+          "link": {
+            "left": 109,
+            "right": 438.046875,
+            "top": 14,
+            "bottom": 58,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 443.046875,
+            "right": 595,
+            "top": 14,
+            "bottom": 58,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 109,
+              "right": 193,
+              "top": 27,
+              "bottom": 44,
+              "width": 84,
+              "height": 17
+            },
+            {
+              "text": "居家校园办公",
+              "left": 212,
+              "right": 332,
+              "top": 23,
+              "bottom": 49,
+              "width": 120,
+              "height": 26
+            }
+          ],
+          "controls": [
+            {
+              "left": 109,
+              "right": 438.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 443.046875,
+              "right": 487.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 487.046875,
+              "right": 531.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 531.046875,
+              "right": 595,
+              "top": 14,
+              "bottom": 58,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "title": {
+        "x": 460,
+        "y": 0,
+        "width": 520,
+        "height": 900
+      },
+      "map": {
+        "x": 460,
+        "y": 0,
+        "width": 520,
+        "height": 900
+      },
+      "regions": [
+        {
+          "region": "nature",
+          "link": {
+            "left": 477,
+            "right": 806.046875,
+            "top": 14,
+            "bottom": 58,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 811.046875,
+            "right": 963,
+            "top": 14,
+            "bottom": 58,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 477,
+              "right": 561,
+              "top": 27,
+              "bottom": 44,
+              "width": 84,
+              "height": 17
+            },
+            {
+              "text": "自然灾害",
+              "left": 580,
+              "right": 660,
+              "top": 23,
+              "bottom": 49,
+              "width": 80,
+              "height": 26
+            }
+          ],
+          "controls": [
+            {
+              "left": 477,
+              "right": 806.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 811.046875,
+              "right": 855.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 855.046875,
+              "right": 899.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 899.046875,
+              "right": 963,
+              "top": 14,
+              "bottom": 58,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "public",
+          "link": {
+            "left": 477,
+            "right": 806.046875,
+            "top": 14,
+            "bottom": 58,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 811.046875,
+            "right": 963,
+            "top": 14,
+            "bottom": 58,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 477,
+              "right": 561,
+              "top": 27,
+              "bottom": 44,
+              "width": 84,
+              "height": 17
+            },
+            {
+              "text": "公共安全",
+              "left": 580,
+              "right": 660,
+              "top": 23,
+              "bottom": 49,
+              "width": 80,
+              "height": 26
+            }
+          ],
+          "controls": [
+            {
+              "left": 477,
+              "right": 806.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 811.046875,
+              "right": 855.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 855.046875,
+              "right": 899.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 899.046875,
+              "right": 963,
+              "top": 14,
+              "bottom": 58,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "home",
+          "link": {
+            "left": 477,
+            "right": 806.046875,
+            "top": 14,
+            "bottom": 58,
+            "width": 329.046875,
+            "height": 44
+          },
+          "actions": {
+            "left": 811.046875,
+            "right": 963,
+            "top": 14,
+            "bottom": 58,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 477,
+              "right": 561,
+              "top": 27,
+              "bottom": 44,
+              "width": 84,
+              "height": 17
+            },
+            {
+              "text": "居家校园办公",
+              "left": 580,
+              "right": 700,
+              "top": 23,
+              "bottom": 49,
+              "width": 120,
+              "height": 26
+            }
+          ],
+          "controls": [
+            {
+              "left": 477,
+              "right": 806.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 329.046875,
+              "height": 44
+            },
+            {
+              "left": 811.046875,
+              "right": 855.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 855.046875,
+              "right": 899.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 899.046875,
+              "right": 963,
+              "top": 14,
+              "bottom": 58,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "browserClosed": true,
+  "physicalDevice": "not_run"
+}

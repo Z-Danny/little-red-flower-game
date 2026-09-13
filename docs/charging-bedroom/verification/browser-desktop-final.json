@@ -1,0 +1,28 @@
+{
+  "at": "2026-09-09T15:45:46.451Z",
+  "browser": "headless Chromium/Edge",
+  "sound": "speaker output muted; not a human listening test",
+  "physicalPhone": "not tested",
+  "reports": [
+    {
+      "protocol": "file",
+      "width": 1440,
+      "height": 900,
+      "errors": [],
+      "external": [],
+      "checks": [
+        "3 targets / full portrait contain / quiet environment",
+        "blank miss no score",
+        "letterbox excluded",
+        "800ms mark / busy and repeated taps",
+        "pause clock frozen",
+        "simulated hidden lifecycle freezes time",
+        "ending retained / 3 flowers persisted",
+        "replay clears marks / repeated reward idempotent",
+        "previous levels retained / no page errors / no external requests"
+      ],
+      "closed": true
+    }
+  ],
+  "closed": true
+}

@@ -1,0 +1,38 @@
+{
+  "feedbackVersion": 2,
+  "id": "forest-fire-sources-v2",
+  "title": "林缘的五处火源",
+  "order": 20,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "forest_grill",
+      "name": "禁火区炭烤炉",
+      "lesson": "禁火林区不能生火烧烤。"
+    },
+    {
+      "id": "smouldering_cigarette",
+      "name": "未熄烟头",
+      "lesson": "林区吸烟和遗留火种很危险。"
+    },
+    {
+      "id": "forest_campfire",
+      "name": "禁火区篝火",
+      "lesson": "禁火林区不能点篝火取暖。"
+    },
+    {
+      "id": "burning_paper",
+      "name": "林缘烧纸盆",
+      "lesson": "禁火林区不能烧纸用火。"
+    },
+    {
+      "id": "forest_fireworks",
+      "name": "林缘燃放的烟花",
+      "lesson": "禁火林区不能燃放烟花。"
+    }
+  ],
+  "summary": "禁火林区不能烧烤、吸烟遗留火种、点篝火、烧纸或燃放烟花。发现火情应立即远离并报告，不靠近捡拾火种或冒险扑救。",
+  "timeout": "fail"
+}

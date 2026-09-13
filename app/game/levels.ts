@@ -1,6 +1,10 @@
 import type { LevelConfig } from './types';
+import {levelTitle} from './journey/presentation';
 import { configuredPackages } from './content/generated';
-import { assets as kitchenAssets } from './kitchen/config';
+import { huntPacks } from './scene-hunt/registry';
+import { disasterPacks } from './disaster/registry';
+import { presentationOf } from './scene-hunt/presentation';
+import { assets as kitchenAssets, level as kitchenLevel } from './kitchen/config';
 import { assets as typhoonAssets } from './typhoon/config';
 import { actions as typhoonActions, level as typhoonLevel, placement as typhoonPlacement, riskCues as typhoonRiskCues, type ActionId } from './typhoon/config';
 
@@ -54,7 +58,7 @@ const builtInLevels: LevelConfig[] = [
     id: 'oil-fire', engine: 'kitchen-v1', order: 2, kind: 'response', title: '厨房着火了', shortTitle: '灶台十秒钟', location: '厨房',
     playable: true, previewImage: kitchenAssets.room,
     knowledge: '油锅起火时，先关火，再用锅盖盖住，切勿直接泼水。', task: '关火、盖锅盖，然后撤到安全处',
-    briefing: '油锅突然起火。直接拿取厨房中的物品，点击旋钮关火；危险操作会展示后果，但不会阻止你继续。', duration: '约 1 分钟', riskSeconds: 85, accent: '#d87c3f', sceneRoom: 'kitchen', sceneMood: 'fire',
+    briefing: '油锅突然起火。直接拿取厨房中的物品，点击旋钮关火；危险操作会展示后果，但不会阻止你继续。', duration: `${kitchenLevel.riskSeconds} 秒`, riskSeconds: kitchenLevel.riskSeconds, accent: '#d87c3f', sceneRoom: 'kitchen', sceneMood: 'fire',
     goals: ['gas-off', 'pan-covered', 'evacuated'],
     zones: [
       { id: 'pan', label: '起火油锅', icon: 'flame', position: { x: 30, y: 58 } },
@@ -123,13 +127,20 @@ const builtInLevels: LevelConfig[] = [
 ];
 
 export const getPackage = (id: string) => configuredPackages.find(pack => pack.rules.id === id);
-export const levels: LevelConfig[] = [...builtInLevels, ...configuredPackages.map(({ rules: r, skin: s }): LevelConfig => ({
+const additionalHunts: LevelConfig[] = huntPacks.filter(p=>!builtInLevels.some(l=>l.id===p.rules.id)).map(p=>({
+  id:p.rules.id, engine:'scene-hunt', order:p.rules.order, kind:'prevention', title:p.rules.title, shortTitle:p.rules.title,
+  location:presentationOf(p).location, knowledge:p.rules.summary, task:presentationOf(p).opening,
+  briefing:presentationOf(p).preview, duration:'从容观察 · 不限时', riskSeconds:p.rules.seconds, accent:'#d39559',
+  sceneRoom:'living', sceneMood:'calm', goals:p.rules.targets.map(t=>t.id), playable:true, previewImage:p.skin.scene,
+}));
+const additionalDisasters:LevelConfig[]=disasterPacks.map(({rules:r,skin:s})=>({id:r.id,engine:'disaster-v1',order:r.order,kind:r.kind,title:r.title,shortTitle:r.title,location:r.kind==='prevention'?'街道 · 社区':'住宅 · 楼梯',knowledge:r.summary,task:r.opening,briefing:r.safety,duration:r.kind==='prevention'?'限时 90 秒':'约 2 分钟',riskSeconds:r.seconds,accent:'#d27a45',sceneRoom:'living',sceneMood:'storm',goals:r.goals.map(g=>g.id),playable:true,previewImage:s.scene}));
+export const levels: LevelConfig[] = [...builtInLevels, ...additionalHunts, ...additionalDisasters, ...configuredPackages.map(({ rules: r, skin: s }): LevelConfig => ({
   id: r.id, engine: 'configured-v1', order: r.order, kind: r.kind, title: r.title, shortTitle: r.title,
   location: r.location, knowledge: r.completion.summary, task: r.description, briefing: r.description,
   duration: r.risk.mode === 'elapsed' ? '从容练习 · 不限时' : `约 ${r.risk.seconds} 秒`, riskSeconds: r.risk.seconds, accent: '#d7784e', sceneRoom: r.kind === 'prevention' ? 'living' : 'kitchen',
   sceneMood: r.kind === 'prevention' ? 'storm' : 'fire', goals: r.goals.filter(g => g.showTarget !== false).map(g => g.id),
   playable: true, previewImage: s.assets[s.background].src,
-}))];
+}))].map(level => ({...level, title:levelTitle(level.id,level.title)}));
 export const getLevel = (id: string) => levels.find((level) => level.id === id);
 
 function validateLevels(configs: LevelConfig[]) {
@@ -137,7 +148,7 @@ function validateLevels(configs: LevelConfig[]) {
   for (const level of configs) {
     if (levelIds.has(level.id)) throw new Error(`Duplicate level id: ${level.id}`);
     levelIds.add(level.id);
-    if (level.engine === 'configured-v1') continue; // Full data validation happens at package registration.
+    if (level.engine === 'configured-v1' || level.engine === 'scene-hunt' || level.engine === 'disaster-v1') continue; // Full data validation happens at package registration.
     const goals = new Set(level.goals);
     if (goals.size !== level.goals.length) throw new Error(`Duplicate goal in ${level.id}`);
     if (level.kind === 'prevention') {

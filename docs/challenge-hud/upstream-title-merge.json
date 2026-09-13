@@ -1,0 +1,177 @@
+{
+  "at": "2026-09-12T19:31:13.204Z",
+  "updates": [
+    {
+      "p": "components/game/game-app.tsx",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\components\\game\\game-app.tsx",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\components\\game\\game-app.tsx",
+      "old": "45b7d70b49f64bad81717558f238205d7759fbc4495eb5c3275c339cef60758d",
+      "now": "85dafe6bbe636d5f3b1773723d480fc173741a6bc2a37b0f875e25b4f17c6752"
+    },
+    {
+      "p": "components/game/journey/map-chrome.tsx",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\components\\game\\journey\\map-chrome.tsx",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\components\\game\\journey\\map-chrome.tsx",
+      "old": "1bc30b1ffeb08496479460fd14909b375fbf3ebda78d94a26cfa1e37d9107ddd",
+      "now": "3c481f170e49294d0c0d4bebecddfc4fa293a692112bfbaa1085f7c4df04dee2"
+    },
+    {
+      "p": "components/game/journey/use-map-journey.ts",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\components\\game\\journey\\use-map-journey.ts",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\components\\game\\journey\\use-map-journey.ts",
+      "old": "b16b53fa823b3584081e4aef4f79027a36036bae89de00dd3662c557ef6fd933",
+      "now": "eb52c849bc78a8dfe981b84c24c24715815ac4d41cd93fc40073598413b4d747"
+    },
+    {
+      "p": "components/game/level-hub.tsx",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\components\\game\\level-hub.tsx",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\components\\game\\level-hub.tsx",
+      "old": "3fdbd5e7634e4ab30cfc0288890ccbba463cfcbf99929e764f24abd5ea1e4e97",
+      "now": "3a3260a288b78de52292e77ec2119b976b1efffbd83d4e392e827f5c78ac76ac"
+    },
+    {
+      "p": "offline/README.md",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\offline\\README.md",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\offline\\README.md",
+      "old": "3b6a25b2ec14f976b418faa9d185acb2ece4d592cb78a073997e3a067d5efba2",
+      "now": "19683e454407f410fe67e005a02075e198e31f4c1bce1e3c8b168d9f8d7eb178"
+    },
+    {
+      "p": "scripts/test-journey-browser.mjs",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\scripts\\test-journey-browser.mjs",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\scripts\\test-journey-browser.mjs",
+      "old": "45f8644ee2908128b2e6423e1107ba6f07596d96095ac5563c05c9ce6701b279",
+      "now": "3ef7f2d5a3ca03c6cf5f783860137db9f37df3965a6598b24aeda28e6d49e23d"
+    },
+    {
+      "p": "scripts/test-map-signals-browser.mjs",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\scripts\\test-map-signals-browser.mjs",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\scripts\\test-map-signals-browser.mjs",
+      "old": "17b407ac2a9d924c1a32d53c1801ff02c20df789c6ee194c5d4c8aac18735a7d",
+      "now": "77019de484861666ccda6452a789f7fb840d3ce1654c296d06251196bd4ff7cb"
+    },
+    {
+      "p": "scripts/test-quake-steps-browser.mjs",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\scripts\\test-quake-steps-browser.mjs",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\scripts\\test-quake-steps-browser.mjs",
+      "old": "53149ed5bff78900ad742a53920fef8923ebfec76f259ce84a11e0e02c8c6ff1",
+      "now": "6a30549ce57b83ab80e4b65925b4aa8044e4748ba943adc57614a952b4ae1f31"
+    },
+    {
+      "p": "tests/journey.test.ts",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\tests\\journey.test.ts",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\tests\\journey.test.ts",
+      "old": "8905e40b1799e4c08ae965224eb3dbbdb81a9b70839d838fd605a5eba8c919fb",
+      "now": "f9bda51489b762cccf52b10acd04a8443fe49c456e5fb8bc22c31b939af301aa"
+    },
+    {
+      "p": "app/game/journey/resume.ts",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\app\\game\\journey\\resume.ts",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\app\\game\\journey\\resume.ts",
+      "old": null,
+      "now": "51bc111e88a9b5d6379e20c08ebeaa7a69e7e130b721e12ec51a3774c56b5ec9"
+    },
+    {
+      "p": "app/title-screen.css",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\app\\title-screen.css",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\app\\title-screen.css",
+      "old": null,
+      "now": "ea44535359de042ff19790d4195848393fc7d53c2ea816f3131e635015ec5ec2"
+    },
+    {
+      "p": "components/game/journey/title-screen.tsx",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\components\\game\\journey\\title-screen.tsx",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\components\\game\\journey\\title-screen.tsx",
+      "old": null,
+      "now": "06f5bdb83b56c4553acf19681d6b1dc0ade1c3d2ac73a2a0fa2201ccc8e00382"
+    },
+    {
+      "p": "components/game/journey/use-journey-location.ts",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\components\\game\\journey\\use-journey-location.ts",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\components\\game\\journey\\use-journey-location.ts",
+      "old": null,
+      "now": "0e68c5ffc1ea21a3d7b4d66cdb04652583377134921b1038b9a99ddeadc2b3bb"
+    },
+    {
+      "p": "content/journey-home.json",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\content\\journey-home.json",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\content\\journey-home.json",
+      "old": null,
+      "now": "80b0f2ad0e6cabf37a55cf41a5a13bc3d592ec84434dd60d9ae075175541d7ec"
+    },
+    {
+      "p": "public/levels/journey-map/title-screen-v1.png",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\public\\levels\\journey-map\\title-screen-v1.png",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\public\\levels\\journey-map\\title-screen-v1.png",
+      "old": null,
+      "now": "ee7a143f926ccfcea59d059dd54f919ac0217bc37a55dde3386cdba31dd3e8de"
+    },
+    {
+      "p": "scripts/test-title-screen-browser.mjs",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\scripts\\test-title-screen-browser.mjs",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\scripts\\test-title-screen-browser.mjs",
+      "old": null,
+      "now": "1c08281722b35c5ab7fafe8949a3618494f00e4318b33f82ce7efe5bd653941b"
+    },
+    {
+      "p": "docs/flower-journey/TITLE-SCREEN.md",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\docs\\flower-journey\\TITLE-SCREEN.md",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\docs\\flower-journey\\TITLE-SCREEN.md",
+      "old": null,
+      "now": "665101604770e6b4e5f110035cb00b21458812e539fa4369c75b8a052b0ba12e"
+    },
+    {
+      "p": "docs/flower-journey/title-screen-verification/home-fresh-1440.png",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\docs\\flower-journey\\title-screen-verification\\home-fresh-1440.png",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\docs\\flower-journey\\title-screen-verification\\home-fresh-1440.png",
+      "old": null,
+      "now": "ce1e791f084bd5b86ed86e7b6a9bfd72c6baddc2663798c7b28d595ed7a915d6"
+    },
+    {
+      "p": "docs/flower-journey/title-screen-verification/home-fresh-320.png",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\docs\\flower-journey\\title-screen-verification\\home-fresh-320.png",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\docs\\flower-journey\\title-screen-verification\\home-fresh-320.png",
+      "old": null,
+      "now": "e85d4c0f944b041430360053f0a9a88bb906f092459fa165c0c80a2b945b7426"
+    },
+    {
+      "p": "docs/flower-journey/title-screen-verification/home-fresh-390.png",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\docs\\flower-journey\\title-screen-verification\\home-fresh-390.png",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\docs\\flower-journey\\title-screen-verification\\home-fresh-390.png",
+      "old": null,
+      "now": "d9ba1d4e2ab2e550c0096ece77349a2a1920bc7503b11203e1242915ba7896ab"
+    },
+    {
+      "p": "docs/flower-journey/title-screen-verification/home-fresh-540.png",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\docs\\flower-journey\\title-screen-verification\\home-fresh-540.png",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\docs\\flower-journey\\title-screen-verification\\home-fresh-540.png",
+      "old": null,
+      "now": "c9f50ad9358cacb1274e5d2bbeda8f419d26a54a1e3d67d6e58f85b110ffd283"
+    },
+    {
+      "p": "docs/flower-journey/title-screen-verification/home-returning-390.png",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\docs\\flower-journey\\title-screen-verification\\home-returning-390.png",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\docs\\flower-journey\\title-screen-verification\\home-returning-390.png",
+      "old": null,
+      "now": "45874e16d5f4984b13b73ee90fae163d8543b025d3d7ed2dfa934fbc8ad491ef"
+    },
+    {
+      "p": "docs/flower-journey/title-screen-verification/journey-regression.json",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\docs\\flower-journey\\title-screen-verification\\journey-regression.json",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\docs\\flower-journey\\title-screen-verification\\journey-regression.json",
+      "old": null,
+      "now": "9e7c259176d06e75619e8cfbcb80be6b9cc7ff9c05d559ee737af9661de45458"
+    },
+    {
+      "p": "docs/flower-journey/title-screen-verification/report.json",
+      "from": "D:\\中关村\\小红花\\小红花游戏\\docs\\flower-journey\\title-screen-verification\\report.json",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\docs\\flower-journey\\title-screen-verification\\report.json",
+      "old": null,
+      "now": "dcb34521f87c4cb9d7517f2619169a9c03e05c78de43e1bf44bdef4eff5d3308"
+    }
+  ],
+  "overlap": [
+    "app/globals.css",
+    "scripts/export-offline.mjs"
+  ]
+}

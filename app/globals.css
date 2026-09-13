@@ -6,6 +6,14 @@
 @import './configured.css';
 @import './leaderboard.css';
 @import './scene-hunt.css';
+@import './disaster.css';
+@import './challenge-hud.css';
+@import './garden.css';
+@import './typography.css';
+@import './map-signals.css';
+@import './title-screen.css';
+@import './journey-frame.css';
+@import './placement.css';
 
 :root {
   --background: oklch(0.97 0.025 83);

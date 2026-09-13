@@ -1,0 +1,141 @@
+{
+  "status": "passed",
+  "html": "D:\\中关村\\小红花\\test1\\outputs\\本地离线版\\小红花应急行动.html",
+  "sha256": "5a8fb21fa40b43981014787d05b7c7847bfb9ea8197b8d85d60e3f77dd692049",
+  "checks": [
+    {
+      "name": "shared viewport remains full height with no document scroll 390",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "actual flood and rain buffers plus music 390",
+      "nativeLoops": [
+        {
+          "length": 139264,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 176400,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 132300,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        }
+      ]
+    },
+    {
+      "name": "entering flood is rejected and produces native impact audio"
+    },
+    {
+      "name": "pause/mute/resume retains one group of three loops",
+      "nativeLoops": [
+        {
+          "length": 139264,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 176400,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 132300,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        }
+      ]
+    },
+    {
+      "name": "pause freezes elapsed time and audio, mute survives resume"
+    },
+    {
+      "name": "upstairs has a distinct actor pose and separate phone/water bounds 390",
+      "phone": {
+        "x": 502,
+        "y": 590,
+        "w": 80,
+        "h": 42.74,
+        "asset": "phone-initial",
+        "depth": 32,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "phone"
+      },
+      "water": {
+        "x": 592,
+        "y": 517,
+        "w": 52,
+        "h": 82.07,
+        "asset": "bottled-water-initial",
+        "depth": 31,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "bottled-water"
+      }
+    },
+    {
+      "name": "signaling has clock-driven actor performance; consumed standalone cloth stays hidden",
+      "first": {
+        "x": 126,
+        "y": 347,
+        "w": 340,
+        "h": 510,
+        "asset": "family-signal-low",
+        "depth": 40,
+        "rotation": 0.00029810272874129004,
+        "opacity": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 1
+        },
+        "id": "family"
+      },
+      "second": {
+        "x": 126,
+        "y": 347,
+        "w": 340,
+        "h": 510,
+        "asset": "family-signal-high",
+        "depth": 40,
+        "rotation": -0.00707553241566957,
+        "opacity": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 1
+        },
+        "id": "family"
+      }
+    },
+    {
+      "name": "reordered phone/water/radio actions do not resurrect the consumed cloth"
+    },
+    {
+      "name": "all six real actions complete with three flowers 390"
+    },
+    {
+      "name": "real replay preserves prerequisite scores and does not duplicate flowers"
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "physicalPhone": "not_run",
+  "humanListening": "not_run",
+  "visualReview": "screenshots supplied; automated pose checks are not a human visual review",
+  "browserClosed": true
+}

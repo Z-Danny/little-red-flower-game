@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "label": "full package test",
+      "command": "E:\\作业\\CV\\node\\node.exe E:\\作业\\CV\\node\\node_modules\\npm\\bin\\npm-cli.js test",
+      "started": "2026-09-13T05:54:15.409Z",
+      "finished": "2026-09-13T05:54:26.827Z",
+      "exitCode": 0,
+      "tests": 1864,
+      "log": "full-tests.log"
+    },
+    {
+      "label": "TypeScript no emission or incremental cache",
+      "command": "E:\\作业\\CV\\node\\node.exe node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "started": "2026-09-13T05:54:15.429Z",
+      "finished": "2026-09-13T05:54:26.655Z",
+      "exitCode": 0,
+      "tests": 0,
+      "log": "tsc.log"
+    }
+  ],
+  "archive": {
+    "expected": "478479f54a104ccb6403fecbde1b6aa0db8067a7ce1f59a59ed65c2813e94b45",
+    "actual": "478479f54a104ccb6403fecbde1b6aa0db8067a7ce1f59a59ed65c2813e94b45",
+    "unchanged": true
+  },
+  "generatedArtifacts": [
+    {
+      "file": "docs/hazard-batch-v2/verification/batch-unit-report.json",
+      "before": "ccf5b640be1e2b97260d03cc22464ce236ebea5b80e9bc7faf70c1f5d744b703",
+      "after": "848c10458c39b5bd052032e7bbdd1093d2659b32851d268bbdcececa169d0c8d",
+      "excludeFromTaskDelivery": true
+    },
+    {
+      "file": "docs/hazard-batch-v2/verification/batch-unit-tests.tap",
+      "before": "d5a40b66425c529799277016e21455f4de61203f21da39dea5aada0d06629e41",
+      "after": "ae2c8abac1ba5ceabf8b0c347e5f442dd5d919124b03b2acf01f66eb0ce511a8",
+      "excludeFromTaskDelivery": true
+    }
+  ],
+  "browser": "not_run_by_this_script",
+  "physicalPhone": "not_run",
+  "humanListening": "not_run"
+}

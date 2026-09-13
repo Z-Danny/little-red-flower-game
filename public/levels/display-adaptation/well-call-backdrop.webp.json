@@ -1,0 +1,85 @@
+{
+  "source": "D:\\中关村\\小红花\\test1\\work\\response-batch-20260911\\public\\levels\\transcript-v1\\well-room.webp",
+  "sourceSha256": "c784850eb2fc00b28b2f602b2577530733322323c844fe8c5ffdddc63fadb07d",
+  "generated": "D:\\中关村\\小红花\\test1\\work\\response-batch-20260911\\art-source\\display-adaptation\\well-call\\generated.png",
+  "generatedSha256": "9d5b7a1aa0973dc98d89f5d8d8109e8db1773f20caf587f658810da0dd110d37",
+  "output": "D:\\中关村\\小红花\\test1\\work\\response-batch-20260911\\public\\levels\\display-adaptation\\well-call-backdrop.webp",
+  "outputSha256": "21986758103276ee35aab6fd0981bd6723f88edd2e25312c6facf4f4a208ddc7",
+  "bounds": {
+    "x": 0,
+    "y": 0,
+    "w": 720,
+    "h": 1320
+  },
+  "sceneBounds": {
+    "x": 0,
+    "y": 0,
+    "w": 720,
+    "h": 1320
+  },
+  "tools": {
+    "opencv": "4.10.0",
+    "pillow": "10.4.0"
+  },
+  "method": "affine edge coordinate registration; exterior-only low-frequency edge color delta; immutable RGB center.",
+  "registration": {
+    "siftMatches": 959,
+    "affineInliers": 923,
+    "seedAffine": [
+      [
+        0.9960700273513794,
+        -0.0005804817192256451,
+        1.5365136861801147
+      ],
+      [
+        0.0005804817192256451,
+        0.9960700273513794,
+        -1.0334330797195435
+      ]
+    ],
+    "method": "SIFT robust near-axis-aligned similarity; monotone edge-domain registration",
+    "ignoredRotationTerms": [
+      -0.0005804817192256451,
+      0.0005804817192256451
+    ],
+    "outerDomain": "monotone piecewise coordinates through painted edge and original-adjacent anchors",
+    "outOfPaintSampleCount": 0,
+    "boundaryFlowMax": {}
+  },
+  "centerIdentity": {
+    "changedChannels": 0,
+    "maxDiff": 0
+  },
+  "seams": {
+    "before": {
+      "bottom": {
+        "adjacentRgbMae": 14.719,
+        "lowFrequencyRgbMae": 11.2653
+      }
+    },
+    "registered": {
+      "bottom": {
+        "adjacentRgbMae": 11.5977,
+        "lowFrequencyRgbMae": 10.4545
+      }
+    },
+    "final": {
+      "bottom": {
+        "adjacentRgbMae": 5.4463,
+        "lowFrequencyRgbMae": 0.8539
+      }
+    }
+  },
+  "geometry": {
+    "outerSamplesFromGeneratedOnly": true,
+    "nonPositiveExteriorJacobianPixels": 0,
+    "p01ExteriorJacobian": 0.9921115636825562
+  },
+  "status": "visual-review-required",
+  "limits": [
+    "All original pixels and raw input files untouched.",
+    "No reflection, edge replication, fill or invented scenery.",
+    "Small seam metrics do not prove geometry, lighting, character or mobile framing acceptance.",
+    "Local warp may compress paint in narrow margins; inspect output and Jacobian, reject if fold/duplicated contour visible."
+  ]
+}

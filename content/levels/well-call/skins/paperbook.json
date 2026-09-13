@@ -5,10 +5,15 @@
     "width": 720,
     "height": 1280
   },
+  "framing": {
+    "sceneBounds": { "x": 0, "y": 0, "w": 720, "h": 1320 },
+    "critical": { "x": 70, "y": 260, "w": 600, "h": 966 }
+  },
   "assets": {
     "well-room": {
-      "src": "/levels/transcript-v1/well-room.webp",
-      "alpha": false
+      "src": "/levels/display-adaptation/well-call-backdrop.webp",
+      "alpha": false,
+      "sceneBounds": { "x": 0, "y": 0, "w": 720, "h": 1320 }
     },
     "well-opening": {
       "src": "/levels/transcript-v1/well-opening.png",

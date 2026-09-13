@@ -1,0 +1,11 @@
+{
+  "safeHold": 650,
+  "rewardStep": 180,
+  "land": 650,
+  "sprout": 850,
+  "bloom": 1350,
+  "count": 1550,
+  "unlock": 1850,
+  "guide": 2150,
+  "end": 2600
+}

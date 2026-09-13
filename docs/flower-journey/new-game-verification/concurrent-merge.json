@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "userArtifact": "478479f54a104ccb6403fecbde1b6aa0db8067a7ce1f59a59ed65c2813e94b45",
+  "merged": [
+    "app/game/challenge/rules.ts",
+    "app/game/disaster/model.ts",
+    "app/game/runtime/engine.ts",
+    "app/game/runtime/scene.ts",
+    "app/game/runtime/schema.ts",
+    "app/game/scene-hunt/model.ts",
+    "components/game/configured/player.tsx",
+    "components/game/scene-hunt/player.tsx",
+    "components/game/scene-hunt/use-collection-sound.ts",
+    "scripts/test-challenge-hud-browser.mjs",
+    "scripts/test-scene-hunt.mjs",
+    "tests/disaster.test.ts",
+    "tests/hazard-batch.test.ts",
+    "tests/hunt-penalty.test.ts",
+    "tests/scene-hunt.test.ts"
+  ]
+}

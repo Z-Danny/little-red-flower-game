@@ -1,0 +1,651 @@
+{
+  "status": "passed",
+  "html": "D:\\中关村\\小红花\\test1\\work\\fire-stairs-20260913\\outputs\\本地离线版\\小红花应急行动.html",
+  "sha256": "46e7433d05f3068a9162c536683eee4e0fdc1df9168859ee27e6377c8b227571",
+  "checks": [
+    {
+      "name": "fullscreen unchanged 320",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568
+      }
+    },
+    {
+      "name": "native alarm and cough playback 320"
+    },
+    {
+      "name": "exit and automatic close 320"
+    },
+    {
+      "name": "outside stops alarm/cough 320"
+    },
+    {
+      "name": "four pointer actions and reward 320",
+      "sounds": [
+        {
+          "length": 123070,
+          "loop": true,
+          "rate": 22050
+        },
+        {
+          "length": 44100,
+          "loop": true,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 30870,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 17199,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 11025,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 31973,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 16538,
+          "loop": false,
+          "rate": 22050
+        }
+      ]
+    },
+    {
+      "name": "fullscreen unchanged 375",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667
+      }
+    },
+    {
+      "name": "native alarm and cough playback 375"
+    },
+    {
+      "name": "exit and automatic close 375"
+    },
+    {
+      "name": "outside stops alarm/cough 375"
+    },
+    {
+      "name": "four pointer actions and reward 375",
+      "sounds": [
+        {
+          "length": 123070,
+          "loop": true,
+          "rate": 22050
+        },
+        {
+          "length": 44100,
+          "loop": true,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 30870,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 17199,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 11025,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 31973,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 16538,
+          "loop": false,
+          "rate": 22050
+        }
+      ]
+    },
+    {
+      "name": "fullscreen unchanged 390",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "native alarm and cough playback 390"
+    },
+    {
+      "name": "pause freezes time/audio; mute retained"
+    },
+    {
+      "name": "exit and automatic close 390"
+    },
+    {
+      "name": "ordinary elevator rejected without progress"
+    },
+    {
+      "name": "outside stops alarm/cough 390"
+    },
+    {
+      "name": "four pointer actions and reward 390",
+      "sounds": [
+        {
+          "length": 123070,
+          "loop": true,
+          "rate": 22050
+        },
+        {
+          "length": 44100,
+          "loop": true,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 30870,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 17199,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 11025,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 31973,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 16538,
+          "loop": false,
+          "rate": 22050
+        }
+      ]
+    },
+    {
+      "name": "replay does not duplicate reward"
+    },
+    {
+      "name": "fullscreen unchanged 430",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932
+      }
+    },
+    {
+      "name": "native alarm and cough playback 430"
+    },
+    {
+      "name": "exit and automatic close 430"
+    },
+    {
+      "name": "outside stops alarm/cough 430"
+    },
+    {
+      "name": "four pointer actions and reward 430",
+      "sounds": [
+        {
+          "length": 123070,
+          "loop": true,
+          "rate": 22050
+        },
+        {
+          "length": 44100,
+          "loop": true,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 30870,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 17199,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 11025,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 31973,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 16538,
+          "loop": false,
+          "rate": 22050
+        }
+      ]
+    },
+    {
+      "name": "fullscreen unchanged 1440",
+      "bounds": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900
+      }
+    },
+    {
+      "name": "native alarm and cough playback 1440"
+    },
+    {
+      "name": "exit and automatic close 1440"
+    },
+    {
+      "name": "outside stops alarm/cough 1440"
+    },
+    {
+      "name": "four pointer actions and reward 1440",
+      "sounds": [
+        {
+          "length": 123070,
+          "loop": true,
+          "rate": 22050
+        },
+        {
+          "length": 44100,
+          "loop": true,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 30870,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 17199,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 41895,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 11025,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 31973,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 6615,
+          "loop": false,
+          "rate": 22050
+        },
+        {
+          "length": 16538,
+          "loop": false,
+          "rate": 22050
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "physicalPhone": "not_run",
+  "humanListening": "not_run",
+  "browserClosed": true
+}

@@ -1,0 +1,16 @@
+{
+  "at": "2026-09-12T16:20:52.358Z",
+  "status": "passed",
+  "htmlSha256": "e750923d8769ec151d1c91f9247a471a772613beafebdd25d61c373c047fab08",
+  "ruleTests": 675,
+  "typhoonBrowserChecks": 18,
+  "allHuntBrowserChecks": 72,
+  "build": {
+    "exitCode": 0,
+    "evidence": "Production vinext build completed in this task; Vite temp cache required approved elevation."
+  },
+  "humanListening": "not_run",
+  "physicalPhone": "not_run",
+  "assets": "No source image, mask or other level rule changed",
+  "runtime": "Isolated muted Edge, no HTTP requests or page errors, all test contexts closed"
+}

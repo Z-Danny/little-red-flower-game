@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 1,
+  "id": "paper-gouache",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "background": {
+      "src": "/levels/character-continuity-v3/lift-contact-practice/viewport-background.webp",
+      "alpha": false,
+      "sceneBounds": {
+        "x": 0,
+        "y": -160,
+        "w": 720,
+        "h": 1600
+      }
+    },
+    "family-calm": {
+      "src": "/levels/character-continuity-v3/lift-contact-practice/family-calm.webp",
+      "alpha": true
+    },
+    "family-initial": {
+      "src": "/levels/character-continuity-v3/lift-contact-practice/family-initial.webp",
+      "alpha": true
+    },
+    "flashlight-initial": {
+      "src": "/levels/reference-storybook-v2/lift-contact-practice/flashlight-initial.webp",
+      "alpha": true
+    },
+    "alarm-intercom-initial": {
+      "src": "/levels/reference-storybook-v2/lift-contact-practice/alarm-intercom-initial.webp",
+      "alpha": true
+    },
+    "lift-door-panel": {
+      "src": "/levels/reference-storybook-v2/lift-contact-practice/lift-door-panel.webp",
+      "alpha": false
+    },
+    "ordinary-button-panel": {
+      "src": "/levels/reference-storybook-v2/lift-contact-practice/ordinary-button-panel.webp",
+      "alpha": false
+    },
+    "intercom-screen": {
+      "src": "/levels/response-practice-v1/r07/intercom-screen-88b905ee81ec.webp",
+      "alpha": true
+    },
+    "report-field": {
+      "src": "/levels/response-practice-v1/r07/report-field-70d76c5211a6.webp",
+      "alpha": true
+    }
+  },
+  "background": "background",
+  "poses": {
+    "family": {
+      "x": 304.5112,
+      "y": 333.1775,
+      "w": 313.7088,
+      "h": 760.5526,
+      "asset": "family-initial",
+      "depth": 40
+    },
+    "flashlight": {
+      "x": 71.1211,
+      "y": 763.1881,
+      "w": 98.7035,
+      "h": 146.1424,
+      "asset": "flashlight-initial",
+      "depth": 35
+    },
+    "alarm-intercom": {
+      "x": 20.6589,
+      "y": 158.7248,
+      "w": 77.2795,
+      "h": 347.3751,
+      "asset": "alarm-intercom-initial",
+      "depth": 20
+    },
+    "lift-door": {
+      "asset": "lift-door-panel",
+      "x": 205.82359192348565,
+      "y": 173.26242295430393,
+      "w": 345.0797024442083,
+      "h": 767.4388947927737,
+      "depth": 5
+    },
+    "ordinary-button": {
+      "asset": "ordinary-button-panel",
+      "x": 672.5611052072263,
+      "y": 287.26879914984056,
+      "w": 42.082890541976624,
+      "h": 292.2848034006376,
+      "depth": 5
+    },
+    "device-screen": {
+      "asset": "intercom-screen",
+      "x": 114,
+      "y": 215,
+      "w": 278,
+      "h": 370,
+      "depth": 65,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "location-info": {
+      "asset": "report-field",
+      "x": 134,
+      "y": 295,
+      "w": 238,
+      "h": 95,
+      "depth": 66,
+      "opacity": 0
+    },
+    "people-info": {
+      "asset": "report-field",
+      "x": 134,
+      "y": 402,
+      "w": 238,
+      "h": 95,
+      "depth": 66,
+      "opacity": 0
+    }
+  },
+  "zones": {
+    "intercom-report": {
+      "x": 122,
+      "y": 507,
+      "w": 264,
+      "h": 72
+    },
+    "floor-light": {
+      "x": 28,
+      "y": 1020,
+      "w": 240,
+      "h": 165
+    },
+    "stand-back": {
+      "x": 392,
+      "y": 855,
+      "w": 290,
+      "h": 304
+    },
+    "door-gap": {
+      "x": 339,
+      "y": 712,
+      "w": 53,
+      "h": 255
+    },
+    "ceiling-hatch": {
+      "x": 205,
+      "y": 20,
+      "w": 285,
+      "h": 177
+    }
+  },
+  "states": [
+    {
+      "object": "device-screen",
+      "when": {
+        "all": [
+          "contact-established"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "location-info",
+      "when": {
+        "all": [
+          "contact-established"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "people-info",
+      "when": {
+        "all": [
+          "contact-established"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "location-info",
+      "when": {
+        "all": [
+          "location-reported"
+        ]
+      },
+      "pose": {
+        "opacity": 0.45,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "people-info",
+      "when": {
+        "all": [
+          "people-reported"
+        ]
+      },
+      "pose": {
+        "opacity": 0.45,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "device-screen",
+      "when": {
+        "all": [
+          "location-reported",
+          "people-reported"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "location-info",
+      "when": {
+        "all": [
+          "location-reported",
+          "people-reported"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "people-info",
+      "when": {
+        "all": [
+          "location-reported",
+          "people-reported"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "family",
+      "when": {
+        "all": [
+          "standing-back"
+        ]
+      },
+      "pose": {
+        "asset": "family-calm",
+        "x": 320,
+        "y": 392,
+        "w": 290,
+        "h": 697.24,
+        "depth": 40
+      }
+    },
+    {
+      "object": "flashlight",
+      "when": {
+        "all": [
+          "floor-lit"
+        ]
+      },
+      "pose": {
+        "asset": "flashlight-initial",
+        "x": 119,
+        "y": 1010,
+        "w": 90,
+        "h": 133.25,
+        "depth": 35,
+        "rotation": -0.32
+      }
+    }
+  ],
+  "animations": {
+    "establish-contact": {
+      "durationMs": 800,
+      "tracks": [
+        {
+          "object": "alarm-intercom",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.018
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.018
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "report-location": {
+      "durationMs": 700,
+      "tracks": [
+        {
+          "object": "location-info",
+          "keyframes": [
+            {
+              "at": 0.45,
+              "x": 145,
+              "y": 494,
+              "w": 220,
+              "h": 88
+            },
+            {
+              "at": 1,
+              "x": 134,
+              "y": 295,
+              "w": 238,
+              "h": 95,
+              "opacity": 0.45
+            }
+          ],
+          "fromDrop": true
+        }
+      ]
+    },
+    "report-people": {
+      "durationMs": 700,
+      "tracks": [
+        {
+          "object": "people-info",
+          "keyframes": [
+            {
+              "at": 0.45,
+              "x": 145,
+              "y": 494,
+              "w": 220,
+              "h": 88
+            },
+            {
+              "at": 1,
+              "x": 134,
+              "y": 402,
+              "w": 238,
+              "h": 95,
+              "opacity": 0.45
+            }
+          ],
+          "fromDrop": true
+        }
+      ]
+    },
+    "stand-back": {
+      "durationMs": 900,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.32,
+              "x": 315,
+              "y": 356
+            },
+            {
+              "at": 0.72,
+              "asset": "family-calm"
+            },
+            {
+              "at": 1,
+              "asset": "family-calm",
+              "x": 320,
+              "y": 392,
+              "w": 290,
+              "h": 697.24
+            }
+          ]
+        }
+      ]
+    },
+    "light-floor": {
+      "durationMs": 900,
+      "tracks": [
+        {
+          "object": "flashlight",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "x": 135,
+              "y": 947,
+              "rotation": -0.18
+            },
+            {
+              "at": 1,
+              "asset": "flashlight-initial",
+              "x": 119,
+              "y": 1010,
+              "w": 90,
+              "h": 133.25,
+              "rotation": -0.32
+            }
+          ],
+          "fromDrop": true
+        }
+      ]
+    },
+    "pry-door-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "lift-door",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "opacity": 0.8
+            },
+            {
+              "at": 0.55,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "crawl-gap-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.018
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.018
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "climb-hatch-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "rotation": -0.018
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.018
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "ordinary-button-neutral": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "ordinary-button",
+          "keyframes": [
+            {
+              "at": 0.4,
+              "opacity": 0.6
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [
+    {
+      "object": "device-screen",
+      "text": "紧急通话 · 模拟",
+      "x": 0.5,
+      "y": 0.12,
+      "size": 21,
+      "color": "#f4ecd8"
+    },
+    {
+      "object": "device-screen",
+      "text": "拖送至通话区",
+      "x": 0.5,
+      "y": 0.9,
+      "size": 18,
+      "color": "#d4cbaa"
+    },
+    {
+      "object": "location-info",
+      "text": "训练示例\n红花小区3栋 · 02号梯",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 19,
+      "color": "#f4ecd8"
+    },
+    {
+      "object": "people-info",
+      "text": "2人被困\n当前无明显伤情",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 20,
+      "color": "#f4ecd8"
+    }
+  ],
+  "zoneLabels": {
+    "intercom-report": "通话区",
+    "floor-light": "脚下地面",
+    "stand-back": "近侧站稳",
+    "door-gap": "门缝",
+    "ceiling-hatch": "检修口"
+  },
+  "zoneConditions": {
+    "intercom-report": {
+      "all": [
+        "contact-established"
+      ]
+    }
+  },
+  "presentation": {
+    "durationMs": 300000,
+    "effects": [
+      {
+        "kind": "light",
+        "box": {
+          "x": 29,
+          "y": 1005,
+          "w": 322,
+          "h": 180
+        },
+        "depth": 33,
+        "color": "#f4dd9b",
+        "strength": 0.65,
+        "when": {
+          "all": [
+            "floor-lit"
+          ]
+        }
+      },
+      {
+        "kind": "light",
+        "box": {
+          "x": 21,
+          "y": 286,
+          "w": 72,
+          "h": 211
+        },
+        "depth": 24,
+        "color": "#93cfac",
+        "strength": 0.28,
+        "when": {
+          "all": [
+            "contact-established"
+          ]
+        }
+      }
+    ],
+    "actors": [
+      {
+        "object": "family",
+        "amplitude": 0.22,
+        "until": [
+          "standing-back"
+        ]
+      }
+    ],
+    "audio": {
+      "theme": "lift",
+      "cues": {
+        "opening": "lift",
+        "pickup": "pickup",
+        "bounce": "bounce",
+        "danger": "warning",
+        "goal": "soft-tap",
+        "complete": "success",
+        "establish-contact": "intercom-connect",
+        "report-location": "message-send",
+        "report-people": "message-send",
+        "stand-back": "fabric",
+        "light-floor": "switch",
+        "ordinary-button-neutral": "button-tap",
+        "pry-door-error": "metal-tap",
+        "crawl-gap-error": "warning",
+        "climb-hatch-error": "warning"
+      },
+      "calmWhen": [
+        "contact-established",
+        "standing-back"
+      ]
+    }
+  },
+  "framing": {
+    "sceneBounds": {
+      "x": 0,
+      "y": -160,
+      "w": 720,
+      "h": 1600
+    },
+    "criticalRegions": [
+      {
+        "x": 20.6,
+        "y": 158.7,
+        "w": 77.3,
+        "h": 347.4
+      },
+      {
+        "x": 672.5,
+        "y": 287.2,
+        "w": 42.2,
+        "h": 292.4
+      },
+      {
+        "x": 304,
+        "y": 333,
+        "w": 314,
+        "h": 761
+      }
+    ]
+  }
+}

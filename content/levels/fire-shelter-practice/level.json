@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "id": "fire-shelter-practice",
+  "kind": "response",
+  "title": "高楼火灾：隔烟与定位待援",
+  "order": 31,
+  "location": "受烟威胁的高层房间",
+  "description": "走廊已被浓烟封堵，母亲和孩子在室内无明火的房间，房门尚未关严。窗外暂无烟火冲击；不要进入走廊或跳窗。",
+  "safety": "情境训练，不是真实求救。现场条件不符或出现新险情时，应遵从当地应急与专业人员指引。",
+  "briefing": "浓烟正从门口涌入，先把房门关严。湿毛巾堵缝，胶带加固；手电筒可拖给安全位置的母亲。房门和手机可点击。",
+  "objects": [
+    {
+      "id": "room-door",
+      "label": "通向浓烟的房门",
+      "input": "tap"
+    },
+    {
+      "id": "family",
+      "label": "母亲与孩子",
+      "input": "drag",
+      "disabledWhen": [
+        "rescue-signalled"
+      ]
+    },
+    {
+      "id": "wet-cloth",
+      "label": "湿毛巾",
+      "input": "drag",
+      "disabledWhen": [
+        "gaps-blocked"
+      ]
+    },
+    {
+      "id": "sealing-tape",
+      "label": "加固胶带",
+      "input": "drag",
+      "disabledWhen": [
+        "seal-reinforced"
+      ]
+    },
+    {
+      "id": "phone",
+      "label": "手机：模拟拨打119并报告位置",
+      "input": "tap",
+      "disabledWhen": [
+        "fire-service-contacted"
+      ]
+    },
+    {
+      "id": "flashlight",
+      "label": "求救手电",
+      "input": "drag",
+      "disabledWhen": [
+        "rescue-signalled"
+      ]
+    },
+    {
+      "id": "side-table",
+      "label": "普通小桌",
+      "input": "drag"
+    }
+  ],
+  "goals": [
+    {
+      "id": "door-closed",
+      "label": "关闭房门",
+      "object": "room-door",
+      "showTarget": false
+    },
+    {
+      "id": "gaps-blocked",
+      "label": "封堵门底缝隙",
+      "object": "wet-cloth",
+      "showTarget": false
+    },
+    {
+      "id": "seal-reinforced",
+      "label": "加固门缝密封",
+      "object": "sealing-tape",
+      "showTarget": false
+    },
+    {
+      "id": "fire-service-contacted",
+      "label": "拨打119并报告位置",
+      "object": "phone",
+      "showTarget": false
+    },
+    {
+      "id": "family-sheltered",
+      "label": "移到远离窗户的室内位置",
+      "object": "family",
+      "showTarget": false
+    },
+    {
+      "id": "rescue-signalled",
+      "label": "发出求救信号并等待",
+      "object": "flashlight",
+      "showTarget": false
+    }
+  ],
+  "interactions": [
+    {
+      "id": "reopen-door-error",
+      "source": "room-door",
+      "mode": "tap",
+      "requires": [
+        "door-closed"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "reopen-door-error",
+      "feedback": "训练中止：打开房门探查会使浓烟涌入。请留在可隔烟房间内等待救援。",
+      "failure": true
+    },
+    {
+      "id": "close-room-door",
+      "source": "room-door",
+      "mode": "tap",
+      "requires": [],
+      "grants": [
+        "door-closed"
+      ],
+      "outcome": "correct",
+      "animation": "close-room-door",
+      "feedback": "房门已关严，进烟减弱；不反锁。"
+    },
+    {
+      "id": "block-door-gaps",
+      "source": "wet-cloth",
+      "mode": "drop",
+      "target": "door-gaps",
+      "requires": [
+        "door-closed"
+      ],
+      "grants": [
+        "gaps-blocked"
+      ],
+      "outcome": "correct",
+      "animation": "block-door-gaps",
+      "feedback": "湿毛巾贴住门底缝隙，减少进烟。"
+    },
+    {
+      "id": "reinforce-seal",
+      "source": "sealing-tape",
+      "mode": "drop",
+      "target": "door-gaps",
+      "requires": [
+        "gaps-blocked"
+      ],
+      "grants": [
+        "seal-reinforced"
+      ],
+      "outcome": "correct",
+      "animation": "reinforce-seal",
+      "feedback": "胶带贴紧可达的门缝边缘，进一步减少进烟；封堵不能隔绝所有有毒气体。"
+    },
+    {
+      "id": "contact-fire-service",
+      "source": "phone",
+      "mode": "tap",
+      "requires": [],
+      "grants": [
+        "fire-service-contacted"
+      ],
+      "outcome": "correct",
+      "animation": "contact-fire-service",
+      "feedback": "模拟119已接通：红花小区3栋502室，母子2人，浓烟封堵走廊；保留本机回拨。"
+    },
+    {
+      "id": "shelter-family",
+      "source": "family",
+      "mode": "drop",
+      "target": "room-refuge",
+      "requires": [],
+      "grants": [
+        "family-sheltered"
+      ],
+      "outcome": "correct",
+      "animation": "shelter-family",
+      "feedback": "保持低姿，移到远离窗户和发热门口的室内位置。完成隔烟和报警后，把桌上手电筒拖给母亲。"
+    },
+    {
+      "id": "signal-rescue",
+      "source": "flashlight",
+      "mode": "drop",
+      "requires": [
+        "door-closed",
+        "gaps-blocked",
+        "seal-reinforced",
+        "fire-service-contacted",
+        "family-sheltered"
+      ],
+      "grants": [
+        "rescue-signalled"
+      ],
+      "outcome": "correct",
+      "animation": "signal-rescue",
+      "feedback": "留在室内安全位置，用手电向无烟火冲击的窗外间歇示意，保持联系等待救援。",
+      "target": "family-signal"
+    },
+    {
+      "id": "family-door-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "door-handle",
+      "requires": [],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "family-door-error",
+      "feedback": "训练中止：不要打开房门探查浓烟。关门隔烟并拨打119报告位置。",
+      "failure": true
+    },
+    {
+      "id": "corridor-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "corridor-zone",
+      "requires": [],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "corridor-error",
+      "feedback": "训练中止：浓烟走廊不可通行，不要冒险进入。",
+      "failure": true
+    },
+    {
+      "id": "climb-out-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "outside-window",
+      "requires": [],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "climb-out-error",
+      "feedback": "训练中止：高层跳窗会造成严重伤害，不要翻越窗台。",
+      "failure": true
+    },
+    {
+      "id": "early-seal",
+      "source": "wet-cloth",
+      "mode": "drop",
+      "target": "door-gaps",
+      "requires": [],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-seal",
+      "feedback": "先关严房门，再用湿毛巾封堵门底缝。"
+    },
+    {
+      "id": "early-reinforce",
+      "source": "sealing-tape",
+      "mode": "drop",
+      "target": "door-gaps",
+      "requires": [],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-reinforce",
+      "feedback": "先用湿毛巾堵住门底缝，再用胶带加固。"
+    },
+    {
+      "id": "table-gap-neutral",
+      "source": "side-table",
+      "mode": "drop",
+      "target": "door-gaps",
+      "requires": [],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "table-gap-neutral",
+      "feedback": "普通家具不能封住门缝，放回原处。"
+    },
+    {
+      "id": "early-signal",
+      "source": "flashlight",
+      "mode": "drop",
+      "requires": [
+        "family-sheltered"
+      ],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-signal",
+      "feedback": "先完成关门、湿毛巾堵缝、胶带加固和119位置报告，再把手电筒交给母亲示意求救。",
+      "target": "family-signal"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 50,
+    "initial": 0,
+    "warningAt": 100,
+    "peakFeedback": "50秒训练倒计时已归零，仍可继续正确处置；这不是现实火场的安全时间。",
+    "timeout": "continue"
+  },
+  "completion": {
+    "requires": [
+      "door-closed",
+      "gaps-blocked",
+      "seal-reinforced",
+      "fire-service-contacted",
+      "family-sheltered",
+      "rescue-signalled"
+    ],
+    "settleMs": 1200,
+    "observeMs": 6000,
+    "fixedStars": 3,
+    "title": "保持联系，等待救援",
+    "summary": "无法撤离时关闭房门、封堵门缝，远离烟气和窗户，拨打 119 并等待救援。",
+    "status": "救援到达声仅为训练演出，不代表现实救援时长。现实火场请持续遵从119指引。"
+  }
+}

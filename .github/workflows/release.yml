@@ -1,0 +1,43 @@
+name: Release offline game
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.22.0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm verify
+      - run: pnpm export:offline
+      - name: Package offline download
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          folder = Path('outputs/本地离线版')
+          with ZipFile('red-flower-offline.zip', 'w', ZIP_DEFLATED, compresslevel=6) as z:
+              for name in ['小红花应急行动.html', '使用说明.md', '导出校验.json']:
+                  z.write(folder / name, name)
+              z.write('LICENSE', 'LICENSE')
+          PY
+          sha256sum red-flower-offline.zip > SHA256SUMS.txt
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" red-flower-offline.zip SHA256SUMS.txt \
+            --verify-tag --title "小红花应急行动 $GITHUB_REF_NAME" --generate-notes \
+            --notes "下载 red-flower-offline.zip，解压后用浏览器打开小红花应急行动.html。Source code 压缩包是开发源码，不是离线游戏。"

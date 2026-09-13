@@ -1,0 +1,33 @@
+{
+  "at": "2026-09-12T17:54:16.423Z",
+  "updates": [
+    {
+      "source": "D:\\中关村\\小红花\\小红花游戏\\components\\game\\kitchen\\kitchen-thermometer.tsx",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\components\\game\\kitchen\\kitchen-thermometer.tsx",
+      "rel": "components/game/kitchen/kitchen-thermometer.tsx",
+      "old": "d196c458309518c935730ffbb2a3f2454e5c8f079b407c9349c0ff1f8a92064f",
+      "now": "e299189327bd1357b6653deda187cee6f2921e3aaf50f560e6ae812422136bcf"
+    },
+    {
+      "source": "D:\\中关村\\小红花\\小红花游戏\\docs\\kitchen-50s\\README.md",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\docs\\kitchen-50s\\README.md",
+      "rel": "docs/kitchen-50s/README.md",
+      "old": "645b1d9e30da8bf81c7db225978b485a684dcbe0eb8cbd4a36a12abebe52f02b",
+      "now": "08b7470ae99618deb976ec058a9aadb68661be9928791893fe29df1e35d38a64"
+    },
+    {
+      "source": "D:\\中关村\\小红花\\小红花游戏\\scripts\\test-kitchen-50s-browser.mjs",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\scripts\\test-kitchen-50s-browser.mjs",
+      "rel": "scripts/test-kitchen-50s-browser.mjs",
+      "old": "e153404e07855007a21ad6f9470285d5b172e8b0d94b5f1a24d61780cf7007c0",
+      "now": "db3ce330bc731950e396b4a4601299bb1886e1d87e505a497b03679554caef7b"
+    },
+    {
+      "source": "D:\\中关村\\小红花\\小红花游戏\\tests\\kitchen.test.ts",
+      "to": "D:\\中关村\\小红花\\test1\\work\\typhoon-deadline-20260913\\tests\\kitchen.test.ts",
+      "rel": "tests/kitchen.test.ts",
+      "old": "41449f66a118a1af09e52dc1dd3d6f69105d4155ac774231d069d67b5683c510",
+      "now": "66bc52413c15033619b0dc070203031804ee6726db67d0aa1bbf9cb597826b58"
+    }
+  ]
+}

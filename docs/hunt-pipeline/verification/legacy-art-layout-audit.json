@@ -1,0 +1,1573 @@
+[
+  {
+    "id": "typhoon-home",
+    "issues": [
+      {
+        "id": "plant",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 191.55555555555554,
+          "y": 110.66666666666664,
+          "right": 227.1111111111111,
+          "bottom": 158.66666666666663
+        }
+      },
+      {
+        "id": "window",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 46.666666666666664,
+          "y": 19.111111111111097,
+          "right": 98.66666666666666,
+          "bottom": 251.55555555555551
+        }
+      },
+      {
+        "id": "rail",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 98.66666666666666,
+          "y": 69.77777777777776,
+          "right": 147.1111111111111,
+          "bottom": 154.2222222222222
+        }
+      },
+      {
+        "id": "cabinet",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 260,
+          "y": 77.33333333333331,
+          "right": 289.3333333333333,
+          "bottom": 222.66666666666663
+        }
+      },
+      {
+        "id": "plant",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 224.49765625,
+          "y": 130.2734375,
+          "right": 266.18515625,
+          "bottom": 186.5515625
+        }
+      },
+      {
+        "id": "window",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 54.62109375,
+          "y": 22.928125,
+          "right": 115.58906250000001,
+          "bottom": 295.46015625
+        }
+      },
+      {
+        "id": "rail",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 115.58906250000001,
+          "y": 82.3328125,
+          "right": 172.38828125,
+          "bottom": 181.340625
+        }
+      },
+      {
+        "id": "cabinet",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 304.74609375,
+          "y": 91.19140625,
+          "right": 339.13828125,
+          "bottom": 261.5890625
+        }
+      },
+      {
+        "id": "window",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 26.85937499999997,
+          "y": 29.012500000000003,
+          "right": 104.00624999999998,
+          "bottom": 373.865625
+        }
+      },
+      {
+        "id": "rail",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 104.00625,
+          "y": 104.18125,
+          "right": 175.878125,
+          "bottom": 229.46250000000003
+        }
+      },
+      {
+        "id": "cabinet",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 343.359375,
+          "y": 115.39062500000001,
+          "right": 386.878125,
+          "bottom": 331.00625
+        }
+      },
+      {
+        "id": "window",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 29.328125,
+          "y": 32.0375,
+          "right": 114.51875,
+          "bottom": 412.846875
+        }
+      },
+      {
+        "id": "rail",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 114.51875000000001,
+          "y": 115.04375,
+          "right": 193.88437500000003,
+          "bottom": 253.3875
+        }
+      },
+      {
+        "id": "cabinet",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 378.828125,
+          "y": 127.421875,
+          "right": 426.884375,
+          "bottom": 365.51875
+        }
+      },
+      {
+        "id": "window",
+        "viewport": [
+          540,
+          960
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 78.75,
+          "y": 33,
+          "right": 166.5,
+          "bottom": 425.25
+        }
+      },
+      {
+        "id": "rail",
+        "viewport": [
+          540,
+          960
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 166.5,
+          "y": 118.5,
+          "right": 248.25,
+          "bottom": 261
+        }
+      },
+      {
+        "id": "cabinet",
+        "viewport": [
+          540,
+          960
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 438.75,
+          "y": 131.25,
+          "right": 488.25,
+          "bottom": 376.5
+        }
+      },
+      {
+        "id": "window",
+        "viewport": [
+          1440,
+          900
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 73.828125,
+          "y": 30.9375,
+          "right": 156.09375,
+          "bottom": 398.671875
+        }
+      },
+      {
+        "id": "rail",
+        "viewport": [
+          1440,
+          900
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 156.09375,
+          "y": 111.09375,
+          "right": 232.734375,
+          "bottom": 244.6875
+        }
+      },
+      {
+        "id": "cabinet",
+        "viewport": [
+          1440,
+          900
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 411.328125,
+          "y": 123.046875,
+          "right": 457.734375,
+          "bottom": 352.96875
+        }
+      }
+    ]
+  },
+  {
+    "id": "charging-bedroom",
+    "issues": [
+      {
+        "id": "covered_phone",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 0,
+          "y": 133.33333333333331,
+          "right": 82.22222222222221,
+          "bottom": 186.2222222222222
+        }
+      },
+      {
+        "id": "covered_phone",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -42.37500000000003,
+          "y": 198.471875,
+          "right": 79.60937499999999,
+          "bottom": 276.9375
+        }
+      },
+      {
+        "id": "swollen_bank",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 305.775,
+          "y": 427.27500000000003,
+          "right": 406.65937499999995,
+          "bottom": 489.91562500000003
+        }
+      },
+      {
+        "id": "covered_phone",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -47.125,
+          "y": 219.165625,
+          "right": 87.578125,
+          "bottom": 305.8125
+        }
+      },
+      {
+        "id": "swollen_bank",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 337.325,
+          "y": 471.825,
+          "right": 448.728125,
+          "bottom": 540.996875
+        }
+      }
+    ]
+  },
+  {
+    "id": "bedroom-night-check-v2",
+    "issues": [
+      {
+        "id": "covered_phone",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 0,
+          "y": 74.2222222222222,
+          "right": 76.44444444444444,
+          "bottom": 152.4444444444444
+        }
+      },
+      {
+        "id": "folded_blanket",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 93.77777777777777,
+          "y": 95.1111111111111,
+          "right": 218.22222222222223,
+          "bottom": 194.2222222222222
+        }
+      },
+      {
+        "id": "covered_phone",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": -0.09375,
+          "y": 87.54375,
+          "right": 89.534375,
+          "bottom": 179.25625000000002
+        }
+      },
+      {
+        "id": "folded_blanket",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 109.85703125,
+          "y": 112.03515625,
+          "right": 255.76328125,
+          "bottom": 228.2390625
+        }
+      },
+      {
+        "id": "covered_phone",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -42.37500000000003,
+          "y": 110.775,
+          "right": 71.03749999999998,
+          "bottom": 226.82500000000002
+        }
+      },
+      {
+        "id": "damaged_lead",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -9.406250000000028,
+          "y": 485.3,
+          "right": 150.1625,
+          "bottom": 633
+        }
+      },
+      {
+        "id": "swollen_bank",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 334.12812499999995,
+          "y": 215.61562500000002,
+          "right": 432.37499999999994,
+          "bottom": 287.4875
+        }
+      },
+      {
+        "id": "covered_heater",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 233.24375,
+          "y": 490.57500000000005,
+          "right": 432.375,
+          "bottom": 817.625
+        }
+      },
+      {
+        "id": "covered_phone",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -47.125,
+          "y": 122.325,
+          "right": 78.1125,
+          "bottom": 250.47500000000002
+        }
+      },
+      {
+        "id": "damaged_lead",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -10.71875,
+          "y": 535.9,
+          "right": 165.4875,
+          "bottom": 699
+        }
+      },
+      {
+        "id": "swollen_bank",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 368.63437500000003,
+          "y": 238.096875,
+          "right": 477.12500000000006,
+          "bottom": 317.46250000000003
+        }
+      },
+      {
+        "id": "covered_heater",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 257.23125,
+          "y": 541.725,
+          "right": 477.125,
+          "bottom": 902.875
+        }
+      },
+      {
+        "id": "covered_phone",
+        "viewport": [
+          540,
+          960
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 0,
+          "y": 126,
+          "right": 129,
+          "bottom": 258
+        }
+      },
+      {
+        "id": "covered_phone",
+        "viewport": [
+          1440,
+          900
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 0,
+          "y": 118.125,
+          "right": 120.9375,
+          "bottom": 241.875
+        }
+      }
+    ]
+  },
+  {
+    "id": "kitchen-before-cooking-v2",
+    "issues": [
+      {
+        "id": "greasy_filter",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 47.11111111111111,
+          "y": 71.1111111111111,
+          "right": 158.66666666666666,
+          "bottom": 98.66666666666666
+        }
+      },
+      {
+        "id": "greasy_filter",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 55.142187500000006,
+          "y": 83.89609375,
+          "right": 185.93671875,
+          "bottom": 116.20390625000002
+        }
+      },
+      {
+        "id": "greasy_filter",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 27.518749999999983,
+          "y": 106.15937500000001,
+          "right": 193.021875,
+          "bottom": 147.040625
+        }
+      },
+      {
+        "id": "damaged_kettle",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 242.475,
+          "y": 514.3125,
+          "right": 429.078125,
+          "bottom": 700.915625
+        }
+      },
+      {
+        "id": "greasy_filter",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 30.056250000000006,
+          "y": 117.228125,
+          "right": 212.815625,
+          "bottom": 162.37187500000002
+        }
+      },
+      {
+        "id": "damaged_kettle",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 267.425,
+          "y": 567.9375,
+          "right": 473.484375,
+          "bottom": 773.996875
+        }
+      },
+      {
+        "id": "greasy_filter",
+        "viewport": [
+          540,
+          960
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 79.5,
+          "y": 120.75,
+          "right": 267.75,
+          "bottom": 167.25
+        }
+      },
+      {
+        "id": "greasy_filter",
+        "viewport": [
+          1440,
+          900
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 74.53125,
+          "y": 113.203125,
+          "right": 251.015625,
+          "bottom": 156.796875
+        }
+      }
+    ]
+  },
+  {
+    "id": "clear-corridor-check-v2",
+    "issues": [
+      {
+        "id": "wedged_fire_door",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 163.11111111111111,
+          "y": 87.99999999999999,
+          "right": 201.33333333333334,
+          "bottom": 285.77777777777777
+        }
+      },
+      {
+        "id": "locked_exit",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 228,
+          "y": 106.2222222222222,
+          "right": 303.55555555555554,
+          "bottom": 242.66666666666663
+        }
+      },
+      {
+        "id": "blocked_hydrant",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 79.1111111111111,
+          "y": 129.77777777777777,
+          "right": 145.33333333333331,
+          "bottom": 273.3333333333333
+        }
+      },
+      {
+        "id": "wedged_fire_door",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 191.14765625,
+          "y": 103.69765625000001,
+          "right": 235.96171875000002,
+          "bottom": 335.584375
+        }
+      },
+      {
+        "id": "locked_exit",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 267.22734375,
+          "y": 125.0625,
+          "right": 355.81328125,
+          "bottom": 285.03828125
+        }
+      },
+      {
+        "id": "blocked_path",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -42.37500000000003,
+          "y": 440.46250000000003,
+          "right": 195.65937499999998,
+          "bottom": 840.703125
+        }
+      },
+      {
+        "id": "ebike_charging",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 276.103125,
+          "y": 380.459375,
+          "right": 426.44062499999995,
+          "bottom": 672.5625
+        }
+      },
+      {
+        "id": "wedged_fire_door",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 199.615625,
+          "y": 131.21562500000002,
+          "right": 256.321875,
+          "bottom": 424.63750000000005
+        }
+      },
+      {
+        "id": "locked_exit",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 295.884375,
+          "y": 158.25,
+          "right": 407.978125,
+          "bottom": 360.678125
+        }
+      },
+      {
+        "id": "blocked_path",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -47.125,
+          "y": 486.3875,
+          "right": 215.72812500000003,
+          "bottom": 928.359375
+        }
+      },
+      {
+        "id": "ebike_charging",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 304.559375,
+          "y": 420.128125,
+          "right": 470.571875,
+          "bottom": 742.6875
+        }
+      },
+      {
+        "id": "locked_exit",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 326.403125,
+          "y": 174.75,
+          "right": 450.184375,
+          "bottom": 398.284375
+        }
+      }
+    ]
+  },
+  {
+    "id": "quake-bedroom-v2",
+    "issues": [
+      {
+        "id": "unsecured_cabinet",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 241.33333333333331,
+          "y": 32.44444444444443,
+          "right": 313.77777777777777,
+          "bottom": 282.2222222222222
+        }
+      },
+      {
+        "id": "heavy_top",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 12,
+          "y": 30.666666666666654,
+          "right": 68.88888888888889,
+          "bottom": 101.77777777777777
+        }
+      },
+      {
+        "id": "overbed_frame",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 143.11111111111111,
+          "y": 93.33333333333331,
+          "right": 217.33333333333331,
+          "bottom": 163.1111111111111
+        }
+      },
+      {
+        "id": "unsecured_cabinet",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 282.86015625,
+          "y": 38.5609375,
+          "right": 367.7984375,
+          "bottom": 331.41562500000003
+        }
+      },
+      {
+        "id": "heavy_top",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 13.97578125,
+          "y": 36.4765625,
+          "right": 80.67578125,
+          "bottom": 119.8515625
+        }
+      },
+      {
+        "id": "overbed_frame",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 167.6984375,
+          "y": 109.95078125,
+          "right": 254.72109375000002,
+          "bottom": 191.7625
+        }
+      },
+      {
+        "id": "unsecured_cabinet",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 315.665625,
+          "y": 48.79375,
+          "right": 423.14374999999995,
+          "bottom": 419.3625
+        }
+      },
+      {
+        "id": "heavy_top",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -24.571875000000027,
+          "y": 46.15625,
+          "right": 59.82812499999998,
+          "bottom": 151.65625
+        }
+      },
+      {
+        "id": "exit_boxes",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -13.362500000000026,
+          "y": 500.46562500000005,
+          "right": 126.425,
+          "bottom": 693.6625
+        }
+      },
+      {
+        "id": "blocked_shelter",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 270.16875000000005,
+          "y": 488.596875,
+          "right": 415.23125000000005,
+          "bottom": 721.35625
+        }
+      },
+      {
+        "id": "unsecured_cabinet",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 348.246875,
+          "y": 53.88125,
+          "right": 466.93125,
+          "bottom": 463.08750000000003
+        }
+      },
+      {
+        "id": "heavy_top",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -27.465625,
+          "y": 50.96875,
+          "right": 65.734375,
+          "bottom": 167.46875
+        }
+      },
+      {
+        "id": "exit_boxes",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -15.087499999999999,
+          "y": 552.646875,
+          "right": 139.275,
+          "bottom": 765.9875000000001
+        }
+      },
+      {
+        "id": "blocked_shelter",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 298.00625,
+          "y": 539.540625,
+          "right": 458.19375,
+          "bottom": 796.5687499999999
+        }
+      },
+      {
+        "id": "unsecured_cabinet",
+        "viewport": [
+          540,
+          960
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 407.25,
+          "y": 55.5,
+          "right": 529.5,
+          "bottom": 477
+        }
+      },
+      {
+        "id": "heavy_top",
+        "viewport": [
+          540,
+          960
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 20.25,
+          "y": 52.5,
+          "right": 116.25,
+          "bottom": 172.5
+        }
+      },
+      {
+        "id": "unsecured_cabinet",
+        "viewport": [
+          1440,
+          900
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 381.796875,
+          "y": 52.03125,
+          "right": 496.40625,
+          "bottom": 447.1875
+        }
+      },
+      {
+        "id": "heavy_top",
+        "viewport": [
+          1440,
+          900
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 18.984375,
+          "y": 49.21875,
+          "right": 108.984375,
+          "bottom": 161.71875
+        }
+      }
+    ]
+  },
+  {
+    "id": "storm-street-check-v2",
+    "issues": [
+      {
+        "id": "flooded_underpass",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 24.444444444444443,
+          "y": 55.55555555555554,
+          "right": 141.33333333333331,
+          "bottom": 156.88888888888886
+        }
+      },
+      {
+        "id": "loose_sign",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 181.33333333333331,
+          "y": 17.777777777777764,
+          "right": 296,
+          "bottom": 79.11111111111109
+        }
+      },
+      {
+        "id": "flooded_underpass",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 28.56640625,
+          "y": 65.6578125,
+          "right": 165.61406250000002,
+          "bottom": 184.46718750000002
+        }
+      },
+      {
+        "id": "loose_sign",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 212.51250000000002,
+          "y": 21.364843750000002,
+          "right": 346.95468750000003,
+          "bottom": 93.27578125000001
+        }
+      },
+      {
+        "id": "flooded_underpass",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -6.109375000000028,
+          "y": 83.08125000000001,
+          "right": 167.30624999999998,
+          "bottom": 233.41875000000002
+        }
+      },
+      {
+        "id": "wet_power_box",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 259.61875,
+          "y": 245.946875,
+          "right": 394.790625,
+          "bottom": 425.95625
+        }
+      },
+      {
+        "id": "loose_sign",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 226.65,
+          "y": 27.034375,
+          "right": 396.76875,
+          "bottom": 118.028125
+        }
+      },
+      {
+        "id": "leaning_fence",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -3.4718750000000256,
+          "y": 351.44687500000003,
+          "right": 179.83437499999997,
+          "bottom": 539.3687500000001
+        }
+      },
+      {
+        "id": "flooded_underpass",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -7.078125,
+          "y": 91.74375,
+          "right": 184.41875000000002,
+          "bottom": 257.75625
+        }
+      },
+      {
+        "id": "wet_power_box",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 286.35625,
+          "y": 271.590625,
+          "right": 435.621875,
+          "bottom": 470.36875
+        }
+      },
+      {
+        "id": "loose_sign",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 249.95,
+          "y": 29.853125000000002,
+          "right": 437.80625,
+          "bottom": 130.334375
+        }
+      },
+      {
+        "id": "leaning_fence",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -4.165624999999999,
+          "y": 388.090625,
+          "right": 198.253125,
+          "bottom": 595.60625
+        }
+      },
+      {
+        "id": "flooded_underpass",
+        "viewport": [
+          540,
+          960
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 41.25,
+          "y": 94.5,
+          "right": 238.5,
+          "bottom": 265.5
+        }
+      },
+      {
+        "id": "loose_sign",
+        "viewport": [
+          540,
+          960
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 306,
+          "y": 30.75,
+          "right": 499.5,
+          "bottom": 134.25
+        }
+      },
+      {
+        "id": "flooded_underpass",
+        "viewport": [
+          1440,
+          900
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 38.671875,
+          "y": 88.59375,
+          "right": 223.59375,
+          "bottom": 248.90625
+        }
+      },
+      {
+        "id": "loose_sign",
+        "viewport": [
+          1440,
+          900
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 286.875,
+          "y": 28.828125,
+          "right": 468.28125,
+          "bottom": 125.859375
+        }
+      }
+    ]
+  },
+  {
+    "id": "thunder-park-v2",
+    "issues": [
+      {
+        "id": "isolated_tree",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 8,
+          "y": 30.222222222222207,
+          "right": 116.88888888888889,
+          "bottom": 150.66666666666666
+        }
+      },
+      {
+        "id": "open_gazebo",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 153.77777777777777,
+          "y": 119.11111111111109,
+          "right": 243.55555555555554,
+          "bottom": 177.33333333333331
+        }
+      },
+      {
+        "id": "isolated_tree",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 9.285937500000001,
+          "y": 35.95546875,
+          "right": 136.95390625,
+          "bottom": 177.171875
+        }
+      },
+      {
+        "id": "isolated_tree",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -30.50625000000003,
+          "y": 45.496875,
+          "right": 131.04062499999998,
+          "bottom": 224.1875
+        }
+      },
+      {
+        "id": "camping_tent",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -8.087500000000027,
+          "y": 406.175,
+          "right": 166.64687499999997,
+          "bottom": 490.57500000000005
+        }
+      },
+      {
+        "id": "isolated_tree",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -34.01875,
+          "y": 50.240625,
+          "right": 144.371875,
+          "bottom": 247.5625
+        }
+      },
+      {
+        "id": "camping_tent",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -9.262499999999996,
+          "y": 448.52500000000003,
+          "right": 183.690625,
+          "bottom": 541.725
+        }
+      },
+      {
+        "id": "isolated_tree",
+        "viewport": [
+          540,
+          960
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 13.5,
+          "y": 51.75,
+          "right": 197.25,
+          "bottom": 255
+        }
+      },
+      {
+        "id": "isolated_tree",
+        "viewport": [
+          1440,
+          900
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 12.65625,
+          "y": 48.515625,
+          "right": 184.921875,
+          "bottom": 239.0625
+        }
+      }
+    ]
+  },
+  {
+    "id": "forest-fire-sources-v2",
+    "issues": [
+      {
+        "id": "forest_grill",
+        "viewport": [
+          320,
+          568
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 31.11111111111111,
+          "y": 87.55555555555554,
+          "right": 128,
+          "bottom": 163.1111111111111
+        }
+      },
+      {
+        "id": "forest_grill",
+        "viewport": [
+          375,
+          667
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 36.3828125,
+          "y": 103.1765625,
+          "right": 149.98125,
+          "bottom": 191.7625
+        }
+      },
+      {
+        "id": "forest_grill",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-in-hud-band",
+        "bounds": {
+          "x": 3.7812499999999716,
+          "y": 130.55625,
+          "right": 147.52499999999998,
+          "bottom": 242.65000000000003
+        }
+      },
+      {
+        "id": "smouldering_cigarette",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -29.18750000000003,
+          "y": 442.440625,
+          "right": 92.13749999999997,
+          "bottom": 513.653125
+        }
+      },
+      {
+        "id": "forest_campfire",
+        "viewport": [
+          390,
+          844
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 241.15624999999997,
+          "y": 207.703125,
+          "right": 405.340625,
+          "bottom": 274.3
+        }
+      },
+      {
+        "id": "smouldering_cigarette",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": -32.5625,
+          "y": 488.57187500000003,
+          "right": 101.4125,
+          "bottom": 567.209375
+        }
+      },
+      {
+        "id": "forest_campfire",
+        "viewport": [
+          430,
+          932
+        ],
+        "reason": "critical-content-cropped",
+        "bounds": {
+          "x": 265.96875,
+          "y": 229.359375,
+          "right": 447.271875,
+          "bottom": 302.9
+        }
+      }
+    ]
+  }
+]

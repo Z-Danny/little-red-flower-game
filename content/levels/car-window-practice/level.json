@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "id": "car-window-practice",
+  "kind": "response",
+  "title": "汽车落水：从可用侧窗离车",
+  "order": 27,
+  "location": "车内与水面",
+  "description": "车辆刚落水，近侧电动车窗仍能下降、开口可通过；岸侧有人准备投来救生圈。",
+  "safety": "情境训练，不是真实求救。现场条件不符或出现新险情时，应遵从当地应急与专业人员指引。",
+  "briefing": "情境训练｜车辆刚落水，近侧电动车窗仍能下降、开口可通过；岸侧有人准备投来救生圈。",
+  "objects": [
+    {
+      "id": "adult-inside",
+      "label": "车内成人",
+      "input": "drag",
+      "disabledWhen": [
+        "out-of-car"
+      ]
+    },
+    {
+      "id": "adult-afloat",
+      "label": "保持漂浮并求助",
+      "input": "tap",
+      "requires": [
+        "out-of-car"
+      ],
+      "disabledWhen": [
+        "afloat-signalling"
+      ]
+    },
+    {
+      "id": "buckle",
+      "label": "安全带卡扣",
+      "input": "tap",
+      "disabledWhen": [
+        "belt-released",
+        "out-of-car"
+      ]
+    },
+    {
+      "id": "window-button",
+      "label": "近侧车窗按钮",
+      "input": "tap",
+      "disabledWhen": [
+        "window-open",
+        "out-of-car"
+      ]
+    },
+    {
+      "id": "lifebuoy",
+      "label": "近处救生圈",
+      "input": "drag",
+      "requires": [
+        "out-of-car"
+      ],
+      "disabledWhen": [
+        "buoy-held"
+      ]
+    },
+    {
+      "id": "wait-in-car",
+      "label": "选择继续留在车内",
+      "input": "tap",
+      "disabledWhen": [
+        "out-of-car"
+      ]
+    },
+    {
+      "id": "return-bag",
+      "label": "车内财物",
+      "input": "tap",
+      "requires": [
+        "out-of-car"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "belt-released",
+      "label": "解开安全带",
+      "object": "buckle",
+      "showTarget": false
+    },
+    {
+      "id": "window-open",
+      "label": "降下可用侧窗",
+      "object": "window-button",
+      "showTarget": false
+    },
+    {
+      "id": "out-of-car",
+      "label": "尽快从可用出口离车",
+      "object": "adult-inside",
+      "showTarget": false
+    },
+    {
+      "id": "buoy-held",
+      "label": "抓住近处救生圈",
+      "object": "lifebuoy",
+      "showTarget": false
+    },
+    {
+      "id": "afloat-signalling",
+      "label": "保持口鼻出水并求助",
+      "object": "adult-afloat",
+      "showTarget": false
+    }
+  ],
+  "interactions": [
+    {
+      "id": "release-belt",
+      "source": "buckle",
+      "mode": "tap",
+      "grants": [
+        "belt-released"
+      ],
+      "outcome": "correct",
+      "animation": "release-belt",
+      "feedback": "解开安全带。"
+    },
+    {
+      "id": "open-window",
+      "source": "window-button",
+      "mode": "tap",
+      "grants": [
+        "window-open"
+      ],
+      "outcome": "correct",
+      "animation": "open-window",
+      "feedback": "侧窗正常下降，当前开口可用于离车。"
+    },
+    {
+      "id": "exit-window",
+      "source": "adult-inside",
+      "mode": "drop",
+      "target": "window-exit",
+      "requires": [
+        "belt-released",
+        "window-open"
+      ],
+      "grants": [
+        "out-of-car"
+      ],
+      "outcome": "correct",
+      "animation": "exit-window",
+      "feedback": "立即利用可用开口离车。训练转场：已在车外水面。"
+    },
+    {
+      "id": "grip-buoy",
+      "source": "lifebuoy",
+      "mode": "drop",
+      "target": "buoy-grip",
+      "requires": [
+        "out-of-car"
+      ],
+      "grants": [
+        "buoy-held"
+      ],
+      "outcome": "correct",
+      "animation": "grip-buoy",
+      "feedback": "抓牢伸手可及的救生圈，保持口鼻出水。"
+    },
+    {
+      "id": "signal-afloat",
+      "source": "adult-afloat",
+      "mode": "tap",
+      "requires": [
+        "buoy-held"
+      ],
+      "grants": [
+        "afloat-signalling"
+      ],
+      "outcome": "correct",
+      "animation": "signal-afloat",
+      "feedback": "保持浮具支持，发出求救信号，继续等待援助。"
+    },
+    {
+      "id": "early-exit",
+      "source": "adult-inside",
+      "mode": "drop",
+      "target": "window-exit",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-exit",
+      "feedback": "先解开安全带，并降下当前可用的侧窗。"
+    },
+    {
+      "id": "early-signal",
+      "source": "adult-afloat",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-signal",
+      "feedback": "近处有已投来的救生圈，抓牢浮具支持。"
+    },
+    {
+      "id": "wait-car-error",
+      "source": "wait-in-car",
+      "mode": "tap",
+      "unless": [
+        "out-of-car"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "wait-car-error",
+      "feedback": "错误后果示意｜抓住可用出口，尽快离车；不要主动等待车厢灌满。"
+    },
+    {
+      "id": "return-bag-error",
+      "source": "return-bag",
+      "mode": "tap",
+      "requires": [
+        "out-of-car"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "return-bag-error",
+      "feedback": "错误后果示意｜不要返回车内取包或手机，保持水面支持。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 60,
+    "initial": 0,
+    "warningAt": 100,
+    "peakFeedback": "演出已达训练上限；仍可继续正确处置，不以等待时间判失败。"
+  },
+  "completion": {
+    "requires": [
+      "belt-released",
+      "window-open",
+      "out-of-car",
+      "buoy-held",
+      "afloat-signalling"
+    ],
+    "settleMs": 1200,
+    "observeMs": 4000,
+    "fixedStars": 3,
+    "summary": "已离车并建立漂浮支持，继续求救",
+    "title": "已离车并建立漂浮支持，继续求救",
+    "status": "训练完成；继续关注现场变化与专业指引。"
+  }
+}

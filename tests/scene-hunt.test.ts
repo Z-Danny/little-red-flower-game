@@ -47,8 +47,9 @@ for (const order of permutations(rules.targets.map((t) => t.id)))
     assert.equal(pressure(rules, r), 0);
     assert.deepEqual(reduceHunt(rules, r, { type: 'reset' }), createHunt());
   });
-test('scope: only typhoon routed to scene recognition', () => {
-  assert.equal(huntPacks.length, 1);
+test('scope: typhoon and new bedroom routed to scene recognition', () => {
+  assert.equal(huntPacks.length, 9);
+  assert.ok(getHunt('charging-bedroom'));
   assert.equal(getHunt('oil-fire'), undefined);
   assert.equal(getHunt('flood-kit'), undefined);
 });
@@ -57,11 +58,11 @@ test('ready has no time pressure or input', () => {
   assert.equal(tick(r, 5000), r);
   assert.equal(tap(r, 'plant'), r);
 });
-test('wrong tap no deduction, ripple expires', () => {
+test('wrong tap deducts five seconds, ripple expires', () => {
   let r = start();
   r = tap(r, null);
   assert.deepEqual(r.found, []);
-  assert.equal(r.elapsed, 0);
+  assert.equal(r.elapsed, 5000);
   assert.ok(r.miss);
   r = tick(r, 420);
   assert.equal(r.miss, null);
@@ -74,13 +75,13 @@ test('busy tap and double tap cannot duplicate rewards', () => {
   assert.equal(tap(r, 'plant'), r);
   assert.equal(r.found.length, 1);
 });
-test('peak is recoverable, no automatic safe scene', () => {
-  let r = tick(start(), 105000);
-  assert.equal(r.phase, 'playing');
+test('typhoon hard deadline cannot enter a safe scene after timeout', () => {
+  const r = tick(start(), 105000);
+  assert.equal(r.phase, 'failed');
   assert.equal(r.peak, true);
   assert.equal(pressure(rules, r), 1);
-  for (const t of rules.targets) r = tick(tap(r, t.id), 800);
-  assert.equal(r.phase, 'reveal');
+  assert.equal(r.stars, 0);
+  assert.equal(tap(r, 'plant'), r);
 });
 test('invalid ticks cannot corrupt state and long frame clamps', () => {
   const r = start();
@@ -161,7 +162,7 @@ test('weather draws behind people, no face droplets', () => {
   assert.ok(src.search(/art\.family,\s*0,\s*sy/) > src.indexOf('Rain is clipped'));
   assert.ok(!src.includes('#b1dfeb'));
 });
-test('sound never autostarts; lifecycle cleans nodes and respects mute / hidden / pause', async () => {
+for (const profile of ['storm','quiet_electric'] as const) test('sound lifecycle: ' + profile + ' never autostarts and respects mute / hidden / pause', async () => {
   const oldCtx = globalThis.AudioContext,
     oldFetch = globalThis.fetch;
   class Param {
@@ -197,6 +198,7 @@ test('sound never autostarts; lifecycle cleans nodes and respects mute / hidden 
   }
   class C {
     static made = 0;
+    static bufferSources = 0;
     state = 'suspended';
     currentTime = 0;
     sampleRate = 8000;
@@ -221,6 +223,7 @@ test('sound never autostarts; lifecycle cleans nodes and respects mute / hidden 
       };
     }
     createBufferSource() {
+      C.bufferSources++;
       return new N();
     }
     createOscillator() {
@@ -247,12 +250,13 @@ test('sound never autostarts; lifecycle cleans nodes and respects mute / hidden 
     ok: true,
     arrayBuffer: async () => new ArrayBuffer(10),
   })) as any;
-  const sound = new HuntSound();
+  const sound = new HuntSound(profile);
   try {
     assert.equal(C.made, 0);
     assert.equal(sound.status, 'locked');
     await sound.unlock();
     assert.equal(C.made, 1);
+    assert.equal(C.bufferSources, profile === 'quiet_electric' ? 0 : 2);
     sound.setScene(true, 0.8);
     sound.cue('found');
     assert.equal(sound.lastCue, 'found');

@@ -1,0 +1,4 @@
+[
+  { "id": "response-draft-one", "kind": "response", "title": "处置草稿一（待制作）", "order": 901 },
+  { "id": "response-draft-two", "kind": "response", "title": "处置草稿二（待制作）", "order": 902 }
+]

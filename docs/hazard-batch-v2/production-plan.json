@@ -1,0 +1,289 @@
+{
+  "version": 2,
+  "sourceSha256": "3c14427ca49a9abbcdf2b6d4f2b4c908ee83ddba2ea6fec30a70a8c66c6d8848",
+  "actualNewCards": 7,
+  "existingTyphoonPreserved": true,
+  "existingBedroomPreserved": true,
+  "levels": [
+    {
+      "authorId": "H02",
+      "id": "bedroom-night-check-v2",
+      "title": "睡前的卧室",
+      "order": 14,
+      "targets": [
+        {
+          "id": "covered_phone",
+          "name": "被枕头盖住的充电手机",
+          "color": "#FF0000",
+          "lesson": "充电手机不能埋在枕头下。"
+        },
+        {
+          "id": "damaged_lead",
+          "name": "破损充电组件",
+          "color": "#00FF00",
+          "lesson": "破损充电线应停用。"
+        },
+        {
+          "id": "swollen_bank",
+          "name": "鼓胀充电宝",
+          "color": "#0000FF",
+          "lesson": "鼓胀的充电宝不能继续用。"
+        },
+        {
+          "id": "folded_blanket",
+          "name": "折叠通电的电热毯",
+          "color": "#FFFF00",
+          "lesson": "电热毯不能折叠通电。"
+        },
+        {
+          "id": "covered_heater",
+          "name": "被衣服覆盖的取暖器",
+          "color": "#FF00FF",
+          "lesson": "取暖器上不能盖衣服。"
+        }
+      ],
+      "status": "playable_verified",
+      "card": "docs/hazard-batch-v2/cards/H02"
+    },
+    {
+      "authorId": "H04",
+      "id": "kitchen-before-cooking-v2",
+      "title": "开火前的厨房",
+      "order": 15,
+      "targets": [
+        {
+          "id": "gas_hose",
+          "name": "老化开裂的燃气软管",
+          "color": "#FF0000",
+          "lesson": "燃气软管开裂，应停用报修。"
+        },
+        {
+          "id": "paper_near_hob",
+          "name": "炉头旁的纸巾",
+          "color": "#00FF00",
+          "lesson": "开火前先移开炉边纸巾。"
+        },
+        {
+          "id": "greasy_filter",
+          "name": "油垢积聚的油烟机滤网",
+          "color": "#0000FF",
+          "lesson": "油烟机积油要及时清理。"
+        },
+        {
+          "id": "sideways_cylinder",
+          "name": "横卧的液化气钢瓶",
+          "color": "#FFFF00",
+          "lesson": "液化气钢瓶不能卧放使用。"
+        },
+        {
+          "id": "damaged_kettle",
+          "name": "电热水壶的破损电源线",
+          "color": "#FF00FF",
+          "lesson": "电源线破损，应停止使用。"
+        }
+      ],
+      "status": "playable_verified",
+      "card": "docs/hazard-batch-v2/cards/H04"
+    },
+    {
+      "authorId": "H06",
+      "id": "clear-corridor-check-v2",
+      "title": "让生命通道畅通",
+      "order": 16,
+      "targets": [
+        {
+          "id": "blocked_path",
+          "name": "堵路纸箱",
+          "color": "#FF0000",
+          "lesson": "纸箱挡住了疏散通道。"
+        },
+        {
+          "id": "ebike_charging",
+          "name": "楼道充电的电动自行车",
+          "color": "#00FF00",
+          "lesson": "电动自行车不能在楼道充电。"
+        },
+        {
+          "id": "wedged_fire_door",
+          "name": "被顶开的常闭防火门",
+          "color": "#0000FF",
+          "lesson": "常闭防火门不能被顶住。"
+        },
+        {
+          "id": "locked_exit",
+          "name": "被链锁锁闭的安全出口",
+          "color": "#FFFF00",
+          "lesson": "安全出口不能被链锁锁住。"
+        },
+        {
+          "id": "blocked_hydrant",
+          "name": "被柜子挡住的消火栓",
+          "color": "#FF00FF",
+          "lesson": "消火栓前不能堆放物品。"
+        }
+      ],
+      "status": "playable_verified",
+      "card": "docs/hazard-batch-v2/cards/H06"
+    },
+    {
+      "authorId": "H08",
+      "id": "quake-bedroom-v2",
+      "title": "日常家庭防震准备",
+      "order": 17,
+      "targets": [
+        {
+          "id": "unsecured_cabinet",
+          "name": "固定连接脱开的高柜",
+          "color": "#FF0000",
+          "lesson": "高柜需要可靠固定。"
+        },
+        {
+          "id": "heavy_top",
+          "name": "高处的沉重陶罐",
+          "color": "#00FF00",
+          "lesson": "沉重物品应放在低处。"
+        },
+        {
+          "id": "overbed_frame",
+          "name": "床上方的厚重镜框",
+          "color": "#0000FF",
+          "lesson": "床上方不要悬挂重物。"
+        },
+        {
+          "id": "exit_boxes",
+          "name": "门口挡路箱",
+          "color": "#FFFF00",
+          "lesson": "门口通道要保持畅通。"
+        },
+        {
+          "id": "blocked_shelter",
+          "name": "被塞满的坚固桌下",
+          "color": "#FF00FF",
+          "lesson": "坚固桌下应预留避震空间。"
+        }
+      ],
+      "status": "playable_verified",
+      "card": "docs/hazard-batch-v2/cards/H08"
+    },
+    {
+      "authorId": "H09",
+      "id": "storm-street-check-v2",
+      "title": "风雨中的街口",
+      "order": 18,
+      "targets": [
+        {
+          "id": "flooded_underpass",
+          "name": "积水的地下通道",
+          "color": "#FF0000",
+          "lesson": "积水的地下通道不要进入。"
+        },
+        {
+          "id": "wet_power_box",
+          "name": "积水中的配电箱",
+          "color": "#00FF00",
+          "lesson": "积水电力设施要远离。"
+        },
+        {
+          "id": "missing_cover",
+          "name": "缺失井盖的检查井",
+          "color": "#0000FF",
+          "lesson": "缺失井盖，不能靠近。"
+        },
+        {
+          "id": "loose_sign",
+          "name": "连接脱开的广告牌",
+          "color": "#FFFF00",
+          "lesson": "大风天远离松动广告牌。"
+        },
+        {
+          "id": "leaning_fence",
+          "name": "倾斜的轻质围挡",
+          "color": "#FF00FF",
+          "lesson": "大风天要远离不稳围挡。"
+        }
+      ],
+      "status": "playable_verified",
+      "card": "docs/hazard-batch-v2/cards/H09"
+    },
+    {
+      "authorId": "H11",
+      "id": "thunder-park-v2",
+      "title": "雷雨来临的公园",
+      "order": 19,
+      "targets": [
+        {
+          "id": "isolated_tree",
+          "name": "孤立高树下方",
+          "color": "#FF0000",
+          "lesson": "雷雨时不要在孤立高树下避雨。"
+        },
+        {
+          "id": "open_gazebo",
+          "name": "四面敞开的凉亭",
+          "color": "#00FF00",
+          "lesson": "开敞凉亭不是安全避雷处。"
+        },
+        {
+          "id": "pond_platform",
+          "name": "池塘边的钓台",
+          "color": "#0000FF",
+          "lesson": "雷雨时应离开水边。"
+        },
+        {
+          "id": "open_cart",
+          "name": "开放式高尔夫球车",
+          "color": "#FFFF00",
+          "lesson": "开放式球车不能当避雷处。"
+        },
+        {
+          "id": "camping_tent",
+          "name": "普通露营帐篷",
+          "color": "#FF00FF",
+          "lesson": "帐篷能挡雨，不能作为避雷处。"
+        }
+      ],
+      "status": "playable_verified",
+      "card": "docs/hazard-batch-v2/cards/H11"
+    },
+    {
+      "authorId": "H12",
+      "id": "forest-fire-sources-v2",
+      "title": "林缘的五处火源",
+      "order": 20,
+      "targets": [
+        {
+          "id": "forest_grill",
+          "name": "禁火区炭烤炉",
+          "color": "#FF0000",
+          "lesson": "禁火林区不能生火烧烤。"
+        },
+        {
+          "id": "smouldering_cigarette",
+          "name": "未熄烟头",
+          "color": "#00FF00",
+          "lesson": "林区吸烟和遗留火种很危险。"
+        },
+        {
+          "id": "forest_campfire",
+          "name": "禁火区篝火",
+          "color": "#0000FF",
+          "lesson": "禁火林区不能点篝火取暖。"
+        },
+        {
+          "id": "burning_paper",
+          "name": "林缘烧纸盆",
+          "color": "#FFFF00",
+          "lesson": "禁火林区不能烧纸用火。"
+        },
+        {
+          "id": "forest_fireworks",
+          "name": "林缘燃放的烟花",
+          "color": "#FF00FF",
+          "lesson": "禁火林区不能燃放烟花。"
+        }
+      ],
+      "status": "playable_verified",
+      "card": "docs/hazard-batch-v2/cards/H12"
+    }
+  ]
+}

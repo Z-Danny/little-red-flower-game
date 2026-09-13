@@ -1,0 +1,25 @@
+{
+  "coverage": "GB2312 + current UI Chinese + ASCII and punctuation",
+  "fonts": [
+    {
+      "file": "flower-display.woff2",
+      "family": "Flower Display",
+      "source": "https://github.com/lxgw/LxgwWenKai-Screen/releases/tag/v1.522",
+      "license": "WenKai-OFL.txt",
+      "sourceSha256": "23ec023913e1851925eb94462c4b0ccd1d78bb89533745aaa8cc682ccd339dc0",
+      "sha256": "c8201f8857132185238c26377bc8438b3928ed06e4b10f5fd58cc1dcb43eb01b",
+      "bytes": 1888452,
+      "codepoints": 7784
+    },
+    {
+      "file": "flower-ui.woff2",
+      "family": "Flower UI",
+      "source": "https://github.com/google/fonts/tree/main/ofl/notosanssc",
+      "license": "NotoSansSC-OFL.txt",
+      "sourceSha256": "a3041811a78c361b1de50f953c805e0244951c21c5bd412f7232ef0d899af0da",
+      "sha256": "df4f5108d0a935ff991e9eda5d939e0ded1d849680ea1b83aad0ac251e5d3181",
+      "bytes": 1975156,
+      "codepoints": 7733
+    }
+  ]
+}

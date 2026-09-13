@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "at": "2026-09-10T06:30:24.595Z",
+  "offlineSha256": "6e2475bbea3eb63d7e28d831e78b31fd84727005a4a1d0a3ef97171f245a9ee6",
+  "playableLevels": 16,
+  "maxFlowers": 48,
+  "newLevelIds": [
+    "rain-street-preparation-v1",
+    "flood-house-response-v1"
+  ],
+  "newRuleTests": 31,
+  "existingRegressionTests": 1650,
+  "newBrowserChecks": 79,
+  "lifecycleChecks": 9,
+  "oldMobileLayout": {
+    "checks": 133,
+    "browserClosed": true
+  },
+  "typecheck": true,
+  "productionBuild": true,
+  "embeddedResources": 52,
+  "noExternalRequests": true,
+  "noAINarration": true,
+  "realDeviceTested": false,
+  "humanSpeakerReview": false,
+  "publicRelease": false
+}

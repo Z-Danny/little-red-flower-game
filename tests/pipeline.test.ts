@@ -6,8 +6,8 @@ import { join, resolve } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import preventionRules from '../content/templates/prevention/level.json';
-import preventionSkin from '../content/templates/prevention/skins/illustrated.json';
+import preventionRules from './fixtures/legacy-prevention/level.json';
+import preventionSkin from './fixtures/legacy-prevention/skins/illustrated.json';
 import responseRules from '../content/templates/response/level.json';
 import responseSkin from '../content/templates/response/skins/illustrated.json';
 import kitchenSkin from '../content/presets/kitchen/skin.json';
@@ -122,15 +122,18 @@ test('rotated pose inverse transform matches visible shape', () => {
   const p=response().skin.poses.gas; const result=localPoint({...p,rotation:Math.PI/2},{x:p.x+p.w/2,y:p.y+p.h});
   assert.ok(Math.abs(result.x-1)<1e-9); assert.ok(Math.abs(result.y-.5)<1e-9);
 });
-for(const [width,height] of [[320,740],[390,844],[430,932],[800,500]]) test(`camera round trip and no cropping ${width}x${height}`,()=>{
+for(const [width,height] of [[320,568],[375,667],[390,844],[430,932],[800,500]]) test(`response uniform cover and exact input round trip ${width}x${height}`,()=>{
   const p=response(), c=cameraFor(p,width,height), point={x:250,y:650};
   const local=toWorld(p,{x:12+c.x+point.x*c.scale,y:17+c.y+point.y*c.scale},{left:12,top:17,width,height});
   assert.ok(Math.abs(local.x-point.x)<1e-8 && Math.abs(local.y-point.y)<1e-8);
-  assert.ok(c.x>=-.001 && c.y>=-.001); assert.ok(p.skin.world.width*c.scale<=width+.001);
+  assert.equal(c.scale,Math.max(width/p.skin.world.width,height/p.skin.world.height));
+  assert.ok(c.x<=.001 && c.y<=.001);
+  assert.ok(c.x+p.skin.world.width*c.scale>=width-.001);
+  assert.ok(c.y+p.skin.world.height*c.scale>=height-.001);
 });
 test('renderer paints no duplicate home sprite during drag and no persistent action subtitles',()=>{
   const p=response(), r=createRun(p), draw:any[]=[];
-  const ctx=new Proxy({drawImage:(...args:any[])=>draw.push(args)}, {get:(target,key)=>key in target?target[key as keyof typeof target]:(()=>{})}) as unknown as CanvasRenderingContext2D;
+  const ctx=new Proxy({drawImage:(...args:any[])=>draw.push(args),createRadialGradient:()=>({addColorStop(){}}),createLinearGradient:()=>({addColorStop(){}})}, {get:(target,key)=>key in target?target[key as keyof typeof target]:(()=>{})}) as unknown as CanvasRenderingContext2D;
   const art=Object.fromEntries(Object.keys(p.skin.assets).map(id=>[id,{image:id}])) as any;
   render(ctx,p,art,r,{id:'lid',point:{x:250,y:650},offset:{x:90,y:40},start:{x:170,y:950},pointerId:1,moved:true},'lid',true);
   assert.equal(draw.filter(args=>args[0]==='lid').length,1);

@@ -1,0 +1,38 @@
+{
+  "feedbackVersion": 2,
+  "id": "clear-corridor-check-v2",
+  "title": "让生命通道畅通",
+  "order": 16,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "blocked_path",
+      "name": "堵路纸箱",
+      "lesson": "纸箱挡住了疏散通道。"
+    },
+    {
+      "id": "ebike_charging",
+      "name": "楼道充电的电动自行车",
+      "lesson": "电动自行车不能在楼道充电。"
+    },
+    {
+      "id": "wedged_fire_door",
+      "name": "被顶开的常闭防火门",
+      "lesson": "常闭防火门不能被顶住。"
+    },
+    {
+      "id": "locked_exit",
+      "name": "被链锁锁闭的安全出口",
+      "lesson": "安全出口不能被链锁锁住。"
+    },
+    {
+      "id": "blocked_hydrant",
+      "name": "被柜子挡住的消火栓",
+      "lesson": "消火栓前不能堆放物品。"
+    }
+  ],
+  "summary": "疏散通道和消火栓前不得堆物，电动自行车不能在楼道充电。常闭防火门不能被顶住，安全出口不能被链锁锁闭。",
+  "timeout": "fail"
+}

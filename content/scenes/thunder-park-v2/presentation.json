@@ -1,0 +1,16 @@
+{
+  "location": "公园 · 室内教学观察",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "教学观察：找出五处不能避雷的位置。",
+  "reveal": "人员已在安全建筑内，雷雨中继续避免户外活动。",
+  "completeTitle": "五处已识别，雷雨中不去户外",
+  "pauseNote": "人物已经进入具备水电设施的坚固服务建筑，并远离窗户。雷雨中户外没有安全位置，本关五个目标不是全部危险位置；不要在户外等候或找目标。计时仅为训练用时，不表示雷雨结束时间。",
+  "endingNote": "图示中人员继续留在安全建筑内，五处户外位置仍无人停留，雷雨并未因识别完成而停止。本关不提供重新外出的倒计时。",
+  "preview": "人员已在建筑内。认识五种不能当作安全避雷处的位置，不把未命中的户外地点误当安全区。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}

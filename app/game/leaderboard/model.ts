@@ -3,6 +3,7 @@ export type ScoreCaps = Readonly<Record<string, number>>;
 export type ProfileInput = { name: string; region: string };
 export type Player = ProfileInput & { id: string; createdAt: number; completed: Record<string, number> };
 export type BoardState = { version: 1; activePlayerId: string; players: Player[] };
+export type CompletionReceipt = { levelId:string; playerId:string; reward:number; before:Record<string,number> };
 export type RankedPlayer = ProfileInput & { id: string; flowers: number; rank: number | null };
 export type BoardSnapshot = {
   scope: 'local' | 'online';
@@ -20,7 +21,8 @@ export interface LeaderboardProvider {
   updateProfile(profile: ProfileInput): Promise<BoardSnapshot>;
   switchPlayer(id: string): Promise<BoardSnapshot>;
   recordResult(levelId: string, flowers: number, playerId: string): Promise<BoardSnapshot>;
-  resetCurrentProgress(): Promise<BoardSnapshot>;
+  claimCompletion(levelId: string, playerId: string): Promise<{ snapshot:BoardSnapshot; receipt:CompletionReceipt }>;
+  resetCurrentProgress(expectedPlayerId?: string): Promise<BoardSnapshot>;
   subscribe?(onChange: () => void): () => void;
 }
 
@@ -75,6 +77,16 @@ export function recordBest(state: BoardState, id: string, flowers: number, caps:
   return { ...state, players: state.players.map(player => player.id === playerId
     ? { ...player, completed: { ...player.completed, [id]: Math.max(player.completed[id] ?? 0, flowers) } }
     : player) };
+}
+
+/** Completion rewards are collectible once. Legacy best scores remain byte-for-byte values. */
+export function claimFirstCompletion(state:BoardState,id:string,playerId:string,caps:ScoreCaps) {
+  if (!own(caps,id)) throw new Error('该关卡尚未开放。');
+  const player=state.players.find(p=>p.id===playerId);
+  if(!player)throw new Error('找不到本次游玩的玩家，成绩未写入。');
+  const reward=own(player.completed,id)&&player.completed[id]>0?0:3;
+  const receipt:CompletionReceipt={levelId:id,playerId,reward,before:sanitizeScores(player.completed,caps)};
+  return {state:reward?recordBest(state,id,3,caps,playerId):state,receipt};
 }
 
 /** Do not erase unknown/disabled level records; only active caps contribute to rankings. */

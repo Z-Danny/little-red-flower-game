@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "visibility event freezes game time",
+    "visible resume excludes hidden time",
+    "risk advances and preserves playing until deadline",
+    "actual browser flood timeout fails",
+    "timeout replay returns to ready and clears progress",
+    "exit closes owned audio contexts",
+    "actual browser street timeout fails",
+    "timeout cannot award flowers",
+    "both level audio contexts disposed"
+  ],
+  "offlineSha256": "6e2475bbea3eb63d7e28d831e78b31fd84727005a4a1d0a3ef97171f245a9ee6"
+}

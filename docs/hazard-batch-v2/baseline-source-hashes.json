@@ -1,0 +1,502 @@
+{
+  "version": 1,
+  "purpose": "Pre-batch hashes for immutable existing level rules, configurations and art. Relative to repository root.",
+  "files": [
+    {
+      "path": "content/levels/clear-corridor/level.json",
+      "sha256": "2bbe9033d4283e9b54c58953912587c58f1fe849016a946a9f11aa60998ffd15"
+    },
+    {
+      "path": "content/levels/clear-corridor/skins/paperbook.json",
+      "sha256": "b7c87ee7bf12e1bc400b00d9cadac78e28fe70b4a11314ea1713e2a20ede274b"
+    },
+    {
+      "path": "content/levels/example-prevention/level.json",
+      "sha256": "7a500da27d908e385c6eed07d048d0c485e28271a928bc65b7aef5f40cd00aac"
+    },
+    {
+      "path": "content/levels/example-prevention/skins/illustrated.json",
+      "sha256": "18372ccd155b38d71a42437143cdb10b6be7de82b131a9e10d46bee40a81a201"
+    },
+    {
+      "path": "content/levels/example-response/level.json",
+      "sha256": "37420d362a8374f677aa38bfbb82da349973e3d3e7b5cbf52fbdeccaaaa68e34"
+    },
+    {
+      "path": "content/levels/example-response/skins/illustrated.json",
+      "sha256": "5e257b80e1ba15573b2c9d4a6a47f59f36ef9799b6c58bb956cdd22159830891"
+    },
+    {
+      "path": "content/levels/flood-kit/level.json",
+      "sha256": "50f1b8a5dc129822895fe7d53a069f6b80d354bbae1657d160e094e3a9b31f0c"
+    },
+    {
+      "path": "content/levels/flood-kit/skins/paperbook.json",
+      "sha256": "fd45bfdbe99ac79e5712243ebf89e0b9b8ea922e0cf62eea400d3b86753c4121"
+    },
+    {
+      "path": "content/levels/lift-wait/level.json",
+      "sha256": "9c2cb79f252754a09345e5f222a854dea6486a47a877d43351e791c34effd15b"
+    },
+    {
+      "path": "content/levels/lift-wait/skins/paperbook.json",
+      "sha256": "457b513f563818fc64b233c9dee195b450d67b85f17d79d20eea381e54114409"
+    },
+    {
+      "path": "content/levels/well-call/level.json",
+      "sha256": "5a28fcafd06d9665f8b9498d4032351c8d3bbd272b533efe160272bc6820d5bf"
+    },
+    {
+      "path": "content/levels/well-call/skins/paperbook.json",
+      "sha256": "86cb444c54101eb6f7ac08ccdee098723408aa5f4b35fba86de8a85a022cb226"
+    },
+    {
+      "path": "content/scenes/charging-bedroom/presentation.json",
+      "sha256": "92e22a54384010ed7e19b86bdfdfe4632e2087d552b14d09df045e092302b171"
+    },
+    {
+      "path": "content/scenes/charging-bedroom/rules.json",
+      "sha256": "c4c5fa717a5dab243518bb14c66eaf7a8dea4b3a3f74d74a577e4bcef4e8b7ed"
+    },
+    {
+      "path": "content/scenes/charging-bedroom/skin.json",
+      "sha256": "a7e85fc2e01db77a1d838d327898bd35b1780a560965d21982aa9fe700a184a7"
+    },
+    {
+      "path": "content/scenes/typhoon-home/rules.json",
+      "sha256": "f53d6a865fc5b5610cf6e956b9b9ab52e403d97d5a06378938b2d2b82cea0f33"
+    },
+    {
+      "path": "content/scenes/typhoon-home/skin.json",
+      "sha256": "2d8c3da8a3e36949a0c2c5046543bc547c689a11efdbbe455a1213dc706916e6"
+    },
+    {
+      "path": "public/levels/charging-bedroom-v1/clean.webp",
+      "sha256": "772d9fb65e5823aac6bb349165f9911f9738817d03fa2b7c62a73cea76c6b8cb"
+    },
+    {
+      "path": "public/levels/charging-bedroom-v1/covered_phone.png",
+      "sha256": "444143976e7314e1c8ae822d2a4d8960d6828d12357b0d820ae9be2b4c1e9cf2"
+    },
+    {
+      "path": "public/levels/charging-bedroom-v1/damaged_lead.png",
+      "sha256": "a1e04b0240c4c17ea9b23ea96b40ddf404bb670572f04254b087d1cece1f3c08"
+    },
+    {
+      "path": "public/levels/charging-bedroom-v1/ending.webp",
+      "sha256": "8325d1d3f214c2eb4fd7c9f1c5cd7f4c39249303d2e8cbb866384b8269c8be7c"
+    },
+    {
+      "path": "public/levels/charging-bedroom-v1/family.png",
+      "sha256": "8bbc8dcc5f729fedf82301254534d0dc41bf67aedf699b9be6259a4b2094c395"
+    },
+    {
+      "path": "public/levels/charging-bedroom-v1/id-mask.png",
+      "sha256": "cd0ec74aeaeba78cbad471c62cddd4291b48c212c50c12bc856917ccd41b540a"
+    },
+    {
+      "path": "public/levels/charging-bedroom-v1/object-mask.png",
+      "sha256": "cd0ec74aeaeba78cbad471c62cddd4291b48c212c50c12bc856917ccd41b540a"
+    },
+    {
+      "path": "public/levels/charging-bedroom-v1/scene.webp",
+      "sha256": "b1dc11dbd678a8dc1f032b998d3f3cd6f2b761a4812f838712a8bc92b4efcb19"
+    },
+    {
+      "path": "public/levels/charging-bedroom-v1/swollen_bank.png",
+      "sha256": "fbc0ab7a39e82c8eb4639bfb28597d5a0d79ea6984ebc76974f08713d0d5a77e"
+    },
+    {
+      "path": "public/levels/kitchen-v1/cloth.png",
+      "sha256": "aa9226b131b2a8d9c3d4d0ca5438641f945d7f5c81d0aaf25167af5b469a032d"
+    },
+    {
+      "path": "public/levels/kitchen-v1/extinguisher.png",
+      "sha256": "85d40a09b00a03fd15dd402e823175e34788b6b3b563f7d3b57589b7f114e0ce"
+    },
+    {
+      "path": "public/levels/kitchen-v1/flame.png",
+      "sha256": "965a7e48221b98455d6101bb6c80f00868f1f3ae2d2f48a8e78d6f8f971a2597"
+    },
+    {
+      "path": "public/levels/kitchen-v1/focused.png",
+      "sha256": "2aad577fa91d0e24f50c4bc987f36f7fbb0423a611030f261dbaaa44654fcb9d"
+    },
+    {
+      "path": "public/levels/kitchen-v1/gas.png",
+      "sha256": "d885bbc8a4aac30147c0b1756cb56150e3409cd7ca5ce9edeaa4ce44936f5c85"
+    },
+    {
+      "path": "public/levels/kitchen-v1/knife.png",
+      "sha256": "9cdca55824c394f34606f37957a85ae40424435de876766667f00d2932087576"
+    },
+    {
+      "path": "public/levels/kitchen-v1/lid.png",
+      "sha256": "1822b057456cc554352d0bcbc1d9fd7fa46da4e78d9c605a530ba2825c318693"
+    },
+    {
+      "path": "public/levels/kitchen-v1/pan.png",
+      "sha256": "32d96f7376cb1f94d490f22b25a7ffac131e9eca8b26bccd14edbb4f07cb4e4c"
+    },
+    {
+      "path": "public/levels/kitchen-v1/panicked.png",
+      "sha256": "95c25dc8b9b567203d811534e6d2a954a0d398475ef862ca3026ada04968b72e"
+    },
+    {
+      "path": "public/levels/kitchen-v1/plate.png",
+      "sha256": "f7e7c76fe6db0b92457e1173d1d0e45efa154a89d99d0d1e0d673eaa20ea160f"
+    },
+    {
+      "path": "public/levels/kitchen-v1/relieved.png",
+      "sha256": "ed30d6bd307f898fcd6acaa1eba4743c5c044562f247b6de12a18d066d3736ab"
+    },
+    {
+      "path": "public/levels/kitchen-v1/room-integrated-v2.png",
+      "sha256": "c958fb1ba90b287161461e63179fadaf57ebf8a1438b21d2d73115bf7b3ca0a2"
+    },
+    {
+      "path": "public/levels/kitchen-v1/room-portrait-v3.png",
+      "sha256": "0e5b05d5104a29cc4fd09a418b01925ce8eed60deda78d1d2b34bf441dd4649d"
+    },
+    {
+      "path": "public/levels/kitchen-v1/room.png",
+      "sha256": "5f0ddcd534614cb8189e64d42c1258fd9df556a8469f1c0235d24b5c988d6c7e"
+    },
+    {
+      "path": "public/levels/kitchen-v1/water.png",
+      "sha256": "db0899c1a4280322a1465598acf5c8f0e9b58e64e00a80520a92938984b01474"
+    },
+    {
+      "path": "public/levels/kitchen-v1/worried.png",
+      "sha256": "5196047b3fd4d3d2f03ba0c61f0c4f181634c3ea327dd9e16f02107bf9a46e2c"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/cloth.png",
+      "sha256": "ecddbf7fb11cd365290e062048a64f1a7ae2fe5cfaede16d2fd3191540268fa5"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/extinguisher.png",
+      "sha256": "14a5cf7f923d66cc4367896428e260c4ece94ead75f8a5e29a6d9cd2a91d92dd"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/flame.png",
+      "sha256": "6c642f4b875b7072b4d468d523de4087be81fa0440402ae219fee7035e144ea1"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/focused.png",
+      "sha256": "96312322ebcfece11f8b51a15450f47ad707c1d98d7de6c841701575010b962d"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/gas.png",
+      "sha256": "46e58ffcbd0a7d5a8fa6dc3a87fbf6b13171560f7221587514dc1e9f8b1bb50e"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/knife.png",
+      "sha256": "7867841468cbf8569d06fa00135580ec0c950603f31f12c11115f6027b13e8f4"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/lid.png",
+      "sha256": "95748035834c28cae8d2703bc1c5c6e6f9d872f8fe576384e17528e35d6e5b93"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/pan.png",
+      "sha256": "9690784294c43aa7a18ff3758cf5138d3a9532d11c65b9d5ddd5895336fafe3a"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/panicked.png",
+      "sha256": "26b5b2f3e6f38e8ece640fd8f1fc7fc328cabebb3abcecbc798662dc25e10314"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/plate.png",
+      "sha256": "f138a28fac04f583880e2dfb6d337320c6eccfe261f81cb15e1bb7b6fe67bf79"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/relieved.png",
+      "sha256": "088048a6a09f75bc6d556e4b0981e4fc7fadff68ca174f0a3f744ee6406d3280"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/room.png",
+      "sha256": "cf8eba0554fdc08191817f050ef66306afa04e304cd92d28dfb1395871e03cca"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/water.png",
+      "sha256": "80d331947283ef33e7d23ab92667045e1019779149b233d2926a7f5c6a044302"
+    },
+    {
+      "path": "public/levels/paperbook-kitchen-v1/worried.png",
+      "sha256": "fe9f0ab294e101d7b767f3cd5e1a617b64b3e0b192f7f98139bd112899045c58"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/cabinet.png",
+      "sha256": "6d738008b5f28a45916435b06bfb7458741f9322c7d8a33aac9c5f3e5e9a0377"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/cable.png",
+      "sha256": "dcc04de52874c73037971347e90cfc232fa8e8fdfaf212b616efbe6b687c47d2"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/cushion.png",
+      "sha256": "f5795eea826348a97d8dee91b9c1dad9c3263d588523ac9d1d43118223a0c7ae"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/family-seated.png",
+      "sha256": "a4d7f9f7a7e7c1c9b2c4937c64f2990cc3809ba8cc75c4581c949fe4b59cec18"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/family-standing.png",
+      "sha256": "8be79fbaf5aa5fa024c1834c470d51a99759fd112e03f104f41a74732ec07660"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/latch-closed.png",
+      "sha256": "7fa1611388e19018f5584235b1774acf184810299034308754ef57916d20ad26"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/latch-open.png",
+      "sha256": "c9ff3bc870b4bc2172e6ee3e7eab67bbe9be8c07e7a8b86a67e386a5d2d40909"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/plant.png",
+      "sha256": "3829168a81320bbff3485eccf0c562ec21b1c56527757bab8ae6cc3608c6c2a7"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/plug.png",
+      "sha256": "66b8790ac7aaed63f6ae0196ded6a75ba23fe3fd57cd75e59fb26e1f4d335981"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/powerstrip.png",
+      "sha256": "974ef04caf9a5dbb353b7a950a8248692cf831861f86524b5564f1c050177274"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/rail.png",
+      "sha256": "2e603b0d3f9bbc8771f7e9be15016e22c2ac1ae8eec86d6ab5367e6b6ecd9eaa"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/room.png",
+      "sha256": "a1cbe8b027e01425da39540a44938eb258e98f6ac2bb5f27eedfcf00ba6391b2"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/socket.png",
+      "sha256": "e7f358a44d694109b92becd4ecd0197f74f9335f07574e123f5b332a42394a0e"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/strap.png",
+      "sha256": "7a0069f5948f0b13f7a88210abeecb68944bd41efc1c16698e71960586ff175c"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/umbrella.png",
+      "sha256": "f07d4c0737226e9132fe94e4949d47e47870d1752c540f8f56b7fdfde7de6da5"
+    },
+    {
+      "path": "public/levels/paperbook-typhoon-v1/window.png",
+      "sha256": "f9e29ea5524deb7f89b4fa2011ed57a4e06b33d91de058f1db6877230ed1d96a"
+    },
+    {
+      "path": "public/levels/transcript-v1/bag.png",
+      "sha256": "fd872f048ba0beeeb13fb3a98518aaf25906079356b3a5e3c8a3169a8416af77"
+    },
+    {
+      "path": "public/levels/transcript-v1/bell.png",
+      "sha256": "b06c3bdd04edc5f683e7d421df2d2c45d06718a1380b70862e69d83cf10d5ee0"
+    },
+    {
+      "path": "public/levels/transcript-v1/box.png",
+      "sha256": "41e2db7c687d27ee1de62a9b1294a3a33bacc4cf5e18feb370968b6fe7abdf42"
+    },
+    {
+      "path": "public/levels/transcript-v1/case.png",
+      "sha256": "421422f01e7dd21cb5f94e659a32318357f0498da7ab0f0900e3855f3af35f08"
+    },
+    {
+      "path": "public/levels/transcript-v1/chair.png",
+      "sha256": "2b72141f81100c5a27a44a304901afb7992f74f6f92a32b7f3d22687d2ab72cf"
+    },
+    {
+      "path": "public/levels/transcript-v1/citizen-focused.png",
+      "sha256": "c3071440424fa2348c1e73556d440262d117a5914b6fbb2469d562f381406a5c"
+    },
+    {
+      "path": "public/levels/transcript-v1/citizen-panicked.png",
+      "sha256": "dc87c093d3149b9164918ff529b27f23315519b721005ebf23dd67eec6bcb323"
+    },
+    {
+      "path": "public/levels/transcript-v1/citizen-relieved.png",
+      "sha256": "a39c19a80d36dde148067518d6ac18536402fadeb3ec6424aa7c280dc5ae77c7"
+    },
+    {
+      "path": "public/levels/transcript-v1/citizen-worried.png",
+      "sha256": "041315ccae7136a3d190863369bed37e35a59d2c80b8757db96c1a60a3e1aabe"
+    },
+    {
+      "path": "public/levels/transcript-v1/corridor-room.webp",
+      "sha256": "ff8da9e9c26ad512d37b8e3d267ff73aac684cecbb264441fb573a79d39d4325"
+    },
+    {
+      "path": "public/levels/transcript-v1/food.png",
+      "sha256": "6c9c7b585354c874e10af65790ddef86888fcf4481489ba2c1897a27dc90e8df"
+    },
+    {
+      "path": "public/levels/transcript-v1/intercom.png",
+      "sha256": "00b0cc4e2f43abd745324ff4ef4686e3e190be2c2493058c9029077ae57b8bcf"
+    },
+    {
+      "path": "public/levels/transcript-v1/kit-room.webp",
+      "sha256": "8f55867bdb2061f1a367c168ad75778a49e220462b65f2df4baf3f486695be47"
+    },
+    {
+      "path": "public/levels/transcript-v1/lift-door.png",
+      "sha256": "a0a843430bd616bb4549c8584742a54ac292f8374d873da4f367b7b1bea3fca0"
+    },
+    {
+      "path": "public/levels/transcript-v1/lift-room.webp",
+      "sha256": "577daa0be72ba5d85a4cf2cbff7ba98d3f178655705d680c14ae23dcc4ffa282"
+    },
+    {
+      "path": "public/levels/transcript-v1/phone.png",
+      "sha256": "61e1802b08dbb53e8eae1f3b33e5697313e0f672b79a3644a6f9286f1f9a6356"
+    },
+    {
+      "path": "public/levels/transcript-v1/radio.png",
+      "sha256": "38df35adb773c50cc7335c19f1e9dd7a01c55ccfa73a74500b46ac8380f06142"
+    },
+    {
+      "path": "public/levels/transcript-v1/scooter.png",
+      "sha256": "658890669036ac9ccafb440c90f320cf169ca760cef155e0e5e3a3673c66c3b3"
+    },
+    {
+      "path": "public/levels/transcript-v1/screen-tile.png",
+      "sha256": "afbb3653808b5c7b0391f5a98b36207693bba090cef412c11b92ed132e844961"
+    },
+    {
+      "path": "public/levels/transcript-v1/torch.png",
+      "sha256": "d30b076e98ade1f84ba187e9b500a91d21897661b34b40d9aa71c5c286e4b9b5"
+    },
+    {
+      "path": "public/levels/transcript-v1/water.png",
+      "sha256": "0401765d7accabd3edc8efcbe212efeeeb83bf1a43eb91db8b76b23347c39884"
+    },
+    {
+      "path": "public/levels/transcript-v1/well-opening.png",
+      "sha256": "2b632559dc85fad2bc95dbddeb46beebe64e04432d905dcea18bb6dfbd494e81"
+    },
+    {
+      "path": "public/levels/transcript-v1/well-room.webp",
+      "sha256": "c784850eb2fc00b28b2f602b2577530733322323c844fe8c5ffdddc63fadb07d"
+    },
+    {
+      "path": "public/levels/transcript-v1/whistle.png",
+      "sha256": "884cb9092eae2ba38b6061d691bfc58c9fb7e3d71fb4171cbce1354f40ab4ea7"
+    },
+    {
+      "path": "public/levels/typhoon-danger.png",
+      "sha256": "15d4784e72127cddd10fc38dce7dc0afa47d610a891cd7db07e50b7532a86691"
+    },
+    {
+      "path": "public/levels/typhoon-safe.png",
+      "sha256": "66a9600c44f77418dfdd8d703f00593d3fba3dc4c855d68b8d8e18b0970cb38b"
+    },
+    {
+      "path": "public/levels/typhoon-scene-v3/cabinet-icon.png",
+      "sha256": "930950cda2ee5ae87cd84641d48f4a9bead259b9737df20f7b1cfa89a79fb7ae"
+    },
+    {
+      "path": "public/levels/typhoon-scene-v3/clean.webp",
+      "sha256": "5d22a6f8407b731efea8091ed1d51d8d063981d7121222474ea45410a6a70b7c"
+    },
+    {
+      "path": "public/levels/typhoon-scene-v3/family.png",
+      "sha256": "1b3cd33ced7df67a8c7367d54f40a3710dcc7144bea71a8fef932cd2383aae2c"
+    },
+    {
+      "path": "public/levels/typhoon-scene-v3/plant-icon.png",
+      "sha256": "348d1fc3708f980a1a2a358104a0bdada8863d195bf596279158380f4d4de38c"
+    },
+    {
+      "path": "public/levels/typhoon-scene-v3/powerstrip-icon.png",
+      "sha256": "8fe846013d50eec110e0f3d06373c3357d0c60cec0a422ca4e90b5075778997d"
+    },
+    {
+      "path": "public/levels/typhoon-scene-v3/rail-icon.png",
+      "sha256": "7e03372bf05ddb8c4df63e6d0ffd2dbcee1205b3227669144724b5f364320f6e"
+    },
+    {
+      "path": "public/levels/typhoon-scene-v3/safe.webp",
+      "sha256": "7c1547d1df2766645a9bb76b8a5f03d3cdc38f65f3772a3d168062012fb1966a"
+    },
+    {
+      "path": "public/levels/typhoon-scene-v3/scene.webp",
+      "sha256": "9e1d7caeb997aa19a8d7a6c598e4db1f2d048ce504264cd09f140972da539c21"
+    },
+    {
+      "path": "public/levels/typhoon-scene-v3/targets-mask.png",
+      "sha256": "85d0b77f318c8f60e404e43601957479ef3fb819d89d4ee3e11f2585bbfca126"
+    },
+    {
+      "path": "public/levels/typhoon-scene-v3/window-icon.png",
+      "sha256": "5cd707d0c6227e9644283112aa37460ab5c0d148ebebc15bdcb55fc1daecfb70"
+    },
+    {
+      "path": "public/levels/typhoon-v2/cabinet.png",
+      "sha256": "ca023b578568a7b0ca90d1065059f279e40eb20cf3cec97b6adb4f2bf94da0ad"
+    },
+    {
+      "path": "public/levels/typhoon-v2/cable.png",
+      "sha256": "752256e05d26ce42e38b33cc1afdf8b85f20508b2bbe18b4e9c859f7e59ddfa7"
+    },
+    {
+      "path": "public/levels/typhoon-v2/cushion.png",
+      "sha256": "6774d410a1aae11a8bc56e5f2d347c4a1d17d1f4c06e20fea5265be96d6a82b3"
+    },
+    {
+      "path": "public/levels/typhoon-v2/family-seated.png",
+      "sha256": "d2f048f51752dd1de0f41a6b215df5e603cba0265baaa78c4c2664743460238f"
+    },
+    {
+      "path": "public/levels/typhoon-v2/family-standing.png",
+      "sha256": "25ace5d8792aea5ceeb25f36b246f9211b86fe6b0c0a0cd51b31ea8255ded99b"
+    },
+    {
+      "path": "public/levels/typhoon-v2/latch-closed.png",
+      "sha256": "19e37eb8dcc5a1295ea4fd9fb2bb83055d31acd455965ec685636fe8bc54dfbc"
+    },
+    {
+      "path": "public/levels/typhoon-v2/latch-open.png",
+      "sha256": "2705b70a1b79bfaaee11e9047d4ce93b4143000e2a9378fefaa61df61651bb58"
+    },
+    {
+      "path": "public/levels/typhoon-v2/plant.png",
+      "sha256": "129f1ecb90a2042e65397b6636c4c7fa25def3deb3cedd4b6fbe811497d5d701"
+    },
+    {
+      "path": "public/levels/typhoon-v2/plug.png",
+      "sha256": "e4d41c161e2e5ed77c47b14092d455ab6bb23a6155c106aab683d78eec7751ef"
+    },
+    {
+      "path": "public/levels/typhoon-v2/powerstrip.png",
+      "sha256": "26e4f7c4639a75b08e82033537556c2cb4c745233a6676afaf750c2d46fca4e0"
+    },
+    {
+      "path": "public/levels/typhoon-v2/rail.png",
+      "sha256": "2b282f9d7dd32cf5f8e81f012e358138359986d598df237cbef94f73aeec98b1"
+    },
+    {
+      "path": "public/levels/typhoon-v2/room.png",
+      "sha256": "0923e5226c3a5002fb1a01f89fa74edbd2b4a4b1825e1a5bd57ac0bf884ba70c"
+    },
+    {
+      "path": "public/levels/typhoon-v2/socket.png",
+      "sha256": "95bf086c176f137bf4be85341776445acde990634a9746e2537e13e91a85e919"
+    },
+    {
+      "path": "public/levels/typhoon-v2/strap.png",
+      "sha256": "cf7c29eec41a4557e380b39a2595dd190dc6cef01b34ce41f44cba2715081639"
+    },
+    {
+      "path": "public/levels/typhoon-v2/umbrella.png",
+      "sha256": "4bfdfae29d906f6fc5af46e063e280cd3d8f6fb1b66fc9fc6be8beb136ae8ed9"
+    },
+    {
+      "path": "public/levels/typhoon-v2/window.png",
+      "sha256": "3b4386fa19d70b9bbea90a9e40e524bbfc5fba5865e714ffcf3e04b0d055f27f"
+    }
+  ]
+}

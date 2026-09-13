@@ -237,6 +237,25 @@
   text-shadow: 0 3px #f4cc9c;
   margin: 3px 0 10px;
 }
+.hunt-player[data-layout='portrait-v1'] .hunt-flowers span {
+  display: inline-block;
+  margin-right: 0.16em;
+  opacity: 0;
+  animation: hunt-flower-appear 180ms ease-out forwards;
+}
+@keyframes hunt-flower-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.65);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.hunt-player[data-animation-paused='true'] .hunt-flowers span {
+  animation-play-state: paused;
+}
 .hunt-keyboard {
   position: absolute;
   left: 0;
@@ -280,4 +299,180 @@
   .hunt-player * {
     scroll-behavior: auto !important;
   }
+  .hunt-player[data-layout='portrait-v1'] .hunt-flowers span {
+    animation: none;
+    opacity: 1;
+  }
+}
+/* Mobile: edge-to-edge uniform cover, without vertical centering or stretch.
+   Wide windows: keep a centered portrait-width game, not a landscape painting. */
+.hunt-player[data-layout='portrait-v1'] {
+  --hunt-viewport-safe-top: env(safe-area-inset-top, 0px);
+  --hunt-viewport-safe-right: env(safe-area-inset-right, 0px);
+  --hunt-viewport-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --hunt-viewport-safe-left: env(safe-area-inset-left, 0px);
+  /* Runtime keeps controls in the safe area; art still paints behind it. */
+  --hunt-safe-top: 0px;
+  --hunt-safe-right: 0px;
+  --hunt-safe-bottom: 0px;
+  --hunt-safe-left: 0px;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  min-height: 0;
+  height: 100%;
+  box-shadow: 0 30px 90px #0008;
+  /* Focus/scrollIntoView must never scroll this fixed game viewport. */
+  overflow: clip;
+  container: hunt / inline-size;
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-targets {
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-targets > span {
+  flex: none;
+  box-sizing: border-box;
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-hud {
+  /* Grid's minmax(0,1fr) prevents long titles from pushing Pause off-screen. */
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) max-content 44px;
+  gap: 8px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 640px;
+  padding: calc(10px + var(--hunt-safe-top)) max(12px, var(--hunt-safe-right))
+    10px max(12px, var(--hunt-safe-left));
+  pointer-events: none;
+  background: linear-gradient(#14232199, #14232138, transparent);
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-hud button {
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  line-height: 1;
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-hud h1 {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-hud small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-hud > span {
+  white-space: nowrap;
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-entry {
+  width: min(
+    360px,
+    calc(100% - var(--hunt-safe-left) - var(--hunt-safe-right) - 24px)
+  );
+  left: calc(50% + (var(--hunt-safe-left) - var(--hunt-safe-right)) / 2);
+  bottom: calc(12px + var(--hunt-safe-bottom));
+  max-height: calc(
+    100% - 96px - var(--hunt-safe-top) - var(--hunt-safe-bottom)
+  );
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-caption {
+  max-width: min(
+    430px,
+    calc(100% - var(--hunt-safe-left) - var(--hunt-safe-right) - 24px)
+  );
+  left: calc(50% + (var(--hunt-safe-left) - var(--hunt-safe-right)) / 2);
+  bottom: calc(12px + var(--hunt-safe-bottom));
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-shade {
+  padding: max(12px, var(--hunt-safe-top)) max(12px, var(--hunt-safe-right))
+    max(12px, var(--hunt-safe-bottom)) max(12px, var(--hunt-safe-left));
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-dialog {
+  max-height: 100%;
+  overscroll-behavior: contain;
+}
+.hunt-player[data-layout='portrait-v1'] .hunt-dialog button {
+  min-height: 44px;
+}
+.hunt-player[data-layout='portrait-v1'] button {
+  -webkit-tap-highlight-color: transparent;
+}
+.hunt-player[data-short='true'] .hunt-entry {
+  padding: 12px;
+  gap: 6px;
+}
+.hunt-player[data-short='true'] .hunt-entry button {
+  padding: 8px;
+  min-height: 44px;
+}
+@container hunt (max-width: 200px) {
+  .hunt-player[data-short='true'] .hunt-entry > span,
+  .hunt-player[data-short='true'] .hunt-entry small,
+  .hunt-player[data-short='true'] .hunt-entry button b {
+    display: none;
+  }
+  .hunt-player[data-short='true'] .hunt-entry button {
+    font-size: 13px;
+  }
+}
+@container hunt (max-width: 299px) {
+  .hunt-player[data-layout='portrait-v1'] .hunt-dialog {
+    padding: 16px;
+  }
+  .hunt-player[data-layout='portrait-v1'] .hunt-options {
+    grid-template-columns: 1fr;
+  }
+  .hunt-player[data-layout='portrait-v1'] .hunt-footer {
+    flex-direction: column;
+  }
+  .hunt-player[data-layout='portrait-v1'] .hunt-hud {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    row-gap: 1px;
+  }
+  .hunt-player[data-layout='portrait-v1'] .hunt-hud > button:first-child {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  .hunt-player[data-layout='portrait-v1'] .hunt-hud > button:last-child {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+  .hunt-player[data-layout='portrait-v1'] .hunt-hud h1 {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 15px;
+  }
+  .hunt-player[data-layout='portrait-v1'] .hunt-hud > span {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 12px;
+  }
+}
+
+/* Optional presentation modes; shared frame/camera stays untouched. */
+.hunt-player[data-clues='on-demand'] .hunt-targets[hidden] { display: none; }
+.hunt-player[data-clues='on-demand'] .hunt-targets:not([hidden]) { pointer-events: auto; }
+.hunt-player[data-clues='on-demand'] .hunt-hud { grid-template-columns: 44px minmax(0, 1fr) max-content 44px 44px; }
+.hunt-player[data-clues='on-demand'] .hunt-hint-toggle { display: grid; place-items: center; color: #f8df98; }
+.hunt-player[data-clues='on-demand'] .hunt-hint-toggle[aria-expanded='true'] { background: #f5d895; color: #304b40; border-color: #fff0c7; }
+.hunt-player[data-timer='pressure-bar'] .hunt-hud { grid-template-columns: 44px minmax(0, 1fr) 44px; row-gap: 5px; }
+.hunt-player[data-timer='pressure-bar'][data-clues='on-demand'] .hunt-hud { grid-template-columns: 44px minmax(0, 1fr) 44px 44px; }
+.hunt-countdown { grid-column: 1 / -1; grid-row: 2; display: flex; align-items: center; gap: 0; width: 100%; pointer-events: none; }
+.hunt-countdown-track { flex: 1; height: 7px; border-radius: 8px; background: #112d2999; box-shadow: 0 0 0 1px #fff1ca38; overflow: hidden; }
+.hunt-countdown-track > span { display: block; width: 100%; height: 100%; border-radius: inherit; transform-origin: left center; transition: background-color 650ms ease; }
+@container hunt (max-width: 299px) {
+  .hunt-player[data-timer='pressure-bar'] .hunt-hud > button:first-child { grid-column: 1; grid-row: 1; }
+  .hunt-player[data-timer='pressure-bar'] .hunt-hud h1 { grid-column: 2; grid-row: 1; font-size: 13px; }
+  .hunt-player[data-timer='pressure-bar'] .hunt-hud .hunt-hint-toggle { grid-column: 3; grid-row: 1; }
+  .hunt-player[data-timer='pressure-bar'] .hunt-hud > button:last-of-type { grid-column: 4; grid-row: 1; }
 }

@@ -1,0 +1,108 @@
+{
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "sourceSha256": "9108156455e629add0a37df4b231742178649290a0768ecd5d74a0b7417cbcea",
+  "targetPixels": {
+    "covered_phone": 15457,
+    "damaged_lead": 5639,
+    "swollen_bank": 9005
+  },
+  "targets": {
+    "covered_phone": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 301,
+        "w": 185,
+        "h": 119
+      },
+      "icon": "/levels/charging-bedroom-v1/covered_phone.png"
+    },
+    "damaged_lead": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 89,
+        "y": 1012,
+        "w": 201,
+        "h": 116
+      },
+      "icon": "/levels/charging-bedroom-v1/damaged_lead.png"
+    },
+    "swollen_bank": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 528,
+        "y": 648,
+        "w": 153,
+        "h": 95
+      },
+      "icon": "/levels/charging-bedroom-v1/swollen_bank.png"
+    }
+  },
+  "familyBounds": [
+    307,
+    80,
+    476,
+    482
+  ],
+  "repair": "silhouette + at most 10px, minus protected targets",
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "objectAndHitMasksIdentical": true,
+  "files": [
+    {
+      "name": "clean.webp",
+      "sha256": "772d9fb65e5823aac6bb349165f9911f9738817d03fa2b7c62a73cea76c6b8cb"
+    },
+    {
+      "name": "covered_phone.png",
+      "sha256": "444143976e7314e1c8ae822d2a4d8960d6828d12357b0d820ae9be2b4c1e9cf2"
+    },
+    {
+      "name": "damaged_lead.png",
+      "sha256": "a1e04b0240c4c17ea9b23ea96b40ddf404bb670572f04254b087d1cece1f3c08"
+    },
+    {
+      "name": "ending.webp",
+      "sha256": "8325d1d3f214c2eb4fd7c9f1c5cd7f4c39249303d2e8cbb866384b8269c8be7c"
+    },
+    {
+      "name": "family.png",
+      "sha256": "8bbc8dcc5f729fedf82301254534d0dc41bf67aedf699b9be6259a4b2094c395"
+    },
+    {
+      "name": "id-mask.png",
+      "sha256": "cd0ec74aeaeba78cbad471c62cddd4291b48c212c50c12bc856917ccd41b540a"
+    },
+    {
+      "name": "object-mask.png",
+      "sha256": "cd0ec74aeaeba78cbad471c62cddd4291b48c212c50c12bc856917ccd41b540a"
+    },
+    {
+      "name": "scene.webp",
+      "sha256": "b1dc11dbd678a8dc1f032b998d3f3cd6f2b761a4812f838712a8bc92b4efcb19"
+    },
+    {
+      "name": "swollen_bank.png",
+      "sha256": "fbc0ab7a39e82c8eb4639bfb28597d5a0d79ea6984ebc76974f08713d0d5a77e"
+    }
+  ]
+}

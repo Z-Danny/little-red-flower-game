@@ -1,0 +1,262 @@
+{
+  "compilerVersion": 1,
+  "id": "quake-bedroom-v2",
+  "authorId": "H08",
+  "sourceSha256": "4c0a5d608b7648158289e9709e0c42d1ea82ca46e2e0c7c2ac06f30eee3ec7ee",
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "inputHashes": {
+    "scene-original.png": "4c0a5d608b7648158289e9709e0c42d1ea82ca46e2e0c7c2ac06f30eee3ec7ee",
+    "mask-candidate.png": "e3b66bb144213f26ad8c86fd29050fae3f2aabd8b5bd50124167e0f792b7b7ce",
+    "clean-candidate.png": "197d53069655be2cdac4d66010649bf0d24c50a3c39b0a4e91bae4fb4f053e9a",
+    "ending.png": "c8b56eb89970db20332255fd17fe8b86921c241c95cf23fc16eb05968e6f322e"
+  },
+  "specSha256": "28eb8315504aad09ddd2e15b9068869553a6a18db72ffd71bcbaa07ac8fc396c",
+  "corrections": {
+    "targets": {
+      "unsecured_cabinet": {
+        "keepPolygons": [
+          [
+            [
+              543,
+              145
+            ],
+            [
+              585,
+              94
+            ],
+            [
+              645,
+              93
+            ],
+            [
+              663,
+              104
+            ],
+            [
+              663,
+              606
+            ],
+            [
+              572,
+              630
+            ],
+            [
+              545,
+              635
+            ],
+            [
+              543,
+              576
+            ]
+          ],
+          [
+            [
+              643,
+              90
+            ],
+            [
+              686,
+              73
+            ],
+            [
+              697,
+              73
+            ],
+            [
+              697,
+              123
+            ],
+            [
+              680,
+              126
+            ],
+            [
+              686,
+              156
+            ],
+            [
+              708,
+              195
+            ],
+            [
+              708,
+              210
+            ],
+            [
+              690,
+              214
+            ],
+            [
+              668,
+              181
+            ],
+            [
+              651,
+              145
+            ]
+          ]
+        ],
+        "excludePolygons": [
+          [
+            [
+              661,
+              463
+            ],
+            [
+              681,
+              462
+            ],
+            [
+              704,
+              464
+            ],
+            [
+              720,
+              493
+            ],
+            [
+              720,
+              538
+            ],
+            [
+              693,
+              539
+            ],
+            [
+              644,
+              517
+            ],
+            [
+              638,
+              506
+            ],
+            [
+              644,
+              491
+            ]
+          ]
+        ],
+        "reason": "原候选把左侧书柜、门、床头柜和灯、桌子等非目标误涂红色；仅与候选红色相交保留右侧固定带脱开的高柜及墙面连接件，排除桌灯。该裁切不新增目标像素。"
+      },
+      "overbed_frame": {
+        "fillEnclosedHoles": true,
+        "reason": "逐图审核原物体为完整的厚重镜子；蓝色外框包围的黑区是实心镜面，不是可穿透的实体孔洞。仅对这个镜子目标封闭漏涂内部，不填桌腿、把手或柜间真实空隙。"
+      }
+    },
+    "characters": {}
+  },
+  "targetPixels": {
+    "unsecured_cabinet": 55072,
+    "heavy_top": 9527,
+    "overbed_frame": 25394,
+    "exit_boxes": 52126,
+    "blocked_shelter": 56468
+  },
+  "hitPixels": {
+    "unsecured_cabinet": 55072,
+    "heavy_top": 9527,
+    "overbed_frame": 25394,
+    "exit_boxes": 52126,
+    "blocked_shelter": 56468
+  },
+  "familyBox": {
+    "x": 200,
+    "y": 295,
+    "w": 226,
+    "h": 520
+  },
+  "familyPixels": 74129,
+  "effectsPixels": {
+    "weather": 0,
+    "water": 0,
+    "sky": 0,
+    "fire": 0,
+    "smoke": 0
+  },
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "effectMasksExcludeTargetsAndCharacters": true,
+  "objectAndHitMasksIdentical": true,
+  "approval": "draft; semantic visual inspection and runtime tests pending",
+  "files": [
+    {
+      "path": "blocked_shelter.png",
+      "sha256": "0e2f161e3eaef71a737187bd6f5e0a109154116ae4430d660ec80534b22b4754"
+    },
+    {
+      "path": "character-mask.png",
+      "sha256": "348fe151dfdde1714ceca2338380fe9d751ca5d3204b121a1bc2db8e7a4bd4f4"
+    },
+    {
+      "path": "clean.webp",
+      "sha256": "98cc6f57490120a916f043e7b9c336a3e35fbf3f164efe545a00497fa4a920fd"
+    },
+    {
+      "path": "ending.webp",
+      "sha256": "897d85cdcad9550cd031863b19b84b4a282605128495ef58cf58dd9516acbe45"
+    },
+    {
+      "path": "exit_boxes.png",
+      "sha256": "dace76f4d157db0841311d314e84e5b4282ece5748d76272dba0c74d14a60081"
+    },
+    {
+      "path": "family.png",
+      "sha256": "25dacf7e1af5b89c00bd1339fd25983e849dcc0bff6dc56e3df7a5e2756c908f"
+    },
+    {
+      "path": "fire-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "heavy_top.png",
+      "sha256": "c27bce00ab935d12fda36b0bd4b521f7321a854bea3c9c31bb05f7daa899a863"
+    },
+    {
+      "path": "hit-samples.json",
+      "sha256": "f96bad5e268b0b6a81f33870c0b2bf2890ad1524fd93527cc45ea51c1ec65307"
+    },
+    {
+      "path": "id-mask.png",
+      "sha256": "c185aa1457a889945f2a9d9538e2d08b2d15b5c96e717c78acebb095a49ff955"
+    },
+    {
+      "path": "object-mask.png",
+      "sha256": "c185aa1457a889945f2a9d9538e2d08b2d15b5c96e717c78acebb095a49ff955"
+    },
+    {
+      "path": "overbed_frame.png",
+      "sha256": "25eb4a37a869ef58159c829ebab87bbb76c02f945668b7d6f4fe449eea5f3657"
+    },
+    {
+      "path": "scene.webp",
+      "sha256": "8dca006d4e8a0b7e1b933640d2a253a27d6ce116207947145a8b1406f76cbaac"
+    },
+    {
+      "path": "sky-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "smoke-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "unsecured_cabinet.png",
+      "sha256": "b14c7db4501e92dbb3996e399aff4021b02a7b5150ab2edae3b6bea231166dcc"
+    },
+    {
+      "path": "water-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "weather-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    }
+  ]
+}

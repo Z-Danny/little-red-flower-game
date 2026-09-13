@@ -1,6 +1,13 @@
 import { pressure, type HuntRun } from '@/app/game/scene-hunt/model';
 import type { HuntPack, Box } from '@/app/game/scene-hunt/schema';
 import type { HuntArt } from './art';
+import { presentationOf, endingFade } from '@/app/game/scene-hunt/presentation';
+import { fearMotion } from '@/app/game/scene-hunt/tension';
+import {drawElectric} from './electric-renderer';
+import {
+  drawPerformanceEnvironment,
+  drawPerformanceFamily,
+} from './performance-renderer';
 const clamp = (v: number) => Math.max(0, Math.min(1, v));
 function ring(ctx: CanvasRenderingContext2D, b: Box, p: number, time: number) {
   ctx.save();
@@ -50,17 +57,31 @@ export function drawHunt(
   hint: string | null,
 ) {
   const s = pack.skin,
+    view = presentationOf(pack),
     w = s.width,
     h = s.height,
     t = reduced ? 0 : r.elapsed,
     p = pressure(pack.rules, r),
     transition = r.phase === 'reveal' || r.phase === 'complete',
-    fade = transition ? clamp((r.revealAge - 800) / 1800) : 0;
+    fade = endingFade(r.phase, r.revealAge);
   ctx.save();
-  ctx.drawImage(art.clean, 0, 0, w, h);
-  if (!transition && r.phase !== 'ready') {
+  ctx.drawImage(
+    view.characters === 'static' ? art.scene : art.clean,
+    0,
+    0,
+    w,
+    h,
+  );
+  if (pack.performance && fade < 1)
+    drawPerformanceEnvironment(ctx, pack, art, r, reduced);
+  if (
+    !pack.performance &&
+    view.environment === 'storm' &&
+    !transition &&
+    r.phase !== 'ready'
+  ) {
     // Rain is clipped to the outdoor aperture; increased wind drives a small indoor plume.
-    const o = s.outside;
+    const o = s.outside!;
     ctx.save();
     ctx.beginPath();
     ctx.rect(o.x, o.y, o.w, o.h);
@@ -71,7 +92,10 @@ export function drawHunt(
     ctx.lineWidth = 1.5;
     for (let i = 0; i < 65 + Math.floor(p * 95); i++) {
       // Seeded independent offsets avoid uniform diagonal bands of rain.
-      const seed = (n: number) => { const v = Math.sin(n * 12.9898 + 78.233) * 43758.5453; return v - Math.floor(v); },
+      const seed = (n: number) => {
+          const v = Math.sin(n * 12.9898 + 78.233) * 43758.5453;
+          return v - Math.floor(v);
+        },
         speed = 0.7 + seed(i + 600) * 0.6,
         x = o.x + ((seed(i) * o.w + t * (0.025 + p * 0.05) * speed) % o.w),
         y = o.y + ((seed(i + 300) * o.h + t * (0.21 + p * 0.26) * speed) % o.h);
@@ -83,7 +107,7 @@ export function drawHunt(
     }
     ctx.restore();
     if (p > 0.48) {
-      const e = s.entry;
+      const e = s.entry!;
       ctx.save();
       ctx.strokeStyle = '#c7e8ec';
       ctx.lineWidth = 1.4;
@@ -127,11 +151,16 @@ export function drawHunt(
   }
   // Characters occlude every weather layer: never draw rain or sweat over faces.
   // Only the people are separated from the same original painting. Hazards never move.
-  if (fade < 1) {
+  if (fade < 1 && pack.performance)
+    drawPerformanceFamily(ctx, pack, art, r, reduced);
+  if (fade < 1 && !pack.performance && view.characters !== 'static') {
     const b = s.familyBox,
-      phase = t * (0.003 + p * 0.004),
-      breath = reduced ? 0 : Math.sin(phase) * (1.6 + p * 3),
-      lean = reduced ? 0 : Math.sin(t * 0.0017) * (0.003 + p * 0.008);
+      motionPressure = view.characters === 'storm' ? p : 0,
+      phase = t * (0.003 + motionPressure * 0.004),
+      breath = reduced ? 0 : Math.sin(phase) * (1.6 + motionPressure * 3) + (!transition && r.phase === 'playing' && view.characterAudio === 'nonverbal-fear' ? fearMotion(r.elapsed, pack.rules.seconds) : 0),
+      lean = reduced
+        ? 0
+        : Math.sin(t * 0.0017) * (0.003 + motionPressure * 0.008);
     ctx.save();
     ctx.fillStyle = '#503b2530';
     ctx.beginPath();
@@ -148,7 +177,9 @@ export function drawHunt(
       const sy = (i * art.family.height) / slices,
         sh = art.family.height / slices + 1,
         k = 1 - i / slices,
-        dx = reduced ? 0 : Math.sin(t * 0.012 + i * 0.07) * p * 1.8 * k;
+        dx = reduced
+          ? 0
+          : Math.sin(t * 0.012 + i * 0.07) * motionPressure * 1.8 * k;
       ctx.drawImage(
         art.family,
         0,
@@ -163,6 +194,7 @@ export function drawHunt(
     }
     ctx.restore();
   }
+  if(r.phase === 'playing' && s.effects?.electricSparks)drawElectric(ctx,s.effects.electricSparks,r.elapsed,p,reduced);
   if (fade < 1) {
     ctx.save();
     ctx.globalAlpha = 1 - fade;
@@ -195,13 +227,35 @@ export function drawHunt(
   }
   if (r.miss) {
     ctx.save();
-    ctx.globalAlpha = 1 - r.miss.age / 420;
-    ctx.strokeStyle = '#fff0cb';
+    const v2 = pack.rules.feedbackVersion === 2;
+    ctx.globalAlpha = v2
+      ? r.miss.age < 120
+        ? 1
+        : Math.max(0, 1 - (r.miss.age - 120) / 330)
+      : 1 - r.miss.age / 420;
+    ctx.strokeStyle = v2 ? '#efb75b' : '#fff0cb';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.arc(r.miss.x, r.miss.y, 10 + r.miss.age / 18, 0, 7);
     ctx.stroke();
+    if (v2) {
+      ctx.lineWidth = 3;
+      ctx.lineCap = 'round';
+      ctx.beginPath();
+      ctx.moveTo(r.miss.x - 5, r.miss.y - 5);
+      ctx.lineTo(r.miss.x + 5, r.miss.y + 5);
+      ctx.moveTo(r.miss.x + 5, r.miss.y - 5);
+      ctx.lineTo(r.miss.x - 5, r.miss.y + 5);
+      ctx.stroke();
+    }
     ctx.restore();
+  }
+  if(r.penaltyFeedback && r.phase === 'playing'){
+    const f=r.penaltyFeedback;
+    ctx.save();ctx.globalAlpha=Math.min(1,(1600-f.age)/400);
+    ctx.font='bold 30px "Flower UI", sans-serif';ctx.textAlign='center';ctx.lineJoin='round';
+    const x=Math.max(100,Math.min(w-100,f.x)),y=Math.max(150,Math.min(h-100,f.y-24-f.age*.012));
+    ctx.lineWidth=6;ctx.strokeStyle='#fff8e8';ctx.strokeText('−5 秒',x,y);ctx.fillStyle='#c94736';ctx.fillText('−5 秒',x,y);ctx.restore();
   }
   if (fade > 0) {
     ctx.save();
@@ -209,7 +263,13 @@ export function drawHunt(
     ctx.drawImage(art.safe, 0, 0, w, h);
     ctx.restore();
   }
-  if (transition && r.revealAge > 1800 && r.revealAge < 4700 && !reduced) {
+  if (
+    view.celebration &&
+    transition &&
+    r.revealAge > 1800 &&
+    r.revealAge < 4700 &&
+    !reduced
+  ) {
     ctx.save();
     for (let i = 0; i < 22; i++) {
       const q = clamp((r.revealAge - 1800 - i * 33) / 2400),

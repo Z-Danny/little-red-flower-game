@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/bedroom-night-check-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/bedroom-night-check-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/bedroom-night-check-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/bedroom-night-check-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/bedroom-night-check-v2/family.png",
+  "familyBox": {
+    "x": 229,
+    "y": 353,
+    "w": 360,
+    "h": 482
+  },
+  "targets": {
+    "covered_phone": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 168,
+        "w": 172,
+        "h": 176
+      },
+      "icon": "/levels/hazard-batch-v2/bedroom-night-check-v2/covered_phone.png"
+    },
+    "damaged_lead": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 50,
+        "y": 736,
+        "w": 242,
+        "h": 224
+      },
+      "icon": "/levels/hazard-batch-v2/bedroom-night-check-v2/damaged_lead.png"
+    },
+    "swollen_bank": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 571,
+        "y": 327,
+        "w": 149,
+        "h": 109
+      },
+      "icon": "/levels/hazard-batch-v2/bedroom-night-check-v2/swollen_bank.png"
+    },
+    "folded_blanket": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 211,
+        "y": 215,
+        "w": 280,
+        "h": 223
+      },
+      "icon": "/levels/hazard-batch-v2/bedroom-night-check-v2/folded_blanket.png"
+    },
+    "covered_heater": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 418,
+        "y": 744,
+        "w": 302,
+        "h": 496
+      },
+      "icon": "/levels/hazard-batch-v2/bedroom-night-check-v2/covered_heater.png"
+    }
+  },
+  "effects": {
+    "electricSparks": [{"x": 264, "y": 940, "radius": 30, "periodMs": 4200, "offsetMs": 900}],
+    "characterMask": "/levels/hazard-batch-v2/bedroom-night-check-v2/character-mask.png"
+  }
+}

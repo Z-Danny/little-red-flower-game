@@ -1,0 +1,102 @@
+{
+  "brand": "小红花应急行动",
+  "regionSuffix": "应急区",
+  "levels": {
+    "typhoon-home": {
+      "title": "台风前的家",
+      "preview": ""
+    },
+    "oil-fire": {
+      "title": "厨房着火了",
+      "preview": ""
+    },
+    "charging-bedroom": {
+      "title": "充电中的卧室",
+      "preview": ""
+    },
+    "bedroom-night-check-v2": {
+      "title": "睡前的卧室",
+      "preview": ""
+    },
+    "kitchen-before-cooking-v2": {
+      "title": "开火前的厨房",
+      "preview": ""
+    },
+    "clear-corridor-check-v2": {
+      "title": "让生命通道畅通",
+      "preview": ""
+    },
+    "quake-bedroom-v2": {
+      "title": "日常家庭防震准备",
+      "preview": ""
+    },
+    "storm-street-check-v2": {
+      "title": "风雨中的街口",
+      "preview": ""
+    },
+    "thunder-park-v2": {
+      "title": "雷雨来临的公园",
+      "preview": ""
+    },
+    "forest-fire-sources-v2": {
+      "title": "林缘的五处火源",
+      "preview": ""
+    },
+    "rain-street-preparation-v1": {
+      "title": "暴雨前的街道",
+      "preview": ""
+    },
+    "flood-house-response-v1": {
+      "title": "洪水围困",
+      "preview": ""
+    },
+    "flood-kit": {
+      "title": "汛期应急包",
+      "preview": ""
+    },
+    "clear-corridor": {
+      "title": "畅通的生命通道",
+      "preview": ""
+    },
+    "lift-wait": {
+      "title": "电梯停住了",
+      "preview": ""
+    },
+    "well-call": {
+      "title": "井口边的求助",
+      "preview": ""
+    },
+    "quake-cover-practice": {
+      "title": "地震室内避险",
+      "preview": ""
+    },
+    "quake-exit-practice": {
+      "title": "震动停止后的撤离",
+      "preview": ""
+    },
+    "collapse-signal-practice": {
+      "title": "塌陷被困求救",
+      "preview": ""
+    },
+    "car-window-practice": {
+      "title": "汽车落水离车",
+      "preview": ""
+    },
+    "flood-highground-practice": {
+      "title": "洪水围困待援",
+      "preview": ""
+    },
+    "lift-contact-practice": {
+      "title": "电梯被困求助",
+      "preview": ""
+    },
+    "fire-shelter-practice": {
+      "title": "隔烟与定位待援",
+      "preview": ""
+    },
+    "fire-stairs-practice": {
+      "title": "沿可用楼梯撤离",
+      "preview": ""
+    }
+  }
+}

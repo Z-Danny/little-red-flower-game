@@ -1,0 +1,16 @@
+{
+  "location": "卧室",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "睡前检查：哪些充电设备存在隐患？",
+  "reveal": "识别完成。异常电池已停用，交专业人员处理。",
+  "completeTitle": "识别完成，交给专业人员",
+  "pauseNote": "只识别，不操作。红圈不代表现实处置；儿童发现问题应告知成人。误点只表示未命中本关目标，不证明其他地方安全。计时是训练用时，不是事故倒计时。",
+  "endingNote": "这是另一时点的结果示意。鼓胀电池仍异常，停用不等于风险消失。",
+  "preview": "睡前检查卧室，圈出 3 处充电隐患。只识别、不触碰，再看看停用后的情景。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}

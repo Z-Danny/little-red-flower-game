@@ -1,0 +1,616 @@
+{
+  "createdAt": "2026-09-10T01:45:58.399Z",
+  "status": "pixel_structure_pass",
+  "scope": "Real input assets and their pixel provenance/permissions, not browser visual approval or human speaker review",
+  "levels": [
+    {
+      "authorId": "H02",
+      "id": "bedroom-night-check-v2",
+      "passed": true,
+      "detail": {
+        "id": "bedroom-night-check-v2",
+        "authorId": "H02",
+        "world": [
+          720,
+          1280
+        ],
+        "targets": {
+          "covered_phone": {
+            "objectPixels": 16156,
+            "hitPixels": 16156,
+            "interiorPoint": [
+              51,
+              223
+            ],
+            "interiorRadius": 51.62363799656123,
+            "iconSourcePixelsVerified": true
+          },
+          "damaged_lead": {
+            "objectPixels": 3286,
+            "hitPixels": 3286,
+            "interiorPoint": [
+              67,
+              778
+            ],
+            "interiorRadius": 18,
+            "iconSourcePixelsVerified": true
+          },
+          "swollen_bank": {
+            "objectPixels": 5954,
+            "hitPixels": 5954,
+            "interiorPoint": [
+              626,
+              351
+            ],
+            "interiorRadius": 23.600847442411894,
+            "iconSourcePixelsVerified": true
+          },
+          "folded_blanket": {
+            "objectPixels": 19666,
+            "hitPixels": 19666,
+            "interiorPoint": [
+              318,
+              262
+            ],
+            "interiorRadius": 42.05948168962618,
+            "iconSourcePixelsVerified": true
+          },
+          "covered_heater": {
+            "objectPixels": 84007,
+            "hitPixels": 84007,
+            "interiorPoint": [
+              634,
+              839
+            ],
+            "interiorRadius": 85.58621384311844,
+            "iconSourcePixelsVerified": true
+          }
+        },
+        "status": "pixel_structure_pass",
+        "exactRgbMasks": true,
+        "sameSourceAlpha": true,
+        "protectedPixelsUnchanged": true,
+        "outsideRepairUnchanged": true,
+        "effectMasksExcludeTargetsAndCharacters": true,
+        "effectPixels": {
+          "weather": 0,
+          "water": 0,
+          "sky": 0,
+          "fire": 0,
+          "smoke": 0
+        },
+        "notTested": [
+          "semantic correctness of generated objects",
+          "image registration by visual anchors",
+          "phone visual recognizability",
+          "browser interactions",
+          "audio listening",
+          "file/HTTP offline flow"
+        ]
+      },
+      "error": null
+    },
+    {
+      "authorId": "H04",
+      "id": "kitchen-before-cooking-v2",
+      "passed": true,
+      "detail": {
+        "id": "kitchen-before-cooking-v2",
+        "authorId": "H04",
+        "world": [
+          720,
+          1280
+        ],
+        "targets": {
+          "gas_hose": {
+            "objectPixels": 4189,
+            "hitPixels": 4189,
+            "interiorPoint": [
+              176,
+              528
+            ],
+            "interiorRadius": 8.94427190999916,
+            "iconSourcePixelsVerified": true
+          },
+          "paper_near_hob": {
+            "objectPixels": 3222,
+            "hitPixels": 3222,
+            "interiorPoint": [
+              201,
+              433
+            ],
+            "interiorRadius": 19.235384061671343,
+            "iconSourcePixelsVerified": true
+          },
+          "greasy_filter": {
+            "objectPixels": 13757,
+            "hitPixels": 13757,
+            "interiorPoint": [
+              273,
+              191
+            ],
+            "interiorRadius": 31,
+            "iconSourcePixelsVerified": true
+          },
+          "sideways_cylinder": {
+            "objectPixels": 21860,
+            "hitPixels": 21860,
+            "interiorPoint": [
+              464,
+              667
+            ],
+            "interiorRadius": 59.413803110051795,
+            "iconSourcePixelsVerified": true
+          },
+          "damaged_kettle": {
+            "objectPixels": 36794,
+            "hitPixels": 36794,
+            "interiorPoint": [
+              490,
+              944
+            ],
+            "interiorRadius": 54,
+            "iconSourcePixelsVerified": true
+          }
+        },
+        "status": "pixel_structure_pass",
+        "exactRgbMasks": true,
+        "sameSourceAlpha": true,
+        "protectedPixelsUnchanged": true,
+        "outsideRepairUnchanged": true,
+        "effectMasksExcludeTargetsAndCharacters": true,
+        "effectPixels": {
+          "weather": 0,
+          "water": 0,
+          "sky": 0,
+          "fire": 0,
+          "smoke": 0
+        },
+        "notTested": [
+          "semantic correctness of generated objects",
+          "image registration by visual anchors",
+          "phone visual recognizability",
+          "browser interactions",
+          "audio listening",
+          "file/HTTP offline flow"
+        ]
+      },
+      "error": null
+    },
+    {
+      "authorId": "H06",
+      "id": "clear-corridor-check-v2",
+      "passed": true,
+      "detail": {
+        "id": "clear-corridor-check-v2",
+        "authorId": "H06",
+        "world": [
+          720,
+          1280
+        ],
+        "targets": {
+          "blocked_path": {
+            "objectPixels": 148161,
+            "hitPixels": 148161,
+            "interiorPoint": [
+              110,
+              1062
+            ],
+            "interiorRadius": 111,
+            "iconSourcePixelsVerified": true
+          },
+          "ebike_charging": {
+            "objectPixels": 51172,
+            "hitPixels": 51172,
+            "interiorPoint": [
+              581,
+              783
+            ],
+            "interiorRadius": 65.14598989960932,
+            "iconSourcePixelsVerified": true
+          },
+          "wedged_fire_door": {
+            "objectPixels": 34274,
+            "hitPixels": 34274,
+            "interiorPoint": [
+              408,
+              267
+            ],
+            "interiorRadius": 42,
+            "iconSourcePixelsVerified": true
+          },
+          "locked_exit": {
+            "objectPixels": 40104,
+            "hitPixels": 40104,
+            "interiorPoint": [
+              568,
+              490
+            ],
+            "interiorRadius": 43,
+            "iconSourcePixelsVerified": true
+          },
+          "blocked_hydrant": {
+            "objectPixels": 24284,
+            "hitPixels": 24284,
+            "interiorPoint": [
+              286,
+              391
+            ],
+            "interiorRadius": 41,
+            "iconSourcePixelsVerified": true
+          }
+        },
+        "status": "pixel_structure_pass",
+        "exactRgbMasks": true,
+        "sameSourceAlpha": true,
+        "protectedPixelsUnchanged": true,
+        "outsideRepairUnchanged": true,
+        "effectMasksExcludeTargetsAndCharacters": true,
+        "effectPixels": {
+          "weather": 0,
+          "water": 0,
+          "sky": 0,
+          "fire": 0,
+          "smoke": 0
+        },
+        "notTested": [
+          "semantic correctness of generated objects",
+          "image registration by visual anchors",
+          "phone visual recognizability",
+          "browser interactions",
+          "audio listening",
+          "file/HTTP offline flow"
+        ]
+      },
+      "error": null
+    },
+    {
+      "authorId": "H08",
+      "id": "quake-bedroom-v2",
+      "passed": true,
+      "detail": {
+        "id": "quake-bedroom-v2",
+        "authorId": "H08",
+        "world": [
+          720,
+          1280
+        ],
+        "targets": {
+          "unsecured_cabinet": {
+            "objectPixels": 55072,
+            "hitPixels": 55072,
+            "interiorPoint": [
+              614,
+              245
+            ],
+            "interiorRadius": 49,
+            "iconSourcePixelsVerified": true
+          },
+          "heavy_top": {
+            "objectPixels": 9527,
+            "hitPixels": 9527,
+            "interiorPoint": [
+              78,
+              137
+            ],
+            "interiorRadius": 38,
+            "iconSourcePixelsVerified": true
+          },
+          "overbed_frame": {
+            "objectPixels": 25394,
+            "hitPixels": 25394,
+            "interiorPoint": [
+              412,
+              290
+            ],
+            "interiorRadius": 76.32168761236873,
+            "iconSourcePixelsVerified": true
+          },
+          "exit_boxes": {
+            "objectPixels": 52126,
+            "hitPixels": 52126,
+            "interiorPoint": [
+              133,
+              946
+            ],
+            "interiorRadius": 89.58794561770016,
+            "iconSourcePixelsVerified": true
+          },
+          "blocked_shelter": {
+            "objectPixels": 56468,
+            "hitPixels": 56468,
+            "interiorPoint": [
+              630,
+              990
+            ],
+            "interiorRadius": 62.20128616033595,
+            "iconSourcePixelsVerified": true
+          }
+        },
+        "status": "pixel_structure_pass",
+        "exactRgbMasks": true,
+        "sameSourceAlpha": true,
+        "protectedPixelsUnchanged": true,
+        "outsideRepairUnchanged": true,
+        "effectMasksExcludeTargetsAndCharacters": true,
+        "effectPixels": {
+          "weather": 0,
+          "water": 0,
+          "sky": 0,
+          "fire": 0,
+          "smoke": 0
+        },
+        "notTested": [
+          "semantic correctness of generated objects",
+          "image registration by visual anchors",
+          "phone visual recognizability",
+          "browser interactions",
+          "audio listening",
+          "file/HTTP offline flow"
+        ]
+      },
+      "error": null
+    },
+    {
+      "authorId": "H09",
+      "id": "storm-street-check-v2",
+      "passed": true,
+      "detail": {
+        "id": "storm-street-check-v2",
+        "authorId": "H09",
+        "world": [
+          720,
+          1280
+        ],
+        "targets": {
+          "flooded_underpass": {
+            "objectPixels": 43495,
+            "hitPixels": 43495,
+            "interiorPoint": [
+              140,
+              305
+            ],
+            "interiorRadius": 42.2965719651132,
+            "iconSourcePixelsVerified": true
+          },
+          "wet_power_box": {
+            "objectPixels": 36755,
+            "hitPixels": 36755,
+            "interiorPoint": [
+              602,
+              515
+            ],
+            "interiorRadius": 31,
+            "iconSourcePixelsVerified": true
+          },
+          "missing_cover": {
+            "objectPixels": 12361,
+            "hitPixels": 12361,
+            "interiorPoint": [
+              219,
+              484
+            ],
+            "interiorRadius": 33.734255586866,
+            "iconSourcePixelsVerified": true
+          },
+          "loose_sign": {
+            "objectPixels": 22561,
+            "hitPixels": 22561,
+            "interiorPoint": [
+              556,
+              110
+            ],
+            "interiorRadius": 56.04462507680822,
+            "iconSourcePixelsVerified": true
+          },
+          "leaning_fence": {
+            "objectPixels": 48295,
+            "hitPixels": 48295,
+            "interiorPoint": [
+              232,
+              674
+            ],
+            "interiorRadius": 83.19254774317228,
+            "iconSourcePixelsVerified": true
+          }
+        },
+        "status": "pixel_structure_pass",
+        "exactRgbMasks": true,
+        "sameSourceAlpha": true,
+        "protectedPixelsUnchanged": true,
+        "outsideRepairUnchanged": true,
+        "effectMasksExcludeTargetsAndCharacters": true,
+        "effectPixels": {
+          "weather": 320873,
+          "water": 10408,
+          "sky": 0,
+          "fire": 0,
+          "smoke": 0
+        },
+        "notTested": [
+          "semantic correctness of generated objects",
+          "image registration by visual anchors",
+          "phone visual recognizability",
+          "browser interactions",
+          "audio listening",
+          "file/HTTP offline flow"
+        ]
+      },
+      "error": null
+    },
+    {
+      "authorId": "H11",
+      "id": "thunder-park-v2",
+      "passed": true,
+      "detail": {
+        "id": "thunder-park-v2",
+        "authorId": "H11",
+        "world": [
+          720,
+          1280
+        ],
+        "targets": {
+          "isolated_tree": {
+            "objectPixels": 30119,
+            "hitPixels": 30119,
+            "interiorPoint": [
+              134,
+              122
+            ],
+            "interiorRadius": 42.05948168962618,
+            "iconSourcePixelsVerified": true
+          },
+          "open_gazebo": {
+            "objectPixels": 11821,
+            "hitPixels": 11821,
+            "interiorPoint": [
+              450,
+              294
+            ],
+            "interiorRadius": 23.40939982143925,
+            "iconSourcePixelsVerified": true
+          },
+          "pond_platform": {
+            "objectPixels": 9385,
+            "hitPixels": 9385,
+            "interiorPoint": [
+              256,
+              537
+            ],
+            "interiorRadius": 15.524174696260024,
+            "iconSourcePixelsVerified": true
+          },
+          "open_cart": {
+            "objectPixels": 12298,
+            "hitPixels": 12298,
+            "interiorPoint": [
+              498,
+              568
+            ],
+            "interiorRadius": 22.090722034374522,
+            "iconSourcePixelsVerified": true
+          },
+          "camping_tent": {
+            "objectPixels": 17089,
+            "hitPixels": 17089,
+            "interiorPoint": [
+              247,
+              696
+            ],
+            "interiorRadius": 28.442925306655784,
+            "iconSourcePixelsVerified": true
+          }
+        },
+        "status": "pixel_structure_pass",
+        "exactRgbMasks": true,
+        "sameSourceAlpha": true,
+        "protectedPixelsUnchanged": true,
+        "outsideRepairUnchanged": true,
+        "effectMasksExcludeTargetsAndCharacters": true,
+        "effectPixels": {
+          "weather": 285281,
+          "water": 18865,
+          "sky": 70951,
+          "fire": 0,
+          "smoke": 0
+        },
+        "notTested": [
+          "semantic correctness of generated objects",
+          "image registration by visual anchors",
+          "phone visual recognizability",
+          "browser interactions",
+          "audio listening",
+          "file/HTTP offline flow"
+        ]
+      },
+      "error": null
+    },
+    {
+      "authorId": "H12",
+      "id": "forest-fire-sources-v2",
+      "passed": true,
+      "detail": {
+        "id": "forest-fire-sources-v2",
+        "authorId": "H12",
+        "world": [
+          720,
+          1280
+        ],
+        "targets": {
+          "forest_grill": {
+            "objectPixels": 14910,
+            "hitPixels": 14910,
+            "interiorPoint": [
+              171,
+              255
+            ],
+            "interiorRadius": 26.019223662515376,
+            "iconSourcePixelsVerified": true
+          },
+          "smouldering_cigarette": {
+            "objectPixels": 15141,
+            "hitPixels": 15141,
+            "interiorPoint": [
+              126,
+              731
+            ],
+            "interiorRadius": 45.5411901469428,
+            "iconSourcePixelsVerified": true
+          },
+          "forest_campfire": {
+            "objectPixels": 12624,
+            "hitPixels": 12624,
+            "interiorPoint": [
+              597,
+              398
+            ],
+            "interiorRadius": 17.72004514666935,
+            "iconSourcePixelsVerified": true
+          },
+          "burning_paper": {
+            "objectPixels": 14545,
+            "hitPixels": 14545,
+            "interiorPoint": [
+              202,
+              506
+            ],
+            "interiorRadius": 22,
+            "iconSourcePixelsVerified": true
+          },
+          "forest_fireworks": {
+            "objectPixels": 2354,
+            "hitPixels": 2354,
+            "interiorPoint": [
+              576,
+              656
+            ],
+            "interiorRadius": 14.560219778561036,
+            "iconSourcePixelsVerified": true
+          }
+        },
+        "status": "pixel_structure_pass",
+        "exactRgbMasks": true,
+        "sameSourceAlpha": true,
+        "protectedPixelsUnchanged": true,
+        "outsideRepairUnchanged": true,
+        "effectMasksExcludeTargetsAndCharacters": true,
+        "effectPixels": {
+          "weather": 0,
+          "water": 0,
+          "sky": 0,
+          "fire": 88901,
+          "smoke": 74402
+        },
+        "notTested": [
+          "semantic correctness of generated objects",
+          "image registration by visual anchors",
+          "phone visual recognizability",
+          "browser interactions",
+          "audio listening",
+          "file/HTTP offline flow"
+        ]
+      },
+      "error": null
+    }
+  ]
+}

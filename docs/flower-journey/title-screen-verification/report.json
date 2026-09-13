@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "sha256": "e8bcf8ecb52600a17b3e030bf6e7730e7b72328664863cb4ef894278e1283c79",
+  "checks": [
+    "reward sound control identifies its scope and toggles",
+    "title layout and 44px controls 320x568",
+    "title layout and 44px controls 390x844",
+    "title layout and 44px controls 540x960",
+    "title layout and 44px controls 1440x900",
+    "keyboard start enters map without changing saved rewards",
+    "continue restores selected public map node after reload without unlocking or rewarding",
+    "new player and returning player keep independent map bookmarks",
+    "legacy save enables continue and retains existing flowers",
+    "malformed navigation bookmark does not damage leaderboard save",
+    "standalone embedded artwork with no network requests or browser errors"
+  ],
+  "errors": [],
+  "network": [],
+  "browserClosed": true
+}

@@ -1,0 +1,16 @@
+{
+  "location": "卧室 · 日常防震布置",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "平时准备：找出五处防震布置隐患。",
+  "reveal": "识别完成。这些准备应在平时做好。",
+  "completeTitle": "五处已识别，平时做好准备",
+  "pauseNote": "这是日常家庭布置检查，画面中没有地震，也不预测地震何时发生。重物移动和家具固定由成人或专业人员完成。计时仅为训练用时，不是地震倒计时。",
+  "endingNote": "图示为另一个时点完成的日常布置调整，不是房屋抗震鉴定。桌下空间仅指远离玻璃和可能坠物处的坚固桌下，不代表任何桌子都适合躲避。",
+  "preview": "地震没有发生。检查五处家庭布置问题，把固定家具、重物放低和保持通道畅通的准备做在平时。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}

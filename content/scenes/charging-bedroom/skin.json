@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/charging-bedroom-v1/scene.webp",
+  "clean": "/levels/charging-bedroom-v1/clean.webp",
+  "safe": "/levels/charging-bedroom-v1/ending.webp",
+  "mask": "/levels/charging-bedroom-v1/id-mask.png",
+  "family": "/levels/charging-bedroom-v1/family.png",
+  "familyBox": {
+    "x": 307,
+    "y": 80,
+    "w": 169,
+    "h": 402
+  },
+  "targets": {
+    "covered_phone": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 301,
+        "w": 185,
+        "h": 119
+      },
+      "icon": "/levels/charging-bedroom-v1/covered_phone.png"
+    },
+    "damaged_lead": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 89,
+        "y": 1012,
+        "w": 201,
+        "h": 116
+      },
+      "icon": "/levels/charging-bedroom-v1/damaged_lead.png"
+    },
+    "swollen_bank": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 528,
+        "y": 648,
+        "w": 153,
+        "h": 95
+      },
+      "icon": "/levels/charging-bedroom-v1/swollen_bank.png"
+    }
+  }
+}

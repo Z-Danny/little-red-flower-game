@@ -1,0 +1,9 @@
+{
+  "compiler": "prepare-hazard-batch.py",
+  "version": 1,
+  "id": "thunder-park-v2",
+  "sourceSha256": "ec25e800ce6db2f080b8681b890654fa5ce68b09db72c9c3a01a0d14ced71d75",
+  "specPath": "art-source/hazard-batch-v2/H11/production.json",
+  "skinSha256": "572888f11c5d50fb7e368ec13335a828ec481713ca7e10dc1080d85758b4f987",
+  "createdAt": "2026-09-09T16:41:29.979664+00:00"
+}

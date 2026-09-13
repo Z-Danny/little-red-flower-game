@@ -1,0 +1,493 @@
+{
+  "version": 1,
+  "method": "edge-connected neutral-checker flood fill + reviewed enclosed gap seeds + one-pixel alpha edge cleanup + removal of isolated sub-40-pixel specks; no independent trimming",
+  "authoredBy": "original generated artwork, local cutout processing authorized by user",
+  "review": {
+    "warmAndDarkComposites": "passed_visual_review_on_2026-09-13",
+    "whiteTrousersEyeWhitesAndShoes": "retained_visually_checked",
+    "hairAndFamilyEnclosedGaps": "checker_removed_visually_checked",
+    "physicalPhone": "not_run",
+    "limitations": "Original signal frames have small painted edge differences; shared canvas and equal foot baseline prevent positional rescaling. No skeletal animation claimed."
+  },
+  "signalPair": {
+    "commonCanvas": [
+      1024,
+      1536
+    ],
+    "footRegion": [
+      280,
+      1340,
+      1024,
+      1536
+    ],
+    "footAlphaDifferentPixels": 1059,
+    "footRegionUnionOpaquePixels": 46233,
+    "footSilhouetteDifferenceFraction": 0.02290571669586659
+  },
+  "assets": [
+    {
+      "name": "family-calling",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-b38123dd-a1cb-4a96-b64d-4efbdbd7967c.png",
+      "sourceSHA256": "2ee43c2fbfdafc34d23387fd0cdeb90873de79cbf62e13c05c61ff771f306d39",
+      "output": "public/levels/flood-performance-v1/family-calling.webp",
+      "outputSHA256": "3e0a33389883d982838e485ba27bd43a050401da1aa567eecd6cefbfbf9e8aed",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 982227,
+      "transparentFraction": 0.6244831085205078,
+      "partialAlphaPixels": 5303,
+      "visibleBounds": [
+        175,
+        55,
+        846,
+        1484
+      ],
+      "manualBackgroundSeeds": [
+        [
+          530,
+          530
+        ],
+        [
+          311,
+          144
+        ],
+        [
+          269,
+          277
+        ],
+        [
+          276,
+          259
+        ]
+      ],
+      "isolatedPixelsRemoved": 77,
+      "remainingNeutralComponents": [
+        {
+          "pixels": 639,
+          "bounds": [
+            803,
+            1391,
+            839,
+            1434
+          ],
+          "min": 109,
+          "max": 172,
+          "seed": [
+            838,
+            1391
+          ]
+        },
+        {
+          "pixels": 499,
+          "bounds": [
+            632,
+            1386,
+            661,
+            1418
+          ],
+          "min": 113,
+          "max": 177,
+          "seed": [
+            640,
+            1386
+          ]
+        },
+        {
+          "pixels": 391,
+          "bounds": [
+            793,
+            1423,
+            820,
+            1456
+          ],
+          "min": 118,
+          "max": 178,
+          "seed": [
+            797,
+            1423
+          ]
+        },
+        {
+          "pixels": 178,
+          "bounds": [
+            647,
+            535,
+            670,
+            556
+          ],
+          "min": 247,
+          "max": 255,
+          "seed": [
+            662,
+            535
+          ]
+        },
+        {
+          "pixels": 70,
+          "bounds": [
+            427,
+            209,
+            438,
+            222
+          ],
+          "min": 249,
+          "max": 255,
+          "seed": [
+            434,
+            209
+          ]
+        },
+        {
+          "pixels": 65,
+          "bounds": [
+            362,
+            191,
+            367,
+            209
+          ],
+          "min": 234,
+          "max": 255,
+          "seed": [
+            364,
+            191
+          ]
+        },
+        {
+          "pixels": 64,
+          "bounds": [
+            594,
+            517,
+            604,
+            534
+          ],
+          "min": 220,
+          "max": 255,
+          "seed": [
+            603,
+            517
+          ]
+        }
+      ]
+    },
+    {
+      "name": "family-signal-high",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-4929a007-9094-4c4d-bc3f-82258cdfb0ee.png",
+      "sourceSHA256": "362bf43a8c4460f0754bc1dfbb5220a8b2310ae0b9b519d1b9376a8192fe94c2",
+      "output": "public/levels/flood-performance-v1/family-signal-high.webp",
+      "outputSHA256": "6cfa42e20197209596bd144fa71be26e0a1afa7206fadf56e33652403aca17e3",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 929846,
+      "transparentFraction": 0.591180165608724,
+      "partialAlphaPixels": 6744,
+      "visibleBounds": [
+        13,
+        88,
+        1012,
+        1497
+      ],
+      "manualBackgroundSeeds": [
+        [
+          431,
+          270
+        ],
+        [
+          456,
+          195
+        ],
+        [
+          430,
+          304
+        ]
+      ],
+      "isolatedPixelsRemoved": 4,
+      "remainingNeutralComponents": [
+        {
+          "pixels": 448,
+          "bounds": [
+            971,
+            1416,
+            1003,
+            1447
+          ],
+          "min": 108,
+          "max": 166,
+          "seed": [
+            981,
+            1416
+          ]
+        },
+        {
+          "pixels": 338,
+          "bounds": [
+            810,
+            1412,
+            837,
+            1440
+          ],
+          "min": 123,
+          "max": 187,
+          "seed": [
+            818,
+            1412
+          ]
+        },
+        {
+          "pixels": 90,
+          "bounds": [
+            981,
+            1450,
+            986,
+            1469
+          ],
+          "min": 121,
+          "max": 170,
+          "seed": [
+            982,
+            1450
+          ]
+        },
+        {
+          "pixels": 65,
+          "bounds": [
+            967,
+            1442,
+            976,
+            1450
+          ],
+          "min": 150,
+          "max": 189,
+          "seed": [
+            969,
+            1442
+          ]
+        },
+        {
+          "pixels": 47,
+          "bounds": [
+            564,
+            262,
+            571,
+            272
+          ],
+          "min": 250,
+          "max": 255,
+          "seed": [
+            566,
+            262
+          ]
+        }
+      ]
+    },
+    {
+      "name": "family-signal-low",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-7cd7950d-0b91-4a10-80f5-a671184340b2.png",
+      "sourceSHA256": "533673d3dc208aed00aa84297a28f8dd1704cd17e84b36809d4758b51042c18f",
+      "output": "public/levels/flood-performance-v1/family-signal-low.webp",
+      "outputSHA256": "8a729cd0b4531ff91f08f57b908cd7bb249d5c19a9a7b27b7ba47983863fad97",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 937118,
+      "transparentFraction": 0.5958035786946615,
+      "partialAlphaPixels": 6669,
+      "visibleBounds": [
+        8,
+        117,
+        1011,
+        1497
+      ],
+      "manualBackgroundSeeds": [
+        [
+          457,
+          194
+        ],
+        [
+          430,
+          304
+        ]
+      ],
+      "isolatedPixelsRemoved": 5,
+      "remainingNeutralComponents": [
+        {
+          "pixels": 355,
+          "bounds": [
+            973,
+            1416,
+            997,
+            1446
+          ],
+          "min": 109,
+          "max": 194,
+          "seed": [
+            980,
+            1416
+          ]
+        },
+        {
+          "pixels": 350,
+          "bounds": [
+            810,
+            1412,
+            837,
+            1439
+          ],
+          "min": 124,
+          "max": 187,
+          "seed": [
+            817,
+            1412
+          ]
+        },
+        {
+          "pixels": 232,
+          "bounds": [
+            966,
+            1441,
+            985,
+            1469
+          ],
+          "min": 125,
+          "max": 189,
+          "seed": [
+            970,
+            1441
+          ]
+        },
+        {
+          "pixels": 75,
+          "bounds": [
+            997,
+            1417,
+            1003,
+            1434
+          ],
+          "min": 109,
+          "max": 145,
+          "seed": [
+            1002,
+            1417
+          ]
+        }
+      ]
+    },
+    {
+      "name": "family-waiting",
+      "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-9738c6b5-3f8b-403b-a774-0ba03a912a83.png",
+      "sourceSHA256": "5c0edd6b1da20d433d3736d7bc6f7c4953963dbe1b24b76de240ec7063ed9605",
+      "output": "public/levels/flood-performance-v1/family-waiting.webp",
+      "outputSHA256": "8f4120a8487601b8d7afeecdceb053f26103581153d10436ddc9f3f242776278",
+      "canvas": [
+        1024,
+        1536
+      ],
+      "hasAlpha": true,
+      "transparentPixels": 904701,
+      "transparentFraction": 0.5751934051513672,
+      "partialAlphaPixels": 4364,
+      "visibleBounds": [
+        202,
+        42,
+        894,
+        1500
+      ],
+      "manualBackgroundSeeds": [
+        [
+          584,
+          1130
+        ],
+        [
+          324,
+          209
+        ],
+        [
+          639,
+          279
+        ],
+        [
+          351,
+          133
+        ],
+        [
+          326,
+          242
+        ],
+        [
+          620,
+          322
+        ]
+      ],
+      "isolatedPixelsRemoved": 5,
+      "remainingNeutralComponents": [
+        {
+          "pixels": 759,
+          "bounds": [
+            844,
+            1403,
+            885,
+            1451
+          ],
+          "min": 108,
+          "max": 168,
+          "seed": [
+            883,
+            1403
+          ]
+        },
+        {
+          "pixels": 429,
+          "bounds": [
+            657,
+            1410,
+            685,
+            1442
+          ],
+          "min": 125,
+          "max": 186,
+          "seed": [
+            664,
+            1410
+          ]
+        },
+        {
+          "pixels": 414,
+          "bounds": [
+            831,
+            1435,
+            857,
+            1471
+          ],
+          "min": 122,
+          "max": 176,
+          "seed": [
+            837,
+            1435
+          ]
+        },
+        {
+          "pixels": 278,
+          "bounds": [
+            699,
+            1378,
+            726,
+            1420
+          ],
+          "min": 113,
+          "max": 152,
+          "seed": [
+            725,
+            1378
+          ]
+        }
+      ]
+    }
+  ]
+}

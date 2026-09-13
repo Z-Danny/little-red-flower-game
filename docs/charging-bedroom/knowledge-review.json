@@ -1,0 +1,23 @@
+{
+  "level":"charging-bedroom",
+  "reviewedAt":"2026-09-09",
+  "reviewer":"AI source cross-check and visual review; not professional certification",
+  "contentConclusion":"approved-for-production-with-visual-gates",
+  "visualReview":{"status":"AI visual gates checked on generated final images and browser screenshots","sourceHash":"9108156455e629add0a37df4b231742178649290a0768ecd5d74a0b7417cbcea","evidence":"制作记录.md, verification/, art-source/charging-bedroom-v1/proof/","scope":"not professional certification or real-world safety guarantee"},
+  "scope":"事前识别，不示范儿童触碰、断电、搬运或修理异常电池。无烟火、发热、泄漏；90秒是训练音乐压力，不是现实事故倒计时。",
+  "sourceNotes":"附件引用的00总执行提示词和原S编号链接表未附带；采用已有项目SOP及本卡完整约束。S08网页正文可读，具体用电提示为外链图片，未将其当已读到明确覆盖结论；以补充来源S08b核对。S03正文直开失败，但搜索返回的完整相关段落明确要求更换破损电源线及专业维修，记录访问限制。",
+  "sources":{
+    "S07":{"publisher":"London Fire Brigade","url":"https://www.london-fire.gov.uk/safety/the-home/electrical-items/batteries-and-chargers/","read":"Firefighter safety tips / If your battery starts swelling or expanding","paraphrase":"不要覆盖充电器或充电设备；电池鼓胀应停止充电和使用，不拆壳，联系厂家或专业技术人员。"},
+    "S08":{"publisher":"江苏省消防救援总队（转载中国消防）","url":"https://js.119.gov.cn/202302/35463ade55aa4cb185f79be3182b26de_c_6fed975b408a4fcea710.html","read":"正文和来源信息；外链图片未作为结论证据","adopted":false},
+    "S08b":{"publisher":"北京市人民政府门户网站（北京日报采访大兴消防）","url":"https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202605/t20260512_4646774.html","read":"消防提示第五点","paraphrase":"枕头附近充电不利于散热，床褥可助长火势。只采用覆盖与远离床褥的窄结论，不采用品牌或时长判危险。"},
+    "S03":{"publisher":"中华人民共和国应急管理部","url":"https://www.mem.gov.cn/kp/shaq/201904/t20190403_365937.shtml","read":"搜索返回全文相关段落；直开失败","paraphrase":"及时更换破损电源线、插座和电器；损坏请受训专业人员修理，不自行拆卸。"},
+    "S06":{"publisher":"US Consumer Product Safety Commission","url":"https://www.cpsc.gov/s3fs-public/elecsafety.pdf","read":"PDF第1页损坏设备/线缆条目","paraphrase":"不要使用损坏的设备或线缆，接电前检查磨损。未采用过时统计数据。"},
+    "S09":{"publisher":"US Fire Administration","url":"https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/batteries/","read":"Messages to share","paraphrase":"形状等状态异常时停止使用锂电池；不要投入普通垃圾，远离可燃物。"}
+  },
+  "targets":[
+    {"id":"covered_phone","core":"充电设备不应被枕头、被褥覆盖。","sources":["S07","S08b"],"sameText":false,"visibleGate":"同一枕头压住手机大部分，露出机身和确实插入的连接线。","boundary":"仅成人在无发热烟火等异常且安全时停止不当充电；儿童只识别、告知。","endingGate":"手机断开，置干燥坚硬台面、远离床褥。","conclusion":"core-supported; visual approval required"},
+    {"id":"damaged_lead","core":"破损充电线应停用。","sources":["S03","S06"],"sameText":false,"visibleGate":"近景线缆外皮破裂，铜线清楚可辨；不是条纹装饰。","boundary":"成人停用，专业更换；不演示带电触摸、胶带包裹再用。","endingGate":"断开并放进成人保管的待处理盒。","conclusion":"core-supported; visual approval required"},
+    {"id":"swollen_bank","core":"鼓胀的充电宝不能继续用。","sources":["S07","S09"],"sameText":false,"visibleGate":"侧壳拱起、接缝分开，可见完整充电宝；无火烟泄漏。","boundary":"不拆壳、不挤压，成人联系厂家或专业人员；出现烟火先远离求助。","endingGate":"断开，仍鼓胀，在隔离非燃台面，人物远离不触碰。只表示停用待专业处理，不称风险完全消失。","conclusion":"core-supported; visual approval required"}
+  ],
+  "designNotOfficialRules":["房间布局、物件颜色、三处目标数与蒙版颜色是游戏设计，不是来源规定。","非燃台面仅表达远离可燃物和待处理，不宣称其可以消除受损电池危险。","误点只代表未命中本关目标，不证明别处现实安全。"]
+}

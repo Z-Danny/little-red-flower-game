@@ -1,0 +1,707 @@
+/* Transparent, world-anchored scene VFX. No badges, icon tiles or extra labels. */
+.garden-world {
+  container-type: size;
+}
+.map-signal {
+  position: absolute;
+  left: calc(50% + var(--fx-x));
+  top: calc(100% + var(--fx-y));
+  width: var(--fx-width);
+  height: var(--fx-height);
+  transform: translate(-50%, -100%);
+  pointer-events: none;
+  z-index: 3;
+  color: var(--fx-color);
+  --fx-show: var(--fx-rest);
+}
+.map-signal .scene-effect-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.fx-scene {
+  opacity: var(--fx-show);
+  transition: opacity 0.32s ease;
+}
+.fx-safety {
+  opacity: 0;
+  transition: opacity 0.32s;
+}
+.map-signal[data-state='complete'] .fx-scene {
+  visibility: hidden;
+  opacity: 0;
+}
+.map-signal[data-state='complete'] .fx-safety {
+  opacity: calc(var(--fx-show) * 0.7);
+}
+.garden-node:is(
+  :focus-visible,
+  :active,
+  [data-pressed='true'],
+  [data-scene-active='true']
+) {
+  z-index: 7;
+}
+.garden-node:is(
+    :focus-visible,
+    :active,
+    [data-pressed='true'],
+    [data-scene-active='true']
+  )
+  .map-signal {
+  --fx-show: 1;
+}
+.garden-scene-replay {
+  display: none;
+  position: absolute;
+  bottom: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 4px 8px;
+  border-radius: 8px;
+  background: #f8f6eae8;
+  color: #406659;
+  font:
+    11px/1.4 'Flower UI',
+    sans-serif;
+  box-shadow: 0 2px 8px #294c4314;
+  pointer-events: none;
+}
+.garden-node:is(
+    :focus-visible,
+    :active,
+    [data-pressed='true'],
+    [data-scene-active='true']
+  )
+  .map-signal[data-state='complete']
+  .fx-scene {
+  visibility: visible;
+  opacity: 1;
+}
+.garden-node:is(
+    :focus-visible,
+    :active,
+    [data-pressed='true'],
+    [data-scene-active='true']
+  )
+  .fx-safety {
+  opacity: 0;
+}
+.garden-node:is(
+    :focus-visible,
+    :active,
+    [data-pressed='true'],
+    [data-scene-active='true']
+  )
+  .garden-scene-replay {
+  display: block;
+}
+@media (hover: hover) and (pointer: fine) {
+  .garden-node:hover {
+    z-index: 7;
+  }
+  .garden-node:hover .map-signal {
+    --fx-show: 1;
+  }
+  .garden-node:hover .map-signal[data-state='complete'] .fx-scene {
+    visibility: visible;
+    opacity: 1;
+  }
+  .garden-node:hover .fx-safety {
+    opacity: 0;
+  }
+  .garden-node:hover .garden-scene-replay {
+    display: block;
+  }
+}
+.map-signal svg * {
+  transform-box: fill-box;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: var(--delay, 0s);
+  animation-duration: var(--fx-seconds);
+}
+.fx-flame {
+  transform-origin: 50% 100%;
+  animation-name: fx-flame;
+  animation-duration: calc(var(--fx-seconds) * 0.464) !important;
+}
+.fx-core {
+  transform-origin: 50% 100%;
+  animation-name: fx-core;
+  animation-duration: calc(var(--fx-seconds) * 0.607) !important;
+}
+.fx-fire-sprite {
+  transform-origin: 50% 95%;
+  animation-name: fx-fire-sprite;
+  animation-duration: calc(var(--fx-seconds) * 0.72) !important;
+}
+.fx-fire-overlay {
+  opacity: 0.18;
+  mix-blend-mode: screen;
+  animation-direction: reverse;
+  animation-delay: -0.6s !important;
+}
+@keyframes fx-fire-sprite {
+  0%,
+  100% {
+    transform: scale(0.94, 0.92) skewX(-3deg);
+  }
+  40% {
+    transform: scale(1.035, 1.055) skewX(2deg);
+  }
+  75% {
+    transform: scale(0.985, 1.02) skewX(-1deg);
+  }
+}
+.fx-firelight {
+  transform-origin: center;
+  animation-name: fx-glow;
+}
+.fx-plume {
+  transform-origin: center;
+  animation-name: fx-smoke;
+  animation-duration: calc(var(--fx-seconds) * 1.429) !important;
+}
+.fx-particle {
+  animation-name: fx-rise;
+  animation-duration: calc(var(--fx-seconds) * 0.929) !important;
+}
+.fx-electric-light,
+.fx-hotspot {
+  transform-origin: center;
+  animation-name: fx-glow;
+  animation-duration: calc(var(--fx-seconds) * 0.536) !important;
+}
+.fx-current {
+  stroke-dasharray: 42 16;
+  animation-name: fx-current;
+  animation-timing-function: linear !important;
+  animation-duration: calc(var(--fx-seconds) * 0.429) !important;
+}
+.fx-current-hot {
+  animation-direction: reverse;
+}
+.fx-spark {
+  transform-box: view-box !important;
+  transform-origin: 80px 160px;
+  animation-name: fx-spark;
+  animation-duration: calc(var(--fx-seconds) * 0.571) !important;
+}
+.fx-arc {
+  transform-origin: 50% 100%;
+  animation-name: fx-arc;
+}
+.fx-funnel {
+  transform-origin: 50% 100%;
+  animation-name: fx-funnel;
+}
+.fx-wind-ring {
+  transform-origin: center;
+  stroke-dasharray: 56 17;
+  animation-name: fx-swirl;
+  animation-duration: calc(var(--fx-seconds) * 0.714) !important;
+}
+.fx-leaf {
+  transform-box: view-box !important;
+  transform-origin: 80px 100px;
+  animation-name: fx-leaf;
+  animation-duration: calc(var(--fx-seconds) * 1.25) !important;
+}
+.fx-wave {
+  animation-name: fx-wave;
+  animation-duration: calc(var(--fx-seconds) * 1.143) !important;
+}
+.fx-ripple {
+  transform-origin: center;
+  animation-name: fx-ripple;
+}
+.fx-cloud {
+  transform-origin: center;
+  animation-name: fx-cloud;
+  animation-duration: calc(var(--fx-seconds) * 1.786) !important;
+}
+.fx-raindrop {
+  animation-name: fx-rain;
+  animation-duration: calc(var(--fx-seconds) * 0.464) !important;
+  animation-timing-function: linear !important;
+}
+.fx-lightning {
+  animation-name: fx-lightning;
+  animation-duration: calc(var(--fx-seconds) * 1.25) !important;
+}
+.fx-quake {
+  animation-name: fx-quake;
+}
+.fx-dust {
+  transform-origin: center;
+  animation-name: fx-dust;
+}
+.fx-route {
+  animation-name: fx-route;
+}
+.fx-lift-scan {
+  animation-name: fx-lift;
+  animation-duration: calc(var(--fx-seconds) * 1.429) !important;
+}
+.fx-warning-ring {
+  transform-origin: center;
+  animation-name: fx-warning;
+}
+.fx-window-light,
+.fx-exit-light {
+  animation-name: fx-glow;
+}
+.fx-steam {
+  animation-name: fx-steam;
+}
+.map-signal[data-motion='off'] * {
+  animation-play-state: paused !important;
+}
+/* Each transparent painted layer follows its own Bezier track in SVG space. */
+.map-signal .fx-track {
+  transform-box: view-box !important;
+  transform-origin: 0 0;
+  animation-name: fx-painted-travel;
+  animation-duration: var(--track-seconds) !important;
+  animation-delay: var(--track-delay) !important;
+  animation-timing-function: linear !important;
+}
+.map-signal .fx-paint {
+  pointer-events: none;
+}
+.map-signal .fx-track[data-envelope='fall'] {
+  animation-name: fx-masonry-fall;
+}
+@keyframes fx-masonry-fall {
+  0% {
+    transform: var(--track-p0);
+    opacity: 0;
+  }
+  12.5% {
+    transform: var(--track-p1);
+    opacity: 1;
+  }
+  25% {
+    transform: var(--track-p2);
+    opacity: 1;
+  }
+  37.5% {
+    transform: var(--track-p3);
+    opacity: 1;
+  }
+  50% {
+    transform: var(--track-p4);
+    opacity: 1;
+  }
+  62.5% {
+    transform: var(--track-p5);
+    opacity: 1;
+  }
+  75% {
+    transform: var(--track-p6);
+    opacity: 0.9;
+  }
+  87.5% {
+    transform: var(--track-p7);
+    opacity: 0.6;
+  }
+  100% {
+    transform: var(--track-p8);
+    opacity: 0;
+  }
+}
+.map-signal .fx-footstep {
+  animation: fx-footfall var(--step-duration) ease-out infinite;
+  animation-delay: var(--step-delay);
+  filter: drop-shadow(0 1px 1.2px #264b34b0);
+}
+@keyframes fx-footfall {
+  0%,
+  100% {
+    opacity: 0.24;
+  }
+  12%,
+  45% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 0.45;
+  }
+}
+.map-signal .fx-track[data-envelope='burst'] {
+  animation-name: fx-spark-burst;
+}
+@keyframes fx-spark-burst {
+  0% {
+    transform: var(--track-p0);
+    opacity: 0;
+  }
+  10% {
+    transform: var(--track-p4);
+    opacity: var(--track-peak);
+  }
+  24% {
+    transform: var(--track-p6);
+    opacity: 0.85;
+  }
+  40% {
+    transform: var(--track-p8);
+    opacity: 0.35;
+  }
+  55%,
+  100% {
+    transform: var(--track-p8);
+    opacity: 0;
+  }
+}
+.map-signal .fx-call-lamp {
+  animation: fx-contact-light 2.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 3px #ffd475);
+}
+.map-signal .fx-call-wave {
+  animation: fx-contact-wave 2s ease-out infinite;
+  filter: drop-shadow(0 1px 1px #775e37);
+}
+.map-signal .fx-route-cue {
+  stroke-dasharray: var(--route-dash, 5 13);
+  animation: fx-route-flow 2.5s linear infinite;
+  filter: drop-shadow(0 1px 2px #527b43);
+}
+@keyframes fx-contact-light {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  45%,
+  65% {
+    opacity: 1;
+  }
+}
+@keyframes fx-contact-wave {
+  0%,
+  100% {
+    opacity: 0.05;
+  }
+  40%,
+  60% {
+    opacity: 0.85;
+  }
+}
+@keyframes fx-route-flow {
+  from {
+    stroke-dashoffset: var(--route-cycle, 36);
+    opacity: 0.45;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 0.85;
+  }
+}
+@keyframes fx-painted-travel {
+  0% {
+    transform: var(--track-p0);
+    opacity: var(--track-in);
+  }
+  12.5% {
+    transform: var(--track-p1);
+  }
+  25% {
+    transform: var(--track-p2);
+    opacity: var(--track-peak);
+  }
+  37.5% {
+    transform: var(--track-p3);
+  }
+  50% {
+    transform: var(--track-p4);
+  }
+  62.5% {
+    transform: var(--track-p5);
+  }
+  75% {
+    transform: var(--track-p6);
+    opacity: var(--track-peak);
+  }
+  87.5% {
+    transform: var(--track-p7);
+  }
+  100% {
+    transform: var(--track-p8);
+    opacity: var(--track-out);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-signal .fx-track {
+    transform: var(--track-p4);
+    opacity: var(--track-peak);
+  }
+}
+.garden-node.planting .map-signal {
+  opacity: 0;
+}
+@keyframes fx-flame {
+  0%,
+  100% {
+    transform: scale(0.91, 0.87) skewX(-5deg);
+  }
+  50% {
+    transform: scale(1.07, 1.2) skewX(5deg);
+  }
+}
+@keyframes fx-core {
+  0%,
+  100% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.12, 0.85);
+  }
+}
+@keyframes fx-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+@keyframes fx-smoke {
+  0% {
+    transform: translate(0, 8px) scale(0.5);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate(15px, -83px) scale(2);
+    opacity: 0;
+  }
+}
+@keyframes fx-rise {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(15px, -95px);
+    opacity: 0;
+  }
+}
+@keyframes fx-current {
+  to {
+    stroke-dashoffset: -116;
+  }
+}
+@keyframes fx-spark {
+  0% {
+    transform: rotate(var(--angle)) translateY(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(var(--angle)) translateY(-62px) scaleY(0.35);
+    opacity: 0;
+  }
+}
+@keyframes fx-arc {
+  0%,
+  100% {
+    transform: scaleX(0.9);
+  }
+  50% {
+    transform: scaleX(1.07);
+  }
+}
+@keyframes fx-funnel {
+  0%,
+  100% {
+    transform: skewX(-7deg);
+  }
+  50% {
+    transform: skewX(7deg);
+  }
+}
+@keyframes fx-swirl {
+  0% {
+    stroke-dashoffset: 0;
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  100% {
+    stroke-dashoffset: -146;
+    transform: translateX(-4px);
+  }
+}
+@keyframes fx-leaf {
+  0% {
+    transform: rotate(0deg) translateX(-12px);
+    opacity: 0;
+  }
+  20%,
+  80% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: rotate(330deg) translateX(30px);
+    opacity: 0;
+  }
+}
+@keyframes fx-wave {
+  0%,
+  100% {
+    transform: translate(-5px, 2px);
+  }
+  50% {
+    transform: translate(5px, -5px);
+  }
+}
+@keyframes fx-ripple {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+@keyframes fx-cloud {
+  0%,
+  100% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+@keyframes fx-rain {
+  0% {
+    transform: translate(4px, -12px);
+    opacity: 0;
+  }
+  15%,
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-12px, 66px);
+    opacity: 0;
+  }
+}
+@keyframes fx-lightning {
+  0%,
+  45%,
+  100% {
+    opacity: 0.12;
+  }
+  60%,
+  75% {
+    opacity: 0.9;
+  }
+}
+@keyframes fx-quake {
+  0%,
+  60%,
+  100% {
+    transform: translateX(0);
+  }
+  70%,
+  85% {
+    transform: translateX(-3px);
+  }
+  77%,
+  92% {
+    transform: translateX(3px);
+  }
+}
+@keyframes fx-dust {
+  0% {
+    transform: translateY(0) scale(0.5);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-25px) scale(2);
+    opacity: 0;
+  }
+}
+@keyframes fx-route {
+  0% {
+    transform: translateY(-12px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(14px);
+    opacity: 0;
+  }
+}
+@keyframes fx-lift {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-98px);
+    opacity: 0.5;
+  }
+}
+@keyframes fx-warning {
+  0%,
+  100% {
+    transform: scale(0.95);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+@keyframes fx-steam {
+  0% {
+    transform: translateY(8px) scaleX(0.8);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-35px) scaleX(1.2);
+    opacity: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .map-signal * {
+    animation: none !important;
+    transition: none !important;
+  }
+  .fx-particle,
+  .fx-spark,
+  .fx-plume,
+  .fx-raindrop {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "status": "passed",
+  "html": "D:\\中关村\\小红花\\test1\\outputs\\本地离线版\\小红花应急行动.html",
+  "sha256": "1a3d9db967b8097fc78da1e200ad0ee16e7fde1e2589949adef8a67218a74f51",
+  "checks": [
+    {
+      "name": "full-height shared portrait viewport 390",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "visible alpha-hit sources before play 390",
+      "objects": [
+        {
+          "object": "family",
+          "rect": {
+            "left": 68.22499999999997,
+            "top": 308.58750000000003,
+            "right": 289.11562499999997,
+            "bottom": 611.504375
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "breaker",
+          "rect": {
+            "left": 162.51562499999997,
+            "top": 87.03750000000001,
+            "right": 195.484375,
+            "bottom": 142.9831609375
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "phone",
+          "rect": {
+            "left": 254.16875,
+            "top": 389.03125,
+            "right": 306.91875,
+            "bottom": 417.2129375
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "bottled-water",
+          "rect": {
+            "left": 313.5125,
+            "top": 340.896875,
+            "right": 347.8,
+            "bottom": 395.01178125
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "flashlight",
+          "rect": {
+            "left": 349.11875,
+            "top": 392.9875,
+            "right": 390,
+            "bottom": 410.21696875000004
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "foam",
+          "rect": {
+            "left": 74.15937499999998,
+            "top": 503.10312500000003,
+            "right": 118.33749999999998,
+            "bottom": 591.0274843750001
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "stool",
+          "rect": {
+            "left": 41.19062499999997,
+            "top": 638.934375,
+            "right": 99.21562499999999,
+            "bottom": 744.8959375000001
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "car",
+          "rect": {
+            "left": 39.70580499468649,
+            "top": 292.7751196172249,
+            "right": 79.05808979808714,
+            "bottom": 312.9665071770335
+          },
+          "withinSurface": true
+        }
+      ]
+    },
+    {
+      "name": "music and environmental playback 390",
+      "loops": [
+        {
+          "length": 139264,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 176400,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 132300,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        }
+      ]
+    },
+    {
+      "name": "resume retains exactly three audio loops",
+      "loops": [
+        {
+          "length": 139264,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 176400,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 132300,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        }
+      ]
+    },
+    {
+      "name": "pause freezes elapsed training time and audio; resume continues time, mute persists"
+    },
+    {
+      "name": "fatal choice locks input, shows consequence first, then retry popup; no reward: enter-flood 390"
+    },
+    {
+      "name": "fatal choice locks input, shows consequence first, then retry popup; no reward: touch-wire 390"
+    },
+    {
+      "name": "fatal choice locks input, shows consequence first, then retry popup; no reward: stay-in-car 390"
+    },
+    {
+      "name": "early roof escape allowed without collecting supplies; no completion reward"
+    },
+    {
+      "name": "sources remain reachable beside stairs 390",
+      "objects": [
+        {
+          "object": "family",
+          "rect": {
+            "left": 101.19374999999997,
+            "top": 263.75,
+            "right": 242.3,
+            "bottom": 602.66875
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "breaker",
+          "rect": {
+            "left": 162.51562499999997,
+            "top": 87.03750000000001,
+            "right": 195.484375,
+            "bottom": 142.9831609375
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "phone",
+          "rect": {
+            "left": 254.16875,
+            "top": 389.03125,
+            "right": 306.91875,
+            "bottom": 417.2129375
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "bottled-water",
+          "rect": {
+            "left": 313.5125,
+            "top": 340.896875,
+            "right": 347.8,
+            "bottom": 395.01178125
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "flashlight",
+          "rect": {
+            "left": 349.11875,
+            "top": 392.9875,
+            "right": 390,
+            "bottom": 410.21696875000004
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "foam",
+          "rect": {
+            "left": 74.15937499999998,
+            "top": 503.10312500000003,
+            "right": 118.33749999999998,
+            "bottom": 591.0274843750001
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "stool",
+          "rect": {
+            "left": 41.19062499999997,
+            "top": 638.934375,
+            "right": 99.21562499999999,
+            "bottom": 744.8959375000001
+          },
+          "withinSurface": true
+        },
+        {
+          "object": "car",
+          "rect": {
+            "left": 39.70580499468649,
+            "top": 292.7751196172249,
+            "right": 79.05808979808714,
+            "bottom": 312.9665071770335
+          },
+          "withinSurface": true
+        }
+      ]
+    },
+    {
+      "name": "seven real interactions complete and award three flowers 390"
+    },
+    {
+      "name": "replay does not duplicate flowers or mutate prerequisite scores"
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "screenshots": [
+    "start-390.png",
+    "failure-mid-enter-flood-390.png",
+    "failure-result-enter-flood-390.png",
+    "failure-mid-touch-wire-390.png",
+    "failure-result-touch-wire-390.png",
+    "failure-mid-stay-in-car-390.png",
+    "failure-result-stay-in-car-390.png",
+    "early-roof-transition-390.png",
+    "early-roof-arrival-390.png",
+    "approach-stairs-390.png",
+    "at-stairs-390.png",
+    "turning-off-power-390.png",
+    "power-off-390.png",
+    "pack-light-390.png",
+    "combine-float-390.png",
+    "send-location-390.png",
+    "pack-water-390.png",
+    "ready-for-roof-390.png",
+    "roof-transition-390.png",
+    "roof-arrival-390.png",
+    "complete-390.png"
+  ],
+  "physicalPhone": "not_run",
+  "humanListening": "not_run",
+  "visualReview": "Screenshots supplied separately; model geometry checks are not a human visual review.",
+  "browserClosed": true
+}

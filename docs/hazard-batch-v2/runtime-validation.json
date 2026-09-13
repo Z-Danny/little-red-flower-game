@@ -1,0 +1,21 @@
+{
+  "date": "2026-09-10",
+  "scope": "Shared scene-hunt v2 engine in the isolated hazard-batch-v2 working copy; before new production packs are registered.",
+  "sourceRepositoryModified": false,
+  "oldLevelRulesOrArtModified": false,
+  "gitActions": false,
+  "results": [
+    {"command": "node scripts/test-hazard-performance.mjs", "exitCode": 0, "passed": 138},
+    {"command": "node scripts/test-scene-hunt.mjs", "exitCode": 0, "passed": 150},
+    {"command": "node scripts/test-kitchen.mjs", "exitCode": 0, "passed": 51},
+    {"command": "node scripts/test-typhoon.mjs", "exitCode": 0, "passed": 28},
+    {"command": "node scripts/test-pipeline.mjs", "exitCode": 0, "passed": 48},
+    {"command": "node scripts/test-leaderboard.mjs", "exitCode": 0, "passed": 29},
+    {"command": "node scripts/test-transcripts.mjs", "exitCode": 0, "passed": 188},
+    {"command": "node node_modules/typescript/bin/tsc --noEmit", "exitCode": 0},
+    {"command": "node scripts/check-hazard-renderer.mjs <installed @napi-rs/canvas directory>", "exitCode": 0, "scenarios": 18, "evidence": ["target pixels unchanged", "paint outside approved mask absent", "aggregate smoke alpha bounded", "feet fixed across tiers", "reduced-motion fixed"]}
+  ],
+  "unitTestsPassed": 632,
+  "nativeCanvasPixelChecksPassed": 18,
+  "limitations": ["Synthetic pixel checks are not approval of production artwork.", "No browser opened, no real-speaker listening, no physical phone test in this engine subtask.", "Full build, offline export and new production-pack browser acceptance belong to integration."]
+}

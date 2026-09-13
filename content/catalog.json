@@ -28,5 +28,45 @@
     "id": "well-call",
     "skin": "paperbook",
     "enabled": true
+  },
+  {
+    "id": "quake-cover-practice",
+    "skin": "paper-gouache",
+    "enabled": true
+  },
+  {
+    "id": "quake-exit-practice",
+    "skin": "paper-gouache",
+    "enabled": true
+  },
+  {
+    "id": "collapse-signal-practice",
+    "skin": "paper-gouache",
+    "enabled": true
+  },
+  {
+    "id": "flood-highground-practice",
+    "skin": "paper-gouache",
+    "enabled": true
+  },
+  {
+    "id": "car-window-practice",
+    "skin": "paper-gouache",
+    "enabled": true
+  },
+  {
+    "id": "lift-contact-practice",
+    "skin": "paper-gouache",
+    "enabled": true
+  },
+  {
+    "id": "fire-shelter-practice",
+    "skin": "paper-gouache",
+    "enabled": true
+  },
+  {
+    "id": "fire-stairs-practice",
+    "skin": "paper-gouache",
+    "enabled": true
   }
 ]

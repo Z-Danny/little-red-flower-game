@@ -1,0 +1,38 @@
+{
+  "feedbackVersion": 2,
+  "id": "thunder-park-v2",
+  "title": "雷雨来临的公园",
+  "order": 19,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "isolated_tree",
+      "name": "孤立高树下方",
+      "lesson": "雷雨时不要在孤立高树下避雨。"
+    },
+    {
+      "id": "open_gazebo",
+      "name": "四面敞开的凉亭",
+      "lesson": "开敞凉亭不是安全避雷处。"
+    },
+    {
+      "id": "pond_platform",
+      "name": "池塘边的钓台",
+      "lesson": "雷雨时应离开水边。"
+    },
+    {
+      "id": "open_cart",
+      "name": "开放式高尔夫球车",
+      "lesson": "开放式球车不能当避雷处。"
+    },
+    {
+      "id": "camping_tent",
+      "name": "普通露营帐篷",
+      "lesson": "帐篷能挡雨，不能作为避雷处。"
+    }
+  ],
+  "summary": "雷雨中不要把孤立高树、开敞凉亭、水边钓台、开放式球车或普通帐篷当作安全避雷处，应进入合适的坚固建筑避险并远离窗户。",
+  "timeout": "fail"
+}

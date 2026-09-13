@@ -1,0 +1,269 @@
+{
+  "schemaVersion": 1,
+  "id": "flood-highground-practice",
+  "kind": "response",
+  "title": "洪水围困：转移高处与求救",
+  "order": 28,
+  "location": "干燥楼梯与较高楼层",
+  "description": "外部已被洪水围困，干燥完整楼梯通向较高楼层；物资提前放在楼上，供电由专业人员在场外处理。",
+  "safety": "情境训练，不是真实求救。现场条件不符或出现新险情时，应遵从当地应急与专业人员指引。",
+  "briefing": "情境训练｜外部已被洪水围困，干燥完整楼梯通向较高楼层；物资提前放在楼上，供电由专业人员在场外处理。",
+  "objects": [
+    {
+      "id": "family",
+      "label": "成人与孩子",
+      "input": "drag",
+      "disabledWhen": [
+        "waiting-safely"
+      ]
+    },
+    {
+      "id": "phone",
+      "label": "随身手机",
+      "input": "tap",
+      "requires": [
+        "at-higher-level"
+      ],
+      "disabledWhen": [
+        "rescue-contacted"
+      ]
+    },
+    {
+      "id": "bottled-water",
+      "label": "提前准备的饮水",
+      "input": "drag",
+      "requires": [
+        "at-higher-level"
+      ],
+      "disabledWhen": [
+        "water-accessible"
+      ]
+    },
+    {
+      "id": "battery-radio",
+      "label": "电池收音机",
+      "input": "tap",
+      "requires": [
+        "at-higher-level"
+      ],
+      "disabledWhen": [
+        "updates-monitored"
+      ]
+    },
+    {
+      "id": "bright-cloth",
+      "label": "鲜艳衣物",
+      "input": "drag",
+      "requires": [
+        "at-higher-level"
+      ],
+      "disabledWhen": [
+        "visible-signal"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "at-higher-level",
+      "label": "先到可靠高处",
+      "object": "family",
+      "showTarget": false
+    },
+    {
+      "id": "rescue-contacted",
+      "label": "报告位置与被困人数",
+      "object": "phone",
+      "showTarget": false
+    },
+    {
+      "id": "water-accessible",
+      "label": "取用楼上已有饮水",
+      "object": "bottled-water",
+      "showTarget": false
+    },
+    {
+      "id": "updates-monitored",
+      "label": "收听当前指引",
+      "object": "battery-radio",
+      "showTarget": false
+    },
+    {
+      "id": "visible-signal",
+      "label": "从窗内发可见信号",
+      "object": "bright-cloth",
+      "showTarget": false
+    },
+    {
+      "id": "waiting-safely",
+      "label": "高处远离边缘待援",
+      "object": "family",
+      "showTarget": false
+    }
+  ],
+  "interactions": [
+    {
+      "id": "reach-higher-level",
+      "source": "family",
+      "mode": "drop",
+      "target": "high-route",
+      "unless": [
+        "at-higher-level"
+      ],
+      "grants": [
+        "at-higher-level"
+      ],
+      "outcome": "correct",
+      "animation": "reach-higher-level",
+      "feedback": "沿干燥楼梯先到较高楼层，两人同时到位。"
+    },
+    {
+      "id": "contact-rescue",
+      "source": "phone",
+      "mode": "tap",
+      "requires": [
+        "at-higher-level"
+      ],
+      "grants": [
+        "rescue-contacted"
+      ],
+      "outcome": "correct",
+      "animation": "contact-rescue",
+      "feedback": "模拟报告：红花小区3栋4层，2人，外部洪水围困，保留本机回拨。"
+    },
+    {
+      "id": "place-water",
+      "source": "bottled-water",
+      "mode": "drop",
+      "target": "supply-spot",
+      "requires": [
+        "at-higher-level"
+      ],
+      "grants": [
+        "water-accessible"
+      ],
+      "outcome": "correct",
+      "animation": "place-water",
+      "feedback": "把楼上现成饮水放在待援处。"
+    },
+    {
+      "id": "monitor-updates",
+      "source": "battery-radio",
+      "mode": "tap",
+      "requires": [
+        "at-higher-level"
+      ],
+      "grants": [
+        "updates-monitored"
+      ],
+      "outcome": "correct",
+      "animation": "monitor-updates",
+      "feedback": "模拟信息：继续留意转移指引，保持联系。"
+    },
+    {
+      "id": "signal-from-inside",
+      "source": "bright-cloth",
+      "mode": "drop",
+      "target": "signal-window",
+      "requires": [
+        "at-higher-level"
+      ],
+      "grants": [
+        "visible-signal"
+      ],
+      "outcome": "correct",
+      "animation": "signal-from-inside",
+      "feedback": "双脚留在室内，通过安全窗口示警。"
+    },
+    {
+      "id": "wait-at-height",
+      "source": "family",
+      "mode": "drop",
+      "target": "waiting-zone",
+      "requires": [
+        "at-higher-level",
+        "rescue-contacted",
+        "water-accessible",
+        "updates-monitored",
+        "visible-signal"
+      ],
+      "grants": [
+        "waiting-safely"
+      ],
+      "outcome": "correct",
+      "animation": "wait-at-height",
+      "feedback": "远离无防护边缘，保持联系等待指引。"
+    },
+    {
+      "id": "early-wait",
+      "source": "family",
+      "mode": "drop",
+      "target": "waiting-zone",
+      "requires": [
+        "at-higher-level"
+      ],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-wait",
+      "feedback": "留在楼上，完成近处联络、信息与示警练习。"
+    },
+    {
+      "id": "enter-flood-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "flood-zone",
+      "unless": [
+        "at-higher-level"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "enter-flood-error",
+      "feedback": "错误后果示意｜不要涉入外部洪水，先沿干燥完整楼梯到高处。"
+    },
+    {
+      "id": "return-lower-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "return-lower",
+      "requires": [
+        "at-higher-level"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "return-lower-error",
+      "feedback": "错误后果示意｜不要返回低处取财物。"
+    },
+    {
+      "id": "wire-error",
+      "source": "family",
+      "mode": "drop",
+      "target": "fallen-wire",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "wire-error",
+      "feedback": "错误后果示意｜远离落水电线和可能带电的积水，不接近操作。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 90,
+    "initial": 0,
+    "warningAt": 100,
+    "peakFeedback": "演出已达训练上限；仍可继续正确处置，不以等待时间判失败。"
+  },
+  "completion": {
+    "requires": [
+      "at-higher-level",
+      "rescue-contacted",
+      "water-accessible",
+      "updates-monitored",
+      "visible-signal",
+      "waiting-safely"
+    ],
+    "settleMs": 1200,
+    "observeMs": 4000,
+    "fixedStars": 3,
+    "summary": "已到较高处并发出求救信息，继续关注指引",
+    "title": "已到较高处并发出求救信息，继续关注指引",
+    "status": "训练完成；继续关注现场变化与专业指引。"
+  }
+}

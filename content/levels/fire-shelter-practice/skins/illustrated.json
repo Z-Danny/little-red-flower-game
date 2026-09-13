@@ -1,0 +1,909 @@
+{
+  "schemaVersion": 1,
+  "id": "illustrated",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "background": {
+      "src": "/levels/reference-storybook-v2/fire-shelter-practice/background.webp",
+      "alpha": false
+    },
+    "closed-background": {
+      "src": "/levels/reference-storybook-v2/fire-shelter-practice/closed-background.webp",
+      "alpha": false
+    },
+    "family-worried": {
+      "src": "/levels/fire-shelter-v4/worried.webp",
+      "alpha": true
+    },
+    "family-low": {
+      "src": "/levels/character-continuity-v3/fire-shelter-practice/family-low.webp",
+      "alpha": true
+    },
+    "side-table": {
+      "src": "/levels/reference-storybook-v2/fire-shelter-practice/side-table.webp",
+      "alpha": true
+    },
+    "sealed-cloth": {
+      "src": "/levels/reference-storybook-v2/fire-shelter-practice/sealed-cloth.webp",
+      "alpha": true
+    },
+    "phone-initial": {
+      "src": "/levels/reference-storybook-v2/fire-shelter-practice/phone-initial.webp",
+      "alpha": true
+    },
+    "flashlight-initial": {
+      "src": "/levels/reference-storybook-v2/fire-shelter-practice/flashlight-initial.webp",
+      "alpha": true
+    },
+    "wet-cloth-initial": {
+      "src": "/levels/reference-storybook-v2/fire-shelter-practice/wet-cloth-initial.webp",
+      "alpha": true
+    },
+    "door-open-panel": {
+      "src": "/levels/reference-storybook-v2/fire-shelter-practice/door-open-panel.webp",
+      "alpha": false
+    },
+    "door-closed-panel": {
+      "src": "/levels/reference-storybook-v2/fire-shelter-practice/door-closed-panel.webp",
+      "alpha": false
+    },
+    "family-cough": {
+      "src": "/levels/fire-shelter-v4/cough.webp",
+      "alpha": true
+    },
+    "family-signal": {
+      "src": "/levels/fire-shelter-v4/signal.webp",
+      "alpha": true
+    },
+    "tape-roll": {
+      "src": "/levels/shelter-props-v5/tape-roll.webp",
+      "alpha": true
+    },
+    "tape-strip": {
+      "src": "/levels/shelter-props-v5/tape-strip.webp",
+      "alpha": true
+    }
+  },
+  "background": "background",
+  "poses": {
+    "world-scene": {
+      "asset": "background",
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1280,
+      "depth": 0,
+      "blockInput": false
+    },
+    "family": {
+      "asset": "family-worried",
+      "x": 140,
+      "y": 354,
+      "w": 270,
+      "h": 488.8235294117647,
+      "depth": 40,
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "phone": {
+      "x": 100,
+      "y": 945,
+      "w": 105,
+      "h": 98,
+      "asset": "phone-initial",
+      "depth": 45
+    },
+    "flashlight": {
+      "x": 155,
+      "y": 1012,
+      "w": 95,
+      "h": 69.1,
+      "asset": "flashlight-initial",
+      "depth": 46,
+      "blockInput": true
+    },
+    "wet-cloth": {
+      "x": 552,
+      "y": 831,
+      "w": 94,
+      "h": 46,
+      "asset": "wet-cloth-initial",
+      "depth": 32
+    },
+    "side-table": {
+      "asset": "side-table",
+      "x": 543,
+      "y": 831,
+      "w": 150,
+      "h": 131.74,
+      "depth": 30
+    },
+    "room-door": {
+      "asset": "door-open-panel",
+      "x": 462.9117959617428,
+      "y": 125.82352816153029,
+      "w": 188.22529224229544,
+      "h": 536.3655685441021,
+      "depth": 5
+    },
+    "sealing-tape": {
+      "x": 213,
+      "y": 963,
+      "w": 78,
+      "h": 66.35820895522389,
+      "asset": "tape-roll",
+      "depth": 47
+    }
+  },
+  "zones": {
+    "door-gaps": {
+      "x": 474,
+      "y": 568,
+      "w": 146,
+      "h": 75
+    },
+    "room-refuge": {
+      "x": 315,
+      "y": 785,
+      "w": 245,
+      "h": 215
+    },
+    "door-handle": {
+      "x": 555,
+      "y": 387,
+      "w": 65,
+      "h": 88
+    },
+    "corridor-zone": {
+      "x": 486,
+      "y": 250,
+      "w": 130,
+      "h": 120
+    },
+    "outside-window": {
+      "x": 80,
+      "y": 190,
+      "w": 100,
+      "h": 120
+    },
+    "family-signal": {
+      "x": 330,
+      "y": 675,
+      "w": 210,
+      "h": 255
+    }
+  },
+  "states": [
+    {
+      "object": "world-scene",
+      "when": {
+        "all": [
+          "door-closed"
+        ]
+      },
+      "pose": {
+        "asset": "closed-background"
+      }
+    },
+    {
+      "object": "room-door",
+      "when": {
+        "all": [
+          "door-closed"
+        ]
+      },
+      "pose": {
+        "asset": "door-closed-panel"
+      }
+    },
+    {
+      "object": "wet-cloth",
+      "when": {
+        "all": [
+          "gaps-blocked"
+        ]
+      },
+      "pose": {
+        "asset": "sealed-cloth",
+        "x": 478,
+        "y": 576,
+        "w": 134,
+        "h": 33.579247311827956,
+        "depth": 32,
+        "rotation": 0.39
+      }
+    },
+    {
+      "object": "sealing-tape",
+      "when": {
+        "all": [
+          "seal-reinforced"
+        ]
+      },
+      "pose": {
+        "asset": "tape-strip",
+        "x": 480,
+        "y": 586,
+        "w": 134,
+        "h": 10.333333333333334,
+        "depth": 34,
+        "rotation": 0.23
+      }
+    },
+    {
+      "object": "family",
+      "when": {
+        "all": [
+          "family-sheltered"
+        ]
+      },
+      "pose": {
+        "asset": "family-low",
+        "x": 320,
+        "y": 652,
+        "w": 260,
+        "h": 352.59,
+        "depth": 40,
+        "rotation": 0
+      }
+    },
+    {
+      "object": "family",
+      "when": {
+        "all": [
+          "rescue-signalled"
+        ]
+      },
+      "pose": {
+        "asset": "family-signal",
+        "x": 253,
+        "y": 650,
+        "w": 319.94747899159665,
+        "h": 355,
+        "depth": 40,
+        "rotation": 0
+      }
+    },
+    {
+      "object": "flashlight",
+      "when": {
+        "all": [
+          "rescue-signalled"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    }
+  ],
+  "animations": {
+    "close-room-door": {
+      "durationMs": 700,
+      "tracks": [
+        {
+          "object": "world-scene",
+          "keyframes": [
+            {
+              "at": 0.6,
+              "asset": "closed-background"
+            },
+            {
+              "at": 1,
+              "asset": "closed-background"
+            }
+          ]
+        },
+        {
+          "object": "room-door",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "opacity": 0.4
+            },
+            {
+              "at": 0.6,
+              "asset": "door-closed-panel",
+              "x": 462.9117959617428,
+              "y": 125.82352816153029,
+              "w": 188.22529224229544,
+              "h": 536.3655685441021
+            },
+            {
+              "at": 1,
+              "asset": "door-closed-panel",
+              "x": 462.9117959617428,
+              "y": 125.82352816153029,
+              "w": 188.22529224229544,
+              "h": 536.3655685441021,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "block-door-gaps": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "wet-cloth",
+          "keyframes": [
+            {
+              "at": 0.4,
+              "x": 504,
+              "y": 557
+            },
+            {
+              "at": 0.75,
+              "asset": "sealed-cloth",
+              "x": 478,
+              "y": 576,
+              "w": 134,
+              "h": 33.579247311827956,
+              "rotation": 0.39
+            },
+            {
+              "at": 1,
+              "asset": "sealed-cloth",
+              "x": 478,
+              "y": 576,
+              "w": 134,
+              "h": 33.579247311827956,
+              "rotation": 0.39
+            }
+          ],
+          "fromDrop": true
+        }
+      ]
+    },
+    "reinforce-seal": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "sealing-tape",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "x": 480,
+              "y": 560,
+              "rotation": 0
+            },
+            {
+              "at": 0.55,
+              "asset": "tape-strip",
+              "x": 480,
+              "y": 586,
+              "w": 35,
+              "h": 2.699004975124378,
+              "rotation": 0.23
+            },
+            {
+              "at": 1,
+              "asset": "tape-strip",
+              "x": 480,
+              "y": 586,
+              "w": 134,
+              "h": 10.333333333333334,
+              "rotation": 0.23
+            }
+          ],
+          "fromDrop": true
+        }
+      ]
+    },
+    "contact-fire-service": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.09
+            },
+            {
+              "at": 0.6,
+              "rotation": 0.04
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "shelter-family": {
+      "durationMs": 1300,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "x": 245,
+              "y": 430,
+              "rotation": 0.045
+            },
+            {
+              "at": 0.65,
+              "asset": "family-low",
+              "x": 295,
+              "y": 652,
+              "w": 260,
+              "h": 352.59,
+              "rotation": -0.02
+            },
+            {
+              "at": 1,
+              "asset": "family-low",
+              "x": 320,
+              "y": 652,
+              "w": 260,
+              "h": 352.59,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "signal-rescue": {
+      "durationMs": 1300,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "asset": "family-signal",
+              "x": 253,
+              "y": 650,
+              "w": 319.94747899159665,
+              "h": 355,
+              "rotation": -0.04
+            },
+            {
+              "at": 0.7,
+              "asset": "family-signal",
+              "x": 253,
+              "y": 650,
+              "w": 319.94747899159665,
+              "h": 355,
+              "rotation": 0.035
+            },
+            {
+              "at": 1,
+              "asset": "family-signal",
+              "x": 253,
+              "y": 650,
+              "w": 319.94747899159665,
+              "h": 355,
+              "rotation": 0
+            }
+          ]
+        },
+        {
+          "object": "flashlight",
+          "keyframes": [
+            {
+              "at": 0.15,
+              "x": 295,
+              "y": 727,
+              "w": 60,
+              "h": 43.642105263157895,
+              "opacity": 1
+            },
+            {
+              "at": 0.34,
+              "x": 253,
+              "y": 653,
+              "w": 44,
+              "h": 32.00421052631579,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ],
+          "fromDrop": true
+        }
+      ]
+    },
+    "reopen-door-error": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "room-door",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.045
+            },
+            {
+              "at": 0.65,
+              "rotation": 0.045
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "family-door-error": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.045
+            },
+            {
+              "at": 0.65,
+              "rotation": 0.045
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "corridor-error": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.045
+            },
+            {
+              "at": 0.65,
+              "rotation": 0.045
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "climb-out-error": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.045
+            },
+            {
+              "at": 0.65,
+              "rotation": 0.045
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-seal": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "wet-cloth",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.045
+            },
+            {
+              "at": 0.65,
+              "rotation": 0.045
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-reinforce": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "sealing-tape",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.045
+            },
+            {
+              "at": 0.65,
+              "rotation": 0.045
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "table-gap-neutral": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "side-table",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.045
+            },
+            {
+              "at": 0.65,
+              "rotation": 0.045
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-signal": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "family",
+          "keyframes": [
+            {
+              "at": 0.3,
+              "rotation": -0.045
+            },
+            {
+              "at": 0.65,
+              "rotation": 0.045
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [],
+  "zoneLabels": {
+    "door-gaps": "门底缝隙",
+    "room-refuge": "远离窗户的室内位置",
+    "door-handle": "打开房门探查",
+    "corridor-zone": "进入浓烟走廊",
+    "outside-window": "翻出窗外",
+    "family-signal": "交给母亲"
+  },
+  "zoneConditions": {
+    "family-signal": {
+      "all": [
+        "family-sheltered"
+      ],
+      "not": [
+        "rescue-signalled"
+      ]
+    }
+  },
+  "presentation": {
+    "durationMs": 50000,
+    "effects": [
+      {
+        "kind": "glow",
+        "box": {
+          "x": 470,
+          "y": 460,
+          "w": 178,
+          "h": 205
+        },
+        "depth": 35,
+        "color": "#fa753b",
+        "strength": 2,
+        "reductions": [
+          {
+            "when": {
+              "all": [
+                "door-closed"
+              ]
+            },
+            "factor": 0.35
+          }
+        ]
+      },
+      {
+        "kind": "alarm",
+        "box": {
+          "x": 550,
+          "y": 92,
+          "w": 55,
+          "h": 48
+        },
+        "depth": 50,
+        "color": "#f94b40",
+        "strength": 1.7
+      },
+      {
+        "kind": "beam",
+        "box": {
+          "x": 110,
+          "y": 320,
+          "w": 140,
+          "h": 367
+        },
+        "depth": 41,
+        "color": "#ffe9a1",
+        "strength": 2,
+        "when": {
+          "all": [
+            "rescue-signalled"
+          ]
+        },
+        "beam": {
+          "object": "family",
+          "origin": {
+            "x": 0.04,
+            "y": 0.038
+          },
+          "axis": {
+            "x": -0.042,
+            "y": -0.1
+          },
+          "length": 680,
+          "spread": 0.11,
+          "aperture": 15
+        }
+      }
+    ],
+    "actors": [
+      {
+        "object": "family",
+        "amplitude": 1,
+        "performance": {
+          "lean": 0.04,
+          "periodMs": 1600,
+          "cough": {
+            "asset": "family-cough",
+            "w": 292,
+            "h": 350.54,
+            "everyMs": 6500,
+            "durationMs": 1400,
+            "until": [
+              "seal-reinforced"
+            ]
+          }
+        }
+      }
+    ],
+    "audio": {
+      "theme": "fire",
+      "calmWhen": [
+        "door-closed",
+        "gaps-blocked",
+        "seal-reinforced"
+      ],
+      "cues": {
+        "opening": "fire-alarm",
+        "pickup": "pickup",
+        "bounce": "bounce",
+        "danger": "warning",
+        "failure": "smoke-warning",
+        "goal": "soft-tap",
+        "complete": "success",
+        "close-room-door": "door-latch",
+        "block-door-gaps": "fabric",
+        "reinforce-seal": "fabric-seal",
+        "contact-fire-service": "telephone-connect",
+        "shelter-family": "footsteps",
+        "signal-rescue": "switch"
+      },
+      "emergency": {
+        "alarm": "fire-alarm",
+        "heartbeat": "heartbeat",
+        "cough": "nonverbal-cough",
+        "coughUntil": [
+          "seal-reinforced"
+        ],
+        "rescue": "rescue-arrival",
+        "rescueAfterMs": 3200
+      }
+    },
+    "timer": "countdown",
+    "roomSmoke": {
+      "door": {
+        "origin": {
+          "x": 613,
+          "y": 275
+        },
+        "control": {
+          "x": 485,
+          "y": 205
+        },
+        "end": {
+          "x": 280,
+          "y": 90
+        },
+        "spread": 190,
+        "radius": 63,
+        "lifetimeMs": 4800
+      },
+      "gap": {
+        "origin": {
+          "x": 543,
+          "y": 594
+        },
+        "control": {
+          "x": 445,
+          "y": 562
+        },
+        "end": {
+          "x": 345,
+          "y": 395
+        },
+        "spread": 17,
+        "radius": 26,
+        "lifetimeMs": 3800
+      },
+      "ceiling": {
+        "x": 0,
+        "y": 0,
+        "w": 720,
+        "h": 330
+      },
+      "depth": 35,
+      "closedGoal": "door-closed",
+      "pluggedGoal": "gaps-blocked",
+      "reinforcedGoal": "seal-reinforced",
+      "initialLoad": 0.1,
+      "fillMs": 58000
+    }
+  },
+  "framing": {
+    "sceneBounds": {
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1280
+    },
+    "criticalRegions": [
+      {
+        "x": 95,
+        "y": 350,
+        "w": 500,
+        "h": 700
+      },
+      {
+        "x": 475,
+        "y": 220,
+        "w": 150,
+        "h": 425
+      }
+    ]
+  }
+}

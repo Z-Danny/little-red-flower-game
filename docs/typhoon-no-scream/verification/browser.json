@@ -1,0 +1,96 @@
+{
+  "at": "2026-09-13T02:16:56.903Z",
+  "mode": "full-realtime",
+  "htmlSha256": "94c44eea870257db479fdff3c57785bce37211bea51272fd2c9e71aff5aab019",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Mobile/full-frame disclosure 320x568",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 375x667",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 390x844",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 430x932",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 540x960",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 390x650",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 1440x900",
+      "status": "passed"
+    },
+    {
+      "name": "Storm/music output remains audible with no character startle",
+      "status": "passed",
+      "elapsed": 8721
+    },
+    {
+      "name": "Pause freezes countdown and silences output",
+      "status": "passed"
+    },
+    {
+      "name": "25-second amber phase; music enabled, disabled character control hidden",
+      "status": "passed"
+    },
+    {
+      "name": "Background freezes clock and audio",
+      "status": "passed"
+    },
+    {
+      "name": "40-second red phase without character screams",
+      "status": "passed"
+    },
+    {
+      "name": "50s terminal failure, no reward, bounded dialog and silence after terminal cue",
+      "status": "passed"
+    },
+    {
+      "name": "Full 50 seconds: zero character cues and no scream sample sources started",
+      "status": "passed",
+      "cueCount": 0,
+      "shortSamples": []
+    },
+    {
+      "name": "One-tap retry resets round, red circles, hidden clues and full timer",
+      "status": "passed"
+    },
+    {
+      "name": "Master mute stops all channels",
+      "status": "passed"
+    },
+    {
+      "name": "Five timely real pointer hits after retry; reward and no frightened sound on completion",
+      "status": "passed"
+    },
+    {
+      "name": "Exit disposes native level AudioContext (map channel remains separate)",
+      "status": "passed"
+    },
+    {
+      "name": "Replay resets 50s and hidden clues",
+      "status": "passed"
+    },
+    {
+      "name": "Mouse hover/leave, click pin/toggle, keyboard focus/Escape",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "humanListening": "not_run",
+  "physicalPhone": "not_run",
+  "closed": true
+}

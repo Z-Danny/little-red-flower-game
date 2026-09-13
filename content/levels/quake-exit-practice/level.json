@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "id": "quake-exit-practice",
+  "kind": "response",
+  "title": "震动停止后的撤离",
+  "order": 24,
+  "location": "楼梯与集合空地",
+  "description": "晃动已停、已收到撤离指引；本题完整楼梯可用，鞋与手电就在脚边。",
+  "safety": "情境训练，不是真实求救。现场条件不符或出现新险情时，应遵从当地应急与专业人员指引。",
+  "briefing": "情境训练｜晃动已停、已收到撤离指引；本题完整楼梯可用，鞋与手电就在脚边。",
+  "objects": [
+    {
+      "id": "adult",
+      "label": "撤离成人",
+      "input": "drag",
+      "disabledWhen": [
+        "at-assembly"
+      ]
+    },
+    {
+      "id": "sturdy-shoes",
+      "label": "结实鞋",
+      "input": "drag",
+      "disabledWhen": [
+        "feet-protected",
+        "outside-building"
+      ]
+    },
+    {
+      "id": "flashlight",
+      "label": "电池手电",
+      "input": "drag",
+      "disabledWhen": [
+        "route-observed",
+        "outside-building"
+      ]
+    },
+    {
+      "id": "phone",
+      "label": "随身手机",
+      "input": "drag",
+      "requires": [
+        "outside-building"
+      ],
+      "disabledWhen": [
+        "location-shared"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "id": "feet-protected",
+      "label": "穿好结实鞋",
+      "object": "sturdy-shoes",
+      "showTarget": false
+    },
+    {
+      "id": "route-observed",
+      "label": "照亮并观察通路",
+      "object": "flashlight",
+      "showTarget": false
+    },
+    {
+      "id": "outside-building",
+      "label": "经可用楼梯出楼",
+      "object": "adult",
+      "showTarget": false
+    },
+    {
+      "id": "at-assembly",
+      "label": "远离外墙到集合点",
+      "object": "adult",
+      "showTarget": false
+    },
+    {
+      "id": "location-shared",
+      "label": "报告集合位置",
+      "object": "phone",
+      "showTarget": false
+    }
+  ],
+  "interactions": [
+    {
+      "id": "wear-shoes",
+      "source": "sturdy-shoes",
+      "mode": "drop",
+      "target": "feet-zone",
+      "grants": [
+        "feet-protected"
+      ],
+      "outcome": "correct",
+      "animation": "wear-shoes",
+      "feedback": "原地穿好结实鞋，留意碎片。"
+    },
+    {
+      "id": "inspect-stairs",
+      "source": "flashlight",
+      "mode": "drop",
+      "target": "stair-check",
+      "grants": [
+        "route-observed"
+      ],
+      "outcome": "correct",
+      "animation": "inspect-stairs",
+      "feedback": "本情境踏步与扶手完整、路线可用。"
+    },
+    {
+      "id": "leave-by-stairs",
+      "source": "adult",
+      "mode": "drop",
+      "target": "stairs-route",
+      "requires": [
+        "feet-protected",
+        "route-observed"
+      ],
+      "unless": [
+        "outside-building"
+      ],
+      "grants": [
+        "outside-building"
+      ],
+      "outcome": "correct",
+      "animation": "leave-by-stairs",
+      "feedback": "沿可用楼梯有序下行。训练转场：已到楼外。"
+    },
+    {
+      "id": "reach-assembly",
+      "source": "adult",
+      "mode": "drop",
+      "target": "assembly-zone",
+      "requires": [
+        "outside-building"
+      ],
+      "grants": [
+        "at-assembly"
+      ],
+      "outcome": "correct",
+      "animation": "reach-assembly",
+      "feedback": "远离外墙、碎玻璃与电线，到开阔集合处。"
+    },
+    {
+      "id": "share-location",
+      "source": "phone",
+      "mode": "drop",
+      "target": "message-zone",
+      "requires": [
+        "at-assembly"
+      ],
+      "grants": [
+        "location-shared"
+      ],
+      "outcome": "correct",
+      "animation": "share-location",
+      "feedback": "已模拟向家人报告当前集合点。"
+    },
+    {
+      "id": "early-stairs",
+      "source": "adult",
+      "mode": "drop",
+      "target": "stairs-route",
+      "unless": [
+        "outside-building"
+      ],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-stairs",
+      "feedback": "留意脚部防护，并用手边照明查看当前路线。"
+    },
+    {
+      "id": "early-report",
+      "source": "phone",
+      "mode": "drop",
+      "target": "message-zone",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "early-report",
+      "feedback": "先到远离外墙的集合区域。"
+    },
+    {
+      "id": "lift-error",
+      "source": "adult",
+      "mode": "drop",
+      "target": "lift-zone",
+      "unless": [
+        "outside-building"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "lift-error",
+      "feedback": "错误后果示意｜震后按指引使用当前可用楼梯，不乘停用电梯。"
+    },
+    {
+      "id": "return-error",
+      "source": "adult",
+      "mode": "drop",
+      "target": "return-room",
+      "unless": [
+        "outside-building"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "return-error",
+      "feedback": "错误后果示意｜不要返回受损房间取财物。"
+    },
+    {
+      "id": "wall-error",
+      "source": "adult",
+      "mode": "drop",
+      "target": "damaged-wall",
+      "requires": [
+        "outside-building"
+      ],
+      "grants": [],
+      "outcome": "danger",
+      "animation": "wall-error",
+      "feedback": "错误后果示意｜远离破损外墙与可能掉落的碎片。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "seconds": 75,
+    "initial": 0,
+    "warningAt": 100,
+    "peakFeedback": "演出已达训练上限；仍可继续正确处置，不以等待时间判失败。"
+  },
+  "completion": {
+    "requires": [
+      "feet-protected",
+      "route-observed",
+      "outside-building",
+      "at-assembly",
+      "location-shared"
+    ],
+    "settleMs": 1200,
+    "observeMs": 4000,
+    "fixedStars": 3,
+    "summary": "已到达本情境指定集合点，继续关注指引",
+    "title": "已到达本情境指定集合点，继续关注指引",
+    "status": "训练完成；继续关注现场变化与专业指引。"
+  }
+}

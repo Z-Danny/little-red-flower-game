@@ -1,0 +1,16 @@
+{
+  "location": "禁火林缘 · 教学观察",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "教学观察：五处火源。现实应立即远离报告。",
+  "reveal": "图示为管理人员处置并检查后的状态。",
+  "completeTitle": "五处已识别，远离火源并报告",
+  "pauseNote": "这是虚构禁火林缘的教学观察图，人物已远离火源与烟气。现实中发现火情应立即远离并报告，不在现场等待找齐，不让儿童扑火。分档演出不是实际火灾增长模型，计时不是安全等待时间。",
+  "endingNote": "完整结果图表示另一个时点：专业管理人员已处置五处火源并完成检查，人物仍在入口外。点击和红圈只记录识别，不会熄灭现实火源，也不能仅凭没有烟或红光判断余火已灭。",
+  "preview": "在虚构禁火林缘的教学图中识别五种不当火源。现实遇见火情应立即远离报告，而不是停留观察。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}

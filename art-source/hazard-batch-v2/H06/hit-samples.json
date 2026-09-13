@@ -1,0 +1,42 @@
+{
+  "world": [
+    720,
+    1280
+  ],
+  "targets": {
+    "blocked_path": [
+      110,
+      1062
+    ],
+    "ebike_charging": [
+      581,
+      783
+    ],
+    "wedged_fire_door": [
+      408,
+      267
+    ],
+    "locked_exit": [
+      568,
+      490
+    ],
+    "blocked_hydrant": [
+      286,
+      391
+    ]
+  },
+  "background": [
+    432,
+    1071
+  ],
+  "targetInteriorRadius": {
+    "blocked_path": 111.0,
+    "ebike_charging": 65.14598989960932,
+    "wedged_fire_door": 42.0,
+    "locked_exit": 43.0,
+    "blocked_hydrant": 41.0
+  },
+  "backgroundRadius": 109.0,
+  "method": "max Euclidean distance to exterior of real object-mask; no bbox centers",
+  "visualStatus": "samples require browser/semantic confirmation"
+}

@@ -1,0 +1,42 @@
+{
+  "world": [
+    720,
+    1280
+  ],
+  "targets": {
+    "isolated_tree": [
+      134,
+      122
+    ],
+    "open_gazebo": [
+      450,
+      294
+    ],
+    "pond_platform": [
+      256,
+      537
+    ],
+    "open_cart": [
+      498,
+      568
+    ],
+    "camping_tent": [
+      247,
+      696
+    ]
+  },
+  "background": [
+    132,
+    874
+  ],
+  "targetInteriorRadius": {
+    "isolated_tree": 42.05948168962618,
+    "open_gazebo": 23.40939982143925,
+    "pond_platform": 15.524174696260024,
+    "open_cart": 22.090722034374522,
+    "camping_tent": 28.442925306655784
+  },
+  "backgroundRadius": 132.43866504914644,
+  "method": "max Euclidean distance to exterior of real object-mask; no bbox centers",
+  "visualStatus": "samples require browser/semantic confirmation"
+}

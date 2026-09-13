@@ -1,0 +1,132 @@
+{
+  "compilerVersion": 1,
+  "id": "kitchen-before-cooking-v2",
+  "authorId": "H04",
+  "sourceSha256": "4f41ff6972a569ba7f34ea3321f371d151604700938d5771bf816c5ca240276b",
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "inputHashes": {
+    "scene-original.png": "4f41ff6972a569ba7f34ea3321f371d151604700938d5771bf816c5ca240276b",
+    "mask-candidate.png": "6f9552032b369eacc0b6c59e4977447267485583005447cab8642093000d3ae5",
+    "clean-candidate.png": "b72195b773b1b9519555279d6368e23f81d36db5838d1c91f284b70d571bf037",
+    "ending.png": "06f991092dc01a794badc1d2cb873efe81d85d9d02f9532145c4772cb14a3533"
+  },
+  "specSha256": "6973983e28e3dc408ea316959a0acc09d257a7be1fe3782149f051b7ce1b8f46",
+  "corrections": {
+    "targets": {},
+    "characters": {}
+  },
+  "targetPixels": {
+    "gas_hose": 4189,
+    "paper_near_hob": 3222,
+    "greasy_filter": 13757,
+    "sideways_cylinder": 21860,
+    "damaged_kettle": 36794
+  },
+  "hitPixels": {
+    "gas_hose": 4189,
+    "paper_near_hob": 3222,
+    "greasy_filter": 13757,
+    "sideways_cylinder": 21860,
+    "damaged_kettle": 36794
+  },
+  "familyBox": {
+    "x": 560,
+    "y": 179,
+    "w": 160,
+    "h": 499
+  },
+  "familyPixels": 58349,
+  "effectsPixels": {
+    "weather": 0,
+    "water": 0,
+    "sky": 0,
+    "fire": 0,
+    "smoke": 0
+  },
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "effectMasksExcludeTargetsAndCharacters": true,
+  "objectAndHitMasksIdentical": true,
+  "approval": "draft; semantic visual inspection and runtime tests pending",
+  "files": [
+    {
+      "path": "character-mask.png",
+      "sha256": "9beb33bf19fdcb637e5e5b1719a3721546220dc6495a7715d59080a0ddb0603c"
+    },
+    {
+      "path": "clean.webp",
+      "sha256": "3e8fb90926743fcc81d8d7414120758fc94438bb449aee0e3857d20fdfa853ad"
+    },
+    {
+      "path": "damaged_kettle.png",
+      "sha256": "44e4f122d55aa6dd5bde52385883f9938464f6b1b13b00443e18a3623c2aa5a2"
+    },
+    {
+      "path": "ending.webp",
+      "sha256": "45d8c4749c5c53b00d1193e99d6d761d0c7fd0f1cdfb95343946f91d3bf74556"
+    },
+    {
+      "path": "family.png",
+      "sha256": "09d7b66fe24e26a401210fce7f568d5111ec7a48c35dedc8dcc9264496cdeb6e"
+    },
+    {
+      "path": "fire-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "gas_hose.png",
+      "sha256": "7e209a6f7166147b554baffa678c15bce094482411d5b8996ee9e2564ec9736e"
+    },
+    {
+      "path": "greasy_filter.png",
+      "sha256": "a5493ef8fcbdb3573ee6bf99e38749358054db397875533e85432232b8e5f940"
+    },
+    {
+      "path": "hit-samples.json",
+      "sha256": "c1146df42365fa9c7828b8c6e20651b92184c7eb427f419e013722a0c6e6d3b0"
+    },
+    {
+      "path": "id-mask.png",
+      "sha256": "ee01c55641ff31639b1b038acea0b0de902aae57dae366667b5b21ed518add21"
+    },
+    {
+      "path": "object-mask.png",
+      "sha256": "ee01c55641ff31639b1b038acea0b0de902aae57dae366667b5b21ed518add21"
+    },
+    {
+      "path": "paper_near_hob.png",
+      "sha256": "0f761ed9b3128cac1b9cfaef91ac4d359e8c0b25418c6c5b4e4d14e9f1002c1d"
+    },
+    {
+      "path": "scene.webp",
+      "sha256": "431021839f820878cce325c825eeb0f403d1de188a674abd5035ab6d9ee0ddb3"
+    },
+    {
+      "path": "sideways_cylinder.png",
+      "sha256": "fb4b2335db50a944897626b3e9d4f8b13c21c2a460e3c74fac4319638d2e183c"
+    },
+    {
+      "path": "sky-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "smoke-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "water-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "weather-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    }
+  ]
+}

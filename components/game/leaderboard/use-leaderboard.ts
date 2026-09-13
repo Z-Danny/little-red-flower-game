@@ -4,12 +4,14 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { levels } from '@/app/game/levels';
 import { BOARD_STORAGE_KEY, createLocalLeaderboard } from '@/app/game/leaderboard/local-provider';
 import type { BoardSnapshot, LeaderboardProvider, ProfileInput } from '@/app/game/leaderboard/model';
+import {canEnter} from '@/app/game/journey/progress';
 
 /** Composition root. Inject a different provider here; players and game engines stay unchanged. */
 function browserProvider(): LeaderboardProvider {
   return createLocalLeaderboard({
     caps: Object.fromEntries(levels.filter(level => level.playable).map(level => [level.id, 3])),
     storage: () => window.localStorage,
+    canEnter,
     id: () => crypto.randomUUID(),
     listen(callback) {
       const onStorage = (event: StorageEvent) => { if (event.key === BOARD_STORAGE_KEY || event.key === null) callback(); };
@@ -27,6 +29,7 @@ export function useLeaderboard(provided?: LeaderboardProvider) {
   const sequence = useRef(0);
   const pending = useRef(0);
   const alive = useRef(false);
+  const currentPlayerId = snapshot?.current.id;
 
   const run = useCallback(async (action: () => Promise<BoardSnapshot>) => {
     const request = ++sequence.current;
@@ -55,12 +58,17 @@ export function useLeaderboard(provided?: LeaderboardProvider) {
 
   return {
     snapshot, error, busy,
+    claimCompletion:useCallback(async(id:string,playerId:string)=>{
+      let receipt:import('@/app/game/leaderboard/model').CompletionReceipt|undefined;
+      const ok=await run(async()=>{const result=await provider.claimCompletion(id,playerId);receipt=result.receipt;return result.snapshot;});
+      return ok?receipt:undefined;
+    },[provider,run]),
     refresh: useCallback(() => run(() => provider.read()), [provider, run]),
     recordResult: useCallback((id: string, flowers: number, playerId: string) => { void run(() => provider.recordResult(id, flowers, playerId)); }, [provider, run]),
     createPlayer: (profile: ProfileInput) => run(() => provider.createPlayer(profile)),
     updateProfile: (profile: ProfileInput) => run(() => provider.updateProfile(profile)),
     switchPlayer: (id: string) => run(() => provider.switchPlayer(id)),
-    resetProgress: useCallback(() => { void run(() => provider.resetCurrentProgress()); }, [provider, run]),
+    resetProgress: useCallback(() => run(() => provider.resetCurrentProgress(currentPlayerId)), [provider, run, currentPlayerId]),
   };
 }
 

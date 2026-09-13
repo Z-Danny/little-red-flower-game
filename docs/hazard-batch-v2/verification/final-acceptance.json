@@ -1,0 +1,676 @@
+{
+  "at": "2026-09-10T02:07:44.851Z",
+  "status": "passed",
+  "scope": "7 new independent scene-hunt v2 levels",
+  "newLevels": 7,
+  "totalPlayable": 14,
+  "maxFlowers": 42,
+  "html": {
+    "bytes": 64026444,
+    "sha256": "58893ec8ae2c91876892aea6c34bca478c244abd3a2decedfd9a9b07e201c510"
+  },
+  "tests": {
+    "unit": 1524,
+    "browserCases": 42,
+    "audioProfiles": 7,
+    "artPacks": 7,
+    "nativeCanvasScenarios": 18
+  },
+  "physicalPhones": "not_run",
+  "humanListening": "not_run",
+  "safetyCertification": "not_claimed",
+  "gitPush": "not_performed",
+  "assets": [
+    {
+      "id": "bedroom-night-check-v2",
+      "authorId": "H02",
+      "title": "睡前的卧室",
+      "sourceSha256": "21442b1e147c0ff05445efd3b4e985062e66710eaa51589d6f8730429f2ce1ae",
+      "inputHashes": {
+        "scene-original.png": "21442b1e147c0ff05445efd3b4e985062e66710eaa51589d6f8730429f2ce1ae",
+        "mask-candidate.png": "29f03e747c3fe9b324e290325bd73e2fbfd7bbf6d2739d87270cec620ce49510",
+        "clean-candidate.png": "1e8e11a59b15b7d388099a50a63eecfd9d5a50d82ec91723ef5e4e1d9572ba21",
+        "ending.png": "9fd25b3c3227847a12e65c5ae543a2ac2828ed8a11434dc0c8c45440dad09dd6"
+      },
+      "specSha256": "6ab20c963bdd63818998066976db808b3221116f65436796cd94934f5d6bf5ae",
+      "configurationHashes": {
+        "rules": "bb6a662aac790a54272126fdbbee79473d360704f8f3ebda96dbd90d1594d4f7",
+        "skin": "0a642f8e8af48472105d2318da58468844443072c40db3bb2888621374cb360d",
+        "presentation": "cb58b803258362d4d86739d1290c1dccb7474781b1a457ba5bfa99083408a2fd",
+        "performance": "6164c147451d29be6c98479ca6617342b8c333e5c108a433e759a5825d42b7ec"
+      },
+      "outputFiles": [
+        {
+          "path": "character-mask.png",
+          "sha256": "7582bffc17222327d15529fdbe57f71811b76bd48daca7c36080db5e9b2b33d0"
+        },
+        {
+          "path": "clean.webp",
+          "sha256": "f08aeb90916c8d2ca5d979e913b01911edf6d4bcf0e4636ac473107a998345ff"
+        },
+        {
+          "path": "covered_heater.png",
+          "sha256": "ea84dce3c0bac0714b7fc079453937844ddd01868c31569ddbf96452d20b2a0e"
+        },
+        {
+          "path": "covered_phone.png",
+          "sha256": "ba668371f1e428a3b0789bf8dccab3aa1f4060d542e4293e40d4fff7e90a00bf"
+        },
+        {
+          "path": "damaged_lead.png",
+          "sha256": "36dd59a57212d95d18178d65debd40da78f75ec86c8cb3f38952e81dfb636778"
+        },
+        {
+          "path": "ending.webp",
+          "sha256": "e6e8066b57fae14ed38f9d501c1d52d2f227b9527e05f069f714591c950f32cd"
+        },
+        {
+          "path": "family.png",
+          "sha256": "52e8e8d780d9f45c683befc70bfd5af43050389cdf7d784e46d12115b68820a1"
+        },
+        {
+          "path": "fire-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "folded_blanket.png",
+          "sha256": "d91a9408e1b8b428e1e37229895d59dd97f61750698917e3cc438b7f90f59838"
+        },
+        {
+          "path": "hit-samples.json",
+          "sha256": "d34adbd087c5371f17a894c2f4f1e614f5f1d4f9296ea0f9f48b5509026781b3"
+        },
+        {
+          "path": "id-mask.png",
+          "sha256": "02f3c324f2b80f60287f4820d6987b9be33b52be626a9f70380e1e8b3df57daa"
+        },
+        {
+          "path": "object-mask.png",
+          "sha256": "02f3c324f2b80f60287f4820d6987b9be33b52be626a9f70380e1e8b3df57daa"
+        },
+        {
+          "path": "scene.webp",
+          "sha256": "3ccd4a1c59c10734a7bc977cc5a65790a320f9aa0b8cd8f2a6d4c404ec6bf537"
+        },
+        {
+          "path": "sky-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "smoke-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "swollen_bank.png",
+          "sha256": "442c98cb830e5965fa8c700726772b06ccc385851abf87be613db786048600ce"
+        },
+        {
+          "path": "water-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "weather-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        }
+      ]
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "authorId": "H04",
+      "title": "开火前的厨房",
+      "sourceSha256": "4f41ff6972a569ba7f34ea3321f371d151604700938d5771bf816c5ca240276b",
+      "inputHashes": {
+        "scene-original.png": "4f41ff6972a569ba7f34ea3321f371d151604700938d5771bf816c5ca240276b",
+        "mask-candidate.png": "6f9552032b369eacc0b6c59e4977447267485583005447cab8642093000d3ae5",
+        "clean-candidate.png": "b72195b773b1b9519555279d6368e23f81d36db5838d1c91f284b70d571bf037",
+        "ending.png": "06f991092dc01a794badc1d2cb873efe81d85d9d02f9532145c4772cb14a3533"
+      },
+      "specSha256": "6973983e28e3dc408ea316959a0acc09d257a7be1fe3782149f051b7ce1b8f46",
+      "configurationHashes": {
+        "rules": "b9c406ead873377d79c0568c17dbd1ed470d4ad74f8d83653766174a46d58415",
+        "skin": "f072e65279d1c14842b90a8054a71553a2e6dad60c5f432e64a1a98414768871",
+        "presentation": "9b50f6da105de636f6882de4dc587d2533e28a0559ef9c76827036cef9913ffb",
+        "performance": "eaf4f0e56d1b0cd286ab5044dbc62dac466619a44ff6d293c514c5926c11d9fd"
+      },
+      "outputFiles": [
+        {
+          "path": "character-mask.png",
+          "sha256": "9beb33bf19fdcb637e5e5b1719a3721546220dc6495a7715d59080a0ddb0603c"
+        },
+        {
+          "path": "clean.webp",
+          "sha256": "3e8fb90926743fcc81d8d7414120758fc94438bb449aee0e3857d20fdfa853ad"
+        },
+        {
+          "path": "damaged_kettle.png",
+          "sha256": "44e4f122d55aa6dd5bde52385883f9938464f6b1b13b00443e18a3623c2aa5a2"
+        },
+        {
+          "path": "ending.webp",
+          "sha256": "45d8c4749c5c53b00d1193e99d6d761d0c7fd0f1cdfb95343946f91d3bf74556"
+        },
+        {
+          "path": "family.png",
+          "sha256": "09d7b66fe24e26a401210fce7f568d5111ec7a48c35dedc8dcc9264496cdeb6e"
+        },
+        {
+          "path": "fire-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "gas_hose.png",
+          "sha256": "7e209a6f7166147b554baffa678c15bce094482411d5b8996ee9e2564ec9736e"
+        },
+        {
+          "path": "greasy_filter.png",
+          "sha256": "a5493ef8fcbdb3573ee6bf99e38749358054db397875533e85432232b8e5f940"
+        },
+        {
+          "path": "hit-samples.json",
+          "sha256": "c1146df42365fa9c7828b8c6e20651b92184c7eb427f419e013722a0c6e6d3b0"
+        },
+        {
+          "path": "id-mask.png",
+          "sha256": "ee01c55641ff31639b1b038acea0b0de902aae57dae366667b5b21ed518add21"
+        },
+        {
+          "path": "object-mask.png",
+          "sha256": "ee01c55641ff31639b1b038acea0b0de902aae57dae366667b5b21ed518add21"
+        },
+        {
+          "path": "paper_near_hob.png",
+          "sha256": "0f761ed9b3128cac1b9cfaef91ac4d359e8c0b25418c6c5b4e4d14e9f1002c1d"
+        },
+        {
+          "path": "scene.webp",
+          "sha256": "431021839f820878cce325c825eeb0f403d1de188a674abd5035ab6d9ee0ddb3"
+        },
+        {
+          "path": "sideways_cylinder.png",
+          "sha256": "fb4b2335db50a944897626b3e9d4f8b13c21c2a460e3c74fac4319638d2e183c"
+        },
+        {
+          "path": "sky-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "smoke-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "water-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "weather-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        }
+      ]
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "authorId": "H06",
+      "title": "让生命通道畅通",
+      "sourceSha256": "e25a99e81d4c036dd57bebf08dad9d8eaecb0187ec6c007dc48a9cda9c26392e",
+      "inputHashes": {
+        "scene-original.png": "e25a99e81d4c036dd57bebf08dad9d8eaecb0187ec6c007dc48a9cda9c26392e",
+        "mask-candidate.png": "4c0015a23ace86deba314f1a2ffd7d908ef9975e053e1279220a224d6feb8144",
+        "clean-candidate.png": "1279bcad54e877c3bea697b15800af8a5a23ee6a6a0304ec80e8b627942e27b5",
+        "ending.png": "2dfe079d6c98b5ed3ba2b92737ee99153a9f695aa53c5e598aea45f425796d67"
+      },
+      "specSha256": "6107a03def2e3af64c93fd248347629ffe54202d09f720520b1b50982332f7a3",
+      "configurationHashes": {
+        "rules": "1b1b6221e31a34db515c6cd3abb21b00b00379655d6066be08e4c59500f590a9",
+        "skin": "4531401417d007beaaa05e01f219f659ec6f63e7fedf44e9c2d6e96c3c4afd1c",
+        "presentation": "6ce42d2cd6de79e9575308517e3dcbe257a3d303f4655df03b312d8577df35af",
+        "performance": "a8b947f17d6e91e1b5e5c9de0e706e2d75c18334b3364f07cb2eaecfeb2fb75e"
+      },
+      "outputFiles": [
+        {
+          "path": "blocked_hydrant.png",
+          "sha256": "c6349e480ae45311b5f3e5aafe239cd77814571c12c1b1ab9b8d29ff7f3cb9b4"
+        },
+        {
+          "path": "blocked_path.png",
+          "sha256": "c4318d946a1b91cbdefd473b9c262f7b459d7e0a16b748ccd71043b5f12ad2c6"
+        },
+        {
+          "path": "character-mask.png",
+          "sha256": "9f1bc2559238e855dea4ff66f55b9fa5f99492dc7023e51e2c000b9f19bb0ef4"
+        },
+        {
+          "path": "clean.webp",
+          "sha256": "775eadd596daa715d7a55ff793155c830a559bb626145c23ed342279c4566f2e"
+        },
+        {
+          "path": "ebike_charging.png",
+          "sha256": "0894b29177960037da08395f53d9685c786180bb922038cee2a0cd7340c6dc09"
+        },
+        {
+          "path": "ending.webp",
+          "sha256": "4454269e9e085fbaf651dc9116c2c24b771f8552945d56ef164d69409a005dfb"
+        },
+        {
+          "path": "family.png",
+          "sha256": "4be6bc96780e71098449bb4186d291d18869344a637c033eecb6a3c8483c56b6"
+        },
+        {
+          "path": "fire-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "hit-samples.json",
+          "sha256": "f430c25e042c4e4251a2eec976c4bd83d8e5eb12534f49c49c40733975863444"
+        },
+        {
+          "path": "id-mask.png",
+          "sha256": "47f8fade8b31ebf21c9d015a4469d550928b98136bb4437f6f712cc6b9be75c1"
+        },
+        {
+          "path": "locked_exit.png",
+          "sha256": "5cbbff31e61a87d8272f4eccde7f35e1128b8be80c1f405f95e91d3901367063"
+        },
+        {
+          "path": "object-mask.png",
+          "sha256": "47f8fade8b31ebf21c9d015a4469d550928b98136bb4437f6f712cc6b9be75c1"
+        },
+        {
+          "path": "scene.webp",
+          "sha256": "efd3da0e8034e51aa6e798f1703d123b6a67ea7f3232c3e6a2ea0534de57495a"
+        },
+        {
+          "path": "sky-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "smoke-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "water-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "weather-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "wedged_fire_door.png",
+          "sha256": "c0450c5183ba9e37e11a8ec4e9223a9d5e6c42878a05ee7508b6619a07618c42"
+        }
+      ]
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "authorId": "H08",
+      "title": "日常家庭防震准备",
+      "sourceSha256": "4c0a5d608b7648158289e9709e0c42d1ea82ca46e2e0c7c2ac06f30eee3ec7ee",
+      "inputHashes": {
+        "scene-original.png": "4c0a5d608b7648158289e9709e0c42d1ea82ca46e2e0c7c2ac06f30eee3ec7ee",
+        "mask-candidate.png": "e3b66bb144213f26ad8c86fd29050fae3f2aabd8b5bd50124167e0f792b7b7ce",
+        "clean-candidate.png": "197d53069655be2cdac4d66010649bf0d24c50a3c39b0a4e91bae4fb4f053e9a",
+        "ending.png": "c8b56eb89970db20332255fd17fe8b86921c241c95cf23fc16eb05968e6f322e"
+      },
+      "specSha256": "28eb8315504aad09ddd2e15b9068869553a6a18db72ffd71bcbaa07ac8fc396c",
+      "configurationHashes": {
+        "rules": "8cbc1c9a87675c37d050ca6ebfd2525e15039a34c0018c2b742835f27c5f8bbb",
+        "skin": "dd28bd30bdcaa710373d83e4b9ec8ce8c8df5a9c25df37c72e1c744b6531d038",
+        "presentation": "a19820ec4f3354e5162a0a7b80e925bcf6095d0fdfdc2ef7b4590724045f856c",
+        "performance": "ae2988a7a871732b2d0e9f57b02bc80a054d3462e4c4a92570b8c4a59ef45e84"
+      },
+      "outputFiles": [
+        {
+          "path": "blocked_shelter.png",
+          "sha256": "0e2f161e3eaef71a737187bd6f5e0a109154116ae4430d660ec80534b22b4754"
+        },
+        {
+          "path": "character-mask.png",
+          "sha256": "348fe151dfdde1714ceca2338380fe9d751ca5d3204b121a1bc2db8e7a4bd4f4"
+        },
+        {
+          "path": "clean.webp",
+          "sha256": "98cc6f57490120a916f043e7b9c336a3e35fbf3f164efe545a00497fa4a920fd"
+        },
+        {
+          "path": "ending.webp",
+          "sha256": "897d85cdcad9550cd031863b19b84b4a282605128495ef58cf58dd9516acbe45"
+        },
+        {
+          "path": "exit_boxes.png",
+          "sha256": "dace76f4d157db0841311d314e84e5b4282ece5748d76272dba0c74d14a60081"
+        },
+        {
+          "path": "family.png",
+          "sha256": "25dacf7e1af5b89c00bd1339fd25983e849dcc0bff6dc56e3df7a5e2756c908f"
+        },
+        {
+          "path": "fire-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "heavy_top.png",
+          "sha256": "c27bce00ab935d12fda36b0bd4b521f7321a854bea3c9c31bb05f7daa899a863"
+        },
+        {
+          "path": "hit-samples.json",
+          "sha256": "f96bad5e268b0b6a81f33870c0b2bf2890ad1524fd93527cc45ea51c1ec65307"
+        },
+        {
+          "path": "id-mask.png",
+          "sha256": "c185aa1457a889945f2a9d9538e2d08b2d15b5c96e717c78acebb095a49ff955"
+        },
+        {
+          "path": "object-mask.png",
+          "sha256": "c185aa1457a889945f2a9d9538e2d08b2d15b5c96e717c78acebb095a49ff955"
+        },
+        {
+          "path": "overbed_frame.png",
+          "sha256": "25eb4a37a869ef58159c829ebab87bbb76c02f945668b7d6f4fe449eea5f3657"
+        },
+        {
+          "path": "scene.webp",
+          "sha256": "8dca006d4e8a0b7e1b933640d2a253a27d6ce116207947145a8b1406f76cbaac"
+        },
+        {
+          "path": "sky-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "smoke-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "unsecured_cabinet.png",
+          "sha256": "b14c7db4501e92dbb3996e399aff4021b02a7b5150ab2edae3b6bea231166dcc"
+        },
+        {
+          "path": "water-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "weather-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        }
+      ]
+    },
+    {
+      "id": "storm-street-check-v2",
+      "authorId": "H09",
+      "title": "风雨中的街口",
+      "sourceSha256": "054aa49f90d54963a9cfb2b8c103c561a80c7c1f96d2b68fb43b16d47bc8722c",
+      "inputHashes": {
+        "scene-original.png": "054aa49f90d54963a9cfb2b8c103c561a80c7c1f96d2b68fb43b16d47bc8722c",
+        "mask-candidate.png": "4b2a2517abf3b569abc4f1f373874efd30623a8e17d6dd93014d0cf0fa408e1c",
+        "clean-candidate.png": "a0e6b54f245fe148043056f72a1edeae339abbb493e704cd5cfd0e07a7111a74",
+        "ending.png": "837694bb6d2d7394b10f2fe1b0d626fbb0d4be14a6976ba4abfaa77656f09a8e"
+      },
+      "specSha256": "079cab9d10cc9b50c9406367f9247731fe67f04e24d556b7672be81609f833b1",
+      "configurationHashes": {
+        "rules": "193494daa80a59f1ab17ed4cfa3e750192d6ff27d7ff88a77bb0b2387acb6579",
+        "skin": "1fb39930b728f66aec5b33449e20733b0b2c24a59cb95742154503a77db3b644",
+        "presentation": "887c642ddb19c165b6864830ff70256919c09235354070a535ac4294c1206f5a",
+        "performance": "038d537536eabfc0ff0d54478e88ab3b40599cc931d968efa4ef1b26a45d4020"
+      },
+      "outputFiles": [
+        {
+          "path": "character-mask.png",
+          "sha256": "d7b717d00550c88c1df5972453f4bd613f3ce0a4c97ba031d1e57a7b934625cc"
+        },
+        {
+          "path": "clean.webp",
+          "sha256": "90fb4f56ad626e8c08748735e3e5ab467f12298d87271616d1131836d3cab3f0"
+        },
+        {
+          "path": "ending.webp",
+          "sha256": "e8a950bcb5446e684557e1a1e2ce18d58723d53110e5e626c1680effbbee3721"
+        },
+        {
+          "path": "family.png",
+          "sha256": "f9dc737e114e768742f7bca7b8e2cfb6bb663df1375d2a18096822437f631075"
+        },
+        {
+          "path": "fire-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "flooded_underpass.png",
+          "sha256": "7e6c479e83decc2c636837244c4c56f6e485915403946793ad0df4e33018c35e"
+        },
+        {
+          "path": "hit-samples.json",
+          "sha256": "ab30967a10fe2bcfde87bec88a14c1c0209f6829aaea20cc147981e4e93ea24a"
+        },
+        {
+          "path": "id-mask.png",
+          "sha256": "ad9a5c64226fadfe9997c9058d556888e9e3ac05e2f34e7f9901ca069a312e88"
+        },
+        {
+          "path": "leaning_fence.png",
+          "sha256": "b8ca597bbff2e47ab63cc1a033a646f1ec4012a50d037d1def57f7757e10b49b"
+        },
+        {
+          "path": "loose_sign.png",
+          "sha256": "9a44924531345e096d86565fca8db2ac795b1ef0a96786dc7973469a37d3967f"
+        },
+        {
+          "path": "missing_cover.png",
+          "sha256": "170c6e9ded949669ae592d9f3f2a217b6506cf0d6c38b18231d8987375fc3dfd"
+        },
+        {
+          "path": "object-mask.png",
+          "sha256": "ad9a5c64226fadfe9997c9058d556888e9e3ac05e2f34e7f9901ca069a312e88"
+        },
+        {
+          "path": "scene.webp",
+          "sha256": "5db5d6cae3fb0f280bc1f8c50634f9b42f7fdeb89f7c0d02d14928cf39e41a38"
+        },
+        {
+          "path": "sky-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "smoke-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "water-mask.png",
+          "sha256": "2f69ce8adcc38c9b82af4272c1ffb6b7c87072c1952ee79bd697826b94c72159"
+        },
+        {
+          "path": "weather-mask.png",
+          "sha256": "f1bad590a56b939bb9e9bb2783accffdb543858935d3a5e3bcd9b3a310c6644d"
+        },
+        {
+          "path": "wet_power_box.png",
+          "sha256": "5ac68ec42dd2d4fba80745d57614c0dc5c66f79bd0b28c42d01cc6b446728d58"
+        }
+      ]
+    },
+    {
+      "id": "thunder-park-v2",
+      "authorId": "H11",
+      "title": "雷雨来临的公园",
+      "sourceSha256": "ec25e800ce6db2f080b8681b890654fa5ce68b09db72c9c3a01a0d14ced71d75",
+      "inputHashes": {
+        "scene-original.png": "ec25e800ce6db2f080b8681b890654fa5ce68b09db72c9c3a01a0d14ced71d75",
+        "mask-candidate.png": "6916ede843005f87517fa30fe170d8d038e068ee215c6b983ab171a121957154",
+        "clean-candidate.png": "add496cc6c0b6677b2a1c3ffb9fc5af8893e0029614cc91aab1f83a517a36b0f",
+        "ending.png": "b802da9b4b9d7e2368f8c5430835b4c953cca12e0a856ea9d93b5bb80087e3a1"
+      },
+      "specSha256": "6677ca9d9582d09e5e499dad3c2de61688b8d9a1681b4a00cdeaab7166451851",
+      "configurationHashes": {
+        "rules": "b30702b70b4de2fba239591b1aec1e251834ac5738140d881b9d412788dcb44f",
+        "skin": "572888f11c5d50fb7e368ec13335a828ec481713ca7e10dc1080d85758b4f987",
+        "presentation": "f5a7c46065a778a97b25d6d3dd65a530da86f558db013207d590069f1f275877",
+        "performance": "72e9c6a4c70a5526961db6a898200c23bab2e2d6325c98760e692f4b3a5940d2"
+      },
+      "outputFiles": [
+        {
+          "path": "camping_tent.png",
+          "sha256": "527a2c8108790f1ab186fd45da9e00abd624323ad5876fb7f3037b6420f8bc22"
+        },
+        {
+          "path": "character-mask.png",
+          "sha256": "1b1aa2ffdb9d5e07f4cfbf2889e070e5a3e1a370ff5a76935e4252f48b01af08"
+        },
+        {
+          "path": "clean.webp",
+          "sha256": "6d340e221d917378d3d9e7080c287a9c18acb4bfade16db6b5935067f5715d8c"
+        },
+        {
+          "path": "ending.webp",
+          "sha256": "5a086b6dc5d812f121264a6826002a40d59118daa7d8a2f5b40d1cebb30a50cd"
+        },
+        {
+          "path": "family.png",
+          "sha256": "ad0dbb19c932b313ceb9210396ebddcbb53dee33a8c63188961c82d7344fefb1"
+        },
+        {
+          "path": "fire-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "hit-samples.json",
+          "sha256": "b080b0ce823c3d4ffda6c9a16369f2a59888fa0fb933fb34cd6a4c15417b831b"
+        },
+        {
+          "path": "id-mask.png",
+          "sha256": "209b0290c9dc03b7441b38a808c487a5ecd26b55396874491e9e3477a2484dfe"
+        },
+        {
+          "path": "isolated_tree.png",
+          "sha256": "9717d079aa4ea76cfd75ab6d11e5f09de02971c36f29f8174fbe581dc72143c7"
+        },
+        {
+          "path": "object-mask.png",
+          "sha256": "209b0290c9dc03b7441b38a808c487a5ecd26b55396874491e9e3477a2484dfe"
+        },
+        {
+          "path": "open_cart.png",
+          "sha256": "ea39b73056bcf25834e99547a42202a86ce2e483433f17b903c9ba2679fb17ab"
+        },
+        {
+          "path": "open_gazebo.png",
+          "sha256": "d7fdef34233efd51e88cdd69fe20f356cd221038cb461dd7a3fec8a59fc99d94"
+        },
+        {
+          "path": "pond_platform.png",
+          "sha256": "a23e77f07079dd21c0c16f593b61896fa1431c447dfcbd254c114c4ef0ed2953"
+        },
+        {
+          "path": "scene.webp",
+          "sha256": "44d01a16ccde0cac1a5d44cdce1678bbeebd0e86645a3971698c4e160537afc0"
+        },
+        {
+          "path": "sky-mask.png",
+          "sha256": "615a1d698e0877d1ac6842e3311734afb84ccf53a29cdab5176696770a81ab26"
+        },
+        {
+          "path": "smoke-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "water-mask.png",
+          "sha256": "cb6c1a697739d4f2248d50f6523287805f8b9a7822065ed4c3a7dfaa48f0bbc7"
+        },
+        {
+          "path": "weather-mask.png",
+          "sha256": "8cc3e405c6b662795667e08505152f44009f43a71d5ec619bb19d22cf2af029b"
+        }
+      ]
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "authorId": "H12",
+      "title": "林缘的五处火源",
+      "sourceSha256": "5b8d7b3c321172867ba56d8dd758b71ba396e932a3bd3fb9fa23814d219cb074",
+      "inputHashes": {
+        "scene-original.png": "5b8d7b3c321172867ba56d8dd758b71ba396e932a3bd3fb9fa23814d219cb074",
+        "mask-candidate.png": "b8572a104caf01978a003ca665e2c7e1586a2dfe699cf2275918c71bc3d54db4",
+        "clean-candidate.png": "49c09a6b68faea84189eb957d4c94e390dbc27cc389b3c98844f4b106afee847",
+        "ending.png": "85da3350d896860d5fc7cf949d5481340d927ecda13faf6d8e8f7cbce85c3a42"
+      },
+      "specSha256": "4dfb98b2bc75bc567a998335142c8da54d84790eb827570a7944d21c1b0fdcee",
+      "configurationHashes": {
+        "rules": "d794242579fa21abe7f6659181be8e4a3f391a01df9043bc0ef5c74732585f5a",
+        "skin": "9318283155357e52cc49184815a474db5ec2eb0a009363c58afb2da7d634a77d",
+        "presentation": "4922db7e39b5ca1026b7422aa9c7b7a4f69f90b4589bab6d1dc12d0fb12fa52e",
+        "performance": "187a6d3f4b2f5e84a48853b67848b11900b5af2f478e55e27b29933b71f291a3"
+      },
+      "outputFiles": [
+        {
+          "path": "burning_paper.png",
+          "sha256": "f99cd4190ee7a14e599246b5a4a1db0657beccfbc65c77f9a3c3c35109ee9701"
+        },
+        {
+          "path": "character-mask.png",
+          "sha256": "07fd6dd3310cd5b5440631f85a939433fec22a8cd543f12d689b922029b6cb2a"
+        },
+        {
+          "path": "clean.webp",
+          "sha256": "9ed580bf6e3d041b439246265edec18062365456946ef2e7503de73302f46400"
+        },
+        {
+          "path": "ending.webp",
+          "sha256": "9e6be8538f3ea88a4a8ec0f3782292aab0eadbe35d58917fd40d8e558f3a21a3"
+        },
+        {
+          "path": "family.png",
+          "sha256": "1a620d84d48ab70e188c698004772c13cb8a09b5e306b13d2526576cf2b90589"
+        },
+        {
+          "path": "fire-mask.png",
+          "sha256": "6c49039a3e8dbff4615a9fde91df1872ecfd17303f3d55bc615195cd7bbfca8a"
+        },
+        {
+          "path": "forest_campfire.png",
+          "sha256": "422c21e4d74c2f16b1bafb67e2d37b037eda3b397a7bd3f82b2307a62a3a6a10"
+        },
+        {
+          "path": "forest_fireworks.png",
+          "sha256": "1349819fdfb6c4a97e2528ce6edc3473c267679fcfeb7e29771a9e82d86f1192"
+        },
+        {
+          "path": "forest_grill.png",
+          "sha256": "48dabf9882ef560b0139853f54bb1872f86381d7260c2ed69024dd656f7b481f"
+        },
+        {
+          "path": "hit-samples.json",
+          "sha256": "5e65936148f27e296e9a2099270938325ec74b5aa73d5515088578245bbccc39"
+        },
+        {
+          "path": "id-mask.png",
+          "sha256": "182788b600a169686fea19efc310fca7d687087fe3a324d23da7006caf47570e"
+        },
+        {
+          "path": "object-mask.png",
+          "sha256": "182788b600a169686fea19efc310fca7d687087fe3a324d23da7006caf47570e"
+        },
+        {
+          "path": "scene.webp",
+          "sha256": "242405e7b4d4532e4a22375ecc4b1c244096be3754b7db404623ac4710b97d5d"
+        },
+        {
+          "path": "sky-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "smoke-mask.png",
+          "sha256": "25b6dea3e547c9b2296f687803ea719a7b86154da9644553046927ed9ef9eaef"
+        },
+        {
+          "path": "smouldering_cigarette.png",
+          "sha256": "bb89285cc2140683d453c08fa34b7bdb821d5b3b587a0b17516e1d1372b70ed5"
+        },
+        {
+          "path": "water-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        },
+        {
+          "path": "weather-mask.png",
+          "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+        }
+      ]
+    }
+  ]
+}

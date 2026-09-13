@@ -9,9 +9,33 @@ import rules2 from '../../../content/levels/lift-wait/level.json';
 import skin2 from '../../../content/levels/lift-wait/skins/paperbook.json';
 import rules3 from '../../../content/levels/well-call/level.json';
 import skin3 from '../../../content/levels/well-call/skins/paperbook.json';
+import rules4 from '../../../content/levels/quake-cover-practice/level.json';
+import skin4 from '../../../content/levels/quake-cover-practice/skins/paper-gouache.json';
+import rules5 from '../../../content/levels/quake-exit-practice/level.json';
+import skin5 from '../../../content/levels/quake-exit-practice/skins/paper-gouache.json';
+import rules6 from '../../../content/levels/collapse-signal-practice/level.json';
+import skin6 from '../../../content/levels/collapse-signal-practice/skins/paper-gouache.json';
+import rules7 from '../../../content/levels/flood-highground-practice/level.json';
+import skin7 from '../../../content/levels/flood-highground-practice/skins/paper-gouache.json';
+import rules8 from '../../../content/levels/car-window-practice/level.json';
+import skin8 from '../../../content/levels/car-window-practice/skins/paper-gouache.json';
+import rules9 from '../../../content/levels/lift-contact-practice/level.json';
+import skin9 from '../../../content/levels/lift-contact-practice/skins/paper-gouache.json';
+import rules10 from '../../../content/levels/fire-shelter-practice/level.json';
+import skin10 from '../../../content/levels/fire-shelter-practice/skins/paper-gouache.json';
+import rules11 from '../../../content/levels/fire-stairs-practice/level.json';
+import skin11 from '../../../content/levels/fire-stairs-practice/skins/paper-gouache.json';
 export const configuredPackages: LevelPackage[] = [
   validatePackage(rules0, skin0, { embedded: true }),
   validatePackage(rules1, skin1, { embedded: true }),
   validatePackage(rules2, skin2, { embedded: true }),
   validatePackage(rules3, skin3, { embedded: true }),
+  validatePackage(rules4, skin4, { embedded: true }),
+  validatePackage(rules5, skin5, { embedded: true }),
+  validatePackage(rules6, skin6, { embedded: true }),
+  validatePackage(rules7, skin7, { embedded: true }),
+  validatePackage(rules8, skin8, { embedded: true }),
+  validatePackage(rules9, skin9, { embedded: true }),
+  validatePackage(rules10, skin10, { embedded: true }),
+  validatePackage(rules11, skin11, { embedded: true }),
 ];

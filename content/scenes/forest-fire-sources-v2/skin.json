@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/forest-fire-sources-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/forest-fire-sources-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/forest-fire-sources-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/forest-fire-sources-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/forest-fire-sources-v2/family.png",
+  "familyBox": {
+    "x": 0,
+    "y": 715,
+    "w": 720,
+    "h": 565
+  },
+  "targets": {
+    "forest_grill": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 70,
+        "y": 198,
+        "w": 218,
+        "h": 170
+      },
+      "icon": "/levels/hazard-batch-v2/forest-fire-sources-v2/forest_grill.png"
+    },
+    "smouldering_cigarette": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 20,
+        "y": 671,
+        "w": 184,
+        "h": 108
+      },
+      "icon": "/levels/hazard-batch-v2/forest-fire-sources-v2/smouldering_cigarette.png"
+    },
+    "forest_campfire": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 430,
+        "y": 315,
+        "w": 249,
+        "h": 101
+      },
+      "icon": "/levels/hazard-batch-v2/forest-fire-sources-v2/forest_campfire.png"
+    },
+    "burning_paper": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 85,
+        "y": 426,
+        "w": 201,
+        "h": 103
+      },
+      "icon": "/levels/hazard-batch-v2/forest-fire-sources-v2/burning_paper.png"
+    },
+    "forest_fireworks": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 562,
+        "y": 610,
+        "w": 36,
+        "h": 77
+      },
+      "icon": "/levels/hazard-batch-v2/forest-fire-sources-v2/forest_fireworks.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/forest-fire-sources-v2/character-mask.png",
+    "fireMask": "/levels/hazard-batch-v2/forest-fire-sources-v2/fire-mask.png",
+    "smokeMask": "/levels/hazard-batch-v2/forest-fire-sources-v2/smoke-mask.png",
+    "fireSources": [
+      {
+        "kind": "ember",
+        "x": 99,
+        "y": 185,
+        "w": 130,
+        "h": 125
+      },
+      {
+        "kind": "ember",
+        "x": 64,
+        "y": 657,
+        "w": 120,
+        "h": 122
+      },
+      {
+        "kind": "flame",
+        "x": 490,
+        "y": 240,
+        "w": 130,
+        "h": 114
+      },
+      {
+        "kind": "flame",
+        "x": 100,
+        "y": 365,
+        "w": 146,
+        "h": 102
+      },
+      {
+        "kind": "fountain",
+        "x": 504,
+        "y": 408,
+        "w": 150,
+        "h": 208
+      }
+    ],
+    "smokeDrift": -1
+  }
+}

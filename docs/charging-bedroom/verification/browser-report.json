@@ -1,0 +1,120 @@
+{
+  "at": "2026-09-09T15:42:13.701Z",
+  "browser": "headless Chromium/Edge",
+  "sound": "speaker output muted; not a human listening test",
+  "physicalPhone": "not tested",
+  "reports": [
+    {
+      "protocol": "http",
+      "width": 390,
+      "height": 844,
+      "errors": [],
+      "external": [],
+      "checks": [
+        "3 targets / full portrait contain / quiet environment",
+        "blank miss no score",
+        "800ms mark / busy and repeated taps",
+        "pause clock frozen",
+        "simulated hidden lifecycle freezes time",
+        "90s peak recoverable (controlled browser clock)",
+        "ending retained / 3 flowers persisted",
+        "replay clears marks / repeated reward idempotent",
+        "previous levels retained / no page errors / no external requests"
+      ],
+      "closed": true
+    },
+    {
+      "protocol": "http",
+      "width": 320,
+      "height": 740,
+      "errors": [],
+      "external": [],
+      "checks": [
+        "3 targets / full portrait contain / quiet environment",
+        "blank miss no score",
+        "800ms mark / busy and repeated taps",
+        "pause clock frozen",
+        "simulated hidden lifecycle freezes time",
+        "ending retained / 3 flowers persisted",
+        "replay clears marks / repeated reward idempotent",
+        "previous levels retained / no page errors / no external requests"
+      ],
+      "closed": true
+    },
+    {
+      "protocol": "http",
+      "width": 1440,
+      "height": 900,
+      "errors": [],
+      "external": [],
+      "checks": [
+        "3 targets / full portrait contain / quiet environment",
+        "blank miss no score",
+        "letterbox excluded",
+        "800ms mark / busy and repeated taps",
+        "pause clock frozen",
+        "simulated hidden lifecycle freezes time",
+        "ending retained / 3 flowers persisted",
+        "replay clears marks / repeated reward idempotent",
+        "previous levels retained / no page errors / no external requests"
+      ],
+      "closed": true
+    },
+    {
+      "protocol": "file",
+      "width": 390,
+      "height": 844,
+      "errors": [],
+      "external": [],
+      "checks": [
+        "3 targets / full portrait contain / quiet environment",
+        "blank miss no score",
+        "800ms mark / busy and repeated taps",
+        "pause clock frozen",
+        "simulated hidden lifecycle freezes time",
+        "ending retained / 3 flowers persisted",
+        "replay clears marks / repeated reward idempotent",
+        "previous levels retained / no page errors / no external requests"
+      ],
+      "closed": true
+    },
+    {
+      "protocol": "file",
+      "width": 320,
+      "height": 740,
+      "errors": [],
+      "external": [],
+      "checks": [
+        "3 targets / full portrait contain / quiet environment",
+        "blank miss no score",
+        "800ms mark / busy and repeated taps",
+        "pause clock frozen",
+        "simulated hidden lifecycle freezes time",
+        "ending retained / 3 flowers persisted",
+        "replay clears marks / repeated reward idempotent",
+        "previous levels retained / no page errors / no external requests"
+      ],
+      "closed": true
+    },
+    {
+      "protocol": "file",
+      "width": 1440,
+      "height": 900,
+      "errors": [],
+      "external": [],
+      "checks": [
+        "3 targets / full portrait contain / quiet environment",
+        "blank miss no score",
+        "letterbox excluded",
+        "800ms mark / busy and repeated taps",
+        "pause clock frozen",
+        "simulated hidden lifecycle freezes time",
+        "ending retained / 3 flowers persisted",
+        "replay clears marks / repeated reward idempotent",
+        "previous levels retained / no page errors / no external requests"
+      ],
+      "closed": true
+    }
+  ],
+  "closed": true
+}

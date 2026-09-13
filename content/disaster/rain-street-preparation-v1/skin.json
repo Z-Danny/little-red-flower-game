@@ -1,0 +1,159 @@
+{
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/rain-flood-v1/street/scene.webp",
+  "clean": "/levels/rain-flood-v1/street/clean.webp",
+  "ending": "/levels/rain-flood-v1/street/ending.webp",
+  "mask": "/levels/rain-flood-v1/street/mask.png",
+  "sprites": {
+    "pool": {
+      "src": "/levels/rain-flood-v1/street/pool.png",
+      "icon": "/levels/rain-flood-v1/street/pool-icon.png",
+      "box": {
+        "x": 243,
+        "y": 455,
+        "w": 201,
+        "h": 167
+      },
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "label": "低洼积水路段",
+      "input": "tap",
+      "fixed": false
+    },
+    "manhole": {
+      "src": "/levels/rain-flood-v1/street/manhole.png",
+      "icon": "/levels/rain-flood-v1/street/manhole-icon.png",
+      "box": {
+        "x": 72,
+        "y": 785,
+        "w": 190,
+        "h": 59
+      },
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "label": "异常井盖",
+      "input": "tap",
+      "fixed": false
+    },
+    "cable": {
+      "src": "/levels/rain-flood-v1/street/cable.png",
+      "icon": "/levels/rain-flood-v1/street/cable-icon.png",
+      "box": {
+        "x": 530,
+        "y": 260,
+        "w": 117,
+        "h": 181
+      },
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "label": "低垂断线",
+      "input": "tap",
+      "fixed": false
+    },
+    "sign": {
+      "src": "/levels/rain-flood-v1/street/sign.png",
+      "icon": "/levels/rain-flood-v1/street/sign-icon.png",
+      "box": {
+        "x": 387,
+        "y": 105,
+        "w": 102,
+        "h": 164
+      },
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "label": "松动广告牌",
+      "input": "tap",
+      "fixed": false
+    },
+    "car": {
+      "src": "/levels/rain-flood-v1/street/car.png",
+      "icon": "/levels/rain-flood-v1/street/car-icon.png",
+      "box": {
+        "x": 21,
+        "y": 499,
+        "w": 198,
+        "h": 117
+      },
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "label": "树下停放的车",
+      "input": "tap",
+      "fixed": false
+    },
+    "garage": {
+      "src": "/levels/rain-flood-v1/street/garage.png",
+      "icon": "/levels/rain-flood-v1/street/garage-icon.png",
+      "box": {
+        "x": 446,
+        "y": 501,
+        "w": 184,
+        "h": 160
+      },
+      "color": [
+        0,
+        255,
+        255
+      ],
+      "label": "地下车库入口",
+      "input": "tap",
+      "fixed": false
+    },
+    "person": {
+      "src": "/levels/rain-flood-v1/street/person.png",
+      "icon": "/levels/rain-flood-v1/street/person-icon.png",
+      "box": {
+        "x": 439,
+        "y": 695,
+        "w": 152,
+        "h": 469
+      },
+      "color": [
+        255,
+        128,
+        0
+      ],
+      "label": "准备涉水的行人",
+      "input": "tap",
+      "fixed": false
+    }
+  },
+  "zones": {},
+  "poses": {},
+  "weather": [
+    [
+      {
+        "x": 0,
+        "y": 0
+      },
+      {
+        "x": 720,
+        "y": 0
+      },
+      {
+        "x": 720,
+        "y": 1280
+      },
+      {
+        "x": 0,
+        "y": 1280
+      }
+    ]
+  ],
+  "faces": {}
+}

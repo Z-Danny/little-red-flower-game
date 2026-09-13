@@ -1,6 +1,6 @@
 /* Gameplay is a single continuous room. All regular HUD floats over the illustration. */
 .game-page:has(.kitchen-player){height:100dvh;min-height:0;padding:0;overflow:hidden;background:#18251f}
-.kitchen-player{position:relative;width:min(100%,50dvh);height:100dvh;margin:auto;overflow:hidden;background:#382e20;color:#fff6e5;isolation:isolate;font-family:"Microsoft YaHei UI","PingFang SC",system-ui,sans-serif}
+.kitchen-player{position:relative;width:100%;height:100dvh;margin:0;overflow:hidden;background:#382e20;color:#fff6e5;isolation:isolate;font-family:"Microsoft YaHei UI","PingFang SC",system-ui,sans-serif}
 .kitchen-player:fullscreen{width:100vw;height:100dvh;max-width:none}
 .kitchen-player button{font:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
 .kitchen-player button:disabled{opacity:.4;cursor:default}
@@ -8,18 +8,34 @@
 .kitchen-world{position:absolute;inset:0}
 .kitchen-scene{width:100%;height:100%;position:relative;background:#382e20}
 .kitchen-scene canvas{display:block;width:100%;height:100%;touch-action:none;user-select:none}
-.kitchen-hud{position:absolute;z-index:5;inset:0 0 auto;display:flex;align-items:center;gap:10px;padding:calc(15px + env(safe-area-inset-top,0px)) 14px 28px;background:linear-gradient(#162117aa,#16211738 64%,transparent);pointer-events:none}
+.kitchen-hud{position:absolute;z-index:5;inset:0 0 auto;display:grid;grid-template-columns:44px minmax(0,1fr) 44px 44px;align-items:center;gap:8px;padding:calc(12px + env(safe-area-inset-top,0px)) 14px 24px;background:linear-gradient(#162117c2,#16211738 78%,transparent);pointer-events:none}
 .kitchen-hud>*{pointer-events:auto}
 .kitchen-icon{width:40px;height:40px;display:grid;place-items:center;flex-shrink:0;border:1px solid #fff2;border-radius:50%;color:#fff8e9;background:#1b282566;backdrop-filter:blur(4px)}
 .kitchen-icon svg{width:18px;height:18px}
 .kitchen-hud h1{margin:0;flex:1;min-width:0;text-shadow:0 1px 6px #151c12;font-size:14px;line-height:1.5;font-weight:600}
 .kitchen-hud h1 small{display:block;font-size:9px;letter-spacing:.16em;color:#f6e6c1;font-weight:600}
 .kitchen-hud h1 span{white-space:nowrap}
-.kitchen-clock{display:flex;align-items:center;gap:5px;font-size:15px;line-height:1;font-weight:600;font-variant-numeric:tabular-nums;text-shadow:0 1px 5px #171e13}
-.kitchen-clock svg{width:14px;height:14px;opacity:.8}
-.kitchen-clock.urgent{color:#ffd2a0}
+.kitchen-player[data-game-surface]{container:kitchen / inline-size}
+.kitchen-player[data-game-surface] button{min-width:44px;min-height:44px}
+.kitchen-player[data-game-surface] .kitchen-hud{padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right));gap:8px}
+.kitchen-player[data-game-surface] .kitchen-icon{width:44px;height:44px}
+.kitchen-player[data-game-surface] .kitchen-hud h1 span{display:block;overflow:hidden;text-overflow:ellipsis}
+.kitchen-player[data-game-surface] :is(.kitchen-menu,.kitchen-result){max-height:100%;overflow:auto;overscroll-behavior:contain}
+.kitchen-player[data-game-surface] :is(.kitchen-menu-shade,.kitchen-result-shade){padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+@container kitchen (max-width:300px){.kitchen-player[data-game-surface] .kitchen-hud{gap:8px 4px}.kitchen-hud h1{font-size:12px}}
+/* A generated picture-book instrument floats at the left; it never intercepts scene input. */
+.kitchen-thermometer{position:absolute;z-index:6;left:max(var(--meter-left),env(safe-area-inset-left));top:calc(var(--meter-top) + env(safe-area-inset-top,0px));width:var(--meter-width);pointer-events:none;filter:drop-shadow(0 2px 3px #18271e55)}
+.kitchen-thermometer svg{display:block;width:100%;height:auto;overflow:hidden}
+.kitchen-thermometer-liquid,.kitchen-thermometer-highlight{transition:y var(--meter-transition) ease-out,height var(--meter-transition) ease-out}
+.kitchen-thermometer stop{transition:stop-color var(--meter-transition) ease-out}
+.kitchen-thermometer[data-tone=critical]{filter:drop-shadow(0 0 5px #d2503b70)}
+.kitchen-audio-settings{font-size:11px;margin-top:16px;color:#65715d}
+.kitchen-audio-settings summary{cursor:pointer;padding:6px 0}
+.kitchen-audio-settings label{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0}
+.kitchen-audio-settings input{width:60%;accent-color:#38614e}
+.kitchen-audio-settings small{font-size:10px;line-height:1.7}
 .kitchen-cancel{position:absolute;z-index:7;right:16px;bottom:calc(20px + env(safe-area-inset-bottom,0px))}
-.kitchen-toast{position:absolute;z-index:7;top:calc(76px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);max-width:90%;width:max-content;padding:9px 15px;border-radius:24px;background:#312016d9;color:#ffe4bb;font-size:12px;pointer-events:none;animation:kitchen-toast-in .18s ease-out}
+.kitchen-toast{position:absolute;z-index:7;top:calc(76px + env(safe-area-inset-top,0px));left:calc(50% + 22px);transform:translateX(-50%);max-width:calc(100% - 78px);width:max-content;padding:9px 12px;border-radius:18px;background:#312016d9;color:#ffe4bb;font-size:12px;pointer-events:none;animation:kitchen-toast-in .18s ease-out}
 @keyframes kitchen-toast-in{from{opacity:0;transform:translate(-50%,-5px)}to{opacity:1;transform:translate(-50%,0)}}
 .kitchen-menu-shade{position:absolute;z-index:20;inset:0;display:grid;place-items:center;padding:22px;background:#17261ab8;backdrop-filter:blur(5px)}
 .kitchen-menu,.kitchen-result{width:100%;max-width:370px;padding:26px;border:1px solid #f3e5c799;border-radius:24px;background:#fff3dcf5;color:#35483b;box-shadow:0 24px 90px #07150b33}
@@ -52,5 +68,5 @@
 @keyframes kitchen-result-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .game-hub .map-level+.map-level{margin-top:12px}.game-hub .map-level.kitchen-map .map-node{background:#d87c3f}.game-hub .mission-picker{display:flex;gap:7px;padding:0 20px 14px}.mission-picker button{flex:1;border:1px solid #c6b598;border-radius:11px;padding:9px;background:#eee3d0;color:#627062;font-size:12px}.mission-picker button.selected{background:#385e51;color:#fff6df;border-color:#385e51}.hub-live-preview .kitchen-scene{height:100%;aspect-ratio:auto}.hub-live-preview .kitchen-scene canvas{object-fit:cover;object-position:top}
 
-@media(max-width:360px){.kitchen-hud{gap:7px;padding-left:10px;padding-right:10px}.kitchen-hud h1{font-size:12px}.kitchen-icon{width:36px;height:36px}.kitchen-clock{font-size:13px}.kitchen-menu,.kitchen-result{padding:20px}}
+@media(max-width:360px){.kitchen-hud h1{font-size:12px}.kitchen-menu,.kitchen-result{padding:20px}}
 @media(prefers-reduced-motion:reduce){.kitchen-player *{animation:none!important;transition:none!important}}

@@ -1,0 +1,42 @@
+{
+  "world": [
+    720,
+    1280
+  ],
+  "targets": {
+    "gas_hose": [
+      176,
+      528
+    ],
+    "paper_near_hob": [
+      201,
+      433
+    ],
+    "greasy_filter": [
+      273,
+      191
+    ],
+    "sideways_cylinder": [
+      464,
+      667
+    ],
+    "damaged_kettle": [
+      490,
+      944
+    ]
+  },
+  "background": [
+    219,
+    900
+  ],
+  "targetInteriorRadius": {
+    "gas_hose": 8.94427190999916,
+    "paper_near_hob": 19.235384061671343,
+    "greasy_filter": 31.0,
+    "sideways_cylinder": 59.413803110051795,
+    "damaged_kettle": 54.0
+  },
+  "backgroundRadius": 219.18485349129398,
+  "method": "max Euclidean distance to exterior of real object-mask; no bbox centers",
+  "visualStatus": "samples require browser/semantic confirmation"
+}

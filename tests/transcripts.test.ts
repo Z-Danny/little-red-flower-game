@@ -26,8 +26,9 @@ for(const id of ids){
   let r=createRun(p);for(const i of order)r=act(p,r,i);r=tick(p,r,2000);
   assert.equal(r.phase,'complete');assert.deepEqual([...r.resolved].sort(),[...p.rules.completion.requires].sort());assert.equal(r.stars,3);
  });
- test(`${id}: waiting for 20 minutes never creates a fictitious disaster or reduces score`,()=>{
-  let r=tick(p,createRun(p),20*60*1000);assert.equal(r.risk,0);assert.equal(r.peakSeen,false);assert.equal(r.phase,'playing');
+ test(`${id}: waiting never invents a disaster; timed collection expires while response practice stays open`,()=>{
+  let r=tick(p,createRun(p),20*60*1000);assert.equal(r.risk,0);assert.equal(r.peakSeen,false);assert.equal(r.phase,p.rules.risk.timeout==='fail'?'failed':'playing');
+  if(p.rules.risk.timeout==='fail'){assert.equal(r.stars,0);assert.equal(r.elapsed,50000);r=reduceRun(p,r,{type:'reset'});}
   for(const i of correct)r=act(p,r,i);assert.equal(tick(p,r,2000).stars,3);
  });
  test(`${id}: animation durations, late commits, duplicate immunity, final pose continuity`,()=>{
@@ -48,11 +49,11 @@ for(const id of ids){
   const q=structuredClone(p);for(const a of Object.values(q.skin.assets))a.src=a.src.replace('/transcript-v1/','/alternate/');
   validatePackage(q.rules,q.skin);const play=(x:LevelPackage)=>correct.reduce((r,i)=>act(x,r,i),createRun(x));assert.deepEqual(play(p),play(q));
  });
- for(const [w,h] of [[320,740],[390,844]])test(`${id}: ${w}px contain camera cannot crop required objects`,()=>{
+ for(const [w,h] of [[320,740],[390,844]])test(`${id}: ${w}px camera preserves required centers and input round trip`,()=>{
   const c=cameraFor(p,w,h);for(const o of p.rules.objects){const b=p.skin.poses[o.id];assert.ok(b.x>=0&&b.y>=0&&b.x+b.w<=720&&b.y+b.h<=1280);const pt={x:b.x+b.w/2,y:b.y+b.h/2};const screen={x:c.x+pt.x*c.scale,y:c.y+pt.y*c.scale};assert.ok(screen.x>=0&&screen.x<=w&&screen.y>=0&&screen.y<=h);const back=toWorld(p,screen,{left:0,top:0,width:w,height:h});assert.ok(Math.abs(back.x-pt.x)<.001);}
  });
  test(`${id}: HUD does not expose response answer checklist or fake disaster countdown`,()=>{
-  const html=renderToStaticMarkup(createElement(ConfiguredPlayer,{pack:p,onBack:()=>{},onFinish:()=>{}}));assert.ok(html.includes('训练用时'));assert.ok(!html.includes('风险倒计时'));
+  const html=renderToStaticMarkup(createElement(ConfiguredPlayer,{pack:p,onBack:()=>{},onFinish:()=>{}}));assert.ok(!html.includes('风险倒计时'));if(p.rules.risk.timeout==='fail'){assert.ok(html.includes('role="progressbar"'));assert.ok(!html.includes('<time'));assert.ok(html.includes('物件剪影提示'));}else assert.ok(html.includes('训练用时'));
   if(p.rules.kind==='response')assert.ok(!html.includes('configured-targets'));
   else for(const g of p.rules.goals)assert.ok(html.includes(p.skin.assets[p.skin.poses[g.object].asset].src));
  });

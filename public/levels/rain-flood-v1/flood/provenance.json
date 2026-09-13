@@ -1,0 +1,15 @@
+{
+  "compiler": "prepare-rain-flood.py",
+  "source": {
+    "alert-candidate.png": "2bdd956b17c1295ed47b4d0c6d7aab6441543207bcd1ddb756350b9be514536a",
+    "clean-candidate.png": "023d009fc7af0426a1a3a5ab121b39216fe9044ce3bc88bb2316c66130ad0c34",
+    "ending.png": "f19ef8293bc39c5e0b6696a0b3f492eec56456c13acbe4ea68dca4b3c5f38b13",
+    "mask-candidate.png": "9222e6f27964f47338aff21c457a15093f30224590779ea554fc3e90d4dc689e",
+    "scene-original.png": "8a70956e6991e6c9b89127c78070c65a8d758a2b76c2aca77be5da7329c3609d"
+  },
+  "productionSha256": "763b8f31439180d95c1380fb9e6795694fcfdc2520cc64946d32e929feecab56",
+  "originalPixelSprites": true,
+  "runtimeMaskPaletteExact": true,
+  "repairOutsidePixelsUnchanged": true,
+  "visualApproval": "reviewed in original, mask overlay, 390x844 initial/action/ending screenshots"
+}

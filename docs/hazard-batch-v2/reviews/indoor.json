@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-09-10",
+  "reviewer": "AI 内容交叉审校（非消防、医疗或工程专业认证）",
+  "scope": [
+    "H02",
+    "H04",
+    "H08"
+  ],
+  "inputRead": {
+    "files": [
+      "cards/H02/full.md",
+      "cards/H04/full.md",
+      "cards/H08/full.md"
+    ],
+    "allStagesRead": true,
+    "note": "完整读完 A–I 制作卡。本记录只审内容与画面门槛，不代替生图/像素/浏览器/实听验收。"
+  },
+  "decision": "15 个最小知识目标可保留；必须落实下列条件和画面验收。未批准任何尚未查看的母版/结局图。",
+  "sources": [
+    {
+      "id": "S03",
+      "url": "https://www.mem.gov.cn/kp/shaq/201904/t20190403_365937.shtml",
+      "publisher": "应急管理部",
+      "readStatus": "unavailable",
+      "readEvidence": "2026-09-10 两次 direct open 均返回 Internal Error；未把旧摘要算作本次实际阅读。",
+      "adoptedParaphrase": null,
+      "support": "不作已核证据",
+      "replacedBy": [
+        "S06",
+        "S11"
+      ]
+    },
+    {
+      "id": "S05",
+      "url": "https://www.cpsc.gov/s3fs-public/513.pdf",
+      "publisher": "美国消费品安全委员会 CPSC 工作人员",
+      "readStatus": "adopted_passage_read",
+      "locator": "PDF 第 5 页 Kitchen，网页提取 L293–296",
+      "adoptedParaphrase": "炉面及上方应清除纸张、塑料等可燃物，不能作可燃品储放区。",
+      "support": "纸巾搭到炉头支架是明确可燃物靠灶；不采用美国插座制度到中国画面。"
+    },
+    {
+      "id": "S06",
+      "url": "https://www.cpsc.gov/s3fs-public/elecsafety.pdf",
+      "publisher": "美国消费品安全委员会 CPSC",
+      "readStatus": "adopted_passage_read",
+      "locator": "1 页 PDF L12–15",
+      "adoptedParaphrase": "损坏的电器或电线不要继续使用，插接前检查磨损。",
+      "support": "破损组件停用；不采用该旧海报的历史事故统计为当前数据。"
+    },
+    {
+      "id": "S07",
+      "url": "https://www.london-fire.gov.uk/safety/the-home/electrical-items/batteries-and-chargers/",
+      "publisher": "伦敦消防局 London Fire Brigade",
+      "readStatus": "adopted_passage_read",
+      "locator": "Firefighter safety tips L449–452；If your battery starts swelling or expanding L457–462",
+      "adoptedParaphrase": "充电器及正在充电的设备不应被覆盖；电池膨胀应停止充电、关闭设备，不拆壳或自行摆弄，联系厂家或合格技术人员。",
+      "support": "手机覆盖、鼓胀停用；非燃台面具体布置属设计表达，不称其为官方指定处置容器。"
+    },
+    {
+      "id": "S08",
+      "url": "https://js.119.gov.cn/202410/35463ade55aa4cb185f79be3182b26de_c_eb84256e7b4642cf9505.html",
+      "publisher": "江苏省消防救援总队转载；页面原始来源标注央视新闻",
+      "readStatus": "adopted_passage_read",
+      "locator": "如何预防手机充电时发生危险 L144–157",
+      "adoptedParaphrase": "充电时应避开枕头等易燃物；合格充电保护并不意味着所有情形必然起火或爆炸。",
+      "support": "枕头附近充电及可燃物风险的补充；‘被覆盖’的直接表述以 S07 为准。",
+      "independence": "与 S07 非同文；这是新闻转载，不冒称江苏消防自行实验。"
+    },
+    {
+      "id": "S09",
+      "url": "https://www.usfa.fema.gov/prevention/home-fires/prevent-fires/batteries/",
+      "publisher": "美国消防局 USFA / FEMA",
+      "readStatus": "adopted_passage_read",
+      "locator": "Messages to share L144–150",
+      "adoptedParaphrase": "锂电池出现形状改变等异常即停止使用；不丢入普通垃圾，按当地渠道回收，并避开可燃物。",
+      "support": "鼓胀停用与待专业处理；不能把形变后的物体画成恢复或再充电。",
+      "independence": "页面温度数据段指向 NFPA；这里只采用 USFA 明示的停用与回收段，与 S07 非同文。"
+    },
+    {
+      "id": "S10",
+      "url": "https://fj.119.gov.cn/ztzl/kp/hzyf/202502/t20250208_107004.htm",
+      "publisher": "福建省消防救援总队；原始来源福州支队，林巧玲",
+      "readStatus": "adopted_passage_read",
+      "locator": "消防实验揭秘电热毯火灾成因 L35–37；暖风器 L41–44",
+      "adoptedParaphrase": "电热毯弯折可能损害内部线路，使用时应平铺；取暖设备不可用于烘烤衣服，应与可燃物分开。",
+      "support": "折叠通电与覆盖取暖器；不复制正文事故、燃点或秒数到游戏压力倒计时。"
+    },
+    {
+      "id": "S11",
+      "url": "https://www.shenyang.gov.cn/zwgk/zwdt/bxgz/202511/t20251121_4941005.html",
+      "publisher": "沈阳市人民政府转载沈阳日报；沈阳消防救援支队受访人员直接答复",
+      "readStatus": "adopted_passage_read",
+      "locator": "家庭用电 L74–79；家庭用火 L83–88；办公用电 L107–108",
+      "adoptedParaphrase": "取暖电器不能覆盖，电热毯不要折叠；损坏线路及时更换；油烟机积油应清洁，可燃物远离灶台。",
+      "support": "H02 两种取暖隐患、损坏线停用，H04 纸巾/油污；限于预防，不引入文中其他应急操作。",
+      "independence": "与福州支队实验稿、CPSC 海报及汕尾提示不是整篇同文；引用的是消防受访者建议。"
+    },
+    {
+      "id": "S13",
+      "url": "https://wsjkw.jl.gov.cn/zdzt/jkkp/202201/t20220118_8379762.html",
+      "publisher": "吉林省卫生健康委员会官网；页面来源字段空白",
+      "readStatus": "adopted_passage_read",
+      "locator": "警惕4类取暖用品，第3项电暖器 L119–121",
+      "adoptedParaphrase": "电暖器不能由棉被、衣服覆盖，应远离床、沙发及水源。",
+      "support": "覆盖衣服的取暖器；不采用本文低温烫伤温度、时长、急救步骤或‘隔衣就没问题’等不在本关范围的表述。",
+      "independence": "与 S10 的福州消防实验不是同文；原始作者不明，不额外宣称临床审核。"
+    },
+    {
+      "id": "S14",
+      "url": "https://js.119.gov.cn/202107/35463ade55aa4cb185f79be3182b26de_c_360f9bca9b8444ccb99a.html",
+      "publisher": "江苏省消防救援总队转载；原始来源中国江苏网",
+      "readStatus": "adopted_passage_read",
+      "locator": "定期检查合理存放 家庭用气需要关注的问题 L143–146",
+      "adoptedParaphrase": "连接燃气器具的软管会老化开裂，应检查并更换异常管件。",
+      "support": "开裂软管需停用检查；不采用旧稿中固定18个月期限，不把天然气专属段落套到瓶装液化气泄漏处置。"
+    },
+    {
+      "id": "S15",
+      "url": "https://www.suzhou.gov.cn/szsrmzf/mszx/202602/c3369e05be08407ca678175a75a94e0f.shtml",
+      "publisher": "苏州市人民政府转载；原始来源苏州公安微警务",
+      "readStatus": "adopted_passage_read",
+      "locator": "用气篇第2、3条 L44–46；用火篇第2条 L56",
+      "adoptedParaphrase": "软管老化或松脱须联系专业人员维修、更换；钢瓶应保持直立，不能横放、倒放等使用，儿童不接触钢瓶。",
+      "support": "软管专业报修及钢瓶直立；不把本关变成自行拆接或泄漏处理教程。",
+      "independence": "与 S14、S38/S39 已读采用段不是同文，可作为卧瓶的独立补核。"
+    },
+    {
+      "id": "S16",
+      "url": "https://www.shanwei.gov.cn/swscjdglj/hdjl/zsk/content/post_1121524.html",
+      "publisher": "汕尾市市场监督管理局；页面来源本网",
+      "readStatus": "adopted_passage_read",
+      "locator": "七、厨房用火保安全 L31",
+      "adoptedParaphrase": "厨房油烟管道和炉灶油污应定期清理，避免积油导致火灾。",
+      "support": "适用场所原文是节庆餐饮服务，能补核油污一般风险；家庭油烟机滤网的直接依据优先 S11，不转用商用配置尺寸。"
+    },
+    {
+      "id": "S38",
+      "url": "https://www.bjhr.gov.cn/zt/fkfzzs/201912/t20191210_1026589.html",
+      "publisher": "北京市怀柔区人民政府；原始来源区民防局",
+      "readStatus": "adopted_passage_read",
+      "locator": "全文核心解释 L10–12，页面日期2017-12-21",
+      "adoptedParaphrase": "卧放钢瓶后开阀可能使液态液化气逸出，导致异常供气等风险，因此不能卧放使用。",
+      "support": "横卧瓶目标的机理背景；不将画面阀关的静态隐患说成已喷气。",
+      "independence": "与 S39 的同一机理段高度重合；按一个共同文字证据组计算，不计为独立双证。"
+    },
+    {
+      "id": "S39",
+      "url": "https://cgw.wuhan.gov.cn/ZWGK_13499/fdzdgknr/ggbm/ggsyxxgk/202208/t20220826_2030416.shtml",
+      "publisher": "武汉市城市管理执法委员会；文末范金晖，页面文章来源无",
+      "readStatus": "adopted_passage_read",
+      "locator": "钢瓶使用注意 L56；减压阀 L59；页面发布日期2015-03-17",
+      "adoptedParaphrase": "钢瓶使用与存放均应直立；不自行拆调减压阀，异常应交供气单位专业人员。",
+      "support": "钢瓶直立与结局专业检查；不照搬旧文充装数据或具体距离作本关评分。",
+      "independence": "卧瓶机理段与 S38 高度同文；独立补核改用 S15。"
+    },
+    {
+      "id": "S20",
+      "url": "https://www.shidz.gov.cn/columns/2f7d8d4d-df82-4c78-8084-46b42f856986/202602/03/bf95da29-9e17-47db-8983-82d3d95e414b.html",
+      "publisher": "石家庄高新技术产业开发区官网；发布部门应急管理局",
+      "readStatus": "adopted_passage_read",
+      "locator": "生命通道及通道畅通 L46–65",
+      "adoptedParaphrase": "楼梯、疏散通道需畅通，杂物堵塞会妨碍通行和疏散。",
+      "support": "公共通道原则补核；家庭房门口的直接依据为 S22，不在本关判罚款或泛化任何室内箱子违法。"
+    },
+    {
+      "id": "S22",
+      "url": "https://www.baoji.gov.cn/bmpd/bjsdzj/ztzl/dzkp/202506/t20250623_1160539.html",
+      "publisher": "宝鸡市地震局",
+      "readStatus": "adopted_passage_read",
+      "locator": "第3问 L53–59；第4问 L70；第5问 L82、L88–92",
+      "adoptedParaphrase": "固定高大家具，重物放低，床上方不挂重镜框；平时腾出坚固写字台下空间并清理门口通路。",
+      "support": "H08五目标的预防原则；不同家庭需因地制宜。",
+      "excluded": "第2问含‘三角空间’；本批明确不采用，也不把本页整篇背书为游戏内容。"
+    },
+    {
+      "id": "S23",
+      "url": "https://dzj.jl.gov.cn/bsfw/dzkp_205394/dzcs/202403/t20240315_8882944.html",
+      "publisher": "吉林省地震局",
+      "readStatus": "adopted_passage_read",
+      "locator": "简答题第18题 L270–271；多选第4题 L176–178",
+      "adoptedParaphrase": "家庭应日常检查家具布置，固定高大家具，摘除或固定重悬挂物，按重下轻上放置。",
+      "support": "固定柜体、陶罐放低、床上重物；床上位置更具体的依据用 S22 / S43。",
+      "independence": "与 S22 部分为常见相同措辞，未证实文献完全独立；S43补充异源交叉核对。"
+    },
+    {
+      "id": "S42",
+      "url": "https://fsm.119.gov.taipei/w/fsm119/Earthquake_21103013094789532",
+      "publisher": "台北市政府消防局防灾科学教育馆",
+      "readStatus": "adopted_passage_read",
+      "locator": "办公场所 L118–119；居室 L82–83",
+      "adoptedParaphrase": "预先规划避难位置；平时桌下杂物净空，留出人员可躲藏空间。",
+      "support": "原文桌下净空在办公情境；迁移到家中坚固书桌为设计推导，需 S43 的家庭安全位置条件共同约束。"
+    },
+    {
+      "id": "S43",
+      "url": "https://www.cdc.gov/earthquakes/safety/index.html",
+      "publisher": "CDC National Center for Environmental Health",
+      "readStatus": "adopted_passage_read",
+      "locator": "Know the safe spots L62–66；Secure hazards L97–106；Prepare L43",
+      "adoptedParaphrase": "提前识别每个房间的较安全位置；坚固桌下须避开玻璃与坠落物，固定家具、重物放低，移走床或座位上方的重镜框。",
+      "support": "H08全局边界及异源补核；不保证任意桌子或建筑绝对安全，不采用美国木结构加固施工细节。"
+    }
+  ],
+  "sameTextChecks": [
+    {
+      "pair": [
+        "S38",
+        "S39"
+      ],
+      "status": "substantially_same_passage",
+      "action": "卧瓶机理段只计一个证据组，加入S15独立补核。"
+    },
+    {
+      "pair": [
+        "S22",
+        "S23"
+      ],
+      "status": "partial_common_wording_independence_not_proven",
+      "action": "不同发布页面不等于两项独立研究，S43补核；仅引用采用段。"
+    },
+    {
+      "pair": [
+        "S07",
+        "S08"
+      ],
+      "status": "not_same_text",
+      "action": "S08为央视新闻转载，覆盖设备直接表述以S07为准。"
+    },
+    {
+      "pair": [
+        "S10",
+        "S11"
+      ],
+      "status": "not_same_text",
+      "action": "福州消防实验稿与沈阳消防访谈分开登记。"
+    },
+    {
+      "pair": [
+        "S14",
+        "S15"
+      ],
+      "status": "not_same_text",
+      "action": "新闻转载风险说明与苏州公安专业报修提醒分开登记。"
+    },
+    {
+      "pair": [
+        "S11",
+        "S16"
+      ],
+      "status": "not_same_text_different_context",
+      "action": "S16是餐饮场所，家庭滤网以S11为主。"
+    },
+    {
+      "pair": [
+        "S42",
+        "S43"
+      ],
+      "status": "not_same_text_complementary_scope",
+      "action": "桌下净空+家庭坚固避震位置结合，不扩展为所有桌下绝对安全。"
+    }
+  ],
+  "sharedArtGates": [
+    "三关都是事前准备；0/30/60/90秒不得出现火烟、闪火、泄漏喷气、地震房屋摇晃或医疗症状。",
+    "人物动态表达认真担忧而非中毒、惊厥；不能碰破损线、热设备、钢瓶或鼓胀电池。",
+    "五处真实可见独立判据；最小视口320px真实contain可辨认。红圈只表示已识别，不修复目标。",
+    "构图安全距离及材质是设计表达，不将画中像素距离标成法规尺寸或宣称已通过实体消防检查。",
+    "结局是成人/专业人员后来处理后的另一时点，不是儿童通过点击完成现实处置；尚待专业处理的设备不恢复使用。"
+  ],
+  "levels": [
+    {
+      "id": "H02",
+      "title": "睡前的卧室",
+      "opening": "睡前检查：找出五处充电和取暖隐患。",
+      "sceneBoundary": "冬夜、未起火无烟无伤情。五组设备分开，不将同一根线拆成多项。",
+      "targets": [
+        {
+          "id": "covered_phone",
+          "core": "正在充电的设备不应被枕头等覆盖。",
+          "evidence": [
+            "S07",
+            "S08"
+          ],
+          "visibleCriteria": [
+            "手机露出足够实体，连接线确实插入手机；只有前方覆盖它的枕头进入组合目标。",
+            "手机与电热毯是不同位置/不同插头。"
+          ],
+          "realWorldBoundary": "成人仅在无烟火、过热等异常且安全的条件下停止不当充电与整理；儿童不操作。",
+          "endingChecks": [
+            "手机已断开并放于干燥硬质台面，远离床褥。"
+          ],
+          "ambiguityActions": [
+            "不把所有床头手机或一边充电必然爆炸作为判据。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "damaged_lead",
+          "core": "破损电线及电器组件应停止使用。",
+          "evidence": [
+            "S06",
+            "S11"
+          ],
+          "visibleCriteria": [
+            "破损绝缘与铜线清楚，不用花纹假装损坏。",
+            "破损组件按用户最新反馈接独立地面插线板；白色插线板供电线与黑色组件电线各自连续、互不混接，供电回到墙插。"
+          ],
+          "realWorldBoundary": "成人安全停用并联系合格人员/厂家更换；不碰露铜处，不用胶带修补后继续通电。",
+          "endingChecks": [
+            "组件断电，已放入成人保管待处理盒；未画成已修复。"
+          ],
+          "ambiguityActions": [
+            "S03无法读取，不列为已核依据。",
+            "插线板本体及白色供电线不计为破损组件蒙版；不串联插排，不让高功率取暖器共享该插排。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "swollen_bank",
+          "core": "电池形状异常应停用，不拆壳或挤压。",
+          "evidence": [
+            "S07",
+            "S09"
+          ],
+          "visibleCriteria": [
+            "完整充电宝体积明显，侧壳拱起/接缝开裂；无烟、泄漏、发光。"
+          ],
+          "realWorldBoundary": "交成人联系厂家或专业人员；存在烟火等危险先远离求助，本关不教授搬运异常电池。",
+          "endingChecks": [
+            "已断开，仍鼓胀，位于隔开的非燃台面，人物不触碰。",
+            "不能放入普通垃圾桶或和纸盒衣服混堆。"
+          ],
+          "ambiguityActions": [
+            "不得把‘隔离待处理’写成‘危险完全消除’。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "folded_blanket",
+          "core": "电热毯不可在折叠或揉团状态通电。",
+          "evidence": [
+            "S10",
+            "S11"
+          ],
+          "visibleCriteria": [
+            "毯体厚叠层、专属控制器亮灯及线缆可见，不能像普通被子。",
+            "与手机枕头目标物理分离。"
+          ],
+          "realWorldBoundary": "成人按说明停用检查；本关结果为断电平铺，不演示带电展开。",
+          "endingChecks": [
+            "控制器关，插头已断开，毯体平铺，不夹在枕头下或折叠收纳。"
+          ],
+          "ambiguityActions": [
+            "不要采用‘关闭收置’而又折得更厚的含混结局；统一为断电平铺。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "covered_heater",
+          "core": "取暖器不能被衣服等可燃物覆盖。",
+          "evidence": [
+            "S10",
+            "S13",
+            "S11"
+          ],
+          "visibleCriteria": [
+            "衣服直接盖住出风口，设备有明确工作状态；无火烟。",
+            "取暖器本体离床、窗帘、人物及水源较远；独立墙插供电。"
+          ],
+          "realWorldBoundary": "成人安全停用，冷却后整理；儿童不接近发热设备。",
+          "endingChecks": [
+            "取暖器已关；衣服到远离热源的衣架。"
+          ],
+          "ambiguityActions": [
+            "只采用覆盖和远离可燃物原则，不把本文医疗温度/烫伤时长变成游戏计时。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        }
+      ],
+      "endingCaption": "识别完成。异常设备停用，交专业人员处理。",
+      "mandatoryMasterChecks": [
+        "五组都能单独辨认，手机/毯/枕不重叠为一组。",
+        "电线物理起止合理，没有线一半凭空变色、共用段、悬空插头或墙插画在家具上。",
+        "母子留有上身微动余量，脚不占电线设备。"
+      ],
+      "mandatoryEndingChecks": [
+        "鼓胀保留并远离人。",
+        "手机断开、破损组件待处理、电热毯断开平铺、取暖器停用衣服移开。"
+      ],
+      "visualStatus": "not_reviewed"
+    },
+    {
+      "id": "H04",
+      "title": "开火前的厨房",
+      "opening": "开火前，找出厨房的五处隐患。",
+      "sceneBoundary": "瓶装液化气家庭厨房，阀门/灶头全关闭；没有已知泄漏、火焰或烹饪过程。",
+      "targets": [
+        {
+          "id": "gas_hose",
+          "core": "老化开裂软管应停用并由专业人员检查更换。",
+          "evidence": [
+            "S14",
+            "S15"
+          ],
+          "visibleCriteria": [
+            "软管裂口显著，两端实际连到该灶具/减压阀；没有喷气气团。",
+            "不能把裂纹画在钢瓶，软管不悬空、穿人或与电线混接。"
+          ],
+          "realWorldBoundary": "成人保持停用，联系供气专业人员；儿童不拆接、开阀或用火检漏。",
+          "endingChecks": [
+            "专业维护后的完整合格连接，阀门及灶头仍关。"
+          ],
+          "ambiguityActions": [
+            "删除旧来源固定18个月一刀切更换期限，遵循产品及现行服务要求。",
+            "蒙版接口需定唯一归属：软管卡口归管，钢瓶阀/减压阀归瓶，不重复像素。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "paper_near_hob",
+          "core": "炉头和上方不能堆放可燃物。",
+          "evidence": [
+            "S05",
+            "S11"
+          ],
+          "visibleCriteria": [
+            "纸巾的一端真实搭在炉头支架上，而非远处正常纸巾。"
+          ],
+          "realWorldBoundary": "成人开火前整理；本关无火不演示烧纸。",
+          "endingChecks": [
+            "纸巾远离灶头存放，原炉头结构不变。"
+          ],
+          "ambiguityActions": [],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "greasy_filter",
+          "core": "厨房油烟设备应清理积油，减少火灾风险。",
+          "evidence": [
+            "S11",
+            "S16"
+          ],
+          "visibleCriteria": [
+            "同一油烟机滤网有厚黏油污；不是黄色灯光/阴影/木纹。"
+          ],
+          "realWorldBoundary": "成人依说明停用断电后清洁或预约专业服务；儿童不拆洗。",
+          "endingChecks": [
+            "同一结构滤网洁净，机器仍关，无凭空换位/换型号。"
+          ],
+          "ambiguityActions": [
+            "S16为餐饮场所的补核，不套其全部商用规范到住宅。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "sideways_cylinder",
+          "core": "液化气钢瓶应直立放置，不能卧放使用。",
+          "evidence": [
+            "S38",
+            "S39",
+            "S15"
+          ],
+          "visibleCriteria": [
+            "完整钢瓶/底座横卧，闭合阀件和供气连接可见；不是运输箱或丢弃瓶。",
+            "瓶与软管是两个真实故障，不能把整套系统一并圈两次。"
+          ],
+          "realWorldBoundary": "保持停用，联系供气单位检查与规范处置；儿童不扶瓶，不拆减压阀。",
+          "endingChecks": [
+            "供气单位检查维护后规范直立、连接完整、仍关闭。"
+          ],
+          "ambiguityActions": [
+            "S38/S39高度同文，不算独立双证；S15补核。",
+            "不能让玩家点击扶正后立即点火，或画仅扶正即宣布无需检查。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "damaged_kettle",
+          "core": "电器电源线破损应停止使用。",
+          "evidence": [
+            "S06",
+            "S11"
+          ],
+          "visibleCriteria": [
+            "近景壶、底座及自己的破损线为一组，露铜清楚，台面干燥远离水槽。"
+          ],
+          "realWorldBoundary": "成人安全停用，交厂家或专业人员处理，儿童不触碰。",
+          "endingChecks": [
+            "壶和底座断开，破损线待处理，无胶带修补后再插电。"
+          ],
+          "ambiguityActions": [
+            "S03未读成功，不列已核；不能圈整个备菜台。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        }
+      ],
+      "endingCaption": "识别完成。维护和整理应在开火前做好。",
+      "recommendedContext": "结局作为专业维护和成人整理之后的另一时点；可在说明/结局单条语义中明确‘燃气已由专业人员检查维护，破损电壶仍停用’。不增加常驻步骤面板。",
+      "mandatoryMasterChecks": [
+        "无喷气、嘶声、火烟、人物闻气咳嗽。",
+        "瓶横卧、阀关、管两端连、纸搭灶、滤网厚油、独立电壶露铜五个判据同时清楚。",
+        "钢瓶不烙出裂纹、过热变红或额外腐蚀隐患。"
+      ],
+      "mandatoryEndingChecks": [
+        "软管与钢瓶结果是专业维护已完成，而非只摆正即可。",
+        "纸远离、滤网净、壶仍待处理、灶仍关闭。"
+      ],
+      "visualStatus": "not_reviewed"
+    },
+    {
+      "id": "H08",
+      "title": "日常家庭防震准备",
+      "opening": "平时准备：找出五处防震布置隐患。",
+      "sceneBoundary": "平常晴天，没有地震预报/震动/警报；90秒只是活动计时，不是地震到达预报。",
+      "targets": [
+        {
+          "id": "unsecured_cabinet",
+          "core": "高大家具需要可靠固定，降低倾倒风险。",
+          "evidence": [
+            "S22",
+            "S23",
+            "S43"
+          ],
+          "visibleCriteria": [
+            "柜侧与墙可见，防倾倒连接带明确一端脱开。",
+            "不得仅凭柜背不可见或开柜门认定没固定。"
+          ],
+          "realWorldBoundary": "成人按家具和墙体安装要求，必要时专业安装；不在震动中处理。",
+          "endingChecks": [
+            "连接件实际接住墙和柜，柜尺寸/位置不变，不用一条浮空带假装修复。"
+          ],
+          "ambiguityActions": [],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "heavy_top",
+          "core": "沉重物品应放在稳妥低处。",
+          "evidence": [
+            "S22",
+            "S23",
+            "S43"
+          ],
+          "visibleCriteria": [
+            "另一柜顶有体量清楚的厚陶罐，位置高且可见；与未固定高柜不是同一物组。"
+          ],
+          "realWorldBoundary": "成人日常整理，儿童不攀柜。",
+          "endingChecks": [
+            "罐到可用低层稳定空间，不占通路。"
+          ],
+          "ambiguityActions": [
+            "不把任何高处轻饰物都判成这一目标。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "overbed_frame",
+          "core": "床头/睡眠区域上方不宜悬挂沉重镜框。",
+          "evidence": [
+            "S22",
+            "S23",
+            "S43"
+          ],
+          "visibleCriteria": [
+            "厚重镜框与枕头明确上下关系，悬挂结构可见，不是轻纸画。"
+          ],
+          "realWorldBoundary": "成人平时重新布置，必要时请合适人员；不在震时搬动。",
+          "endingChecks": [
+            "重镜框从原床上方移走，上方留空，床不靠挪位置伪造完成。"
+          ],
+          "ambiguityActions": [],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "exit_boxes",
+          "core": "门口与通行路线应保持畅通。",
+          "evidence": [
+            "S22",
+            "S20"
+          ],
+          "visibleCriteria": [
+            "一组箱子实质横挡门至床通路，房门正常开启路径受阻；不是墙边正常收纳。"
+          ],
+          "realWorldBoundary": "成人事前清理；本关不要求震动中穿房找出口。",
+          "endingChecks": [
+            "箱子进入合适收纳，房门能开关，床到门路线清楚。"
+          ],
+          "ambiguityActions": [
+            "不将公共消防通道法律处罚直接泛化到任意私人卧室箱子。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        },
+        {
+          "id": "blocked_shelter",
+          "core": "平时为预选的坚固桌下保留可容身空间。",
+          "evidence": [
+            "S42",
+            "S43",
+            "S22"
+          ],
+          "visibleCriteria": [
+            "完整牢固木桌板/脚和被箱筐塞满的桌下可见；桌远离玻璃和重悬挂物。",
+            "该箱筐组与门口箱组独立、互不连接；目标只取箱筐真实像素。"
+          ],
+          "realWorldBoundary": "成人平时腾空，不教震时先搬箱；适合位置依家庭结构判断，桌下不是绝对安全保证。",
+          "endingChecks": [
+            "桌不变形不换位；箱筐收纳后留下足够净空，周围无玻璃或落物风险。"
+          ],
+          "ambiguityActions": [
+            "来源S42的直接净空段是办公室；迁移家庭书桌是与S43共同约束的设计推导。",
+            "不把桌板/桌外地面纳入目标，不用‘生命三角’。"
+          ],
+          "contentDecision": "pass_with_stated_boundaries",
+          "artDecision": "pending_actual_master_and_ending_review"
+        }
+      ],
+      "endingCaption": "识别完成。这些准备应在平时做好。",
+      "mandatoryMasterChecks": [
+        "五目标物理与语义独立，重罐不用未固定高柜承载。",
+        "人物稳站，不因四档压力表现地震震动、捂头躲震或震动预警。",
+        "桌稳定且附近无落物/窗玻璃风险，净空箱组和通路箱组不能同一组。"
+      ],
+      "mandatoryEndingChecks": [
+        "可靠固定、重物低放、床上重镜框移除、门路畅通、坚固桌下净空同时完成。",
+        "不声称房屋建筑抗震达标、杜绝地震或可以保证所有灾害安全。"
+      ],
+      "visualStatus": "not_reviewed"
+    }
+  ],
+  "workflowNotes": [
+    "本审校有意不复制网页全文；每项仅登记实际读过的采用段、短意译和范围。",
+    "网页 find 偶发无匹配但随后 open 指定区段读到正文；只有实际读到的段落记 adopted_passage_read。",
+    "S03 两次失败以明确可读取的一手/直接受访官方来源替代，不隐去失败。",
+    "所有内容通过均带画面可见性条件；母版、蒙版配准、结局图、人脸边缘、音频、浏览器需生产代理另行验收。",
+    "没有修改玩法源码、没有生成素材、没有进行消防专业认证。"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "at": "2026-09-12T16:18:18.659Z",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "test-typhoon-immersion",
+      "exitCode": 0,
+      "tests": 21
+    },
+    {
+      "name": "test-scene-hunt",
+      "exitCode": 0,
+      "tests": 312
+    },
+    {
+      "name": "test-hazard-performance",
+      "exitCode": 0,
+      "tests": 138
+    },
+    {
+      "name": "test-hunt-pipeline",
+      "exitCode": 0,
+      "tests": 73
+    },
+    {
+      "name": "test-journey",
+      "exitCode": 0,
+      "tests": 27
+    },
+    {
+      "name": "test-map-signals",
+      "exitCode": 0,
+      "tests": 8
+    },
+    {
+      "name": "test-kitchen",
+      "exitCode": 0,
+      "tests": 51
+    },
+    {
+      "name": "test-disaster",
+      "exitCode": 0,
+      "tests": 31
+    },
+    {
+      "name": "test-response-experience",
+      "exitCode": 0,
+      "tests": 14
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0
+    }
+  ]
+}

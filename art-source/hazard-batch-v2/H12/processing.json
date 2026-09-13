@@ -1,0 +1,226 @@
+{
+  "compilerVersion": 1,
+  "id": "forest-fire-sources-v2",
+  "authorId": "H12",
+  "sourceSha256": "5b8d7b3c321172867ba56d8dd758b71ba396e932a3bd3fb9fa23814d219cb074",
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "inputHashes": {
+    "scene-original.png": "5b8d7b3c321172867ba56d8dd758b71ba396e932a3bd3fb9fa23814d219cb074",
+    "mask-candidate.png": "b8572a104caf01978a003ca665e2c7e1586a2dfe699cf2275918c71bc3d54db4",
+    "clean-candidate.png": "49c09a6b68faea84189eb957d4c94e390dbc27cc389b3c98844f4b106afee847",
+    "ending.png": "85da3350d896860d5fc7cf949d5481340d927ecda13faf6d8e8f7cbce85c3a42"
+  },
+  "specSha256": "4dfb98b2bc75bc567a998335142c8da54d84790eb827570a7944d21c1b0fdcee",
+  "corrections": {
+    "targets": {
+      "smouldering_cigarette": {
+        "fillEnclosedHoles": true,
+        "closeGapsPx": 1,
+        "excludePolygons": [
+          [
+            [
+              79,
+              727
+            ],
+            [
+              72,
+              742
+            ],
+            [
+              69,
+              751
+            ],
+            [
+              70,
+              763
+            ],
+            [
+              64,
+              770
+            ],
+            [
+              53,
+              777
+            ],
+            [
+              39,
+              779
+            ],
+            [
+              29,
+              789
+            ],
+            [
+              23,
+              793
+            ],
+            [
+              28,
+              778
+            ],
+            [
+              26,
+              767
+            ],
+            [
+              31,
+              758
+            ],
+            [
+              39,
+              747
+            ],
+            [
+              44,
+              739
+            ],
+            [
+              61,
+              733
+            ]
+          ]
+        ],
+        "reason": "逐像素对照母图：盘内黑色候选区是实心烟灰盘底及灰烬，不是贯穿背景的孔洞；盘与盘内未熄烟头是设计明确批准的一组。候选盘沿有 1px 漏缝与背景连通，先在原包围范围内闭合该细缝再填内部，不填外围背景。排除前沿遮挡的棕色落叶，它不是烟灰盘或烟头。"
+      },
+      "forest_fireworks": {
+        "keepPolygons": [
+          [
+            [
+              550,
+              600
+            ],
+            [
+              612,
+              600
+            ],
+            [
+              612,
+              700
+            ],
+            [
+              550,
+              700
+            ]
+          ]
+        ],
+        "fillEnclosedHoles": true,
+        "reason": "仅裁剪候选品红实体，不创建矩形热区：保留正在喷花的圆筒，排除右侧未燃放的空包装纸盒及背景。筒壁印花和上口燃药底是实心原物像素，封闭其内部漏色，不填筒外背景。"
+      }
+    },
+    "characters": {}
+  },
+  "targetPixels": {
+    "forest_grill": 14910,
+    "smouldering_cigarette": 15141,
+    "forest_campfire": 12624,
+    "burning_paper": 14545,
+    "forest_fireworks": 2354
+  },
+  "hitPixels": {
+    "forest_grill": 14910,
+    "smouldering_cigarette": 15141,
+    "forest_campfire": 12624,
+    "burning_paper": 14545,
+    "forest_fireworks": 2354
+  },
+  "familyBox": {
+    "x": 0,
+    "y": 715,
+    "w": 720,
+    "h": 565
+  },
+  "familyPixels": 258349,
+  "effectsPixels": {
+    "weather": 0,
+    "water": 0,
+    "sky": 0,
+    "fire": 88901,
+    "smoke": 74402
+  },
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "effectMasksExcludeTargetsAndCharacters": true,
+  "objectAndHitMasksIdentical": true,
+  "approval": "draft; semantic visual inspection and runtime tests pending",
+  "files": [
+    {
+      "path": "burning_paper.png",
+      "sha256": "f99cd4190ee7a14e599246b5a4a1db0657beccfbc65c77f9a3c3c35109ee9701"
+    },
+    {
+      "path": "character-mask.png",
+      "sha256": "07fd6dd3310cd5b5440631f85a939433fec22a8cd543f12d689b922029b6cb2a"
+    },
+    {
+      "path": "clean.webp",
+      "sha256": "9ed580bf6e3d041b439246265edec18062365456946ef2e7503de73302f46400"
+    },
+    {
+      "path": "ending.webp",
+      "sha256": "9e6be8538f3ea88a4a8ec0f3782292aab0eadbe35d58917fd40d8e558f3a21a3"
+    },
+    {
+      "path": "family.png",
+      "sha256": "1a620d84d48ab70e188c698004772c13cb8a09b5e306b13d2526576cf2b90589"
+    },
+    {
+      "path": "fire-mask.png",
+      "sha256": "6c49039a3e8dbff4615a9fde91df1872ecfd17303f3d55bc615195cd7bbfca8a"
+    },
+    {
+      "path": "forest_campfire.png",
+      "sha256": "422c21e4d74c2f16b1bafb67e2d37b037eda3b397a7bd3f82b2307a62a3a6a10"
+    },
+    {
+      "path": "forest_fireworks.png",
+      "sha256": "1349819fdfb6c4a97e2528ce6edc3473c267679fcfeb7e29771a9e82d86f1192"
+    },
+    {
+      "path": "forest_grill.png",
+      "sha256": "48dabf9882ef560b0139853f54bb1872f86381d7260c2ed69024dd656f7b481f"
+    },
+    {
+      "path": "hit-samples.json",
+      "sha256": "5e65936148f27e296e9a2099270938325ec74b5aa73d5515088578245bbccc39"
+    },
+    {
+      "path": "id-mask.png",
+      "sha256": "182788b600a169686fea19efc310fca7d687087fe3a324d23da7006caf47570e"
+    },
+    {
+      "path": "object-mask.png",
+      "sha256": "182788b600a169686fea19efc310fca7d687087fe3a324d23da7006caf47570e"
+    },
+    {
+      "path": "scene.webp",
+      "sha256": "242405e7b4d4532e4a22375ecc4b1c244096be3754b7db404623ac4710b97d5d"
+    },
+    {
+      "path": "sky-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "smoke-mask.png",
+      "sha256": "25b6dea3e547c9b2296f687803ea719a7b86154da9644553046927ed9ef9eaef"
+    },
+    {
+      "path": "smouldering_cigarette.png",
+      "sha256": "bb89285cc2140683d453c08fa34b7bdb821d5b3b587a0b17516e1d1372b70ed5"
+    },
+    {
+      "path": "water-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "weather-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+{
+  "at": "2026-09-10T03:37:02.211Z",
+  "htmlSha256": "3cf948b295062ae374a9b5df8395583a7288428565ccfe9178878801af195048",
+  "status": "passed",
+  "checks": [
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 390,
+      "height": 844,
+      "safe": {
+        "left": 0,
+        "right": 0,
+        "top": 47,
+        "bottom": 34
+      },
+      "passed": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 844,
+      "height": 390,
+      "safe": {
+        "left": 44,
+        "right": 44,
+        "top": 0,
+        "bottom": 21
+      },
+      "passed": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "phoneZoom": 2,
+      "beginPauseResumeTouch": true,
+      "passed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 390,
+      "height": 844,
+      "safe": {
+        "left": 0,
+        "right": 0,
+        "top": 47,
+        "bottom": 34
+      },
+      "passed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 844,
+      "height": 390,
+      "safe": {
+        "left": 44,
+        "right": 44,
+        "top": 0,
+        "bottom": 21
+      },
+      "passed": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "phoneZoom": 2,
+      "beginPauseResumeTouch": true,
+      "passed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 390,
+      "height": 844,
+      "safe": {
+        "left": 0,
+        "right": 0,
+        "top": 47,
+        "bottom": 34
+      },
+      "passed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 844,
+      "height": 390,
+      "safe": {
+        "left": 44,
+        "right": 44,
+        "top": 0,
+        "bottom": 21
+      },
+      "passed": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "phoneZoom": 2,
+      "beginPauseResumeTouch": true,
+      "passed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 390,
+      "height": 844,
+      "safe": {
+        "left": 0,
+        "right": 0,
+        "top": 47,
+        "bottom": 34
+      },
+      "passed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 844,
+      "height": 390,
+      "safe": {
+        "left": 44,
+        "right": 44,
+        "top": 0,
+        "bottom": 21
+      },
+      "passed": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "phoneZoom": 2,
+      "beginPauseResumeTouch": true,
+      "passed": true
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 390,
+      "height": 844,
+      "safe": {
+        "left": 0,
+        "right": 0,
+        "top": 47,
+        "bottom": 34
+      },
+      "passed": true
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 844,
+      "height": 390,
+      "safe": {
+        "left": 44,
+        "right": 44,
+        "top": 0,
+        "bottom": 21
+      },
+      "passed": true
+    },
+    {
+      "id": "storm-street-check-v2",
+      "phoneZoom": 2,
+      "beginPauseResumeTouch": true,
+      "passed": true
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 390,
+      "height": 844,
+      "safe": {
+        "left": 0,
+        "right": 0,
+        "top": 47,
+        "bottom": 34
+      },
+      "passed": true
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 844,
+      "height": 390,
+      "safe": {
+        "left": 44,
+        "right": 44,
+        "top": 0,
+        "bottom": 21
+      },
+      "passed": true
+    },
+    {
+      "id": "thunder-park-v2",
+      "phoneZoom": 2,
+      "beginPauseResumeTouch": true,
+      "passed": true
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 390,
+      "height": 844,
+      "safe": {
+        "left": 0,
+        "right": 0,
+        "top": 47,
+        "bottom": 34
+      },
+      "passed": true
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 844,
+      "height": 390,
+      "safe": {
+        "left": 44,
+        "right": 44,
+        "top": 0,
+        "bottom": 21
+      },
+      "passed": true
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "phoneZoom": 2,
+      "beginPauseResumeTouch": true,
+      "passed": true
+    }
+  ],
+  "browserClosed": true,
+  "scope": "Simulated CSS safe-area insets and real CDP visual-viewport zoom; not physical phone testing"
+}

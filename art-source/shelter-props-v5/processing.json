@@ -1,0 +1,12 @@
+{
+  "tape-roll": {
+    "width": 804,
+    "height": 684,
+    "method": "native alpha cleanup; no hole filling"
+  },
+  "tape-strip": {
+    "width": 804,
+    "height": 62,
+    "method": "native alpha cleanup; no hole filling"
+  }
+}

@@ -36,6 +36,20 @@ next-env.d.ts
 /dist/
 /.wrangler/
 /outputs/
+/site/index.html
+# Large art intermediates and generated visual QA captures stay local.
+/art-source/**/*.png
+/art-source/**/*.jpg
+/art-source/**/*.webp
+/art-source/**/*.wav
+/docs/**/*.png
+/docs/**/*.jpg
+/docs/**/*.webp
+/docs/**/*.wav
+/docs/**/*.mp4
+/docs/**/*.log
+!/docs/screenshots/
+!/docs/screenshots/*.png
 /work/
 /h5/dist/
 /h5/.vite/

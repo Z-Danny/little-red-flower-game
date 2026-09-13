@@ -1,0 +1,484 @@
+{
+  "version": 5,
+  "defaults": {
+    "width": 180,
+    "height": 220,
+    "seconds": 2.8,
+    "particles": 12,
+    "restOpacity": 0.16
+  },
+  "presets": {
+    "fire": {
+      "effect": "fire",
+      "color": "#ef984a",
+      "image": "/levels/journey-map/signals/painterly-fire-v2.png"
+    },
+    "electric": {
+      "effect": "electric",
+      "color": "#8edff1",
+      "motion": "electric",
+      "restOpacity": 0.32
+    },
+    "wind": {
+      "effect": "wind",
+      "color": "#b6d4c4",
+      "motion": "wind",
+      "restOpacity": 0.32
+    },
+    "water": {
+      "effect": "water",
+      "color": "#8ed1da",
+      "motion": "water",
+      "restOpacity": 0.32
+    },
+    "quake": {
+      "effect": "quake",
+      "color": "#b9a285",
+      "motion": "quake",
+      "restOpacity": 0.32
+    },
+    "rain": {
+      "effect": "rain",
+      "color": "#b2dce9",
+      "motion": "rain",
+      "restOpacity": 0.32
+    },
+    "storm": {
+      "effect": "storm",
+      "color": "#e4d496",
+      "motion": "storm",
+      "restOpacity": 0.32
+    },
+    "exit": {
+      "effect": "exit",
+      "color": "#c5e4a2",
+      "motion": "exit",
+      "restOpacity": 0.32
+    },
+    "lift": {
+      "effect": "lift",
+      "color": "#ecc788",
+      "motion": "lift",
+      "restOpacity": 0.32
+    },
+    "well": {
+      "effect": "well",
+      "color": "#e7c18d",
+      "motion": "well",
+      "restOpacity": 0.32
+    },
+    "window": {
+      "effect": "window",
+      "color": "#e1e4b3",
+      "motion": "window",
+      "restOpacity": 0.32
+    },
+    "heat": {
+      "effect": "heat",
+      "color": "#e9c594",
+      "motion": "heat",
+      "restOpacity": 0.32
+    },
+    "refuge": {
+      "effect": "smoke",
+      "color": "#8b958c",
+      "motion": "refuge",
+      "restOpacity": 0.32
+    }
+  },
+  "nodes": {
+    "typhoon-home": {
+      "preset": "wind",
+      "label": "台风避险",
+      "anchor": {
+        "x": 230,
+        "y": 1850
+      },
+      "width": 340,
+      "height": 255,
+      "hitArea": {
+        "x": 60,
+        "y": 1595,
+        "width": 340,
+        "height": 255
+      }
+    },
+    "flood-kit": {
+      "preset": "water",
+      "label": "汛期备灾",
+      "anchor": {
+        "x": 535,
+        "y": 1560
+      },
+      "width": 275,
+      "height": 125,
+      "hitArea": {
+        "x": 397.5,
+        "y": 1435,
+        "width": 275,
+        "height": 125
+      }
+    },
+    "quake-bedroom-v2": {
+      "preset": "quake",
+      "label": "地震防护",
+      "anchor": {
+        "x": 224,
+        "y": 1400
+      },
+      "width": 265,
+      "height": 145,
+      "hitArea": {
+        "x": 91.5,
+        "y": 1255,
+        "width": 265,
+        "height": 145
+      }
+    },
+    "storm-street-check-v2": {
+      "preset": "rain",
+      "label": "街口风雨",
+      "anchor": {
+        "x": 560,
+        "y": 1240
+      },
+      "width": 265,
+      "height": 230,
+      "hitArea": {
+        "x": 427.5,
+        "y": 1010,
+        "width": 265,
+        "height": 230
+      }
+    },
+    "thunder-park-v2": {
+      "preset": "storm",
+      "label": "雷雨避险",
+      "anchor": {
+        "x": 205,
+        "y": 1100
+      },
+      "width": 300,
+      "height": 220,
+      "hitArea": {
+        "x": 55,
+        "y": 880,
+        "width": 300,
+        "height": 220
+      }
+    },
+    "forest-fire-sources-v2": {
+      "preset": "fire",
+      "label": "林缘防火",
+      "anchor": {
+        "x": 539,
+        "y": 947
+      },
+      "width": 100,
+      "height": 150,
+      "hitArea": {
+        "x": 489,
+        "y": 797,
+        "width": 100,
+        "height": 150
+      }
+    },
+    "rain-street-preparation-v1": {
+      "preset": "rain",
+      "label": "暴雨准备",
+      "anchor": {
+        "x": 181,
+        "y": 817
+      },
+      "width": 295,
+      "height": 180,
+      "hitArea": {
+        "x": 33.5,
+        "y": 637,
+        "width": 295,
+        "height": 180
+      }
+    },
+    "flood-house-response-v1": {
+      "preset": "water",
+      "label": "洪水避险",
+      "anchor": {
+        "x": 547,
+        "y": 755
+      },
+      "width": 300,
+      "height": 130,
+      "hitArea": {
+        "x": 397,
+        "y": 625,
+        "width": 300,
+        "height": 130
+      }
+    },
+    "clear-corridor": {
+      "preset": "exit",
+      "label": "通道畅通",
+      "anchor": {
+        "x": 248,
+        "y": 1895
+      },
+      "width": 255,
+      "height": 225,
+      "hitArea": {
+        "x": 120.5,
+        "y": 1670,
+        "width": 255,
+        "height": 225
+      },
+      "motion": "corridor-route",
+      "restOpacity": 0.38
+    },
+    "lift-wait": {
+      "preset": "lift",
+      "label": "电梯安全",
+      "anchor": {
+        "x": 555,
+        "y": 1535
+      },
+      "width": 180,
+      "height": 250,
+      "hitArea": {
+        "x": 465,
+        "y": 1285,
+        "width": 180,
+        "height": 250
+      },
+      "motion": "lift-glass"
+    },
+    "well-call": {
+      "preset": "well",
+      "label": "井口防护",
+      "anchor": {
+        "x": 226,
+        "y": 1290
+      },
+      "width": 290,
+      "height": 155,
+      "hitArea": {
+        "x": 81,
+        "y": 1135,
+        "width": 290,
+        "height": 155
+      }
+    },
+    "clear-corridor-check-v2": {
+      "preset": "exit",
+      "label": "楼道排查",
+      "anchor": {
+        "x": 560,
+        "y": 1025
+      },
+      "width": 270,
+      "height": 205,
+      "hitArea": {
+        "x": 425,
+        "y": 820,
+        "width": 270,
+        "height": 205
+      }
+    },
+    "oil-fire": {
+      "preset": "fire",
+      "label": "厨房防火",
+      "anchor": {
+        "x": 191,
+        "y": 1847
+      },
+      "width": 94,
+      "height": 150,
+      "hitArea": {
+        "x": 144,
+        "y": 1697,
+        "width": 94,
+        "height": 150
+      }
+    },
+    "charging-bedroom": {
+      "preset": "electric",
+      "label": "用电安全",
+      "anchor": {
+        "x": 622,
+        "y": 1561
+      },
+      "width": 180,
+      "height": 185,
+      "hitArea": {
+        "x": 532,
+        "y": 1376,
+        "width": 180,
+        "height": 185
+      }
+    },
+    "bedroom-night-check-v2": {
+      "preset": "window",
+      "label": "睡前防护",
+      "anchor": {
+        "x": 223,
+        "y": 1290
+      },
+      "width": 270,
+      "height": 160,
+      "hitArea": {
+        "x": 88,
+        "y": 1130,
+        "width": 270,
+        "height": 160
+      }
+    },
+    "kitchen-before-cooking-v2": {
+      "preset": "heat",
+      "label": "开火准备",
+      "anchor": {
+        "x": 550,
+        "y": 950
+      },
+      "width": 270,
+      "height": 190,
+      "hitArea": {
+        "x": 415,
+        "y": 760,
+        "width": 270,
+        "height": 190
+      }
+    },
+    "quake-cover-practice": {
+      "preset": "quake",
+      "label": "室内避震",
+      "anchor": {
+        "x": 223,
+        "y": 531
+      },
+      "width": 265,
+      "height": 135,
+      "hitArea": {
+        "x": 90.5,
+        "y": 396,
+        "width": 265,
+        "height": 135
+      }
+    },
+    "quake-exit-practice": {
+      "preset": "exit",
+      "label": "震后楼梯与集合点",
+      "anchor": {
+        "x": 548,
+        "y": 413
+      },
+      "width": 250,
+      "height": 180,
+      "hitArea": {
+        "x": 423,
+        "y": 233,
+        "width": 250,
+        "height": 180
+      },
+      "motion": "evacuate"
+    },
+    "collapse-signal-practice": {
+      "preset": "quake",
+      "label": "道路塌陷防护与求救",
+      "anchor": {
+        "x": 248,
+        "y": 239
+      },
+      "width": 330,
+      "height": 165,
+      "hitArea": {
+        "x": 83,
+        "y": 74,
+        "width": 330,
+        "height": 165
+      },
+      "motion": "collapse"
+    },
+    "flood-highground-practice": {
+      "preset": "water",
+      "label": "高层避洪与窗口示意",
+      "anchor": {
+        "x": 230,
+        "y": 260
+      },
+      "width": 280,
+      "height": 200,
+      "hitArea": {
+        "x": 90,
+        "y": 60,
+        "width": 280,
+        "height": 200
+      },
+      "motion": "highground"
+    },
+    "car-window-practice": {
+      "preset": "water",
+      "label": "侧窗脱身与水面浮力",
+      "anchor": {
+        "x": 228,
+        "y": 745
+      },
+      "width": 290,
+      "height": 150,
+      "hitArea": {
+        "x": 83,
+        "y": 595,
+        "width": 290,
+        "height": 150
+      },
+      "motion": "carwater"
+    },
+    "lift-contact-practice": {
+      "preset": "lift",
+      "label": "电梯求助",
+      "anchor": {
+        "x": 535,
+        "y": 461
+      },
+      "width": 205,
+      "height": 245,
+      "hitArea": {
+        "x": 432.5,
+        "y": 216,
+        "width": 205,
+        "height": 245
+      }
+    },
+    "fire-shelter-practice": {
+      "preset": "refuge",
+      "label": "关闭房门隔烟、窗口示意",
+      "anchor": {
+        "x": 244,
+        "y": 524
+      },
+      "width": 310,
+      "height": 235,
+      "hitArea": {
+        "x": 89,
+        "y": 289,
+        "width": 310,
+        "height": 235
+      },
+      "motion": "refuge"
+    },
+    "fire-stairs-practice": {
+      "preset": "exit",
+      "label": "沿已确认可用楼梯撤离",
+      "anchor": {
+        "x": 552,
+        "y": 296
+      },
+      "width": 245,
+      "height": 265,
+      "hitArea": {
+        "x": 429.5,
+        "y": 31,
+        "width": 245,
+        "height": 265
+      },
+      "motion": "stairs"
+    }
+  }
+}

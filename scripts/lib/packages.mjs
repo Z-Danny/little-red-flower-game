@@ -50,7 +50,8 @@ export async function checkArt(pack, base = root) {
     if (statSync(path).size > 12 * 1024 * 1024) throw new Error(`${key}: 单图超过 12 MB`);
     const image = sharp(path), info = await image.metadata();
     if (!info.width || !info.height || info.width > 4096 || info.height > 4096) throw new Error(`${key}: 尺寸超过 4096 或无效`);
-    if (key === pack.skin.background && Math.abs(info.width / info.height - pack.skin.world.width / pack.skin.world.height) > .015) throw new Error(`${key}: 背景长宽比与逻辑世界不符，会拉伸`);
+    const painted = asset.sceneBounds ?? { w: pack.skin.world.width, h: pack.skin.world.height };
+    if (key === pack.skin.background && Math.abs(info.width / info.height - painted.w / painted.h) > .015) throw new Error(`${key}: 背景长宽比与声明绘制范围不符，会拉伸`);
     if (asset.alpha) {
       if (!info.hasAlpha) throw new Error(`${key}: 需要真正透明通道`);
       const { data, info: raw } = await image.ensureAlpha().raw().toBuffer({ resolveWithObject: true });

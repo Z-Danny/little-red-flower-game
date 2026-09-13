@@ -1,0 +1,112 @@
+[
+  {
+    "name": "family-prepared",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-e9790069-e45f-4fe5-98e6-9b4e61e5a07b.png",
+    "original": "docs/flood-rooftop/originals/family-prepared.png",
+    "sourceSHA256": "da78a16af0f8d79da04b7917d500b6f46f18c3b841b2d57b255f529ad96c32aa",
+    "originalCanvas": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "name": "family-message",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-eb2cd5a0-b013-4890-909d-c6074be85c89.png",
+    "original": "docs/flood-rooftop/originals/family-message.png",
+    "sourceSHA256": "76da849dbfde3eab15f9c00e62e6ecd88122625b8108603dde295bf60ce3873f",
+    "originalCanvas": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "name": "roof-background",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-d33de743-cffe-4fef-b1c6-54c52a3f11b5.png",
+    "original": "docs/flood-rooftop/originals/roof-background.png",
+    "sourceSHA256": "f914fdd2fd5facc52b4b937581134663067ea3ad885167764e0dc6dc28269abc",
+    "originalCanvas": [
+      941,
+      1672
+    ]
+  },
+  {
+    "name": "wood-panel",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-6ecd47a2-432b-42ea-afdf-85d87826b726.png",
+    "original": "docs/flood-rooftop/originals/wood-panel.png",
+    "sourceSHA256": "2632543cf1b93fd14b2500cc5c48851a501cf163a7fade77475880b592de6b8f",
+    "originalCanvas": [
+      930,
+      1691
+    ]
+  },
+  {
+    "name": "foam",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-f70ffb78-fd1a-42c1-bc08-b531840ad4e1.png",
+    "original": "docs/flood-rooftop/originals/foam.png",
+    "sourceSHA256": "dfd9e869582de9b817664dc256a99048ea9b273b7e3fd7e06ac82297fc8173ea",
+    "originalCanvas": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "name": "float-aid",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-06f44529-ab45-417f-9e20-5a1e14ae48d2.png",
+    "original": "docs/flood-rooftop/originals/float-aid.png",
+    "sourceSHA256": "15c094b32eebaeb46841e17024fe2d2cceb9b517ffa6926029a3afe831f25f6b",
+    "originalCanvas": [
+      931,
+      1690
+    ]
+  },
+  {
+    "name": "breaker",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-6490817f-b676-4bd9-8111-3fd3c23ef403.png",
+    "original": "docs/flood-rooftop/originals/breaker.png",
+    "sourceSHA256": "25fbe3633f495ffb4693921e9181ed2e4e7b064d49fb8ec11c99acebad440010",
+    "originalCanvas": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "name": "flood-failure",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-932e7f8f-4c8a-41c6-8f44-6ba99f6349b9.png",
+    "original": "docs/flood-rooftop/originals/flood-failure.png",
+    "sourceSHA256": "5ebfaa338f596b4042c0d911d11b6213811400251495a30c55cd41870eee2154",
+    "originalCanvas": [
+      941,
+      1672
+    ]
+  },
+  {
+    "name": "breaker-off",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-096be55d-858c-4fea-a609-30f676f5bfb0.png",
+    "original": "docs/flood-rooftop/originals/breaker-off.png",
+    "sourceSHA256": "caaa9032e38a2fb1ab75bdcd2b664745e590b7e748e6f47928c0f09c09c03284",
+    "originalCanvas": [
+      1024,
+      1536
+    ]
+  },
+  {
+    "name": "electric-failure",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-2fa11359-b9d4-46d8-8300-de10721358b9.png",
+    "original": "docs/flood-rooftop/originals/electric-failure.png",
+    "sourceSHA256": "9d9443ad133b567781bbcee85c609f59b1fb01f58a019aeca30947dc2fb09d02",
+    "originalCanvas": [
+      941,
+      1672
+    ]
+  },
+  {
+    "name": "family-roof",
+    "source": "C:\\Users\\lenovo\\.codex\\generated_images\\01a07ff2-23d7-7980-aa3e-e9905f47354c\\exec-4bb17519-43c6-433f-98fe-6732b814445a.png",
+    "original": "docs/flood-rooftop/originals/family-roof.png",
+    "sourceSHA256": "79b48a57ee4933e439d17169268e20f2d7985a0b50adbabb582b16923b5ba18c",
+    "originalCanvas": [
+      1024,
+      1536
+    ]
+  }
+]

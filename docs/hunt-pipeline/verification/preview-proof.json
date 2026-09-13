@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "newLevelId": "pipeline-proof-only",
+  "fixture": "isolated temporary checkout; reused art is a test fixture only",
+  "checks": [
+    "new draft remains disabled; catalog unchanged",
+    "new ID automatically appears in hub and opens unified full-frame player"
+  ],
+  "browserClosed": true
+}

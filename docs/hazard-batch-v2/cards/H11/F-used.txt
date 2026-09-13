@@ -1,0 +1,15 @@
+以H11批准原画为构图参考，生成一张完整同尺寸规范结果绘本图。保持镜头、地平线、家具/建筑尺寸、纸纹、光影风格。不要拼贴、分屏或增加答案箭头。
+这是另外一个时点的结果，玩家点击不执行其中现实操作。
+逐项结果必须是：
+- 孤立高树下方：树仍在原处，家人在安全建筑内，不用砍树表示避险。
+- 四面敞开的凉亭：凉亭仍开敞无人，家人在原有安全建筑内。
+- 池塘边的钓台：钓台空置，家人均在服务建筑内；池塘不消失。
+- 开放式高尔夫球车：球车仍停在外面无人，家人留在原安全建筑内；不能给球车临时加透明罩宣称防雷。
+- 普通露营帐篷：帐篷仍在原处无人，家人已在建筑内，不演示冒雷雨拆收帐篷。
+完整结局语义：同构完整避险图：五处地点继续存在且无人停留，家人在原有服务建筑深处放松，雨仍继续。成功代表知道哪些位置不能避雷，不能宣称雷雨结束。
+游戏对应短字幕：“人员已在安全建筑内，雷雨中继续避免户外活动。”
+无关主体保持一致。外部天气和未处理的结构风险不因找齐而消失。标记“待专业处理”的目标不能画成已修好、已恢复使用；隔离只表达避开，不能表达危险已经消除。
+以原图门窗、家具角点、地面线和人物区域逐一核对同构。结局图不能参与目标命中或再叠原人物。输出ending.png及逐项通过/不通过说明。
+成功图的人物应与危险原画形成明确反差：肩部放松、眉头舒展、姿态安定；不是只换背景颜色。不得因完成识别就称未修设备已经安全。
+
+Output ONE full-size same-camera result illustration only. Do not create captions/text explanations/panels. Preserve all background shapes and architecture. Keep the same people inside their current safe region, clearly relax their eyebrows/shoulders and turn their attention toward each other. No people approaching outdoor risks. The existing characters have the same identity/clothing. H11 outdoor rain MUST remain, not sunny. H12 all flames, red-hot cores, burning sparks and smoke MUST be gone as professionally treated at a later time; never remove the no-fire sign or make the barbecue look still cooking.

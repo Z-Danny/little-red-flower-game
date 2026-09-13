@@ -1,0 +1,767 @@
+{
+  "version": "1.0",
+  "reviewed_at": "2026-09-10",
+  "scope": [
+    "H06",
+    "H09",
+    "H11",
+    "H12"
+  ],
+  "method": "四张完整制作卡逐行读取；浏览官方链接并实际读取采用正文段落；仅审核本关核心安全事实和制作边界。",
+  "status": "content_conditionally_approved_art_and_runtime_not_reviewed",
+  "certification": "AI资料交叉审核，不构成专业认证、消防审验或政府审签。",
+  "source_check": {
+    "all_listed_urls_opened": true,
+    "all_adopted_passages_read": true,
+    "note": "find未命中不能判断正文不存在；S26与S27通过定位正文再次阅读成功。没有仅凭域名或附件标注宣称已核验。"
+  },
+  "shared_constraints": [
+    "90秒与四档为游戏演出，不是安全等待时间、雷电规律或林火模型。",
+    "雨/烟必须在人物后且裁到许可区；目标关键证据区不被遮住。",
+    "原画、结果图未在本审核生产；所有视觉通过状态保留pending。",
+    "来源中的医疗、灭火操作、数字距离及非本关危险操作不进入玩法。",
+    "不改变任何已有存档ID；本文作者编号仅用于审校。"
+  ],
+  "sources": [
+    {
+      "id": "S11",
+      "url": "https://www.shenyang.gov.cn/zwgk/zwdt/bxgz/202511/t20251121_4941005.html",
+      "title": "沈阳消防的冬季防火锦囊",
+      "publisher": "沈阳市人民政府网站",
+      "origin": "沈阳日报采访沈阳市消防救援支队人员",
+      "published": "2025-11-21",
+      "read": "正文公共区域段及问答已实际阅读",
+      "locator": "公共区域段；Web 提取行 94–101、153",
+      "adopted": "常闭门不能被人为阻止关闭；楼梯间不堆物、不停车充电；出口不锁闭，消火栓不遮挡。",
+      "excluded": "采访内其他灭火、浓烟方向、伤亡数字均未采纳。"
+    },
+    {
+      "id": "S20",
+      "url": "https://www.shidz.gov.cn/columns/2f7d8d4d-df82-4c78-8084-46b42f856986/202602/03/bf95da29-9e17-47db-8983-82d3d95e414b.html",
+      "title": "赶紧清理！楼道堆杂物",
+      "publisher": "石家庄高新区管委会网站/应急管理局",
+      "origin": "官方科普引用《消防法》及《高层民用建筑消防安全管理规定》",
+      "published": "2026-02-03",
+      "read": "正文引用条款已实际阅读",
+      "locator": "《消防法》第二十八条；《高层民用建筑消防安全管理规定》第二十八条；行55–69",
+      "adopted": "通道、出口不能占堵，常闭门应闭合，消防设施不得被遮挡。",
+      "excluded": "罚款、事故细节和举报号码不进入关卡。"
+    },
+    {
+      "id": "S37",
+      "url": "https://www.mem.gov.cn/gk/zfxxgkpt/fdzdgknr/gz11/202106/t20210621_405573.shtml",
+      "title": "高层民用建筑消防安全管理规定",
+      "publisher": "中华人民共和国应急管理部",
+      "origin": "应急管理部令第5号原文",
+      "published": "2021-06-21",
+      "read": "第28、31、36、37条原文实际阅读",
+      "locator": "第二十八条、第三十一条、第三十六条、第三十七条；行209–213、224、265–273",
+      "adopted": "高层建筑通道、门和设施需保持有效；公共门厅、疏散走道、楼梯间和出口禁停电动自行车及为其充电。",
+      "excluded": "不把本卡构图当建筑设计合规证明；不涉及条款处罚解释。"
+    },
+    {
+      "id": "S16",
+      "url": "https://www.shanwei.gov.cn/swscjdglj/hdjl/zsk/content/post_1121524.html",
+      "title": "节庆活动场所火灾风险提示",
+      "publisher": "汕尾市市场监督管理局",
+      "origin": "该局本网安全提示",
+      "published": "2025-02-05",
+      "read": "第八项正文已实际阅读",
+      "locator": "第八项疏散通道持畅通；行32",
+      "adopted": "活动场所出口应可正常启闭，不上锁堵塞；常闭防火门保持闭合。",
+      "excluded": "该文情境是活动场所；住宅结论由S37原文直接支持，不单独从该文外推。"
+    },
+    {
+      "id": "S24",
+      "url": "https://weather.sz.gov.cn/zhuanti/2014BaoYu/content/post_9695089.html",
+      "title": "暴雨天出行 注意积水远离电线",
+      "publisher": "深圳市气象局",
+      "origin": "中国气象报社",
+      "published": "2022-04-13",
+      "read": "行人安全守则第1、3、5、7项实际阅读",
+      "locator": "行99–109、115–126",
+      "adopted": "暴雨宜在较高牢固建筑避险；不贸然涉水，远离电力设施和不牢固围墙、广告牌。",
+      "excluded": "单腿跳、标记断线现场、固定半车轮水深等细节不进入关卡，也不指导儿童处置电力风险。"
+    },
+    {
+      "id": "S25",
+      "url": "https://www.lg.gov.cn/lgajj/gkmlpt/content/11/11535/post_11535627.html",
+      "title": "暴雨过后，这些危险要小心",
+      "publisher": "深圳市龙岗区应急管理局",
+      "origin": "该局发布科普，页面未标更早原稿",
+      "published": "2024-09-03",
+      "read": "警惕积水区四项实际阅读",
+      "locator": "警惕积水区第1–4项；行58–66",
+      "adopted": "远离积水与电力设备，警惕被冲开的井盖和塌陷，不进入地下低洼空间。",
+      "excluded": "后续电器晾晒、拆电动车挡板等内容不采纳。"
+    },
+    {
+      "id": "S26",
+      "url": "https://www.bjmtg.gov.cn/bjmtg/c102697/202606/d25c66526404437f8c551a357203f2f4.shtml",
+      "title": "北京即将进入汛期！安全避险指南",
+      "publisher": "北京市门头沟区政府网站/妙峰山镇",
+      "origin": "页面尾注北京石景山微信公众号",
+      "published": "2026-05-27",
+      "read": "步行出行安全第1–3项实际阅读",
+      "locator": "行48–52",
+      "adopted": "积水地下通道绕行；暴雨远离广告牌等设施，警惕井盖移位。",
+      "excluded": "日期按正文2026-05-27记录，不按URL目录猜6月；不采纳其他时限或涉水操作。"
+    },
+    {
+      "id": "S27",
+      "url": "https://www.nmc.cn/publish/country/warning/wind.html",
+      "title": "大风预警防御指南",
+      "publisher": "中央气象台/国家气象中心",
+      "origin": "动态预警页面",
+      "published": "本次打开显示2026-06-20产品，非实时预警结论",
+      "read": "防御指南第3–4项实际阅读",
+      "locator": "行448–455",
+      "adopted": "防范风吹围板、棚架、广告牌等搭建物；人员不在相关危险构件下停留。",
+      "excluded": "只取一般防御知识，不把所见预警时间、等级应用于玩家当前位置。"
+    },
+    {
+      "id": "S21",
+      "url": "https://www.sz.gov.cn/hdjl/ywzsk/jyj/fwxx/xxaqgl/content/post_11148149.html",
+      "title": "高空坠物避险指南",
+      "publisher": "深圳市人民政府网站",
+      "origin": "深圳市教育局",
+      "published": "2024-02-18",
+      "read": "第3、5项实际阅读",
+      "locator": "行38–48",
+      "adopted": "高架广告牌可能因大风或连接松动坠落，应避免靠近。",
+      "excluded": "保险推荐和未涉及的现场加固办法不采纳。"
+    },
+    {
+      "id": "S01",
+      "url": "https://www.mem.gov.cn/kp/zrzh/202208/t20220809_419856.shtml",
+      "title": "台风来了，如何应对？",
+      "publisher": "应急管理部",
+      "origin": "综合中国天气网、新华网、广东省应急管理厅",
+      "published": "2022-08-09",
+      "read": "台风到来时第1项实际阅读",
+      "locator": "行70–72",
+      "adopted": "台风时不在玻璃门窗、临时工棚、广告牌下等危险处逗留。",
+      "excluded": "不把综合来源算独立试验；不采纳蜡烛、窗户加钉木板等非本关内容。"
+    },
+    {
+      "id": "S29",
+      "url": "https://www.cdc.gov/lightning/safety/index.html",
+      "title": "Safety Guidelines: Lightning",
+      "publisher": "US CDC",
+      "origin": "National Center for Environmental Health",
+      "published": "2026-06-16",
+      "read": "Indoors及Outdoors相关小节实际阅读",
+      "locator": "行49–52、88–116",
+      "adopted": "雷雨需及时进合适封闭庇护处；孤树、水边、开敞亭、开放球车、帐篷均非安全避雷地点；室内远离门窗。",
+      "excluded": "急救、潜水、数字距离、等待时限和林下最后手段均不进入本关。"
+    },
+    {
+      "id": "S30",
+      "url": "https://www.weather.gov/safety/lightning-tips",
+      "title": "Lightning: What You Need to Know",
+      "publisher": "US NWS/NOAA",
+      "origin": "National Weather Service安全提示",
+      "published": null,
+      "read": "全文29行实际阅读",
+      "locator": "行10–19、25–27",
+      "adopted": "听雷及时入牢固建筑或适当封闭金属车；不在孤树下、水边停留，室内远离门窗。",
+      "excluded": "不把游戏90秒等同现实恢复户外活动条件。"
+    },
+    {
+      "id": "S28",
+      "url": "https://www.weather.gov/safety/lightning-outdoors",
+      "title": "When a Safe Building or Vehicle is Nearby",
+      "publisher": "US NWS/NOAA",
+      "origin": "National Weather Service安全场景指导",
+      "published": null,
+      "read": "At the Beach or Lake与Camping小节实际阅读",
+      "locator": "行73–77",
+      "adopted": "开敞野餐亭与帐篷不适合避雷，应转入合适建筑或车辆。",
+      "excluded": "潜水及无庇护处的最后手段未采用；不是所有车都安全。"
+    },
+    {
+      "id": "S40",
+      "url": "https://www.weather.gov/iln/lightningsafetyweek",
+      "title": "Lightning Safety Awareness Week",
+      "publisher": "US NWS Wilmington",
+      "origin": "National Weather Service地方办公室",
+      "published": null,
+      "read": "WHERE TO GO/WHERE NOT TO GO和室内守则实际阅读",
+      "locator": "行187–198",
+      "adopted": "有顶但开放侧面的球车不安全；适当封闭金属车辆与有水电设施的牢固建筑不同于敞篷结构。",
+      "excluded": "不使用旧伤亡统计、不作100%安全保证、不画手扶金属或贴窗避雷。"
+    },
+    {
+      "id": "S41",
+      "url": "https://www.weather.gov/wrn/spring-lightning-sm",
+      "title": "Social Media: Lightning — Camping",
+      "publisher": "US NWS/NOAA",
+      "origin": "National Weather Service露营安全科普",
+      "published": null,
+      "read": "Camping正文实际阅读",
+      "locator": "行297–300",
+      "adopted": "帐篷不防雷，需预先知道合适牢固建筑或硬顶封闭车的位置。",
+      "excluded": "插画和宣传素材未下载复用；仅采用安全事实。"
+    },
+    {
+      "id": "S31",
+      "url": "https://www.dpxq.gov.cn/xxgk/wgk/glgk/jgxxgk/aqsc/content/post_12605312.html",
+      "title": "森林防火安全常识",
+      "publisher": "大鹏新区政府在线",
+      "origin": "大鹏新区应急管理局安全文化发展中心",
+      "published": "2026-01-16",
+      "read": "森林防火十不准第2、3、4、6、10项实际阅读",
+      "locator": "行29–48",
+      "adopted": "林区吸烟、野炊、烟花、烧纸和生火取暖均是须防范的不当用火。",
+      "excluded": "不引用刑罚数额、统计或把任意城市烧烤点判成违法。"
+    },
+    {
+      "id": "S32",
+      "url": "https://www.jingtai.gov.cn/zfxxgk/zc/zczxwdk/byssthjjjtfj/art/2024/art_a53ce86b539547a989f9350a593e6dcc.html",
+      "title": "继续执行森林防火封山令的政策咨询问答",
+      "publisher": "景泰县人民政府",
+      "origin": "景泰县政府办公室/政府网站",
+      "published": "2024-11-08",
+      "read": "正文问4十不准与问5处置实际阅读",
+      "locator": "网页提取行10完整问答段",
+      "adopted": "本地防火期禁烟火、烧烤篝火、烧纸烟花；遇林火应先撤至安全区域再报告，由专业人员处理。",
+      "excluded": "地方封山令不外推为全国任何时段的法律结论；不采用该文统计与国际排名。"
+    },
+    {
+      "id": "S44",
+      "url": "https://www.mem.gov.cn/fw/jsxx/202001/t20200121_343685.shtml",
+      "title": "应急管理部春节安全提示信息",
+      "publisher": "应急管理部",
+      "origin": "应急管理部新闻宣传司",
+      "published": "2020-01-21",
+      "read": "安全提示第6–7项实际阅读",
+      "locator": "行58–60",
+      "adopted": "进入林区遵守当地防火要求，避免吸烟用火、烟花和烧纸。",
+      "excluded": "不扩写烟花操作步骤或现实安全距离。"
+    }
+  ],
+  "levels": [
+    {
+      "card": "H06",
+      "title": "让生命通道畅通",
+      "type": "无火情的日常巡查",
+      "critical_changes": [
+        "两扇门分开：中景常闭式防火门带闭门器和可辨门楔；后景出口有出口标志与链锁。不可用一扇门承担两目标。",
+        "文字门牌须在320px宽视口读清；不能靠微小标牌区分常开/常闭。",
+        "消火栓目标只取挡门柜体；箱体保留可辨标记且不得被柜体完全盖住。",
+        "结局移开杂物、电动车和柜子；常闭门闭合但能推开，出口去链锁；不把出口永久敞开当通畅。"
+      ],
+      "source_independence": "S20引用S37第28条，与S37不是独立第二条法规；S11是消防人员访谈，S16是不同场所科普，采用范围分别标注。",
+      "targets": [
+        {
+          "id": "blocked_path",
+          "core": "疏散通道不得被占堵。",
+          "condition": "明确公共疏散通路且无当前火灾。",
+          "visible_criterion": "纸箱横跨有效行走路线；不只是墙边整齐放置。",
+          "stable_hit_carrier": "阻挡通路的纸箱实体，不包含地板空隙。",
+          "ending_check": "纸箱移出通路，地面可通行。",
+          "source_use": [
+            {
+              "source_id": "S11",
+              "adopted_scope": "公共区域杂物"
+            },
+            {
+              "source_id": "S20",
+              "adopted_scope": "消防法第28条引用"
+            },
+            {
+              "source_id": "S37",
+              "adopted_scope": "第28条"
+            }
+          ],
+          "real_world_boundary": "交责任人/物业平时清理；不引导火情时先搬物。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "ebike_charging",
+          "core": "不在高层住宅楼道停放或充电。",
+          "condition": "电动自行车处于公共门厅/楼道而非户外合法点位。",
+          "visible_criterion": "车体、充电器与墙插连接可追踪，非普通自行车。",
+          "stable_hit_carrier": "同一ID包含车体、充电器和对应线；不含墙面。",
+          "ending_check": "车辆与充电器移出楼道，不新造充电棚合规结论。",
+          "source_use": [
+            {
+              "source_id": "S11",
+              "adopted_scope": "公共区域停车充电"
+            },
+            {
+              "source_id": "S37",
+              "adopted_scope": "第37条明确地点"
+            }
+          ],
+          "real_world_boundary": "由车主、物业处理；儿童不碰插头或推车。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "wedged_fire_door",
+          "core": "常闭防火门不应被人为顶开。",
+          "condition": "门明确属于常闭式，非自动联动常开式。",
+          "visible_criterion": "独立门扇、闭门器、自然常闭门牌和明显门楔同时可见。",
+          "stable_hit_carrier": "门扇与门楔，不含门洞后走廊。",
+          "ending_check": "楔子去掉、门正常闭合且仍可推开，无新链锁。",
+          "source_use": [
+            {
+              "source_id": "S11",
+              "adopted_scope": "常闭门访谈"
+            },
+            {
+              "source_id": "S20",
+              "adopted_scope": "管理规定第28条引用"
+            },
+            {
+              "source_id": "S37",
+              "adopted_scope": "第28条原文"
+            }
+          ],
+          "real_world_boundary": "物业移除阻碍并检查部件；不示范锁死或让儿童修门。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "locked_exit",
+          "core": "安全出口不能锁闭到无法疏散。",
+          "condition": "指向室外的公共安全出口，不是普通私宅户门。",
+          "visible_criterion": "第二扇独立双门，出口自然标志、把手链条与挂锁清晰。",
+          "stable_hit_carrier": "门扇、相连把手与链锁；不含附近墙。",
+          "ending_check": "链锁解除，正常可开启，不要求始终敞开。",
+          "source_use": [
+            {
+              "source_id": "S16",
+              "adopted_scope": "活动场所出口正常启闭"
+            },
+            {
+              "source_id": "S20",
+              "adopted_scope": "第28条引用"
+            },
+            {
+              "source_id": "S37",
+              "adopted_scope": "住宅出口直接依据"
+            }
+          ],
+          "real_world_boundary": "交物业解除违规锁闭，不教儿童剪锁破门。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "blocked_hydrant",
+          "core": "消火栓不能被遮挡而妨碍使用。",
+          "condition": "柜子实际挡住消防箱开启空间。",
+          "visible_criterion": "可辨消火栓箱上部和门缝，前方柜体显著阻碍门。",
+          "stable_hit_carrier": "只圈造成阻挡的柜体，不将正常栓箱判危险。",
+          "ending_check": "柜子移走，原消防箱保留且门前空净。",
+          "source_use": [
+            {
+              "source_id": "S11",
+              "adopted_scope": "公共区域消防设施"
+            },
+            {
+              "source_id": "S20",
+              "adopted_scope": "消防法及管理规定引用"
+            },
+            {
+              "source_id": "S37",
+              "adopted_scope": "第28条"
+            }
+          ],
+          "real_world_boundary": "物业、责任人清理；不让儿童开栓放水。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        }
+      ]
+    },
+    {
+      "card": "H09",
+      "title": "风雨中的街口",
+      "type": "人员已避险的教学观察",
+      "critical_changes": [
+        "闭合牢固建筑外壳要在画面中成立；家人位于室内深处，不画在无遮蔽门廊或贴玻璃。",
+        "五处外景危险彼此分开，水域边界、广告牌与围挡实体固定；风雨效果裁到外景，不压人物。",
+        "井口必须有可见黑洞和边缘，不能只靠水面猜下面有井。",
+        "结局是已封控、待专业处理，不是雨停、排干、修复；隔离物由管理部门先前设置，画面不示范冒险放隔离。"
+      ],
+      "source_independence": "S24署名中国气象报社；S25为龙岗应急发布；S26转自北京石景山公众号。三文采用段落并非同文；S27为中央气象台动态产品，仅取防御知识。",
+      "targets": [
+        {
+          "id": "flooded_underpass",
+          "core": "有积水的地下低洼通道不要进入。",
+          "condition": "暴雨积水状态，人员已在牢固建筑较高处。",
+          "visible_criterion": "下行台阶、入口积水及自然通道标牌同时可辨。",
+          "stable_hit_carrier": "下行入口和真实积水，不圈整条街。",
+          "ending_check": "入口隔离、积水仍在，家人留在室内。",
+          "source_use": [
+            {
+              "source_id": "S25",
+              "adopted_scope": "积水区第4项"
+            },
+            {
+              "source_id": "S26",
+              "adopted_scope": "步行第1项"
+            }
+          ],
+          "real_world_boundary": "不试水深、不进低洼区拍照；绕开并服从指引。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "wet_power_box",
+          "core": "积水电力设施应远离。",
+          "condition": "配电箱底部有水，不能假设无火花即不带电。",
+          "visible_criterion": "明确电箱及自然电力警示，独立水域围住底部。",
+          "stable_hit_carrier": "箱体和紧邻这处积水，同组不合并其他水区。",
+          "ending_check": "周围隔离，设施不修好、不放行。",
+          "source_use": [
+            {
+              "source_id": "S24",
+              "adopted_scope": "行人第5项电力风险"
+            },
+            {
+              "source_id": "S25",
+              "adopted_scope": "积水区第1–2项"
+            }
+          ],
+          "real_world_boundary": "不触摸或试验是否带电，由相关部门处理。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "missing_cover",
+          "core": "缺失井盖的孔洞不可靠近。",
+          "condition": "原画井口真实可见；不宣称任意积水下都有井。",
+          "visible_criterion": "黑暗井口、金属边缘及移开的盖子清楚分离。",
+          "stable_hit_carrier": "井口和可见边缘；盖子不变成第六目标。",
+          "ending_check": "井口隔离并保留未通行状态。",
+          "source_use": [
+            {
+              "source_id": "S24",
+              "adopted_scope": "行人第3项"
+            },
+            {
+              "source_id": "S25",
+              "adopted_scope": "积水区第3项"
+            },
+            {
+              "source_id": "S26",
+              "adopted_scope": "步行第3项"
+            }
+          ],
+          "real_world_boundary": "远离并报告；不探脚、不下井、不搬盖。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "loose_sign",
+          "core": "大风中远离可能坠落的广告牌。",
+          "condition": "高处广告牌一角连接已脱开，有可见坠落风险。",
+          "visible_criterion": "脱开支架与倾斜牌体可辨，不只靠锈点。",
+          "stable_hit_carrier": "牌体和相连脱开构件，不含建筑空隙。",
+          "ending_check": "下方隔离，松动结构仍待专业处理。",
+          "source_use": [
+            {
+              "source_id": "S27",
+              "adopted_scope": "防御指南第3–4项"
+            },
+            {
+              "source_id": "S21",
+              "adopted_scope": "第3、5项"
+            }
+          ],
+          "real_world_boundary": "不冒风扶正或加固；人员已远离到建筑内。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "leaning_fence",
+          "core": "远离大风中的不稳临时围挡。",
+          "condition": "是轻质工地围板，非完整永久墙。",
+          "visible_criterion": "板体及失稳支脚倾斜，不与招牌重叠。",
+          "stable_hit_carrier": "倾斜围挡及自身支脚，不含整条人行道。",
+          "ending_check": "围挡周围封控，仍未扶正修好。",
+          "source_use": [
+            {
+              "source_id": "S27",
+              "adopted_scope": "防御指南第3项"
+            },
+            {
+              "source_id": "S01",
+              "adopted_scope": "危险地带莫逗留"
+            },
+            {
+              "source_id": "S24",
+              "adopted_scope": "行人第7项"
+            }
+          ],
+          "real_world_boundary": "交管理者在安全条件下处理；儿童不支扶。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        }
+      ]
+    },
+    {
+      "card": "H11",
+      "title": "雷雨来临的公园",
+      "type": "已在牢固建筑内的地点辨识",
+      "critical_changes": [
+        "建议开场用“已在牢固建筑内。教学观察：五处不能避雷的位置。”；UI如只能一条字幕仍须保留室内前提。",
+        "建议误点专用句“这里不是本关目标；雷雨中户外都不安全。”；不能把非目标解释为安全点。",
+        "服务建筑要明显有完整封闭墙顶，人物远离门窗、水管、电器与裸混凝土墙，不倚靠窗边。",
+        "四面亭、开放球车、普通帐篷均必须显示开放/布质结构；球车不能误画成普通金属封闭汽车。",
+        "结局五种地点保持且无人；雨继续。只表示人避险，不加透明罩、砍树、拆篷或把90秒设成安全等待时限。"
+      ],
+      "source_independence": "CDC与NWS是不同机构资料；S28/S30/S40/S41同属NWS网络，不计为四个独立研究。相同结论有措辞重合，实际各采用小节已核实。",
+      "targets": [
+        {
+          "id": "isolated_tree",
+          "core": "雷雨不在孤立高树下停留避雨。",
+          "condition": "孤立树不是与建筑等价的庇护处；任何户外空地也不因此安全。",
+          "visible_criterion": "孤立树冠与树干清楚，帐篷不在树下。",
+          "stable_hit_carrier": "树冠树干实体；标签说明下方位置，不无限圈地。",
+          "ending_check": "树不砍，人员仍在服务建筑深处。",
+          "source_use": [
+            {
+              "source_id": "S29",
+              "adopted_scope": "Outdoors孤立树条"
+            },
+            {
+              "source_id": "S30",
+              "adopted_scope": "Last Resort孤立树条"
+            }
+          ],
+          "real_world_boundary": "听雷及时进合适庇护处，不等找齐；游戏是观察训练。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "open_gazebo",
+          "core": "四面开敞亭不能作为安全避雷处。",
+          "condition": "有顶不代表封闭牢固建筑，普通凉亭不因接地便安全。",
+          "visible_criterion": "屋顶柱子清楚、四面没有墙，保持柱间空洞。",
+          "stable_hit_carrier": "亭体实体；如放宽hit仅可审核内轮廓空隙，icon不填。",
+          "ending_check": "亭继续开敞空置，家人在原室内。",
+          "source_use": [
+            {
+              "source_id": "S29",
+              "adopted_scope": "Choose a safe shelter"
+            },
+            {
+              "source_id": "S28",
+              "adopted_scope": "At the Beach or Lake"
+            }
+          ],
+          "real_world_boundary": "进入合适封闭牢固建筑；不在亭下继续等。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "pond_platform",
+          "core": "雷雨停止水边活动并离开水域。",
+          "condition": "钓台是池边室外设施，不是避雷建筑。",
+          "visible_criterion": "池水、岸线、钓台关系清楚，不画人在钓鱼。",
+          "stable_hit_carrier": "钓台及紧邻明确岸边，不圈整池水。",
+          "ending_check": "水和钓台保留空置，人员不回水边。",
+          "source_use": [
+            {
+              "source_id": "S29",
+              "adopted_scope": "Beach and water activities及离开水域条"
+            },
+            {
+              "source_id": "S30",
+              "adopted_scope": "Last Resort水域条"
+            }
+          ],
+          "real_world_boundary": "听到雷声及时进建筑，不示范潜水避雷。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "open_cart",
+          "core": "开放式球车不能作雷雨庇护。",
+          "condition": "明确有开放座舱而非封闭金属车；不能概括所有汽车均不安全。",
+          "visible_criterion": "车轮、座椅、薄顶棚和无门窗侧面清晰。",
+          "stable_hit_carrier": "车体、棚架和车轮；侧面空洞不归ID。",
+          "ending_check": "球车保持空置且开放，不加罩伪装修。",
+          "source_use": [
+            {
+              "source_id": "S29",
+              "adopted_scope": "Avoid open vehicles"
+            },
+            {
+              "source_id": "S40",
+              "adopted_scope": "WHERE NOT TO GO开放座舱"
+            }
+          ],
+          "real_world_boundary": "提前进入牢固建筑；不教孩子有顶小车即可避雷。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "camping_tent",
+          "core": "普通帐篷挡雨但不防雷。",
+          "condition": "普通布篷不是永久封闭建筑，独立放在草坪。",
+          "visible_criterion": "布面、撑杆、入口清晰，与孤树分开。",
+          "stable_hit_carrier": "帐篷及自身撑杆，不吞草地。",
+          "ending_check": "帐篷保留无人，不在雷雨中拆篷。",
+          "source_use": [
+            {
+              "source_id": "S29",
+              "adopted_scope": "Choose a safe shelter"
+            },
+            {
+              "source_id": "S41",
+              "adopted_scope": "Camping"
+            }
+          ],
+          "real_world_boundary": "提前安排适当建筑庇护；雷雨时不回户外取物。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        }
+      ]
+    },
+    {
+      "card": "H12",
+      "title": "林缘的五处火源",
+      "type": "虚构禁火林区教学观察；非实际火场停留",
+      "critical_changes": [
+        "本区禁火自然标识可辨，五类火源只各一组；不把城市合法烧烤场景混入。",
+        "人物已经撤到入口外，与所有火源和烟气有明显空间隔离；前景烟灰盘也不能挨脚。入口牌本身不是安全屏障。",
+        "五个固定命中载体：炭炉、烟灰盘与烟头、木柴堆、纸盆与纸、地面喷花装置。不能命中烟、火焰外缘或飘散火星。",
+        "动态增强仅许可区，不新增第六火源、不蔓延林地、不让人物进入烟；烟方向远离人员。",
+        "结局另一个时点由专业人员处理并检查，非玩家描圈灭火；无明火/红芯只是绘图状态，不能教育成看不到烟便确认余火全灭。"
+      ],
+      "source_independence": "S31、S32均使用常见十不准框架，不能宣称独立实证；S32是景泰地方令问答，S44是应急管理部节日提示，不将地方时点条件外推全国。",
+      "targets": [
+        {
+          "id": "forest_grill",
+          "core": "禁火林区不生火烧烤。",
+          "condition": "虚构明确禁火区域，不评价所有城市烧烤点。",
+          "visible_criterion": "炭炉格栅下红炭，禁火标牌清楚。",
+          "stable_hit_carrier": "固定炭炉实体与内部炭，排除烟和火焰外缘。",
+          "ending_check": "设备停用、无红炭，说明管理人员已处理检查。",
+          "source_use": [
+            {
+              "source_id": "S31",
+              "adopted_scope": "十不准第3项"
+            },
+            {
+              "source_id": "S32",
+              "adopted_scope": "问4野炊烧烤"
+            }
+          ],
+          "real_world_boundary": "人员先远离再报告，不让儿童泼水搬炉。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "smouldering_cigarette",
+          "core": "林区遗留未熄火种有引燃风险。",
+          "condition": "实际有烟头红芯，不把普通空烟灰盘判危险。",
+          "visible_criterion": "独立盘内烟头红芯和邻近枯叶关系可辨。",
+          "stable_hit_carrier": "固定烟灰盘和盘内烟头组合，不能取漂烟。",
+          "ending_check": "红芯消失且字幕说明专业处理检查，不靠无烟判断。",
+          "source_use": [
+            {
+              "source_id": "S31",
+              "adopted_scope": "十不准第2项"
+            },
+            {
+              "source_id": "S32",
+              "adopted_scope": "问4吸烟烟蒂"
+            }
+          ],
+          "real_world_boundary": "远离并报告，不手捡、脚踩或让儿童处理。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "forest_campfire",
+          "core": "禁火林区不随意点篝火。",
+          "condition": "已燃木柴火堆，与烧纸盆不是一个火源拆计。",
+          "visible_criterion": "可辨木柴堆上有基准火焰。",
+          "stable_hit_carrier": "固定木柴实体，排除变化中的火舌、火星与烟。",
+          "ending_check": "木柴无火无红芯，由专业人员检查处置。",
+          "source_use": [
+            {
+              "source_id": "S31",
+              "adopted_scope": "十不准第10项"
+            },
+            {
+              "source_id": "S32",
+              "adopted_scope": "问4篝火/取暖及问5远离报告"
+            }
+          ],
+          "real_world_boundary": "先撤离报告，非让儿童现场扑救。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "burning_paper",
+          "core": "禁火林区不烧纸用火。",
+          "condition": "多张纸在盆中实际燃烧，不是未使用纸堆。",
+          "visible_criterion": "盆、纸片及燃烧边缘明确，远离木柴堆。",
+          "stable_hit_carrier": "固定盆和纸实体；烟火效果不参与ID。",
+          "ending_check": "纸火和余火已由专业人员处理检查，不用盖盆证明完成。",
+          "source_use": [
+            {
+              "source_id": "S31",
+              "adopted_scope": "十不准第6项"
+            },
+            {
+              "source_id": "S44",
+              "adopted_scope": "第7项"
+            }
+          ],
+          "real_world_boundary": "不抢取纸盆，不呈现灭火技巧。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        },
+        {
+          "id": "forest_fireworks",
+          "core": "禁火林区不燃放烟花。",
+          "condition": "明确地面喷花装置正在燃放，不是普通礼盒。",
+          "visible_criterion": "包装装置和短喷花同时可见，不能靠火星单独示意。",
+          "stable_hit_carrier": "固定喷花装置实体；所有飞散火花非目标。",
+          "ending_check": "装置无喷花、无余火；人员仍不接近。",
+          "source_use": [
+            {
+              "source_id": "S31",
+              "adopted_scope": "十不准第4项"
+            },
+            {
+              "source_id": "S44",
+              "adopted_scope": "第7项"
+            }
+          ],
+          "real_world_boundary": "远离报告，不靠近捡拾或尝试重新点燃。",
+          "knowledge_result": "supported_with_stated_conditions",
+          "art_result": "pending_original_and_ending_pixel_review",
+          "conclusion": "知识及设计条件通过；不等于原画、命中或运行验收通过"
+        }
+      ]
+    }
+  ]
+}

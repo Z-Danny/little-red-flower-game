@@ -1,0 +1,47 @@
+{
+  "generator": "built-in ImageGen",
+  "activeAssets": 5,
+  "assets": [
+    {
+      "file": "public/levels/journey-map/nature.png",
+      "promptFile": "nature.prompt.txt",
+      "width": 793,
+      "height": 1983,
+      "hasAlpha": false,
+      "sha256": "b186d3c0b2b60642675ed8ea1009e8522278d74b3410d577dd12dae50888616f"
+    },
+    {
+      "file": "public/levels/journey-map/public.png",
+      "promptFile": "public.prompt.txt",
+      "width": 941,
+      "height": 1672,
+      "hasAlpha": false,
+      "sha256": "567fbb93b017ef1f1aebd0ae9f6521de55fac4a143dd7b6d0107688ad9326dad"
+    },
+    {
+      "file": "public/levels/journey-map/home.png",
+      "promptFile": "home.prompt.txt",
+      "width": 948,
+      "height": 1659,
+      "hasAlpha": false,
+      "sha256": "114897309492e0f42706a628930d2c3747d1e57813e176b554b124c9d3e34c4a"
+    },
+    {
+      "file": "public/levels/journey-map/flower.png",
+      "promptFile": "flower.prompt.txt",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "sha256": "014ed09e6c55a7dabf76495aa1423529c57960c04ec8fafeaea85651da4f918f"
+    },
+    {
+      "file": "public/levels/journey-map/bud.png",
+      "promptFile": "bud.prompt.txt",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "sha256": "5fdbf55fbd8440351a79502858c93e10f9d6f70d9a237115911287725e4488c8"
+    }
+  ],
+  "notes": "Original generated PNGs. Coordinates describe ground beneath the marker. Three distinct maps; no text is baked into the illustrations."
+}

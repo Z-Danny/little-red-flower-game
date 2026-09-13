@@ -1,0 +1,38 @@
+{
+  "feedbackVersion": 2,
+  "id": "kitchen-before-cooking-v2",
+  "title": "开火前的厨房",
+  "order": 15,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "gas_hose",
+      "name": "老化开裂的燃气软管",
+      "lesson": "燃气软管开裂，应停用报修。"
+    },
+    {
+      "id": "paper_near_hob",
+      "name": "炉头旁的纸巾",
+      "lesson": "开火前先移开炉边纸巾。"
+    },
+    {
+      "id": "greasy_filter",
+      "name": "油垢积聚的油烟机滤网",
+      "lesson": "油烟机积油要及时清理。"
+    },
+    {
+      "id": "sideways_cylinder",
+      "name": "横卧的液化气钢瓶",
+      "lesson": "液化气钢瓶不能卧放使用。"
+    },
+    {
+      "id": "damaged_kettle",
+      "name": "电热水壶的破损电源线",
+      "lesson": "电源线破损，应停止使用。"
+    }
+  ],
+  "summary": "开火前移开炉边可燃物，及时清理油烟机积油。燃气软管开裂应停用报修，液化气钢瓶不能卧放使用，电源线破损的电器应停用。",
+  "timeout": "fail"
+}

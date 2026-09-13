@@ -1,0 +1,66 @@
+{
+  "id": "kitchen-before-cooking-v2",
+  "authorId": "H04",
+  "sourceSha256": "4f41ff6972a569ba7f34ea3321f371d151604700938d5771bf816c5ca240276b",
+  "targets": [
+    {
+      "id": "gas_hose",
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "paper_near_hob",
+      "color": [
+        0,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "greasy_filter",
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "sideways_cylinder",
+      "color": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "damaged_kettle",
+      "color": [
+        255,
+        0,
+        255
+      ]
+    }
+  ],
+  "corrections": {
+    "targets": {},
+    "characters": {}
+  },
+  "world": [
+    720,
+    1280
+  ],
+  "effects": {
+    "weatherPolygons": [],
+    "waterPolygons": [],
+    "skyPolygons": [],
+    "firePolygons": [],
+    "smokePolygons": [],
+    "fireSources": [],
+    "smokeDrift": 1
+  },
+  "output": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2",
+  "skin": "content/scenes/kitchen-before-cooking-v2/skin.json"
+}

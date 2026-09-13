@@ -1,0 +1,479 @@
+{
+  "version": 5,
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "regions": [
+    {
+      "id": "nature",
+      "name": "自然灾害",
+      "short": "自然灾害",
+      "subtitle": "守护山川与家园",
+      "medal": "山川守护者",
+      "image": "/levels/journey-map/nature-v2.png",
+      "top": 0,
+      "height": 2160,
+      "nodes": [
+        {
+          "id": "typhoon-home",
+          "x": 345,
+          "y": 1870,
+          "place": "临海住宅台阶与主径交汇处",
+          "unlockAfter": null
+        },
+        {
+          "id": "flood-kit",
+          "x": 440,
+          "y": 1570,
+          "place": "蓝顶备灾物资棚前场",
+          "unlockAfter": "typhoon-home"
+        },
+        {
+          "id": "quake-bedroom-v2",
+          "x": 365,
+          "y": 1410,
+          "place": "下方卧室住宅门前台阶",
+          "unlockAfter": "flood-kit"
+        },
+        {
+          "id": "storm-street-check-v2",
+          "x": 515,
+          "y": 1270,
+          "place": "路灯与斑马线所在的街道路面",
+          "unlockAfter": "quake-bedroom-v2"
+        },
+        {
+          "id": "thunder-park-v2",
+          "x": 334,
+          "y": 1120,
+          "place": "大树与凉亭之间的公园步道",
+          "unlockAfter": "storm-street-check-v2"
+        },
+        {
+          "id": "forest-fire-sources-v2",
+          "x": 447,
+          "y": 990,
+          "place": "林间野餐营地入口土径",
+          "unlockAfter": "thunder-park-v2"
+        },
+        {
+          "id": "rain-street-preparation-v1",
+          "x": 286,
+          "y": 857,
+          "place": "排水格栅旁的街道路缘",
+          "unlockAfter": "forest-fire-sources-v2"
+        },
+        {
+          "id": "flood-house-response-v1",
+          "x": 437,
+          "y": 732,
+          "place": "河畔住宅对岸的主径",
+          "unlockAfter": "rain-street-preparation-v1"
+        },
+        {
+          "id": "quake-cover-practice",
+          "x": 353,
+          "y": 555,
+          "place": "木桌客厅前台阶下方",
+          "unlockAfter": "flood-house-response-v1"
+        },
+        {
+          "id": "quake-exit-practice",
+          "x": 462,
+          "y": 423,
+          "place": "完整楼梯出口外的集合广场",
+          "unlockAfter": "quake-cover-practice"
+        },
+        {
+          "id": "flood-highground-practice",
+          "x": 326,
+          "y": 310,
+          "place": "高层避洪住宅旁的岸上小径",
+          "unlockAfter": "quake-exit-practice"
+        }
+      ],
+      "restoration": {
+        "flowers": [
+          {
+            "x": 317,
+            "y": 1894
+          },
+          {
+            "x": 380,
+            "y": 1888
+          },
+          {
+            "x": 412,
+            "y": 1594
+          },
+          {
+            "x": 475,
+            "y": 1588
+          },
+          {
+            "x": 337,
+            "y": 1434
+          },
+          {
+            "x": 400,
+            "y": 1428
+          },
+          {
+            "x": 487,
+            "y": 1294
+          },
+          {
+            "x": 550,
+            "y": 1288
+          },
+          {
+            "x": 306,
+            "y": 1144
+          },
+          {
+            "x": 369,
+            "y": 1138
+          },
+          {
+            "x": 419,
+            "y": 1014
+          },
+          {
+            "x": 482,
+            "y": 1008
+          },
+          {
+            "x": 258,
+            "y": 881
+          },
+          {
+            "x": 321,
+            "y": 875
+          },
+          {
+            "x": 409,
+            "y": 756
+          },
+          {
+            "x": 472,
+            "y": 750
+          },
+          {
+            "x": 325,
+            "y": 579
+          },
+          {
+            "x": 388,
+            "y": 573
+          },
+          {
+            "x": 434,
+            "y": 447
+          },
+          {
+            "x": 497,
+            "y": 441
+          },
+          {
+            "x": 298,
+            "y": 334
+          },
+          {
+            "x": 361,
+            "y": 328
+          }
+        ],
+        "lights": [
+          {
+            "x": 387,
+            "y": 1830
+          },
+          {
+            "x": 407,
+            "y": 1370
+          },
+          {
+            "x": 376,
+            "y": 1080
+          },
+          {
+            "x": 328,
+            "y": 817
+          },
+          {
+            "x": 395,
+            "y": 515
+          },
+          {
+            "x": 368,
+            "y": 270
+          }
+        ]
+      },
+      "width": 720
+    },
+    {
+      "id": "public",
+      "name": "公共安全",
+      "short": "公共安全",
+      "subtitle": "让回家的路更安心",
+      "medal": "街区守护者",
+      "image": "/levels/journey-map/public-v2.png",
+      "top": 0,
+      "height": 2160,
+      "nodes": [
+        {
+          "id": "clear-corridor",
+          "x": 363,
+          "y": 1935,
+          "place": "底部楼道入口台阶外沿",
+          "unlockAfter": null
+        },
+        {
+          "id": "lift-wait",
+          "x": 432,
+          "y": 1650,
+          "place": "下部玻璃电梯入口旁的步道",
+          "unlockAfter": "clear-corridor"
+        },
+        {
+          "id": "well-call",
+          "x": 350,
+          "y": 1346,
+          "place": "敞开井口围栏外的铺装道路",
+          "unlockAfter": "lift-wait"
+        },
+        {
+          "id": "clear-corridor-check-v2",
+          "x": 429,
+          "y": 1095,
+          "place": "第二栋住宅楼道台阶与步道交汇处",
+          "unlockAfter": "well-call"
+        },
+        {
+          "id": "car-window-practice",
+          "x": 378,
+          "y": 802,
+          "place": "落水蓝车旁的岸上救生圈附近",
+          "unlockAfter": "clear-corridor-check-v2"
+        },
+        {
+          "id": "lift-contact-practice",
+          "x": 421,
+          "y": 584,
+          "place": "上部停梯轿厢旁的入口平台",
+          "unlockAfter": "car-window-practice"
+        },
+        {
+          "id": "collapse-signal-practice",
+          "x": 391,
+          "y": 295,
+          "place": "道路塌陷警戒线外的完整路面",
+          "unlockAfter": "lift-contact-practice"
+        }
+      ],
+      "restoration": {
+        "flowers": [
+          {
+            "x": 335,
+            "y": 1959
+          },
+          {
+            "x": 398,
+            "y": 1953
+          },
+          {
+            "x": 404,
+            "y": 1674
+          },
+          {
+            "x": 467,
+            "y": 1668
+          },
+          {
+            "x": 322,
+            "y": 1370
+          },
+          {
+            "x": 385,
+            "y": 1364
+          },
+          {
+            "x": 401,
+            "y": 1119
+          },
+          {
+            "x": 464,
+            "y": 1113
+          },
+          {
+            "x": 350,
+            "y": 826
+          },
+          {
+            "x": 413,
+            "y": 820
+          },
+          {
+            "x": 393,
+            "y": 608
+          },
+          {
+            "x": 456,
+            "y": 602
+          },
+          {
+            "x": 363,
+            "y": 319
+          },
+          {
+            "x": 426,
+            "y": 313
+          }
+        ],
+        "lights": [
+          {
+            "x": 405,
+            "y": 1895
+          },
+          {
+            "x": 392,
+            "y": 1306
+          },
+          {
+            "x": 420,
+            "y": 762
+          },
+          {
+            "x": 433,
+            "y": 255
+          }
+        ]
+      },
+      "width": 720
+    },
+    {
+      "id": "home",
+      "name": "居家校园办公",
+      "short": "居家校园办公",
+      "subtitle": "把安心带回家",
+      "medal": "日常守护者",
+      "image": "/levels/journey-map/home-v2.png",
+      "top": 0,
+      "height": 2160,
+      "nodes": [
+        {
+          "id": "oil-fire",
+          "x": 346,
+          "y": 1930,
+          "place": "厨房入口台阶外的花径",
+          "unlockAfter": null
+        },
+        {
+          "id": "charging-bedroom",
+          "x": 446,
+          "y": 1647,
+          "place": "儿童房前院通往花径的位置",
+          "unlockAfter": "oil-fire"
+        },
+        {
+          "id": "bedroom-night-check-v2",
+          "x": 378,
+          "y": 1310,
+          "place": "卧室窗外的花径旁",
+          "unlockAfter": "charging-bedroom"
+        },
+        {
+          "id": "kitchen-before-cooking-v2",
+          "x": 421,
+          "y": 999,
+          "place": "校园厨房外的门前步道",
+          "unlockAfter": "bedroom-night-check-v2"
+        },
+        {
+          "id": "fire-shelter-practice",
+          "x": 404,
+          "y": 664,
+          "place": "隔烟待援住宅外侧花径",
+          "unlockAfter": "kitchen-before-cooking-v2"
+        },
+        {
+          "id": "fire-stairs-practice",
+          "x": 452,
+          "y": 343,
+          "place": "高楼楼梯出口外的集合广场边缘",
+          "unlockAfter": "fire-shelter-practice"
+        }
+      ],
+      "restoration": {
+        "flowers": [
+          {
+            "x": 318,
+            "y": 1954
+          },
+          {
+            "x": 381,
+            "y": 1948
+          },
+          {
+            "x": 418,
+            "y": 1671
+          },
+          {
+            "x": 481,
+            "y": 1665
+          },
+          {
+            "x": 350,
+            "y": 1334
+          },
+          {
+            "x": 413,
+            "y": 1328
+          },
+          {
+            "x": 393,
+            "y": 1023
+          },
+          {
+            "x": 456,
+            "y": 1017
+          },
+          {
+            "x": 376,
+            "y": 688
+          },
+          {
+            "x": 439,
+            "y": 682
+          },
+          {
+            "x": 424,
+            "y": 367
+          },
+          {
+            "x": 487,
+            "y": 361
+          }
+        ],
+        "lights": [
+          {
+            "x": 388,
+            "y": 1890
+          },
+          {
+            "x": 420,
+            "y": 1270
+          },
+          {
+            "x": 446,
+            "y": 624
+          }
+        ]
+      },
+      "width": 720
+    }
+  ],
+  "direction": "up"
+}

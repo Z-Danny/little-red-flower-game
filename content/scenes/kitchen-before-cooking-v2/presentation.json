@@ -1,0 +1,16 @@
+{
+  "location": "厨房 · 开火前检查",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "开火前，找出厨房的五处隐患。",
+  "reveal": "图示为专业维护后。开火前应完成检查。",
+  "completeTitle": "五处已识别，开火前先检查",
+  "pauseNote": "这是未开火、未出现泄漏征兆时的识别训练，不是燃气泄漏处置演练。儿童只观察并告知成人，成人也不要自行修理燃气设施。计时仅为训练用时，不是事故倒计时。",
+  "endingNote": "图示为燃气服务专业人员维护、检查后的另一个时点。成人不应自行修理燃气设施，应联系有资质的燃气服务人员；破损电器已停用待修，不因圈出问题就恢复使用。",
+  "preview": "灶台尚未开火。找出厨房里五处可见隐患，区分日常检查与应由专业人员完成的维护。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}

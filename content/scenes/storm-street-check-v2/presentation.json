@@ -1,0 +1,16 @@
+{
+  "location": "风雨街口 · 室内观察",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "人在安全建筑内，找出街口五处危险。",
+  "reveal": "人员已避险。积水和危险区域仍须远离。",
+  "completeTitle": "五处已识别，继续远离危险",
+  "pauseNote": "人物已在干燥、较高处的坚固建筑内并远离窗玻璃。这是教学观察，不建议在户外停留找隐患；现实中应优先避险。画面演出不是水位或灾害预测，计时不是可安全等待的时间。",
+  "endingNote": "图示为管理人员设置隔离、人员继续避险后的状态。积水、缺失井盖和松动设施仍待专业处置，找到目标不代表可以外出或涉水。",
+  "preview": "从人员已避险的教学视角观察风雨街口，识别五处危险。结局仍保留积水和待处置区域。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}

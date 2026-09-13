@@ -1,0 +1,95 @@
+{
+  "at": "2026-09-12T19:33:26.941Z",
+  "mode": "full-realtime",
+  "htmlSha256": "903c166d7b217fe4536ba77e5e6365b5a116465d44a3d935c9f09da23fde2b30",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Mobile/full-frame disclosure 320x568",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 375x667",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 390x844",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 430x932",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 540x960",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 390x650",
+      "status": "passed"
+    },
+    {
+      "name": "Mobile/full-frame disclosure 1440x900",
+      "status": "passed"
+    },
+    {
+      "name": "Recorded voiced startle with real native audio",
+      "status": "passed",
+      "elapsed": 8711
+    },
+    {
+      "name": "Pause freezes countdown and silences output",
+      "status": "passed"
+    },
+    {
+      "name": "25-second amber phase; optional character mute persists",
+      "status": "passed"
+    },
+    {
+      "name": "Background freezes clock and audio",
+      "status": "passed"
+    },
+    {
+      "name": "40-second red phase and accelerated nonverbal pacing",
+      "status": "passed"
+    },
+    {
+      "name": "50s terminal failure, no reward, bounded dialog and silence after terminal cue",
+      "status": "passed"
+    },
+    {
+      "name": "50-second empty bar and all three recorded reaction cues reached",
+      "status": "passed",
+      "cueCount": 3
+    },
+    {
+      "name": "One-tap retry resets round, red circles, hidden clues and full timer",
+      "status": "passed"
+    },
+    {
+      "name": "Master mute stops all channels",
+      "status": "passed"
+    },
+    {
+      "name": "Five timely real pointer hits after retry; reward and no frightened sound on completion",
+      "status": "passed"
+    },
+    {
+      "name": "Exit disposes native level AudioContext (map channel remains separate)",
+      "status": "passed"
+    },
+    {
+      "name": "Replay resets 50s and hidden clues",
+      "status": "passed"
+    },
+    {
+      "name": "Mouse hover/leave, click pin/toggle, keyboard focus/Escape",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "humanListening": "not_run",
+  "physicalPhone": "not_run",
+  "closed": true
+}

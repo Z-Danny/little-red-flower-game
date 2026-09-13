@@ -1,0 +1,56 @@
+[
+  {
+    "id": "typhoon-home",
+    "skin": "skin.json",
+    "enabled": true,
+    "migrated": true
+  },
+  {
+    "id": "charging-bedroom",
+    "skin": "skin.json",
+    "enabled": true,
+    "migrated": true
+  },
+  {
+    "id": "bedroom-night-check-v2",
+    "skin": "skin.json",
+    "enabled": true,
+    "migrated": true
+  },
+  {
+    "id": "kitchen-before-cooking-v2",
+    "skin": "skin.json",
+    "enabled": true,
+    "migrated": true
+  },
+  {
+    "id": "clear-corridor-check-v2",
+    "skin": "skin.json",
+    "enabled": true,
+    "migrated": true
+  },
+  {
+    "id": "quake-bedroom-v2",
+    "skin": "skin.json",
+    "enabled": true,
+    "migrated": true
+  },
+  {
+    "id": "storm-street-check-v2",
+    "skin": "skin.json",
+    "enabled": true,
+    "migrated": true
+  },
+  {
+    "id": "thunder-park-v2",
+    "skin": "skin.json",
+    "enabled": true,
+    "migrated": true
+  },
+  {
+    "id": "forest-fire-sources-v2",
+    "skin": "skin.json",
+    "enabled": true,
+    "migrated": true
+  }
+]

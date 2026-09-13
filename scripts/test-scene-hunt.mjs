@@ -14,7 +14,7 @@ const { build } = require(esbuildPath),
   outfile = join(temp, 'tests.mjs');
 await build({
   absWorkingDir: root,
-  entryPoints: ['tests/scene-hunt.test.ts'],
+  stdin: { contents: "import './tests/scene-hunt.test.ts'; import './tests/charging-bedroom.test.ts'; import './tests/hunt-viewport.test.ts'; import './tests/hunt-penalty.test.ts'; import './tests/bedroom-sparks.test.ts';", resolveDir: root, sourcefile: 'hunt-tests-entry.ts' },
   bundle: true,
   platform: 'node',
   format: 'esm',

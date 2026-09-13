@@ -1,0 +1,172 @@
+{
+  "id": "storm-street-check-v2",
+  "authorId": "H09",
+  "sourceSha256": "054aa49f90d54963a9cfb2b8c103c561a80c7c1f96d2b68fb43b16d47bc8722c",
+  "world": [
+    720,
+    1280
+  ],
+  "output": "public/levels/hazard-batch-v2/storm-street-check-v2",
+  "skin": "content/scenes/storm-street-check-v2/skin.json",
+  "targets": [
+    {
+      "id": "flooded_underpass",
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "wet_power_box",
+      "color": [
+        0,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "missing_cover",
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "loose_sign",
+      "color": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "leaning_fence",
+      "color": [
+        255,
+        0,
+        255
+      ]
+    }
+  ],
+  "corrections": {
+    "targets": {
+      "missing_cover": {
+        "fillEnclosedHoles": true,
+        "reason": "原稿明确井口及可见边缘为组合风险区；原画井内开口与蓝色围边闭合，候选深蓝色漏分的井口需归同一ID，范围不越井沿。"
+      },
+      "loose_sign": {
+        "fillEnclosedHoles": true,
+        "reason": "硬质广告牌板内候选黑色细线只是图案/接缝，实心牌体轮廓不应出现随机命中小孔。"
+      },
+      "leaning_fence": {
+        "closeGapsPx": 1,
+        "fillEnclosedHoles": true,
+        "excludePolygons": [
+          [
+            [
+              294,
+              763
+            ],
+            [
+              299,
+              758
+            ],
+            [
+              307,
+              779
+            ],
+            [
+              301,
+              781
+            ]
+          ]
+        ],
+        "reason": "Fill only corrugated solid panel seams; preserve natural background triangle outside the right support brace."
+      }
+    },
+    "characters": {}
+  },
+  "effects": {
+    "weatherPolygons": [
+      [
+        [
+          55,
+          0
+        ],
+        [
+          676,
+          0
+        ],
+        [
+          676,
+          916
+        ],
+        [
+          145,
+          826
+        ],
+        [
+          145,
+          710
+        ],
+        [
+          55,
+          710
+        ]
+      ]
+    ],
+    "waterPolygons": [
+      [
+        [
+          340,
+          507
+        ],
+        [
+          413,
+          513
+        ],
+        [
+          410,
+          563
+        ],
+        [
+          360,
+          576
+        ],
+        [
+          324,
+          551
+        ]
+      ],
+      [
+        [
+          535,
+          657
+        ],
+        [
+          649,
+          651
+        ],
+        [
+          648,
+          705
+        ],
+        [
+          561,
+          708
+        ],
+        [
+          541,
+          694
+        ]
+      ]
+    ],
+    "skyPolygons": [],
+    "firePolygons": [],
+    "smokePolygons": [],
+    "fireSources": [],
+    "smokeDrift": 1
+  }
+}

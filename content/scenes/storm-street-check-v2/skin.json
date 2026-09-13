@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/storm-street-check-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/storm-street-check-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/storm-street-check-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/storm-street-check-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/storm-street-check-v2/family.png",
+  "familyBox": {
+    "x": 406,
+    "y": 743,
+    "w": 314,
+    "h": 537
+  },
+  "targets": {
+    "flooded_underpass": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 55,
+        "y": 126,
+        "w": 263,
+        "h": 228
+      },
+      "icon": "/levels/hazard-batch-v2/storm-street-check-v2/flooded_underpass.png"
+    },
+    "wet_power_box": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 458,
+        "y": 373,
+        "w": 205,
+        "h": 273
+      },
+      "icon": "/levels/hazard-batch-v2/storm-street-check-v2/wet_power_box.png"
+    },
+    "missing_cover": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 138,
+        "y": 440,
+        "w": 229,
+        "h": 79
+      },
+      "icon": "/levels/hazard-batch-v2/storm-street-check-v2/missing_cover.png"
+    },
+    "loose_sign": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 408,
+        "y": 41,
+        "w": 258,
+        "h": 138
+      },
+      "icon": "/levels/hazard-batch-v2/storm-street-check-v2/loose_sign.png"
+    },
+    "leaning_fence": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 59,
+        "y": 533,
+        "w": 278,
+        "h": 285
+      },
+      "icon": "/levels/hazard-batch-v2/storm-street-check-v2/leaning_fence.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/storm-street-check-v2/character-mask.png",
+    "weatherMask": "/levels/hazard-batch-v2/storm-street-check-v2/weather-mask.png",
+    "waterMask": "/levels/hazard-batch-v2/storm-street-check-v2/water-mask.png"
+  }
+}

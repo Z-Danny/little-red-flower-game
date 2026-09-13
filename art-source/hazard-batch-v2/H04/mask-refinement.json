@@ -1,0 +1,20 @@
+{
+  "method": "retain candidate 1; source-color connected component for black plug and vertical lead only; no use of shifted candidate 2 plug",
+  "roiSourcePixels": [
+    882,
+    1220,
+    939,
+    1373
+  ],
+  "thresholdMaxRgb": 125,
+  "componentSeedInRoi": [
+    25,
+    50
+  ],
+  "addedSourcePixels": 3001,
+  "sourceSha256": "4f41ff6972a569ba7f34ea3321f371d151604700938d5771bf816c5ca240276b",
+  "candidate1Sha256": "577504a38bcb5b01a6911bf5bb236fc76adb9d4dca91ddd9d4bfa9b523b82a9c",
+  "rejectedCandidate2Sha256": "296dce04a9d1d8200f8190fb586093d12b5a1b6062508c4e5c4b2077490ad335",
+  "outputSha256": "6f9552032b369eacc0b6c59e4977447267485583005447cab8642093000d3ae5",
+  "sceneArtworkChanged": false
+}

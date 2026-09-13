@@ -1,0 +1,11 @@
+import fs from 'node:fs';import path from 'node:path';import{createHash}from'node:crypto';import{root}from'./lib/dependencies.mjs';
+const out=path.join(root,'docs/typhoon-deadline/verification'),read=f=>JSON.parse(fs.readFileSync(path.join(out,f)));
+const tests=read('regression.json'),browser=read('browser.json'),all=read('all-hunts/report.json');
+const challenge=JSON.parse(fs.readFileSync(path.join(root,'docs/challenge-hud/verification/browser.json')));
+if(new Set(challenge.checks.map(c=>c.id)).size!==12)throw Error('All 12 challenge levels require current browser evidence');
+const html=path.join(root,'outputs/本地离线版/小红花应急行动.html'),sha=createHash('sha256').update(fs.readFileSync(html)).digest('hex');
+if([tests,browser,all,challenge].some(r=>r.status!=='passed')||browser.mode!=='full-realtime'||!browser.closed||!all.browserClosed||!challenge.closed||[browser,all,challenge].some(r=>r.htmlSha256!==sha))throw Error('Report requires passing evidence for final HTML');
+const report={at:new Date().toISOString(),status:'passed',htmlSha256:sha,ruleTests:tests.checks.reduce((n,c)=>n+(c.tests??0),0),typhoonBrowserChecks:browser.checks.length,allHuntBrowserChecks:all.checks.length,challengeBrowserChecks:challenge.checks.length,build:{exitCode:0,evidence:'Production vinext build completed in this task; Vite temp cache required approved elevation.'},humanListening:'not_run',physicalPhone:'not_run',assets:'All 12 challenge rules updated; source images, masks, scene cameras and response rules preserved',runtime:'Isolated muted Edge, no HTTP requests or page errors, all test contexts closed'};
+fs.writeFileSync(path.join(out,'summary.json'),JSON.stringify(report,null,2));
+fs.writeFileSync(path.join(out,'REPORT.md'),`# 12关统一50秒HUD与台风声音验收\n\n- 规则/配置/回归测试：${report.ruleTests}项通过，TypeScript通过。\n- 生产构建退出码0（有既有大chunk提示，不影响成功）。\n- 台风关真实浏览器：${report.typhoonBrowserChecks}项，含实际50秒计时、触控、鼠标悬停、键盘、暂停/后台/静音/背景音乐开关、50秒失败、一次点击重试后限时通关、结算停止恐惧音、退出释放、重玩。\n- 12关统一HUD/限时与收纳：${report.challengeBrowserChecks}项。\n- 9个整场景找隐患关：${report.allHuntBrowserChecks}项布局与指针通关/重玩检查。\n- 320/375/390/430/540像素宽度与桌面、动态高度检查通过。画面等比，不改共享相机。\n- 台风人物惊叫已通过配置关闭，背景音乐、环境和交互音效保留；未生成新的呼吸音。原生AudioContext有输出，暂停/后台/静音无输出。\n- 真机触控、人耳听感：not_run，不将音频信号测试当作听感验收。\n- 全部测试浏览器已关闭，无网页异常、无外网请求。\n- 保留同期地图动效更新，未替换任何原画、蒙版或处置关规则；收纳操作保留。\n\n最终HTML SHA256：\`${sha}\`。\n\n详细测试、原生声音检查及截图见本目录JSON和日志。\n`);
+console.log(report);

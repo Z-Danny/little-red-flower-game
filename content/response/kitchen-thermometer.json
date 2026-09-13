@@ -1,0 +1,18 @@
+{
+  "asset": "/levels/kitchen-hud-v1/thermometer-shell.png",
+  "image": { "width": 1024, "height": 1536 },
+  "viewBox": [312, 32, 400, 1476],
+  "liquid": {
+    "color": "#ce493d",
+    "chamberPath": "M483 179 C483 158 495 146 512 146 C529 146 541 158 541 179 L541 1167 Q541 1186 557 1194 C597 1212 619 1252 619 1300 C619 1365 571 1403 512 1403 C451 1403 405 1365 405 1300 C405 1252 427 1212 467 1194 Q483 1186 483 1167 Z",
+    "top": 154,
+    "bottom": 1410,
+    "minimumFill": 0.065,
+    "highlightX": 491,
+    "highlightWidth": 9
+  },
+  "warning": 0.6,
+  "critical": 0.8,
+  "display": { "width": 48, "top": 76, "left": 8, "transitionMs": 420 },
+  "description": "Illustrated urgency indicator, not an actual thermometer or real temperature. Generated shell and independently clipped animated liquid share these authored coordinates."
+}

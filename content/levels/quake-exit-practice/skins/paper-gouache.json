@@ -1,0 +1,740 @@
+{
+  "schemaVersion": 1,
+  "id": "paper-gouache",
+  "world": {
+    "width": 720,
+    "height": 1280
+  },
+  "assets": {
+    "background": {
+      "src": "/levels/reference-storybook-v2/quake-exit-practice/background.webp",
+      "alpha": false
+    },
+    "adult-initial": {
+      "src": "/levels/character-continuity-v3/quake-exit-practice/adult-initial.webp",
+      "alpha": true
+    },
+    "sturdy-shoes-initial": {
+      "src": "/levels/reference-storybook-v2/quake-exit-practice/sturdy-shoes-initial.webp",
+      "alpha": true
+    },
+    "flashlight-initial": {
+      "src": "/levels/reference-storybook-v2/quake-exit-practice/flashlight-initial.webp",
+      "alpha": true
+    },
+    "phone-initial": {
+      "src": "/levels/reference-storybook-v2/quake-exit-practice/phone-initial.webp",
+      "alpha": true
+    },
+    "adult-tying": {
+      "src": "/levels/character-continuity-v3/quake-exit-practice/adult-tying.webp",
+      "alpha": true
+    },
+    "adult-shoes": {
+      "src": "/levels/character-continuity-v3/quake-exit-practice/adult-shoes.webp",
+      "alpha": true
+    },
+    "device": {
+      "src": "/levels/response-practice-v1/r02/device.webp",
+      "alpha": true
+    },
+    "outside": {
+      "src": "/levels/reference-storybook-v2/quake-exit-practice/outside.webp",
+      "alpha": false
+    }
+  },
+  "background": "background",
+  "poses": {
+    "adult": {
+      "asset": "adult-initial",
+      "x": 226.4825,
+      "y": 207.6939,
+      "w": 222.6567,
+      "h": 785.8023,
+      "depth": 40
+    },
+    "sturdy-shoes": {
+      "asset": "sturdy-shoes-initial",
+      "x": 43.6132,
+      "y": 867.2476,
+      "w": 161.4453,
+      "h": 124.7184,
+      "depth": 45
+    },
+    "flashlight": {
+      "asset": "flashlight-initial",
+      "x": 557.0244,
+      "y": 734.1126,
+      "w": 107.1201,
+      "h": 45.1435,
+      "depth": 45
+    },
+    "phone": {
+      "asset": "phone-initial",
+      "x": 591.4559,
+      "y": 790.7333,
+      "w": 93.3475,
+      "h": 70.3932,
+      "depth": 45
+    },
+    "outside-scene": {
+      "asset": "outside",
+      "x": 0,
+      "y": 0.34,
+      "w": 720,
+      "h": 1279.32,
+      "depth": -20,
+      "opacity": 0,
+      "blockInput": false
+    }
+  },
+  "zones": {
+    "feet-zone": {
+      "x": 252,
+      "y": 875,
+      "w": 207,
+      "h": 130
+    },
+    "stair-check": {
+      "x": 480,
+      "y": 315,
+      "w": 156,
+      "h": 165
+    },
+    "stairs-route": {
+      "x": 469,
+      "y": 472,
+      "w": 177,
+      "h": 113
+    },
+    "assembly-zone": {
+      "x": 169,
+      "y": 724,
+      "w": 269,
+      "h": 404
+    },
+    "message-zone": {
+      "x": 447,
+      "y": 942.5,
+      "w": 234.9,
+      "h": 85.5
+    },
+    "lift-zone": {
+      "x": 95,
+      "y": 125,
+      "w": 140,
+      "h": 447
+    },
+    "return-room": {
+      "x": 665,
+      "y": 182,
+      "w": 55,
+      "h": 380
+    },
+    "damaged-wall": {
+      "x": 0,
+      "y": 121,
+      "w": 125,
+      "h": 380
+    }
+  },
+  "zoneConditions": {
+    "feet-zone": {
+      "not": [
+        "outside-building"
+      ]
+    },
+    "stair-check": {
+      "not": [
+        "outside-building"
+      ]
+    },
+    "stairs-route": {
+      "not": [
+        "outside-building"
+      ]
+    },
+    "assembly-zone": {
+      "all": [
+        "outside-building"
+      ]
+    },
+    "message-zone": {
+      "all": [
+        "outside-building"
+      ]
+    },
+    "lift-zone": {
+      "not": [
+        "outside-building"
+      ]
+    },
+    "return-room": {
+      "not": [
+        "outside-building"
+      ]
+    },
+    "damaged-wall": {
+      "all": [
+        "outside-building"
+      ]
+    }
+  },
+  "zoneLabels": {
+    "feet-zone": "人物双脚",
+    "stair-check": "观察楼梯踏步",
+    "stairs-route": "可用楼梯",
+    "assembly-zone": "开阔集合处",
+    "message-zone": "手机：报告集合点",
+    "lift-zone": "停用电梯",
+    "return-room": "返回受损房间",
+    "damaged-wall": "破损外墙附近"
+  },
+  "states": [
+    {
+      "object": "adult",
+      "when": {
+        "all": [
+          "feet-protected"
+        ]
+      },
+      "pose": {
+        "asset": "adult-shoes",
+        "x": 196.45989117938552,
+        "y": 207.6939,
+        "w": 282.70191764122893,
+        "h": 785.8023
+      }
+    },
+    {
+      "object": "sturdy-shoes",
+      "when": {
+        "all": [
+          "feet-protected"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "outside-scene",
+      "when": {
+        "all": [
+          "outside-building"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "adult",
+      "when": {
+        "all": [
+          "outside-building"
+        ]
+      },
+      "pose": {
+        "asset": "adult-shoes",
+        "x": 440,
+        "y": 450,
+        "w": 178,
+        "h": 495
+      }
+    },
+    {
+      "object": "adult",
+      "when": {
+        "all": [
+          "at-assembly"
+        ]
+      },
+      "pose": {
+        "asset": "adult-shoes",
+        "x": 233,
+        "y": 659,
+        "w": 181.5,
+        "h": 505
+      }
+    },
+    {
+      "object": "sturdy-shoes",
+      "when": {
+        "all": [
+          "outside-building"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "flashlight",
+      "when": {
+        "all": [
+          "outside-building"
+        ]
+      },
+      "pose": {
+        "opacity": 0,
+        "blockInput": false
+      }
+    },
+    {
+      "object": "phone",
+      "when": {
+        "all": [
+          "outside-building"
+        ]
+      },
+      "pose": {
+        "asset": "phone-initial",
+        "x": 426,
+        "y": 666,
+        "w": 65,
+        "h": 49,
+        "depth": 70
+      }
+    },
+    {
+      "object": "phone",
+      "when": {
+        "all": [
+          "at-assembly"
+        ]
+      },
+      "pose": {
+        "asset": "device",
+        "x": 420,
+        "y": 686,
+        "w": 288,
+        "h": 387,
+        "depth": 70
+      }
+    },
+    {
+      "object": "phone",
+      "when": {
+        "all": [
+          "location-shared"
+        ]
+      },
+      "pose": {
+        "rotation": 0,
+        "opacity": 0,
+        "blockInput": false
+      }
+    }
+  ],
+  "animations": {
+    "wear-shoes": {
+      "durationMs": 900,
+      "tracks": [
+        {
+          "object": "sturdy-shoes",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.27,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        },
+        {
+          "object": "adult",
+          "keyframes": [
+            {
+              "at": 0.27,
+              "asset": "adult-tying",
+              "x": 196.45989117938552,
+              "y": 207.6939,
+              "w": 282.70191764122893,
+              "h": 785.8023
+            },
+            {
+              "at": 0.8,
+              "asset": "adult-tying"
+            },
+            {
+              "at": 1,
+              "asset": "adult-shoes",
+              "x": 196.45989117938552,
+              "y": 207.6939,
+              "w": 282.70191764122893,
+              "h": 785.8023
+            }
+          ]
+        }
+      ]
+    },
+    "inspect-stairs": {
+      "durationMs": 900,
+      "tracks": [
+        {
+          "object": "flashlight",
+          "fromDrop": true,
+          "keyframes": [
+            {
+              "at": 0.4,
+              "x": 503,
+              "y": 451,
+              "rotation": -0.35
+            },
+            {
+              "at": 0.78,
+              "x": 503,
+              "y": 451,
+              "rotation": -0.35
+            },
+            {
+              "at": 1,
+              "asset": "flashlight-initial",
+              "x": 557.0244,
+              "y": 734.1126,
+              "w": 107.1201,
+              "h": 45.1435,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "leave-by-stairs": {
+      "durationMs": 1500,
+      "tracks": [
+        {
+          "object": "adult",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "asset": "adult-shoes",
+              "x": 460,
+              "y": 390,
+              "w": 100,
+              "h": 278
+            },
+            {
+              "at": 0.8,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "asset": "adult-shoes",
+              "x": 440,
+              "y": 450,
+              "w": 178,
+              "h": 495,
+              "opacity": 1
+            }
+          ]
+        },
+        {
+          "object": "outside-scene",
+          "keyframes": [
+            {
+              "at": 0.8,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "reach-assembly": {
+      "durationMs": 1200,
+      "tracks": [
+        {
+          "object": "adult",
+          "fromDrop": false,
+          "keyframes": [
+            {
+              "at": 1,
+              "asset": "adult-shoes",
+              "x": 233,
+              "y": 659,
+              "w": 181.5,
+              "h": 505
+            }
+          ]
+        },
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.45,
+              "opacity": 0
+            },
+            {
+              "at": 0.65,
+              "asset": "device",
+              "x": 420,
+              "y": 686,
+              "w": 288,
+              "h": 387,
+              "opacity": 0
+            },
+            {
+              "at": 1,
+              "asset": "device",
+              "x": 420,
+              "y": 686,
+              "w": 288,
+              "h": 387,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "share-location": {
+      "durationMs": 700,
+      "tracks": [
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.4,
+              "rotation": -0.02
+            },
+            {
+              "at": 0.7,
+              "rotation": 0.01,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "rotation": 0,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-stairs": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "adult",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.02
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.015
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "early-report": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "phone",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.02
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.015
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "lift-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "adult",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.02
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.015
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "return-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "adult",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.02
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.015
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    },
+    "wall-error": {
+      "durationMs": 1400,
+      "tracks": [
+        {
+          "object": "adult",
+          "keyframes": [
+            {
+              "at": 0.35,
+              "rotation": 0.02
+            },
+            {
+              "at": 0.7,
+              "rotation": -0.015
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [
+    {
+      "object": "phone",
+      "text": "室外集合处\n已离开受损楼栋\n发送给家人",
+      "x": 0.5,
+      "y": 0.44,
+      "size": 26,
+      "color": "#315048",
+      "when": {
+        "all": [
+          "at-assembly"
+        ],
+        "not": [
+          "location-shared"
+        ]
+      }
+    }
+  ],
+  "presentation": {
+    "durationMs": 75000,
+    "effects": [
+      {
+        "kind": "dust",
+        "box": {
+          "x": 8,
+          "y": 180,
+          "w": 158,
+          "h": 600
+        },
+        "depth": 15,
+        "strength": 0.2,
+        "color": "#af9d80",
+        "when": {
+          "not": [
+            "outside-building"
+          ]
+        }
+      },
+      {
+        "kind": "light",
+        "box": {
+          "x": 487,
+          "y": 311,
+          "w": 159,
+          "h": 236
+        },
+        "depth": 35,
+        "color": "#ffdfa2",
+        "strength": 0.9,
+        "when": {
+          "all": [
+            "route-observed"
+          ]
+        }
+      },
+      {
+        "kind": "light",
+        "box": {
+          "x": 200,
+          "y": 600,
+          "w": 170,
+          "h": 570
+        },
+        "depth": 4,
+        "color": "#fff0c1",
+        "strength": 0.3,
+        "when": {
+          "all": [
+            "at-assembly"
+          ]
+        }
+      }
+    ],
+    "actors": [
+      {
+        "object": "adult",
+        "amplitude": 0.25,
+        "until": [
+          "at-assembly"
+        ]
+      }
+    ],
+    "audio": {
+      "theme": "outdoor",
+      "cues": {
+        "pickup": "pickup",
+        "bounce": "bounce",
+        "danger": "impact",
+        "complete": "success",
+        "wear-shoes": "shoe-set",
+        "inspect-stairs": "torch-click",
+        "leave-by-stairs": "stair-step",
+        "reach-assembly": "outside-air",
+        "share-location": "message-sent",
+        "early-stairs": "invalid-return",
+        "early-report": "invalid-return",
+        "lift-error": "danger-demonstration",
+        "return-error": "danger-demonstration",
+        "wall-error": "danger-demonstration"
+      },
+      "calmWhen": [
+        "at-assembly"
+      ]
+    }
+  }
+}

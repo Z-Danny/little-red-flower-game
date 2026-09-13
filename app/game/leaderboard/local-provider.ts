@@ -1,4 +1,4 @@
-import { MAX_PLAYERS, parseState, rankPlayers, recordBest, sanitizeScores, validateProfile, type BoardSnapshot, type BoardState, type LeaderboardProvider, type ProfileInput, type ScoreCaps } from './model';
+import { MAX_PLAYERS, parseState, rankPlayers, recordBest, claimFirstCompletion, sanitizeScores, validateProfile, type BoardSnapshot, type BoardState, type LeaderboardProvider, type ProfileInput, type ScoreCaps } from './model';
 
 export const BOARD_STORAGE_KEY = 'little-red-flower-leaderboard-v1';
 export const LEGACY_STORAGE_KEY = 'little-red-flower-emergency-progress-v1';
@@ -9,6 +9,7 @@ type Options = {
   id: () => string;
   now?: () => number;
   listen?: (onChange: () => void) => () => void;
+  canEnter?: (levelId:string,completed:Readonly<Record<string,number>>)=>boolean;
 };
 
 /** The only module that knows about local persistence. Failed writes stay playable in memory. */
@@ -100,8 +101,19 @@ export function createLocalLeaderboard(options: Options): LeaderboardProvider {
       });
     },
     async recordResult(id, flowers, playerId) { return mutate(state => recordBest(state, id, flowers, options.caps, playerId)); },
-    async resetCurrentProgress() {
-      return mutate(state => ({ ...state, players: state.players.map(player => player.id === state.activePlayerId ? { ...player, completed: {} } : player) }));
+    async claimCompletion(id,playerId) {
+      const state=load(),player=state.players.find(p=>p.id===playerId);
+      if(player&&options.canEnter&&!options.canEnter(id,player.completed))throw new Error('请先完成本区域的上一关。');
+      const next=claimFirstCompletion(state,id,playerId,options.caps);
+      save(next.state);
+      return {snapshot:snapshot(next.state),receipt:next.receipt};
+    },
+    async resetCurrentProgress(expectedPlayerId) {
+      return mutate(state => {
+        if (expectedPlayerId && state.activePlayerId !== expectedPlayerId)
+          throw new Error('当前玩家已在其他页面切换，请刷新后重新确认。');
+        return { ...state, players: state.players.map(player => player.id === state.activePlayerId ? { ...player, completed: {} } : player) };
+      });
     },
     subscribe: options.listen,
   };

@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "nodeTests": "passed",
+  "nativeCanvasPixels": {
+    "renders": {
+      "rain": {
+        "inside": 1721,
+        "outside": 0
+      },
+      "water": {
+        "inside": 14766,
+        "outside": 0
+      }
+    },
+    "union": {
+      "left": 255,
+      "overlap": 255,
+      "right": 255,
+      "outsideBox": 0,
+      "belowBox": 0
+    },
+    "hidden": {
+      "inside": 0,
+      "outside": 0
+    },
+    "visible": {
+      "inside": 923,
+      "outside": 0
+    }
+  },
+  "browser": "isolated headless Edge, muted, finally closed",
+  "physicalPhone": "not_run"
+}

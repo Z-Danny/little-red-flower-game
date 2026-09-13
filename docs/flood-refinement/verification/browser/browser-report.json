@@ -1,0 +1,381 @@
+{
+  "status": "passed",
+  "html": "D:\\中关村\\小红花\\test1\\work\\flood-refinement-20260913\\outputs\\本地离线版\\小红花应急行动.html",
+  "sha256": "495e57fa1ca105e8a52bf3e196e37e729fd798e6dc06dbfd33d1fb4a57028829",
+  "checks": [
+    {
+      "name": "shared viewport remains full height with no document scroll 320",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568
+      }
+    },
+    {
+      "name": "actual flood and rain buffers plus music 320",
+      "nativeLoops": [
+        {
+          "length": 139264,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 176400,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 132300,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        }
+      ]
+    },
+    {
+      "name": "upstairs has a distinct actor pose and separate phone/water bounds 320",
+      "phone": {
+        "x": 502,
+        "y": 590,
+        "w": 80,
+        "h": 42.74,
+        "asset": "phone-initial",
+        "depth": 32,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "phone"
+      },
+      "water": {
+        "x": 592,
+        "y": 517,
+        "w": 52,
+        "h": 82.07,
+        "asset": "bottled-water-initial",
+        "depth": 31,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "bottled-water"
+      }
+    },
+    {
+      "name": "all six real actions complete with three flowers 320"
+    },
+    {
+      "name": "shared viewport remains full height with no document scroll 375",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 375,
+        "height": 667
+      }
+    },
+    {
+      "name": "actual flood and rain buffers plus music 375",
+      "nativeLoops": [
+        {
+          "length": 139264,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 176400,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 132300,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        }
+      ]
+    },
+    {
+      "name": "upstairs has a distinct actor pose and separate phone/water bounds 375",
+      "phone": {
+        "x": 502,
+        "y": 590,
+        "w": 80,
+        "h": 42.74,
+        "asset": "phone-initial",
+        "depth": 32,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "phone"
+      },
+      "water": {
+        "x": 592,
+        "y": 517,
+        "w": 52,
+        "h": 82.07,
+        "asset": "bottled-water-initial",
+        "depth": 31,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "bottled-water"
+      }
+    },
+    {
+      "name": "all six real actions complete with three flowers 375"
+    },
+    {
+      "name": "shared viewport remains full height with no document scroll 390",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "actual flood and rain buffers plus music 390",
+      "nativeLoops": [
+        {
+          "length": 139264,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 176400,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 132300,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        }
+      ]
+    },
+    {
+      "name": "entering flood is rejected and produces native impact audio"
+    },
+    {
+      "name": "pause/mute/resume retains one group of three loops",
+      "nativeLoops": [
+        {
+          "length": 139264,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 176400,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 132300,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        }
+      ]
+    },
+    {
+      "name": "pause freezes elapsed time and audio, mute survives resume"
+    },
+    {
+      "name": "upstairs has a distinct actor pose and separate phone/water bounds 390",
+      "phone": {
+        "x": 502,
+        "y": 590,
+        "w": 80,
+        "h": 42.74,
+        "asset": "phone-initial",
+        "depth": 32,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "phone"
+      },
+      "water": {
+        "x": 592,
+        "y": 517,
+        "w": 52,
+        "h": 82.07,
+        "asset": "bottled-water-initial",
+        "depth": 31,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "bottled-water"
+      }
+    },
+    {
+      "name": "signaling has clock-driven actor performance; consumed standalone cloth stays hidden",
+      "first": {
+        "x": 126,
+        "y": 347,
+        "w": 340,
+        "h": 510,
+        "asset": "family-signal-low",
+        "depth": 40,
+        "rotation": 0.00029810272874129004,
+        "opacity": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 1
+        },
+        "id": "family"
+      },
+      "second": {
+        "x": 126,
+        "y": 347,
+        "w": 340,
+        "h": 510,
+        "asset": "family-signal-high",
+        "depth": 40,
+        "rotation": -0.00707553241566957,
+        "opacity": 1,
+        "pivot": {
+          "x": 0.5,
+          "y": 1
+        },
+        "id": "family"
+      }
+    },
+    {
+      "name": "reordered phone/water/radio actions do not resurrect the consumed cloth"
+    },
+    {
+      "name": "all six real actions complete with three flowers 390"
+    },
+    {
+      "name": "real replay preserves prerequisite scores and does not duplicate flowers"
+    },
+    {
+      "name": "shared viewport remains full height with no document scroll 430",
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932
+      }
+    },
+    {
+      "name": "actual flood and rain buffers plus music 430",
+      "nativeLoops": [
+        {
+          "length": 139264,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 176400,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 132300,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        }
+      ]
+    },
+    {
+      "name": "upstairs has a distinct actor pose and separate phone/water bounds 430",
+      "phone": {
+        "x": 502,
+        "y": 590,
+        "w": 80,
+        "h": 42.74,
+        "asset": "phone-initial",
+        "depth": 32,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "phone"
+      },
+      "water": {
+        "x": 592,
+        "y": 517,
+        "w": 52,
+        "h": 82.07,
+        "asset": "bottled-water-initial",
+        "depth": 31,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "bottled-water"
+      }
+    },
+    {
+      "name": "all six real actions complete with three flowers 430"
+    },
+    {
+      "name": "shared viewport remains full height with no document scroll 1440",
+      "bounds": {
+        "x": 466.875,
+        "y": 0,
+        "width": 506.25,
+        "height": 900
+      }
+    },
+    {
+      "name": "actual flood and rain buffers plus music 1440",
+      "nativeLoops": [
+        {
+          "length": 139264,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 176400,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        },
+        {
+          "length": 132300,
+          "rate": 22050,
+          "loop": true,
+          "stopped": false
+        }
+      ]
+    },
+    {
+      "name": "upstairs has a distinct actor pose and separate phone/water bounds 1440",
+      "phone": {
+        "x": 502,
+        "y": 590,
+        "w": 80,
+        "h": 42.74,
+        "asset": "phone-initial",
+        "depth": 32,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "phone"
+      },
+      "water": {
+        "x": 592,
+        "y": 517,
+        "w": 52,
+        "h": 82.07,
+        "asset": "bottled-water-initial",
+        "depth": 31,
+        "opacity": 1,
+        "rotation": 0,
+        "id": "bottled-water"
+      }
+    },
+    {
+      "name": "all six real actions complete with three flowers 1440"
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "physicalPhone": "not_run",
+  "humanListening": "not_run",
+  "visualReview": "screenshots supplied; automated pose checks are not a human visual review",
+  "browserClosed": true
+}

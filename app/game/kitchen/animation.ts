@@ -1,5 +1,7 @@
 import { layout, type Box, type ItemId, type Point } from './config';
 import { type Run } from './model';
+import { actorMotion } from '../response/pressure';
+import { kitchenPressure } from './experience';
 export const center = (b: Box): Point => ({ x: b.x + b.w / 2, y: b.y + b.h / 2 });
 export const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 export const ease = (t: number) => 1 - Math.pow(1 - Math.max(0, Math.min(1, t)), 3);
@@ -13,11 +15,18 @@ export function personBox(r: Run): Box {
     const released = { ...layout.person, x: a.at.x - layout.person.w / 2, y: a.at.y - layout.person.h / 2 };
     return mixBox(released, a.kind === 'evacuate' ? layout.evacuated : layout.person, ease(a.age / a.duration));
   }
-  const step = r.reaction === 'panicked' ? Math.sin(Math.min(1, (2500 - r.reactionAge) / 400) * Math.PI / 2) * 22 : 0;
+  const step = r.reaction === 'panicked' ? Math.sin(Math.min(1, (2500 - r.reactionAge) / 2500) * Math.PI) * 10 : 0;
   return { ...layout.person, x: layout.person.x + step };
 }
 export function itemBox(item: ItemId, r: Run): Box {
   return item === 'person' ? personBox(r) : item === 'gas' ? layout.gas : layout.props[item];
+}
+export function personPose(r: Run, reduced = false) {
+  const home = personBox(r);
+  // Fixed path endpoints remain exact; breathing must not move a carried actor's target.
+  if (r.action?.item === 'person' || r.evacuated) return { box: home, angle: 0 };
+  const wrong = r.action && ['water', 'cloth'].includes(r.action.kind) ? Math.sin(Math.min(1, r.action.age / 850) * Math.PI) : 0;
+  return actorMotion(home, r.elapsed, kitchenPressure(r).fear, reduced, wrong);
 }
 export function movingItem(r: Run): { box: Box; angle: number; opacity: number } | null {
   const a = r.action;

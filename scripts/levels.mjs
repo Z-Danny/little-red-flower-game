@@ -2,6 +2,7 @@ import { existsSync, mkdirSync, copyFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { root } from './lib/dependencies.mjs';
 import { catalog, checkArt, checkPresets, getRuntime, hash, json, readJSON, readPackage, registrySource, validateCatalog, writeAtomic } from './lib/packages.mjs';
+import { sync as syncHunts } from './hunts.mjs';
 
 const [command = 'validate', ...args] = process.argv.slice(2);
 const option = name => { const i = args.indexOf(`--${name}`); return i < 0 ? undefined : args[i + 1]; };
@@ -14,6 +15,7 @@ try {
     console.log(`PASS: ${results.length} 个关卡/皮肤组合；规则、可达性${flag('rules-only') ? '' : '、资源文件与透明通道'}已校验。`);
     const report = join(root, 'outputs/level-pipeline/validation.json'); writeAtomic(report, json({ checkedAt: new Date().toISOString(), presets, results }));
   } else if (command === 'sync') {
+    await syncHunts();
     await validateCatalog();
     await checkPresets();
     writeAtomic(join(root, 'app/game/content/generated.ts'), registrySource(catalog()));
@@ -26,6 +28,7 @@ try {
     const orders = new Set([1,2,3,4,5,6]); for (const entry of entries) orders.add((await readPackage(entry)).rules.order);
     const prepared = [];
     for (const job of jobs) {
+      if (job?.kind === 'prevention') throw new Error('旧防范模板已退役。整场景找隐患请用 node scripts/hunts.mjs create --id ... --title ... --order ...，禁止复制移动物品的旧模板。');
       if (!job || Object.keys(job).some(k => !['id','kind','title','order'].includes(k)) || !validId(job.id) || used.has(job.id)) throw new Error(`非法/重复 ID：${job?.id}`);
       if (!['prevention','response'].includes(job.kind) || typeof job.title !== 'string' || !job.title.trim() || !Number.isInteger(job.order) || job.order <= 6 || orders.has(job.order)) throw new Error(`${job.id}: 类型、标题或编号错误（编号需 > 6 且不重复）`);
       const folder = join(root, 'content/levels', job.id); if (existsSync(folder)) throw new Error(`拒绝覆盖已有目录 ${folder}`);

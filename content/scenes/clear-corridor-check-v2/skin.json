@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/clear-corridor-check-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/clear-corridor-check-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/clear-corridor-check-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/clear-corridor-check-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/clear-corridor-check-v2/family.png",
+  "familyBox": {
+    "x": 32,
+    "y": 337,
+    "w": 256,
+    "h": 408
+  },
+  "targets": {
+    "blocked_path": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 668,
+        "w": 361,
+        "h": 607
+      },
+      "icon": "/levels/hazard-batch-v2/clear-corridor-check-v2/blocked_path.png"
+    },
+    "ebike_charging": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 483,
+        "y": 577,
+        "w": 228,
+        "h": 443
+      },
+      "icon": "/levels/hazard-batch-v2/clear-corridor-check-v2/ebike_charging.png"
+    },
+    "wedged_fire_door": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 367,
+        "y": 199,
+        "w": 86,
+        "h": 445
+      },
+      "icon": "/levels/hazard-batch-v2/clear-corridor-check-v2/wedged_fire_door.png"
+    },
+    "locked_exit": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 513,
+        "y": 240,
+        "w": 170,
+        "h": 307
+      },
+      "icon": "/levels/hazard-batch-v2/clear-corridor-check-v2/locked_exit.png"
+    },
+    "blocked_hydrant": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 178,
+        "y": 293,
+        "w": 149,
+        "h": 323
+      },
+      "icon": "/levels/hazard-batch-v2/clear-corridor-check-v2/blocked_hydrant.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/clear-corridor-check-v2/character-mask.png"
+  }
+}

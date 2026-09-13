@@ -1,0 +1,1 @@
+{"status":"passed","command":"node node_modules/vinext/dist/cli.js build","notes":["Existing large-chunk warning","vinext route classification unknown"],"publishing":"not_run"}

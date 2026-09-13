@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/thunder-park-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/thunder-park-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/thunder-park-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/thunder-park-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/thunder-park-v2/family.png",
+  "familyBox": {
+    "x": 255,
+    "y": 707,
+    "w": 465,
+    "h": 361
+  },
+  "targets": {
+    "isolated_tree": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 69,
+        "w": 245,
+        "h": 271
+      },
+      "icon": "/levels/hazard-batch-v2/thunder-park-v2/isolated_tree.png"
+    },
+    "open_gazebo": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 346,
+        "y": 269,
+        "w": 202,
+        "h": 131
+      },
+      "icon": "/levels/hazard-batch-v2/thunder-park-v2/open_gazebo.png"
+    },
+    "pond_platform": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 103,
+        "y": 464,
+        "w": 256,
+        "h": 109
+      },
+      "icon": "/levels/hazard-batch-v2/thunder-park-v2/pond_platform.png"
+    },
+    "open_cart": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 385,
+        "y": 466,
+        "w": 163,
+        "h": 147
+      },
+      "icon": "/levels/hazard-batch-v2/thunder-park-v2/open_cart.png"
+    },
+    "camping_tent": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 52,
+        "y": 616,
+        "w": 265,
+        "h": 128
+      },
+      "icon": "/levels/hazard-batch-v2/thunder-park-v2/camping_tent.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/thunder-park-v2/character-mask.png",
+    "weatherMask": "/levels/hazard-batch-v2/thunder-park-v2/weather-mask.png",
+    "waterMask": "/levels/hazard-batch-v2/thunder-park-v2/water-mask.png",
+    "skyMask": "/levels/hazard-batch-v2/thunder-park-v2/sky-mask.png"
+  }
+}

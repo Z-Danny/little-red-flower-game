@@ -1,0 +1,263 @@
+{
+  "compilerVersion": 1,
+  "id": "bedroom-night-check-v2",
+  "authorId": "H02",
+  "sourceSha256": "21442b1e147c0ff05445efd3b4e985062e66710eaa51589d6f8730429f2ce1ae",
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "inputHashes": {
+    "scene-original.png": "21442b1e147c0ff05445efd3b4e985062e66710eaa51589d6f8730429f2ce1ae",
+    "mask-candidate.png": "29f03e747c3fe9b324e290325bd73e2fbfd7bbf6d2739d87270cec620ce49510",
+    "clean-candidate.png": "1e8e11a59b15b7d388099a50a63eecfd9d5a50d82ec91723ef5e4e1d9572ba21",
+    "ending.png": "9fd25b3c3227847a12e65c5ae543a2ac2828ed8a11434dc0c8c45440dad09dd6"
+  },
+  "specSha256": "6ab20c963bdd63818998066976db808b3221116f65436796cd94934f5d6bf5ae",
+  "corrections": {
+    "targets": {
+      "folded_blanket": {
+        "excludePolygons": [
+          [
+            [
+              465,
+              391
+            ],
+            [
+              493,
+              386
+            ],
+            [
+              494,
+              406
+            ],
+            [
+              489,
+              405
+            ],
+            [
+              482,
+              403
+            ],
+            [
+              475,
+              407
+            ],
+            [
+              474,
+              414
+            ],
+            [
+              465,
+              414
+            ]
+          ],
+          [
+            [
+              491,
+              406
+            ],
+            [
+              496,
+              406
+            ],
+            [
+              496,
+              434
+            ],
+            [
+              486,
+              434
+            ],
+            [
+              486,
+              429
+            ],
+            [
+              491,
+              425
+            ]
+          ],
+          [
+            [
+              464,
+              410
+            ],
+            [
+              474,
+              410
+            ],
+            [
+              474,
+              420
+            ],
+            [
+              480,
+              424
+            ],
+            [
+              480,
+              430
+            ],
+            [
+              464,
+              431
+            ]
+          ]
+        ],
+        "reason": "逐像素放大核对，原候选把电热毯插头后的墙面插座面板涂黄。仅删面板，保留原画的毯体、控制器、所属线缆和实际插头，不新增蒙版。"
+      },
+      "covered_heater": {
+        "excludePolygons": [
+          [
+            [
+              670,
+              1063
+            ],
+            [
+              684,
+              1065
+            ],
+            [
+              689,
+              1075
+            ],
+            [
+              689,
+              1096
+            ],
+            [
+              678,
+              1089
+            ],
+            [
+              663,
+              1098
+            ],
+            [
+              663,
+              1084
+            ],
+            [
+              669,
+              1080
+            ]
+          ]
+        ],
+        "reason": "原候选取暖器插头上方的插座面板有品红误涂。按原画插头顶面的斜边裁除面板小块，不裁衣物、取暖器、真实插头与线。"
+      }
+    },
+    "characters": {}
+  },
+  "targetPixels": {
+    "covered_phone": 16156,
+    "damaged_lead": 3286,
+    "swollen_bank": 5954,
+    "folded_blanket": 19666,
+    "covered_heater": 84007
+  },
+  "hitPixels": {
+    "covered_phone": 16156,
+    "damaged_lead": 3286,
+    "swollen_bank": 5954,
+    "folded_blanket": 19666,
+    "covered_heater": 84007
+  },
+  "familyBox": {
+    "x": 229,
+    "y": 353,
+    "w": 360,
+    "h": 482
+  },
+  "familyPixels": 110280,
+  "effectsPixels": {
+    "weather": 0,
+    "water": 0,
+    "sky": 0,
+    "fire": 0,
+    "smoke": 0
+  },
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "effectMasksExcludeTargetsAndCharacters": true,
+  "objectAndHitMasksIdentical": true,
+  "approval": "draft; semantic visual inspection and runtime tests pending",
+  "files": [
+    {
+      "path": "character-mask.png",
+      "sha256": "7582bffc17222327d15529fdbe57f71811b76bd48daca7c36080db5e9b2b33d0"
+    },
+    {
+      "path": "clean.webp",
+      "sha256": "f08aeb90916c8d2ca5d979e913b01911edf6d4bcf0e4636ac473107a998345ff"
+    },
+    {
+      "path": "covered_heater.png",
+      "sha256": "ea84dce3c0bac0714b7fc079453937844ddd01868c31569ddbf96452d20b2a0e"
+    },
+    {
+      "path": "covered_phone.png",
+      "sha256": "ba668371f1e428a3b0789bf8dccab3aa1f4060d542e4293e40d4fff7e90a00bf"
+    },
+    {
+      "path": "damaged_lead.png",
+      "sha256": "36dd59a57212d95d18178d65debd40da78f75ec86c8cb3f38952e81dfb636778"
+    },
+    {
+      "path": "ending.webp",
+      "sha256": "e6e8066b57fae14ed38f9d501c1d52d2f227b9527e05f069f714591c950f32cd"
+    },
+    {
+      "path": "family.png",
+      "sha256": "52e8e8d780d9f45c683befc70bfd5af43050389cdf7d784e46d12115b68820a1"
+    },
+    {
+      "path": "fire-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "folded_blanket.png",
+      "sha256": "d91a9408e1b8b428e1e37229895d59dd97f61750698917e3cc438b7f90f59838"
+    },
+    {
+      "path": "hit-samples.json",
+      "sha256": "d34adbd087c5371f17a894c2f4f1e614f5f1d4f9296ea0f9f48b5509026781b3"
+    },
+    {
+      "path": "id-mask.png",
+      "sha256": "02f3c324f2b80f60287f4820d6987b9be33b52be626a9f70380e1e8b3df57daa"
+    },
+    {
+      "path": "object-mask.png",
+      "sha256": "02f3c324f2b80f60287f4820d6987b9be33b52be626a9f70380e1e8b3df57daa"
+    },
+    {
+      "path": "scene.webp",
+      "sha256": "3ccd4a1c59c10734a7bc977cc5a65790a320f9aa0b8cd8f2a6d4c404ec6bf537"
+    },
+    {
+      "path": "sky-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "smoke-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "swollen_bank.png",
+      "sha256": "442c98cb830e5965fa8c700726772b06ccc385851abf87be613db786048600ce"
+    },
+    {
+      "path": "water-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    },
+    {
+      "path": "weather-mask.png",
+      "sha256": "2773a7be018e530c9a5c1ba9a252cdc3688591ea65da146725d7793b7f31665b"
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "status": "baseline-recorded",
+  "sha256": "903c166d7b217fe4536ba77e5e6365b5a116465d44a3d935c9f09da23fde2b30",
+  "checks": [
+    "navigation preserves the 35-flower save fixture",
+    "continue after reload preserves save"
+  ],
+  "geometry": [
+    {
+      "viewport": {
+        "width": 704,
+        "height": 828
+      },
+      "title": {
+        "x": 0,
+        "y": 0,
+        "width": 704,
+        "height": 828
+      },
+      "map": {
+        "x": 92,
+        "y": 0,
+        "width": 520,
+        "height": 828
+      },
+      "regions": [
+        {
+          "region": "nature",
+          "link": {
+            "left": 109,
+            "right": 153,
+            "top": 14,
+            "bottom": 58,
+            "width": 44,
+            "height": 44
+          },
+          "actions": {
+            "left": 443.046875,
+            "right": 595,
+            "top": 14,
+            "bottom": 58,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 39.5,
+              "right": 123.5,
+              "top": 27,
+              "bottom": 44,
+              "width": 84,
+              "height": 17
+            },
+            {
+              "text": "自然灾害",
+              "left": 142.5,
+              "right": 222.5,
+              "top": 23,
+              "bottom": 49,
+              "width": 80,
+              "height": 26
+            }
+          ],
+          "controls": [
+            {
+              "left": 109,
+              "right": 153,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 443.046875,
+              "right": 487.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 487.046875,
+              "right": 531.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 531.046875,
+              "right": 595,
+              "top": 14,
+              "bottom": 58,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "public",
+          "link": {
+            "left": 109,
+            "right": 153,
+            "top": 14,
+            "bottom": 58,
+            "width": 44,
+            "height": 44
+          },
+          "actions": {
+            "left": 443.046875,
+            "right": 595,
+            "top": 14,
+            "bottom": 58,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 39.5,
+              "right": 123.5,
+              "top": 27,
+              "bottom": 44,
+              "width": 84,
+              "height": 17
+            },
+            {
+              "text": "公共安全",
+              "left": 142.5,
+              "right": 222.5,
+              "top": 23,
+              "bottom": 49,
+              "width": 80,
+              "height": 26
+            }
+          ],
+          "controls": [
+            {
+              "left": 109,
+              "right": 153,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 443.046875,
+              "right": 487.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 487.046875,
+              "right": 531.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 531.046875,
+              "right": 595,
+              "top": 14,
+              "bottom": 58,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        },
+        {
+          "region": "home",
+          "link": {
+            "left": 109,
+            "right": 153,
+            "top": 14,
+            "bottom": 58,
+            "width": 44,
+            "height": 44
+          },
+          "actions": {
+            "left": 443.046875,
+            "right": 595,
+            "top": 14,
+            "bottom": 58,
+            "width": 151.953125,
+            "height": 44
+          },
+          "texts": [
+            {
+              "text": "小红花应急行动",
+              "left": 19.5,
+              "right": 103.5,
+              "top": 27,
+              "bottom": 44,
+              "width": 84,
+              "height": 17
+            },
+            {
+              "text": "居家校园办公",
+              "left": 122.5,
+              "right": 242.5,
+              "top": 23,
+              "bottom": 49,
+              "width": 120,
+              "height": 26
+            }
+          ],
+          "controls": [
+            {
+              "left": 109,
+              "right": 153,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 443.046875,
+              "right": 487.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 487.046875,
+              "right": 531.046875,
+              "top": 14,
+              "bottom": 58,
+              "width": 44,
+              "height": 44
+            },
+            {
+              "left": 531.046875,
+              "right": 595,
+              "top": 14,
+              "bottom": 58,
+              "width": 63.953125,
+              "height": 44
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "browserClosed": true,
+  "physicalDevice": "not_run"
+}

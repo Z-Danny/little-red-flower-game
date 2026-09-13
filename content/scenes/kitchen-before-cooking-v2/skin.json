@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/family.png",
+  "familyBox": {
+    "x": 560,
+    "y": 179,
+    "w": 160,
+    "h": 499
+  },
+  "targets": {
+    "gas_hose": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 151,
+        "y": 497,
+        "w": 183,
+        "h": 189
+      },
+      "icon": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/gas_hose.png"
+    },
+    "paper_near_hob": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 182,
+        "y": 402,
+        "w": 93,
+        "h": 57
+      },
+      "icon": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/paper_near_hob.png"
+    },
+    "greasy_filter": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 106,
+        "y": 161,
+        "w": 251,
+        "h": 62
+      },
+      "icon": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/greasy_filter.png"
+    },
+    "sideways_cylinder": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 334,
+        "y": 606,
+        "w": 224,
+        "h": 136
+      },
+      "icon": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/sideways_cylinder.png"
+    },
+    "damaged_kettle": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 432,
+        "y": 780,
+        "w": 283,
+        "h": 283
+      },
+      "icon": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/damaged_kettle.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/character-mask.png"
+  }
+}

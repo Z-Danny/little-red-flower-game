@@ -1,0 +1,42 @@
+{
+  "world": [
+    720,
+    1280
+  ],
+  "targets": {
+    "forest_grill": [
+      171,
+      255
+    ],
+    "smouldering_cigarette": [
+      126,
+      731
+    ],
+    "forest_campfire": [
+      597,
+      398
+    ],
+    "burning_paper": [
+      202,
+      506
+    ],
+    "forest_fireworks": [
+      576,
+      656
+    ]
+  },
+  "background": [
+    397,
+    602
+  ],
+  "targetInteriorRadius": {
+    "forest_grill": 26.019223662515376,
+    "smouldering_cigarette": 45.5411901469428,
+    "forest_campfire": 17.72004514666935,
+    "burning_paper": 22.0,
+    "forest_fireworks": 14.560219778561036
+  },
+  "backgroundRadius": 165.77394246382633,
+  "method": "max Euclidean distance to exterior of real object-mask; no bbox centers",
+  "visualStatus": "samples require browser/semantic confirmation"
+}

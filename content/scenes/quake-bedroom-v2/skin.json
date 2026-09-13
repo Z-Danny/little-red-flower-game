@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/quake-bedroom-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/quake-bedroom-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/quake-bedroom-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/quake-bedroom-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/quake-bedroom-v2/family.png",
+  "familyBox": {
+    "x": 200,
+    "y": 295,
+    "w": 226,
+    "h": 520
+  },
+  "targets": {
+    "unsecured_cabinet": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 543,
+        "y": 74,
+        "w": 163,
+        "h": 562
+      },
+      "icon": "/levels/hazard-batch-v2/quake-bedroom-v2/unsecured_cabinet.png"
+    },
+    "heavy_top": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 27,
+        "y": 70,
+        "w": 128,
+        "h": 160
+      },
+      "icon": "/levels/hazard-batch-v2/quake-bedroom-v2/heavy_top.png"
+    },
+    "overbed_frame": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 322,
+        "y": 211,
+        "w": 167,
+        "h": 157
+      },
+      "icon": "/levels/hazard-batch-v2/quake-bedroom-v2/overbed_frame.png"
+    },
+    "exit_boxes": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 44,
+        "y": 759,
+        "w": 212,
+        "h": 293
+      },
+      "icon": "/levels/hazard-batch-v2/quake-bedroom-v2/exit_boxes.png"
+    },
+    "blocked_shelter": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 474,
+        "y": 741,
+        "w": 220,
+        "h": 353
+      },
+      "icon": "/levels/hazard-batch-v2/quake-bedroom-v2/blocked_shelter.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/quake-bedroom-v2/character-mask.png"
+  }
+}

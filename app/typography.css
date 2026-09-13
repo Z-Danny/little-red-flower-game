@@ -1,0 +1,368 @@
+/* Shared type system. Artwork, level content and interaction geometry stay in
+   their own modules. Font files and their OFL notices are embedded offline. */
+@font-face {
+  font-family: 'Flower Display';
+  src: url('/fonts/flower-display.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Flower UI';
+  src: url('/fonts/flower-ui.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  --font-game-body:
+    'Flower UI', 'PingFang SC', 'Microsoft YaHei UI', sans-serif;
+  --font-game-title:
+    'Flower Display', 'PingFang SC', 'Microsoft YaHei UI', sans-serif;
+  --type-ink: #294f43;
+  --type-body: #4f665a;
+  --type-muted: #697b6c;
+  --type-accent: #b75045;
+  --type-space-xs: 4px;
+  --type-space-sm: 8px;
+  --type-space-md: 16px;
+  --type-space-lg: 24px;
+}
+html body,
+.garden-shell,
+.garden-dialog,
+.lb-page,
+.hunt-player,
+.disaster-player,
+.configured-player,
+.kitchen-player {
+  font-family: var(--font-game-body);
+  -webkit-font-smoothing: antialiased;
+}
+.garden-shell button,
+.garden-dialog button,
+.lb-page input {
+  font-family: var(--font-game-body);
+}
+.garden-title-group h1,
+.garden-node .garden-node-label,
+.garden-dialog h2,
+.lb-hero h1,
+.lb-list-title h2,
+.lb-editor-title h2 {
+  font-family: var(--font-game-title);
+  font-weight: 400;
+  font-synthesis: none;
+  color: var(--type-ink);
+}
+.garden-title-group > span {
+  color: var(--type-body);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+.garden-title-group h1 {
+  font-size: 17px;
+  line-height: 1.4;
+}
+.garden-wallet strong,
+.garden-archive-count > strong,
+.garden-tab-caption small,
+.lb-mine-score strong,
+.lb-score strong,
+.garden-reward-label {
+  font-family: var(--font-game-body);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+.garden-node .garden-node-label {
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-shadow:
+    0 1px 2px #fffef5,
+    1px 0 2px #fffef5,
+    -1px 0 2px #fffef5,
+    0 -1px 2px #fffef5;
+  text-wrap: balance;
+}
+.garden-node[data-status='locked'] .garden-node-label {
+  color: #5a6d5b;
+}
+.garden-tabs button {
+  color: #5e7364;
+}
+.garden-tab-caption {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+}
+.garden-tab-caption small {
+  font-size: 10px;
+  line-height: 14px;
+  color: #697b6c;
+}
+.garden-tabs button[aria-pressed='true'] .garden-tab-caption {
+  font-weight: 650;
+}
+.garden-tabs .garden-region-thumb {
+  width: 28px;
+  height: 24px;
+}
+.garden-dialog {
+  padding: 28px;
+  color: var(--type-ink);
+}
+.garden-dialog h2 {
+  font-size: 29px;
+  line-height: 1.35;
+  letter-spacing: 0;
+  margin: 12px 0 16px;
+  text-wrap: balance;
+}
+.garden-dialog p {
+  color: var(--type-body);
+  font-size: 14px;
+  line-height: 1.85;
+  margin: 16px 0;
+}
+.garden-dialog .garden-overline {
+  color: #617769;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+  padding-right: 24px;
+}
+.garden-entry-facts {
+  font-size: 11px;
+  line-height: 1.7;
+  gap: 8px 12px;
+  margin: 20px 0;
+  color: var(--type-muted);
+}
+.garden-dialog .garden-primary {
+  font-size: 15px;
+  min-height: 50px;
+  line-height: 1.5;
+  font-weight: 600 !important;
+  letter-spacing: 0.04em;
+}
+.garden-primary > span {
+  font-size: 12px;
+  letter-spacing: 0;
+}
+.garden-dialog .garden-footnote {
+  font-size: 11px !important;
+  line-height: 1.8;
+  color: #667869 !important;
+  margin-top: 16px !important;
+}
+.garden-settlement {
+  padding: 20px 28px;
+}
+.garden-settlement h2 {
+  font-size: 27px;
+  margin: 8px 0;
+}
+.garden-settlement .garden-result-message {
+  font-size: 12px;
+  margin: 4px 0 8px;
+  color: #667869;
+}
+.garden-settlement .garden-reward-label {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--type-accent);
+}
+.garden-settlement .garden-lesson {
+  text-align: left;
+  margin: 16px 0;
+  padding-top: 14px;
+}
+.garden-lesson > small {
+  font-size: 11px;
+  color: #697b6c;
+  letter-spacing: 0.04em;
+}
+.garden-settlement .garden-lesson p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 8px 0 0;
+}
+.garden-lesson a {
+  font-size: 11px;
+  color: #426b58;
+}
+.garden-settlement .garden-footnote {
+  font-size: 10px !important;
+  line-height: 1.6;
+  margin-top: 12px !important;
+}
+.garden-archive-count strong {
+  font-size: 48px;
+  font-weight: 500;
+}
+.garden-archive-count span {
+  font-size: 12px;
+  color: var(--type-muted);
+}
+.garden-medals {
+  gap: 8px;
+  padding: 0;
+}
+.garden-medals strong {
+  font-size: 12px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--type-body);
+}
+.garden-medals small {
+  font-size: 11px;
+  color: var(--type-muted);
+  margin-top: 4px;
+}
+.garden-dialog .garden-reset {
+  font-size: 11px !important;
+}
+.garden-guide {
+  font-size: 12px;
+  line-height: 1.6;
+}
+.lb-hero h1 {
+  font-size: 36px;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+.lb-hero > p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--type-body);
+}
+.lb-eyebrow {
+  font-size: 11px;
+  color: #697b6c;
+  letter-spacing: 0.12em;
+}
+.lb-list-title h2,
+.lb-editor-title h2 {
+  font-size: 23px;
+  line-height: 1.4;
+}
+.lb-mine-identity strong {
+  font-weight: 600;
+}
+.lb-mine > p {
+  font-size: 12px;
+  line-height: 1.75;
+}
+.lb-table th {
+  font-size: 12px;
+  color: #665f50;
+}
+.lb-table td {
+  line-height: 1.65;
+}
+.lb-rules {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--type-body);
+}
+.lb-rules p,
+.lb-rules li {
+  font-size: inherit;
+  line-height: inherit;
+}
+.lb-form label {
+  font-size: 13px;
+  color: var(--type-body);
+}
+.lb-help {
+  font-size: 12px;
+  line-height: 1.75;
+}
+/* Keep HUD dimensions and the unified scene viewport unchanged. */
+.hunt-hud h1,
+.disaster-hud h1,
+.configured-hud h1,
+.kitchen-hud h1 {
+  font-family: var(--font-game-body);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 360px) {
+  .garden-header {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .garden-title-group {
+    gap: 5px !important;
+  }
+  .garden-title-group > span {
+    font-size: 9px;
+  }
+  .garden-title-group h1 {
+    font-size: 13px;
+    padding-left: 5px;
+  }
+  .garden-node .garden-node-label {
+    font-size: 15px;
+  }
+  .garden-tab-caption {
+    font-size: 11px;
+  }
+  .garden-dialog {
+    padding: 24px 20px 20px;
+  }
+  .garden-dialog h2 {
+    font-size: 26px;
+  }
+  .garden-settlement {
+    padding: 16px 20px;
+  }
+  .garden-settlement h2 {
+    font-size: 24px;
+  }
+  .garden-settlement .garden-lesson {
+    margin: 10px 0;
+    padding-top: 10px;
+  }
+  .garden-settlement .garden-lesson p {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .garden-settlement .garden-footnote {
+    margin-top: 8px !important;
+  }
+  .garden-medals strong {
+    font-size: 11px;
+  }
+  .garden-archive-count {
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .garden-archive-count > .garden-flower {
+    width: 54px;
+    height: 63px;
+    flex-shrink: 0;
+  }
+  .garden-archive-count > strong {
+    font-size: 44px;
+  }
+  .garden-archive-count > span {
+    font-size: 11px;
+  }
+}
+@media (min-width: 601px) {
+  .garden-title-group > span {
+    font-size: 12px;
+  }
+  .garden-title-group h1 {
+    font-size: 20px;
+  }
+  .garden-node .garden-node-label {
+    font-size: 17px;
+  }
+  .garden-tab-caption {
+    font-size: 13px;
+  }
+}

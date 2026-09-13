@@ -1,8 +1,6 @@
-import { WORLD, cameraSafe } from './config';
-/** Fill the portrait viewport without stretching sprites or cropping the interaction-safe region. */
+import { WORLD, framing } from './config';
+import { createCoverCamera } from '../display/camera';
+/** One uniform cover transform; composition problems must not silently zoom out. */
 export function cameraFor(width: number, height: number) {
-  if (!(width > 0 && height > 0 && Number.isFinite(width) && Number.isFinite(height))) return { scale: 1, x: 0, y: 0 };
-  const cover = Math.max(width / WORLD.width, height / WORLD.height);
-  const scale = Math.min(cover, width / cameraSafe.width, height / cameraSafe.height);
-  return { scale, x: (width - WORLD.width * scale) / 2, y: (height - WORLD.height * scale) / 2 };
+  return createCoverCamera(framing ?? { sceneBounds: { x: 0, y: 0, w: WORLD.width, h: WORLD.height } }, width, height);
 }

@@ -1,0 +1,15 @@
+{
+  "source": "public\\levels\\transcript-v1\\lift-room.webp",
+  "sourceSha256": "577daa0be72ba5d85a4cf2cbff7ba98d3f178655705d680c14ae23dcc4ffa282",
+  "generated": "art-source\\display-adaptation\\lift-wait-generated.png",
+  "generatedSha256": "dbf0a73552cc719d8862ea1ca6d93732b91ca96130acfef40fddfabfe869145b",
+  "sceneBounds": {
+    "x": 0,
+    "y": 0,
+    "w": 720,
+    "h": 1440
+  },
+  "outputSha256": "147b4804394f7c54e2983702607d5122e50db079631602c787f35b60adbe7ab7",
+  "originalCenter": "copied pixel-for-pixel before lossless encoding",
+  "status": "visual seam review required"
+}
