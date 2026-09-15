@@ -42,6 +42,8 @@ next-env.d.ts
 /art-source/**/*.jpg
 /art-source/**/*.webp
 /art-source/**/*.wav
+# Approved audio files are required by the exact-sample regression tests.
+!/art-source/settlement-audio-v1/approved/*.wav
 /art-source/map-archipelago-review-v1/review.html
 /art-source/map-archipelago-review-v1/天空群岛-素材确认-v1.zip
 /docs/**/*.png
