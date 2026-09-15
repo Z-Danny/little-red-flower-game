@@ -1,0 +1,9 @@
+Use case: precise-object-edit
+Asset type: transparent painted game UI settings icon
+Input images: Image 1 is the exact edit target, a green wooden settings toolbox icon.
+Primary request: Recolor only the existing green toolbox body and its two curved vertical side supports to a clearly blue, softly saturated cornflower blue / blue-gray. The green center of the flower knob and the interior wooden surfaces should follow the same blue body material so the complete toolbox reads as blue.
+Scene/backdrop: Genuinely transparent background, clean PNG alpha cutout. All empty areas, including the opening beneath the handle, must remain fully transparent.
+Style/medium: Preserve the existing warm hand-painted children's storybook brush texture and dimensional painted form exactly.
+Composition/framing: Preserve the original square canvas, original exact icon position, size, perspective, geometry, outer silhouette and transparent margin as closely as possible.
+Constraints: Change only the green-painted material color to blue. Keep the warm golden-yellow wooden handle, gold flower petals, pale cream little wrench, golden slider knobs, their exact shapes and positions, and all existing lighting and material texture unchanged. Keep the two vertical slider tracks and the flower control design intact. No redesign and no extra objects.
+Avoid: No drop shadow, no cast shadow outside the object, no background, no backplate or button base, no glow, no added outline or border, no text, no watermark.

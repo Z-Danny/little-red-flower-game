@@ -1,0 +1,11 @@
+✔ detail reads expose sanitized independent progress without changing active save or bytes (1.751042ms)
+✔ journal preserves legacy flower values and actual completion counts, with isolated examples (0.813458ms)
+✔ journal orders a genuine completed player above demos and preserves competition ties (0.182208ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 44.68875

@@ -1,0 +1,175 @@
+{
+  "motifs": [
+    {
+      "id": "typhoon-home",
+      "region": "nature",
+      "title": "台风居家准备",
+      "motif": "一道卷曲风纹",
+      "file": "assets/motifs/typhoon-home.svg"
+    },
+    {
+      "id": "flood-kit",
+      "region": "nature",
+      "title": "汛期应急包",
+      "motif": "带提手的小物资包",
+      "file": "assets/motifs/flood-kit.svg"
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "region": "nature",
+      "title": "家庭防震准备",
+      "motif": "小屋与两处短固定点",
+      "file": "assets/motifs/quake-bedroom-v2.svg"
+    },
+    {
+      "id": "storm-street-check-v2",
+      "region": "nature",
+      "title": "风雨街口找险",
+      "motif": "一道卷风配两滴雨",
+      "file": "assets/motifs/storm-street-check-v2.svg"
+    },
+    {
+      "id": "thunder-park-v2",
+      "region": "nature",
+      "title": "雷雨公园找险",
+      "motif": "雷云与一道短闪电",
+      "file": "assets/motifs/thunder-park-v2.svg"
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "region": "nature",
+      "title": "林缘火源识别",
+      "motif": "三层小松树",
+      "file": "assets/motifs/forest-fire-sources-v2.svg"
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "region": "nature",
+      "title": "暴雨街道找险",
+      "motif": "雨云与三条短雨线",
+      "file": "assets/motifs/rain-street-preparation-v1.svg"
+    },
+    {
+      "id": "flood-house-response-v1",
+      "region": "nature",
+      "title": "洪水居家避险",
+      "motif": "房屋轮廓下的一道波纹",
+      "file": "assets/motifs/flood-house-response-v1.svg"
+    },
+    {
+      "id": "quake-cover-practice",
+      "region": "nature",
+      "title": "地震室内避险",
+      "motif": "厚桌面、短桌腿的小桌",
+      "file": "assets/motifs/quake-cover-practice.svg"
+    },
+    {
+      "id": "quake-exit-practice",
+      "region": "nature",
+      "title": "震后楼梯撤离",
+      "motif": "三阶楼梯与短扶手",
+      "file": "assets/motifs/quake-exit-practice.svg"
+    },
+    {
+      "id": "flood-highground-practice",
+      "region": "nature",
+      "title": "洪水高处待援",
+      "motif": "两层楼轮廓、上层方窗",
+      "file": "assets/motifs/flood-highground-practice.svg"
+    },
+    {
+      "id": "clear-corridor",
+      "region": "public",
+      "title": "楼道杂物清理",
+      "motif": "带盖收纳箱",
+      "file": "assets/motifs/clear-corridor.svg"
+    },
+    {
+      "id": "lift-wait",
+      "region": "public",
+      "title": "电梯故障待援",
+      "motif": "小沙漏",
+      "file": "assets/motifs/lift-wait.svg"
+    },
+    {
+      "id": "well-call",
+      "region": "public",
+      "title": "井口遇险求助",
+      "motif": "电话听筒",
+      "file": "assets/motifs/well-call.svg"
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "region": "public",
+      "title": "楼道隐患巡查",
+      "motif": "放大镜",
+      "file": "assets/motifs/clear-corridor-check-v2.svg"
+    },
+    {
+      "id": "car-window-practice",
+      "region": "public",
+      "title": "汽车落水离车",
+      "motif": "梯形汽车侧窗",
+      "file": "assets/motifs/car-window-practice.svg"
+    },
+    {
+      "id": "lift-contact-practice",
+      "region": "public",
+      "title": "电梯定位求助",
+      "motif": "中心一点的定位标记",
+      "file": "assets/motifs/lift-contact-practice.svg"
+    },
+    {
+      "id": "collapse-signal-practice",
+      "region": "public",
+      "title": "塌陷被困求救",
+      "motif": "信号光纹：一点与三条短射线",
+      "file": "assets/motifs/collapse-signal-practice.svg"
+    },
+    {
+      "id": "oil-fire",
+      "region": "home",
+      "title": "油锅起火处置",
+      "motif": "盖紧锅盖的小锅",
+      "file": "assets/motifs/oil-fire.svg"
+    },
+    {
+      "id": "charging-bedroom",
+      "region": "home",
+      "title": "卧室充电巡查",
+      "motif": "双脚插头",
+      "file": "assets/motifs/charging-bedroom.svg"
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "region": "home",
+      "title": "睡前防火巡查",
+      "motif": "弯月",
+      "file": "assets/motifs/bedroom-night-check-v2.svg"
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "region": "home",
+      "title": "厨房开火检查",
+      "motif": "带短刻线的灶具旋钮",
+      "file": "assets/motifs/kitchen-before-cooking-v2.svg"
+    },
+    {
+      "id": "fire-shelter-practice",
+      "region": "home",
+      "title": "火灾隔烟待援",
+      "motif": "带圆门把的关闭房门",
+      "file": "assets/motifs/fire-shelter-practice.svg"
+    },
+    {
+      "id": "fire-stairs-practice",
+      "region": "home",
+      "title": "火灾楼梯撤离",
+      "motif": "出口门框与向外短箭头",
+      "file": "assets/motifs/fire-stairs-practice.svg"
+    }
+  ],
+  "stamp": {
+    "file": "assets/completed-flower.svg"
+  }
+}

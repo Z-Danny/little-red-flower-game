@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "id": "busy-rescue-v1",
+  "src": "/audio/journey-v1/busy-rescue-loop.mp3",
+  "gain": 0.65,
+  "fadeSeconds": 0.25,
+  "loopStart": 0,
+  "loopEnd": 27.826083333333333
+}

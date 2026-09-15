@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-15",
+  "status": "passed",
+  "scope": "Remove the lower status strip from all 24 map signs and reduce title/board size at user request.",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "bytes": 225813088,
+  "sha256": "036bab5003e99a2921aff78cbec3bd8336e86a86df7a9f12a95f7351e419530d",
+  "checks": {
+    "journeyTests": {
+      "passed": 47,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "build": "passed",
+    "offlineExport": "passed",
+    "diffCheck": "passed"
+  },
+  "browser": {
+    "report": "outputs/compact-map-signs-verification/report.json",
+    "version": "152.0.7977.83",
+    "layouts": 288,
+    "signAndFlowerPairs": 48,
+    "minimumTitleCssPixels": 14,
+    "maximumTitleCssPixels": 16,
+    "maximumSignWidth": 152,
+    "signHeightRange": [
+      32.1875,
+      34.796875
+    ],
+    "bottomStatusRows": 0,
+    "minimumContrast": 6.102692106817295,
+    "transparentTouchHeight": 44,
+    "isolated": true,
+    "muted": true,
+    "headless": true,
+    "closedInFinally": true,
+    "errors": 0,
+    "httpRequests": 0,
+    "failedResources": 0,
+    "fixture": "Completed progress is preset only for appearance checks; no gameplay completion claimed."
+  },
+  "sourceSha256": {
+    "components/game/journey/map-scene.tsx": "9aa6164e06f9274d2cf91f0da1011c863cf34d36f522fc016b471e35934f1944",
+    "app/garden.css": "6f022ed7ef997d19b132e5eeec9ee6054adf9ca26947bef74848b079fb39c1fa",
+    "scripts/test-map-signs-browser.mjs": "21025c3720d76797a33568959a442f1859b3ed824e84ea46e381affaa55ac84a"
+  },
+  "screenshotsReviewed": [
+    "fresh-nature-06-390x844.png",
+    "fresh-public-04-390x844.png",
+    "fresh-home-04-390x844.png"
+  ],
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run"
+}

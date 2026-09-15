@@ -1,0 +1,160 @@
+/* One paper card for every engine. No scene, HUD coordinates or camera changes. */
+.pause-menu-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: max(100px, calc(env(safe-area-inset-top, 0px) + 90px)) max(18px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-left, 0px));
+  box-sizing: border-box;
+  background: rgb(20 34 26 / 42%);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  touch-action: manipulation;
+  overscroll-behavior: contain;
+}
+.pause-menu {
+  position: relative;
+  box-sizing: border-box;
+  width: min(100%, 310px);
+  max-height: 100%;
+  margin: 0;
+  padding: 0 0 36px;
+  color: #274e38;
+  font-family: var(--font-game-body);
+  outline: none;
+  filter: drop-shadow(0 8px 13px rgb(16 28 20 / 24%));
+}
+.pause-menu-paper {
+  position: relative;
+  box-sizing: border-box;
+  padding: 25px 27px 29px;
+  background: url('/ui/pause-v1/paper.webp') center / 100% 100% no-repeat;
+}
+.pause-menu-hint { margin: 0 0 17px; }
+.pause-menu .pause-menu-hint h2 {
+  position: relative;
+  width: fit-content;
+  margin: 0 0 14px;
+  padding: 0 0 5px;
+  color: #274e38;
+  font: 400 23px/1.25 var(--font-game-title);
+}
+.pause-menu-hint h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #daa53d;
+  clip-path: polygon(3% 30%, 75% 0, 100% 42%, 88% 75%, 24% 100%, 0 64%);
+}
+.pause-menu .pause-menu-hint p {
+  margin: 0;
+  color: #2d513f;
+  font: 500 15px/1.7 var(--font-game-body);
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  max-height: min(210px, 32dvh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.pause-menu-sound-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #c6b984;
+  font: 400 21px/1.4 var(--font-game-title);
+}
+.pause-menu[data-has-hint='false'] .pause-menu-paper { padding-top: 20px; }
+.pause-menu[data-has-hint='false'] .pause-menu-sound-row { padding-top: 0; border: 0; }
+button.pause-menu-sound {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 72px;
+  height: 44px;
+  min-height: 44px;
+  min-width: 72px;
+  margin: 0;
+  padding: 4px 6px 4px 12px;
+  border: 0;
+  border-radius: 48% 44% 46% 42% / 48% 48% 45% 47%;
+  background: #365c40;
+  color: #fff1cf;
+  font: 400 20px/1 var(--font-game-title);
+  box-shadow: inset 0 0 0 1px rgb(83 99 45 / 65%);
+  cursor: pointer;
+}
+.pause-menu-sound i {
+  width: 29px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f5dfaa;
+  box-shadow: inset 0 0 0 2px #e9cf90, 0 1px 2px #152c2540;
+}
+button.pause-menu-sound[aria-checked='false'] {
+  flex-direction: row-reverse;
+  padding: 4px 12px 4px 6px;
+  background: #7b806c;
+}
+button.pause-menu-restart {
+  position: absolute;
+  left: 8%;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  width: 84%;
+  min-width: 44px;
+  height: 60px;
+  min-height: 44px;
+  margin: 0;
+  padding: 8px 26px;
+  border: 0;
+  border-radius: 0;
+  background: url('/ui/pause-v1/bookmark.webp') center / 100% 160% no-repeat;
+  box-shadow: none;
+  color: #24482f;
+  font: 400 23px/1.3 var(--font-game-title);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+button.pause-menu-restart:active { transform: translateY(1px); }
+button.pause-menu-restart:focus-visible, button.pause-menu-sound:focus-visible {
+  outline: 2px solid #234b33;
+  outline-offset: 3px;
+}
+.pause-menu-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+/* Keep the existing back/pause controls available above the pause backdrop. */
+:is(.hunt-player, .configured-player, .disaster-player, .kitchen-player)[data-paused='true'] .painted-game-hud {
+  z-index: 41;
+  pointer-events: none;
+  background: transparent;
+}
+[data-paused='true'] .painted-game-hud > :not(.pause-menu-navigation) { pointer-events: none; opacity: .5; }
+[data-paused='true'] .painted-game-hud > .pause-menu-navigation { pointer-events: auto; }
+@media (max-height: 550px) {
+  .pause-menu-shade { padding-top: 92px; padding-bottom: 12px; }
+  .pause-menu-paper { padding-top: 19px; padding-bottom: 28px; }
+  .pause-menu-hint { margin-bottom: 10px; }
+  .pause-menu .pause-menu-hint p { max-height: 24dvh; }
+}
+@media (forced-colors: active) {
+  .pause-menu-paper { background: Canvas; border: 2px solid CanvasText; border-radius: 16px; }
+  .pause-menu .pause-menu-hint h2, .pause-menu .pause-menu-hint p, .pause-menu-sound-row { color: CanvasText; }
+  button.pause-menu-restart, button.pause-menu-sound { border: 2px solid ButtonText; background: ButtonFace; color: ButtonText; }
+}

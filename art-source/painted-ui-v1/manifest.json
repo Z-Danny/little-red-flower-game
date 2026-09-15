@@ -1,0 +1,256 @@
+{
+  "version": 1,
+  "generation": "OpenAI built-in image_gen (gpt-image)",
+  "artworkEdits": "Imagegen only. Sharp only performs alpha bounding crop, proportional resize, and format compression.",
+  "assets": {
+    "hint": {
+      "originalSource": "/Users/danny/.codex/generated_images/01a0a2fb-7936-7ca3-b977-d5a07ef86420/exec-d988438b-b1c6-48fc-9bc5-75dc7ebb7b62.png",
+      "localSource": "art-source/painted-ui-v1/hint-source.png",
+      "sourceSha256": "9e02a2a7c7d52b4af2eadd45498c0b8fd7f4f5279f3999fd0bb6cea29317d931",
+      "originalSize": {
+        "width": 1254,
+        "height": 1254
+      },
+      "crop": {
+        "left": 243,
+        "top": 264,
+        "width": 767,
+        "height": 818
+      },
+      "outputSize": {
+        "width": 180,
+        "height": 192
+      },
+      "png": "public/ui/painted-v1/hint.png",
+      "webp": "public/ui/painted-v1/hint.webp",
+      "webpBytes": 17134,
+      "outputTransparentBorder": 3,
+      "pngBytes": 68714,
+      "pngSha256": "52a91d9c892ea37ad3f41e93c987c9717ee90a982b1c22a9cd5bf936893b986f",
+      "webpSha256": "a226dbf91fa29ee850cb834051123346f3636114767e20ccfb3728d7c6c3b08c",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255
+      }
+    },
+    "pause": {
+      "originalSource": "/Users/danny/.codex/generated_images/01a0a2fb-7936-7ca3-b977-d5a07ef86420/exec-f492cf57-3a59-4e8e-9065-a781b872396a.png",
+      "localSource": "art-source/painted-ui-v1/pause-source.png",
+      "sourceSha256": "c0c04902a780d361aaa2e7683ceb2a212a312d9f83fe13a9d54b5ae8d13f5506",
+      "originalSize": {
+        "width": 1254,
+        "height": 1254
+      },
+      "crop": {
+        "left": 341,
+        "top": 315,
+        "width": 676,
+        "height": 664
+      },
+      "outputSize": {
+        "width": 192,
+        "height": 189
+      },
+      "png": "public/ui/painted-v1/pause.png",
+      "webp": "public/ui/painted-v1/pause.webp",
+      "webpBytes": 16646,
+      "outputTransparentBorder": 3,
+      "pngBytes": 67676,
+      "pngSha256": "1421acd1abe68c0da0f0d166e8910252b8696e9f61d056d0ff573493dcb160c4",
+      "webpSha256": "22df2dce22dca006ad70845e89f5b9b518a5c7127e9ed16fb987f1dbd7f210c2",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255
+      }
+    },
+    "back": {
+      "originalSource": "/Users/danny/.codex/generated_images/01a0a2fb-7936-7ca3-b977-d5a07ef86420/exec-90855824-9388-483c-a1a7-bf12931c8809.png",
+      "localSource": "art-source/painted-ui-v1/back-source.png",
+      "sourceSha256": "160e13c9e031783de8cee21350cf0cf0a9845d9de04603ba72ddca8933d4db92",
+      "originalSize": {
+        "width": 1254,
+        "height": 1254
+      },
+      "crop": {
+        "left": 88,
+        "top": 270,
+        "width": 1109,
+        "height": 771
+      },
+      "outputSize": {
+        "width": 192,
+        "height": 135
+      },
+      "png": "public/ui/painted-v1/back.png",
+      "webp": "public/ui/painted-v1/back.webp",
+      "webpBytes": 11496,
+      "outputTransparentBorder": 3,
+      "pngBytes": 44245,
+      "pngSha256": "b4e2b1945de9e82e1cbe2dba12eaf76ef9bf5f0911e2c4a503bca7b307fdd22a",
+      "webpSha256": "c2286e81384e10fd6febd924c7081b0be6257acdcc48cc4429b20811b83bfc48",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255
+      }
+    },
+    "petal": {
+      "originalSource": "/Users/danny/.codex/generated_images/01a0a2fb-7936-7ca3-b977-d5a07ef86420/exec-2b7ce0f1-7c71-430e-8c65-a9626da5232a.png",
+      "localSource": "art-source/painted-ui-v1/petal-source.png",
+      "sourceSha256": "0a1060f72c3fb11c07a89dc8536a153d2893f2ea88cb85065df9e1bb224dcad5",
+      "originalSize": {
+        "width": 1254,
+        "height": 1254
+      },
+      "crop": {
+        "left": 256,
+        "top": 259,
+        "width": 745,
+        "height": 779
+      },
+      "outputSize": {
+        "width": 184,
+        "height": 192
+      },
+      "png": "public/ui/painted-v1/petal.png",
+      "webp": "public/ui/painted-v1/petal.webp",
+      "webpBytes": 12370,
+      "outputTransparentBorder": 3,
+      "pngBytes": 59167,
+      "pngSha256": "680551b8106844e1df65f0a3a022e7b1f0505ed193c7e8df702b66fc55e4d6be",
+      "webpSha256": "b66f53d7e84be948c25b4300fbb34947903eecd053740feac592e173391208ce",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255
+      }
+    },
+    "modal": {
+      "originalSource": "/Users/danny/.codex/generated_images/01a0a339-aadf-74b2-90dc-7b7e0e0ea48d/exec-25a3dd89-807d-4b09-9768-f25f66794229.png",
+      "localSource": "art-source/painted-ui-v1/modal-source.png",
+      "sourceSha256": "16d8d2e686882c4738150789984fa6eb577b9bbcc7ee0f36f226ad80b671731c",
+      "originalSize": {
+        "width": 1185,
+        "height": 1327
+      },
+      "crop": {
+        "left": 46,
+        "top": 175,
+        "width": 1112,
+        "height": 1014
+      },
+      "outputSize": {
+        "width": 960,
+        "height": 875
+      },
+      "png": "public/ui/painted-v1/modal.png",
+      "webp": "public/ui/painted-v1/modal.webp",
+      "webpBytes": 136630,
+      "pngBytes": 1387222,
+      "pngSha256": "1da09d24ef3d7792749940e6d7340f3528fb7ec21431fde5746ed9a471e9af30",
+      "webpSha256": "1a84fdeafdee54ca534c599e862a3a6bb952f5df54360ebf8b3bcfd783ce2ec0",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255
+      }
+    },
+    "timer-full": {
+      "originalSource": "/Users/danny/.codex/generated_images/01a0a339-aadf-74b2-90dc-7b7e0e0ea48d/exec-9e2bba45-af3e-4bd7-8690-7109c4c766d6.png",
+      "localSource": "art-source/painted-ui-v1/timer-full-source.png",
+      "sourceSha256": "e59140e3760655c3a56ea808e81ad1a5fafe3d2aa554892a40e6f60003247d6a",
+      "originalSize": {
+        "width": 2169,
+        "height": 725
+      },
+      "crop": {
+        "left": 40,
+        "top": 320,
+        "width": 2080,
+        "height": 116
+      },
+      "outputSize": {
+        "width": 1600,
+        "height": 89
+      },
+      "png": "public/ui/painted-v1/timer-full.png",
+      "webp": "public/ui/painted-v1/timer-full.webp",
+      "webpBytes": 40296,
+      "pngBytes": 257299,
+      "pngSha256": "6f9715afd7bb78768245d0c39d4353f0fa7aa385ae1e3591a86ce463ac02f5ea",
+      "webpSha256": "6ebd3615c6b539c6be635f70e9c11a7e2c8af3ee9ad25f7467e655caab1f12f7",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255
+      }
+    },
+    "timer-empty": {
+      "originalSource": "/Users/danny/.codex/generated_images/01a0a339-aadf-74b2-90dc-7b7e0e0ea48d/exec-c5c51fa2-e424-4063-b8f2-ab7777207bc9.png",
+      "localSource": "art-source/painted-ui-v1/timer-empty-source.png",
+      "sourceSha256": "5417bb1472c13b7f5239c1ee9fe14a899166fb26e0a97728c6b105512be194d4",
+      "originalSize": {
+        "width": 2169,
+        "height": 725
+      },
+      "crop": {
+        "left": 40,
+        "top": 320,
+        "width": 2080,
+        "height": 116
+      },
+      "outputSize": {
+        "width": 1600,
+        "height": 89
+      },
+      "png": "public/ui/painted-v1/timer-empty.png",
+      "webp": "public/ui/painted-v1/timer-empty.webp",
+      "webpBytes": 42086,
+      "pngBytes": 240862,
+      "pngSha256": "d63ce076e447341dd6193f4dab555a496f4ab621a2c08cdffe0a9938de5fdd82",
+      "webpSha256": "022bc5b719dba0a3d1988d167044120a19783abff93db13872b0e3a5f33b65a8",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255
+      }
+    }
+  },
+  "layout": {
+    "modal": {
+      "title": {
+        "left": 22,
+        "top": 5,
+        "width": 56,
+        "height": 15
+      },
+      "description": {
+        "left": 12,
+        "top": 28,
+        "width": 76,
+        "height": 27
+      },
+      "button": {
+        "left": 10.8,
+        "top": 63.7,
+        "width": 76.4,
+        "height": 18.3
+      }
+    },
+    "timer": {
+      "fillXStart": 3.9,
+      "fillXEnd": 96.1,
+      "trackCenterY": 55,
+      "fillSafeYStart": 34,
+      "fillSafeYEnd": 76,
+      "notes": "All values are percentages of the final cropped image. Empty is fixed frame. Full image is translated upward by 4.5% of bar height then clipped to x=3.9..96.1%, y=34..76%; dynamically clip the resulting fill by remaining ratio. Generated geometry drifts by ~4 source output px vertically (under 1 CSS px at 360px width), so do not swap or clip full frames.",
+      "fullLayerTranslateY": -4.5
+    },
+    "petal": {
+      "anchorX": 50,
+      "anchorY": 96
+    }
+  }
+}

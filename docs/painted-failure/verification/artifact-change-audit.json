@@ -1,0 +1,125 @@
+{
+  "reviewedAt": "2026-09-15T05:24:16.878Z",
+  "functionalStatus": "passed",
+  "artifactConsistencyStatus": "failed_due_to_concurrent_exports",
+  "exportSha256Chain": [
+    "dfcf85ba2eb884b7955373303d4bf1c00058196e44dfbd12e6218523629edba8",
+    "d5841e3d55ab088300e4439dc372f12cbc6b5f207d5ace043c4ad72c4a3c3eb7",
+    "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa"
+  ],
+  "matrix": {
+    "failureEntries": 14,
+    "viewportSamples": 56,
+    "unsafeExtraCase": 1,
+    "negativeChecks": 3,
+    "checksPassed": 18
+  },
+  "sourceAudit": [
+    {
+      "file": "components/game/painted-failure.tsx",
+      "expected": "f99e5cd77011f35982916e19e3b4ba1fdfc3d1953b6943d12c68383bd4403c17",
+      "actual": "f99e5cd77011f35982916e19e3b4ba1fdfc3d1953b6943d12c68383bd4403c17",
+      "unchanged": true
+    },
+    {
+      "file": "app/painted-failure.css",
+      "expected": "9d62e3ecc4946552670bffbe6433e416ae13d29ea58a23e5a52b51cd3d507f2e",
+      "actual": "9d62e3ecc4946552670bffbe6433e416ae13d29ea58a23e5a52b51cd3d507f2e",
+      "unchanged": true
+    },
+    {
+      "file": "components/game/scene-hunt/player.tsx",
+      "expected": "76b769713abb8e17bf5a362ddb02e60f51a395d91a7d9db4a740b4b36fb88a14",
+      "actual": "7f85911a2f5bc6797a1ce7920ba2f66d3fc0a9b1f2559b43debe1dfc9aaa4d69",
+      "unchanged": false
+    },
+    {
+      "file": "components/game/disaster/player.tsx",
+      "expected": "0ca10a5e3a6d7b405bff58e7e75acc4ff1935fa1122cd74bbea4641488cf1b2e",
+      "actual": "8b7d489aa9ff1841ad18885ba855e3edc8a2180adace83a3dc3ae137df7183f0",
+      "unchanged": false
+    },
+    {
+      "file": "components/game/configured/player.tsx",
+      "expected": "107748bc9c8a9e901474cc0a9d253fae8bd8cd6eb4ee20d8d78b7c264c7e66f8",
+      "actual": "e40eec6b515840e41cea73b031e76b79104ecad3e0cbb609d6358b6d34887f37",
+      "unchanged": false
+    },
+    {
+      "file": "components/game/configured/practice-player.tsx",
+      "expected": "dc5ec48c4318d3c0a4db73da399974ec641cdc41fcda1d6bf5cdff19763d25ec",
+      "actual": "b49971d7351f9df787d7454a40c6c7d92920e96b8a5b4906bec6cbe0650ce85c",
+      "unchanged": false
+    },
+    {
+      "file": "app/layout.tsx",
+      "expected": "5fb9b1e025aa7f66f6d475f68eb5aecfdb6c5e185d8661f85cf6de7d9fef5275",
+      "actual": "5fb9b1e025aa7f66f6d475f68eb5aecfdb6c5e185d8661f85cf6de7d9fef5275",
+      "unchanged": true
+    },
+    {
+      "file": "scripts/export-offline.mjs",
+      "expected": "5b930129fb56b84adef3f419971cdb947edb7860fa99c86e662645f3814ed386",
+      "actual": "5b930129fb56b84adef3f419971cdb947edb7860fa99c86e662645f3814ed386",
+      "unchanged": true
+    }
+  ],
+  "assetAudit": [
+    {
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/header.webp",
+      "expected": "ec23c644c95499baca6814da40a80227fc26eccdae9d4894ac4485e5bc96aeb5",
+      "actual": "ec23c644c95499baca6814da40a80227fc26eccdae9d4894ac4485e5bc96aeb5",
+      "unchanged": true
+    },
+    {
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/body.webp",
+      "expected": "1b29f2ac5f4ccba6b80b87c47728f09931427fca7a6d0c9dcbdb443ad0eaa2b7",
+      "actual": "1b29f2ac5f4ccba6b80b87c47728f09931427fca7a6d0c9dcbdb443ad0eaa2b7",
+      "unchanged": true
+    },
+    {
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/footer.webp",
+      "expected": "222eaf552d84bd1154ea5486cbb8885d103617ddc30f3349855b9cc1e12d7c3e",
+      "actual": "222eaf552d84bd1154ea5486cbb8885d103617ddc30f3349855b9cc1e12d7c3e",
+      "unchanged": true
+    },
+    {
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/button.webp",
+      "expected": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9",
+      "actual": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9",
+      "unchanged": true
+    },
+    {
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/secondary-button.webp",
+      "expected": "407cd98bf77b47ec91a324b8b1cb927bc0914b4ebac8104ba7ccc8c8f251799b",
+      "actual": "407cd98bf77b47ec91a324b8b1cb927bc0914b4ebac8104ba7ccc8c8f251799b",
+      "unchanged": true
+    }
+  ],
+  "workingTreeDrift": {
+    "unchangedSourceCount": 4,
+    "totalSourceCount": 8,
+    "changedFiles": [
+      "components/game/scene-hunt/player.tsx",
+      "components/game/disaster/player.tsx",
+      "components/game/configured/player.tsx",
+      "components/game/configured/practice-player.tsx"
+    ],
+    "explanation": "At the recorded audit time, parallel level-start edits were present in 4 player files: components/game/scene-hunt/player.tsx, components/game/disaster/player.tsx, components/game/configured/player.tsx, components/game/configured/practice-player.tsx. Earlier diff inspection identified LevelLaunchStatus/useLevelAutoStart, autoStart/loadAttempt/reload and begin/replay logic. This task did not edit or revert those changes. Failure component and CSS hashes remain unchanged. Later startup source edits are not claimed as browser-verified by this run."
+  },
+  "currentExport": {
+    "sha256": "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa",
+    "containsDataAutoStart": false,
+    "containsLaunchStatus": false
+  },
+  "attribution": "The full 14-entry matrix read the main HTML separately for each isolated context while a parallel map-music task exported new files. Per-case export hashes were not captured, so this matrix is not attributed wholly to the initial or final build. The final overall artifact-integrity assertion failed; all preceding functional checks passed.",
+  "latestArtifactSmoke": {
+    "report": "../latest-artifact-smoke/report.json",
+    "status": "passed",
+    "entries": 3,
+    "viewportSamples": 6,
+    "initialSha256": "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa",
+    "finalSha256": "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa",
+    "scope": "quake-bedroom-v2, typhoon-home and fire-shelter-practice rendering/dynamic text, 390/320 layout, Retry and Back on a stable latest HTML; controlled timer boundary for hunts, real door error clicks for practice."
+  }
+}

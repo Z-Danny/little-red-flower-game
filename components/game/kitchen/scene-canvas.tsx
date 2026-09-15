@@ -8,7 +8,7 @@ import { loadArt, type Art } from './asset-loader';
 import { render, type Drag } from './renderer';
 
 type Props = { run?: Run; preview?: boolean; drag?: Drag | null; selected?: ItemId | null;
-  canvasRef?: RefObject<HTMLCanvasElement | null>; artRef?: RefObject<Art | null>; onReady?: () => void;
+  canvasRef?: RefObject<HTMLCanvasElement | null>; artRef?: RefObject<Art | null>; onReady?: () => void; onError?: (error: string) => void; externalLoading?: boolean;
   onPointerDown?: PointerEventHandler<HTMLCanvasElement>; onPointerMove?: PointerEventHandler<HTMLCanvasElement>;
   onPointerUp?: PointerEventHandler<HTMLCanvasElement>; onPointerCancel?: PointerEventHandler<HTMLCanvasElement> };
 const initial = createRun();
@@ -22,8 +22,8 @@ export function KitchenCanvas(props: Props) {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     loadArt().then(art => {
       if (!alive || !canvasRef.current) return;
-      artRef.current = art; setReady(true); latest.current.onReady?.();
-      const canvas = canvasRef.current, ctx = canvas.getContext('2d'); if (!ctx) { setError('浏览器不支持 2D 绘图'); return; }
+      const canvas = canvasRef.current, ctx = canvas.getContext('2d'); if (!ctx) throw new Error('浏览器不支持 2D 绘图');
+      artRef.current = art;
       const resize = () => {
         const rect = canvas.getBoundingClientRect(), d = Math.min(2, window.devicePixelRatio || 1);
         canvas.width = Math.round(rect.width * d);
@@ -48,14 +48,15 @@ export function KitchenCanvas(props: Props) {
         render(ctx, art, run, { selected: p.selected ?? null, drag: p.drag ?? null, hover: p.drag ? pickZone(p.drag.point) : 'miss', clock: p.preview ? 0 : run.elapsed, reduced });
         if (!p.preview) frame = requestAnimationFrame(draw);
       }; draw();
+      setReady(true); latest.current.onReady?.();
       if (latest.current.preview) { observer.disconnect(); observer = new ResizeObserver(() => { resize(); draw(); }); observer.observe(canvas); }
-    }).catch((err: unknown) => { if (alive) setError(err instanceof Error ? err.message : '素材加载失败'); });
+    }).catch((err: unknown) => { if (alive) { const message = err instanceof Error ? err.message : '素材加载失败'; setError(message); latest.current.onError?.(message); } });
     return () => { alive = false; cancelAnimationFrame(frame); observer?.disconnect(); };
   }, [canvasRef, artRef, retry]);
   return <div className="kitchen-scene" data-scene="kitchen-v3">
     <canvas ref={canvasRef} data-game-canvas={props.preview ? undefined : ''} width={WORLD.width} height={WORLD.height} aria-label="厨房互动场景，可以拖动物品或轻点选取" {...{
       onPointerDown: props.onPointerDown, onPointerMove: props.onPointerMove, onPointerUp: props.onPointerUp, onPointerCancel: props.onPointerCancel,
     }} />
-    {!ready && <div className="scene-loading" role="status">{error ? <div>{error}<button type="button" onClick={() => { setError(''); setRetry(n => n + 1); }}>重新加载</button></div> : '厨房训练准备中…'}</div>}
+    {!ready && !props.externalLoading && <div className="scene-loading" role="status">{error ? <div>{error}<button type="button" onClick={() => { setError(''); setRetry(n => n + 1); }}>重新加载</button></div> : '厨房训练准备中…'}</div>}
   </div>;
 }

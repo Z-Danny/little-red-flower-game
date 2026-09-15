@@ -90,9 +90,10 @@ try{
   await page.waitForFunction(()=>document.querySelector('.hunt-player').dataset.phase==='failed',null,{timeout:16000});
   assert.equal(await bar.getAttribute('aria-valuenow'),'0');
   assert.equal(await elapsed(),50000);
-  await page.getByRole('heading',{name:'时间到了，再挑战一次吧',exact:true}).waitFor();
-  assert.match(await page.getByRole('dialog').innerText(),/还有 5 处隐患未找到/);
-  const box=await page.getByRole('dialog').boundingBox();assert.ok(box.x>=0&&box.y>=0&&box.x+box.width<=390&&box.y+box.height<=844);
+  await page.locator('[data-testid="failure-title"]').waitFor();
+  assert.equal(await page.locator('[data-testid="failure-title"]').innerText(),'怎么回事！');
+  assert.match(await page.locator('[data-testid="failure-reason"]').innerText(),/还有 5 处隐患未找到/);
+  const box=await page.locator('.painted-failure').boundingBox();assert.ok(box.x>=0&&box.y>=0&&box.x+box.width<=390&&box.y+box.height<=844);
   assert.equal(await page.evaluate(()=>localStorage.getItem('little-red-flower-leaderboard-v1')),savedBefore);
   await page.waitForTimeout(1400);assert.ok(await page.evaluate(()=>window.__rms()<.0001));
   assert.equal(await page.locator('canvas').getAttribute('data-audio-cue'),'timeout');
@@ -104,7 +105,7 @@ try{
   const shortSamples=await page.evaluate(()=>window.__buffers.filter(b=>!b.loop&&b.duration>=.45&&b.duration<=.85));
   assert.deepEqual(shortSamples,[]);
   check('Full 50 seconds: zero character cues and no scream sample sources started',{cueCount,shortSamples});
-  await page.getByRole('button',{name:'重新挑战',exact:true}).tap();
+  await page.locator('.painted-failure').getByRole('button',{name:'不服，再来！',exact:true}).tap();
   await page.waitForFunction(()=>document.querySelector('.hunt-player').dataset.phase==='playing'&&Number(document.querySelector('.hunt-player').dataset.elapsed)<2000);
   assert.equal(await page.locator('.hunt-player').getAttribute('data-found'),'');
   assert.equal(await tray.isVisible(),false);
@@ -124,7 +125,7 @@ try{
   await page.waitForFunction(()=>document.querySelector('.hunt-player')?.dataset.phase==='complete');
   const completeCount=await page.locator('canvas').getAttribute('data-character-count');await page.waitForTimeout(1400);assert.equal(await page.locator('canvas').getAttribute('data-character-count'),completeCount);
   await page.screenshot({path:path.join(out,'mobile-complete.png')});check('Five timely real pointer hits after retry; reward and no frightened sound on completion');
-  await page.getByRole('button',{name:/返回地图/}).click();await page.waitForFunction(n=>window.__audio.slice(n).every(c=>c.state==='closed'),mapContexts);check('Exit disposes native level AudioContext (map channel remains separate)');
+  await page.locator('[data-testid="settlement-primary"]').click();await page.waitForFunction(n=>window.__audio.slice(n).every(c=>c.state==='closed'),mapContexts);check('Exit disposes native level AudioContext (map channel remains separate)');
   await page.locator('[data-map-node="typhoon-home"]').click();await page.getByRole('button',{name:'再守护一次',exact:true}).click();await page.locator('.hunt-entry>button').waitFor();
   assert.equal(await page.locator('.hunt-player').getAttribute('data-found'),'');assert.equal(await bar.getAttribute('aria-valuenow'),'50');assert.equal(await tray.isVisible(),false);check('Replay resets 50s and hidden clues');
  } finally{await ctx.close();}

@@ -44,7 +44,7 @@ export function createLocalLeaderboard(options: Options): LeaderboardProvider {
         catch {
           // Never replace an unreadable/newer-version save with an empty leaderboard.
           sessionOnly = true;
-          notice = '本机排行榜存档暂时无法读取，原存档未被覆盖。本次使用临时榜，请保留浏览器数据。';
+          notice = '玩家存档暂时无法读取，原存档未被覆盖。本次记录暂存于页面，请保留浏览器数据。';
           memory ??= initial();
           return memory;
         }
@@ -56,7 +56,7 @@ export function createLocalLeaderboard(options: Options): LeaderboardProvider {
       return memory;
     } catch {
       sessionOnly = true;
-      notice = '浏览器不允许本地存档，本次使用临时榜。关闭页面后记录可能丢失。';
+      notice = '浏览器不允许保存存档，本次记录暂存于页面。关闭页面后可能丢失。';
       memory ??= initial();
       return memory;
     }
@@ -67,6 +67,7 @@ export function createLocalLeaderboard(options: Options): LeaderboardProvider {
     return {
       scope: 'local', current: { ...current, completed: sanitizeScores(current.completed, options.caps) },
       entries: rankPlayers(state.players, options.caps),
+      progressByPlayer: Object.fromEntries(state.players.map(player => [player.id, sanitizeScores(player.completed, options.caps)])),
       maxFlowers: Object.values(options.caps).reduce((sum, cap) => sum + cap, 0),
       persistence: sessionOnly ? 'session' : 'saved', notice,
     };
@@ -84,7 +85,7 @@ export function createLocalLeaderboard(options: Options): LeaderboardProvider {
     async createPlayer(input: ProfileInput) {
       const profile = validateProfile(input);
       return mutate(state => {
-        if (state.players.length >= MAX_PLAYERS) throw new Error(`本机最多保存 ${MAX_PLAYERS} 位玩家。`);
+        if (state.players.length >= MAX_PLAYERS) throw new Error(`最多保存 ${MAX_PLAYERS} 位玩家。`);
         const id = options.id();
         if (state.players.some(player => player.id === id)) throw new Error('创建失败，请重试。');
         return { ...state, activePlayerId: id, players: [...state.players, { ...profile, id, createdAt: now(), completed: {} }] };

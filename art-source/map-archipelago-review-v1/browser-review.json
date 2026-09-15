@@ -1,0 +1,91 @@
+{
+  "file": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/review.html",
+  "sha256": "f1e5870353baab6a4336d7e64af422f46914160ac984ac2e28e3fad33edf44c8",
+  "status": "passed",
+  "imagesLoaded": true,
+  "errors": [],
+  "externalRequests": [],
+  "viewports": [
+    {
+      "width": 390,
+      "horizontalOverflow": false,
+      "titles": [
+        {
+          "text": "自然灾害",
+          "lines": 1,
+          "whiteSpace": "nowrap",
+          "fitsLabel": true
+        },
+        {
+          "text": "公共安全",
+          "lines": 1,
+          "whiteSpace": "nowrap",
+          "fitsLabel": true
+        },
+        {
+          "text": "居家校园办公",
+          "lines": 1,
+          "whiteSpace": "nowrap",
+          "fitsLabel": true
+        }
+      ]
+    },
+    {
+      "width": 320,
+      "horizontalOverflow": false,
+      "titles": [
+        {
+          "text": "自然灾害",
+          "lines": 1,
+          "whiteSpace": "nowrap",
+          "fitsLabel": true
+        },
+        {
+          "text": "公共安全",
+          "lines": 1,
+          "whiteSpace": "nowrap",
+          "fitsLabel": true
+        },
+        {
+          "text": "居家校园办公",
+          "lines": 1,
+          "whiteSpace": "nowrap",
+          "fitsLabel": true
+        }
+      ]
+    }
+  ],
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "browserClosed": true,
+  "browser": "152.0.7977.83",
+  "imageCount": 18,
+  "assetSurface": [
+    {
+      "contained": true
+    },
+    {
+      "contained": true
+    },
+    {
+      "contained": true
+    },
+    {
+      "contained": true
+    },
+    {
+      "contained": true
+    },
+    {
+      "contained": true
+    },
+    {
+      "contained": true
+    }
+  ],
+  "finalVisualAdjustment": "Current flag moved into public-island grass; final HTML reloaded offline and all screenshots refreshed.",
+  "combinedPreview": {
+    "width": 1200,
+    "path": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/screenshots/combined-preview.png"
+  }
+}

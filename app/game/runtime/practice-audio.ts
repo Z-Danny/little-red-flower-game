@@ -1,12 +1,17 @@
 import { hasAll } from './engine';
+import { takeLevelAudioContext } from '../level-audio-context';
 import { presentationFrame, presentationPressure, unit } from './presentation';
 import type { LevelPackage, Run } from './schema';
 import { emergencySound } from './emergency-sound';
 import { floodAmbientMix, floodSound, synthesiseFloodLoop, usesFloodWindowProfile } from './flood-sound';
+import { connectSfxPeakLimit, normaliseSfx } from '../audio/sfx-levels';
+import { approvedSoundSamples, type ApprovedSound } from '../audio/result-samples';
 
 export type PracticeAudioSettings = { music: number; ambient: number; sfx: number; muted: boolean };
 export const defaultPracticeAudioSettings: PracticeAudioSettings = { music: .12, ambient: .18, sfx: .22, muted: false };
 export type PracticeAudioStatus = { state: string; loops: number; sfx: number; played: number; lastCue: string; rms: number };
+/** Audio-only adaptation; existing practice themes keep their original score. */
+export type PracticeAudioOptions = { music?: (sampleRate: number) => Float32Array; suspendWhenMuted?: boolean; referenceSfx?: number };
 type Theme = NonNullable<NonNullable<LevelPackage['skin']['presentation']>['audio']>['theme'];
 type Cue = { id: string; event: string };
 const themes: Record<Theme, { bpm: number; notes: number[]; cutoff: number; hum: number }> = {
@@ -52,6 +57,20 @@ export function synthesiseCue(id: string, sampleRate = 22050): Float32Array {
   mean /= frames;
   for (let i = 0; i < frames; i++) data[i] = Math.max(-.7, Math.min(.7, data[i] - mean));
   return data;
+}
+const characterCue = (id: string) => /nonverbal|heartbeat|breath|gasp|fear-|relief/.test(id);
+// Native compressor makeup gain is measured in scripts/measure-sfx-levels.mjs.
+export const practiceSfxCalibrationGain = .7;
+export function practiceSfxTarget(id: string): number {
+  if (/complete|success|finish|rescue-arrival/.test(id)) return .09;
+  if (/danger|warning|error|wrong|impact|alarm/.test(id)) return .085;
+  if (/pickup|bounce|return|goal|soft-tap|waiting|settle|scene-ready/.test(id)) return .065;
+  return .08;
+}
+/** Character recipes and all continuous beds retain their authored gains. */
+export function practiceSfxSamples(id: string, sampleRate = 22050): Float32Array {
+  const samples = synthesiseCue(id, sampleRate);
+  return characterCue(id) ? samples : normaliseSfx(samples, { targetRms: practiceSfxTarget(id), sampleRate });
 }
 export class PracticeCueTimeline {
   private started = false;
@@ -112,6 +131,12 @@ export class PracticeAudioSession {
   private context: AudioContext | null = null;
   private master: GainNode | null = null;
   private analyser: AnalyserNode | null = null;
+  private peakLimit: WaveShaperNode | null = null;
+  private resultGain: GainNode | null = null;
+  private resultSeen = false;
+  private resultPlaying = false;
+  private resultTimer: ReturnType<typeof setTimeout> | null = null;
+  private awaitingReplayFrame = false;
   private buses = new Map<'music' | 'ambient' | 'sfx', GainNode>();
   private loops: Playing[] = [];
   private oneShots = new Set<Playing>();
@@ -128,7 +153,7 @@ export class PracticeAudioSession {
   private played = 0;
   private lastCue = '';
   private resuming: Promise<void> | null = null;
-  constructor(private readonly pack: LevelPackage, private readonly makeContext: () => AudioContext = () => new AudioContext()) { this.timeline = new PracticeCueTimeline(pack); }
+  constructor(private readonly pack: LevelPackage, private readonly makeContext: () => AudioContext = takeLevelAudioContext, private readonly options: PracticeAudioOptions = {}) { this.timeline = new PracticeCueTimeline(pack); }
   private ramp(param: AudioParam, value: number, seconds = .08) {
     const t = this.context?.currentTime ?? 0; param.cancelScheduledValues(t); param.setTargetAtTime(value, t, seconds);
   }
@@ -143,15 +168,15 @@ export class PracticeAudioSession {
     source.start(); return sound;
   }
   private buildLoops(theme: Theme) {
-    const c = this.context!, profile = themes[theme], sr = 22050, duration = 8 * 60 / profile.bpm, music = new Float32Array(Math.ceil(duration * sr));
-    for (let beat = 0; beat < 8; beat++) {
+    const c = this.context!, profile = themes[theme], sr = 22050, duration = 8 * 60 / profile.bpm, music = this.options.music?.(sr) ?? new Float32Array(Math.ceil(duration * sr));
+    for (let beat = 0; !this.options.music && beat < 8; beat++) {
       const start = Math.floor(beat * 60 / profile.bpm * sr), f = profile.notes[beat % profile.notes.length];
       for (let i = 0; i < Math.min(sr, music.length - start); i++) {
         const t = i / sr, env = Math.min(1, t / .015) * Math.exp(-t * 6);
         music[start + i] += (Math.sin(t * f * Math.PI * 2) + Math.sin(t * f * Math.PI * 4) * .2) * env * .22;
       }
     }
-    for (let i = 0; i < Math.min(440, music.length); i++) music[music.length - 1 - i] *= i / 440;
+    if (!this.options.music) for (let i = 0; i < Math.min(440, music.length); i++) music[music.length - 1 - i] *= i / 440;
     const musicSource = c.createBufferSource(); musicSource.buffer = this.buffer(music); musicSource.loop = true; this.start(musicSource, this.buses.get('music')!, 1, true);
     if (usesFloodWindowProfile(this.pack.skin.presentation?.audio?.ambientProfile)) {
       const flood = c.createGain(), rain = c.createGain();
@@ -175,14 +200,16 @@ export class PracticeAudioSession {
     if (profile.hum) { const hum = c.createOscillator(); hum.type = 'sine'; hum.frequency.value = profile.hum; this.start(hum, this.ambientLevel, .024, true); }
   }
   async unlock() {
-    if (this.disposed || !this.pack.skin.presentation?.audio) return;
+    if (this.disposed || !this.pack.skin.presentation?.audio || this.options.suspendWhenMuted && this.settings.muted) return;
     try {
       if (!this.context) {
         this.context = this.makeContext(); const c = this.context;
         this.master = c.createGain(); this.master.gain.value = 0;
         const limiter = c.createDynamicsCompressor(); limiter.threshold.value = -15; limiter.knee.value = 8; limiter.ratio.value = 8; limiter.attack.value = .004; limiter.release.value = .16;
         this.analyser = c.createAnalyser(); this.analyser.fftSize = 256;
-        this.master.connect(limiter); limiter.connect(this.analyser); this.analyser.connect(c.destination);
+        this.master.connect(limiter); this.peakLimit = connectSfxPeakLimit(c, limiter, this.analyser); this.analyser.connect(c.destination);
+        this.resultGain = c.createGain(); this.resultGain.gain.value = 0;
+        this.resultGain.connect(this.peakLimit ?? this.analyser);
         for (const key of ['music','ambient','sfx'] as const) { const bus = c.createGain(); bus.gain.value = 0; bus.connect(this.master); this.buses.set(key, bus); }
         this.buildLoops(this.pack.skin.presentation.audio.theme);
       }
@@ -193,7 +220,20 @@ export class PracticeAudioSession {
   update(run: Run, active: boolean) {
     if (this.disposed) return;
     this.run = run; this.active = active;
-    const canPlay = active && !this.hidden;
+    const terminal = run.phase === 'complete' || run.phase === 'failed';
+    if (!terminal) this.awaitingReplayFrame = false;
+    if (terminal && !this.resultSeen && !this.awaitingReplayFrame) {
+      this.resultSeen = true; this.timeline.advance(run); this.stopOneShots();
+      if (!run.escaped && active && !this.hidden && !this.settings.muted && this.settings.sfx > 0 && this.context?.state === 'running') {
+        this.resultPlaying = true;
+        this.playResult(run.phase === 'failed' ? 'failure' : 'victory');
+        this.resultTimer = setTimeout(() => { this.cancelResult(); if (this.run) this.update(this.run, this.active); }, 1400);
+      }
+    }
+    if (!active || this.hidden || this.settings.muted || this.settings.sfx <= 0) this.cancelResult();
+    const canPlay = active && !this.hidden && !(this.options.suspendWhenMuted && this.settings.muted) && (!terminal || this.resultPlaying);
+    // Consume muted events so unmuting never replays old interactions in a burst.
+    if (!terminal && active && !this.hidden && this.options.suspendWhenMuted && this.settings.muted) this.timeline.advance(run);
     if (this.context) {
       if (!canPlay) { this.stopOneShots(); if (this.context.state === 'running') void this.context.suspend().catch(() => undefined); }
       else if (this.context.state === 'suspended' && !this.resuming) {
@@ -201,19 +241,23 @@ export class PracticeAudioSession {
           this.resuming = null; if (!this.disposed && this.run) this.update(this.run, this.active);
         }).catch(() => { this.resuming = null; });
       }
-      if (canPlay && this.context.state === 'running') for (const cue of this.timeline.advance(run)) this.play(cue.id);
+      if (canPlay && !terminal && this.context.state === 'running') for (const cue of this.timeline.advance(run)) this.play(cue.id);
     }
     this.mix();
   }
   setSettings(settings: PracticeAudioSettings) {
     this.settings = { music: unit(settings.music), ambient: unit(settings.ambient), sfx: unit(settings.sfx), muted: !!settings.muted };
-    if (this.settings.muted) this.stopOneShots(); this.mix();
+    if (this.settings.muted) this.stopOneShots();
+    if (this.resultPlaying && (this.settings.muted || this.settings.sfx <= 0)) this.cancelResult();
+    if ((this.options.suspendWhenMuted || this.resultSeen) && this.run) this.update(this.run, this.active); else this.mix();
   }
   setHidden(hidden: boolean) { this.hidden = hidden; if (this.run) this.update(this.run, this.active); }
   private mix() {
     if (!this.context || !this.master) return;
+    const terminal = this.run?.phase === 'complete' || this.run?.phase === 'failed';
     const audible = this.active && !this.hidden && !this.settings.muted;
-    this.ramp(this.master.gain, audible ? (this.pack.skin.presentation?.audio?.emergency?.alarm ? .65 : .35) : 0, .025);
+    this.ramp(this.master.gain, audible && !terminal ? (this.pack.skin.presentation?.audio?.emergency?.alarm ? .65 : .35) : 0, .025);
+    if (this.resultGain) this.ramp(this.resultGain.gain, audible && this.resultPlaying ? this.settings.sfx / Math.max(.01, this.options.referenceSfx ?? defaultPracticeAudioSettings.sfx) : 0, .008);
     const calm = !!this.run && (!!this.pack.skin.presentation?.audio?.calmWhen?.length && hasAll(this.run.resolved, this.pack.skin.presentation.audio.calmWhen) || this.run.phase !== 'playing');
     const pressure = this.run ? presentationPressure(this.pack, this.run) : 0;
     if (this.floodLevels) {
@@ -221,8 +265,7 @@ export class PracticeAudioSession {
       this.ramp(this.floodLevels.flood.gain, levels.flood, .3);
       this.ramp(this.floodLevels.rain.gain, levels.rain, .22);
     }
-    const terminalEmergency=!!this.pack.skin.presentation?.audio?.emergency && (this.run?.phase==='failed'||this.run?.phase==='complete');
-    for (const [key, bus] of this.buses) this.ramp(bus.gain, (terminalEmergency&&key!=='sfx'?0:this.settings[key]) * (key === 'music' ? (this.oneShots.size ? .45 : 1) * (calm ? .5 : .7 + pressure * .3) : 1));
+    for (const [key, bus] of this.buses) this.ramp(bus.gain, (terminal ? 0 : this.settings[key]) * (key === 'music' ? (this.oneShots.size ? .45 : 1) * (calm ? .5 : .7 + pressure * .3) : 1), key === 'sfx' ? .008 : .08);
     const theme = this.pack.skin.presentation?.audio?.theme;
     const frames = this.run ? presentationFrame(this.pack, this.run) : [];
     const relevant = (frame: { kind: string }) => theme === 'electric' ? frame.kind === 'machine' : theme === 'water' || theme === 'flood' ? frame.kind === 'water' || frame.kind === 'rain' : theme === 'quake' || theme === 'collapse' ? frame.kind === 'dust' : theme === 'fire' ? frame.kind === 'smoke' || frame.kind === 'glow' : false;
@@ -232,18 +275,35 @@ export class PracticeAudioSession {
   }
   play(id: string) {
     const c = this.context;
-    if (!c || c.state !== 'running' || this.disposed || !this.active || this.hidden || this.settings.muted) return;
+    if (!c || c.state !== 'running' || this.disposed || !this.active || this.hidden || this.settings.muted || this.run?.phase === 'complete' || this.run?.phase === 'failed') return;
     if (/(?:voice|speech|tts|narrat)/i.test(id)) return;
     while (this.oneShots.size >= 5) this.stop(this.oneShots.values().next().value!);
     let buffer = this.cueBuffers.get(id);
-    if (!buffer) { buffer = this.buffer(synthesiseCue(id)); if (this.cueBuffers.size >= 96) this.cueBuffers.delete(this.cueBuffers.keys().next().value!); this.cueBuffers.set(id, buffer); }
-    const source = c.createBufferSource(); source.buffer = buffer; this.start(source, this.buses.get('sfx')!, 1, false);
+    if (!buffer) { buffer = this.buffer(practiceSfxSamples(id)); if (this.cueBuffers.size >= 96) this.cueBuffers.delete(this.cueBuffers.keys().next().value!); this.cueBuffers.set(id, buffer); }
+    const masterLevel = this.pack.skin.presentation?.audio?.emergency?.alarm ? .65 : .35;
+    const reference = this.options.referenceSfx ?? defaultPracticeAudioSettings.sfx;
+    const calibratedGain = characterCue(id) ? 1 : practiceSfxCalibrationGain / (masterLevel * Math.max(.01, reference));
+    const source = c.createBufferSource(); source.buffer = buffer; this.start(source, this.buses.get('sfx')!, calibratedGain, false);
     this.lastCue = id; this.played++; this.mix();
+  }
+  private playResult(kind: Exclude<ApprovedSound, 'button'>) {
+    const c = this.context; if (!c || !this.resultGain) return;
+    const key = `approved:${kind}`;
+    let buffer = this.cueBuffers.get(key);
+    if (!buffer) { buffer = this.buffer(approvedSoundSamples(kind), 44100); this.cueBuffers.set(key, buffer); }
+    const source = c.createBufferSource(); source.buffer = buffer;
+    this.mix(); this.start(source, this.resultGain, 1, false);
+    this.lastCue = kind; this.played++;
+  }
+  private cancelResult() {
+    if (this.resultTimer) clearTimeout(this.resultTimer); this.resultTimer = null;
+    if (!this.resultPlaying) return;
+    this.resultPlaying = false; this.stopOneShots();
   }
   pickup() { const t = this.context?.currentTime ?? 0; if (t - this.lastPickup >= .12) { this.lastPickup = t; this.play(this.pack.skin.presentation?.audio?.cues.pickup ?? 'object-pickup'); } }
   private stop(sound: Playing) { sound.source.onended = null; try { sound.source.stop(); } catch {} sound.source.disconnect(); sound.gain.disconnect(); this.oneShots.delete(sound); }
   private stopOneShots() { for (const sound of [...this.oneShots]) this.stop(sound); }
-  reset() { this.stopOneShots(); this.timeline.reset(); this.lastPickup = -Infinity; this.lastCue = ''; this.played = 0; }
+  reset() { this.cancelResult(); this.resultSeen = false; this.awaitingReplayFrame = true; this.stopOneShots(); this.timeline.reset(); this.lastPickup = -Infinity; this.lastCue = ''; this.played = 0; }
   status(): PracticeAudioStatus {
     const data = new Float32Array(256);
     if (this.analyser && this.context?.state === 'running' && this.active && !this.hidden && !this.settings.muted) this.analyser.getFloatTimeDomainData(data);
@@ -251,11 +311,11 @@ export class PracticeAudioSession {
       rms: Math.sqrt(data.reduce((sum, n) => sum + n * n, 0) / data.length) };
   }
   dispose() {
-    if (this.disposed) return; this.disposed = true; this.stopOneShots();
+    if (this.disposed) return; this.disposed = true; this.cancelResult(); this.stopOneShots();
     for (const loop of this.loops) this.stop(loop); this.loops = [];
     this.cueBuffers.clear(); this.ambientLevel?.disconnect();
     this.floodLevels?.flood.disconnect(); this.floodLevels?.rain.disconnect(); this.floodLevels = null;
-    for (const bus of this.buses.values()) bus.disconnect(); this.buses.clear(); this.master?.disconnect(); this.analyser?.disconnect();
+    for (const bus of this.buses.values()) bus.disconnect(); this.buses.clear(); this.master?.disconnect(); this.analyser?.disconnect(); this.resultGain?.disconnect(); this.resultGain = null; this.peakLimit?.disconnect(); this.peakLimit = null;
     if (this.context) void this.context.close().catch(() => undefined); this.context = null;
   }
 }

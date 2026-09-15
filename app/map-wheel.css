@@ -1,0 +1,242 @@
+/* Shared map navigation: three illustrated corner controls and a quarter-circle island entrance. */
+.garden-shell {
+  --map-fan-closed: 112px;
+}
+
+.map-corner-tools {
+  position: absolute;
+  z-index: 12;
+  top: calc(6px + env(safe-area-inset-top));
+  right: calc(10px + env(safe-area-inset-right));
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Quiet the scrolling scenery with a feathered color adjustment, without a panel. */
+.map-corner-tools::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: -28px -36px -34px -40px;
+  pointer-events: none;
+  -webkit-backdrop-filter: saturate(0.8) contrast(0.9) brightness(1.07);
+  backdrop-filter: saturate(0.8) contrast(0.9) brightness(1.07);
+  -webkit-mask-image: radial-gradient(
+    ellipse farthest-side at 60% 38%,
+    #000 12%,
+    #000b 44%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse farthest-side at 60% 38%,
+    #000 12%,
+    #000b 44%,
+    transparent 100%
+  );
+}
+
+.map-corner-filters {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.garden-shell button.map-corner-button {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: #294f3f;
+  background: transparent;
+  box-shadow: none;
+  touch-action: manipulation;
+}
+
+.map-corner-button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: url(#map-corner-cream-outline);
+  pointer-events: none;
+  user-select: none;
+}
+
+.map-corner-wallet {
+  --map-wallet-count-x: 49.2%;
+  --map-wallet-count-y: 50%;
+}
+
+.garden-shell .map-corner-wallet strong {
+  position: absolute;
+  left: var(--map-wallet-count-x);
+  top: var(--map-wallet-count-y);
+  transform: translate(-50%, -50%);
+  color: #2f5144;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.garden-shell .map-corner-wallet strong[data-wallet-digits='2'] {
+  font-size: 14px;
+}
+
+.garden-shell .map-corner-wallet strong[data-wallet-digits='3'] {
+  font-size: 12px;
+}
+
+/* Collision measurements use the final label position, never an animation frame. */
+.garden-node[data-hud-avoiding='true'] .garden-node-label {
+  transition: none;
+}
+
+.map-fan {
+  position: absolute;
+  z-index: 13;
+  left: env(safe-area-inset-left);
+  bottom: env(safe-area-inset-bottom);
+  width: var(--map-fan-closed);
+  height: var(--map-fan-closed);
+  clip-path: circle(100% at 0 100%);
+  color: #294f3f;
+  pointer-events: none;
+}
+.garden-shell .map-fan-toggle {
+  position: absolute;
+  inset: 0;
+  width: var(--map-fan-closed);
+  height: var(--map-fan-closed);
+  clip-path: circle(100% at 0 100%);
+  border-radius: 0 100% 0 0;
+  background: linear-gradient(135deg, #fffdf1, #f5efda 65%, #e8dfbf);
+  box-shadow:
+    inset -2px 2px 0 #fffcf0,
+    inset -6px 6px 0 #ded6b9;
+  border: 0;
+  border-top: 2px solid #cabd98;
+  border-right: 2px solid #cabd98;
+  padding: 0;
+  color: inherit;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+.map-fan-current-art {
+  position: absolute;
+  left: 14px;
+  bottom: 33px;
+  width: 64px;
+  height: 59px;
+  object-fit: contain;
+  pointer-events: none;
+}
+.map-fan-name {
+  position: absolute;
+  left: 2px;
+  bottom: 14px;
+  width: 88px;
+  color: #294f3f;
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.5;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.map-fan button:focus-visible,
+.map-corner-tools button:focus-visible,
+.map-home-button:focus-visible {
+  outline: 3px solid #436e56;
+  outline-offset: -4px;
+}
+
+.map-fan button:active:not(:disabled),
+.map-corner-tools button:active:not(:disabled),
+.map-home-button:active:not(:disabled) {
+  filter: brightness(0.95);
+}
+
+.map-fan button:disabled,
+.map-home-button:disabled {
+  opacity: 0.55;
+}
+
+/* The map fills the game frame again; safe areas have no navigation strip. */
+.garden-shell .journey-map-layer > .garden-scroll {
+  top: env(safe-area-inset-top);
+  padding-top: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  scroll-padding-top: 100px;
+  scroll-padding-bottom: calc(
+    var(--map-fan-closed) + 16px + env(safe-area-inset-bottom)
+  );
+}
+
+.garden-shell .journey-map-layer > .garden-guide {
+  bottom: calc(var(--map-fan-closed) + 16px + env(safe-area-inset-bottom));
+}
+
+.garden-archive-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+.garden-dialog .garden-archive-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 44px;
+  border: 1px solid #d6dfcb;
+  border-radius: 13px;
+  padding: 8px;
+  background: #edf1e4;
+  color: #46664e;
+  font-size: 13px;
+}
+.garden-archive-actions svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.garden-archive-actions .garden-music-toggle {
+  grid-column: 1 / -1;
+}
+.garden-dialog .garden-archive-actions button:disabled {
+  opacity: 0.5;
+}
+
+.garden-settings-actions {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.garden-settings .garden-reset:disabled {
+  opacity: 0.5;
+}
+
+/* Keep the map mounted and its scroll position intact while visiting the islands. */
+.journey-map-layer {
+  position: absolute;
+  inset: 0;
+}
+.garden-shell[data-archipelago-open='true'] > .journey-map-layer {
+  visibility: hidden;
+  pointer-events: none;
+}
+.journey-map-layer[inert] *,
+.journey-map-layer[inert] *::before,
+.journey-map-layer[inert] *::after {
+  animation-play-state: paused !important;
+}

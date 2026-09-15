@@ -1,5 +1,9 @@
 /** Procedural music/SFX + licensed CC0 nonverbal startles. No TTS or network. */
+import { synthesiseHuntFeedback, type HuntFeedback } from './feedback-score';
+import { connectSfxPeakLimit } from '../audio/sfx-levels';
+import { approvedSoundDuration } from '../audio/result-samples';
 import { fearSamples } from './nonverbal';
+import { takeLevelAudioContext } from '../level-audio-context';
 import {sparkFrame, type ElectricSpark} from './electric';
 import { fearMoment, type FearKind } from './tension';
 import {
@@ -30,8 +34,12 @@ export class HuntSound {
   private master: GainNode | null = null;
   private bed: GainNode | null = null;
   private fx: GainNode | null = null;
+  private feedbackBus: GainNode | null = null;
+  private feedbackBuffers = new Map<HuntFeedback, AudioBuffer>();
+  private feedbackSources = new Set<AudioBufferSourceNode>();
   private musicBus: GainNode | null = null;
   private analyser: AnalyserNode | null = null;
+  private peakLimit: WaveShaperNode | null = null;
   private wind: GainNode | null = null;
   private rain: GainNode | null = null;
   private windFilter: BiquadFilterNode | null = null;
@@ -57,7 +65,7 @@ export class HuntSound {
   private lastFearSlot = -1;
   private duckUntil = 0;
   private characterEnabled = true;
-  private failureUntil = 0;
+  private terminalUntil = 0;
   lastCharacterCue = '';
   characterCueCount = 0;
   sparkCueCount = 0;
@@ -76,7 +84,7 @@ export class HuntSound {
     if (this.disposed) return;
     try {
       if (!this.ctx) {
-        this.ctx = new AudioContext();
+        this.ctx = takeLevelAudioContext();
         const c = this.ctx;
         this.master = c.createGain();
         this.master.gain.value = 0;
@@ -87,11 +95,16 @@ export class HuntSound {
         compressor.release.value = 0.25;
         this.analyser = c.createAnalyser();
         this.analyser.fftSize = 256;
+        const output = c.createGain();
         this.master.connect(compressor);
-        compressor.connect(this.analyser);
+        compressor.connect(output);
+        this.peakLimit = connectSfxPeakLimit(c, output, this.analyser);
         this.analyser.connect(c.destination);
         this.bed = c.createGain();
         this.fx = c.createGain();
+        this.feedbackBus = c.createGain();
+        this.feedbackBus.gain.value = 0;
+        this.feedbackBus.connect(output);
         this.musicBus = c.createGain();
         this.fearBus = c.createGain();
         this.fearBus.connect(this.master);
@@ -116,6 +129,7 @@ export class HuntSound {
     sparksActive = !resolved,
   ) {
     this.sceneActive = active;
+    if (!active) this.stopFeedback();
     this.sparksActive = sparksActive;
     this.p = Math.max(0, Math.min(1, p));
     this.resolved = resolved;
@@ -125,12 +139,12 @@ export class HuntSound {
   }
   setHidden(hidden: boolean) {
     this.hidden = hidden;
-    if (hidden) this.stopFear();
+    if (hidden) { this.stopFear(); this.stopFeedback(); }
     this.apply();
   }
   setMuted(v: boolean) {
     this.muted = v;
-    if (v) this.stopFear();
+    if (v) { this.stopFear(); this.stopFeedback(); }
     this.apply();
   }
   setMusic(v: boolean) {
@@ -144,7 +158,8 @@ export class HuntSound {
   reset() {
     this.stopFear();
     this.stopOneShots();
-    this.failureUntil = 0;
+    this.feedbackSources.clear();
+    this.terminalUntil = 0;
     this.sceneActive = false;
     this.apply();
     this.tick = 0;
@@ -161,15 +176,30 @@ export class HuntSound {
   }
   /** One brief terminal cue; then silence, never an endless storm in the failure modal. */
   fail() {
+    this.playTerminal('timeout');
+  }
+  finish() {
+    this.playTerminal('success');
+  }
+  private playTerminal(cue: 'timeout' | 'success') {
     this.stopFear();
     this.stopOneShots();
+    this.stopFeedback();
     this.sceneActive = false;
     const c = this.ctx;
-    this.lastCue = 'timeout';
+    this.lastCue = cue;
     if (!c || c.state !== 'running' || this.muted || this.hidden) { this.apply(); return; }
-    this.failureUntil = c.currentTime + .85;
+    this.terminalUntil = c.currentTime + Math.max(1.3, approvedSoundDuration(cue === 'success' ? 'victory' : 'failure') + .1);
     this.apply();
-    [293.66, 220, 146.83].forEach((f, i) => this.tone(f, c.currentTime + i * .15, .3, .08, 'triangle'));
+    this.playFeedback(cue);
+  }
+  private stopFeedback() {
+    for (const source of this.feedbackSources) {
+      source.onended = null;
+      try { source.stop(); } catch {}
+      source.disconnect(); this.live.delete(source);
+    }
+    this.feedbackSources.clear();
   }
   private stopOneShots() {
     for (const node of [...this.live]) {
@@ -180,8 +210,9 @@ export class HuntSound {
   private apply() {
     const c = this.ctx;
     if (!c || !this.master || !this.bed) return;
-    const terminalCue = c.currentTime < this.failureUntil;
+    const terminalCue = c.currentTime < this.terminalUntil;
     const active = (this.sceneActive || terminalCue) && !this.hidden && !this.muted;
+    this.feedbackBus?.gain.setTargetAtTime(active ? 1 : 0, c.currentTime, .008);
     this.bed.gain.setTargetAtTime(this.sceneActive ? 1 : 0, c.currentTime, .025);
     this.master.gain.setTargetAtTime(
       active
@@ -369,69 +400,46 @@ export class HuntSound {
       return;
     this.lastCue = cue;
     const t = c.currentTime;
-    if (this.performance) {
-      const a = performanceAudio[this.performance.sound];
-      if (cue === 'tap') this.burst(t, 0.8, 0.022, 1800);
-      if (cue === 'found') this.tone(783.991, t, 0.09, 0.07, 'triangle', 690);
-      if (cue === 'wrong') {
-        this.tone(246.94, t, 0.075, 0.045, 'triangle', 220);
-        this.tone(196, t + 0.085, 0.075, 0.04, 'triangle', 174.61);
-      }
-      if (cue === 'resolve')
-        a.ending.forEach((f, i) =>
-          this.tone(f, t + i * 0.24, a.tail, 0.055, 'sine', undefined, this.fx),
-        );
-      if (cue === 'success')
-        a.ending.forEach((f, i) =>
-          this.tone(f * 1.5, t + i * 0.18, 0.28, 0.055, 'sine'),
-        );
-      if (cue === 'thunder' && this.performance.atmosphere === 'thunder')
-        this.softThunder(t);
+    if (cue !== 'thunder') {
+      this.playFeedback(cue);
       return;
     }
-    if (this.profile === 'quiet_electric') {
-      if (cue === 'tap') this.burst(t, quiet.markMs / 1000, 0.022, 1800);
-      if (cue === 'found')
-        this.tone(783.991, t, quiet.foundMs / 1000, 0.065, 'triangle', 690);
-      if (cue === 'wrong')
-        this.tone(220, t, quiet.missMs / 1000, 0.026, 'triangle', 196);
-      if (cue === 'resolve')
-        quiet.ending.forEach((f, i) => this.tone(f, t + i * 0.24, 0.5, 0.06));
-      if (cue === 'success')
-        [659.255, 783.991, 987.767].forEach((f, i) =>
-          this.tone(f, t + i * 0.18, 0.48, 0.065),
-        );
-      return; // Never create thunder, electrical crackle, human voice or rain for this profile.
+    if (this.performance) {
+      if (this.performance.atmosphere === 'thunder') this.softThunder(t);
+    } else if (this.profile === 'storm') {
+      this.burst(t, 1.8, .34, 380);
+      this.tone(57, t, 1.2, .07, 'sine', 32);
     }
-    if (cue === 'found') {
-      [659.25, 880, 1318.5].forEach((f, i) =>
-        this.tone(f, t + i * 0.075, 0.2, 0.11),
-      );
-      this.burst(t, 0.1, 0.035, 3500);
-    }
-    if (cue === 'wrong') {
-      this.tone(210, t, 0.16, 0.055, 'triangle', 145);
-    }
-    if (cue === 'tap') this.burst(t, 0.045, 0.04, 2000);
-    if (cue === 'thunder') {
-      this.burst(t, 1.8, 0.34, 380);
-      this.tone(57, t, 1.2, 0.07, 'sine', 32);
-    }
-    if (cue === 'resolve') {
-      this.burst(t, 1.25, 0.1, 1200);
-      [392, 523.25, 659.25].forEach((f, i) =>
-        this.tone(f, t + i * 0.15, 0.6, 0.075),
-      );
-    }
-    if (cue === 'success')
-      [523.25, 659.25, 783.99, 1046.5].forEach((f, i) =>
-        this.tone(f, t + i * 0.16, 0.65, 0.09),
-      );
   }
+  private playFeedback(cue: HuntFeedback) {
+    const c = this.ctx;
+    if (!c || !this.feedbackBus) return;
+    let buffer = this.feedbackBuffers.get(cue);
+    if (!buffer) {
+      const sampleRate = cue === 'success' || cue === 'timeout' ? 44100 : 22050;
+      const samples = synthesiseHuntFeedback(this.profile, this.performance, cue, sampleRate);
+      buffer = c.createBuffer(1, samples.length, sampleRate);
+      buffer.getChannelData(0).set(samples);
+      this.feedbackBuffers.set(cue, buffer);
+    }
+    // Bound overlaps during fast taps and terminal transitions.
+    while (this.feedbackSources.size >= 3) {
+      const oldest = this.feedbackSources.values().next().value!;
+      try { oldest.stop(); } catch {}
+      oldest.disconnect(); this.feedbackSources.delete(oldest);
+    }
+    const source = this.track(c.createBufferSource()) as AudioBufferSourceNode;
+    this.feedbackSources.add(source);
+    source.buffer = buffer; source.connect(this.feedbackBus); source.start();
+    source.onended = () => { this.live.delete(source); this.feedbackSources.delete(source); source.disconnect(); };
+    this.duckUntil = Math.max(this.duckUntil, c.currentTime + Math.min(.55, buffer.duration));
+    this.apply();
+  }
+
   private schedule() {
     const c = this.ctx;
-    if (c && this.failureUntil && c.currentTime >= this.failureUntil) {
-      this.failureUntil = 0;
+    if (c && this.terminalUntil && c.currentTime >= this.terminalUntil) {
+      this.terminalUntil = 0;
       this.apply();
     }
     if (
@@ -648,6 +656,10 @@ export class HuntSound {
 
   dispose() {
     this.disposed = true;
+    this.feedbackBuffers.clear();
+    this.feedbackSources.clear();
+    this.feedbackBus?.disconnect();
+    this.peakLimit?.disconnect();
     this.stopFear();
     this.fearBuffers.clear();
     if (this.timer) clearInterval(this.timer);

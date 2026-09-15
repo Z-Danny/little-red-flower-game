@@ -1,0 +1,98 @@
+{
+  "typhoon-home": {
+    "description": "台风将至，客厅和阳台还藏着一些隐患。仔细观察，为家人做好准备。",
+    "startLabel": "开始居家检查"
+  },
+  "flood-kit": {
+    "description": "汛期临近，家里的应急包还没备齐。找出场景中需要准备的物品。",
+    "startLabel": "开始整理应急包"
+  },
+  "quake-bedroom-v2": {
+    "description": "平日家中的摆放，可能藏着地震时的风险。观察卧室，找出需要调整的地方。",
+    "startLabel": "开始防震检查"
+  },
+  "storm-street-check-v2": {
+    "description": "风雨中的街口暗藏危险。留在室内观察画面，找出需要警惕的隐患。",
+    "startLabel": "开始观察街口"
+  },
+  "thunder-park-v2": {
+    "description": "人们已进入建筑内，公园仍笼罩在雷雨中。在教学图中辨认不能避雷的位置。",
+    "startLabel": "开始辨认雷雨风险"
+  },
+  "forest-fire-sources-v2": {
+    "description": "这是一幅禁火林缘的教学观察图，人物已远离火源。找出画面中的不当用火。",
+    "startLabel": "开始辨认火源"
+  },
+  "rain-street-preparation-v1": {
+    "description": "暴雨将至，熟悉的街道出现了新的危险。仔细观察画面，圈出隐藏的隐患。",
+    "startLabel": "开始街道找险"
+  },
+  "flood-house-response-v1": {
+    "description": "洪水围住了房屋，家人还在室内。根据场景提示，练习准备与向楼上转移。",
+    "startLabel": "开始居家避险"
+  },
+  "quake-cover-practice": {
+    "description": "房间突然剧烈晃动，你就在结实的木桌旁。跟随情境变化，练习室内避险。",
+    "startLabel": "开始室内避险"
+  },
+  "quake-exit-practice": {
+    "description": "晃动已经停止，撤离指引已到达，本场景的完整楼梯可用。准备离开房间。",
+    "startLabel": "开始震后撤离"
+  },
+  "flood-highground-practice": {
+    "description": "屋外已被洪水围困，干燥完整的楼梯通向较高楼层。练习转移、求救与待援。",
+    "startLabel": "开始转移待援"
+  },
+  "clear-corridor": {
+    "description": "回家的楼道被自家杂物占住了。整理眼前的物品，让通道重新畅通。",
+    "startLabel": "开始整理楼道"
+  },
+  "lift-wait": {
+    "description": "电梯突然停住，门也没有打开。观察轿厢内的设施，练习联络与等待。",
+    "startLabel": "开始故障应对"
+  },
+  "well-call": {
+    "description": "有人在污水井内遇险，周围的人也需要提醒。留在外围，练习联络专业救援。",
+    "startLabel": "开始井口求助"
+  },
+  "clear-corridor-check-v2": {
+    "description": "看似熟悉的公共楼道，藏着通行与消防隐患。仔细观察，完成这次巡查。",
+    "startLabel": "开始楼道巡查"
+  },
+  "car-window-practice": {
+    "description": "车辆刚刚落水，近侧车窗仍可打开并通过，岸边有人接应。开始这次离车练习。",
+    "startLabel": "开始离车练习"
+  },
+  "lift-contact-practice": {
+    "description": "电梯平稳停在两层之间，紧急通话仍可使用。观察轿厢信息，练习报告受困情况。",
+    "startLabel": "开始定位求助"
+  },
+  "collapse-signal-practice": {
+    "description": "下肢被困，无法自行脱身，上身还能小幅活动，手机仍有信号。练习防护与求救。",
+    "startLabel": "开始发出求救"
+  },
+  "oil-fire": {
+    "description": "做饭时，油锅突然燃起火焰。观察厨房里的物品，练习应对这场突发状况。",
+    "startLabel": "开始应对锅火"
+  },
+  "charging-bedroom": {
+    "description": "卧室里的设备正在充电，其中藏着不易察觉的隐患。仔细观察，只识别、不触碰。",
+    "startLabel": "开始充电巡查"
+  },
+  "bedroom-night-check-v2": {
+    "description": "冬夜将深，卧室里的充电与取暖设备还需要检查。睡前再仔细看一看。",
+    "startLabel": "开始睡前检查"
+  },
+  "kitchen-before-cooking-v2": {
+    "description": "准备做饭了，厨房真的准备好了吗？开火前，找出画面中容易忽略的隐患。",
+    "startLabel": "开始开火前检查"
+  },
+  "fire-shelter-practice": {
+    "description": "走廊被浓烟封堵，母亲和孩子在室内无明火的房间。练习隔烟、求救与待援。",
+    "startLabel": "开始隔烟待援"
+  },
+  "fire-stairs-practice": {
+    "description": "上方楼层起火，本场景通往地面的楼梯已确认可用。练习带孩子撤到室外。",
+    "startLabel": "开始楼梯撤离"
+  }
+}

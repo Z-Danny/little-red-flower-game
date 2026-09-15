@@ -103,16 +103,18 @@ async function open(id) {
   await tick(100);
   await page.locator(`[data-map-node="${id}"]`).scrollIntoViewIfNeeded();
   await page.locator(`[data-map-node="${id}"]`).click();
-  await page.getByRole('button', { name: /^(进入场景|再守护一次)$/ }).click();
-  await tick(200);
-  const entry = page.locator('.hunt-entry>button,.disaster-entry>button');
-  if (await entry.count()) {
-    await entry.waitFor();
-    await entry.click();
+  const entry = page.locator(`[data-painted-intro][data-level-id="${id}"]`);
+  await entry.waitFor({ state: 'visible' });
+  const primary = entry.locator('[data-painted-primary]');
+  if (await page.locator(`[data-map-node="${id}"]`).getAttribute('data-status') === 'complete') {
+    assert.equal((await primary.innerText()).trim(), '再玩一次');
   }
-  const practiceEntry=page.locator('.configured-dialog').getByRole('button',{name:'进入场景',exact:true});
-  if(await practiceEntry.count()) await practiceEntry.click();
+  await primary.click();
+  await page.locator('[data-painted-intro]').waitFor({ state: 'detached' });
+  await page.locator('.hunt-player[data-ready="true"],.disaster-player[data-ready="true"],.configured-player[data-ready="true"],.kitchen-player[data-ready="true"]').waitFor({ state: 'visible' });
   await tick(200);
+  await page.locator('.hunt-player[data-phase="playing"],.disaster-player[data-phase="playing"],.configured-player[data-phase="playing"],.kitchen-player[data-phase="playing"]').waitFor({ state: 'visible' });
+  assert.equal(await page.locator('[data-painted-intro]').count(), 0, 'one map confirmation must not open a second introduction');
 }
 async function pick(points) {
   const p = await page.evaluate(
@@ -417,10 +419,10 @@ async function complete(id) {
   await tick(pack?.skin.presentation ? pack.rules.completion.settleMs+(pack.rules.completion.observeMs??0)+500 : 1000);
   await page.locator('.garden-settlement').waitFor();
   await tick(650);
-  assert.equal(await page.locator('.garden-reward>.garden-flower').count(), 3);
+  assert.equal(await page.locator('.painted-settlement-reward > .garden-flower').count(), 3);
 }
 async function returnAndPlant(id, replay = false) {
-  await page.getByRole('button', { name: /返回地图/ }).click();
+  await page.locator('[data-testid="settlement-primary"]').click();
   if (!replay) {
     await tick(700);
     assert.equal(
@@ -525,11 +527,13 @@ try {
     const b = await page.locator('[data-map-node="flood-kit"]').boundingBox();
     await page.touchscreen.tap(b.x + b.width / 2, b.y + b.height / 2);
   }
-  assert.equal(
-    await page.getByRole('button', { name: '进入场景', exact: true }).count(),
-    0,
-  );
-  await page.getByRole('button', { name: '关闭', exact: true }).click();
+  const lockedEntry = page.locator('[data-painted-intro][data-level-id="flood-kit"]');
+  assert.equal(await lockedEntry.getAttribute('data-locked'), 'true');
+  assert(await lockedEntry.locator('[data-painted-primary]').isDisabled());
+  assert.equal(await page.locator('.hunt-player,.disaster-player,.configured-player,.kitchen-player').count(), 0);
+  await page.keyboard.press('Escape');
+  await tick(200);
+  await lockedEntry.waitFor({ state: 'detached' });
   assert.deepEqual(await saved(), {});
   check('locked node cannot enter or award');
   const remaining = rt.journey.journeyMap.regions.flatMap(r=>r.nodes);
@@ -541,6 +545,8 @@ try {
       await open(node.id);
       if (node.id === 'typhoon-home') {
         await page.locator('.hunt-hud>button').first().click();
+        await page.locator('.hunt-dialog').getByRole('button', { name: '结束本次观察', exact: true }).click();
+        await page.locator('.hunt-dialog').getByRole('button', { name: '返回关卡', exact: true }).click();
         assert.deepEqual(await saved(), before);
         assert.equal(
           await page
@@ -553,13 +559,12 @@ try {
       }
       if (node.id === 'rain-street-preparation-v1') {
         await tick(93000);
-        await page.locator('.disaster-dialog').waitFor();
-        assert.equal(await page.locator('.garden-settlement').count(), 0);
+        await page.locator('.painted-failure').waitFor();
+        assert.equal(await page.locator('.painted-settlement').count(), 0);
         assert.deepEqual(await saved(), before);
-        await page
-          .locator('.disaster-footer button')
-          .filter({ hasText: '返回关卡' })
-          .click();
+        assert.equal(await page.locator('[data-testid="failure-back"]').innerText(), '返回地图');
+        await page.locator('[data-testid="failure-back"]').click();
+        await tick(260);
         assert.equal(
           await page
             .locator('[data-map-node="flood-house-response-v1"]')
@@ -609,8 +614,8 @@ try {
         await open(node.id);
         await complete(node.id);
         assert.equal(
-          await page.locator('.garden-reward-label').innerText(),
-          '本关花朵已种下',
+          await page.locator('[data-testid="settlement-reward"]').innerText(),
+          '小红花已种下 · 本次为巩固练习',
         );
         await returnAndPlant(node.id, true);
         assert.deepEqual(await saved(), scores);
@@ -662,7 +667,7 @@ try {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await open('oil-fire');
   await complete('oil-fire');
-  await page.getByRole('button', { name: /返回地图/ }).click();
+  await page.locator('[data-testid="settlement-primary"]').click();
   await tick(400);
   await page.reload();
   await page.locator('[data-home-continue]').click();

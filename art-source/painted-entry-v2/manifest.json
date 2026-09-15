@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "generation": "OpenAI built-in image_gen__imagegen. Two edit calls with the original modal as referenced_image_paths. No CLI/API fallback.",
+  "preparation": "Sharp only: alpha bounding crop, proportional resize to width 956, 2px transparent border, WebP compression. Generated alpha preserved.",
+  "approvedReference": {
+    "path": "art-source/painted-entry-v2/approved-reference.png",
+    "sha256": "1da09d24ef3d7792749940e6d7340f3528fb7ec21431fde5746ed9a471e9af30"
+  },
+  "generatedSources": {
+    "panel": "/Users/danny/.codex/generated_images/01a0a37e-e09f-74c2-9f71-7315c6dd632e/exec-cb5790a5-6eb3-4d2c-92d3-b94724f71bf7.png",
+    "button": "/Users/danny/.codex/generated_images/01a0a37e-e09f-74c2-9f71-7315c6dd632e/exec-ce28e371-b435-4e79-b78e-a7330e5cc856.png"
+  },
+  "prompts": {
+    "path": "art-source/painted-entry-v2/prompts.json",
+    "sha256": "3513504cc8aa2f7654f65591f486c65bd8f45d11a0c2cbbdc3464ea33e2eacf0"
+  },
+  "assets": {
+    "panel": {
+      "path": "public/ui/painted-v1/modal-panel-v2.webp",
+      "width": 960,
+      "height": 875,
+      "bytes": 154860,
+      "sha256": "ce7e7b814bf443e5521b7bc5762345e3dca459ac68b946fb7e9c1be61828b55e",
+      "source": "art-source/painted-entry-v2/panel-source.png",
+      "sourceSha256": "90b3c747f6e4732cf6a8e4b761186f672fe86f46f614545e1700276ce796850c",
+      "sourceSize": {
+        "width": 1314,
+        "height": 1197
+      },
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 1314,
+        "height": 1197
+      },
+      "transparentOutputBorder": 2,
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "edgeAlphaMax": 0,
+        "fullyTransparentFraction": 0.09333452380952381
+      }
+    },
+    "button": {
+      "path": "public/ui/painted-v1/modal-button-v2.webp",
+      "width": 960,
+      "height": 230,
+      "bytes": 77470,
+      "sha256": "c4c6246f3974640538a88aa98b918db2e20e6b3c0eb37a5825e932227c88148c",
+      "source": "art-source/painted-entry-v2/button-source.png",
+      "sourceSha256": "00caf95b190b84e09588e6d622f4589a81d6b15ab24e5a259d2d3e58218c0cb5",
+      "sourceSize": {
+        "width": 2172,
+        "height": 724
+      },
+      "crop": {
+        "left": 49,
+        "top": 119,
+        "width": 2071,
+        "height": 489
+      },
+      "transparentOutputBorder": 2,
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "edgeAlphaMax": 0,
+        "fullyTransparentFraction": 0.08387228260869566
+      }
+    }
+  },
+  "layout": {
+    "units": "percent of full image unless noted",
+    "title": {
+      "left": 24,
+      "top": 5,
+      "width": 55,
+      "height": 13
+    },
+    "bodySafe": {
+      "left": 10,
+      "top": 29,
+      "width": 79,
+      "height": 48
+    },
+    "buttonSuggested": {
+      "left": 15,
+      "top": 70,
+      "width": 70
+    },
+    "buttonLabel": {
+      "left": 12,
+      "top": 18,
+      "width": 76,
+      "height": 60
+    },
+    "recommendedCss": {
+      "panelWidth": 320,
+      "buttonWidth": 220,
+      "buttonHeight": 52
+    },
+    "note": "Panel is a complete single image around 1.10:1. Keep title within the green plaque; place body and independent button with CSS. Decorative lower-right leaves begin around 82% down the panel."
+  },
+  "visualReview": {
+    "embeddedPanelButton": "removed and natural ivory paper filled",
+    "titleAndBodyText": "none",
+    "buttonTextAndIcons": "none",
+    "exteriorAlpha": "verified",
+    "leafTips": "complete"
+  }
+}

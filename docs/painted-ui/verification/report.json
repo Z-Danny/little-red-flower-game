@@ -1,0 +1,2608 @@
+{
+  "status": "passed",
+  "startedAt": "2026-09-15T04:42:50.413Z",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "f27d20afa948d94999bba0635f638c1d3a0b23cb22aa6b8179bb22172c8cdee2",
+  "browser": "152.0.7977.83",
+  "checks": [
+    {
+      "name": "typhoon-home: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "typhoon-home 320x568: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "typhoon-home 390x844: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "typhoon-home 430x932: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "typhoon-home 1440x900: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "typhoon-home: retry resets countdown without awarding flowers",
+      "status": "passed"
+    },
+    {
+      "name": "typhoon-home: explicit start, decreasing timer, hint disclosure, pause freeze and resume",
+      "status": "passed"
+    },
+    {
+      "name": "flood-kit: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "flood-kit 320x568: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "flood-kit 390x844: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "flood-kit 430x932: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "flood-kit 1440x900: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "flood-kit: explicit start, decreasing timer, hint disclosure, pause freeze and resume",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "thunder-park-v2: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "forest-fire-sources-v2: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "rain-street-preparation-v1: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "rain-street-preparation-v1 320x568: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "rain-street-preparation-v1 390x844: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "rain-street-preparation-v1 430x932: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "rain-street-preparation-v1 1440x900: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "rain-street-preparation-v1: explicit start, decreasing timer, hint disclosure, pause freeze and resume",
+      "status": "passed"
+    },
+    {
+      "name": "flood-house-response-v1: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "flood-house-response-v1: 280px HUD keeps three image buttons, title and elapsed clock without overlap",
+      "status": "passed"
+    },
+    {
+      "name": "quake-cover-practice: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "quake-exit-practice: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "flood-highground-practice: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "clear-corridor: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "lift-wait: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "well-call: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "clear-corridor-check-v2: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "car-window-practice: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "lift-contact-practice: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "collapse-signal-practice: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "oil-fire: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "oil-fire 320x568: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "oil-fire 390x844: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "oil-fire 430x932: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "oil-fire 1440x900: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "oil-fire: practice/kitchen remains frozen until explicit start",
+      "status": "passed"
+    },
+    {
+      "name": "charging-bedroom: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "bedroom-night-check-v2: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "kitchen-before-cooking-v2: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice 320x568: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice 390x844: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice 430x932: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice 1440x900: centered panel, readable copy and usable button bounds",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice: practice/kitchen remains frozen until explicit start",
+      "status": "passed"
+    },
+    {
+      "name": "fire-stairs-practice: preserved title, scenario copy, arrow-free start button and embedded panel",
+      "status": "passed"
+    },
+    {
+      "name": "24 scene openings; 20 viewport samples; representative timers, hints and start gates; no new rewards, network or runtime errors",
+      "status": "passed"
+    }
+  ],
+  "openings": [
+    {
+      "id": "typhoon-home",
+      "title": "台风居家准备",
+      "description": "台风将至，客厅和阳台还藏着一些隐患。仔细观察，为家人做好准备。",
+      "startLabel": "开始居家检查",
+      "imageCount": 12
+    },
+    {
+      "id": "flood-kit",
+      "title": "汛期应急包",
+      "description": "汛期临近，家里的应急包还没备齐。找出场景中需要准备的物品。",
+      "startLabel": "开始整理应急包",
+      "imageCount": 12
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "title": "家庭防震准备",
+      "description": "平日家中的摆放，可能藏着地震时的风险。观察卧室，找出需要调整的地方。",
+      "startLabel": "开始防震检查",
+      "imageCount": 12
+    },
+    {
+      "id": "storm-street-check-v2",
+      "title": "风雨街口找险",
+      "description": "风雨中的街口暗藏危险。留在室内观察画面，找出需要警惕的隐患。",
+      "startLabel": "开始观察街口",
+      "imageCount": 12
+    },
+    {
+      "id": "thunder-park-v2",
+      "title": "雷雨公园找险",
+      "description": "人们已进入建筑内，公园仍笼罩在雷雨中。在教学图中辨认不能避雷的位置。",
+      "startLabel": "开始辨认雷雨风险",
+      "imageCount": 12
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "title": "林缘火源识别",
+      "description": "这是一幅禁火林缘的教学观察图，人物已远离火源。找出画面中的不当用火。",
+      "startLabel": "开始辨认火源",
+      "imageCount": 12
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "title": "暴雨街道找险",
+      "description": "暴雨将至，熟悉的街道出现了新的危险。仔细观察画面，圈出隐藏的隐患。",
+      "startLabel": "开始街道找险",
+      "imageCount": 14
+    },
+    {
+      "id": "flood-house-response-v1",
+      "title": "洪水居家避险",
+      "description": "洪水围住了房屋，家人还在室内。根据场景提示，练习准备与向楼上转移。",
+      "startLabel": "开始居家避险",
+      "imageCount": 4
+    },
+    {
+      "id": "quake-cover-practice",
+      "title": "地震室内避险",
+      "description": "房间突然剧烈晃动，你就在结实的木桌旁。跟随情境变化，练习室内避险。",
+      "startLabel": "开始室内避险",
+      "imageCount": 4
+    },
+    {
+      "id": "quake-exit-practice",
+      "title": "震后楼梯撤离",
+      "description": "晃动已经停止，撤离指引已到达，本场景的完整楼梯可用。准备离开房间。",
+      "startLabel": "开始震后撤离",
+      "imageCount": 4
+    },
+    {
+      "id": "flood-highground-practice",
+      "title": "洪水高处待援",
+      "description": "屋外已被洪水围困，干燥完整的楼梯通向较高楼层。练习转移、求救与待援。",
+      "startLabel": "开始转移待援",
+      "imageCount": 4
+    },
+    {
+      "id": "clear-corridor",
+      "title": "楼道杂物清理",
+      "description": "回家的楼道被自家杂物占住了。整理眼前的物品，让通道重新畅通。",
+      "startLabel": "开始整理楼道",
+      "imageCount": 11
+    },
+    {
+      "id": "lift-wait",
+      "title": "电梯故障待援",
+      "description": "电梯突然停住，门也没有打开。观察轿厢内的设施，练习联络与等待。",
+      "startLabel": "开始故障应对",
+      "imageCount": 4
+    },
+    {
+      "id": "well-call",
+      "title": "井口遇险求助",
+      "description": "有人在污水井内遇险，周围的人也需要提醒。留在外围，练习联络专业救援。",
+      "startLabel": "开始井口求助",
+      "imageCount": 4
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "title": "楼道隐患巡查",
+      "description": "看似熟悉的公共楼道，藏着通行与消防隐患。仔细观察，完成这次巡查。",
+      "startLabel": "开始楼道巡查",
+      "imageCount": 12
+    },
+    {
+      "id": "car-window-practice",
+      "title": "汽车落水离车",
+      "description": "车辆刚刚落水，近侧车窗仍可打开并通过，岸边有人接应。开始这次离车练习。",
+      "startLabel": "开始离车练习",
+      "imageCount": 4
+    },
+    {
+      "id": "lift-contact-practice",
+      "title": "电梯定位求助",
+      "description": "电梯平稳停在两层之间，紧急通话仍可使用。观察轿厢信息，练习报告受困情况。",
+      "startLabel": "开始定位求助",
+      "imageCount": 4
+    },
+    {
+      "id": "collapse-signal-practice",
+      "title": "塌陷被困求救",
+      "description": "下肢被困，无法自行脱身，上身还能小幅活动，手机仍有信号。练习防护与求救。",
+      "startLabel": "开始发出求救",
+      "imageCount": 4
+    },
+    {
+      "id": "oil-fire",
+      "title": "油锅起火处置",
+      "description": "做饭时，油锅突然燃起火焰。观察厨房里的物品，练习应对这场突发状况。",
+      "startLabel": "开始应对锅火",
+      "imageCount": 7
+    },
+    {
+      "id": "charging-bedroom",
+      "title": "卧室充电巡查",
+      "description": "卧室里的设备正在充电，其中藏着不易察觉的隐患。仔细观察，只识别、不触碰。",
+      "startLabel": "开始充电巡查",
+      "imageCount": 10
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "title": "睡前防火巡查",
+      "description": "冬夜将深，卧室里的充电与取暖设备还需要检查。睡前再仔细看一看。",
+      "startLabel": "开始睡前检查",
+      "imageCount": 12
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "title": "厨房开火检查",
+      "description": "准备做饭了，厨房真的准备好了吗？开火前，找出画面中容易忽略的隐患。",
+      "startLabel": "开始开火前检查",
+      "imageCount": 12
+    },
+    {
+      "id": "fire-shelter-practice",
+      "title": "火灾隔烟待援",
+      "description": "走廊被浓烟封堵，母亲和孩子在室内无明火的房间。练习隔烟、求救与待援。",
+      "startLabel": "开始隔烟待援",
+      "imageCount": 7
+    },
+    {
+      "id": "fire-stairs-practice",
+      "title": "火灾楼梯撤离",
+      "description": "上方楼层起火，本场景通往地面的楼梯已确认可用。练习带孩子撤到室外。",
+      "startLabel": "开始楼梯撤离",
+      "imageCount": 4
+    }
+  ],
+  "layouts": [
+    {
+      "id": "typhoon-home",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 12,
+        "y": 125.109375,
+        "right": 308,
+        "bottom": 394.890625,
+        "width": 296,
+        "height": 269.78125
+      },
+      "title": {
+        "x": 77.109375,
+        "y": 138.59375,
+        "right": 242.890625,
+        "bottom": 179.046875,
+        "width": 165.78125,
+        "height": 40.453125
+      },
+      "description": {
+        "x": 47.515625,
+        "y": 200.640625,
+        "right": 272.484375,
+        "bottom": 273.46875,
+        "width": 224.96875,
+        "height": 72.828125
+      },
+      "start": {
+        "x": 43.953125,
+        "y": 296.953125,
+        "right": 270.09375,
+        "bottom": 346.3125,
+        "width": 226.140625,
+        "height": 49.359375
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始居家检查",
+          "x": 43.953125,
+          "y": 296.953125,
+          "right": 270.09375,
+          "bottom": 346.3125,
+          "width": 226.140625,
+          "height": 49.359375,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 116,
+          "y": 398.890625,
+          "right": 204,
+          "bottom": 442.890625,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "typhoon-home",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 12,
+        "y": 231.203125,
+        "right": 378,
+        "bottom": 564.796875,
+        "width": 366,
+        "height": 333.59375
+      },
+      "title": {
+        "x": 92.515625,
+        "y": 247.875,
+        "right": 297.484375,
+        "bottom": 297.90625,
+        "width": 204.96875,
+        "height": 50.03125
+      },
+      "description": {
+        "x": 55.90625,
+        "y": 324.609375,
+        "right": 334.09375,
+        "bottom": 414.671875,
+        "width": 278.1875,
+        "height": 90.0625
+      },
+      "start": {
+        "x": 51.515625,
+        "y": 443.6875,
+        "right": 331.125,
+        "bottom": 504.734375,
+        "width": 279.609375,
+        "height": 61.046875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始居家检查",
+          "x": 51.515625,
+          "y": 443.6875,
+          "right": 331.125,
+          "bottom": 504.734375,
+          "width": 279.609375,
+          "height": 61.046875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 151,
+          "y": 568.796875,
+          "right": 239,
+          "bottom": 612.796875,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "typhoon-home",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 12,
+        "y": 256.96875,
+        "right": 418,
+        "bottom": 627.015625,
+        "width": 406,
+        "height": 370.046875
+      },
+      "title": {
+        "x": 101.3125,
+        "y": 275.46875,
+        "right": 328.6875,
+        "bottom": 330.96875,
+        "width": 227.375,
+        "height": 55.5
+      },
+      "description": {
+        "x": 60.71875,
+        "y": 360.578125,
+        "right": 369.28125,
+        "bottom": 460.484375,
+        "width": 308.5625,
+        "height": 99.90625
+      },
+      "start": {
+        "x": 55.84375,
+        "y": 492.6875,
+        "right": 366.015625,
+        "bottom": 560.390625,
+        "width": 310.171875,
+        "height": 67.703125
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始居家检查",
+          "x": 55.84375,
+          "y": 492.6875,
+          "right": 366.015625,
+          "bottom": 560.390625,
+          "width": 310.171875,
+          "height": 67.703125,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 171,
+          "y": 631.015625,
+          "right": 259,
+          "bottom": 675.015625,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "typhoon-home",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 478.875,
+        "y": 206.21875,
+        "right": 961.125,
+        "bottom": 645.765625,
+        "width": 482.25,
+        "height": 439.546875
+      },
+      "title": {
+        "x": 584.96875,
+        "y": 228.1875,
+        "right": 855.03125,
+        "bottom": 294.109375,
+        "width": 270.0625,
+        "height": 65.921875
+      },
+      "description": {
+        "x": 536.734375,
+        "y": 329.28125,
+        "right": 903.265625,
+        "bottom": 447.953125,
+        "width": 366.53125,
+        "height": 118.671875
+      },
+      "start": {
+        "x": 530.953125,
+        "y": 486.203125,
+        "right": 899.390625,
+        "bottom": 566.625,
+        "width": 368.4375,
+        "height": 80.421875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始居家检查",
+          "x": 530.953125,
+          "y": 486.203125,
+          "right": 899.390625,
+          "bottom": 566.625,
+          "width": 368.4375,
+          "height": 80.421875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 676,
+          "y": 649.765625,
+          "right": 764,
+          "bottom": 693.765625,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "flood-kit",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 12.953125,
+        "y": 125.984375,
+        "right": 307.03125,
+        "bottom": 394.015625,
+        "width": 294.078125,
+        "height": 268.03125
+      },
+      "title": {
+        "x": 77.640625,
+        "y": 139.375,
+        "right": 242.34375,
+        "bottom": 179.578125,
+        "width": 164.703125,
+        "height": 40.203125
+      },
+      "description": {
+        "x": 48.234375,
+        "y": 201.03125,
+        "right": 271.75,
+        "bottom": 273.390625,
+        "width": 223.515625,
+        "height": 72.359375
+      },
+      "start": {
+        "x": 44.703125,
+        "y": 296.71875,
+        "right": 269.375,
+        "bottom": 345.765625,
+        "width": 224.671875,
+        "height": 49.046875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始整理应急包",
+          "x": 44.703125,
+          "y": 296.71875,
+          "right": 269.375,
+          "bottom": 345.765625,
+          "width": 224.671875,
+          "height": 49.046875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 115.984375,
+          "y": 398.015625,
+          "right": 203.984375,
+          "bottom": 442.015625,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "flood-kit",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 12,
+        "y": 231.203125,
+        "right": 378,
+        "bottom": 564.796875,
+        "width": 366,
+        "height": 333.59375
+      },
+      "title": {
+        "x": 92.515625,
+        "y": 247.875,
+        "right": 297.484375,
+        "bottom": 297.90625,
+        "width": 204.96875,
+        "height": 50.03125
+      },
+      "description": {
+        "x": 55.90625,
+        "y": 324.609375,
+        "right": 334.09375,
+        "bottom": 414.671875,
+        "width": 278.1875,
+        "height": 90.0625
+      },
+      "start": {
+        "x": 51.515625,
+        "y": 443.6875,
+        "right": 331.125,
+        "bottom": 504.734375,
+        "width": 279.609375,
+        "height": 61.046875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始整理应急包",
+          "x": 51.515625,
+          "y": 443.6875,
+          "right": 331.125,
+          "bottom": 504.734375,
+          "width": 279.609375,
+          "height": 61.046875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 151,
+          "y": 568.796875,
+          "right": 239,
+          "bottom": 612.796875,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "flood-kit",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 12,
+        "y": 256.96875,
+        "right": 418,
+        "bottom": 627.015625,
+        "width": 406,
+        "height": 370.046875
+      },
+      "title": {
+        "x": 101.3125,
+        "y": 275.46875,
+        "right": 328.6875,
+        "bottom": 330.96875,
+        "width": 227.375,
+        "height": 55.5
+      },
+      "description": {
+        "x": 60.71875,
+        "y": 360.578125,
+        "right": 369.28125,
+        "bottom": 460.484375,
+        "width": 308.5625,
+        "height": 99.90625
+      },
+      "start": {
+        "x": 55.84375,
+        "y": 492.6875,
+        "right": 366.015625,
+        "bottom": 560.390625,
+        "width": 310.171875,
+        "height": 67.703125
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始整理应急包",
+          "x": 55.84375,
+          "y": 492.6875,
+          "right": 366.015625,
+          "bottom": 560.390625,
+          "width": 310.171875,
+          "height": 67.703125,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 171,
+          "y": 631.015625,
+          "right": 259,
+          "bottom": 675.015625,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "flood-kit",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 480,
+        "y": 207.25,
+        "right": 960,
+        "bottom": 644.75,
+        "width": 480,
+        "height": 437.5
+      },
+      "title": {
+        "x": 585.59375,
+        "y": 229.125,
+        "right": 854.40625,
+        "bottom": 294.75,
+        "width": 268.8125,
+        "height": 65.625
+      },
+      "description": {
+        "x": 537.59375,
+        "y": 329.75,
+        "right": 902.40625,
+        "bottom": 447.875,
+        "width": 364.8125,
+        "height": 118.125
+      },
+      "start": {
+        "x": 531.828125,
+        "y": 485.9375,
+        "right": 898.546875,
+        "bottom": 565.984375,
+        "width": 366.71875,
+        "height": 80.046875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始整理应急包",
+          "x": 531.828125,
+          "y": 485.9375,
+          "right": 898.546875,
+          "bottom": 565.984375,
+          "width": 366.71875,
+          "height": 80.046875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 676,
+          "y": 648.75,
+          "right": 764,
+          "bottom": 692.75,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 12,
+        "y": 125.109375,
+        "right": 308,
+        "bottom": 394.890625,
+        "width": 296,
+        "height": 269.78125
+      },
+      "title": {
+        "x": 77.109375,
+        "y": 138.59375,
+        "right": 242.890625,
+        "bottom": 179.046875,
+        "width": 165.78125,
+        "height": 40.453125
+      },
+      "description": {
+        "x": 47.515625,
+        "y": 200.640625,
+        "right": 272.484375,
+        "bottom": 273.46875,
+        "width": 224.96875,
+        "height": 72.828125
+      },
+      "start": {
+        "x": 43.953125,
+        "y": 296.953125,
+        "right": 270.09375,
+        "bottom": 346.3125,
+        "width": 226.140625,
+        "height": 49.359375
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始街道找险",
+          "x": 43.953125,
+          "y": 296.953125,
+          "right": 270.09375,
+          "bottom": 346.3125,
+          "width": 226.140625,
+          "height": 49.359375,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 118,
+          "y": 398.890625,
+          "right": 202,
+          "bottom": 442.890625,
+          "width": 84,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 12,
+        "y": 231.203125,
+        "right": 378,
+        "bottom": 564.796875,
+        "width": 366,
+        "height": 333.59375
+      },
+      "title": {
+        "x": 92.515625,
+        "y": 247.875,
+        "right": 297.484375,
+        "bottom": 297.90625,
+        "width": 204.96875,
+        "height": 50.03125
+      },
+      "description": {
+        "x": 55.90625,
+        "y": 324.609375,
+        "right": 334.09375,
+        "bottom": 414.671875,
+        "width": 278.1875,
+        "height": 90.0625
+      },
+      "start": {
+        "x": 51.515625,
+        "y": 443.6875,
+        "right": 331.125,
+        "bottom": 504.734375,
+        "width": 279.609375,
+        "height": 61.046875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始街道找险",
+          "x": 51.515625,
+          "y": 443.6875,
+          "right": 331.125,
+          "bottom": 504.734375,
+          "width": 279.609375,
+          "height": 61.046875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 153,
+          "y": 568.796875,
+          "right": 237,
+          "bottom": 612.796875,
+          "width": 84,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 12,
+        "y": 256.96875,
+        "right": 418,
+        "bottom": 627.015625,
+        "width": 406,
+        "height": 370.046875
+      },
+      "title": {
+        "x": 101.3125,
+        "y": 275.46875,
+        "right": 328.6875,
+        "bottom": 330.96875,
+        "width": 227.375,
+        "height": 55.5
+      },
+      "description": {
+        "x": 60.71875,
+        "y": 360.578125,
+        "right": 369.28125,
+        "bottom": 460.484375,
+        "width": 308.5625,
+        "height": 99.90625
+      },
+      "start": {
+        "x": 55.84375,
+        "y": 492.6875,
+        "right": 366.015625,
+        "bottom": 560.390625,
+        "width": 310.171875,
+        "height": 67.703125
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始街道找险",
+          "x": 55.84375,
+          "y": 492.6875,
+          "right": 366.015625,
+          "bottom": 560.390625,
+          "width": 310.171875,
+          "height": 67.703125,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 173,
+          "y": 631.015625,
+          "right": 257,
+          "bottom": 675.015625,
+          "width": 84,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 478.875,
+        "y": 206.21875,
+        "right": 961.125,
+        "bottom": 645.765625,
+        "width": 482.25,
+        "height": 439.546875
+      },
+      "title": {
+        "x": 584.96875,
+        "y": 228.1875,
+        "right": 855.03125,
+        "bottom": 294.109375,
+        "width": 270.0625,
+        "height": 65.921875
+      },
+      "description": {
+        "x": 536.734375,
+        "y": 329.28125,
+        "right": 903.265625,
+        "bottom": 447.953125,
+        "width": 366.53125,
+        "height": 118.671875
+      },
+      "start": {
+        "x": 530.953125,
+        "y": 486.203125,
+        "right": 899.390625,
+        "bottom": 566.625,
+        "width": 368.4375,
+        "height": 80.421875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始街道找险",
+          "x": 530.953125,
+          "y": 486.203125,
+          "right": 899.390625,
+          "bottom": 566.625,
+          "width": 368.4375,
+          "height": 80.421875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 678,
+          "y": 649.765625,
+          "right": 762,
+          "bottom": 693.765625,
+          "width": 84,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "oil-fire",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 12,
+        "y": 125.109375,
+        "right": 308,
+        "bottom": 394.890625,
+        "width": 296,
+        "height": 269.78125
+      },
+      "title": {
+        "x": 77.109375,
+        "y": 138.59375,
+        "right": 242.890625,
+        "bottom": 179.046875,
+        "width": 165.78125,
+        "height": 40.453125
+      },
+      "description": {
+        "x": 47.515625,
+        "y": 200.640625,
+        "right": 272.484375,
+        "bottom": 273.46875,
+        "width": 224.96875,
+        "height": 72.828125
+      },
+      "start": {
+        "x": 43.953125,
+        "y": 296.953125,
+        "right": 270.09375,
+        "bottom": 346.3125,
+        "width": 226.140625,
+        "height": 49.359375
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始应对锅火",
+          "x": 43.953125,
+          "y": 296.953125,
+          "right": 270.09375,
+          "bottom": 346.3125,
+          "width": 226.140625,
+          "height": 49.359375,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 118,
+          "y": 398.890625,
+          "right": 202,
+          "bottom": 442.890625,
+          "width": 84,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "oil-fire",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 12,
+        "y": 231.203125,
+        "right": 378,
+        "bottom": 564.796875,
+        "width": 366,
+        "height": 333.59375
+      },
+      "title": {
+        "x": 92.515625,
+        "y": 247.875,
+        "right": 297.484375,
+        "bottom": 297.90625,
+        "width": 204.96875,
+        "height": 50.03125
+      },
+      "description": {
+        "x": 55.90625,
+        "y": 324.609375,
+        "right": 334.09375,
+        "bottom": 414.671875,
+        "width": 278.1875,
+        "height": 90.0625
+      },
+      "start": {
+        "x": 51.515625,
+        "y": 443.6875,
+        "right": 331.125,
+        "bottom": 504.734375,
+        "width": 279.609375,
+        "height": 61.046875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始应对锅火",
+          "x": 51.515625,
+          "y": 443.6875,
+          "right": 331.125,
+          "bottom": 504.734375,
+          "width": 279.609375,
+          "height": 61.046875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 153,
+          "y": 568.796875,
+          "right": 237,
+          "bottom": 612.796875,
+          "width": 84,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "oil-fire",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 12,
+        "y": 256.96875,
+        "right": 418,
+        "bottom": 627.015625,
+        "width": 406,
+        "height": 370.046875
+      },
+      "title": {
+        "x": 101.3125,
+        "y": 275.46875,
+        "right": 328.6875,
+        "bottom": 330.96875,
+        "width": 227.375,
+        "height": 55.5
+      },
+      "description": {
+        "x": 60.71875,
+        "y": 360.578125,
+        "right": 369.28125,
+        "bottom": 460.484375,
+        "width": 308.5625,
+        "height": 99.90625
+      },
+      "start": {
+        "x": 55.84375,
+        "y": 492.6875,
+        "right": 366.015625,
+        "bottom": 560.390625,
+        "width": 310.171875,
+        "height": 67.703125
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始应对锅火",
+          "x": 55.84375,
+          "y": 492.6875,
+          "right": 366.015625,
+          "bottom": 560.390625,
+          "width": 310.171875,
+          "height": 67.703125,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 173,
+          "y": 631.015625,
+          "right": 257,
+          "bottom": 675.015625,
+          "width": 84,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "oil-fire",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 507,
+        "y": 231.859375,
+        "right": 933,
+        "bottom": 620.140625,
+        "width": 426,
+        "height": 388.28125
+      },
+      "title": {
+        "x": 600.71875,
+        "y": 251.265625,
+        "right": 839.28125,
+        "bottom": 309.5,
+        "width": 238.5625,
+        "height": 58.234375
+      },
+      "description": {
+        "x": 558.109375,
+        "y": 340.578125,
+        "right": 881.890625,
+        "bottom": 445.40625,
+        "width": 323.78125,
+        "height": 104.828125
+      },
+      "start": {
+        "x": 553,
+        "y": 479.1875,
+        "right": 878.453125,
+        "bottom": 550.234375,
+        "width": 325.453125,
+        "height": 71.046875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始应对锅火",
+          "x": 553,
+          "y": 479.1875,
+          "right": 878.453125,
+          "bottom": 550.234375,
+          "width": 325.453125,
+          "height": 71.046875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 678,
+          "y": 624.140625,
+          "right": 762,
+          "bottom": 668.140625,
+          "width": 84,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 12,
+        "y": 125.109375,
+        "right": 308,
+        "bottom": 394.890625,
+        "width": 296,
+        "height": 269.78125
+      },
+      "title": {
+        "x": 77.109375,
+        "y": 138.59375,
+        "right": 242.890625,
+        "bottom": 179.046875,
+        "width": 165.78125,
+        "height": 40.453125
+      },
+      "description": {
+        "x": 47.515625,
+        "y": 200.640625,
+        "right": 272.484375,
+        "bottom": 273.46875,
+        "width": 224.96875,
+        "height": 72.828125
+      },
+      "start": {
+        "x": 43.953125,
+        "y": 296.953125,
+        "right": 270.09375,
+        "bottom": 346.3125,
+        "width": 226.140625,
+        "height": 49.359375
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始隔烟待援",
+          "x": 43.953125,
+          "y": 296.953125,
+          "right": 270.09375,
+          "bottom": 346.3125,
+          "width": 226.140625,
+          "height": 49.359375,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 116,
+          "y": 398.890625,
+          "right": 204,
+          "bottom": 442.890625,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 12,
+        "y": 231.203125,
+        "right": 378,
+        "bottom": 564.796875,
+        "width": 366,
+        "height": 333.59375
+      },
+      "title": {
+        "x": 92.515625,
+        "y": 247.875,
+        "right": 297.484375,
+        "bottom": 297.90625,
+        "width": 204.96875,
+        "height": 50.03125
+      },
+      "description": {
+        "x": 55.90625,
+        "y": 324.609375,
+        "right": 334.09375,
+        "bottom": 414.671875,
+        "width": 278.1875,
+        "height": 90.0625
+      },
+      "start": {
+        "x": 51.515625,
+        "y": 443.6875,
+        "right": 331.125,
+        "bottom": 504.734375,
+        "width": 279.609375,
+        "height": 61.046875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始隔烟待援",
+          "x": 51.515625,
+          "y": 443.6875,
+          "right": 331.125,
+          "bottom": 504.734375,
+          "width": 279.609375,
+          "height": 61.046875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 151,
+          "y": 568.796875,
+          "right": 239,
+          "bottom": 612.796875,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 12,
+        "y": 256.96875,
+        "right": 418,
+        "bottom": 627.015625,
+        "width": 406,
+        "height": 370.046875
+      },
+      "title": {
+        "x": 101.3125,
+        "y": 275.46875,
+        "right": 328.6875,
+        "bottom": 330.96875,
+        "width": 227.375,
+        "height": 55.5
+      },
+      "description": {
+        "x": 60.71875,
+        "y": 360.578125,
+        "right": 369.28125,
+        "bottom": 460.484375,
+        "width": 308.5625,
+        "height": 99.90625
+      },
+      "start": {
+        "x": 55.84375,
+        "y": 492.6875,
+        "right": 366.015625,
+        "bottom": 560.390625,
+        "width": 310.171875,
+        "height": 67.703125
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始隔烟待援",
+          "x": 55.84375,
+          "y": 492.6875,
+          "right": 366.015625,
+          "bottom": 560.390625,
+          "width": 310.171875,
+          "height": 67.703125,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 171,
+          "y": 631.015625,
+          "right": 259,
+          "bottom": 675.015625,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 478.875,
+        "y": 206.21875,
+        "right": 961.125,
+        "bottom": 645.765625,
+        "width": 482.25,
+        "height": 439.546875
+      },
+      "title": {
+        "x": 584.96875,
+        "y": 228.1875,
+        "right": 855.03125,
+        "bottom": 294.109375,
+        "width": 270.0625,
+        "height": 65.921875
+      },
+      "description": {
+        "x": 536.734375,
+        "y": 329.28125,
+        "right": 903.265625,
+        "bottom": 447.953125,
+        "width": 366.53125,
+        "height": 118.671875
+      },
+      "start": {
+        "x": 530.953125,
+        "y": 486.203125,
+        "right": 899.390625,
+        "bottom": 566.625,
+        "width": 368.4375,
+        "height": 80.421875
+      },
+      "textFits": true,
+      "controls": [
+        {
+          "text": "开始隔烟待援",
+          "x": 530.953125,
+          "y": 486.203125,
+          "right": 899.390625,
+          "bottom": 566.625,
+          "width": 368.4375,
+          "height": 80.421875,
+          "centerHits": true
+        },
+        {
+          "text": "返回地图",
+          "x": 676,
+          "y": 649.765625,
+          "right": 764,
+          "bottom": 693.765625,
+          "width": 88,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "horizontalOverflow": false,
+      "viewportScale": 1
+    }
+  ],
+  "hudLayouts": [
+    {
+      "id": "typhoon-home",
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 320,
+        "bottom": 568,
+        "width": 320,
+        "height": 568
+      },
+      "countdown": {
+        "x": 12,
+        "y": 10,
+        "right": 308,
+        "bottom": 35,
+        "width": 296,
+        "height": 25
+      },
+      "pointer": {
+        "x": 281.265625,
+        "y": 7.853750228881836,
+        "right": 299.265625,
+        "bottom": 28.853750228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 12,
+          "y": 40,
+          "right": 56,
+          "bottom": 84,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 212,
+          "y": 40,
+          "right": 256,
+          "bottom": 84,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停游戏",
+          "x": 264,
+          "y": 40,
+          "right": 308,
+          "bottom": 84,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 568
+      }
+    },
+    {
+      "id": "typhoon-home",
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "countdown": {
+        "x": 12,
+        "y": 10,
+        "right": 378,
+        "bottom": 38.34375,
+        "width": 366,
+        "height": 28.34375
+      },
+      "pointer": {
+        "x": 346.5,
+        "y": 9.447500228881836,
+        "right": 364.5,
+        "bottom": 30.447500228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 12,
+          "y": 43.34375,
+          "right": 56,
+          "bottom": 87.34375,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 282,
+          "y": 43.34375,
+          "right": 326,
+          "bottom": 87.34375,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停游戏",
+          "x": 334,
+          "y": 43.34375,
+          "right": 378,
+          "bottom": 87.34375,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "id": "typhoon-home",
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 430,
+        "bottom": 932,
+        "width": 430,
+        "height": 932
+      },
+      "countdown": {
+        "x": 12,
+        "y": 10,
+        "right": 418,
+        "bottom": 40.578125,
+        "width": 406,
+        "height": 30.578125
+      },
+      "pointer": {
+        "x": 383.296875,
+        "y": 10.666250228881836,
+        "right": 401.296875,
+        "bottom": 31.666250228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 12,
+          "y": 45.578125,
+          "right": 56,
+          "bottom": 89.578125,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 322,
+          "y": 45.578125,
+          "right": 366,
+          "bottom": 89.578125,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停游戏",
+          "x": 374,
+          "y": 45.578125,
+          "right": 418,
+          "bottom": 89.578125,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 430,
+        "height": 932
+      }
+    },
+    {
+      "id": "typhoon-home",
+      "surface": {
+        "x": 466.875,
+        "y": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "width": 506.25,
+        "height": 900
+      },
+      "countdown": {
+        "x": 478.875,
+        "y": 10,
+        "right": 961.125,
+        "bottom": 44.8125,
+        "width": 482.25,
+        "height": 34.8125
+      },
+      "pointer": {
+        "x": 920.71875,
+        "y": 12.994375228881836,
+        "right": 938.71875,
+        "bottom": 33.99437713623047,
+        "width": 18,
+        "height": 21.000001907348633
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 478.875,
+          "y": 49.8125,
+          "right": 522.875,
+          "bottom": 93.8125,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 865.125,
+          "y": 49.8125,
+          "right": 909.125,
+          "bottom": 93.8125,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停游戏",
+          "x": 917.125,
+          "y": 49.8125,
+          "right": 961.125,
+          "bottom": 93.8125,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "id": "flood-kit",
+      "surface": {
+        "x": 0.953125,
+        "y": 0,
+        "right": 319.03125,
+        "bottom": 568,
+        "width": 318.078125,
+        "height": 568
+      },
+      "countdown": {
+        "x": 8.953125,
+        "y": 7,
+        "right": 311.03125,
+        "bottom": 32,
+        "width": 302.078125,
+        "height": 25
+      },
+      "pointer": {
+        "x": 285.234375,
+        "y": 4.697500228881836,
+        "right": 303.234375,
+        "bottom": 25.697500228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 8.953125,
+          "y": 34,
+          "right": 52.953125,
+          "bottom": 78,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 217.03125,
+          "y": 34,
+          "right": 261.03125,
+          "bottom": 78,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停",
+          "x": 267.03125,
+          "y": 34,
+          "right": 311.03125,
+          "bottom": 78,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 568
+      }
+    },
+    {
+      "id": "flood-kit",
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "countdown": {
+        "x": 8,
+        "y": 7,
+        "right": 382,
+        "bottom": 35.796875,
+        "width": 374,
+        "height": 28.796875
+      },
+      "pointer": {
+        "x": 351.734375,
+        "y": 6.697500228881836,
+        "right": 369.734375,
+        "bottom": 27.697500228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 8,
+          "y": 37.796875,
+          "right": 52,
+          "bottom": 81.796875,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 288,
+          "y": 37.796875,
+          "right": 332,
+          "bottom": 81.796875,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停",
+          "x": 338,
+          "y": 37.796875,
+          "right": 382,
+          "bottom": 81.796875,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "id": "flood-kit",
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 430,
+        "bottom": 932,
+        "width": 430,
+        "height": 932
+      },
+      "countdown": {
+        "x": 8,
+        "y": 7,
+        "right": 422,
+        "bottom": 38.015625,
+        "width": 414,
+        "height": 31.015625
+      },
+      "pointer": {
+        "x": 388.828125,
+        "y": 7.916250228881836,
+        "right": 406.828125,
+        "bottom": 28.916250228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 8,
+          "y": 40.015625,
+          "right": 52,
+          "bottom": 84.015625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 328,
+          "y": 40.015625,
+          "right": 372,
+          "bottom": 84.015625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停",
+          "x": 378,
+          "y": 40.015625,
+          "right": 422,
+          "bottom": 84.015625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 430,
+        "height": 932
+      }
+    },
+    {
+      "id": "flood-kit",
+      "surface": {
+        "x": 468,
+        "y": 0,
+        "right": 972,
+        "bottom": 900,
+        "width": 504,
+        "height": 900
+      },
+      "countdown": {
+        "x": 476,
+        "y": 7,
+        "right": 964,
+        "bottom": 42.140625,
+        "width": 488,
+        "height": 35.140625
+      },
+      "pointer": {
+        "x": 924.71875,
+        "y": 10.181875228881836,
+        "right": 942.71875,
+        "bottom": 31.181875228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 476,
+          "y": 44.140625,
+          "right": 520,
+          "bottom": 88.140625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 870,
+          "y": 44.140625,
+          "right": 914,
+          "bottom": 88.140625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停",
+          "x": 920,
+          "y": 44.140625,
+          "right": 964,
+          "bottom": 88.140625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 320,
+        "bottom": 568,
+        "width": 320,
+        "height": 568
+      },
+      "countdown": {
+        "x": 8,
+        "y": 7,
+        "right": 312,
+        "bottom": 32,
+        "width": 304,
+        "height": 25
+      },
+      "pointer": {
+        "x": 286.9375,
+        "y": 4.650625228881836,
+        "right": 304.9375,
+        "bottom": 25.650625228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 8,
+          "y": 40,
+          "right": 52,
+          "bottom": 84,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 216,
+          "y": 40,
+          "right": 260,
+          "bottom": 84,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停游戏",
+          "x": 268,
+          "y": 40,
+          "right": 312,
+          "bottom": 84,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 320,
+        "height": 568
+      }
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "countdown": {
+        "x": 8,
+        "y": 7,
+        "right": 382,
+        "bottom": 35.796875,
+        "width": 374,
+        "height": 28.796875
+      },
+      "pointer": {
+        "x": 352.890625,
+        "y": 6.697500228881836,
+        "right": 370.890625,
+        "bottom": 27.697500228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 8,
+          "y": 43.796875,
+          "right": 52,
+          "bottom": 87.796875,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 286,
+          "y": 43.796875,
+          "right": 330,
+          "bottom": 87.796875,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停游戏",
+          "x": 338,
+          "y": 43.796875,
+          "right": 382,
+          "bottom": 87.796875,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 430,
+        "bottom": 932,
+        "width": 430,
+        "height": 932
+      },
+      "countdown": {
+        "x": 8,
+        "y": 7,
+        "right": 422,
+        "bottom": 38.015625,
+        "width": 414,
+        "height": 31.015625
+      },
+      "pointer": {
+        "x": 390.109375,
+        "y": 7.916250228881836,
+        "right": 408.109375,
+        "bottom": 28.916250228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 8,
+          "y": 46.015625,
+          "right": 52,
+          "bottom": 90.015625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 326,
+          "y": 46.015625,
+          "right": 370,
+          "bottom": 90.015625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停游戏",
+          "x": 378,
+          "y": 46.015625,
+          "right": 422,
+          "bottom": 90.015625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 430,
+        "height": 932
+      }
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "surface": {
+        "x": 466.875,
+        "y": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "width": 506.25,
+        "height": 900
+      },
+      "countdown": {
+        "x": 474.875,
+        "y": 7,
+        "right": 965.125,
+        "bottom": 42.265625,
+        "width": 490.25,
+        "height": 35.265625
+      },
+      "pointer": {
+        "x": 928.40625,
+        "y": 10.244375228881836,
+        "right": 946.40625,
+        "bottom": 31.244375228881836,
+        "width": 18,
+        "height": 21
+      },
+      "controls": [
+        {
+          "label": "返回关卡",
+          "x": 474.875,
+          "y": 50.265625,
+          "right": 518.875,
+          "bottom": 94.265625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "物件剪影提示",
+          "x": 869.125,
+          "y": 50.265625,
+          "right": 913.125,
+          "bottom": 94.265625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        },
+        {
+          "label": "暂停游戏",
+          "x": 921.125,
+          "y": 50.265625,
+          "right": 965.125,
+          "bottom": 94.265625,
+          "width": 44,
+          "height": 44,
+          "centerHits": true
+        }
+      ],
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      }
+    }
+  ],
+  "runtime": [
+    {
+      "id": "typhoon-home",
+      "before": 0,
+      "startedAt": 683,
+      "initialRemaining": 49,
+      "laterRemaining": 47,
+      "initialFill": 0.963,
+      "laterFill": 0.9313359999999999,
+      "pausedAt": 4933,
+      "hintExpanded": true,
+      "pauseFrozen": true,
+      "resumed": true
+    },
+    {
+      "id": "flood-kit",
+      "before": 0,
+      "startedAt": 683,
+      "initialRemaining": 49,
+      "laterRemaining": 48,
+      "initialFill": 0.9693340000000001,
+      "laterFill": 0.9446680000000001,
+      "pausedAt": 3266,
+      "hintExpanded": true,
+      "pauseFrozen": true,
+      "resumed": true
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "before": 0,
+      "startedAt": 683,
+      "initialRemaining": 49,
+      "laterRemaining": 48,
+      "initialFill": 0.9783360000000005,
+      "laterFill": 0.9543360000000005,
+      "pausedAt": 2499,
+      "hintExpanded": true,
+      "pauseFrozen": true,
+      "resumed": true
+    },
+    {
+      "id": "oil-fire",
+      "before": 0,
+      "startedAt": 700,
+      "explicitStart": true
+    },
+    {
+      "id": "fire-shelter-practice",
+      "before": 0,
+      "startedAt": 700,
+      "explicitStart": true
+    }
+  ],
+  "assets": [
+    {
+      "file": "/ui/painted-v1/modal.webp",
+      "sha256": "1a84fdeafdee54ca534c599e862a3a6bb952f5df54360ebf8b3bcfd783ce2ec0",
+      "renderedEmbeddedMatch": true
+    },
+    {
+      "file": "/ui/painted-v1/hint.webp",
+      "sha256": "a226dbf91fa29ee850cb834051123346f3636114767e20ccfb3728d7c6c3b08c",
+      "renderedEmbeddedMatch": true
+    },
+    {
+      "file": "/ui/painted-v1/pause.webp",
+      "sha256": "22df2dce22dca006ad70845e89f5b9b518a5c7127e9ed16fb987f1dbd7f210c2",
+      "renderedEmbeddedMatch": true
+    },
+    {
+      "file": "/ui/painted-v1/back.webp",
+      "sha256": "c2286e81384e10fd6febd924c7081b0be6257acdcc48cc4429b20811b83bfc48",
+      "renderedEmbeddedMatch": true
+    },
+    {
+      "file": "/ui/painted-v1/timer-empty.webp",
+      "sha256": "022bc5b719dba0a3d1988d167044120a19783abff93db13872b0e3a5f33b65a8",
+      "renderedEmbeddedMatch": true
+    },
+    {
+      "file": "/ui/painted-v1/timer-full.webp",
+      "sha256": "6ebd3615c6b539c6be635f70e9c11a7e2c8af3ee9ad25f7467e655caab1f12f7",
+      "renderedEmbeddedMatch": true
+    },
+    {
+      "file": "/ui/painted-v1/petal.webp",
+      "sha256": "b66f53d7e84be948c25b4300fbb34947903eecd053740feac592e173391208ce",
+      "renderedEmbeddedMatch": true
+    }
+  ],
+  "screenshots": [
+    "typhoon-home-opening-320x568.png",
+    "typhoon-home-opening-390x844.png",
+    "typhoon-home-opening-430x932.png",
+    "typhoon-home-opening-1440x900.png",
+    "typhoon-home-playing-hint-390x844.png",
+    "typhoon-home-retry-reset-390x844.png",
+    "flood-kit-opening-320x568.png",
+    "flood-kit-opening-390x844.png",
+    "flood-kit-opening-430x932.png",
+    "flood-kit-opening-1440x900.png",
+    "flood-kit-playing-hint-390x844.png",
+    "rain-street-preparation-v1-opening-320x568.png",
+    "rain-street-preparation-v1-opening-390x844.png",
+    "rain-street-preparation-v1-opening-430x932.png",
+    "rain-street-preparation-v1-opening-1440x900.png",
+    "rain-street-preparation-v1-playing-hint-390x844.png",
+    "flood-house-response-v1-hud-280x568.png",
+    "oil-fire-opening-320x568.png",
+    "oil-fire-opening-390x844.png",
+    "oil-fire-opening-430x932.png",
+    "oil-fire-opening-1440x900.png",
+    "fire-shelter-practice-opening-320x568.png",
+    "fire-shelter-practice-opening-390x844.png",
+    "fire-shelter-practice-opening-430x932.png",
+    "fire-shelter-practice-opening-1440x900.png"
+  ],
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "fixture": "Isolated 69-flower fixture: 23 mapped levels preset complete; typhoon-home remains incomplete. Only for entry/layout access; not earned gameplay. No user profile is opened.",
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "contextClosed": true,
+  "browserClosed": true,
+  "sourceAssets": [
+    {
+      "file": "/ui/painted-v1/back.webp",
+      "sha256": "c2286e81384e10fd6febd924c7081b0be6257acdcc48cc4429b20811b83bfc48"
+    },
+    {
+      "file": "/ui/painted-v1/hint.webp",
+      "sha256": "a226dbf91fa29ee850cb834051123346f3636114767e20ccfb3728d7c6c3b08c"
+    },
+    {
+      "file": "/ui/painted-v1/modal.webp",
+      "sha256": "1a84fdeafdee54ca534c599e862a3a6bb952f5df54360ebf8b3bcfd783ce2ec0"
+    },
+    {
+      "file": "/ui/painted-v1/pause.webp",
+      "sha256": "22df2dce22dca006ad70845e89f5b9b518a5c7127e9ed16fb987f1dbd7f210c2"
+    },
+    {
+      "file": "/ui/painted-v1/petal.webp",
+      "sha256": "b66f53d7e84be948c25b4300fbb34947903eecd053740feac592e173391208ce"
+    },
+    {
+      "file": "/ui/painted-v1/timer-empty.webp",
+      "sha256": "022bc5b719dba0a3d1988d167044120a19783abff93db13872b0e3a5f33b65a8"
+    },
+    {
+      "file": "/ui/painted-v1/timer-full.webp",
+      "sha256": "6ebd3615c6b539c6be635f70e9c11a7e2c8af3ee9ad25f7467e655caab1f12f7"
+    }
+  ],
+  "narrowFloodHud": {
+    "viewport": {
+      "width": 280,
+      "height": 568
+    },
+    "elements": [
+      {
+        "x": 8,
+        "y": 8,
+        "right": 52,
+        "bottom": 52,
+        "width": 44,
+        "height": 44,
+        "name": "返回关卡",
+        "button": true,
+        "centerHits": true
+      },
+      {
+        "x": 60,
+        "y": 13,
+        "right": 168,
+        "bottom": 47,
+        "width": 108,
+        "height": 34,
+        "name": "LEVEL 22 · 应急处置洪水居家避险",
+        "button": false,
+        "centerHits": true
+      },
+      {
+        "x": 239.171875,
+        "y": 53,
+        "right": 272,
+        "bottom": 71,
+        "width": 32.828125,
+        "height": 18,
+        "name": "已用时间",
+        "button": false,
+        "centerHits": true
+      },
+      {
+        "x": 176,
+        "y": 8,
+        "right": 220,
+        "bottom": 52,
+        "width": 44,
+        "height": 44,
+        "name": "场景提示",
+        "button": true,
+        "centerHits": true
+      },
+      {
+        "x": 228,
+        "y": 8,
+        "right": 272,
+        "bottom": 52,
+        "width": 44,
+        "height": 44,
+        "name": "暂停游戏",
+        "button": true,
+        "centerHits": true
+      }
+    ],
+    "status": "passed"
+  },
+  "finalHtmlSha256": "f27d20afa948d94999bba0635f638c1d3a0b23cb22aa6b8179bb22172c8cdee2",
+  "finishedAt": "2026-09-15T04:44:29.426Z"
+}

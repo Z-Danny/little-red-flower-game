@@ -1,0 +1,201 @@
+{
+  "status": "passed",
+  "startedAt": "2026-09-15T07:26:43.417Z",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "e7651ef9d604756e59a7ee97f62c95e56ec57debdc1183fd8df0cfb207efbdb2",
+  "checks": [
+    {
+      "name": "Final HTML embeds journal artwork byte-for-byte",
+      "status": "passed",
+      "assets": 14
+    },
+    {
+      "name": "Keyboard leaderboard tab: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard my-progress tab: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Arrow-key leaderboard tab: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "End-key my-progress tab: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Avatar interaction: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Island detail interaction: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Outside journal close: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Normal motion entry and native interaction animations present",
+      "status": "passed",
+      "animations": [
+        {
+          "type": "start",
+          "name": "journal-page-in"
+        },
+        {
+          "type": "start",
+          "name": "journal-paper-in"
+        }
+      ]
+    }
+  ],
+  "layouts": [],
+  "audio": [
+    {
+      "label": "Keyboard leaderboard tab",
+      "before": 2,
+      "after": 3,
+      "cue": "tap"
+    },
+    {
+      "label": "Keyboard my-progress tab",
+      "before": 3,
+      "after": 4,
+      "cue": "tap"
+    },
+    {
+      "label": "Arrow-key leaderboard tab",
+      "before": 4,
+      "after": 5,
+      "cue": "tap"
+    },
+    {
+      "label": "End-key my-progress tab",
+      "before": 5,
+      "after": 6,
+      "cue": "tap"
+    },
+    {
+      "label": "Avatar interaction",
+      "before": 6,
+      "after": 7,
+      "cue": "tap"
+    },
+    {
+      "label": "Island detail interaction",
+      "before": 7,
+      "after": 8,
+      "cue": "tap"
+    },
+    {
+      "label": "Outside journal close",
+      "before": 8,
+      "after": 9,
+      "cue": "close"
+    }
+  ],
+  "assets": [
+    {
+      "file": "/ui/painted-journal-v1/avatar.webp",
+      "bytes": 85962,
+      "sha256": "08cdb4c06b705525679017fe3e7b4eb8442d338c39d675d748caae63df9d332c",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/count-tag.webp",
+      "bytes": 30388,
+      "sha256": "7a1d1d6f95acfe260aa6582bdb3322cd795bf6d9ad3d25cba417ec9763dd457f",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/frame-body.webp",
+      "bytes": 123176,
+      "sha256": "f0bda2b9409aa3491ade40ad09cd8d45297d829b63693936ef1cc301f1dfc99c",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/frame-footer.webp",
+      "bytes": 46552,
+      "sha256": "7c51e248694e60a4c4c3d917f6451ff090ad3da1a18a718f30146932407c0947",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/frame-header.webp",
+      "bytes": 73612,
+      "sha256": "cb912d83f57bb0371526588904858b4a0eff1742bba43f75d9bc6fff1c61d674",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/island-home.webp",
+      "bytes": 176338,
+      "sha256": "f278e2880ef5a3bc15f23733cb8fd87a009db6029d8e8b5f65337337ce1a6f6b",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/island-nature.webp",
+      "bytes": 166852,
+      "sha256": "31c2e8edd2b655ee52834f2a593fdaabee97c12952a28b120da3a645af328837",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/island-public.webp",
+      "bytes": 175354,
+      "sha256": "eee6cee079686cd6706780ed561da838aed4281b1a5f43ecf1daa18f4e8deaf9",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/island-sign.webp",
+      "bytes": 29044,
+      "sha256": "89ff4b2b12deef06f1214f2fdcbe9da547065632a908b001cb7869be73ba4d98",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/rank-leaf.webp",
+      "bytes": 23588,
+      "sha256": "bc382750142c2d83582d00f796704453ce5dcc939ce3a2194ba60b9c14f6ede8",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/stat-flowers.webp",
+      "bytes": 40218,
+      "sha256": "3d62dcd234bf0a329efb40da6263f76a9f34d3538839c374669d2dd4bf2c614e",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/stat-progress.webp",
+      "bytes": 40218,
+      "sha256": "3d62dcd234bf0a329efb40da6263f76a9f34d3538839c374669d2dd4bf2c614e",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/tab-active.webp",
+      "bytes": 39504,
+      "sha256": "7ccd1454a78e9c18791ff4e46fccef443616636dfc76624379dad3f3f398537d",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/tab-inactive.webp",
+      "bytes": 41488,
+      "sha256": "46e8757730238419e34f39a7865af0f1cfbeef149439edb7c0d83061fc4d725e",
+      "embedded": true
+    }
+  ],
+  "screenshots": [],
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "contextsCreated": 1,
+  "contextsClosed": 1,
+  "browserClosed": true,
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "fixture": "Independent offline browser contexts preset zero, mixed legacy 1/2/3-flower, and all-complete records for UI assertions. These are explicit synthetic fixtures, not earned gameplay results. Demo players remain read-only and must never be persisted. Tests use only native UI input except temporary, transparent AudioContext instrumentation and animation observations. One actual level launch follows journal dismissal; no completion callback or reward is injected.",
+  "scriptSha256": "8b8b294efce516ba710299d8f762aef2b11b7a1678793b2278e57e74b418269e",
+  "browser": "152.0.7977.83",
+  "finalHtmlSha256": "e7651ef9d604756e59a7ee97f62c95e56ec57debdc1183fd8df0cfb207efbdb2",
+  "finishedAt": "2026-09-15T07:26:53.281Z",
+  "mode": "normal-motion-only"
+}

@@ -1,93 +1,154 @@
-/* oxlint-disable next/no-img-element -- Local thumbnails must work without an image server in the offline build. */
+/* oxlint-disable next/no-img-element -- Local art is embedded in the standalone offline build. */
+import { journeyCategories } from '@/app/game/journey/categories';
+import { archipelagoArt } from '@/app/game/journey/archipelago';
 import {
-  Check,
-  HeartPulse,
-  ShieldCheck,
-  Trophy,
-  Volume2,
-  VolumeX,
-} from 'lucide-react';
-import {
-  journeyCategories,
-  mapsForCategory,
-  categoryProgress,
-  type JourneyCategory,
-} from '@/app/game/journey/categories';
-import { journeyCopy } from '@/app/game/journey/presentation';
-import { Flower } from './flower';
-import {
-  nodeStatus,
   journeyTiming,
   type Region,
-  type Progress,
   type Planting,
-  type MapNode,
 } from '@/app/game/journey/progress';
+
+const homeArt = '/ui/map-corner-garden-v2/home.png';
+const flowerArt = '/ui/map-corner-garden-v2/flower-counter.png';
+const settingsArt = '/ui/map-corner-garden-v2/settings-blue.png';
+
 type Props = {
   region: Region;
   done: number;
   wallet: number;
-  muted: boolean;
-  onMute: () => void;
-  onLeaderboard: () => void;
   onArchive: () => void;
+  onSettings: () => void;
   onHome: () => void;
   planting: Planting | null;
   age: number;
-  current?: MapNode;
-  focus: (id: string, smooth?: boolean, align?: number) => void;
-  completed: Progress;
-  onPendingCategory: (category: JourneyCategory) => void;
+  onOpenArchipelago: () => void;
 };
+
 export function MapChrome({
   region,
   done,
   wallet,
-  muted,
-  onMute,
-  onLeaderboard,
   onArchive,
+  onSettings,
   onHome,
   planting,
   age,
-  focus,
-  completed,
-  onPendingCategory,
+  onOpenArchipelago,
 }: Props) {
+  const active =
+    journeyCategories.find((category) =>
+      category.regionIds.includes(region.id),
+    ) ?? journeyCategories[0];
   return (
     <>
-      <header className="garden-header">
-        <div className="garden-topline">
-          <button
-            className="garden-title-group garden-home-link"
-            onClick={onHome}
-            disabled={!!planting}
-            aria-label="返回游戏首页"
+      <aside
+        className="map-corner-tools"
+        data-map-corner-tools
+        aria-label="地图操作"
+      >
+        <svg
+          className="map-corner-filters"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <defs>
+            <filter
+              id="map-corner-cream-outline"
+              x="-8%"
+              y="-8%"
+              width="116%"
+              height="116%"
+              colorInterpolationFilters="sRGB"
+            >
+              <feMorphology
+                in="SourceAlpha"
+                operator="dilate"
+                radius="0.85"
+                result="edge"
+              />
+              <feFlood floodColor="#f6e7c5" result="cream" />
+              <feComposite
+                in="cream"
+                in2="edge"
+                operator="in"
+                result="outline"
+              />
+              <feMerge>
+                <feMergeNode in="outline" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+        </svg>
+        <button
+          type="button"
+          className="map-corner-button map-home-button"
+          data-map-home
+          aria-label="返回游戏首页"
+          disabled={!!planting}
+          onClick={() => {
+            if (planting) return;
+            onHome();
+          }}
+        >
+          <img src={homeArt} alt="" draggable={false} />
+        </button>
+        <button
+          type="button"
+          className="map-corner-button map-corner-wallet garden-wallet"
+          data-journal-open
+          data-ui-sound="open"
+          disabled={!!planting}
+          onClick={() => {
+            if (planting) return;
+            onArchive();
+          }}
+          aria-label={`累计${wallet}朵小红花，打开我的进度`}
+        >
+          <img src={flowerArt} alt="" draggable={false} />
+          <strong
+            data-wallet
+            data-wallet-digits={Math.min(String(wallet).length, 3)}
           >
-            <span>{journeyCopy.brand}</span>
-            <h1>{region.short}</h1>
-          </button>
-          <div className="garden-top-actions">
-            <button
-              onClick={onMute}
-              aria-label={muted ? '打开奖励声音' : '关闭奖励声音'}
-            >
-              {muted ? <VolumeX /> : <Volume2 />}
-            </button>
-            <button onClick={onLeaderboard} aria-label="打开排行榜">
-              <Trophy />
-            </button>
-            <button
-              className="garden-wallet"
-              onClick={onArchive}
-              aria-label={`累计${wallet}朵小红花，打开守护档案`}
-            >
-              <Flower />
-              <strong data-wallet>{wallet}</strong>
-            </button>
-          </div>
-        </div>
-      </header>
+            {wallet}
+          </strong>
+        </button>
+        <button
+          type="button"
+          className="map-corner-button"
+          data-map-settings
+          onClick={() => {
+            onSettings();
+          }}
+          aria-label="打开游戏设置"
+        >
+          <img src={settingsArt} alt="" draggable={false} />
+        </button>
+      </aside>
+      <nav
+        className="map-fan"
+        data-map-fan
+        data-fan-current={active.id}
+        data-expanded="false"
+        aria-label="地图切换"
+      >
+        <button
+          type="button"
+          className="map-fan-toggle"
+          data-map-fan-toggle
+          aria-haspopup="dialog"
+          aria-label={`当前地图：${active.name}，打开群岛选择`}
+          disabled={!!planting}
+          onClick={onOpenArchipelago}
+        >
+          <img
+            className="map-fan-current-art"
+            src={archipelagoArt.entry}
+            alt=""
+            draggable={false}
+          />
+          <span className="map-fan-name">{active.name}</span>
+        </button>
+      </nav>
       {planting && (
         <output className="garden-guide">
           {age < journeyTiming.bloom
@@ -99,56 +160,6 @@ export function MapChrome({
                 : '沿着花径，向上出发'}
         </output>
       )}
-      <nav className="garden-tabs garden-footer" aria-label="选择分类">
-        {journeyCategories.map((category) => {
-          const r = mapsForCategory(category)[0];
-          const { earned, open } = categoryProgress(category, completed);
-          return (
-            <button
-              data-map-region={r?.id}
-              data-category={category.id}
-              data-region-complete={earned}
-              key={category.id}
-              aria-pressed={category.regionIds.includes(region.id)}
-              aria-label={
-                open
-                  ? `${category.name}${earned ? '，已恢复' : ''}`
-                  : `${category.name}，待开放`
-              }
-              disabled={!!planting}
-              onClick={() => {
-                if (!r || !open) {
-                  onPendingCategory(category);
-                  return;
-                }
-                focus(
-                  (
-                    r.nodes.find(
-                      (n) => nodeStatus(n.id, completed) === 'available',
-                    ) ?? r.nodes[0]
-                  ).id,
-                  false,
-                  0.78,
-                );
-              }}
-            >
-              <span
-                className={`garden-region-thumb ${open ? '' : 'garden-category-pending'}`}
-              >
-                {r ? (
-                  <img src={r.image} alt="" />
-                ) : category.icon === 'health' ? (
-                  <HeartPulse />
-                ) : (
-                  <ShieldCheck />
-                )}
-                {earned && <Check />}
-              </span>
-              <span className="garden-tab-caption">{category.name}</span>
-            </button>
-          );
-        })}
-      </nav>
     </>
   );
 }

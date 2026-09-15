@@ -84,9 +84,9 @@ try{
   sounds=await page.evaluate(()=>window.__starts);assert(sounds.some(s=>s.length===31973),'telephone PCM');assert(sounds.some(s=>s.length===17199),'latch PCM');
   check('four pointer actions and reward '+width,{sounds});
   if(width===390){
-   const saved=await scores();await page.getByRole('button',{name:/返回地图/}).click();await tick(3000);await open();
+   const saved=await scores();await page.locator('[data-testid="settlement-primary"]').click();await tick(3000);await open();
    for(const step of ['exit-flat','use-stairs','reach-outside-assembly','report-fire'])await action(step);
-   await tick(6000);assert.deepEqual(await scores(),saved);assert.equal(await page.locator('.garden-reward-label').innerText(),'本关花朵已种下');check('replay does not duplicate reward');
+   await tick(6000);assert.deepEqual(await scores(),saved);assert.equal(await page.locator('[data-testid="settlement-reward"]').innerText(),'小红花已种下 · 本次为巩固练习');check('replay does not duplicate reward');
   }
   await context.close();
  }

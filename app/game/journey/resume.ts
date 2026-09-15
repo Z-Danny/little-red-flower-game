@@ -1,4 +1,4 @@
-import { journeyMap, nodeFor, nodeStatus, type Progress } from './progress';
+import { flowerTotal, journeyMap, nodeFor, nodeStatus, type Progress } from './progress';
 export const JOURNEY_LOCATION_KEY = 'little-red-flower-journey-location-v1';
 export type JourneyLocation = { levelId: string; visitedAt: number };
 export type JourneyLocations = Record<string, JourneyLocation>;
@@ -15,6 +15,7 @@ export function parseLocations(raw: string | null): JourneyLocations {
         typeof entry === 'object' &&
         typeof entry.levelId === 'string' &&
         Number.isFinite(entry.visitedAt) &&
+        entry.visitedAt > 0 &&
         nodeFor(entry.levelId)
       ) {
         clean[id] = { levelId: entry.levelId, visitedAt: entry.visitedAt };
@@ -25,6 +26,14 @@ export function parseLocations(raw: string | null): JourneyLocations {
   }
   return clean;
 }
+export function hasJourneyRecord(progress: Progress, location?: JourneyLocation) {
+  return flowerTotal(progress) > 0 || !!(
+    location &&
+    Number.isFinite(location.visitedAt) &&
+    location.visitedAt > 0 &&
+    nodeStatus(location.levelId, progress) !== 'locked'
+  );
+}
 export function entryNode(progress: Progress) {
   const first = journeyMap.regions[0];
   return (
@@ -33,7 +42,8 @@ export function entryNode(progress: Progress) {
   );
 }
 export function resumeNode(progress: Progress, location?: JourneyLocation) {
-  if (location && nodeFor(location.levelId)) return location.levelId;
+  if (location && nodeStatus(location.levelId, progress) !== 'locked')
+    return location.levelId;
   return (
     journeyMap.regions
       .flatMap((r) => r.nodes)

@@ -20,6 +20,8 @@ import {
 } from './hunts.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const gameTitle = JSON.parse(readFileSync(join(root, 'content', 'journey-home.json'), 'utf8')).title.join('');
+const escapedGameTitle = gameTitle.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 execFileSync(process.execPath, [join(root, 'scripts/levels.mjs'), 'sync'], {
   cwd: root,
   stdio: 'inherit',
@@ -135,7 +137,15 @@ css += '\n' + readFileSync(join(root, 'app', 'typography.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'map-signals.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'title-screen.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'journey-frame.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'map-wheel.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'archipelago.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'placement.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'painted-ui.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'painted-hud.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'painted-settlement.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'painted-failure.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'painted-journal.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'pause-menu.css'), 'utf8');
 // Keep the OFL notices in the single-file distribution as well as in source.
 for (const license of ['WenKai-OFL.txt', 'NotoSansSC-OFL.txt']) {
   css +=
@@ -157,7 +167,7 @@ const embeddedAssets = [];
 const assetUrls = [
   ...new Set(
     (javascript + css).match(
-      /\/(?:(?:levels|audio|fonts)\/[A-Za-z0-9_./-]+|emergency-home)\.(?:png|webp|wav|mp3|ogg|woff2)/g,
+      /\/(?:(?:levels|audio|fonts|ui)\/[A-Za-z0-9_./-]+|emergency-home)\.(?:png|webp|svg|wav|mp3|ogg|woff2)/g,
     ) ?? [],
   ),
 ];
@@ -167,6 +177,7 @@ for (const assetUrl of assetUrls) {
     mime = {
       png: 'image/png',
       webp: 'image/webp',
+      svg: 'image/svg+xml',
       wav: 'audio/wav',
       mp3: 'audio/mpeg',
       ogg: 'audio/ogg',
@@ -195,11 +206,11 @@ assert.ok(
   '离线版必须包含排行榜及其样式。',
 );
 assert.ok(
-  !/url\(\s*['"]?(?:https?:|\/levels\/|\/fonts\/|\/emergency-home)/i.test(css),
+  !/url\(\s*['"]?(?:https?:|\/levels\/|\/fonts\/|\/ui\/|\/emergency-home)/i.test(css),
   '离线样式不能依赖外部图片或字体。',
 );
 assert.ok(
-  !/\/levels\/[\w/.-]+\.(?:png|webp)/.test(javascript),
+  !/\/(?:levels|ui)\/[\w/.-]+\.(?:png|webp|svg)/.test(javascript),
   '关卡图片必须内嵌。',
 );
 assert.ok(
@@ -225,9 +236,9 @@ const html = `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light">
-<meta name="description" content="小红花应急行动，本地离线版。包含当前已启用的训练关卡。">
+<meta name="description" content="${escapedGameTitle}，本地离线版。包含当前已启用的训练关卡。">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob:; media-src data: blob:; font-src data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
-<title>小红花应急行动 · 本地离线版</title>
+<title>${escapedGameTitle} · 本地离线版</title>
 <style>${css.replace(/<\/style/gi, '<\\/style')}</style>
 </head>
 <body>

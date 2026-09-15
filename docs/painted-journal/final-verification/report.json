@@ -1,0 +1,1387 @@
+{
+  "mode": "full",
+  "status": "passed",
+  "startedAt": "2026-09-15T07:31:42.732Z",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "95d6015380afd47e45f0a1124a61008f72cc8dac44db128a25c7467b489f75a4",
+  "checks": [
+    {
+      "name": "Final HTML embeds journal artwork byte-for-byte",
+      "status": "passed",
+      "assets": 14
+    },
+    {
+      "name": "Exact scores and three island totals for journal-qa-active",
+      "status": "passed",
+      "flowers": 0,
+      "completed": 0
+    },
+    {
+      "name": "zero: 390×844 layout, fixed frame/tabs and reachable last content",
+      "status": "passed"
+    },
+    {
+      "name": "Exact scores and three island totals for journal-qa-active",
+      "status": "passed",
+      "flowers": 12,
+      "completed": 5
+    },
+    {
+      "name": "mine: 390×844 layout, fixed frame/tabs and reachable last content",
+      "status": "passed"
+    },
+    {
+      "name": "mine: 320×568 layout, fixed frame/tabs and reachable last content",
+      "status": "passed"
+    },
+    {
+      "name": "mine: 1440×900 layout, fixed frame/tabs and reachable last content",
+      "status": "passed"
+    },
+    {
+      "name": "Pointer leaderboard tab: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Inspect saved player: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Exact scores and three island totals for journal-qa-other",
+      "status": "passed",
+      "flowers": 36,
+      "completed": 12
+    },
+    {
+      "name": "Exact scores and three island totals for journal-qa-active",
+      "status": "passed",
+      "flowers": 12,
+      "completed": 5
+    },
+    {
+      "name": "Saved and demo detail are read-only; returning to mine restores actual data",
+      "status": "passed"
+    },
+    {
+      "name": "board: 390×844 layout, fixed frame/tabs and reachable last content",
+      "status": "passed"
+    },
+    {
+      "name": "board: 320×568 layout, fixed frame/tabs and reachable last content",
+      "status": "passed"
+    },
+    {
+      "name": "board: 1440×900 layout, fixed frame/tabs and reachable last content",
+      "status": "passed"
+    },
+    {
+      "name": "Inside click/scroll remain open; outside/Escape dismiss; reopening defaults mine; focus stays in journal",
+      "status": "passed",
+      "internalScrollExercised": true
+    },
+    {
+      "name": "Exact scores and three island totals for journal-qa-other",
+      "status": "passed",
+      "flowers": 36,
+      "completed": 12
+    },
+    {
+      "name": "Exact scores and three island totals for f7f4efec-c230-49a8-be18-08fb901de118",
+      "status": "passed",
+      "flowers": 0,
+      "completed": 0
+    },
+    {
+      "name": "Explicit edit, cancel, saved-player switch, and add-player preserve per-player progress",
+      "status": "passed"
+    },
+    {
+      "name": "Button/reward mute suppresses journal open, tab, player inspection and dismissal",
+      "status": "passed"
+    },
+    {
+      "name": "Dismissed journal leaves map input usable; real typhoon level starts",
+      "status": "passed"
+    },
+    {
+      "name": "Exact scores and three island totals for journal-qa-active",
+      "status": "passed",
+      "flowers": 72,
+      "completed": 24
+    },
+    {
+      "name": "complete: 390×844 layout, fixed frame/tabs and reachable last content",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard leaderboard tab: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard my-progress tab: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Arrow-key leaderboard tab: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "End-key my-progress tab: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Avatar interaction: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Island detail interaction: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Outside journal close: one cue, released voices",
+      "status": "passed"
+    },
+    {
+      "name": "Normal motion entry is present and reduced-motion fixture suppresses it",
+      "status": "passed",
+      "animations": [
+        {
+          "type": "start",
+          "name": "journal-page-in"
+        },
+        {
+          "type": "start",
+          "name": "journal-paper-in"
+        },
+        {
+          "type": "end",
+          "name": "journal-page-in"
+        },
+        {
+          "type": "end",
+          "name": "journal-paper-in"
+        }
+      ]
+    }
+  ],
+  "layouts": [
+    {
+      "view": "zero",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 12,
+        "y": 20,
+        "width": 366,
+        "height": 804,
+        "right": 378,
+        "bottom": 824
+      },
+      "controls": [
+        {
+          "testid": "journal-tab-board",
+          "label": "红人榜",
+          "x": 41.265625,
+          "y": 105.390625,
+          "width": 150.734375,
+          "height": 49.8125,
+          "right": 192,
+          "bottom": 155.203125
+        },
+        {
+          "testid": "journal-tab-mine",
+          "label": "我的进度",
+          "x": 198,
+          "y": 105.390625,
+          "width": 150.734375,
+          "height": 49.8125,
+          "right": 348.734375,
+          "bottom": 155.203125
+        },
+        {
+          "testid": "journal-avatar",
+          "label": "戳一下这朵得意的小红花",
+          "x": 53.5625,
+          "y": 171.015625,
+          "width": 76.375,
+          "height": 76.375,
+          "right": 129.9375,
+          "bottom": 247.390625
+        },
+        {
+          "testid": "journal-edit",
+          "label": "改个昵称",
+          "x": 246.9375,
+          "y": 209.703125,
+          "width": 62,
+          "height": 37,
+          "right": 308.9375,
+          "bottom": 246.703125
+        },
+        {
+          "testid": "journal-island-nature",
+          "label": "自然灾害，已完成 0 / 11 关，还差 11 关",
+          "x": 41.265625,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 193.5,
+          "bottom": 562.390625
+        },
+        {
+          "testid": "journal-island-public",
+          "label": "公共安全，已完成 0 / 7 关，还差 7 关",
+          "x": 196.5,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 348.734375,
+          "bottom": 562.390625
+        },
+        {
+          "testid": "journal-island-home",
+          "label": "居家校园办公，已完成 0 / 6 关，还差 6 关",
+          "x": 118.125,
+          "y": 559.390625,
+          "width": 153.734375,
+          "height": 168.875,
+          "right": 271.859375,
+          "bottom": 728.265625
+        }
+      ],
+      "figures": [
+        {
+          "id": "journal-flowers",
+          "x": 111.84375,
+          "y": 293.03125,
+          "width": 21.0625,
+          "height": 35.09375,
+          "right": 132.90625,
+          "bottom": 328.125,
+          "textFits": true
+        },
+        {
+          "id": "journal-completed",
+          "x": 241.828125,
+          "y": 293.03125,
+          "width": 75.5625,
+          "height": 35.09375,
+          "right": 317.390625,
+          "bottom": 328.125,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-nature",
+          "x": 41.265625,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 193.5,
+          "bottom": 562.390625,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-public",
+          "x": 196.5,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 348.734375,
+          "bottom": 562.390625,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-home",
+          "x": 118.125,
+          "y": 559.390625,
+          "width": 153.734375,
+          "height": 168.875,
+          "right": 271.859375,
+          "bottom": 728.265625,
+          "textFits": true
+        }
+      ],
+      "docOverflow": false,
+      "ownOverflow": false
+    },
+    {
+      "view": "mine",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 12,
+        "y": 20,
+        "width": 366,
+        "height": 804,
+        "right": 378,
+        "bottom": 824
+      },
+      "controls": [
+        {
+          "testid": "journal-tab-board",
+          "label": "红人榜",
+          "x": 41.265625,
+          "y": 105.390625,
+          "width": 150.734375,
+          "height": 49.8125,
+          "right": 192,
+          "bottom": 155.203125
+        },
+        {
+          "testid": "journal-tab-mine",
+          "label": "我的进度",
+          "x": 198,
+          "y": 105.390625,
+          "width": 150.734375,
+          "height": 49.8125,
+          "right": 348.734375,
+          "bottom": 155.203125
+        },
+        {
+          "testid": "journal-avatar",
+          "label": "戳一下这朵得意的小红花",
+          "x": 53.5625,
+          "y": 171.015625,
+          "width": 76.375,
+          "height": 76.375,
+          "right": 129.9375,
+          "bottom": 247.390625
+        },
+        {
+          "testid": "journal-edit",
+          "label": "改个昵称",
+          "x": 241.9375,
+          "y": 209.703125,
+          "width": 62,
+          "height": 37,
+          "right": 303.9375,
+          "bottom": 246.703125
+        },
+        {
+          "testid": "journal-island-nature",
+          "label": "自然灾害，已完成 2 / 11 关，还差 9 关",
+          "x": 41.265625,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 193.5,
+          "bottom": 562.390625
+        },
+        {
+          "testid": "journal-island-public",
+          "label": "公共安全，已完成 1 / 7 关，还差 6 关",
+          "x": 196.5,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 348.734375,
+          "bottom": 562.390625
+        },
+        {
+          "testid": "journal-island-home",
+          "label": "居家校园办公，已完成 2 / 6 关，还差 4 关",
+          "x": 118.125,
+          "y": 559.390625,
+          "width": 153.734375,
+          "height": 168.875,
+          "right": 271.859375,
+          "bottom": 728.265625
+        }
+      ],
+      "figures": [
+        {
+          "id": "journal-flowers",
+          "x": 101.3125,
+          "y": 293.03125,
+          "width": 42.125,
+          "height": 35.09375,
+          "right": 143.4375,
+          "bottom": 328.125,
+          "textFits": true
+        },
+        {
+          "id": "journal-completed",
+          "x": 241.828125,
+          "y": 293.03125,
+          "width": 75.5625,
+          "height": 35.09375,
+          "right": 317.390625,
+          "bottom": 328.125,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-nature",
+          "x": 41.265625,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 193.5,
+          "bottom": 562.390625,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-public",
+          "x": 196.5,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 348.734375,
+          "bottom": 562.390625,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-home",
+          "x": 118.125,
+          "y": 559.390625,
+          "width": 153.734375,
+          "height": 168.875,
+          "right": 271.859375,
+          "bottom": 728.265625,
+          "textFits": true
+        }
+      ],
+      "docOverflow": false,
+      "ownOverflow": false
+    },
+    {
+      "view": "mine",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 12,
+        "y": 20,
+        "width": 296,
+        "height": 528,
+        "right": 308,
+        "bottom": 548
+      },
+      "controls": [
+        {
+          "testid": "journal-tab-board",
+          "label": "红人榜",
+          "x": 32.71875,
+          "y": 89.0625,
+          "width": 124.28125,
+          "height": 49,
+          "right": 157,
+          "bottom": 138.0625
+        },
+        {
+          "testid": "journal-tab-mine",
+          "label": "我的进度",
+          "x": 163,
+          "y": 89.0625,
+          "width": 124.28125,
+          "height": 49,
+          "right": 287.28125,
+          "bottom": 138.0625
+        },
+        {
+          "testid": "journal-avatar",
+          "label": "戳一下这朵得意的小红花",
+          "x": 35.25,
+          "y": 153.0625,
+          "width": 74.84375,
+          "height": 74.84375,
+          "right": 110.09375,
+          "bottom": 227.90625
+        },
+        {
+          "testid": "journal-edit",
+          "label": "改个昵称",
+          "x": 198.09375,
+          "y": 188.234375,
+          "width": 62,
+          "height": 37,
+          "right": 260.09375,
+          "bottom": 225.234375
+        },
+        {
+          "testid": "journal-island-nature",
+          "label": "自然灾害，已完成 2 / 11 关，还差 9 关",
+          "x": 32.71875,
+          "y": 358.09375,
+          "width": 125.78125,
+          "height": 148.15625,
+          "right": 158.5,
+          "bottom": 506.25
+        },
+        {
+          "testid": "journal-island-public",
+          "label": "公共安全，已完成 1 / 7 关，还差 6 关",
+          "x": 161.5,
+          "y": 358.09375,
+          "width": 125.78125,
+          "height": 148.15625,
+          "right": 287.28125,
+          "bottom": 506.25
+        },
+        {
+          "testid": "journal-island-home",
+          "label": "居家校园办公，已完成 2 / 6 关，还差 4 关",
+          "x": 96.359375,
+          "y": 503.25,
+          "width": 127.28125,
+          "height": 149.28125,
+          "right": 223.640625,
+          "bottom": 652.53125
+        }
+      ],
+      "figures": [
+        {
+          "id": "journal-flowers",
+          "x": 84.390625,
+          "y": 268.703125,
+          "width": 36.015625,
+          "height": 30,
+          "right": 120.40625,
+          "bottom": 298.703125,
+          "textFits": true
+        },
+        {
+          "id": "journal-completed",
+          "x": 200.859375,
+          "y": 268.703125,
+          "width": 64.625,
+          "height": 30,
+          "right": 265.484375,
+          "bottom": 298.703125,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-nature",
+          "x": 32.71875,
+          "y": 358.09375,
+          "width": 125.78125,
+          "height": 148.15625,
+          "right": 158.5,
+          "bottom": 506.25,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-public",
+          "x": 161.5,
+          "y": 358.09375,
+          "width": 125.78125,
+          "height": 148.15625,
+          "right": 287.28125,
+          "bottom": 506.25,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-home",
+          "x": 96.359375,
+          "y": 503.25,
+          "width": 127.28125,
+          "height": 149.28125,
+          "right": 223.640625,
+          "bottom": 652.53125,
+          "textFits": true
+        }
+      ],
+      "docOverflow": false,
+      "ownOverflow": false
+    },
+    {
+      "view": "mine",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 510,
+        "y": 20,
+        "width": 420,
+        "height": 860,
+        "right": 930,
+        "bottom": 880
+      },
+      "controls": [
+        {
+          "testid": "journal-tab-board",
+          "label": "红人榜",
+          "x": 543.59375,
+          "y": 118,
+          "width": 173.40625,
+          "height": 55.5,
+          "right": 717,
+          "bottom": 173.5
+        },
+        {
+          "testid": "journal-tab-mine",
+          "label": "我的进度",
+          "x": 723,
+          "y": 118,
+          "width": 173.40625,
+          "height": 55.5,
+          "right": 896.40625,
+          "bottom": 173.5
+        },
+        {
+          "testid": "journal-avatar",
+          "label": "戳一下这朵得意的小红花",
+          "x": 557.703125,
+          "y": 188.5,
+          "width": 87.625,
+          "height": 87.625,
+          "right": 645.328125,
+          "bottom": 276.125
+        },
+        {
+          "testid": "journal-edit",
+          "label": "改个昵称",
+          "x": 757.328125,
+          "y": 236.40625,
+          "width": 62,
+          "height": 37,
+          "right": 819.328125,
+          "bottom": 273.40625
+        },
+        {
+          "testid": "journal-island-nature",
+          "label": "自然灾害，已完成 2 / 11 关，还差 9 关",
+          "x": 543.59375,
+          "y": 437.234375,
+          "width": 174.90625,
+          "height": 188.734375,
+          "right": 718.5,
+          "bottom": 625.96875
+        },
+        {
+          "testid": "journal-island-public",
+          "label": "公共安全，已完成 1 / 7 关，还差 6 关",
+          "x": 721.5,
+          "y": 437.234375,
+          "width": 174.90625,
+          "height": 188.734375,
+          "right": 896.40625,
+          "bottom": 625.96875
+        },
+        {
+          "testid": "journal-island-home",
+          "label": "居家校园办公，已完成 2 / 6 关，还差 4 关",
+          "x": 631.796875,
+          "y": 622.96875,
+          "width": 176.40625,
+          "height": 188.640625,
+          "right": 808.203125,
+          "bottom": 811.609375
+        }
+      ],
+      "figures": [
+        {
+          "id": "journal-flowers",
+          "x": 603.640625,
+          "y": 321.390625,
+          "width": 52.8125,
+          "height": 44,
+          "right": 656.453125,
+          "bottom": 365.390625,
+          "textFits": true
+        },
+        {
+          "id": "journal-completed",
+          "x": 762.578125,
+          "y": 321.390625,
+          "width": 94.75,
+          "height": 44,
+          "right": 857.328125,
+          "bottom": 365.390625,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-nature",
+          "x": 543.59375,
+          "y": 437.234375,
+          "width": 174.90625,
+          "height": 188.734375,
+          "right": 718.5,
+          "bottom": 625.96875,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-public",
+          "x": 721.5,
+          "y": 437.234375,
+          "width": 174.90625,
+          "height": 188.734375,
+          "right": 896.40625,
+          "bottom": 625.96875,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-home",
+          "x": 631.796875,
+          "y": 622.96875,
+          "width": 176.40625,
+          "height": 188.640625,
+          "right": 808.203125,
+          "bottom": 811.609375,
+          "textFits": true
+        }
+      ],
+      "docOverflow": false,
+      "ownOverflow": false
+    },
+    {
+      "view": "board",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 12,
+        "y": 20,
+        "width": 366,
+        "height": 804,
+        "right": 378,
+        "bottom": 824
+      },
+      "controls": [
+        {
+          "testid": "journal-tab-board",
+          "label": "红人榜",
+          "x": 41.265625,
+          "y": 105.390625,
+          "width": 150.734375,
+          "height": 49.8125,
+          "right": 192,
+          "bottom": 155.203125
+        },
+        {
+          "testid": "journal-tab-mine",
+          "label": "我的进度",
+          "x": 198,
+          "y": 105.390625,
+          "width": 150.734375,
+          "height": 49.8125,
+          "right": 348.734375,
+          "bottom": 155.203125
+        },
+        {
+          "testid": "journal-player-demo:journal:ahua",
+          "label": "查看 阿花 的闯关进度，第 1 名，48 朵小红花，示例玩家",
+          "x": 41.265625,
+          "y": 256.28125,
+          "width": 307.46875,
+          "height": 65.921875,
+          "right": 348.734375,
+          "bottom": 322.203125
+        },
+        {
+          "testid": "journal-player-demo:journal:wang",
+          "label": "查看 隔壁老王 的闯关进度，第 2 名，39 朵小红花，示例玩家",
+          "x": 41.265625,
+          "y": 329.203125,
+          "width": 307.46875,
+          "height": 65.921875,
+          "right": 348.734375,
+          "bottom": 395.125
+        },
+        {
+          "testid": "journal-player-journal-qa-other",
+          "label": "查看 隔壁大聪明 的闯关进度，第 3 名，36 朵小红花",
+          "x": 41.265625,
+          "y": 402.125,
+          "width": 307.46875,
+          "height": 65.921875,
+          "right": 348.734375,
+          "bottom": 468.046875
+        },
+        {
+          "testid": "journal-player-journal-qa-active",
+          "label": "查看 阿花 的闯关进度，第 4 名，12 朵小红花",
+          "x": 41.265625,
+          "y": 475.046875,
+          "width": 307.46875,
+          "height": 65.921875,
+          "right": 348.734375,
+          "bottom": 540.96875
+        },
+        {
+          "testid": "journal-player-demo:journal:lin",
+          "label": "查看 小林 的闯关进度，第 5 名，9 朵小红花，示例玩家",
+          "x": 41.265625,
+          "y": 547.96875,
+          "width": 307.46875,
+          "height": 65.921875,
+          "right": 348.734375,
+          "bottom": 613.890625
+        },
+        {
+          "testid": "journal-player-demo:journal:yuan",
+          "label": "查看 阿圆 的闯关进度，第 6 名，6 朵小红花，示例玩家",
+          "x": 41.265625,
+          "y": 620.890625,
+          "width": 307.46875,
+          "height": 65.921875,
+          "right": 348.734375,
+          "bottom": 686.8125
+        },
+        {
+          "testid": "journal-player-journal-qa-zero",
+          "label": "查看 还没开张 的闯关进度，还没上榜，0 朵小红花",
+          "x": 41.265625,
+          "y": 693.8125,
+          "width": 307.46875,
+          "height": 65.921875,
+          "right": 348.734375,
+          "bottom": 759.734375
+        },
+        {
+          "testid": "journal-create",
+          "label": "＋ 添加玩家",
+          "x": 138.421875,
+          "y": 801.328125,
+          "width": 113.140625,
+          "height": 42,
+          "right": 251.5625,
+          "bottom": 843.328125
+        }
+      ],
+      "figures": [],
+      "docOverflow": false,
+      "ownOverflow": false
+    },
+    {
+      "view": "board",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 12,
+        "y": 20,
+        "width": 296,
+        "height": 528,
+        "right": 308,
+        "bottom": 548
+      },
+      "controls": [
+        {
+          "testid": "journal-tab-board",
+          "label": "红人榜",
+          "x": 32.71875,
+          "y": 89.0625,
+          "width": 124.28125,
+          "height": 49,
+          "right": 157,
+          "bottom": 138.0625
+        },
+        {
+          "testid": "journal-tab-mine",
+          "label": "我的进度",
+          "x": 163,
+          "y": 89.0625,
+          "width": 124.28125,
+          "height": 49,
+          "right": 287.28125,
+          "bottom": 138.0625
+        },
+        {
+          "testid": "journal-player-demo:journal:ahua",
+          "label": "查看 阿花 的闯关进度，第 1 名，48 朵小红花，示例玩家",
+          "x": 32.71875,
+          "y": 236.25,
+          "width": 254.5625,
+          "height": 64,
+          "right": 287.28125,
+          "bottom": 300.25
+        },
+        {
+          "testid": "journal-player-demo:journal:wang",
+          "label": "查看 隔壁老王 的闯关进度，第 2 名，39 朵小红花，示例玩家",
+          "x": 32.71875,
+          "y": 307.25,
+          "width": 254.5625,
+          "height": 64,
+          "right": 287.28125,
+          "bottom": 371.25
+        },
+        {
+          "testid": "journal-player-journal-qa-other",
+          "label": "查看 隔壁大聪明 的闯关进度，第 3 名，36 朵小红花",
+          "x": 32.71875,
+          "y": 378.25,
+          "width": 254.5625,
+          "height": 64,
+          "right": 287.28125,
+          "bottom": 442.25
+        },
+        {
+          "testid": "journal-player-journal-qa-active",
+          "label": "查看 阿花 的闯关进度，第 4 名，12 朵小红花",
+          "x": 32.71875,
+          "y": 449.25,
+          "width": 254.5625,
+          "height": 64,
+          "right": 287.28125,
+          "bottom": 513.25
+        },
+        {
+          "testid": "journal-player-demo:journal:lin",
+          "label": "查看 小林 的闯关进度，第 5 名，9 朵小红花，示例玩家",
+          "x": 32.71875,
+          "y": 520.25,
+          "width": 254.5625,
+          "height": 64,
+          "right": 287.28125,
+          "bottom": 584.25
+        },
+        {
+          "testid": "journal-player-demo:journal:yuan",
+          "label": "查看 阿圆 的闯关进度，第 6 名，6 朵小红花，示例玩家",
+          "x": 32.71875,
+          "y": 591.25,
+          "width": 254.5625,
+          "height": 64,
+          "right": 287.28125,
+          "bottom": 655.25
+        },
+        {
+          "testid": "journal-player-journal-qa-zero",
+          "label": "查看 还没开张 的闯关进度，还没上榜，0 朵小红花",
+          "x": 32.71875,
+          "y": 662.25,
+          "width": 254.5625,
+          "height": 64,
+          "right": 287.28125,
+          "bottom": 726.25
+        },
+        {
+          "testid": "journal-create",
+          "label": "＋ 添加玩家",
+          "x": 103.421875,
+          "y": 767.84375,
+          "width": 113.140625,
+          "height": 42,
+          "right": 216.5625,
+          "bottom": 809.84375
+        }
+      ],
+      "figures": [],
+      "docOverflow": false,
+      "ownOverflow": false
+    },
+    {
+      "view": "board",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 510,
+        "y": 20,
+        "width": 420,
+        "height": 860,
+        "right": 930,
+        "bottom": 880
+      },
+      "controls": [
+        {
+          "testid": "journal-tab-board",
+          "label": "红人榜",
+          "x": 543.59375,
+          "y": 118,
+          "width": 173.40625,
+          "height": 55.5,
+          "right": 717,
+          "bottom": 173.5
+        },
+        {
+          "testid": "journal-tab-mine",
+          "label": "我的进度",
+          "x": 723,
+          "y": 118,
+          "width": 173.40625,
+          "height": 55.5,
+          "right": 896.40625,
+          "bottom": 173.5
+        },
+        {
+          "testid": "journal-player-demo:journal:ahua",
+          "label": "查看 阿花 的闯关进度，第 1 名，48 朵小红花，示例玩家",
+          "x": 543.59375,
+          "y": 278.890625,
+          "width": 352.8125,
+          "height": 70.1875,
+          "right": 896.40625,
+          "bottom": 349.078125
+        },
+        {
+          "testid": "journal-player-demo:journal:wang",
+          "label": "查看 隔壁老王 的闯关进度，第 2 名，39 朵小红花，示例玩家",
+          "x": 543.59375,
+          "y": 356.078125,
+          "width": 352.8125,
+          "height": 70.1875,
+          "right": 896.40625,
+          "bottom": 426.265625
+        },
+        {
+          "testid": "journal-player-journal-qa-other",
+          "label": "查看 隔壁大聪明 的闯关进度，第 3 名，36 朵小红花",
+          "x": 543.59375,
+          "y": 433.265625,
+          "width": 352.8125,
+          "height": 70.1875,
+          "right": 896.40625,
+          "bottom": 503.453125
+        },
+        {
+          "testid": "journal-player-journal-qa-active",
+          "label": "查看 阿花 的闯关进度，第 4 名，12 朵小红花",
+          "x": 543.59375,
+          "y": 510.453125,
+          "width": 352.8125,
+          "height": 70.1875,
+          "right": 896.40625,
+          "bottom": 580.640625
+        },
+        {
+          "testid": "journal-player-demo:journal:lin",
+          "label": "查看 小林 的闯关进度，第 5 名，9 朵小红花，示例玩家",
+          "x": 543.59375,
+          "y": 587.640625,
+          "width": 352.8125,
+          "height": 70.1875,
+          "right": 896.40625,
+          "bottom": 657.828125
+        },
+        {
+          "testid": "journal-player-demo:journal:yuan",
+          "label": "查看 阿圆 的闯关进度，第 6 名，6 朵小红花，示例玩家",
+          "x": 543.59375,
+          "y": 664.828125,
+          "width": 352.8125,
+          "height": 70.1875,
+          "right": 896.40625,
+          "bottom": 735.015625
+        },
+        {
+          "testid": "journal-player-journal-qa-zero",
+          "label": "查看 还没开张 的闯关进度，还没上榜，0 朵小红花",
+          "x": 543.59375,
+          "y": 742.015625,
+          "width": 352.8125,
+          "height": 70.1875,
+          "right": 896.40625,
+          "bottom": 812.203125
+        },
+        {
+          "testid": "journal-create",
+          "label": "＋ 添加玩家",
+          "x": 663.421875,
+          "y": 853.796875,
+          "width": 113.140625,
+          "height": 42,
+          "right": 776.5625,
+          "bottom": 895.796875
+        }
+      ],
+      "figures": [],
+      "docOverflow": false,
+      "ownOverflow": false
+    },
+    {
+      "view": "complete",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 12,
+        "y": 20,
+        "width": 366,
+        "height": 804,
+        "right": 378,
+        "bottom": 824
+      },
+      "controls": [
+        {
+          "testid": "journal-tab-board",
+          "label": "红人榜",
+          "x": 41.265625,
+          "y": 105.390625,
+          "width": 150.734375,
+          "height": 49.8125,
+          "right": 192,
+          "bottom": 155.203125
+        },
+        {
+          "testid": "journal-tab-mine",
+          "label": "我的进度",
+          "x": 198,
+          "y": 105.390625,
+          "width": 150.734375,
+          "height": 49.8125,
+          "right": 348.734375,
+          "bottom": 155.203125
+        },
+        {
+          "testid": "journal-avatar",
+          "label": "戳一下这朵得意的小红花",
+          "x": 53.5625,
+          "y": 171.015625,
+          "width": 76.375,
+          "height": 76.375,
+          "right": 129.9375,
+          "bottom": 247.390625
+        },
+        {
+          "testid": "journal-edit",
+          "label": "改个昵称",
+          "x": 241.9375,
+          "y": 209.703125,
+          "width": 62,
+          "height": 37,
+          "right": 303.9375,
+          "bottom": 246.703125
+        },
+        {
+          "testid": "journal-island-nature",
+          "label": "自然灾害，已完成 11 / 11 关，全拿下了",
+          "x": 41.265625,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 193.5,
+          "bottom": 562.390625
+        },
+        {
+          "testid": "journal-island-public",
+          "label": "公共安全，已完成 7 / 7 关，全拿下了",
+          "x": 196.5,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 348.734375,
+          "bottom": 562.390625
+        },
+        {
+          "testid": "journal-island-home",
+          "label": "居家校园办公，已完成 6 / 6 关，全拿下了",
+          "x": 118.125,
+          "y": 559.390625,
+          "width": 153.734375,
+          "height": 168.875,
+          "right": 271.859375,
+          "bottom": 728.265625
+        }
+      ],
+      "figures": [
+        {
+          "id": "journal-flowers",
+          "x": 101.3125,
+          "y": 293.03125,
+          "width": 42.125,
+          "height": 35.09375,
+          "right": 143.4375,
+          "bottom": 328.125,
+          "textFits": true
+        },
+        {
+          "id": "journal-completed",
+          "x": 231.296875,
+          "y": 293.03125,
+          "width": 96.625,
+          "height": 35.09375,
+          "right": 327.921875,
+          "bottom": 328.125,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-nature",
+          "x": 41.265625,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 193.5,
+          "bottom": 562.390625,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-public",
+          "x": 196.5,
+          "y": 394.625,
+          "width": 152.234375,
+          "height": 167.765625,
+          "right": 348.734375,
+          "bottom": 562.390625,
+          "textFits": true
+        },
+        {
+          "id": "journal-island-home",
+          "x": 118.125,
+          "y": 559.390625,
+          "width": 153.734375,
+          "height": 168.875,
+          "right": 271.859375,
+          "bottom": 728.265625,
+          "textFits": true
+        }
+      ],
+      "docOverflow": false,
+      "ownOverflow": false
+    }
+  ],
+  "audio": [
+    {
+      "label": "Pointer leaderboard tab",
+      "before": 2,
+      "after": 3,
+      "cue": "tap"
+    },
+    {
+      "label": "Inspect saved player",
+      "before": 3,
+      "after": 4,
+      "cue": "open"
+    },
+    {
+      "label": "Keyboard leaderboard tab",
+      "before": 2,
+      "after": 3,
+      "cue": "tap"
+    },
+    {
+      "label": "Keyboard my-progress tab",
+      "before": 3,
+      "after": 4,
+      "cue": "tap"
+    },
+    {
+      "label": "Arrow-key leaderboard tab",
+      "before": 4,
+      "after": 5,
+      "cue": "tap"
+    },
+    {
+      "label": "End-key my-progress tab",
+      "before": 5,
+      "after": 6,
+      "cue": "tap"
+    },
+    {
+      "label": "Avatar interaction",
+      "before": 6,
+      "after": 7,
+      "cue": "tap"
+    },
+    {
+      "label": "Island detail interaction",
+      "before": 7,
+      "after": 8,
+      "cue": "tap"
+    },
+    {
+      "label": "Outside journal close",
+      "before": 8,
+      "after": 9,
+      "cue": "close"
+    }
+  ],
+  "assets": [
+    {
+      "file": "/ui/painted-journal-v1/avatar.webp",
+      "bytes": 85962,
+      "sha256": "08cdb4c06b705525679017fe3e7b4eb8442d338c39d675d748caae63df9d332c",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/count-tag.webp",
+      "bytes": 30388,
+      "sha256": "7a1d1d6f95acfe260aa6582bdb3322cd795bf6d9ad3d25cba417ec9763dd457f",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/frame-body.webp",
+      "bytes": 123176,
+      "sha256": "f0bda2b9409aa3491ade40ad09cd8d45297d829b63693936ef1cc301f1dfc99c",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/frame-footer.webp",
+      "bytes": 46552,
+      "sha256": "7c51e248694e60a4c4c3d917f6451ff090ad3da1a18a718f30146932407c0947",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/frame-header.webp",
+      "bytes": 73612,
+      "sha256": "cb912d83f57bb0371526588904858b4a0eff1742bba43f75d9bc6fff1c61d674",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/island-home.webp",
+      "bytes": 176338,
+      "sha256": "f278e2880ef5a3bc15f23733cb8fd87a009db6029d8e8b5f65337337ce1a6f6b",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/island-nature.webp",
+      "bytes": 166852,
+      "sha256": "31c2e8edd2b655ee52834f2a593fdaabee97c12952a28b120da3a645af328837",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/island-public.webp",
+      "bytes": 175354,
+      "sha256": "eee6cee079686cd6706780ed561da838aed4281b1a5f43ecf1daa18f4e8deaf9",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/island-sign.webp",
+      "bytes": 29044,
+      "sha256": "89ff4b2b12deef06f1214f2fdcbe9da547065632a908b001cb7869be73ba4d98",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/rank-leaf.webp",
+      "bytes": 23588,
+      "sha256": "bc382750142c2d83582d00f796704453ce5dcc939ce3a2194ba60b9c14f6ede8",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/stat-flowers.webp",
+      "bytes": 40218,
+      "sha256": "3d62dcd234bf0a329efb40da6263f76a9f34d3538839c374669d2dd4bf2c614e",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/stat-progress.webp",
+      "bytes": 40218,
+      "sha256": "3d62dcd234bf0a329efb40da6263f76a9f34d3538839c374669d2dd4bf2c614e",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/tab-active.webp",
+      "bytes": 39504,
+      "sha256": "7ccd1454a78e9c18791ff4e46fccef443616636dfc76624379dad3f3f398537d",
+      "embedded": true
+    },
+    {
+      "file": "/ui/painted-journal-v1/tab-inactive.webp",
+      "bytes": 41488,
+      "sha256": "46e8757730238419e34f39a7865af0f1cfbeef149439edb7c0d83061fc4d725e",
+      "embedded": true
+    }
+  ],
+  "screenshots": [
+    "zero-390x844.png",
+    "mine-390x844.png",
+    "mine-320x568.png",
+    "mine-320x568-scrolled.png",
+    "mine-1440x900.png",
+    "other-player-390x844.png",
+    "demo-player-390x844.png",
+    "board-390x844.png",
+    "board-320x568.png",
+    "board-320x568-scrolled.png",
+    "board-1440x900.png",
+    "complete-390x844.png"
+  ],
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "contextsCreated": 4,
+  "contextsClosed": 4,
+  "browserClosed": true,
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "fixture": "Independent offline browser contexts preset zero, mixed legacy 1/2/3-flower, and all-complete records for UI assertions. These are explicit synthetic fixtures, not earned gameplay results. Demo players remain read-only and must never be persisted. Tests use only native UI input except temporary, transparent AudioContext instrumentation and animation observations. One actual level launch follows journal dismissal; no completion callback or reward is injected.",
+  "scriptSha256": "d9d616f706e63f176f767accc886d35e7a6cf2e002101ca0350f71d0a0c19186",
+  "browser": "152.0.7977.83",
+  "finalHtmlSha256": "95d6015380afd47e45f0a1124a61008f72cc8dac44db128a25c7467b489f75a4",
+  "finishedAt": "2026-09-15T07:32:17.562Z"
+}

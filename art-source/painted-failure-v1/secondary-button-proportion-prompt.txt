@@ -1,0 +1,5 @@
+Use case: precise-object-edit
+Input image 1 is the exact approved empty forest-green hand-painted secondary button. Keep its deep green painterly face, thin antique-gold edging and dark green dimensional outer rim unchanged in design language.
+Only change the overall shape proportions: make the capsule substantially SHORTER and TALLER relative to its width, with width-to-height ratio EXACTLY 2.5:1. It will display 120 CSS pixels wide and 48 CSS pixels tall. Preserve broad softly rounded capsule ends and a spacious empty center for a four-character Chinese label that will be rendered separately with HTML. Make the rim slender enough that the inset green face occupies at least 72% of total height.
+One single blank button only. NO text, no letters, no numbers, no arrows, no symbols, no leaves, no flowers.
+Actual alpha transparent background, no checkerboard picture. Center on a landscape canvas with small transparent margins; all rim and subtle lower shadow fully visible. Hand-painted gold/forest-green family and soft brush texture must match the image exactly. Do not produce the original long 4.4:1 shape; required final silhouette is 2.5:1.

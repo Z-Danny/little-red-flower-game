@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "scope": "居家校园办公地图道路、花朵与关联标牌定位",
+  "html": "outputs/居家地图对齐版/小红花应急行动.html",
+  "sha256": "cfe0624c37e167b6a41111b7dd18f300d4d829ae8d2074117ec3c336ad655f40",
+  "roadAnnotation": {
+    "file": "content/journey-routes.json",
+    "distinctPoints": 55,
+    "segments": 5,
+    "coordinateSpace": [
+      720,
+      2160
+    ],
+    "image": "public/levels/journey-map/home-v3-handpainted.png",
+    "imageSha256": "458438411449d8f5574fa88c814530b6f8486d0bf67c428c77bcd51737d45e7a"
+  },
+  "checks": {
+    "journeyTests": {
+      "passed": 48
+    },
+    "typecheck": "passed",
+    "targetedLint": "passed",
+    "exportChecks": 7,
+    "viewports": [
+      [
+        320,
+        568
+      ],
+      [
+        375,
+        667
+      ],
+      [
+        390,
+        844
+      ],
+      [
+        430,
+        932
+      ],
+      [
+        540,
+        960
+      ],
+      [
+        1440,
+        900
+      ]
+    ],
+    "layoutSamples": 72,
+    "layoutFailures": 0,
+    "clickAssociations": 12,
+    "routeGeometrySamples": 17,
+    "routeStateSamples": 85,
+    "browserErrors": 0,
+    "networkRequests": 0,
+    "failedRequests": 0
+  },
+  "fixtures": {
+    "fresh": "Isolated browser storage; no completed levels.",
+    "complete": "All 24 mapped levels preset to 3 flowers only to inspect completed-state layout. No actual gameplay, rewards or completion flow is tested.",
+    "partial": "Each prefix of 1–5 home levels is preset to 3 flowers in its own isolated context. This verifies every route changes from locked to connected as its prerequisite becomes complete. Display fixture only; not earned gameplay."
+  },
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "contextClosed": [
+    "fresh",
+    "complete",
+    "partial-home-1-of-6",
+    "partial-home-2-of-6",
+    "partial-home-3-of-6",
+    "partial-home-4-of-6",
+    "partial-home-5-of-6"
+  ],
+  "browserClosed": true,
+  "report": "outputs/home-route-verification/report.json",
+  "coordinatePreview": "outputs/home-map-alignment/道路坐标标注.html",
+  "additionalRegression": {
+    "report": "outputs/home-route-regression-before-sign-fix/report.json",
+    "outsideRequestedMap": [
+      "nature flood-highground-practice and public clear-corridor at 320x568: corner controls can overlap sign hit areas. These map configurations are unchanged by this task."
+    ],
+    "resolved": "oil-fire sign moved to the right to avoid the bottom-left map fan; final dedicated artifact passed."
+  }
+}

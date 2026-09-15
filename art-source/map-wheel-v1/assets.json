@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "scope": "Top map HUD only; category artwork, wallet, achievement entry, and two UI plates. No map/level assets changed.",
+  "generation": "Built-in image_gen; five separate transparent icon generations. Two plates authored as editable SVG.",
+  "preparation": "sharp: transparent margin normalization, resize, WebP encoding; SVG rasterization to PNG for offline embedding.",
+  "assets": [
+    {
+      "name": "category-nature",
+      "source": "art-source/map-wheel-v1/category-nature.png",
+      "sourceSha256": "e2f9a5116a4c3219ede96d190f81d9ff064729a974ae7999002f808dbc66c2c3",
+      "path": "/levels/journey-map/map-wheel-v1/category-nature.webp",
+      "width": 384,
+      "height": 384,
+      "alpha": true,
+      "transparentSourceFraction": 0.5804837597836843,
+      "sha256": "f53c0e547697576a32028e904f28d02e11a6fb2bd150f3e9d26aeedb6f8ca7d7",
+      "bytes": 27766
+    },
+    {
+      "name": "category-public",
+      "source": "art-source/map-wheel-v1/category-public.png",
+      "sourceSha256": "68a78f3705adac05db6bd537390616ed85af05fb981b2d2b65eec5ad78518639",
+      "path": "/levels/journey-map/map-wheel-v1/category-public.webp",
+      "width": 384,
+      "height": 384,
+      "alpha": true,
+      "transparentSourceFraction": 0.6050183273174963,
+      "sha256": "ed743ff440200012dbbfa8f5a4199fecd48e298e18bec4b34514dc6a8916252f",
+      "bytes": 32162
+    },
+    {
+      "name": "category-home",
+      "source": "art-source/map-wheel-v1/category-home.png",
+      "sourceSha256": "38a4214bf0a01cd3e56ed4c69e874e12e3321d9c7a7d6d0c93ee9aa7c459ab93",
+      "path": "/levels/journey-map/map-wheel-v1/category-home.webp",
+      "width": 384,
+      "height": 384,
+      "alpha": true,
+      "transparentSourceFraction": 0.5252944962086237,
+      "sha256": "c7e414c3c69cce2222ef8292391760eff9f29eee0ed93a68ad648d7b172f1a61",
+      "bytes": 29108
+    },
+    {
+      "name": "flower",
+      "source": "art-source/map-wheel-v1/flower.png",
+      "sourceSha256": "9a4cd2f455e0d6dcb8c7b2667f7abb90586e4eaad22a24622eec133af91a6f84",
+      "path": "/levels/journey-map/map-wheel-v1/flower.webp",
+      "width": 384,
+      "height": 384,
+      "alpha": true,
+      "transparentSourceFraction": 0.5581005217117028,
+      "sha256": "531bbacf5422c98cc1c25499144da967ad97bb24a4ffd3505145b337b7f79426",
+      "bytes": 30242
+    },
+    {
+      "name": "trophy",
+      "source": "art-source/map-wheel-v1/trophy.png",
+      "sourceSha256": "24f9fd8ccaa6a77a691f9ad5d8cf19be91bc0fdc9e3e1a6e2863698d12e9da66",
+      "path": "/levels/journey-map/map-wheel-v1/trophy.webp",
+      "width": 384,
+      "height": 384,
+      "alpha": true,
+      "transparentSourceFraction": 0.5875908416830099,
+      "sha256": "78316873e736845c231632f9f609d38281b4223da7f3dc0f957fad24e6e241c6",
+      "bytes": 30642
+    },
+    {
+      "name": "plate-wing",
+      "source": "art-source/map-wheel-v1/plate-wing.svg",
+      "sourceSha256": "9eba0c5a0354cea54fd90f7bed73c810a50defa119a6ec13e6bd7952421ffabb",
+      "path": "/levels/journey-map/map-wheel-v1/plate-wing.png",
+      "width": 700,
+      "height": 120,
+      "alpha": true,
+      "sha256": "97f2eb3011b2d2703215af26635ce12f0ded2cf159a96a09dbc0fc7ef661b74d",
+      "bytes": 16663
+    },
+    {
+      "name": "plate-wheel",
+      "source": "art-source/map-wheel-v1/plate-wheel.svg",
+      "sourceSha256": "7d53c201c6ab68365a8e691c67da6f8ba8963a13ad6b45c7603921eb10e6fce2",
+      "path": "/levels/journey-map/map-wheel-v1/plate-wheel.png",
+      "width": 320,
+      "height": 320,
+      "alpha": true,
+      "sha256": "21f6bdec2e16c1f9c2d4185f58baf320b5472c0375feac46cc757a0ee958d8a6",
+      "bytes": 32436
+    }
+  ]
+}

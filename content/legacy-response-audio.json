@@ -1,0 +1,37 @@
+{
+  "lift-wait": {
+    "theme": "lift",
+    "calmWhen": ["alarm-contacted", "person-waiting"],
+    "cues": {
+      "opening": "lift-ready-click",
+      "pickup": "object-pickup",
+      "call": "intercom-connect",
+      "wait": "steady-position",
+      "pry": "door-blocked-return",
+      "leave-door": "unsafe-return",
+      "danger": "wrong-warning",
+      "bounce": "invalid-return",
+      "goal": "goal-confirm",
+      "waiting": "waiting-established",
+      "complete": "training-complete"
+    }
+  },
+  "well-call": {
+    "theme": "outdoor",
+    "calmWhen": ["bystander-back", "fire-called", "medical-called"],
+    "cues": {
+      "opening": "scene-ready-click",
+      "pickup": "object-pickup",
+      "back": "footstep-retreat",
+      "enter": "unsafe-return",
+      "pull-in": "unsafe-return",
+      "dial-119": "telephone-connect",
+      "dial-120": "medical-connect",
+      "danger": "wrong-warning",
+      "bounce": "invalid-return",
+      "goal": "goal-confirm",
+      "waiting": "waiting-established",
+      "complete": "training-complete"
+    }
+  }
+}

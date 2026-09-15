@@ -1,0 +1,32 @@
+{
+  "generator": "built-in image_gen",
+  "style": "半写实绘本风",
+  "approval": "用户确认三张预览并要求直接替换；首页、红花、成就统一右上竖排。",
+  "flowerCounter": "Preview numeral 9 removed with image_gen. Live wallet is rendered over the blank center.",
+  "assets": [
+    {
+      "source": "outputs/图标预览/半写实绘本-v2/首页小屋.png",
+      "file": "home.png",
+      "role": "首页",
+      "path": "/ui/map-corner-storybook-v1/home.png",
+      "sha256": "4362f2ab2bf4af0b7c77ede345778436a57c4848d180fddfd49149de91a2bdd4",
+      "bytes": 2367145
+    },
+    {
+      "source": "/Users/danny/.codex/generated_images/01a0a2c0-fad0-7472-8cc1-237e60864c6c/exec-185df928-2f28-4b03-8500-ed9618ae716f.png",
+      "file": "flower-counter.png",
+      "role": "红花计数空底",
+      "path": "/ui/map-corner-storybook-v1/flower-counter.png",
+      "sha256": "d751a461f6f6844e3d46ba4f83f7b32c1caa91bfe427f402937baf3f1367cac2",
+      "bytes": 2024686
+    },
+    {
+      "source": "outputs/图标预览/半写实绘本-v2/成就奖杯.png",
+      "file": "trophy.png",
+      "role": "成就",
+      "path": "/ui/map-corner-storybook-v1/trophy.png",
+      "sha256": "4438ecaa9493d7e104400b14271b7506be1bb8f304fa26667139d3c435621889",
+      "bytes": 2271789
+    }
+  ]
+}

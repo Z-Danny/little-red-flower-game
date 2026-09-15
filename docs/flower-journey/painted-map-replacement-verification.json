@@ -1,0 +1,92 @@
+{
+  "date": "2026-09-15",
+  "status": "passed",
+  "scope": "User-approved public/home v3 handpainted map replacement and corresponding local fog binding/geometry.",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "bytes": 225814017,
+  "sha256": "79f78c774a016775b724bcef981955074262da4649666680bda36ec396985da1",
+  "checks": {
+    "journeyTests": {
+      "passed": 47,
+      "failed": 0
+    },
+    "typecheck": "passed",
+    "build": "passed",
+    "offlineExport": "passed",
+    "diffCheck": "passed"
+  },
+  "browser": {
+    "report": "outputs/painted-map-replacement-verification/report.json",
+    "version": "152.0.7977.83",
+    "assets": [
+      {
+        "region": "public",
+        "source": "/levels/journey-map/public-v3-handpainted.png",
+        "sha256": "3fa5e2ba8ca79feb6356db53da9930fb8e684682185f5ce0d3cc45c319a65ec9",
+        "matchesSource": true,
+        "width": 724,
+        "height": 2171
+      },
+      {
+        "region": "home",
+        "source": "/levels/journey-map/home-v3-handpainted.png",
+        "sha256": "458438411449d8f5574fa88c814530b6f8486d0bf67c428c77bcd51737d45e7a",
+        "matchesSource": true,
+        "width": 726,
+        "height": 2167
+      }
+    ],
+    "layouts": 52,
+    "levelSignAndFlowerPairs": 26,
+    "minimumTitleCssPixels": 16,
+    "freshViewports": [
+      "320x568",
+      "390x844",
+      "430x932"
+    ],
+    "completeFixtureViewports": [
+      "390x844"
+    ],
+    "freshFogCounts": {
+      "public": 6,
+      "home": 5
+    },
+    "completeFixtureFogCount": 0,
+    "httpRequests": 0,
+    "errors": 0,
+    "failedResources": 0,
+    "isolated": true,
+    "muted": true,
+    "headless": true,
+    "closedInFinally": true,
+    "completionFixture": "Only preset for display verification; no claim of actual gameplay completion."
+  },
+  "fogAdjustment": {
+    "region": "public",
+    "node": "clear-corridor-check-v2",
+    "before": {
+      "x": 390,
+      "y": 660,
+      "width": 330,
+      "height": 440
+    },
+    "after": {
+      "x": 390,
+      "y": 620,
+      "width": 330,
+      "height": 480
+    },
+    "reason": "Cover the taller purple gabled roof; lower edge remains fixed."
+  },
+  "configurationSha256": {
+    "map": "164342112bced069c1baa118ee67a0ffc5133f19da32d72c78386a658b0ae05e",
+    "fog": "29106948cb5caba0ad9963750625a572989a30b64a7990d55da6bd89c53a00de"
+  },
+  "screenshotsReviewed": [
+    "complete-public-04-390x844.png",
+    "complete-home-04-390x844.png",
+    "fresh-public-04-390x844.png"
+  ],
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run"
+}

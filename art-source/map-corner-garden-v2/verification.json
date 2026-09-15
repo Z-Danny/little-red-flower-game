@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "html": "outputs/地图透明图标版/小红花应急行动.html",
+  "sha256": "780267e8fc0208868321719e6b6bf43b5e42a45d7f0c99f94bcb51d70336e921",
+  "buttonSizeCssPx": 56,
+  "previousButtonSizeCssPx": 64,
+  "unitTests": {
+    "command": "node scripts/test-journey.mjs",
+    "passed": 77
+  },
+  "typecheck": "passed",
+  "build": "passed",
+  "export": "passed",
+  "browser": "152.0.7977.83",
+  "iconChecks": 20,
+  "layoutCases": 15,
+  "topLevelClickSamples": 4,
+  "musicChecks": 13,
+  "pageErrors": 0,
+  "networkRequests": 0,
+  "iconsReport": "outputs/map-corner-garden-verification/report.json",
+  "musicReport": "outputs/map-corner-garden-verification/music/report.json",
+  "realDevice": "not_run",
+  "humanAudio": "not_run",
+  "browsersClosed": true,
+  "note": "Display fixtures 0/9/63 use isolated browser storage. Approved PNG files copied unchanged. Initial viewport collision failed before explicit DOMRect left/right fix; final artifact passes."
+}

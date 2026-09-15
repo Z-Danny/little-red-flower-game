@@ -9,7 +9,7 @@ const outfile = join(
 );
 await dependency('esbuild').build({
   absWorkingDir: root,
-  stdin: { contents: "import './tests/journey.test'; import './tests/response-map.test'; import './tests/fire-shelter.test';", resolveDir: root },
+  stdin: { contents: "import './tests/journey.test'; import './tests/journey-archipelago.test'; import './tests/response-map.test'; import './tests/fire-shelter.test'; import './tests/journey-music.test'; import './tests/journey-feedback-audio.test'; import './tests/approved-result-samples.test';", resolveDir: root },
   bundle: true,
   platform: 'node',
   format: 'esm',

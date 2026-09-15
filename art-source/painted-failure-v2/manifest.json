@@ -1,0 +1,231 @@
+{
+  "version": 2,
+  "generation": "OpenAI built-in image_gen. Approved sarcastic failure preview edited into separate text-free runtime assets.",
+  "preparation": "Sharp alpha-bounding crop, transparent padding, proportional resize, contiguous rectangular slicing, and encoding only. Golden primary copied byte-for-byte.",
+  "approvedPreview": "/Users/danny/.codex/generated_images/01a0a333-7edd-7b03-be71-e0bcf67639ee/exec-bc073ae6-49a0-4c24-b2e6-74c898d7eab8.png",
+  "generatedSources": {
+    "panel": "/Users/danny/.codex/generated_images/01a0a399-e2a7-7e81-b964-58027173130b/exec-9ef39ccd-717c-48c2-868e-5df3fdce1805.png",
+    "mascot": "/Users/danny/.codex/generated_images/01a0a399-e2a7-7e81-b964-58027173130b/exec-016662f0-911d-4f10-88d7-4d862fa6affd.png",
+    "secondary-button": "/Users/danny/.codex/generated_images/01a0a399-e2a7-7e81-b964-58027173130b/exec-27bbdc37-b2b8-4475-9626-3f7389fda7a2.png"
+  },
+  "prompts": [
+    "art-source/painted-failure-v2/prompts.json",
+    "art-source/painted-failure-v2/panel-refinement-prompt.txt"
+  ],
+  "assets": {
+    "panel": {
+      "width": 964,
+      "height": 1297,
+      "png": "public/ui/painted-failure-v2/panel.png",
+      "webp": "public/ui/painted-failure-v2/panel.webp",
+      "pngBytes": 1729639,
+      "webpBytes": 185202,
+      "pngSha256": "53f4f85fc7b1f780b5b6e015cdc0deb1ce22f3aa857c637cad048aa62bea6d97",
+      "webpSha256": "3a4276106fb2cf05c003080cee28247b750dad7f056aa9aee47ea51c0a98a337",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.07213262652082526
+      },
+      "source": "art-source/painted-failure-v2/panel-source.png",
+      "sourceSha256": "3cc211c1f69d1f889ebade9c9a188406d9e62f5edc15d64987d1cd1290a08554",
+      "sourceSize": {
+        "width": 1073,
+        "height": 1466
+      },
+      "crop": {
+        "left": 66,
+        "top": 97,
+        "width": 946,
+        "height": 1274
+      },
+      "transparentOutputBorder": 2
+    },
+    "mascot": {
+      "width": 484,
+      "height": 466,
+      "png": "public/ui/painted-failure-v2/mascot.png",
+      "webp": "public/ui/painted-failure-v2/mascot.webp",
+      "pngBytes": 434913,
+      "webpBytes": 95638,
+      "pngSha256": "37df8cf9a90c6f322889f0a99f0c3df35bdc17b25e7108cb8b326edc6d8460bc",
+      "webpSha256": "bc840f1d2ae3f05f259eb760e1ce935d56732963fb9e268f67f9882ccc5b9a1b",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.33368211967509664
+      },
+      "source": "art-source/painted-failure-v2/mascot-source.png",
+      "sourceSha256": "1db6738d6427b124aabf9719142c82c3107c5603e8a3505b40d35d3d0c587c25",
+      "sourceSize": {
+        "width": 1254,
+        "height": 1254
+      },
+      "crop": {
+        "left": 31,
+        "top": 41,
+        "width": 1210,
+        "height": 1164
+      },
+      "transparentOutputBorder": 2
+    },
+    "secondary-button": {
+      "width": 964,
+      "height": 235,
+      "png": "public/ui/painted-failure-v2/secondary-button.png",
+      "webp": "public/ui/painted-failure-v2/secondary-button.webp",
+      "pngBytes": 433560,
+      "webpBytes": 87718,
+      "pngSha256": "4b93bafbbf526d074d2324a5980dc5e26cd66940fd89871d1edfd3c729e0b47a",
+      "webpSha256": "b3d8b133d0d2f5593dcecfedd0fb14f526c4d401723349a8756276f7501610f4",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.10406109296371502
+      },
+      "source": "art-source/painted-failure-v2/secondary-button-source.png",
+      "sourceSha256": "54a5e9ae5721bf05ced6541c802f147fa57cad9a504422aa11aec35e428f2e7d",
+      "sourceSize": {
+        "width": 2079,
+        "height": 756
+      },
+      "crop": {
+        "left": 57,
+        "top": 138,
+        "width": 1965,
+        "height": 472
+      },
+      "transparentOutputBorder": 2
+    },
+    "button": {
+      "width": 964,
+      "height": 222,
+      "png": "public/ui/painted-failure-v2/button.png",
+      "webp": "public/ui/painted-failure-v2/button.webp",
+      "pngBytes": 436300,
+      "webpBytes": 73596,
+      "pngSha256": "734bec2a517eb92febc46170cb6ac4e0e36ca521e52deca21043d168f8a9c953",
+      "webpSha256": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.10099155171769279
+      },
+      "reusedFrom": "public/ui/painted-settlement-v1/button.{png,webp}",
+      "creativeModification": "none; identical bytes"
+    },
+    "header": {
+      "width": 964,
+      "height": 270,
+      "png": "public/ui/painted-failure-v2/header.png",
+      "webp": "public/ui/painted-failure-v2/header.webp",
+      "pngBytes": 467836,
+      "webpBytes": 69092,
+      "pngSha256": "121c2dffd61247a8b97a966ac44d4adf4b7a4e70212b95454fcbd653c0a3f16f",
+      "webpSha256": "121d741cfc7227e1cd535972b8bec20b4fbe14d714f9bc8c3ab6c123e1a538ca",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.20584370677731673
+      },
+      "source": "public/ui/painted-failure-v2/panel.png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 964,
+        "height": 270
+      }
+    },
+    "body": {
+      "width": 964,
+      "height": 877,
+      "png": "public/ui/painted-failure-v2/body.png",
+      "webp": "public/ui/painted-failure-v2/body.webp",
+      "pngBytes": 1062322,
+      "webpBytes": 91114,
+      "pngSha256": "96ff09e012445099abf6eee7069601c5adc2cc4e09f4af2b7171597c8866735c",
+      "webpSha256": "75dacdf9b91f8eaf43d527947ffa17d44bace55a01da0acf94216702380c8106",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 254,
+        "fullyTransparentFraction": 0.016300619331273625
+      },
+      "source": "public/ui/painted-failure-v2/panel.png",
+      "crop": {
+        "left": 0,
+        "top": 270,
+        "width": 964,
+        "height": 877
+      }
+    },
+    "footer": {
+      "width": 964,
+      "height": 150,
+      "png": "public/ui/painted-failure-v2/footer.png",
+      "webp": "public/ui/painted-failure-v2/footer.webp",
+      "pngBytes": 201456,
+      "webpBytes": 29702,
+      "pngSha256": "90b869492a56177efcde36eb2ada6d29e4df86455c8b79755f7283697046fa43",
+      "webpSha256": "80670012ec5098516863ca59d12bbdc44f23176d2c2ddd1245620f1956f71a98",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.1578838174273859
+      },
+      "source": "public/ui/painted-failure-v2/panel.png",
+      "crop": {
+        "left": 0,
+        "top": 1147,
+        "width": 964,
+        "height": 150
+      }
+    }
+  },
+  "layout": {
+    "headerHeightToWidthRatio": 0.2800829875518672,
+    "footerHeightToWidthRatio": 0.15560165975103735,
+    "headerTitleSafeRegionPercent": {
+      "left": 31,
+      "top": 16,
+      "width": 51,
+      "height": 59
+    },
+    "mascotSuggestedPlacement": {
+      "leftPercent": -1,
+      "topPercentOfCardWidth": -4,
+      "widthPercent": 29
+    },
+    "bodyTextSafeRegionPercent": {
+      "left": 9,
+      "width": 82
+    },
+    "buttonLabelSafeRegionPercent": {
+      "left": 10,
+      "top": 20,
+      "width": 80,
+      "height": 60
+    },
+    "sliceRule": "Full-width contiguous slices. Keep header/footer at natural aspect ratio; stretch only the body vertically. Separate mascot overlays upper-left. Body/CTA remain semantic DOM.",
+    "footerNote": "Tiny bud is contained in footer; there is no text beneath final button."
+  },
+  "visualReview": {
+    "bakedText": "none",
+    "mascot": "approved identity retained: red petals, crossed leaf arms, half-lidded side-eye, raised brow and crooked smirk",
+    "borders": "all art inside source canvas; alpha verified",
+    "transparentBackground": true,
+    "deliberatelySeparate": [
+      "mascot",
+      "panel frame",
+      "gold primary",
+      "green secondary"
+    ],
+    "animationLimit": "Mascot is one intact image; head tilt/bob can animate as a layer. No separately articulated eyebrow or eyelid sprite provided."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "sha256": "f27d20afa948d94999bba0635f638c1d3a0b23cb22aa6b8179bb22172c8cdee2",
+  "bytes": 230756529,
+  "verify": "passed",
+  "unitTests": 1867,
+  "typecheck": "passed",
+  "productionBuild": "passed",
+  "kitchenArtCheck": "passed",
+  "export": "passed",
+  "exportChecks": 7,
+  "ruleJsonFilesCompared": 26,
+  "changedRuleJson": [],
+  "paintedUiBrowserRegression": "passed",
+  "completionBrowserReport": "docs/painted-settlement/verification/report.json",
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "completionBrowser": "passed",
+  "controlledCompletionLevels": 24,
+  "completionViewports": 96,
+  "genuinePointerGameplay": {
+    "levelId": "typhoon-home",
+    "targets": 5,
+    "reward": 3
+  },
+  "normalMotionSmoke": "passed",
+  "normalMotionReport": "docs/painted-settlement/normal-motion.json",
+  "finalHtmlHashUnchanged": true
+}

@@ -1,0 +1,66 @@
+{
+  "mode": "built-in image_gen",
+  "generatedSource": "/Users/danny/.codex/generated_images/01a0a3af-2e24-7de0-90df-c96dfecfb1e1/exec-ffb6ccaa-0adb-4e1e-8bd1-af8b0535633a.png",
+  "prompt": "prompt.txt",
+  "intent": "Green body recolored to blue; golden controls and handle, cream wrench, painted texture and composition preserved.",
+  "processing": "Copied generated PNG without pixel modification.",
+  "inspections": [
+    {
+      "path": "public/ui/map-corner-garden-v2/settings.png",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "bytes": 1770822,
+      "transparent": 615920,
+      "opaque": 523,
+      "edgeMax": 1,
+      "visibleBoundsAlpha35": {
+        "left": 56,
+        "top": 114,
+        "right": 1210,
+        "bottom": 1146
+      },
+      "sha256": "719f38e63d51b022c23f365a8c850bccab0cc9b19c050449bf5327b4870232a9",
+      "alphaSamples": {
+        "0,0": 0,
+        "600,400": 0,
+        "600,800": 253,
+        "700,1240": 0
+      }
+    },
+    {
+      "path": "public/ui/map-corner-garden-v2/settings-blue.png",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "bytes": 1583633,
+      "transparent": 615583,
+      "opaque": 1062,
+      "edgeMax": 0,
+      "visibleBoundsAlpha35": {
+        "left": 54,
+        "top": 112,
+        "right": 1212,
+        "bottom": 1150
+      },
+      "sha256": "0eaa5e3c5b216c2e14030c780c23f414f172cbdced406befc8ff8007dcc18725",
+      "alphaSamples": {
+        "0,0": 0,
+        "600,400": 0,
+        "600,800": 253,
+        "700,1240": 0
+      }
+    }
+  ],
+  "visualReview": {
+    "passed": true,
+    "blueBody": true,
+    "goldHandleAndControlsPreserved": true,
+    "creamWrenchPreserved": true,
+    "compositionMatched": true,
+    "externalDropShadow": false,
+    "backplate": false,
+    "addedOutline": false,
+    "dimensionOptimizationRequired": false
+  }
+}

@@ -1,0 +1,6551 @@
+{
+  "status": "passed",
+  "startedAt": "2026-09-15T04:41:12.638Z",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "f27d20afa948d94999bba0635f638c1d3a0b23cb22aa6b8179bb22172c8cdee2",
+  "browser": "152.0.7977.83",
+  "controlledCompletions": [
+    {
+      "id": "oil-fire",
+      "scenarioTitle": "油锅起火处置",
+      "points": [
+        "1盖严锅盖，隔绝空气仅在火势小且能安全靠近时，盖严合适锅盖并关闭热源；等油锅冷却后再开盖，防止复燃。",
+        "2不泼水，也不搬锅水遇高温油会迅速汽化，裹挟热油喷溅；搬动燃烧的油锅也可能烫伤自己、把火带到别处。",
+        "3控制不了，撤离报警火势变大、难以靠近或无法控制时，立即撤离并提醒他人，到安全处拨打119，交给消防员。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.119.gov.taipei/News_Content.aspx?n=0EDB9C505FE8B199&s=1756F0CA3C948F0C&sms=18AF49168D1E8B97",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "台北市政府消防局（新窗口打开）"
+        },
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/cooking/pan-fires/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "R4",
+        "levelId": "oil-fire",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "typhoon-home",
+      "scenarioTitle": "台风居家准备",
+      "points": [
+        "1收物要趁风雨前花盆和晾晒物被大风吹落会伤人，应提前收妥；风雨猛烈时不要再冒险探身阳台。",
+        "2关窗也要留距离提前关好并检查门窗，台风期间远离玻璃；危险房屋应按指引及时转移，不能硬守。",
+        "3用电先看是否安全不必要的电源应在手和环境干燥时提前断开；电器周围已进水，就别再靠近操作。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.mem.gov.cn/kp/zrzh/202208/t20220809_419856.shtml",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "应急管理部（新窗口打开）"
+        },
+        {
+          "href": "https://www.weather.gov/safety/flood-during",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国国家气象局（NWS）（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "dE",
+        "levelId": "typhoon-home",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "flood-kit",
+      "scenarioTitle": "汛期应急包",
+      "points": [
+        "1准备不止这五件饮水、即食食品、照明和联络工具要提前备好；还应按家庭人数和实际需要补足物资。",
+        "2能找到，也要能用应急包放在方便取用处，定期查看食品期限和设备电量；收音机、手电应保持可用。",
+        "3转移比收齐更要紧收到转移通知就及时行动，不为收齐物品耽误离开；本关完成不代表储备已经齐全。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.mem.gov.cn/kp/shaq/202011/t20201129_372149.shtml",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "应急管理部（新窗口打开）"
+        },
+        {
+          "href": "https://www.weather.gov/safety/flood-during",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国国家气象局（NWS）（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Hw",
+        "levelId": "flood-kit",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "scenarioTitle": "家庭防震准备",
+      "points": [
+        "1把重物留在低处高柜要可靠固定，重物放低处，床上方避免悬挂厚重物件，减少震动时倾倒和坠落。",
+        "2给避险留出空间平时清出门口通道和坚固桌下空间，并避开玻璃与坠物；不是任何一张桌子都能掩护。",
+        "3调整布置要在平时家具固定和重物搬移请成人或专业人员完成；震动发生时先护头避险，不临时搬家具。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.cdc.gov/earthquakes/safety/index.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国疾控中心（CDC）（新窗口打开）"
+        },
+        {
+          "href": "https://www.cdc.gov/earthquakes/safety/stay-safe-during-an-earthquake.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国疾控中心（CDC）（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "dE",
+        "levelId": "quake-bedroom-v2",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "storm-street-check-v2",
+      "scenarioTitle": "风雨街口找险",
+      "points": [
+        "1积水下面看不清浑水可能盖住缺失井盖和受损路面，不要试探深浅；避开地下通道等低洼积水区域。",
+        "2危险设施绕远些受淹电箱、断线可能带电，松动广告牌和围挡可能倒落；不要靠近检查或自行修理。",
+        "3看清危险仍须避险暴雨大风中优先进入地势较高的坚固建筑，远离窗玻璃；圈出危险不代表街道已安全。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.lg.gov.cn/bmzz/btjdb/xxgk/yjgl/content/post_7750659.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "深圳市龙岗区人民政府（新窗口打开）"
+        },
+        {
+          "href": "https://www.weather.gov/safety/flood-during",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国国家气象局（NWS）（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "dE",
+        "levelId": "storm-street-check-v2",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "thunder-park-v2",
+      "scenarioTitle": "雷雨公园找险",
+      "points": [
+        "1挡雨不等于避雷孤立大树、开敞凉亭、普通帐篷和开放式球车都不是安全避雷处，水边也应立即远离。",
+        "2听到雷声就进屋雷声说明雷电已足够接近，应进入具备水电设施的坚固建筑；室内也要远离窗户和管线。",
+        "3别急着重返户外最后一次雷声后至少等三十分钟再考虑外出，并留意预警；本关结束不代表雷雨结束。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.weather.gov/safety/lightning-tips",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国国家气象局（NWS）（新窗口打开）"
+        },
+        {
+          "href": "https://www.weather.gov/safety/lightning-outdoors",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国国家气象局（NWS）（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "dE",
+        "levelId": "thunder-park-v2",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "scenarioTitle": "林缘火源识别",
+      "points": [
+        "1小火种也别带进山林区禁火要求要遵守，不吸烟、不烧烤、不烧纸或燃放烟花；一粒火星也可能引燃枯草。",
+        "2发现火情先远离遇到烟火应迅速撤到安全区域并报警，说明位置和所见情况，不留下围观或凑近拍照。",
+        "3扑救交给专业人员林火受风向和地形影响，不能盲目扑救或让儿童捡火种；画面无烟不等于余火已熄灭。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.mem.gov.cn/xw/mtxx/202004/t20200409_349694.shtml",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "应急管理部（新窗口打开）"
+        },
+        {
+          "href": "https://www.huainan.gov.cn/zwgk/jrhn/1260914663.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "淮南市人民政府（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "dE",
+        "levelId": "forest-fire-sources-v2",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "scenarioTitle": "暴雨街道找险",
+      "points": [
+        "1低洼入口先避开地下车库和下沉通道容易积水倒灌；提前关注预警，已进水时不要返回取车或抢拿财物。",
+        "2水里和头顶都有险井口、落地电线可能藏在积水里，广告牌和树枝也可能坠落；不涉水、不在它们下方停留。",
+        "3准备做在风雨之前移车和检查设施应在天气恶化前安全进行；暴雨时减少出行，服从封控和转移指引。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.lg.gov.cn/bmzz/btjdb/xxgk/yjgl/content/post_7750659.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "深圳市龙岗区人民政府（新窗口打开）"
+        },
+        {
+          "href": "https://www.weather.gov/safety/flood-during",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国国家气象局（NWS）（新窗口打开）"
+        },
+        {
+          "href": "https://www.mem.gov.cn/kp/zrzh/202208/t20220809_419856.shtml",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "应急管理部（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "xE",
+        "levelId": "rain-street-preparation-v1",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "flood-house-response-v1",
+      "scenarioTitle": "洪水居家避险",
+      "points": [
+        "1转移优先，不等物齐洪水围困时沿可用的干燥路线去可靠高处；饮水和照明只取近处现成的，不折返低处。",
+        "2断电不能冒险涉水只有电闸干燥、完好且可安全到达时才操作；受淹电器和落水电线要远离，交专业人员。",
+        "3到高处仍要保持联系报告位置、人数和被困情况，听从转移指引；备用浮材不保证安全，不能靠它盲目下水。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.weather.gov/safety/flood-during",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国国家气象局（NWS）（新窗口打开）"
+        },
+        {
+          "href": "https://js.119.gov.cn/202608/fcad183dfc5444a7b16647be70f37090_c_749d4af1d50340a09667.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "江苏省消防救援总队（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "xE",
+        "levelId": "flood-house-response-v1",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "quake-cover-practice",
+      "scenarioTitle": "地震室内避险",
+      "points": [
+        "1先稳住，再护头颈震动时就近降低姿态，保护头颈；身边有坚固桌子时进入桌下抓牢，减少跌倒和坠物伤害。",
+        "2别冲向门窗和楼梯强震中奔跑容易摔倒，也可能被玻璃和掉落物击中；留在就近掩护处，不乘普通电梯。",
+        "3晃动停了仍防余震震后查看自身状况、收听官方指引，再报告位置；未见伤口不等于医学确认没有受伤。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.cdc.gov/earthquakes/safety/stay-safe-during-an-earthquake.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国疾控中心（CDC）（新窗口打开）"
+        },
+        {
+          "href": "https://www.cdc.gov/earthquakes/safety/stay-safe-after-an-earthquake.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国疾控中心（CDC）（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Q4",
+        "levelId": "quake-cover-practice",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "quake-exit-practice",
+      "scenarioTitle": "震后楼梯撤离",
+      "points": [
+        "1停震后按指引撤离需要撤离时先留意楼梯和周围是否受损，使用当前可用路线；有裂损或掉落风险就别硬闯。",
+        "2护好脚，也别折返碎玻璃和瓦砾会伤脚，穿好手边结实鞋；不为找鞋或财物返回危险房间，不乘停用电梯。",
+        "3离开楼门再报告到远离外墙、玻璃和电线的集合处，报告位置并关注余震；未经确认不要重新进入受损建筑。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.cdc.gov/earthquakes/safety/stay-safe-after-an-earthquake.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国疾控中心（CDC）（新窗口打开）"
+        },
+        {
+          "href": "https://www.cdc.gov/earthquakes/safety/index.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国疾控中心（CDC）（新窗口打开）"
+        },
+        {
+          "href": "https://www.cdc.gov/earthquakes/safety/stay-safe-during-an-earthquake.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国疾控中心（CDC）（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Q4",
+        "levelId": "quake-exit-practice",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "flood-highground-practice",
+      "scenarioTitle": "洪水高处待援",
+      "points": [
+        "1选可靠高处避险外部洪水围困且退路不可用时，沿可达的完整干燥楼梯转移；不涉水试路，也不回低处取物。",
+        "2把位置说清楚求助时说明建筑、楼层、人数和当前险情，保留回拨联络；发送信息后仍需等待专业救援。",
+        "3示警不探身冒险在室内安全位置发出可见信号，远离无防护边缘和受淹电器；继续收听预警与转移指引。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.weather.gov/safety/flood-during",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国国家气象局（NWS）（新窗口打开）"
+        },
+        {
+          "href": "https://js.119.gov.cn/202608/fcad183dfc5444a7b16647be70f37090_c_749d4af1d50340a09667.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "江苏省消防救援总队（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Q4",
+        "levelId": "flood-highground-practice",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "clear-corridor",
+      "scenarioTitle": "楼道杂物清理",
+      "points": [
+        "1杂物会挡路也助燃纸箱和家具会缩窄逃生路线，还可能成为燃料；楼道、楼梯和安全出口都应保持畅通。",
+        "2收纳不能换处堵平日只安全整理轻便的自家物品，放进合法储物空间；别堵住另一条通道或消防设备。",
+        "3起火时先顾人整理应在没有火烟时完成；发生火灾不要留在楼道搬东西，及时按现场可用路线避险。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/escape-plan/escape-plan-blocks-of-flats/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Hw",
+        "levelId": "clear-corridor",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "lift-wait",
+      "scenarioTitle": "电梯故障待援",
+      "points": [
+        "1先用紧急通话求助普通故障困梯时按报警或对讲按钮；无人回应可用手机联系张贴的救援电话，说明所在位置。",
+        "2门缝不是逃生口轿厢可能停在两层之间，扒门或钻缝会有坠落风险；也不要攀爬检修口或在轿厢内跳跃。",
+        "3联络后继续待援远离门口、保持可联系状态并如实报告不适；本关只完成求助，训练计时不是救援到达时间。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.119.gov.cn/site1/kp/zjts/2022/420.shtml",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "国家消防救援局（新窗口打开）"
+        },
+        {
+          "href": "https://www.beijing.gov.cn/cs/gncs/zcwj/202603/t20260327_4568251.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "北京市市场监督管理局、北京市消防救援局（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Hw",
+        "levelId": "lift-wait",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "well-call",
+      "scenarioTitle": "井口遇险求助",
+      "points": [
+        "1井内危险未必看得见污水井等有限空间可能缺氧或含有毒气体，贸然进入会让救人者也遇险；没有防护切勿下井。",
+        "2把专业救援叫来在外围安全处联系119、120，说明准确位置、遇险人数和所见情况；不要盲目下井拉人。",
+        "3提醒旁人别靠近保持安全距离并劝阻围观者下井，等专业人员处置；电话打通后，井口和井内仍然危险。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.mem.gov.cn/xw/bndt/201806/t20180608_229498.shtml",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "应急管理部（新窗口打开）"
+        },
+        {
+          "href": "https://xmzx.taian.gov.cn/art/2026/4/22/art_50919_10288852.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "泰安市畜牧兽医事业服务中心（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Hw",
+        "levelId": "well-call",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "scenarioTitle": "楼道隐患巡查",
+      "points": [
+        "1门要能关，也要能逃常闭防火门不能被顶住，安全出口不能锁死；关门可减缓烟火蔓延，出口则要保持可通行。",
+        "2通道不堆物不充电纸箱、电动自行车都不应占用楼道，消火栓前也要留空；充电起火会威胁整条逃生路线。",
+        "3发现后交由管理方遇到锁闭出口或被挡消防设施，应及时告知物业等管理人员；不私拆设备，更不在火中清理。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/escape-plan/escape-plan-blocks-of-flats/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        },
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/electrical-items/batteries-and-chargers/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "dE",
+        "levelId": "clear-corridor-check-v2",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "car-window-practice",
+      "scenarioTitle": "汽车落水离车",
+      "points": [
+        "1抓住当前可用出口本情境侧窗仍能打开，应解开安全带后尽快利用开口离车；不要主动留在车内等水灌满。",
+        "2不为财物耽误离车手机和包都不值得折返取回；车窗结构因车型而异，本关不能当作所有车辆的破窗教程。",
+        "3离车后仍需援助本情境有近处救生圈，可抓牢支持并保持口鼻出水；仍须继续求助，离车不等于已经获救。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.119.gov.cn/kp/zjts/qtzh/2023/38098.shtml",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "国家消防救援局（新窗口打开）"
+        },
+        {
+          "href": "https://www.weather.gov/safety/flood-during",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国国家气象局（NWS）（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Q4",
+        "levelId": "car-window-practice",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "lift-contact-practice",
+      "scenarioTitle": "电梯定位求助",
+      "points": [
+        "1位置要报到电梯用紧急通话说明小区、楼栋和轿厢内的电梯编号，帮助救援人员定位；别只报显示的楼层。",
+        "2人员情况如实说说明被困人数和有无受伤、不适，保持回拨联络；情况变化及时补充，不猜测未知信息。",
+        "3稳定等待，不钻门缝普通故障困梯时留在轿厢，远离门口，不扒门或攀爬检修口；联系成功后仍须等专业救援。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.beijing.gov.cn/cs/gncs/zcwj/202603/t20260327_4568251.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "北京市市场监督管理局、北京市消防救援局（新窗口打开）"
+        },
+        {
+          "href": "https://www.119.gov.cn/site1/kp/zjts/2022/420.shtml",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "国家消防救援局（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Q4",
+        "levelId": "lift-contact-practice",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "collapse-signal-practice",
+      "scenarioTitle": "塌陷被困求救",
+      "points": [
+        "1护住头脸，少扬尘在可活动范围内护住头脸，用衣料松适遮挡口鼻以减少粉尘；衣料不能过滤有毒气体。",
+        "2用信号帮助定位通信可用时报告位置和身体受困情况，也可间歇轻敲坚实部位；避免持续大喊消耗体力。",
+        "3别强拉或乱挖身体受压、无法自行脱身时，不强拉肢体或扰动周围土石；减少无谓活动，原位等待救援。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.cdc.gov/earthquakes/safety/stay-safe-after-an-earthquake.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国疾控中心（CDC）（新窗口打开）"
+        },
+        {
+          "href": "https://www.cdc.gov/earthquakes/safety/stay-safe-during-an-earthquake.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "美国疾控中心（CDC）（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Q4",
+        "levelId": "collapse-signal-practice",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "charging-bedroom",
+      "scenarioTitle": "卧室充电巡查",
+      "points": [
+        "1充电也需要散热手机和充电器不要被枕头、被褥覆盖，避免热量积聚；按说明使用匹配合格的充电设备。",
+        "2破损线别凑合用破损的充电线和插头应停用更换，不用胶布随意修补；不要用手触碰裸露导线试探。",
+        "3鼓胀电池交专业处理发现电池鼓胀应停止使用，不拆壳、不挤压，联系厂家或专业人员；出现烟火先远离求助。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/electrical-items/batteries-and-chargers/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        },
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/electrical-items/cables-fuses-and-leads/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "dE",
+        "levelId": "charging-bedroom",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "scenarioTitle": "睡前防火巡查",
+      "points": [
+        "1睡前看看充电处被褥别盖住充电设备，破损线和鼓胀电池应停用；睡前停止不必要的充电，异常交专业处理。",
+        "2电热毯不要折叠通电电热毯卷曲、折叠使用容易损伤内部线路并积热；按说明平铺使用，发现破损就停用。",
+        "3取暖器不兼作烘衣架衣物覆盖取暖器或离得太近可能被引燃，保持与床品、窗帘的距离；入睡或离开前关闭。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/electrical-items/batteries-and-chargers/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        },
+        {
+          "href": "https://js.119.gov.cn/202012/jsxfww-menu-gzdt_c_7e56d84cf82447f387aa.html",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "江苏省消防救援总队（新窗口打开）"
+        },
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/bedtime-checks/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "dE",
+        "levelId": "bedroom-night-check-v2",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "scenarioTitle": "厨房开火检查",
+      "points": [
+        "1炉边少一份可燃物开火前移开纸巾等杂物，定期清理油烟机积油；这些东西遇火易燃，做饭时也要有人照看。",
+        "2燃气异常先停用软管老化开裂应停用并联系专业人员，不能自行改装；液化气钢瓶需直立，不能卧放使用。",
+        "3破损电器别再试水壶等电器的电源线破损就停用报修或更换，不缠胶布继续用；手湿时不要插拔电源。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.119.gov.taipei/News_Content.aspx?n=0EDB9C505FE8B199&s=1756F0CA3C948F0C&sms=18AF49168D1E8B97",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "台北市政府消防局（新窗口打开）"
+        },
+        {
+          "href": "https://www.119.gov.cn/xw/xfyw/2022/14384.shtml",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "国家消防救援局（新窗口打开）"
+        },
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/electrical-items/cables-fuses-and-leads/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "dE",
+        "levelId": "kitchen-before-cooking-v2",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "fire-shelter-practice",
+      "scenarioTitle": "火灾隔烟待援",
+      "points": [
+        "1浓烟封路，别硬闯逃生路线被浓烟阻断时，选择远离烟火、可暂时隔烟的房间并关门；别开门探查或冲过浓烟。",
+        "2堵缝只能减少进烟用手边材料封堵门缝，不能为找毛巾或胶带延误求助；封堵不能隔绝全部毒气，仍须留意变化。",
+        "3报清位置，安全示警拨打119说明楼栋、楼层、房间和人数，按接警员指引行动；不翻窗，保持联系继续待援。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/escape-plan/escape-plan-blocks-of-flats/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Q4",
+        "levelId": "fire-shelter-practice",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    },
+    {
+      "id": "fire-stairs-practice",
+      "scenarioTitle": "火灾楼梯撤离",
+      "points": [
+        "1先看路线是否可用需要撤离且楼梯路线可用时，按指引有序离开；浓烟封堵时不能硬闯，也不乘普通电梯。",
+        "2随手关门，不折返撤离时随手关上身后的门，减少烟火蔓延；不长期顶开防火门，不为财物返回屋内。",
+        "3到安全处再报告远离楼门、外墙和坠物区域，到安全处拨打119说明地址和所知火情；不要假定已有别人报警。"
+      ],
+      "sources": [
+        {
+          "href": "https://www.london-fire.gov.uk/safety/the-home/escape-plan/escape-plan-blocks-of-flats/",
+          "target": "_blank",
+          "rel": "noreferrer",
+          "label": "伦敦消防局（新窗口打开）"
+        }
+      ],
+      "replay": false,
+      "imageCount": 6,
+      "boundary": {
+        "owner": "Q4",
+        "levelId": "fire-stairs-practice",
+        "repeatedBoundary": true
+      },
+      "award": 3,
+      "coverage": "controlled completion boundary; not genuine gameplay"
+    }
+  ],
+  "genuineGameplay": [
+    {
+      "id": "typhoon-home",
+      "targetCount": 5,
+      "input": "real canvas touchscreen taps selected from authored mask; no injected completion",
+      "reward": 3
+    }
+  ],
+  "layouts": [
+    {
+      "id": "oil-fire",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 156,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 676
+      },
+      "scrollHeight": 676,
+      "clientHeight": 676,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 475.203125,
+          "right": 343,
+          "bottom": 542.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 551.078125,
+          "right": 343,
+          "bottom": 617.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 626.953125,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "oil-fire",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 685,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "oil-fire",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "oil-fire",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "typhoon-home",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 156,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 676
+      },
+      "scrollHeight": 676,
+      "clientHeight": 676,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 475.203125,
+          "right": 343,
+          "bottom": 542.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 551.078125,
+          "right": 343,
+          "bottom": 617.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 626.953125,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "typhoon-home",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "typhoon-home",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "typhoon-home",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "flood-kit",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 156,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 676
+      },
+      "scrollHeight": 676,
+      "clientHeight": 676,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 475.203125,
+          "right": 343,
+          "bottom": 542.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 551.078125,
+          "right": 343,
+          "bottom": 617.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 626.953125,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "flood-kit",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "flood-kit",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "flood-kit",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 120,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 712
+      },
+      "scrollHeight": 712,
+      "clientHeight": 712,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 439.203125,
+          "right": 343,
+          "bottom": 506.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 515.078125,
+          "right": 343,
+          "bottom": 581.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 590.953125,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 120,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 712
+      },
+      "scrollHeight": 712,
+      "clientHeight": 712,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 439.203125,
+          "right": 343,
+          "bottom": 506.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 515.078125,
+          "right": 343,
+          "bottom": 581.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 590.953125,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 120,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 712
+      },
+      "scrollHeight": 712,
+      "clientHeight": 712,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 439.203125,
+          "right": 343,
+          "bottom": 506.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 515.078125,
+          "right": 343,
+          "bottom": 581.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 590.953125,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 183.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 736.28125
+      },
+      "scrollHeight": 736,
+      "clientHeight": 736,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 516.90625,
+          "right": 379,
+          "bottom": 583.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 592.78125,
+          "right": 379,
+          "bottom": 659.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 668.65625,
+          "right": 379,
+          "bottom": 735.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 156,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 676
+      },
+      "scrollHeight": 676,
+      "clientHeight": 676,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 475.203125,
+          "right": 343,
+          "bottom": 542.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 551.078125,
+          "right": 343,
+          "bottom": 617.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 626.953125,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 685,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 120,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 712
+      },
+      "scrollHeight": 712,
+      "clientHeight": 712,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 439.203125,
+          "right": 343,
+          "bottom": 506.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 515.078125,
+          "right": 343,
+          "bottom": 581.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 590.953125,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 183.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 736.28125
+      },
+      "scrollHeight": 736,
+      "clientHeight": 736,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 516.90625,
+          "right": 379,
+          "bottom": 583.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 592.78125,
+          "right": 379,
+          "bottom": 659.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 668.65625,
+          "right": 379,
+          "bottom": 735.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 135.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 752.03125
+      },
+      "scrollHeight": 752,
+      "clientHeight": 752,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 477.1875,
+          "right": 896,
+          "bottom": 544.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 553.0625,
+          "right": 896,
+          "bottom": 619.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 628.9375,
+          "right": 896,
+          "bottom": 695.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 120,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 712
+      },
+      "scrollHeight": 712,
+      "clientHeight": 712,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 439.203125,
+          "right": 343,
+          "bottom": 506.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 515.078125,
+          "right": 343,
+          "bottom": 581.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 590.953125,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "quake-cover-practice",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 120,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 712
+      },
+      "scrollHeight": 712,
+      "clientHeight": 712,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 439.203125,
+          "right": 343,
+          "bottom": 506.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 515.078125,
+          "right": 343,
+          "bottom": 581.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 590.953125,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "quake-cover-practice",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "quake-cover-practice",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "quake-cover-practice",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "quake-exit-practice",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 98.5625,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 733.4375
+      },
+      "scrollHeight": 733,
+      "clientHeight": 733,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 417.765625,
+          "right": 343,
+          "bottom": 484.640625,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 493.640625,
+          "right": 343,
+          "bottom": 560.515625,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 569.515625,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "quake-exit-practice",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 757,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "quake-exit-practice",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 183.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 736.28125
+      },
+      "scrollHeight": 736,
+      "clientHeight": 736,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 516.90625,
+          "right": 379,
+          "bottom": 583.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 592.78125,
+          "right": 379,
+          "bottom": 659.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 668.65625,
+          "right": 379,
+          "bottom": 735.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "quake-exit-practice",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 135.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 752.03125
+      },
+      "scrollHeight": 752,
+      "clientHeight": 752,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 477.1875,
+          "right": 896,
+          "bottom": 544.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 553.0625,
+          "right": 896,
+          "bottom": 619.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 628.9375,
+          "right": 896,
+          "bottom": 695.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "flood-highground-practice",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 98.5625,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 733.4375
+      },
+      "scrollHeight": 733,
+      "clientHeight": 733,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 417.765625,
+          "right": 343,
+          "bottom": 506.078125,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 515.078125,
+          "right": 343,
+          "bottom": 581.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 590.953125,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "flood-highground-practice",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "flood-highground-practice",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "flood-highground-practice",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "clear-corridor",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 156,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 676
+      },
+      "scrollHeight": 676,
+      "clientHeight": 676,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 475.203125,
+          "right": 343,
+          "bottom": 542.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 551.078125,
+          "right": 343,
+          "bottom": 617.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 626.953125,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "clear-corridor",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 685,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "clear-corridor",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "clear-corridor",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "lift-wait",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 77.125,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 754.875
+      },
+      "scrollHeight": 755,
+      "clientHeight": 755,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 396.328125,
+          "right": 343,
+          "bottom": 484.640625,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 493.640625,
+          "right": 343,
+          "bottom": 560.515625,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 569.515625,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "lift-wait",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "lift-wait",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 183.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 736.28125
+      },
+      "scrollHeight": 736,
+      "clientHeight": 736,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 516.90625,
+          "right": 379,
+          "bottom": 583.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 592.78125,
+          "right": 379,
+          "bottom": 659.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 668.65625,
+          "right": 379,
+          "bottom": 735.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "lift-wait",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 135.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 752.03125
+      },
+      "scrollHeight": 752,
+      "clientHeight": 752,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 477.1875,
+          "right": 896,
+          "bottom": 544.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 553.0625,
+          "right": 896,
+          "bottom": 619.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 628.9375,
+          "right": 896,
+          "bottom": 695.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "well-call",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 134.5625,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 697.4375
+      },
+      "scrollHeight": 697,
+      "clientHeight": 697,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 453.765625,
+          "right": 343,
+          "bottom": 542.078125,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 551.078125,
+          "right": 343,
+          "bottom": 617.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 626.953125,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "well-call",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "well-call",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "well-call",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 134.5625,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 697.4375
+      },
+      "scrollHeight": 697,
+      "clientHeight": 697,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 453.765625,
+          "right": 343,
+          "bottom": 520.640625,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 529.640625,
+          "right": 343,
+          "bottom": 596.515625,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 605.515625,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 685,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "car-window-practice",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 156,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 676
+      },
+      "scrollHeight": 676,
+      "clientHeight": 676,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 475.203125,
+          "right": 343,
+          "bottom": 542.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 551.078125,
+          "right": 343,
+          "bottom": 617.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 626.953125,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "car-window-practice",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "car-window-practice",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "car-window-practice",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "lift-contact-practice",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 103.5,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 728.5
+      },
+      "scrollHeight": 729,
+      "clientHeight": 729,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 422.703125,
+          "right": 343,
+          "bottom": 489.578125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 498.578125,
+          "right": 343,
+          "bottom": 565.453125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 574.453125,
+          "right": 343,
+          "bottom": 641.328125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "lift-contact-practice",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 738,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 482.953125,
+        "right": 259,
+        "bottom": 532.6875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "lift-contact-practice",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 183.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 736.28125
+      },
+      "scrollHeight": 736,
+      "clientHeight": 736,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 516.90625,
+          "right": 379,
+          "bottom": 583.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 592.78125,
+          "right": 379,
+          "bottom": 659.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 668.65625,
+          "right": 379,
+          "bottom": 735.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "lift-contact-practice",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 135.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 752.03125
+      },
+      "scrollHeight": 752,
+      "clientHeight": 752,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 477.1875,
+          "right": 896,
+          "bottom": 544.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 553.0625,
+          "right": 896,
+          "bottom": 619.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 628.9375,
+          "right": 896,
+          "bottom": 695.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "collapse-signal-practice",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 120,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 712
+      },
+      "scrollHeight": 712,
+      "clientHeight": 712,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 439.203125,
+          "right": 343,
+          "bottom": 506.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 515.078125,
+          "right": 343,
+          "bottom": 581.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 590.953125,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "collapse-signal-practice",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "collapse-signal-practice",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "collapse-signal-practice",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "charging-bedroom",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 156,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 676
+      },
+      "scrollHeight": 676,
+      "clientHeight": 676,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 475.203125,
+          "right": 343,
+          "bottom": 542.078125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 551.078125,
+          "right": 343,
+          "bottom": 617.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 626.953125,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "charging-bedroom",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 685,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "charging-bedroom",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "charging-bedroom",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 10
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 98.5625,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 733.4375
+      },
+      "scrollHeight": 733,
+      "clientHeight": 733,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 417.765625,
+          "right": 343,
+          "bottom": 506.078125,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 515.078125,
+          "right": 343,
+          "bottom": 581.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 590.953125,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 98.5625,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 733.4375
+      },
+      "scrollHeight": 733,
+      "clientHeight": 733,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 417.765625,
+          "right": 343,
+          "bottom": 506.078125,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 515.078125,
+          "right": 343,
+          "bottom": 581.953125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 590.953125,
+          "right": 343,
+          "bottom": 657.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 721,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 12
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 113.125,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 718.875
+      },
+      "scrollHeight": 719,
+      "clientHeight": 719,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 432.328125,
+          "right": 343,
+          "bottom": 520.640625,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 529.640625,
+          "right": 343,
+          "bottom": 617.953125,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 626.953125,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 685,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 298.71875,
+          "right": 280,
+          "bottom": 385.421875,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 394.421875,
+          "right": 280,
+          "bottom": 481.125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 490.125,
+          "right": 280,
+          "bottom": 576.828125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.453125,
+        "right": 259,
+        "bottom": 533.1875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "fire-stairs-practice",
+      "width": 390,
+      "height": 844,
+      "card": {
+        "x": 10,
+        "y": 134.5625,
+        "right": 380,
+        "bottom": 832,
+        "width": 370,
+        "height": 697.4375
+      },
+      "scrollHeight": 697,
+      "clientHeight": 697,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 43.296875,
+          "y": 453.765625,
+          "right": 343,
+          "bottom": 520.640625,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 529.640625,
+          "right": 343,
+          "bottom": 596.515625,
+          "width": 299.703125,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 43.296875,
+          "y": 605.515625,
+          "right": 343,
+          "bottom": 693.828125,
+          "width": 299.703125,
+          "height": 88.3125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 50.6875,
+        "y": 742.53125,
+        "right": 317.078125,
+        "bottom": 803.875,
+        "width": 266.390625,
+        "height": 61.34375,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "fire-stairs-practice",
+      "width": 320,
+      "height": 568,
+      "card": {
+        "x": 10,
+        "y": 12,
+        "right": 310,
+        "bottom": 556,
+        "width": 300,
+        "height": 544
+      },
+      "scrollHeight": 707,
+      "clientHeight": 544,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 37,
+          "y": 320.40625,
+          "right": 280,
+          "bottom": 407.109375,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 416.109375,
+          "right": 280,
+          "bottom": 502.8125,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 37,
+          "y": 511.8125,
+          "right": 280,
+          "bottom": 598.515625,
+          "width": 243,
+          "height": 86.703125,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 43,
+        "y": 483.140625,
+        "right": 259,
+        "bottom": 532.875,
+        "width": 216,
+        "height": 49.734375,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "fire-stairs-practice",
+      "width": 430,
+      "height": 932,
+      "card": {
+        "x": 10,
+        "y": 219.71875,
+        "right": 420,
+        "bottom": 920,
+        "width": 410,
+        "height": 700.28125
+      },
+      "scrollHeight": 700,
+      "clientHeight": 700,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 46.890625,
+          "y": 552.90625,
+          "right": 379,
+          "bottom": 619.78125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 628.78125,
+          "right": 379,
+          "bottom": 695.65625,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 46.890625,
+          "y": 704.65625,
+          "right": 379,
+          "bottom": 771.53125,
+          "width": 332.109375,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 55.09375,
+        "y": 820.859375,
+        "right": 350.28125,
+        "bottom": 888.828125,
+        "width": 295.1875,
+        "height": 67.96875,
+        "hits": true
+      },
+      "focusChecks": 8
+    },
+    {
+      "id": "fire-stairs-practice",
+      "width": 1440,
+      "height": 900,
+      "card": {
+        "x": 500,
+        "y": 171.96875,
+        "right": 940,
+        "bottom": 888,
+        "width": 440,
+        "height": 716.03125
+      },
+      "scrollHeight": 716,
+      "clientHeight": 716,
+      "overflowY": "auto",
+      "horizontalOverflow": false,
+      "points": [
+        {
+          "x": 539.59375,
+          "y": 513.1875,
+          "right": 896,
+          "bottom": 580.0625,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 589.0625,
+          "right": 896,
+          "bottom": 655.9375,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        },
+        {
+          "x": 539.59375,
+          "y": 664.9375,
+          "right": 896,
+          "bottom": 731.8125,
+          "width": 356.40625,
+          "height": 66.875,
+          "clippedHorizontally": false
+        }
+      ],
+      "reducedMotion": true,
+      "activeAnimations": [],
+      "button": {
+        "x": 548.390625,
+        "y": 781.59375,
+        "right": 865.1875,
+        "bottom": 854.546875,
+        "width": 316.796875,
+        "height": 72.953125,
+        "hits": true
+      },
+      "focusChecks": 8
+    }
+  ],
+  "checks": [
+    {
+      "name": "oil-fire: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "typhoon-home: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "flood-kit: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "thunder-park-v2: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "forest-fire-sources-v2: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "rain-street-preparation-v1: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "flood-house-response-v1: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "quake-cover-practice: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "quake-exit-practice: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "flood-highground-practice: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "clear-corridor: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "lift-wait: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "well-call: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "clear-corridor-check-v2: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "car-window-practice: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "lift-contact-practice: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "collapse-signal-practice: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "charging-bedroom: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "bedroom-night-check-v2: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "kitchen-before-cooking-v2: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "fire-stairs-practice: correct title/three knowledge points/references/three flowers, four layouts, focus trap and CTA",
+      "status": "passed"
+    },
+    {
+      "name": "Genuine typhoon-home gameplay awards three; controlled replay awards zero and does not plant again",
+      "status": "passed"
+    },
+    {
+      "name": "Missing current session player fails real claim; restored fixture retries successfully without awarding wrong player",
+      "status": "passed"
+    },
+    {
+      "name": "Quota failure preserves existing save, displays session-only notice and permits map return",
+      "status": "passed"
+    }
+  ],
+  "screenshots": [
+    "oil-fire-390x844.png",
+    "oil-fire-320x568.png",
+    "oil-fire-320x568-scrolled.png",
+    "oil-fire-430x932.png",
+    "oil-fire-1440x900.png",
+    "typhoon-home-390x844.png",
+    "typhoon-home-320x568.png",
+    "typhoon-home-320x568-scrolled.png",
+    "typhoon-home-430x932.png",
+    "typhoon-home-1440x900.png",
+    "fire-shelter-practice-390x844.png",
+    "fire-shelter-practice-320x568.png",
+    "fire-shelter-practice-320x568-scrolled.png",
+    "fire-shelter-practice-430x932.png",
+    "fire-shelter-practice-1440x900.png",
+    "genuine-typhoon-completion.png",
+    "save-failure-retry.png",
+    "save-retry-success.png",
+    "quota-session-fallback.png"
+  ],
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "contextsCreated": 27,
+  "contextsClosed": 27,
+  "browserClosed": true,
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "fixture": "24 isolated synthetic entry fixtures: each tested level uncompleted, the other 23 preset complete solely to unlock entry. The existing start_emergency_level tool opens MainGameApp. The current mounted player onFinish(levelId,3) callback is invoked through React fiber for rendering/completion-boundary QA. These 24 are NOT pointer gameplay or earned progress. Separate clean-profile typhoon-home tests use actual canvas pointer input and real completion.",
+  "sourceArtwork": [
+    {
+      "name": "header",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-settlement-v1/header.webp",
+      "sha256": "16aff69db3828b8cc4aea510c6fa2190e9723ef08eeb21adb1f6bde3426121de"
+    },
+    {
+      "name": "body",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-settlement-v1/body.webp",
+      "sha256": "9a4776787f8e8688db825754b2928e75a09cd9fbdd9e323eac3b1b65ce3ea7ae"
+    },
+    {
+      "name": "footer",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-settlement-v1/footer.webp",
+      "sha256": "ac5c0006850ac7fcbf81a669d24b800386d5b94643f34d13df27ecac6613aecd"
+    },
+    {
+      "name": "button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-settlement-v1/button.webp",
+      "sha256": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9"
+    }
+  ],
+  "renderedArtwork": [
+    {
+      "name": "header",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-settlement-v1/header.webp",
+      "sha256": "16aff69db3828b8cc4aea510c6fa2190e9723ef08eeb21adb1f6bde3426121de",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "body",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-settlement-v1/body.webp",
+      "sha256": "9a4776787f8e8688db825754b2928e75a09cd9fbdd9e323eac3b1b65ce3ea7ae",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "footer",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-settlement-v1/footer.webp",
+      "sha256": "ac5c0006850ac7fcbf81a669d24b800386d5b94643f34d13df27ecac6613aecd",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-settlement-v1/button.webp",
+      "sha256": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9",
+      "embeddedAndRenderedMatch": true
+    }
+  ],
+  "finalHtmlSha256": "f27d20afa948d94999bba0635f638c1d3a0b23cb22aa6b8179bb22172c8cdee2",
+  "finishedAt": "2026-09-15T04:45:47.454Z"
+}

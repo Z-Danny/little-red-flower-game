@@ -1,0 +1,1419 @@
+{
+  "status": "failed",
+  "startedAt": "2026-09-15T05:09:18.884Z",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "dfcf85ba2eb884b7955373303d4bf1c00058196e44dfbd12e6218523629edba8",
+  "browser": "152.0.7977.83",
+  "cases": [
+    {
+      "id": "quake-bedroom-v2",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 处隐患未找到。",
+      "progress": "已找到 1/5 处隐患",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "typhoon-home",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 处隐患未找到。",
+      "progress": "已找到 1/5 处隐患",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "all five real target taps; original successful Settlement awards exactly three",
+      "failureSavePreserved": true,
+      "genuineRetryCompletion": true
+    },
+    {
+      "id": "fire-shelter-practice",
+      "family": "practice",
+      "kind": "unsafe-action",
+      "completed": 1,
+      "total": 6,
+      "reason": "训练中止：打开房门探查会使浓烟涌入。请留在可隔烟房间内等待救援。",
+      "progress": "已完成 1/6 项训练",
+      "input": "real canvas clicks: close door, then reopen it",
+      "retryBoundary": "real repeated door clicks",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "family": "disaster",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 7,
+      "reason": "还有 6 处隐患未找到。",
+      "progress": "已找到 1/7 处隐患",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "flood-kit",
+      "family": "collection",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 件物品未收好。",
+      "progress": "已收好 1/5 件物品",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted state elapsed boundary; next real RAF evaluates timeout",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "storm-street-check-v2",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 处隐患未找到。",
+      "progress": "已找到 1/5 处隐患",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "thunder-park-v2",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 处隐患未找到。",
+      "progress": "已找到 1/5 处隐患",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 处隐患未找到。",
+      "progress": "已找到 1/5 处隐患",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "flood-house-response-v1",
+      "family": "disaster",
+      "kind": "timeout",
+      "completed": 0,
+      "total": 7,
+      "reason": "外部水位已达到危险线。停止搜集物资，现实中应立即向高处转移并求救。",
+      "progress": "已完成 0/7 项训练",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "clear-corridor",
+      "family": "collection",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 4,
+      "reason": "还有 3 件物品未收好。",
+      "progress": "已收好 1/4 件物品",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted state elapsed boundary; next real RAF evaluates timeout",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 处隐患未找到。",
+      "progress": "已找到 1/5 处隐患",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "charging-bedroom",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 3,
+      "reason": "还有 2 处隐患未找到。",
+      "progress": "已找到 1/3 处隐患",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 处隐患未找到。",
+      "progress": "已找到 1/5 处隐患",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 处隐患未找到。",
+      "progress": "已找到 1/5 处隐患",
+      "input": "real engine timeout via Playwright RAF/timer advancement; actual pointer progress first where available",
+      "retryBoundary": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true,
+      "existingFailureRevealEnabled": false
+    },
+    {
+      "id": "flood-house-response-v1",
+      "family": "disaster",
+      "kind": "unsafe-action",
+      "completed": 0,
+      "total": 7,
+      "reason": "洪水浑浊、流速和水深难以判断，不要盲目涉水或游泳。",
+      "progress": "已完成 0/7 项训练",
+      "input": "real canvas drag of person toward outside floodwater",
+      "originalSavePreserved": true
+    }
+  ],
+  "layouts": [
+    {
+      "id": "quake-bedroom-v2",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "typhoon-home",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "typhoon-home",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "typhoon-home",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "typhoon-home",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 339.109375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 80.28125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 405.078125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 358.453125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "flood-kit",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "flood-kit",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "flood-kit",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "flood-kit",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 316.359375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 54.03125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 382.328125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 358.453125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "clear-corridor",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "clear-corridor",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "clear-corridor",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "clear-corridor",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "charging-bedroom",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "charging-bedroom",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "charging-bedroom",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "charging-bedroom",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 430,
+      "height": 932,
+      "box": {
+        "x": 10,
+        "y": 408.578125,
+        "right": 420,
+        "bottom": 920
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 1440,
+      "height": 900,
+      "box": {
+        "x": 500,
+        "y": 361.953125,
+        "right": 940,
+        "bottom": 888
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "quake-bedroom-v2: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "typhoon-home: real timeout earns zero, Retry resets all targets, five real taps reach successful Settlement and award exactly three",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "rain-street-preparation-v1: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "flood-kit: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "thunder-park-v2: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "forest-fire-sources-v2: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "flood-house-response-v1: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "clear-corridor: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "clear-corridor-check-v2: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "charging-bedroom: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "bedroom-night-check-v2: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "kitchen-before-cooking-v2: real failure, correct reason/count, four viewports, no reward, fresh retry and map return",
+      "status": "passed"
+    },
+    {
+      "name": "flood-house-response-v1: real unsafe drag preserves authored reason and no reward",
+      "status": "passed"
+    },
+    {
+      "name": "flood-house-response-v1: real early high-ground evacuation retains safe-exit dialog and no new reward",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice: zero training countdown remains playable without failure or reward",
+      "status": "passed"
+    },
+    {
+      "name": "oil-fire: zero training countdown remains playable without failure or reward",
+      "status": "passed"
+    }
+  ],
+  "screenshots": [
+    "quake-bedroom-v2-390x844.png",
+    "quake-bedroom-v2-320x568.png",
+    "quake-bedroom-v2-430x932.png",
+    "quake-bedroom-v2-1440x900.png",
+    "typhoon-home-390x844.png",
+    "typhoon-home-320x568.png",
+    "typhoon-home-430x932.png",
+    "typhoon-home-1440x900.png",
+    "typhoon-failure-retry-genuine-success.png",
+    "fire-shelter-practice-390x844.png",
+    "fire-shelter-practice-320x568.png",
+    "fire-shelter-practice-430x932.png",
+    "fire-shelter-practice-1440x900.png",
+    "flood-unsafe-action.png"
+  ],
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "contextsCreated": 18,
+  "contextsClosed": 18,
+  "browserClosed": true,
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "fixture": "Each isolated test profile presets the other 23 levels complete only to unlock entry; the tested level is uncompleted. No real user profile is opened. Initial timeouts use actual mounted engines driven by Playwright RAF/timer advancement; scene progress and practice mistakes use real pointer input. After verifying Retry, a controlled reducer tick/state clock boundary may trigger a second timeout solely to exercise Back. No success or reward callback is injected.",
+  "sourceArtwork": [
+    {
+      "name": "header",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/header.webp",
+      "sha256": "ec23c644c95499baca6814da40a80227fc26eccdae9d4894ac4485e5bc96aeb5"
+    },
+    {
+      "name": "body",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/body.webp",
+      "sha256": "1b29f2ac5f4ccba6b80b87c47728f09931427fca7a6d0c9dcbdb443ad0eaa2b7"
+    },
+    {
+      "name": "footer",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/footer.webp",
+      "sha256": "222eaf552d84bd1154ea5486cbb8885d103617ddc30f3349855b9cc1e12d7c3e"
+    },
+    {
+      "name": "button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/button.webp",
+      "sha256": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9"
+    },
+    {
+      "name": "secondary-button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/secondary-button.webp",
+      "sha256": "407cd98bf77b47ec91a324b8b1cb927bc0914b4ebac8104ba7ccc8c8f251799b"
+    }
+  ],
+  "expectedEntries": [
+    {
+      "id": "quake-bedroom-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "typhoon-home",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "fire-shelter-practice",
+      "family": "practice",
+      "seconds": 50,
+      "total": 6
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "family": "disaster",
+      "seconds": 50,
+      "total": 7
+    },
+    {
+      "id": "flood-kit",
+      "family": "collection",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "storm-street-check-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "thunder-park-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "flood-house-response-v1",
+      "family": "disaster",
+      "seconds": 120,
+      "total": 7
+    },
+    {
+      "id": "clear-corridor",
+      "family": "collection",
+      "seconds": 50,
+      "total": 4
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "charging-bedroom",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 3
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    }
+  ],
+  "renderedArtwork": [
+    {
+      "name": "header",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/header.webp",
+      "sha256": "ec23c644c95499baca6814da40a80227fc26eccdae9d4894ac4485e5bc96aeb5",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "body",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/body.webp",
+      "sha256": "1b29f2ac5f4ccba6b80b87c47728f09931427fca7a6d0c9dcbdb443ad0eaa2b7",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "footer",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/footer.webp",
+      "sha256": "222eaf552d84bd1154ea5486cbb8885d103617ddc30f3349855b9cc1e12d7c3e",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/button.webp",
+      "sha256": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "secondary-button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/secondary-button.webp",
+      "sha256": "407cd98bf77b47ec91a324b8b1cb927bc0914b4ebac8104ba7ccc8c8f251799b",
+      "embeddedAndRenderedMatch": true
+    }
+  ],
+  "finalHtmlSha256": "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa",
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ '2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa'\n- 'dfcf85ba2eb884b7955373303d4bf1c00058196e44dfbd12e6218523629edba8'\n\n    at file:///Users/danny/dannyprojects/%E5%B0%8F%E7%BA%A2%E8%8A%B1/scripts/test-painted-failure-browser.mjs:439:64",
+  "finishedAt": "2026-09-15T05:19:44.009Z",
+  "functionalStatus": "passed",
+  "artifactConsistencyStatus": "failed_due_to_concurrent_exports",
+  "artifactChangeAudit": {
+    "reviewedAt": "2026-09-15T05:24:16.878Z",
+    "functionalStatus": "passed",
+    "artifactConsistencyStatus": "failed_due_to_concurrent_exports",
+    "exportSha256Chain": [
+      "dfcf85ba2eb884b7955373303d4bf1c00058196e44dfbd12e6218523629edba8",
+      "d5841e3d55ab088300e4439dc372f12cbc6b5f207d5ace043c4ad72c4a3c3eb7",
+      "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa"
+    ],
+    "matrix": {
+      "failureEntries": 14,
+      "viewportSamples": 56,
+      "unsafeExtraCase": 1,
+      "negativeChecks": 3,
+      "checksPassed": 18
+    },
+    "sourceAudit": [
+      {
+        "file": "components/game/painted-failure.tsx",
+        "expected": "f99e5cd77011f35982916e19e3b4ba1fdfc3d1953b6943d12c68383bd4403c17",
+        "actual": "f99e5cd77011f35982916e19e3b4ba1fdfc3d1953b6943d12c68383bd4403c17",
+        "unchanged": true
+      },
+      {
+        "file": "app/painted-failure.css",
+        "expected": "9d62e3ecc4946552670bffbe6433e416ae13d29ea58a23e5a52b51cd3d507f2e",
+        "actual": "9d62e3ecc4946552670bffbe6433e416ae13d29ea58a23e5a52b51cd3d507f2e",
+        "unchanged": true
+      },
+      {
+        "file": "components/game/scene-hunt/player.tsx",
+        "expected": "76b769713abb8e17bf5a362ddb02e60f51a395d91a7d9db4a740b4b36fb88a14",
+        "actual": "7f85911a2f5bc6797a1ce7920ba2f66d3fc0a9b1f2559b43debe1dfc9aaa4d69",
+        "unchanged": false
+      },
+      {
+        "file": "components/game/disaster/player.tsx",
+        "expected": "0ca10a5e3a6d7b405bff58e7e75acc4ff1935fa1122cd74bbea4641488cf1b2e",
+        "actual": "8b7d489aa9ff1841ad18885ba855e3edc8a2180adace83a3dc3ae137df7183f0",
+        "unchanged": false
+      },
+      {
+        "file": "components/game/configured/player.tsx",
+        "expected": "107748bc9c8a9e901474cc0a9d253fae8bd8cd6eb4ee20d8d78b7c264c7e66f8",
+        "actual": "e40eec6b515840e41cea73b031e76b79104ecad3e0cbb609d6358b6d34887f37",
+        "unchanged": false
+      },
+      {
+        "file": "components/game/configured/practice-player.tsx",
+        "expected": "dc5ec48c4318d3c0a4db73da399974ec641cdc41fcda1d6bf5cdff19763d25ec",
+        "actual": "b49971d7351f9df787d7454a40c6c7d92920e96b8a5b4906bec6cbe0650ce85c",
+        "unchanged": false
+      },
+      {
+        "file": "app/layout.tsx",
+        "expected": "5fb9b1e025aa7f66f6d475f68eb5aecfdb6c5e185d8661f85cf6de7d9fef5275",
+        "actual": "5fb9b1e025aa7f66f6d475f68eb5aecfdb6c5e185d8661f85cf6de7d9fef5275",
+        "unchanged": true
+      },
+      {
+        "file": "scripts/export-offline.mjs",
+        "expected": "5b930129fb56b84adef3f419971cdb947edb7860fa99c86e662645f3814ed386",
+        "actual": "5b930129fb56b84adef3f419971cdb947edb7860fa99c86e662645f3814ed386",
+        "unchanged": true
+      }
+    ],
+    "assetAudit": [
+      {
+        "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/header.webp",
+        "expected": "ec23c644c95499baca6814da40a80227fc26eccdae9d4894ac4485e5bc96aeb5",
+        "actual": "ec23c644c95499baca6814da40a80227fc26eccdae9d4894ac4485e5bc96aeb5",
+        "unchanged": true
+      },
+      {
+        "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/body.webp",
+        "expected": "1b29f2ac5f4ccba6b80b87c47728f09931427fca7a6d0c9dcbdb443ad0eaa2b7",
+        "actual": "1b29f2ac5f4ccba6b80b87c47728f09931427fca7a6d0c9dcbdb443ad0eaa2b7",
+        "unchanged": true
+      },
+      {
+        "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/footer.webp",
+        "expected": "222eaf552d84bd1154ea5486cbb8885d103617ddc30f3349855b9cc1e12d7c3e",
+        "actual": "222eaf552d84bd1154ea5486cbb8885d103617ddc30f3349855b9cc1e12d7c3e",
+        "unchanged": true
+      },
+      {
+        "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/button.webp",
+        "expected": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9",
+        "actual": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9",
+        "unchanged": true
+      },
+      {
+        "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/secondary-button.webp",
+        "expected": "407cd98bf77b47ec91a324b8b1cb927bc0914b4ebac8104ba7ccc8c8f251799b",
+        "actual": "407cd98bf77b47ec91a324b8b1cb927bc0914b4ebac8104ba7ccc8c8f251799b",
+        "unchanged": true
+      }
+    ],
+    "workingTreeDrift": {
+      "unchangedSourceCount": 4,
+      "totalSourceCount": 8,
+      "changedFiles": [
+        "components/game/scene-hunt/player.tsx",
+        "components/game/disaster/player.tsx",
+        "components/game/configured/player.tsx",
+        "components/game/configured/practice-player.tsx"
+      ],
+      "explanation": "At the recorded audit time, parallel level-start edits were present in 4 player files: components/game/scene-hunt/player.tsx, components/game/disaster/player.tsx, components/game/configured/player.tsx, components/game/configured/practice-player.tsx. Earlier diff inspection identified LevelLaunchStatus/useLevelAutoStart, autoStart/loadAttempt/reload and begin/replay logic. This task did not edit or revert those changes. Failure component and CSS hashes remain unchanged. Later startup source edits are not claimed as browser-verified by this run."
+    },
+    "currentExport": {
+      "sha256": "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa",
+      "containsDataAutoStart": false,
+      "containsLaunchStatus": false
+    },
+    "attribution": "The full 14-entry matrix read the main HTML separately for each isolated context while a parallel map-music task exported new files. Per-case export hashes were not captured, so this matrix is not attributed wholly to the initial or final build. The final overall artifact-integrity assertion failed; all preceding functional checks passed.",
+    "latestArtifactSmoke": {
+      "report": "../latest-artifact-smoke/report.json",
+      "status": "passed",
+      "entries": 3,
+      "viewportSamples": 6,
+      "initialSha256": "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa",
+      "finalSha256": "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa",
+      "scope": "quake-bedroom-v2, typhoon-home and fire-shelter-practice rendering/dynamic text, 390/320 layout, Retry and Back on a stable latest HTML; controlled timer boundary for hunts, real door error clicks for practice."
+    }
+  },
+  "auditNote": "All feature checks passed. Original status/failure retained: full-file SHA changed during concurrent exports. Latest stable export was separately checked by latest-artifact-smoke with identical starting/ending SHA; separately authored unexported auto-start source edits are not claimed tested."
+}

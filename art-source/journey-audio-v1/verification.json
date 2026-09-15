@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "id": "busy-rescue-v1",
+  "date": "2026-09-15",
+  "source": {
+    "path": "art-source/journey-audio-v1/source.mp3",
+    "sha256": "620a8e8c84c52dd8a3c135471e468d636e4238cca38efa9f97497bc7831e5c04",
+    "bytes": 720621,
+    "decodedFrames": 1441152,
+    "decodedDurationSeconds": 30.024,
+    "integratedLufs": -12.02,
+    "truePeakDbtp": -0.7,
+    "loudnessRangeLu": 1.4
+  },
+  "tempoAnalysis": {
+    "method": "Positive log-spectral flux; 2048-sample Hann window; 240-sample hop; local baseline removal; normalized autocorrelation over 3–27 seconds",
+    "strongestCandidates": [
+      {
+        "bpm": 137.93103448275863,
+        "lagFrames": 87,
+        "correlation": 0.6001212532500835
+      },
+      {
+        "bpm": 108.1081081081081,
+        "lagFrames": 111,
+        "correlation": 0.1341757747886514
+      },
+      {
+        "bpm": 179.1044776119403,
+        "lagFrames": 67,
+        "correlation": 0.11837769300260784
+      }
+    ],
+    "selectedBpm": 138.0,
+    "limitation": "Pulse-period evidence only; bar alignment and harmonic seam are not human-verified."
+  },
+  "edit": {
+    "sourceStartSeconds": 0.024,
+    "sourceEndSeconds": 27.850083333333334,
+    "loopBeats": 64,
+    "assumedBeatsPerBar": 4,
+    "loopDurationSeconds": 27.826083333333333,
+    "retainedTimelineFraction": 0.9267946753708145,
+    "circularCrossfadeSeconds": 0.04,
+    "crossfadeShape": "raised-cosine equal-gain",
+    "crossfadeMethod": "First 40 ms blend source continuation at cut end into opening at matching pulse phase; period unchanged.",
+    "reason": "Remove the generated closing decay and near-silent tail; keep 16 bars of the selected music without a repeated whole-track fade.",
+    "editedPcmMeasurement": {
+      "integratedLufs": -11.98,
+      "truePeakDbtp": -0.7,
+      "loudnessRangeLu": 0.3
+    },
+    "fixedGainDb": -5.77
+  },
+  "output": {
+    "path": "public/audio/journey-v1/busy-rescue-loop.mp3",
+    "sha256": "d2152a382a66e727fbd2789fd62479343a3ff8277ce998ae6e1801ddb98da6c5",
+    "bytes": 669357,
+    "codec": "mp3",
+    "encoder": "libmp3lame",
+    "bitrate": 192000,
+    "sampleRate": 48000,
+    "channels": 2,
+    "decodedFrames": 1335652,
+    "decodedDurationSeconds": 27.826083333333333,
+    "gaplessMetadata": "Xing/LAME metadata; ffmpeg decoded frame count equals edited PCM frame count. Browser decoding is checked separately.",
+    "integratedLufs": -18.0,
+    "truePeakDbtp": -6.38,
+    "loudnessRangeLu": 0.3
+  },
+  "numericalSeam": {
+    "decodedWrapStepAbsPerChannel": [
+      0.012252457439899445,
+      0.006234019994735718
+    ],
+    "nearSeam99thPercentileStepPerChannel": [
+      0.03997348994016647,
+      0.05308639258146286
+    ],
+    "decodedPeakAbs": 0.4800054430961609,
+    "note": "Numerical values do not prove a perceptually seamless musical loop."
+  },
+  "checks": {
+    "decode": "passed",
+    "finiteSamples": "passed",
+    "integratedLoudness": "passed",
+    "truePeakHeadroom": "passed",
+    "gaplessDecodedFrameCount": "passed",
+    "humanListening": "not_run",
+    "perceptualLoopSeam": "not_run",
+    "browserPlayback": "not_run",
+    "realDevice": "not_run",
+    "gameMix": "not_run"
+  },
+  "tools": {
+    "ffmpeg": "ffmpeg version 8.1.1 Copyright (c) 2000-2026 the FFmpeg developers",
+    "numpy": "2.3.5"
+  }
+}

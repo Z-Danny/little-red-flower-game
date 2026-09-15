@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" fill="none">
+  <defs>
+    <linearGradient id="outer" x1="160" y1="4" x2="160" y2="312" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFEF2"/><stop offset=".48" stop-color="#F9F6E5"/><stop offset="1" stop-color="#D4CEB5"/></linearGradient>
+    <radialGradient id="face" cx="0" cy="0" r="1" gradientTransform="translate(133 102) rotate(62) scale(239)" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFCEC"/><stop offset=".7" stop-color="#F8F3DE"/><stop offset="1" stop-color="#E8E2C7"/></radialGradient>
+    <linearGradient id="rim" x1="160" y1="19" x2="160" y2="301" gradientUnits="userSpaceOnUse"><stop stop-color="#D6D0B7"/><stop offset=".53" stop-color="#E5DFC8"/><stop offset="1" stop-color="#FCFBEA"/></linearGradient>
+  </defs>
+  <circle cx="160" cy="163" r="154" fill="#556D4430"/>
+  <circle cx="160" cy="158" r="153" fill="url(#outer)" stroke="#D4CDB3" stroke-width="2"/>
+  <circle cx="160" cy="157" r="147" stroke="#FFFFF5" stroke-width="4"/>
+  <circle cx="160" cy="158" r="138" fill="url(#face)" stroke="url(#rim)" stroke-width="4"/>
+  <path d="M36 119C53 55 102 26 161 26C219 26 269 61 285 113" stroke="#FFFDF1" stroke-width="3" stroke-linecap="round"/>
+  <path d="M49 229C78 279 124 293 161 293C200 293 244 276 272 231" stroke="#CDC8AD" stroke-opacity=".35" stroke-width="2" stroke-linecap="round"/>
+</svg>

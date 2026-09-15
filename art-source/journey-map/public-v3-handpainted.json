@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "asset": "public/levels/journey-map/public-v3-handpainted.png",
+  "source": "/Users/danny/.codex/generated_images/01a0a2a1-2ec8-7721-8dee-6174d675ebc6/exec-9b6da960-d905-4a95-a1be-c2f80e75d4ac.png",
+  "tool": "built-in image_gen",
+  "sourceDimensions": {
+    "width": 724,
+    "height": 2171
+  },
+  "sha256": "3fa5e2ba8ca79feb6356db53da9930fb8e684682185f5ce0d3cc45c319a65ec9",
+  "selectedByUser": true,
+  "previousImage": "/levels/journey-map/public-v2.png",
+  "logicalMap": {
+    "width": 720,
+    "height": 2160
+  },
+  "generationBrief": "保持七处地标与原始长图布局，减少装饰树木；入口采用石拱门，住宅采用紫色山墙与柱式门廊，电梯住宅采用圆角阳台，电梯框架采用砖钢构造；最后依照封面强化暖金光、深浅绿与手绘笔触。",
+  "scope": "用户确认的地图背景替换；沿用稳定关卡ID、节点、规则与成绩。"
+}

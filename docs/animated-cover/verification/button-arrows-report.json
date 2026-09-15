@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "checks": [
+    {
+      "mode": "dev",
+      "freshAndContinueNoArrows": true,
+      "startAndContinueWork": true,
+      "runtimeErrors": []
+    },
+    {
+      "mode": "offline",
+      "freshAndContinueNoArrows": true,
+      "startAndContinueWork": true,
+      "runtimeErrors": []
+    }
+  ],
+  "browserClosed": true
+}

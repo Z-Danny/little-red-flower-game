@@ -1,0 +1,9 @@
+Use case: text-localization.
+Asset type: existing transparent Chinese game-title logo, production replacement.
+Input image 1 is the exact edit target.
+Primary request: Correct ONLY the mistaken Chinese character 你 to 我 in the bottom row. The exact final seven-character title is 这片儿没我不行, arranged in precisely these two lines:
+这片儿
+没我不行
+Bottom row must be 没 我 不 行. It must say 我, NOT 你.
+Preserve the current composition, warm luminous gold brush strokes, expressive thick calligraphy, orange-gold painted edges, existing texture and dimensionality, relative line widths, and all other characters. Match the replacement 我 to the same painted gold style and visual weight. Preserve the compact wide two-row layout. Do not redesign the title.
+Output only the corrected logo, genuine transparent RGBA PNG with all surrounding space and gaps between characters fully transparent. No background color, no scene, no paper, no frame, no icons, no added text, no watermark, no glow rectangle. Leave a narrow transparent margin so all calligraphic strokes are intact.

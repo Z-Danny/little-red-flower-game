@@ -5,6 +5,10 @@ export type AudioFrame = {
   milestones: string[];
   /** Optional scene-specific music tempo; all music stems share this rate. */
   tempo?: number;
+  /** Explicit null opts into phase-based results and suppresses early milestone jingles. */
+  result?: 'victory' | 'failure' | null;
+  /** A terminal result may outlive active=false, but never an actual user pause. */
+  paused?: boolean;
 };
 export type Cue = { sound?: string; character?: string };
 export type CueProfile = {

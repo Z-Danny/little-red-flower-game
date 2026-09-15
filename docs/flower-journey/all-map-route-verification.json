@@ -1,0 +1,102 @@
+{
+  "status": "passed",
+  "scope": "自然灾害与公共安全道路、花位、标牌对齐；三图完整回归",
+  "html": "outputs/三图道路对齐版/小红花应急行动.html",
+  "sha256": "d3d448dc9a922cd6ea3a44f0e79055f45b8722a6c6ee9d6ad70120181b0aa970",
+  "changedNodes": 18,
+  "newRoadPoints": 141,
+  "maps": [
+    {
+      "id": "nature",
+      "nodes": 11,
+      "segments": 10,
+      "points": 86,
+      "image": "/levels/journey-map/nature-v3-chibi.png",
+      "imageSha256": "5b4635ba8c0517f863f6827f13bacce31e9a81e88ca262b1968cdf723bae81ef",
+      "coordinateSpace": [
+        720,
+        2160
+      ],
+      "preview": "outputs/nature-map-alignment/道路坐标标注.html"
+    },
+    {
+      "id": "public",
+      "nodes": 7,
+      "segments": 6,
+      "points": 55,
+      "image": "/levels/journey-map/public-v3-handpainted.png",
+      "imageSha256": "3fa5e2ba8ca79feb6356db53da9930fb8e684682185f5ce0d3cc45c319a65ec9",
+      "coordinateSpace": [
+        720,
+        2160
+      ],
+      "preview": "outputs/public-map-alignment/道路坐标标注.html"
+    },
+    {
+      "id": "home",
+      "nodes": 6,
+      "segments": 5,
+      "points": 55,
+      "image": "/levels/journey-map/home-v3-handpainted.png",
+      "imageSha256": "458438411449d8f5574fa88c814530b6f8486d0bf67c428c77bcd51737d45e7a",
+      "coordinateSpace": [
+        720,
+        2160
+      ],
+      "preview": "outputs/home-map-alignment/道路坐标标注.html"
+    }
+  ],
+  "checks": {
+    "journeyTestsPassed": 48,
+    "typecheck": "passed",
+    "targetedLint": "passed",
+    "exportChecks": 7,
+    "layoutSamples": 288,
+    "layoutFailures": 0,
+    "clickAssociations": 48,
+    "routeGeometrySamples": 57,
+    "routeStateSamples": 413,
+    "completedPrefixes": 21,
+    "roadCoverageScenarios": 9,
+    "screenshots": 41,
+    "browserErrors": 0,
+    "networkRequests": 0,
+    "failedRequests": 0
+  },
+  "fixtures": {
+    "fresh": "Isolated browser storage; no completed levels.",
+    "complete": "All 24 mapped levels preset to 3 flowers only to inspect completed-state layout. No actual gameplay, rewards or completion flow is tested.",
+    "partial": "For each annotated map, every prefix of 1 through n−1 levels is preset to 3 flowers in its own isolated context (nature: 1–10; public: 1–6; home: 1–5). This verifies every route changes from locked to connected as its prerequisite becomes complete. Display fixture only; not earned gameplay."
+  },
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "contextClosed": [
+    "fresh",
+    "complete",
+    "partial-nature-1-of-11",
+    "partial-nature-2-of-11",
+    "partial-nature-3-of-11",
+    "partial-nature-4-of-11",
+    "partial-nature-5-of-11",
+    "partial-nature-6-of-11",
+    "partial-nature-7-of-11",
+    "partial-nature-8-of-11",
+    "partial-nature-9-of-11",
+    "partial-nature-10-of-11",
+    "partial-public-1-of-7",
+    "partial-public-2-of-7",
+    "partial-public-3-of-7",
+    "partial-public-4-of-7",
+    "partial-public-5-of-7",
+    "partial-public-6-of-7",
+    "partial-home-1-of-6",
+    "partial-home-2-of-6",
+    "partial-home-3-of-6",
+    "partial-home-4-of-6",
+    "partial-home-5-of-6"
+  ],
+  "browserClosed": true,
+  "report": "outputs/all-map-route-verification/report.json",
+  "previousHomeConfigurationPreserved": true,
+  "priorSmallScreenOcclusion": "Resolved for nature flood-highground-practice and public clear-corridor; all six sizes passed."
+}

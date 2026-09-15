@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-15",
+  "html": {
+    "path": "outputs/本地离线版/小红花应急行动.html",
+    "sha256": "b6c84ca33b82459dbc93acaa9a00cbbe871700fcb0e9a44e6aeeb21e1dcfd585"
+  },
+  "checks": {
+    "journeyTests": 47,
+    "typecheck": "passed",
+    "build": "passed",
+    "offlineExport": "passed",
+    "browser": "passed",
+    "layouts": 288,
+    "associations": 48,
+    "embeddedMaps": 3,
+    "errors": 0,
+    "networkRequests": 0,
+    "browserClosed": true,
+    "physicalDevice": "not_run",
+    "humanAudio": "not_run",
+    "numberMatching": "passed",
+    "minimumTitleFontPx": 16,
+    "titleColorContrast": {
+      "nature": 7.15,
+      "public": 6.32,
+      "home": 6.1
+    }
+  },
+  "sources": [
+    {
+      "path": "app/garden.css",
+      "sha256": "264fe60d716d6c407ddca29cc63344805adac1832aaef92aaca94bc38297c49c"
+    },
+    {
+      "path": "app/typography.css",
+      "sha256": "8ef4c2578b9f7553817b6e8b0cf526293a45535bd30f5d1db3388762434f7b41"
+    },
+    {
+      "path": "components/game/journey/map-scene.tsx",
+      "sha256": "5895c2f1a13b99883a9da692cfa942eb4602a3bb37e8de28f76e2911b1875144"
+    },
+    {
+      "path": "content/journey-copy.json",
+      "sha256": "a525cc0bb5c3dd30b28441dcdd7a6fc43af2a8a4c4b7bc063e6bc5bc4f57b3fc"
+    },
+    {
+      "path": "content/journey-map.json",
+      "sha256": "30d692614157db9ad074e77def3d2b8ee647dde5bc7851ef20339ca84fdd0ec3"
+    },
+    {
+      "path": "scripts/test-map-signs-browser.mjs",
+      "sha256": "4efcc9ccca59f44dcaac4ce8c75e204749bfd9d57add50d937364ed31aa2d71d"
+    }
+  ],
+  "browserReport": "outputs/map-signs-verification/report.json"
+}

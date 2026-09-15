@@ -219,11 +219,11 @@ try {
       check('all six real actions complete with three flowers ' + width);
       if (width === 390) {
         const saved = await scores();
-        await page.getByRole('button', { name: /返回地图/ }).click(); await tick(3000); await openLevel();
+        await page.locator('[data-testid="settlement-primary"]').click(); await tick(3000); await openLevel();
         for (const step of ['reach-higher-level', 'contact-rescue', 'place-water', 'monitor-updates', 'signal-from-inside', 'wait-at-height']) await action(step);
         await tick(6200); await page.locator('.garden-settlement').waitFor();
         assert.deepEqual(await scores(), saved);
-        assert.equal(await page.locator('.garden-reward-label').innerText(), '本关花朵已种下');
+        assert.equal(await page.locator('[data-testid="settlement-reward"]').innerText(), '小红花已种下 · 本次为巩固练习');
         check('real replay preserves prerequisite scores and does not duplicate flowers');
       }
     } finally { await context.close(); }

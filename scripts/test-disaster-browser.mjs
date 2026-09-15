@@ -63,7 +63,9 @@ const skin = (key) =>
 const host = () => page.locator('.disaster-player');
 async function map() {
   if (await host().count()) {
-    if (await page.locator('.disaster-dialog').count())
+    if ((await host().getAttribute('data-phase')) === 'failed')
+      await page.locator('.painted-failure').getByRole('button', { name: '返回关卡', exact: true }).click();
+    else if (await page.locator('.disaster-dialog').count())
       await page
         .locator('.disaster-dialog')
         .getByRole('button', { name: '返回关卡', exact: true })
@@ -292,7 +294,9 @@ try {
   );
   await capture('flood-early-retreat');
   for (const zone of ['outside', 'wire', 'car']) {
-    await page.getByRole('button', { name: '重新开始', exact: true }).click();
+    await ((await host().getAttribute('data-phase')) === 'failed'
+      ? page.locator('.painted-failure').getByRole('button', { name: '不服，再来！', exact: true })
+      : page.getByRole('button', { name: '重新开始', exact: true })).click();
     await page.locator('.disaster-entry button').click();
     let target = middle(fs.zones[zone].box);
     if (target.x < 75) target.x = 90;

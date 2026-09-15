@@ -14,6 +14,7 @@ import {
   type Progress,
   type Planting,
 } from '@/app/game/journey/progress';
+import { PlantingAudioTracker, type PlantingCue } from '@/app/game/journey/planting-audio';
 import {
   regionFor,
   nodeFor,
@@ -24,12 +25,14 @@ export function useMapJourney({
   completed,
   planting,
   onPlanted,
+  onPlantSound,
   focusId,
   onVisit,
 }: {
   completed: Progress;
   planting: Planting | null;
   onPlanted: () => void;
+  onPlantSound?: (stage: PlantingCue) => void;
   focusId: string | null;
   onVisit?: (id: string) => void;
 }) {
@@ -43,6 +46,7 @@ export function useMapJourney({
     regionFor(focusId ?? '')?.id ?? 'nature',
   );
   const [age, setAge] = useState(0);
+  const [audioTimeline] = useState(() => new PlantingAudioTracker());
   const [focusRequest, setFocusRequest] = useState<{
     id: string;
     smooth: boolean;
@@ -79,7 +83,8 @@ export function useMapJourney({
       scroll.scrollTo({
         top: Math.max(
           0,
-          (node.y / region.height) * painting.clientHeight -
+          Number.parseFloat(getComputedStyle(scroll).paddingTop) +
+            (node.y / region.height) * painting.clientHeight -
             Math.min(
               scroll.clientHeight * focusRequest.align,
               scroll.clientHeight - 145,
@@ -97,7 +102,7 @@ export function useMapJourney({
     return () => resize.disconnect();
   }, [focusRequest, regionId, region.height]);
   useEffect(() => {
-    if (!planting) return;
+    if (!planting) { audioTimeline.take(null, completed, 0); return; }
     const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
     let frame = 0,
       last = performance.now(),
@@ -109,6 +114,7 @@ export function useMapJourney({
       if (!document.hidden) elapsed += dt;
       const t = reduced ? Math.min(journeyTiming.end, elapsed * 2) : elapsed;
       setAge(t);
+      for (const cue of audioTimeline.take(planting, completed, t)) onPlantSound?.(cue);
       if (t >= journeyTiming.count)
         setWallet(
           Math.min(
@@ -132,7 +138,7 @@ export function useMapJourney({
     };
     frame = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(frame);
-  }, [planting, completed, onPlanted, focus]);
+  }, [planting, completed, onPlanted, focus, audioTimeline, onPlantSound]);
   return {
     region,
     progress,

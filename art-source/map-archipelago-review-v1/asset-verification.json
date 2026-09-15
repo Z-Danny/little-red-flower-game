@@ -1,0 +1,593 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-15T06:45:34.530329+00:00",
+  "status": "passed",
+  "assets_directory": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets",
+  "expected_asset_count": 7,
+  "passed_asset_count": 7,
+  "read_only_image_verification": true,
+  "checks": "PNG metadata, decode, dimensions, SHA256, true alpha, visible bounding box and outer edges",
+  "limitations": [
+    "Alpha checks cannot determine artistic quality, unwanted painted background inside the silhouette, or semantic completeness.",
+    "Single-line Chinese titles require HTML layout verification; lettering is not checked in PNGs.",
+    "Potential clipping means alpha >= 16 at the outer edge; visual review is still required."
+  ],
+  "visual_review": "not_run",
+  "browser_review": "not_run",
+  "physical_device": "not_run",
+  "human_audio": "not_run",
+  "assets": [
+    {
+      "file": "entry-island.png",
+      "path": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets/entry-island.png",
+      "expected_background": "transparent",
+      "status": "passed",
+      "errors": [],
+      "warnings": [
+        "Low-alpha residue exists at an outer edge; visual review should check halos."
+      ],
+      "sha256": "ddc79d60e1193e546cba2c545fbccf477caeec7ff887fab9a4882da1555d6765",
+      "file_bytes": 1160187,
+      "format": "PNG",
+      "mode": "RGBA",
+      "bands": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "metadata_keys": [],
+      "has_alpha_storage": true,
+      "frames": 1,
+      "width": 1254,
+      "height": 1254,
+      "aspect_ratio": 1.0,
+      "alpha": {
+        "minimum": 0,
+        "maximum": 255,
+        "fully_transparent_pixels": 1046961,
+        "fully_transparent_fraction": 0.66578718,
+        "partially_transparent_pixels": 525316,
+        "partially_transparent_fraction": 0.33406083,
+        "fully_opaque_pixels": 239,
+        "fully_opaque_fraction": 0.00015199,
+        "bbox_nonzero_xyxy_exclusive": [
+          0,
+          17,
+          1242,
+          1254
+        ],
+        "bbox_alpha_ge_16_xyxy_exclusive": [
+          197,
+          111,
+          1064,
+          1138
+        ],
+        "visible_margins_px": {
+          "left": 197,
+          "top": 111,
+          "right": 190,
+          "bottom": 116
+        },
+        "corner_values_tl_tr_bl_br": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edges": {
+          "top": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "right": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "bottom": {
+            "maximum_alpha": 1,
+            "nonzero_pixels": 5,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "left": {
+            "maximum_alpha": 1,
+            "nonzero_pixels": 53,
+            "visible_pixels_alpha_ge_16": 0
+          }
+        },
+        "potential_clipping_at_canvas_edge": false
+      }
+    },
+    {
+      "file": "nature-island.png",
+      "path": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets/nature-island.png",
+      "expected_background": "transparent",
+      "status": "passed",
+      "errors": [],
+      "warnings": [],
+      "sha256": "2351ff09bf5618d4ed9fb8ed65125dc8dba78418eaff682034b283d106fc1517",
+      "file_bytes": 1232218,
+      "format": "PNG",
+      "mode": "RGBA",
+      "bands": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "metadata_keys": [],
+      "has_alpha_storage": true,
+      "frames": 1,
+      "width": 1254,
+      "height": 1254,
+      "aspect_ratio": 1.0,
+      "alpha": {
+        "minimum": 0,
+        "maximum": 255,
+        "fully_transparent_pixels": 1015762,
+        "fully_transparent_fraction": 0.645947,
+        "partially_transparent_pixels": 555743,
+        "partially_transparent_fraction": 0.35341008,
+        "fully_opaque_pixels": 1011,
+        "fully_opaque_fraction": 0.00064292,
+        "bbox_nonzero_xyxy_exclusive": [
+          43,
+          20,
+          1250,
+          1232
+        ],
+        "bbox_alpha_ge_16_xyxy_exclusive": [
+          163,
+          69,
+          1092,
+          1159
+        ],
+        "visible_margins_px": {
+          "left": 163,
+          "top": 69,
+          "right": 162,
+          "bottom": 95
+        },
+        "corner_values_tl_tr_bl_br": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edges": {
+          "top": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "right": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "bottom": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "left": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          }
+        },
+        "potential_clipping_at_canvas_edge": false
+      }
+    },
+    {
+      "file": "public-island.png",
+      "path": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets/public-island.png",
+      "expected_background": "transparent",
+      "status": "passed",
+      "errors": [],
+      "warnings": [
+        "Low-alpha residue exists at an outer edge; visual review should check halos."
+      ],
+      "sha256": "2222605eb2132116f9443da60516316da1237d6011e2924a152a3997ec850dcc",
+      "file_bytes": 1268448,
+      "format": "PNG",
+      "mode": "RGBA",
+      "bands": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "metadata_keys": [],
+      "has_alpha_storage": true,
+      "frames": 1,
+      "width": 1254,
+      "height": 1254,
+      "aspect_ratio": 1.0,
+      "alpha": {
+        "minimum": 0,
+        "maximum": 255,
+        "fully_transparent_pixels": 978228,
+        "fully_transparent_fraction": 0.62207825,
+        "partially_transparent_pixels": 593718,
+        "partially_transparent_fraction": 0.37755927,
+        "fully_opaque_pixels": 570,
+        "fully_opaque_fraction": 0.00036248,
+        "bbox_nonzero_xyxy_exclusive": [
+          0,
+          0,
+          1234,
+          1236
+        ],
+        "bbox_alpha_ge_16_xyxy_exclusive": [
+          102,
+          207,
+          1152,
+          1050
+        ],
+        "visible_margins_px": {
+          "left": 102,
+          "top": 207,
+          "right": 102,
+          "bottom": 204
+        },
+        "corner_values_tl_tr_bl_br": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edges": {
+          "top": {
+            "maximum_alpha": 1,
+            "nonzero_pixels": 8,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "right": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "bottom": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "left": {
+            "maximum_alpha": 1,
+            "nonzero_pixels": 11,
+            "visible_pixels_alpha_ge_16": 0
+          }
+        },
+        "potential_clipping_at_canvas_edge": false
+      }
+    },
+    {
+      "file": "home-island.png",
+      "path": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets/home-island.png",
+      "expected_background": "transparent",
+      "status": "passed",
+      "errors": [],
+      "warnings": [
+        "Low-alpha residue exists at an outer edge; visual review should check halos."
+      ],
+      "sha256": "1681fcd74eaeffefc34beeb3beb9f14a5466d9a5014325d620f6a3d259d93959",
+      "file_bytes": 1247465,
+      "format": "PNG",
+      "mode": "RGBA",
+      "bands": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "metadata_keys": [],
+      "has_alpha_storage": true,
+      "frames": 1,
+      "width": 1254,
+      "height": 1254,
+      "aspect_ratio": 1.0,
+      "alpha": {
+        "minimum": 0,
+        "maximum": 255,
+        "fully_transparent_pixels": 988681,
+        "fully_transparent_fraction": 0.62872556,
+        "partially_transparent_pixels": 583559,
+        "partially_transparent_fraction": 0.37109893,
+        "fully_opaque_pixels": 276,
+        "fully_opaque_fraction": 0.00017551,
+        "bbox_nonzero_xyxy_exclusive": [
+          0,
+          19,
+          1230,
+          1236
+        ],
+        "bbox_alpha_ge_16_xyxy_exclusive": [
+          145,
+          201,
+          1116,
+          1073
+        ],
+        "visible_margins_px": {
+          "left": 145,
+          "top": 201,
+          "right": 138,
+          "bottom": 181
+        },
+        "corner_values_tl_tr_bl_br": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edges": {
+          "top": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "right": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "bottom": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "left": {
+            "maximum_alpha": 1,
+            "nonzero_pixels": 3,
+            "visible_pixels_alpha_ge_16": 0
+          }
+        },
+        "potential_clipping_at_canvas_edge": false
+      }
+    },
+    {
+      "file": "wood-plaque.png",
+      "path": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets/wood-plaque.png",
+      "expected_background": "transparent",
+      "status": "passed",
+      "errors": [],
+      "warnings": [],
+      "sha256": "257a2b4ac81f279057f50cd10e6e202ec679b1d840fed511d0ce0a933e51b26d",
+      "file_bytes": 857581,
+      "format": "PNG",
+      "mode": "RGBA",
+      "bands": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "metadata_keys": [],
+      "has_alpha_storage": true,
+      "frames": 1,
+      "width": 2172,
+      "height": 724,
+      "aspect_ratio": 3.0,
+      "alpha": {
+        "minimum": 0,
+        "maximum": 255,
+        "fully_transparent_pixels": 1049220,
+        "fully_transparent_fraction": 0.66721864,
+        "partially_transparent_pixels": 523191,
+        "partially_transparent_fraction": 0.33270695,
+        "fully_opaque_pixels": 117,
+        "fully_opaque_fraction": 7.44e-05,
+        "bbox_nonzero_xyxy_exclusive": [
+          222,
+          15,
+          2070,
+          708
+        ],
+        "bbox_alpha_ge_16_xyxy_exclusive": [
+          224,
+          202,
+          1948,
+          517
+        ],
+        "visible_margins_px": {
+          "left": 224,
+          "top": 202,
+          "right": 224,
+          "bottom": 207
+        },
+        "corner_values_tl_tr_bl_br": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edges": {
+          "top": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "right": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "bottom": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "left": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          }
+        },
+        "potential_clipping_at_canvas_edge": false
+      }
+    },
+    {
+      "file": "current-flag.png",
+      "path": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets/current-flag.png",
+      "expected_background": "transparent",
+      "status": "passed",
+      "errors": [],
+      "warnings": [],
+      "sha256": "36a7bbdc4f99b5c929226d1a495f95c7b044c3e1471cb5d9bc219da4b9bb3cd8",
+      "file_bytes": 615188,
+      "format": "PNG",
+      "mode": "RGBA",
+      "bands": [
+        "R",
+        "G",
+        "B",
+        "A"
+      ],
+      "metadata_keys": [],
+      "has_alpha_storage": true,
+      "frames": 1,
+      "width": 1254,
+      "height": 1254,
+      "aspect_ratio": 1.0,
+      "alpha": {
+        "minimum": 0,
+        "maximum": 255,
+        "fully_transparent_pixels": 1290282,
+        "fully_transparent_fraction": 0.82052075,
+        "partially_transparent_pixels": 281639,
+        "partially_transparent_fraction": 0.17910088,
+        "fully_opaque_pixels": 595,
+        "fully_opaque_fraction": 0.00037837,
+        "bbox_nonzero_xyxy_exclusive": [
+          43,
+          21,
+          1218,
+          1228
+        ],
+        "bbox_alpha_ge_16_xyxy_exclusive": [
+          317,
+          169,
+          1073,
+          1088
+        ],
+        "visible_margins_px": {
+          "left": 317,
+          "top": 169,
+          "right": 181,
+          "bottom": 166
+        },
+        "corner_values_tl_tr_bl_br": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "edges": {
+          "top": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "right": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "bottom": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          },
+          "left": {
+            "maximum_alpha": 0,
+            "nonzero_pixels": 0,
+            "visible_pixels_alpha_ge_16": 0
+          }
+        },
+        "potential_clipping_at_canvas_edge": false
+      }
+    },
+    {
+      "file": "sky-background.png",
+      "path": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets/sky-background.png",
+      "expected_background": "opaque",
+      "status": "passed",
+      "errors": [],
+      "warnings": [],
+      "sha256": "71e11822f043edb85b873f7b20cfef9091c4409586c9fcc536ad368f73cbb5d4",
+      "file_bytes": 1950154,
+      "format": "PNG",
+      "mode": "RGB",
+      "bands": [
+        "R",
+        "G",
+        "B"
+      ],
+      "metadata_keys": [],
+      "has_alpha_storage": false,
+      "frames": 1,
+      "width": 941,
+      "height": 1672,
+      "aspect_ratio": 0.562799,
+      "alpha": {
+        "minimum": 255,
+        "maximum": 255,
+        "fully_transparent_pixels": 0,
+        "fully_transparent_fraction": 0.0,
+        "partially_transparent_pixels": 0,
+        "partially_transparent_fraction": 0.0,
+        "fully_opaque_pixels": 1573352,
+        "fully_opaque_fraction": 1.0,
+        "bbox_nonzero_xyxy_exclusive": [
+          0,
+          0,
+          941,
+          1672
+        ],
+        "bbox_alpha_ge_16_xyxy_exclusive": [
+          0,
+          0,
+          941,
+          1672
+        ],
+        "visible_margins_px": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        },
+        "corner_values_tl_tr_bl_br": [
+          255,
+          255,
+          255,
+          255
+        ],
+        "edges": {
+          "top": {
+            "maximum_alpha": 255,
+            "nonzero_pixels": 941,
+            "visible_pixels_alpha_ge_16": 941
+          },
+          "right": {
+            "maximum_alpha": 255,
+            "nonzero_pixels": 1672,
+            "visible_pixels_alpha_ge_16": 1672
+          },
+          "bottom": {
+            "maximum_alpha": 255,
+            "nonzero_pixels": 941,
+            "visible_pixels_alpha_ge_16": 941
+          },
+          "left": {
+            "maximum_alpha": 255,
+            "nonzero_pixels": 1672,
+            "visible_pixels_alpha_ge_16": 1672
+          }
+        },
+        "potential_clipping_at_canvas_edge": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "status": "user-approved",
+  "selection": "settlement-v2 first three: victory, failure, button A",
+  "packages": {
+    "music-jingles": {
+      "author": "Kenney",
+      "title": "Music Jingles",
+      "sourcePage": "https://kenney.nl/assets/music-jingles",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://kenney.nl/media/pages/assets/music-jingles/f37e530b9e-1677590399/kenney_music-jingles.zip",
+      "archive": {
+        "path": "art-source/settlement-audio-v1/sources/music-jingles/kenney_music-jingles.zip",
+        "bytes": 1239525,
+        "sha256": "b729ba57959bd58793d2c5cafa348aaf2655d354f3da35ec4729e03ec77197b8"
+      },
+      "licenseFile": {
+        "path": "art-source/settlement-audio-v1/sources/music-jingles/License.txt",
+        "bytes": 482,
+        "sha256": "373b1c880ee6c7a83c1ccf209f251cf45fc9ea9b1f0330844fa7be64a401adc4"
+      }
+    },
+    "interface-sounds": {
+      "author": "Kenney",
+      "title": "Interface Sounds 1.0",
+      "sourcePage": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "downloadUrl": "https://kenney.nl/media/pages/assets/interface-sounds/fa43c1dd4d-1677589452/kenney_interface-sounds.zip",
+      "archive": {
+        "path": "art-source/settlement-audio-v1/sources/interface-sounds/kenney_interface-sounds.zip",
+        "bytes": 834536,
+        "sha256": "f2193d072726d6758a5f7871b2dcc54dcce0d5c35c6f0a62f92549b327c81232"
+      },
+      "licenseFile": {
+        "path": "art-source/settlement-audio-v1/sources/interface-sounds/License.txt",
+        "bytes": 574,
+        "sha256": "f7966c773bbed0eca6a9c75081c44a178b38eae112724dbb5fdfbd4192d118a9"
+      }
+    }
+  },
+  "sounds": [
+    {
+      "kind": "victory",
+      "approvedFrom": "outputs/audio-demos/settlement-v2/music/01-victory-short.wav",
+      "approved": {
+        "path": "art-source/settlement-audio-v1/approved/01-victory-short.wav",
+        "bytes": 84842,
+        "sha256": "8a280b33f7b71d17db8903cb569085b0c5ef43d105609a2cc13e4e79576677b2"
+      },
+      "package": "music-jingles",
+      "original": {
+        "path": "art-source/settlement-audio-v1/sources/music-jingles/jingles_SAX02.ogg",
+        "bytes": 17112,
+        "sha256": "70a6c8cf7d2d391eededdb6121371e01f859130595da08413a28ea0608a82e3f"
+      },
+      "encoding": "pcm_s16le",
+      "channels": 1,
+      "sampleRate": 44100,
+      "frames": 42399,
+      "durationSeconds": 0.9614285714285714,
+      "pcmSha256": "a7db14d342fa5f60135a68fed1f7107832fb750877101808853c8544a601fb49",
+      "auditionProcessing": {
+        "filters": "highpass=f=90,lowpass=f=3500,atempo=0.90",
+        "gainDb": -2.1735063990658614
+      },
+      "integrationProcessing": "None: the approved WAV is copied byte-for-byte and its PCM16 data is embedded unchanged."
+    },
+    {
+      "kind": "failure",
+      "approvedFrom": "outputs/audio-demos/settlement-v2/music/02-failure-short.wav",
+      "approved": {
+        "path": "art-source/settlement-audio-v1/approved/02-failure-short.wav",
+        "bytes": 105554,
+        "sha256": "5b7cfd9d1985bc4f91890b1940b6e1a8b1c104843024d0d55f80686dd96895f9"
+      },
+      "package": "music-jingles",
+      "original": {
+        "path": "art-source/settlement-audio-v1/sources/music-jingles/jingles_SAX07.ogg",
+        "bytes": 30900,
+        "sha256": "241c8570fbded819ee0205e4be3efa80aeb834a70df89318da88f9e219798b11"
+      },
+      "encoding": "pcm_s16le",
+      "channels": 1,
+      "sampleRate": 44100,
+      "frames": 52755,
+      "durationSeconds": 1.1962585034013606,
+      "pcmSha256": "cebab52c64fb06bcfaf20ad858f8419fbf593a2569a9b11eb0264bba036e3ef8",
+      "auditionProcessing": {
+        "filters": "asetrate=39288,aresample=44100,atempo=1.625,highpass=f=80,lowpass=f=2500",
+        "gainDb": -1.4494464361401356
+      },
+      "integrationProcessing": "None: the approved WAV is copied byte-for-byte and its PCM16 data is embedded unchanged."
+    },
+    {
+      "kind": "button",
+      "approvedFrom": "outputs/audio-demos/settlement-v2/buttons/03-button-a-warm.wav",
+      "approved": {
+        "path": "art-source/settlement-audio-v1/approved/03-button-a-warm.wav",
+        "bytes": 3126,
+        "sha256": "d5bdc2b64e6d8595b54cec0fd91175b6ccfeefbcaff3519320004ea17e39a3c9"
+      },
+      "package": "interface-sounds",
+      "original": {
+        "path": "art-source/settlement-audio-v1/sources/interface-sounds/click_001.ogg",
+        "bytes": 4876,
+        "sha256": "ccfb7fa0cccdd9faec0eb16033c732b1e308d139d80f799161495d58f7adcdb9"
+      },
+      "encoding": "pcm_s16le",
+      "channels": 1,
+      "sampleRate": 44100,
+      "frames": 1524,
+      "durationSeconds": 0.0345578231292517,
+      "pcmSha256": "8a5a79a4e22b01dbd7741c83e186c11bfe3c16327bc01a29bd868d830d65b543",
+      "auditionProcessing": {
+        "filters": "asetrate=35280,aresample=44100,highpass=f=110,lowpass=f=1900:p=2",
+        "gainDb": 0.07400845711862161
+      },
+      "integrationProcessing": "None: the approved WAV is copied byte-for-byte and its PCM16 data is embedded unchanged."
+    }
+  ],
+  "embedded": {
+    "path": "content/audio/approved-results.json",
+    "bytes": 259028,
+    "sha256": "4ddbcaa142d5c46cbf1dfbc23fcc9a9be5d6cb80c34f6c906141caeb11fd51fd"
+  },
+  "sourceNote": "Actual sources are the public official Kenney Music Jingles and Interface Sounds ZIPs. Initial OriginGame fetch plans returned 401 and were not downloaded. Failed Retro Sounds mirror files were never used. Catalog hashes are not substituted for these actual source hashes.",
+  "automatedChecks": "Approved WAV copies are byte-identical; PCM16 payload byte counts and hashes verified.",
+  "agentHumanListening": "not_run",
+  "physicalDeviceListening": "not_run"
+}

@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/地图轮盘版/小红花应急行动.html",
+  "sha256": "4f2c44fbcd9bb23067ba0ea131c5c7d00e2a5ded9e57efe3cf2c1b8a926ccc90",
+  "browser": "152.0.7977.83",
+  "layoutSamples": 30,
+  "pinnedScrollSamples": 90,
+  "mapEdgeSamples": 12,
+  "assets": [
+    {
+      "file": "/levels/journey-map/map-wheel-v1/plate-wing.png",
+      "sha256": "97f2eb3011b2d2703215af26635ce12f0ded2cf159a96a09dbc0fc7ef661b74d",
+      "width": 700,
+      "height": 120,
+      "embeddedMatchesSource": true
+    },
+    {
+      "file": "/levels/journey-map/map-wheel-v1/flower.webp",
+      "sha256": "531bbacf5422c98cc1c25499144da967ad97bb24a4ffd3505145b337b7f79426",
+      "width": 384,
+      "height": 384,
+      "embeddedMatchesSource": true
+    },
+    {
+      "file": "/levels/journey-map/map-wheel-v1/trophy.webp",
+      "sha256": "78316873e736845c231632f9f609d38281b4223da7f3dc0f957fad24e6e241c6",
+      "width": 384,
+      "height": 384,
+      "embeddedMatchesSource": true
+    },
+    {
+      "file": "/levels/journey-map/map-wheel-v1/plate-wheel.png",
+      "sha256": "21f6bdec2e16c1f9c2d4185f58baf320b5472c0375feac46cc757a0ee958d8a6",
+      "width": 320,
+      "height": 320,
+      "embeddedMatchesSource": true
+    },
+    {
+      "file": "/levels/journey-map/map-wheel-v1/category-nature.webp",
+      "sha256": "f53c0e547697576a32028e904f28d02e11a6fb2bd150f3e9d26aeedb6f8ca7d7",
+      "width": 384,
+      "height": 384,
+      "embeddedMatchesSource": true
+    },
+    {
+      "file": "/levels/journey-map/map-wheel-v1/category-public.webp",
+      "sha256": "ed743ff440200012dbbfa8f5a4199fecd48e298e18bec4b34514dc6a8916252f",
+      "width": 384,
+      "height": 384,
+      "embeddedMatchesSource": true
+    },
+    {
+      "file": "/levels/journey-map/map-wheel-v1/category-home.webp",
+      "sha256": "c7e414c3c69cce2222ef8292391760eff9f29eee0ed93a68ad648d7b172f1a61",
+      "width": 384,
+      "height": 384,
+      "embeddedMatchesSource": true
+    }
+  ],
+  "wheelSizes": [
+    96,
+    97.5,
+    107.5,
+    108
+  ],
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "contextClosed": [
+    "fresh",
+    "completed63"
+  ],
+  "browserClosed": true,
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "codeChecks": {
+    "typecheck": "passed",
+    "targetedLint": "passed",
+    "journeyTests": 47
+  },
+  "fullReport": "outputs/map-wheel-compact-verification/report.json"
+}

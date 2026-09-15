@@ -7,11 +7,13 @@ import {
   reduceDisaster,
   remaining,
   pressure,
+  actionAvailable,
 } from '@/app/game/disaster/model';
 import { disasterCamera, objectPose } from '@/app/game/disaster/scene';
 import { useGameViewport } from '@/app/game/display/use-game-viewport';
 import { useCameraObstacles } from '@/app/game/display/use-camera-obstacles';
 import { clientToScene } from '@/app/game/display/camera';
+import { useInterfaceSound } from '../use-interface-sound';
 import { HuntSound } from '@/app/game/scene-hunt/sound';
 import { loadDisasterArt, type DisasterArt } from './art';
 import { hitObject, dropTarget } from './hit';
@@ -19,6 +21,10 @@ import { drawDisaster, type DragView } from './render';
 import {SafeFeedback} from '../journey/safe-feedback';
 import { CountdownBar } from '../scene-hunt/countdown-bar';
 import { HintToggle } from '../scene-hunt/hint-toggle';
+import { PaintedIcon, PaintedLevelIntro } from '../painted-ui';
+import { PaintedFailure } from '../painted-failure';
+import { PauseMenu } from '../pause-menu';
+import { LevelLaunchStatus, useLevelAutoStart } from '../level-launch';
 import { useHintDisclosure } from '../scene-hunt/use-hint-disclosure';
 const clock = (ms: number) => {
   const n = Math.max(0, Math.ceil(ms / 1000));
@@ -29,8 +35,10 @@ export function DisasterPlayer({
   onBack,
   onFinish,
   journey=false,
+  autoStart=false,
 }: {
   journey?:boolean;
+  autoStart?:boolean;
   pack: DisasterPack;
   onBack: () => void;
   onFinish: (id: string, flowers: number) => void;
@@ -49,9 +57,10 @@ export function DisasterPlayer({
     [paused, setPaused] = useState(false),
     [muted, setMuted] = useState(false),
     [hidden, setHidden] = useState(false),
-    [music, setMusic] = useState(true),
     [selected, setSelected] = useState<string | null>(null),
     [hint, setHint] = useState<string | null>(null);
+  const interfaceSound = useInterfaceSound(muted);
+  const [loadAttempt, setLoadAttempt] = useState(0);
   const surface = useRef<HTMLElement>(null),
     canvas = useRef<HTMLCanvasElement>(null),
     dialog = useRef<HTMLDivElement>(null),
@@ -77,10 +86,32 @@ export function DisasterPlayer({
       paused || ['complete', 'failed', 'evacuated'].includes(run.phase),
     street = pack.rules.kind === 'prevention';
   const disclosure = useHintDisclosure(street, `${paused}:${hidden}:${run.phase}:${run.goals.length}`);
+  const hintAction = run.pending
+    ? pack.rules.actions.find(action => action.id === run.pending?.id)
+    : pack.rules.actions.find(action => action.outcome === 'correct' && actionAvailable(pack.rules, run, action));
+  const hintGoal = pack.rules.goals.find(goal => goal.id === hintAction?.goal);
+  const hintSource = hintAction && pack.skin.sprites[hintAction.source].label;
+  const hintTarget = hintAction && (pack.skin.zones[hintAction.target]?.label ?? pack.skin.sprites[hintAction.target]?.label);
+  const pauseHint = street ? undefined : hintAction
+    ? run.pending
+      ? `${hintGoal?.label ?? '当前操作'}正在进行，回到场景后会继续。`
+      : hintAction.input === 'tap'
+        ? `点击${hintSource}，${hintGoal?.label ?? '完成这一步'}。`
+        : `将${hintSource}拖到${hintTarget}，${hintGoal?.label ?? '完成这一步'}。`
+    : undefined;
   const clearInput = () => {
+    const press = pointer.current, node = canvas.current;
+    if (press && node?.hasPointerCapture(press.pointerId)) node.releasePointerCapture(press.pointerId);
     pointer.current = null;
     drag.current = null;
     setSelected(null);
+  };
+  const showHint = () => {
+    const goal = pack.rules.goals.find(g => !run.goals.includes(g.id));
+    const id = street ? goal?.id : pack.rules.actions.find(a => a.goal === goal?.id)?.source;
+    setHint(id ?? null);
+    hintTime.current = 4000;
+    setPaused(false);
   };
   useEffect(() => {
     const press = pointer.current, node = canvas.current;
@@ -89,6 +120,9 @@ export function DisasterPlayer({
   }, [viewport.viewportKey]);
   useEffect(() => {
     let alive = true;
+    setReady(false);
+    setError('');
+    art.current = null;
     sound.current = new HuntSound('storm', undefined, { seconds: pack.rules.seconds });
     loadDisasterArt(pack.skin)
       .then((a) => {
@@ -112,7 +146,7 @@ export function DisasterPlayer({
       sound.current?.dispose();
       document.removeEventListener('visibilitychange', hide);
     };
-  }, [pack]);
+  }, [pack, loadAttempt]);
   useEffect(() => {
     let frame = 0,
       last = performance.now(),
@@ -173,12 +207,15 @@ export function DisasterPlayer({
             (v.run.phase === 'playing' ||
               v.run.phase === 'reveal' ||
               now < linger.current);
-          sound.current?.setScene(
-            active,
-            pressure(pack.rules, v.run),
-            v.run.phase === 'reveal' || v.run.phase === 'complete',
-            v.run.elapsed + v.run.penalty,
-          );
+          // Terminal samples own their bounded tail; repeated inactive frames must not cut it off.
+          if (v.paused || (v.run.phase !== 'failed' && v.run.phase !== 'complete')) {
+            sound.current?.setScene(
+              active,
+              pressure(pack.rules, v.run),
+              v.run.phase === 'reveal' || v.run.phase === 'complete',
+              v.run.elapsed + v.run.penalty,
+            );
+          }
           c.dataset.audioRms = String(sound.current?.level.toFixed(5) ?? 0);
           c.dataset.audioCue = sound.current?.lastCue ?? '';
           meter = now;
@@ -196,7 +233,7 @@ export function DisasterPlayer({
       s?.cue('found');
       setHint(null);
     }
-    if (run.notice.seq !== prev.notice && run.notice.tone === 'bad')
+    if (run.phase !== 'failed' && run.notice.seq !== prev.notice && run.notice.tone === 'bad')
       s?.cue('wrong');
     if (run.phase !== prev.phase) {
       clearInput();
@@ -205,13 +242,12 @@ export function DisasterPlayer({
         s?.cue('resolve');
       }
       if (run.phase === 'failed') {
-        if (street) { linger.current = 0; s?.fail(); }
-        else { linger.current = performance.now() + 1300; s?.setScene(true, 1); s?.cue('thunder'); s?.cue('wrong'); }
+        linger.current = 0;
+        s?.fail();
       }
       if (run.phase === 'complete') {
-        linger.current = performance.now() + 1000;
-        s?.setScene(true, 0, true);
-        s?.cue('success');
+        linger.current = 0;
+        s?.finish();
         if (!awardSent.current) {
           awardSent.current = true;
           onFinish(pack.rules.id, run.stars);
@@ -233,15 +269,17 @@ export function DisasterPlayer({
       clearInput();
       sound.current?.setScene(false, 0);
     }
-    if (modal)
+    if (modal && !paused)
       dialog.current?.querySelector<HTMLButtonElement>('button')?.focus();
   }, [paused, modal]);
   const begin = () => {
-    if (!ready) return;
+    if (!ready || latest.current.run.phase !== 'ready') return;
     clockReset.current = true;
     dispatch({ type: 'start' });
     void sound.current?.unlock().then(() => sound.current?.setScene(true, 0));
   };
+  useLevelAutoStart(autoStart, ready, begin, pack.rules.id);
+  const reload = () => { setReady(false); setError(''); setLoadAttempt(n => n + 1); };
   const replay = () => {
     clearInput();
     setPaused(false);
@@ -254,7 +292,14 @@ export function DisasterPlayer({
     sound.current?.setScene(false, 0);
     clockReset.current = true;
     dispatch({ type: 'reset' });
-    if (street) { dispatch({ type: 'start' }); void sound.current?.unlock(); }
+    if (street || autoStart) { dispatch({ type: 'start' }); void sound.current?.unlock(); }
+  };
+  const restart = () => {
+    replay();
+    if (!street && !autoStart) {
+      dispatch({ type: 'start' });
+      void sound.current?.unlock();
+    }
   };
   const point = (e: { clientX: number; clientY: number }) => {
     const rect = canvas.current!.getBoundingClientRect(),
@@ -307,11 +352,15 @@ export function DisasterPlayer({
   };
   return (
     <section
+      {...interfaceSound}
       ref={surface}
       style={viewport.style}
       data-game-surface
       className="disaster-player"
       data-level={pack.rules.id}
+      data-ready={String(ready)}
+      data-auto-start={autoStart || undefined}
+      onPointerDownCapture={() => { if (run.phase !== 'ready') void sound.current?.unlock(); }}
       data-challenge={street ? '50s' : undefined}
       data-phase={run.phase}
       data-goals={run.goals.join(',')}
@@ -322,7 +371,7 @@ export function DisasterPlayer({
       data-selected={selected ?? ''}
       data-stars={run.stars}
     >
-      <div className="disaster-world" inert={modal}>
+      <div className="disaster-world" inert={modal || run.phase === 'ready'}>
         <canvas
           ref={canvas}
           data-game-canvas
@@ -375,24 +424,23 @@ export function DisasterPlayer({
             drag.current = null;
           }}
         />
-        {!ready && (
+        {!ready && !autoStart && (
           <div className="disaster-loading" role="status">
             {error || '正在准备场景…'}
             {error && <button onClick={onBack}>返回关卡</button>}
           </div>
         )}
       </div>
-      <header className="disaster-hud" inert={modal}>
+      <header className="disaster-hud painted-game-hud" inert={(!paused && modal) || run.phase === 'ready'}>
         <button
+          className="painted-hud-button pause-menu-navigation"
           aria-label="返回关卡"
-          onClick={() => (run.phase === 'ready' ? onBack() : setPaused(true))}
+          onClick={onBack}
         >
-          ‹
+          <PaintedIcon name="back" />
         </button>
         <h1>
-          <small>
-            LEVEL {pack.rules.order} · {street ? '找隐患' : '应急处置'}
-          </small>
+          <small>{street ? '找隐患' : '应急处置'}</small>
           {levelTitle(pack.rules.id,pack.rules.title)}
         </h1>
         {!street && <time
@@ -401,14 +449,15 @@ export function DisasterPlayer({
         >
           {clock(street ? remaining(pack.rules, run) : run.elapsed)}
         </time>}
-        {street && <HintToggle disclosure={disclosure} />}
-        <button aria-label="暂停游戏" onClick={() => setPaused(true)}>
-          Ⅱ
+        {street && <HintToggle disclosure={disclosure} disabled={paused} />}
+        {!street && <button className="painted-hud-button" disabled={paused} data-ui-sound="hint" aria-label="场景提示" onClick={showHint}><PaintedIcon name="hint" /></button>}
+        <button className="painted-hud-button pause-menu-navigation" aria-label={paused ? '继续游戏' : '暂停游戏'} aria-expanded={paused} onClick={() => setPaused(value => !value)}>
+          <PaintedIcon name="pause" />
         </button>
         {street && <CountdownBar elapsed={run.elapsed + run.penalty} seconds={pack.rules.seconds} resolved={run.phase === 'reveal' || run.phase === 'complete'} deadline pending={!!run.pending && run.goals.length === pack.rules.goals.length - 1} />}
       </header>
       {street && (
-        <div id={disclosure.id} {...disclosure.panelProps} hidden={!disclosure.expanded} className="disaster-clues" aria-label="七个隐患剪影" inert={modal}>
+        <div id={disclosure.id} {...disclosure.panelProps} hidden={!disclosure.expanded} className="disaster-clues" aria-label="七个隐患剪影" inert={modal || run.phase === 'ready'}>
           {pack.rules.goals.map((g) => (
             <span
               key={g.id}
@@ -435,22 +484,8 @@ export function DisasterPlayer({
           <i style={{ width: `${pressure(pack.rules, run) * 100}%` }} />
         </div>
       )}
-      {run.phase === 'ready' && ready && (
-        <div className="disaster-entry">
-          <span>
-            {street
-              ? '观察整幅场景 · 圈出 7 处隐患'
-              : '拿取场景中的物品 · 帮家人转移'}
-          </span>
-          <button onClick={begin}>
-            进入场景 · 开启声音 <b>›</b>
-          </button>
-          <small>
-            {street
-              ? '限时挑战 · 误点扣时 · 圈选不等于实际处置'
-              : '可随时静音 · 不涉水、不返回取物'}
-          </small>
-        </div>
+      {run.phase === 'ready' && !modal && (autoStart ? <LevelLaunchStatus error={error} onRetry={reload} onBack={onBack} /> :
+        <PaintedLevelIntro levelId={pack.rules.id} title={levelTitle(pack.rules.id, pack.rules.title)} ready={ready} error={error} onRetry={reload} onStart={begin} onBack={onBack} />
       )}
       {run.notice.text &&
         run.effectAge < 4600 &&
@@ -506,7 +541,31 @@ export function DisasterPlayer({
           ))}
       </nav>
       {journey&&run.phase==='reveal'&&<SafeFeedback label={street?'风险已识别':'已到高处 · 安全待援'}/>}
-      {modal && !(journey&&run.phase==='complete'&&!paused) && (
+      {run.phase === 'failed' && !paused && <PaintedFailure
+        levelId={pack.rules.id}
+        levelTitle={levelTitle(pack.rules.id, pack.rules.title)}
+        kind={remaining(pack.rules, run) <= 0 ? 'timeout' : 'unsafe-action'}
+        missed={street ? { count: pack.rules.goals.length - run.goals.length, unit: '处' } : undefined}
+        reason={street ? `还有 ${pack.rules.goals.length - run.goals.length} 处隐患未找到。` : run.notice.text}
+        hint={street ? `限时${pack.rules.seconds}秒，盯紧积水、用电和高处坠物。卡住了就点灯泡。` : '先看清这次提醒。救急靠判断，可别硬莽。'}
+        progress={street ? `已找到 ${run.goals.length}/${pack.rules.goals.length} 处隐患` : `已完成 ${run.goals.length}/${pack.rules.goals.length} 项训练`}
+        journey={journey}
+        onRetry={replay}
+        onBack={() => { sound.current?.setScene(false, 0); onBack(); }}
+      />}
+      {paused && <PauseMenu
+        hint={pauseHint}
+        muted={muted}
+        onToggleSound={() => {
+          const next = !muted;
+          setMuted(next);
+          sound.current?.setMuted(next);
+          if (!next) void sound.current?.unlock();
+        }}
+        onRestart={restart}
+        onResume={() => setPaused(false)}
+      />}
+      {modal && !paused && run.phase !== 'failed' && !(journey&&run.phase==='complete') && (
         <div className="disaster-shade">
           <div
             ref={dialog}
@@ -515,7 +574,6 @@ export function DisasterPlayer({
             aria-modal="true"
             aria-labelledby="disaster-title"
             onKeyDown={(e) => {
-              if (e.key === 'Escape' && paused) setPaused(false);
               if (e.key === 'Tab') {
                 const buttons = [
                     ...e.currentTarget.querySelectorAll<HTMLButtonElement>(
@@ -536,70 +594,20 @@ export function DisasterPlayer({
             }}
           >
             <small>
-              {paused
-                ? '训练暂停'
-                : run.phase === 'complete'
+              {run.phase === 'complete'
                   ? '7 项训练已完成'
                   : run.phase === 'evacuated'
                     ? '已先行转移 · 训练未完成'
                     : '本次训练未完成'}
             </small>
             <h2 id="disaster-title">
-              {paused
-                ? '休息一下'
-                : run.phase === 'complete'
+              {run.phase === 'complete'
                   ? pack.rules.finishTitle
                   : run.phase === 'evacuated'
                     ? '先避险，是对的'
                     : street ? '时间到了，再挑战一次吧' : '记住这次提醒'}
             </h2>
-            {paused ? (
-              <>
-                <button
-                  className="disaster-primary"
-                  onClick={() => setPaused(false)}
-                >
-                  继续游戏
-                </button>
-                <div className="disaster-options">
-                  <button
-                    onClick={() => {
-                      setMuted(!muted);
-                      sound.current?.setMuted(!muted);
-                      if (muted) void sound.current?.unlock();
-                    }}
-                  >
-                    {muted ? '打开声音' : '关闭声音'}
-                  </button>
-                  <button
-                    onClick={() => {
-                      setMusic(!music);
-                      sound.current?.setMusic(!music);
-                    }}
-                  >
-                    音乐：{music ? '开' : '关'}
-                  </button>
-                  <button
-                    onClick={() => {
-                      const goal = pack.rules.goals.find(
-                        (g) => !run.goals.includes(g.id),
-                      );
-                      const id = street
-                        ? goal?.id
-                        : pack.rules.actions.find((a) => a.goal === goal?.id)
-                            ?.source;
-                      setHint(id ?? null);
-                      hintTime.current = 4000;
-                      setPaused(false);
-                    }}
-                  >
-                    需要提示
-                  </button>
-                </div>
-                <p>{pack.rules.opening}</p>
-                <small>{pack.rules.safety}</small>
-              </>
-            ) : run.phase === 'complete' ? (
+            {run.phase === 'complete' ? (
               <>
                 <div
                   className="disaster-flowers"
@@ -624,7 +632,7 @@ export function DisasterPlayer({
               </>
             )}
             <div className="disaster-footer">
-              <button onClick={replay}>{street && run.phase === 'failed' ? '重新挑战' : '重新开始'}</button>
+              <button onClick={replay}>重新开始</button>
               <button
                 onClick={() => {
                   sound.current?.setScene(false, 0);

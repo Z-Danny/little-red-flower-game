@@ -1,0 +1,111 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "exec-30318113-309d-4e2d-91b6-48791cab7991.png",
+  "spriteGrid": {
+    "columns": 2,
+    "rows": 2,
+    "frameWidth": 627,
+    "frameHeight": 627,
+    "order": [
+      "bud",
+      "opening",
+      "half-open",
+      "bloom"
+    ]
+  },
+  "assets": [
+    {
+      "name": "background",
+      "path": "public/levels/journey-map/cover-v2/background.png",
+      "width": 941,
+      "height": 1672,
+      "hasAlpha": false,
+      "bytes": 2560867,
+      "sha256": "f27350bbd5ced679bf01e26dea12f9408deadfd8d78e820b38a693d2463bfa01",
+      "generatedOriginal": "exec-59fd9351-d60e-4ab3-afba-f25789e941c0.png",
+      "processing": "Original generated PNG copied unchanged"
+    },
+    {
+      "name": "title",
+      "path": "public/levels/journey-map/cover-v2/title.png",
+      "width": 1200,
+      "height": 691,
+      "hasAlpha": true,
+      "bytes": 1167922,
+      "sha256": "84ebcf0bfc8d8c271ee90f832544c850b1a0f995f68456821b544e87f6a8ceda",
+      "generatedOriginal": "exec-e3bc21e0-d997-4bdb-a76b-f371c5a9e8b6.png",
+      "processing": {
+        "resizeWidth": 1200,
+        "resizeHeight": 691,
+        "fit": "contain",
+        "background": "transparent"
+      },
+      "editReference": "exec-e23b8059-486a-4fb3-98d4-21e731dc0b03.png",
+      "text": "这片儿没我不行"
+    },
+    {
+      "name": "flower-sprites",
+      "path": "public/levels/journey-map/cover-v2/flower-sprites.png",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "bytes": 1118241,
+      "sha256": "f5da1c32ff9c590e3122eb21b98bf1554fdf849048de74b4258dc121c63eee93",
+      "generatedOriginal": "exec-cd6c104a-1a46-4ec6-b97c-157692104f0d.png",
+      "processing": "Original generated PNG copied unchanged"
+    },
+    {
+      "name": "button-primary",
+      "path": "public/levels/journey-map/cover-v2/button-primary.png",
+      "width": 1000,
+      "height": 270,
+      "hasAlpha": true,
+      "bytes": 621456,
+      "sha256": "142d047bbd5e9c124427e83756b2a73c95c5b81eff7c491bea8b6c0a463655b2",
+      "generatedOriginal": "exec-140a5400-510a-433f-984e-e4e8e1e1f6fd.png",
+      "processing": {
+        "transparentMarginCrop": {
+          "left": 33,
+          "top": 127,
+          "width": 1964,
+          "height": 530
+        },
+        "alphaBoundsThreshold": 5,
+        "resizeWidth": 1000
+      }
+    },
+    {
+      "name": "button-secondary",
+      "path": "public/levels/journey-map/cover-v2/button-secondary.png",
+      "width": 1000,
+      "height": 199,
+      "hasAlpha": true,
+      "bytes": 361041,
+      "sha256": "71bfc4b278519e3c3f53cd0990452d7b6bb854ad2e18edd33ad4ff37ad743c0b",
+      "generatedOriginal": "exec-7e2d0443-d695-43a2-8989-8b4bc03579fb.png",
+      "processing": {
+        "transparentMarginCrop": {
+          "left": 37,
+          "top": 288,
+          "width": 1701,
+          "height": 339
+        },
+        "alphaBoundsThreshold": 5,
+        "resizeWidth": 1000
+      }
+    },
+    {
+      "name": "red-leaf",
+      "path": "public/levels/journey-map/cover-v2/red-leaf.png",
+      "width": 192,
+      "height": 192,
+      "hasAlpha": true,
+      "bytes": 23958,
+      "sha256": "054769db45d102354297a8753930a6c543d78a5a2eb53371846f37c86606c520",
+      "generatedOriginal": "exec-3ea53367-fc8e-4a1d-9797-93477072ee17.png",
+      "processing": {
+        "resizeWidth": 192
+      }
+    }
+  ]
+}

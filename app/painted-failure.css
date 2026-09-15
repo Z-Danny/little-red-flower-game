@@ -1,0 +1,278 @@
+/* Shared failure presentation; the level engine owns the failure and retry. */
+.garden-dialog.garden-settlement.painted-failure {
+  --failure-ink: #29492e;
+  width: min(440px, calc(100vw - 20px));
+  max-width: none;
+  max-height: calc(100dvh - max(12px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom)));
+  top: auto;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  translate: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+  color: var(--failure-ink);
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #af945c transparent;
+  -webkit-overflow-scrolling: touch;
+  filter: drop-shadow(0 8px 16px #152c2540);
+  /* Animate the inner artwork without disturbing the popup's centering. */
+  animation: none;
+}
+.painted-failure-card {
+  width: 100%;
+  transform-origin: 50% 85%;
+  animation: failure-card-in 350ms cubic-bezier(.2,.8,.3,1) both;
+}
+.painted-failure-card[data-motion='leaving'] {
+  animation: failure-card-out 180ms ease-in both;
+  pointer-events: none;
+}
+.painted-failure-header,
+.painted-failure-footer { position: relative; }
+.painted-failure-header > img,
+.painted-failure-footer > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+.painted-failure-header { aspect-ratio: 964 / 270; }
+.painted-failure .painted-failure-header > .painted-failure-mascot {
+  position: absolute;
+  z-index: 1;
+  width: 28%;
+  height: 98%;
+  object-fit: contain;
+  left: 1.5%;
+  bottom: -2%;
+  transform-origin: 54% 85%;
+  animation: failure-side-eye 650ms 140ms both;
+}
+.painted-failure .painted-failure-header h2 {
+  position: absolute;
+  left: 30%;
+  top: 16%;
+  width: 57%;
+  height: 59%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #fff4ce;
+  font-family: var(--font-game-title);
+  font-size: clamp(31px, 10vw, 45px);
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+  letter-spacing: 0;
+  text-shadow: 0 2px 1px #142b1c66;
+  outline: none;
+}
+.painted-failure-body {
+  background: url('/ui/painted-failure-v2/body.webp') center / 100% 100% no-repeat;
+}
+.painted-failure-inner { padding: 8px 10% 0; }
+.painted-failure .painted-failure-level {
+  margin: 0;
+  font-family: var(--font-game-title);
+  font-size: clamp(22px, 6.4vw, 28px);
+  font-weight: 700;
+  line-height: 1.4;
+  text-wrap: balance;
+}
+.painted-failure .painted-failure-roast {
+  margin: 9px 0 13px;
+  color: #a94328;
+  font-family: var(--font-game-title);
+  font-size: clamp(28px, 8.6vw, 37px);
+  font-weight: 700;
+  line-height: 1.22;
+  text-wrap: balance;
+  animation: failure-copy-in 230ms 220ms both;
+}
+.painted-failure-roast > span { display: block; }
+.painted-failure-review {
+  padding: 10px 0;
+  border-top: 1px solid #a2a17770;
+  border-bottom: 1px solid #a2a17770;
+  text-align: left;
+  animation: failure-copy-in 240ms 300ms both;
+}
+.painted-failure-review-heading {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 8px;
+}
+.painted-failure-review-heading > strong {
+  color: #8f4b33;
+  font-family: var(--font-game-body);
+  font-size: 16px;
+  line-height: 1.4;
+}
+.painted-failure-review-heading > span {
+  color: #69704e;
+  font-family: var(--font-game-body);
+  font-size: 11px;
+  line-height: 1.4;
+}
+.painted-failure .painted-failure-reason {
+  margin: 6px 0 4px;
+  color: #35573e;
+  font-family: var(--font-game-body);
+  font-size: 14px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.painted-failure .painted-failure-hint {
+  margin: 0;
+  color: #68694c;
+  font-family: var(--font-game-body);
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.painted-failure .painted-failure-no-reward {
+  margin: 10px 0 0;
+  color: #526047;
+  font-family: var(--font-game-title);
+  font-size: 19px;
+  line-height: 1.5;
+}
+.painted-failure-no-reward > strong {
+  display: inline-block;
+  margin: 0 2px;
+  color: #a94328;
+  font-size: 24px;
+  animation: failure-zero-in 240ms 420ms both;
+}
+.painted-failure-footer { aspect-ratio: 964 / 150; }
+.painted-failure-actions {
+  margin-top: 9px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 9px;
+}
+.painted-failure .painted-failure-actions button {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  min-width: 0;
+  min-height: 54px;
+  aspect-ratio: 4.35;
+  padding: 10px 12px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 100px;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  box-shadow: none;
+  font-family: var(--font-game-title);
+  font-size: clamp(23px, 7.2vw, 31px);
+  line-height: 1.2;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: filter 160ms ease-out, transform 240ms cubic-bezier(.2,1.8,.5,1);
+}
+.painted-failure-actions button > span { position: relative; z-index: 1; }
+.painted-failure .painted-failure-retry {
+  background-image: url('/ui/painted-settlement-v1/button.webp');
+  color: #214428;
+}
+.painted-failure-retry::after {
+  content: '';
+  position: absolute;
+  inset: 7% 3%;
+  border-radius: inherit;
+  background: linear-gradient(110deg, transparent 30%, #fff7cd66 47%, transparent 64%);
+  opacity: 0;
+  pointer-events: none;
+  animation: failure-gold-sweep 680ms 650ms both;
+}
+.painted-failure .painted-failure-back {
+  background-image: url('/ui/painted-failure-v2/secondary-button.webp');
+  color: #fff2ca;
+  font-size: clamp(22px, 6.6vw, 28px);
+}
+@media (hover: hover) {
+  .painted-failure .painted-failure-actions button:hover:not(:disabled) {
+    filter: brightness(1.07);
+    transform: translateY(-2px);
+  }
+}
+.painted-failure .painted-failure-actions button:active:not(:disabled) {
+  transform: translateY(2px) scale(.965, .96);
+  transition-duration: 70ms;
+}
+.painted-failure .painted-failure-actions button:disabled { cursor: default; }
+.painted-failure .painted-failure-actions button:focus-visible {
+  outline: 3px solid #386236;
+  outline-offset: 3px;
+}
+@keyframes failure-card-in {
+  0% { opacity: 0; transform: translateY(22px) scale(.965); }
+  72% { opacity: 1; transform: translateY(-3px) scale(1.005); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes failure-card-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(18px) scale(.97); }
+}
+@keyframes failure-side-eye {
+  0% { transform: rotate(-5deg) translateY(4px); }
+  42% { transform: rotate(6deg) translateY(-2px); }
+  70% { transform: rotate(-2deg); }
+  100% { transform: rotate(0); }
+}
+@keyframes failure-copy-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes failure-zero-in {
+  0% { opacity: 0; transform: scale(1.25) rotate(-8deg); }
+  70% { opacity: 1; transform: scale(.96) rotate(2deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0); }
+}
+@keyframes failure-gold-sweep {
+  0% { opacity: 0; transform: translateX(-100%); }
+  25%, 65% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(100%); }
+}
+@media (max-width: 350px) {
+  .painted-failure-inner { padding-top: 4px; }
+  .painted-failure .painted-failure-roast { margin: 6px 0 9px; }
+  .painted-failure-review { padding: 8px 0; }
+  .painted-failure-actions { gap: 7px; }
+  .painted-failure .painted-failure-actions button { min-height: 50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .garden-dialog.garden-settlement.painted-failure,
+  .painted-failure *,
+  .painted-failure *::before,
+  .painted-failure *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .painted-failure-card,
+  .painted-failure-roast,
+  .painted-failure-review,
+  .painted-failure-no-reward > strong { opacity: 1; transform: none; }
+  .painted-failure-retry::after { display: none; }
+}

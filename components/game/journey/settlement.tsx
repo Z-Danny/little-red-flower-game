@@ -1,11 +1,12 @@
 'use client';
-import { ArrowRight, Check, ShieldCheck } from 'lucide-react';
+import { useRef } from 'react';
 import { Flower } from './flower';
 import { GardenDialog } from './dialog';
 import type { LevelConfig } from '@/app/game/types';
 import type { CompletionReceipt } from '@/app/game/leaderboard/model';
 import { journeyTiming } from '@/app/game/journey/presentation';
 import { lessonFor } from '@/app/game/journey/knowledge';
+
 export function Settlement({
   level,
   receipt,
@@ -19,8 +20,12 @@ export function Settlement({
   onRetry: () => void;
   error: string;
 }) {
-  const lesson = lessonFor(level.id),
-    replay = receipt?.reward === 0;
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const lesson = lessonFor(level.id);
+  const replay = receipt?.reward === 0;
+  const awarded = !!receipt && receipt.reward > 0;
+  const saveFailed = !!error && !receipt;
+
   return (
     <GardenDialog
       title={`${level.title}完成结算`}
@@ -28,69 +33,138 @@ export function Settlement({
         if (receipt) onMap();
       }}
       settlement
+      className="painted-settlement"
+      initialFocus={titleRef}
     >
-      <small className="garden-overline">
-        <ShieldCheck />
-        {lesson.result ??
-          (level.kind === 'prevention' ? '风险已识别' : '危机已解除')}
-      </small>
-      <h2>{level.title}</h2>
-      <p className="garden-result-message">
-        {replay
-          ? '这一处安心，因为你的守护而延续。'
-          : '你让地图上的一处，多了一份安心。'}
-      </p>
-      <div
-        className={`garden-reward ${replay ? 'already-planted' : ''}`}
-        aria-label={
-          replay
-            ? '本关花朵已种下'
-            : receipt
-              ? '本关获得3朵小红花'
-              : '正在保存完成记录'
-        }
+      <section
+        className="painted-settlement-card"
+        data-level-id={level.id}
+        data-replay={replay}
+        data-awarded={awarded}
       >
-        {[0, 1, 2].map((i) => (
-          <Flower
-            key={i}
-            className={`reward-${i}`}
-            style={{ animationDelay: `${i * journeyTiming.rewardStep}ms` }}
+        <header className="painted-settlement-header">
+          <img
+            src="/ui/painted-settlement-v1/header.webp"
+            alt=""
+            aria-hidden="true"
+            draggable={false}
           />
-        ))}
-      </div>
-      <strong className="garden-reward-label">
-        {!receipt ? '正在保存…' : replay ? '本关花朵已种下' : '+3 朵小红花'}
-      </strong>
-      <div className="garden-lesson">
-        <small>
-          <Check />
-          记住这一件事
-        </small>
-        <p>{lesson.summary}</p>
-        <a href={lesson.url} target="_blank" rel="noreferrer">
-          依据：{lesson.publisher} ↗
-        </a>
-      </div>
-      {error && !receipt ? (
-        <>
-          <p role="alert">{error}</p>
-          <button className="garden-primary" onClick={onRetry}>
-            重试保存
+          <h2 ref={titleRef} tabIndex={-1} data-testid="settlement-title">
+            还得是你！
+          </h2>
+        </header>
+        <div className="painted-settlement-body">
+          <div className="painted-settlement-inner">
+            <h3
+              className="painted-settlement-level"
+              data-testid="settlement-level"
+            >
+              {level.title}
+            </h3>
+            <p className="painted-settlement-message">{lesson.message}</p>
+            <div className="painted-settlement-reward" aria-hidden="true">
+              {[0, 1, 2].map((i) => (
+                <Flower
+                  key={i}
+                  className={`settlement-flower-${i}`}
+                  style={{
+                    animationDelay: `${i * journeyTiming.rewardStep}ms`,
+                  }}
+                />
+              ))}
+              {awarded && (
+                <img
+                  className="painted-settlement-petal"
+                  src="/ui/painted-v1/petal.webp"
+                  alt=""
+                  draggable={false}
+                />
+              )}
+            </div>
+            <strong
+              className="painted-settlement-reward-label"
+              data-testid="settlement-reward"
+              role="status"
+            >
+              {saveFailed
+                ? '记录尚未保存'
+                : !receipt
+                  ? '正在保存…'
+                  : replay
+                    ? '小红花已种下 · 本次为巩固练习'
+                    : '+3 朵小红花'}
+            </strong>
+            <section
+              className="painted-settlement-knowledge"
+              data-testid="settlement-knowledge"
+              aria-labelledby="settlement-knowledge-title"
+            >
+              <h3 id="settlement-knowledge-title">这招，记住了</h3>
+              <ol>
+                {lesson.points.map((point, i) => (
+                  <li key={point.title} data-testid="settlement-point">
+                    <span
+                      className="painted-settlement-number"
+                      aria-hidden="true"
+                    >
+                      {i + 1}
+                    </span>
+                    <div>
+                      <strong>{point.title}</strong>
+                      <span className="painted-settlement-explanation">
+                        {point.body}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <div className="painted-settlement-sources">
+                <span>科普参考：</span>
+                {lesson.sources.map((source) => (
+                  <a
+                    key={source.url}
+                    href={source.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {source.publisher}
+                    <span className="garden-sr-only">（新窗口打开）</span>
+                  </a>
+                ))}
+              </div>
+            </section>
+            {saveFailed && (
+              <p className="painted-settlement-error" role="alert">
+                {error}
+              </p>
+            )}
+          </div>
+        </div>
+        <div className="painted-settlement-footer">
+          <img
+            src="/ui/painted-settlement-v1/footer.webp"
+            alt=""
+            aria-hidden="true"
+            draggable={false}
+          />
+          <button
+            type="button"
+            className="painted-settlement-primary"
+            data-testid="settlement-primary"
+            data-ui-sound="approved-button"
+            disabled={!receipt && !saveFailed}
+            onClick={saveFailed ? onRetry : onMap}
+          >
+            {saveFailed
+              ? '重试保存'
+              : !receipt
+                ? '正在保存…'
+                : replay
+                  ? '回到地图'
+                  : '种下小红花'}
           </button>
-        </>
-      ) : (
-        <button className="garden-primary" disabled={!receipt} onClick={onMap}>
-          返回地图{!replay && <span>· 种下小红花</span>}
-          <ArrowRight />
-        </button>
-      )}
-      <small className="garden-footnote">
-        {replay
-          ? '再次训练不会重复累计奖励。'
-          : level.kind === 'prevention'
-            ? '背景展示规范处置后的效果示意。'
-            : '本关完成的是应急训练，请遵循现实安全条件。'}
-      </small>
+        </div>
+      </section>
     </GardenDialog>
   );
 }

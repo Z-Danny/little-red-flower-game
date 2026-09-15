@@ -1,0 +1,313 @@
+{
+  "status": "passed",
+  "startedAt": "2026-09-15T05:20:59.319Z",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa",
+  "browser": "152.0.7977.83",
+  "cases": [
+    {
+      "id": "quake-bedroom-v2",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 处隐患未找到。",
+      "progress": "已找到 1/5 处隐患",
+      "input": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true
+    },
+    {
+      "id": "typhoon-home",
+      "family": "hunt",
+      "kind": "timeout",
+      "completed": 1,
+      "total": 5,
+      "reason": "还有 4 处隐患未找到。",
+      "progress": "已找到 1/5 处隐患",
+      "input": "controlled mounted useReducer tick events",
+      "originalSavePreserved": true
+    },
+    {
+      "id": "fire-shelter-practice",
+      "family": "practice",
+      "kind": "unsafe-action",
+      "completed": 1,
+      "total": 6,
+      "reason": "训练中止：打开房门探查会使浓烟涌入。请留在可隔烟房间内等待救援。",
+      "progress": "已完成 1/6 项训练",
+      "input": "real canvas close-door/reopen-door clicks",
+      "originalSavePreserved": true
+    }
+  ],
+  "layouts": [
+    {
+      "id": "quake-bedroom-v2",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "typhoon-home",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 342.609375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "typhoon-home",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 106.53125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 390,
+      "height": 844,
+      "box": {
+        "x": 10,
+        "y": 339.109375,
+        "right": 380,
+        "bottom": 832
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 320,
+      "height": 568,
+      "box": {
+        "x": 10,
+        "y": 80.28125,
+        "right": 310,
+        "bottom": 556
+      },
+      "overflow": false,
+      "scrollable": true,
+      "clippedText": [],
+      "animations": []
+    }
+  ],
+  "checks": [
+    {
+      "name": "quake-bedroom-v2: latest artifact 390/320 rendering, dynamic reason, Retry and Back smoke",
+      "status": "passed"
+    },
+    {
+      "name": "typhoon-home: latest artifact 390/320 rendering, dynamic reason, Retry and Back smoke",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice: latest artifact 390/320 rendering, dynamic reason, Retry and Back smoke",
+      "status": "passed"
+    }
+  ],
+  "screenshots": [
+    "quake-bedroom-v2-390x844.png",
+    "quake-bedroom-v2-320x568.png",
+    "typhoon-home-390x844.png",
+    "typhoon-home-320x568.png",
+    "fire-shelter-practice-390x844.png",
+    "fire-shelter-practice-320x568.png"
+  ],
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "mode": "latest-artifact-three-entry-smoke",
+  "contextsCreated": 3,
+  "contextsClosed": 3,
+  "browserClosed": true,
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "fixture": "Each isolated test profile presets the other 23 levels complete only to unlock entry; the tested level is uncompleted. No real user profile is opened. Initial timeouts use actual mounted engines driven by Playwright RAF/timer advancement; scene progress and practice mistakes use real pointer input. After verifying Retry, a controlled reducer tick/state clock boundary may trigger a second timeout solely to exercise Back. No success or reward callback is injected.",
+  "sourceArtwork": [
+    {
+      "name": "header",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/header.webp",
+      "sha256": "ec23c644c95499baca6814da40a80227fc26eccdae9d4894ac4485e5bc96aeb5"
+    },
+    {
+      "name": "body",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/body.webp",
+      "sha256": "1b29f2ac5f4ccba6b80b87c47728f09931427fca7a6d0c9dcbdb443ad0eaa2b7"
+    },
+    {
+      "name": "footer",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/footer.webp",
+      "sha256": "222eaf552d84bd1154ea5486cbb8885d103617ddc30f3349855b9cc1e12d7c3e"
+    },
+    {
+      "name": "button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/button.webp",
+      "sha256": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9"
+    },
+    {
+      "name": "secondary-button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/secondary-button.webp",
+      "sha256": "407cd98bf77b47ec91a324b8b1cb927bc0914b4ebac8104ba7ccc8c8f251799b"
+    }
+  ],
+  "expectedEntries": [
+    {
+      "id": "quake-bedroom-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "typhoon-home",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "fire-shelter-practice",
+      "family": "practice",
+      "seconds": 50,
+      "total": 6
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "family": "disaster",
+      "seconds": 50,
+      "total": 7
+    },
+    {
+      "id": "flood-kit",
+      "family": "collection",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "storm-street-check-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "thunder-park-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "flood-house-response-v1",
+      "family": "disaster",
+      "seconds": 120,
+      "total": 7
+    },
+    {
+      "id": "clear-corridor",
+      "family": "collection",
+      "seconds": 50,
+      "total": 4
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "charging-bedroom",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 3
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "family": "hunt",
+      "seconds": 50,
+      "total": 5
+    }
+  ],
+  "renderedArtwork": [
+    {
+      "name": "header",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/header.webp",
+      "sha256": "ec23c644c95499baca6814da40a80227fc26eccdae9d4894ac4485e5bc96aeb5",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "body",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/body.webp",
+      "sha256": "1b29f2ac5f4ccba6b80b87c47728f09931427fca7a6d0c9dcbdb443ad0eaa2b7",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "footer",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/footer.webp",
+      "sha256": "222eaf552d84bd1154ea5486cbb8885d103617ddc30f3349855b9cc1e12d7c3e",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/button.webp",
+      "sha256": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9",
+      "embeddedAndRenderedMatch": true
+    },
+    {
+      "name": "secondary-button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v1/secondary-button.webp",
+      "sha256": "407cd98bf77b47ec91a324b8b1cb927bc0914b4ebac8104ba7ccc8c8f251799b",
+      "embeddedAndRenderedMatch": true
+    }
+  ],
+  "finalHtmlSha256": "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa",
+  "finishedAt": "2026-09-15T05:21:35.102Z"
+}

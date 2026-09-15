@@ -1,0 +1,5 @@
+Use case: precise-object-edit
+This is a production UI asset cleanup, not a redesign. Edit the provided already approved semi-realistic storybook red flower counter icon.
+Make ONLY ONE change: REMOVE the dark green numeral "9" from the cream-colored circular flower center. Reconstruct the cream paper/gouache paint texture that would naturally lie underneath. The whole circular center must become a clean, calm, blank pale cream surface, with the same very subtle light and texture. Preserve its golden rim and exact diameter/position.
+Preserve EVERYTHING else as closely as possible: five red petals, every petal's shape and positions, the painterly highlights and shadows, ivory rounded-square backing, sage green border, the canvas framing, generous corners, transparent outer background, lighting, colors and materials. Do not add any digit, text, leaf, stem, ornament, object, border or badge.
+Output one standalone square PNG with alpha transparency matching the input. The blank center is deliberately reserved for live game numbers rendered later in code. NO visible text or number anywhere.

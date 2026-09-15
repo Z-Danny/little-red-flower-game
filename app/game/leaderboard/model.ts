@@ -9,6 +9,8 @@ export type BoardSnapshot = {
   scope: 'local' | 'online';
   current: Player;
   entries: RankedPlayer[];
+  /** Read-only detail snapshots; viewing a player must never switch the active save. */
+  progressByPlayer?: Record<string, Record<string, number>>;
   maxFlowers: number;
   persistence: 'saved' | 'session';
   notice: string;

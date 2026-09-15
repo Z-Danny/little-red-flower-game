@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "createdAt": "2026-09-15T06:47:30.515347+00:00",
+  "status": "awaiting_user_art_review",
+  "generator": "built-in image_gen.imagegen",
+  "prompts": "prompts.json",
+  "changeScope": "New independent asset-review files only. Game integration is pending the user’s review.",
+  "design": {
+    "entry": "Keep existing quarter-circle shell; replace only its inner icon with the tree island.",
+    "selector": "Independent portrait page using A layout; no radial choices.",
+    "labels": [
+      "自然灾害",
+      "公共安全",
+      "居家校园办公"
+    ],
+    "textRendering": "Labels and current flag lettering are separate live text, not baked into PNG. All map labels use one line."
+  },
+  "assets": [
+    {
+      "path": "assets/entry-island.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-8041da5e-1b17-495c-b2ad-4dc5bf39ec80.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "ddc79d60e1193e546cba2c545fbccf477caeec7ff887fab9a4882da1555d6765",
+      "bytes": 1160187,
+      "background": "transparent",
+      "visibleBounds": [
+        197,
+        111,
+        1064,
+        1138
+      ],
+      "trueTransparentFraction": 0.66578718
+    },
+    {
+      "path": "assets/nature-island.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-084bd1aa-8941-4873-9ba2-7188895a2fdc.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "2351ff09bf5618d4ed9fb8ed65125dc8dba78418eaff682034b283d106fc1517",
+      "bytes": 1232218,
+      "background": "transparent",
+      "visibleBounds": [
+        163,
+        69,
+        1092,
+        1159
+      ],
+      "trueTransparentFraction": 0.645947
+    },
+    {
+      "path": "assets/public-island.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-2a0f88c7-c31c-4304-b7e1-9a72af067897.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "2222605eb2132116f9443da60516316da1237d6011e2924a152a3997ec850dcc",
+      "bytes": 1268448,
+      "background": "transparent",
+      "visibleBounds": [
+        102,
+        207,
+        1152,
+        1050
+      ],
+      "trueTransparentFraction": 0.62207825
+    },
+    {
+      "path": "assets/home-island.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-ba1f2e98-72a6-48b2-aa1a-1899148eca72.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "1681fcd74eaeffefc34beeb3beb9f14a5466d9a5014325d620f6a3d259d93959",
+      "bytes": 1247465,
+      "background": "transparent",
+      "visibleBounds": [
+        145,
+        201,
+        1116,
+        1073
+      ],
+      "trueTransparentFraction": 0.62872556
+    },
+    {
+      "path": "assets/wood-plaque.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-8b275cfe-c103-49cb-9c13-6ab86de5dd5f.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "257a2b4ac81f279057f50cd10e6e202ec679b1d840fed511d0ce0a933e51b26d",
+      "bytes": 857581,
+      "background": "transparent",
+      "visibleBounds": [
+        224,
+        202,
+        1948,
+        517
+      ],
+      "trueTransparentFraction": 0.66721864
+    },
+    {
+      "path": "assets/current-flag.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-42147665-86c1-4988-bef5-a0b6af6babd8.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "36a7bbdc4f99b5c929226d1a495f95c7b044c3e1471cb5d9bc219da4b9bb3cd8",
+      "bytes": 615188,
+      "background": "transparent",
+      "visibleBounds": [
+        317,
+        169,
+        1073,
+        1088
+      ],
+      "trueTransparentFraction": 0.82052075
+    },
+    {
+      "path": "assets/sky-background.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-1acef39d-08e4-4fc1-8ab4-d6ad876cf21d.png",
+      "width": 941,
+      "height": 1672,
+      "sha256": "71e11822f043edb85b873f7b20cfef9091c4409586c9fcc536ad368f73cbb5d4",
+      "bytes": 1950154,
+      "background": "opaque",
+      "visibleBounds": [
+        0,
+        0,
+        941,
+        1672
+      ],
+      "trueTransparentFraction": 0.0
+    }
+  ],
+  "validation": {
+    "alpha": "passed 7/7",
+    "report": "asset-verification.json",
+    "finalHtmlBrowser": "passed; see browser-review.json",
+    "physicalDevice": "not_run",
+    "humanAudio": "not_run",
+    "finalHtmlSha256": "f1e5870353baab6a4336d7e64af422f46914160ac984ac2e28e3fad33edf44c8",
+    "visualReview": {
+      "status": "passed",
+      "reviewer": "Codex visual review",
+      "checks": [
+        "Simplified picture-book silhouettes",
+        "All three labels rendered on one line at 320 and 390 widths",
+        "Quarter-circle entry shell preserved in preview",
+        "No visible white rectangles, dark-background halos or image clipping",
+        "Current-map flag positioned on the public-safety island"
+      ]
+    }
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "date": "2026-09-15",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "01b51238f78ef4debb5c0392323ee6bfac4a5fc6ca81dd4f0386ca946d725be7",
+  "bytes": 252626986,
+  "unitTests": 1031,
+  "typecheck": "passed",
+  "build": "passed",
+  "exportChecks": 7,
+  "feedbackBrowserChecks": 30,
+  "musicBrowserChecks": 13,
+  "sampleMeasurements": {
+    "uiCues": 10,
+    "huntCueProfilePairs": 54,
+    "practiceCues": 59,
+    "kitchenSfx": 9,
+    "uiActiveRms": [
+      0.07997965444006697,
+      0.09518907207470959
+    ],
+    "huntActiveRms": [
+      0.08500000127775345,
+      0.12500000039898296
+    ],
+    "practiceActiveRms": [
+      0.08954155745438698,
+      0.12938925390626344
+    ],
+    "kitchenActiveRms": [
+      0.10790740498877407,
+      0.15209155363678872
+    ],
+    "samplePeakGuard": 0.7,
+    "method": "Native OfflineAudioContext; gated 10ms active block RMS. Not LUFS or real-device SPL. Background beds excluded from repeatable per-cue measurement."
+  },
+  "pageErrors": 0,
+  "networkRequests": 0,
+  "allBrowsersClosed": true,
+  "humanListening": "not_run",
+  "physicalDevice": "not_run",
+  "unchangedRuleFiles": 23,
+  "verifiedAudioSourceSnapshot": {
+    "app/game/audio/note-score.ts": "e6e947b5556fc705df7d6cb499f3688f6eff48e10711be53771f119b5a2a1610",
+    "app/game/audio/sfx-levels.ts": "c8bf33f85d7ea29ce5a603fda4f518f0461aa95d3fa74a669ff6a96a194cf1a6",
+    "app/game/scene-hunt/feedback-score.ts": "c48fe73ad6916a0339fa9ec47a53dc14e1b8004cf436ed7ac73fbebeaf407549",
+    "app/game/scene-hunt/sound.ts": "32a49304e3a992e75105b7258ed8c3373d46eeec4a2b48be60b3e0014d6affdf",
+    "app/game/runtime/practice-audio.ts": "ba739af0374370b3c5facf37037b7e7bb6c66accea4750a429b1e8813ac4f6cc",
+    "app/game/runtime/legacy-response-audio.ts": "5648340ad87a47e3b43a2e264df7f3d641b5352ef91b518e6df749f104308743",
+    "app/game/response/audio.ts": "0fb665012cee2ed913a34d5ba28527e3d3413ccdb6b497070609e0def04a05ad",
+    "components/game/journey/reward-sound.ts": "8527ba2c29d4a64c90fe78146615fe13b1b65543c2102dc27c09ca6097b391d3",
+    "components/game/use-interface-sound.ts": "fdd81597daaafe736deff39da46fa6da0fa07b1decce8fa5acf2fe584f00f7a1",
+    "components/game/scene-hunt/use-collection-sound.ts": "5e65925ffbef7295fd841dc5edd6205d9921c70a329226b4a4ea468d4ab958a4"
+  },
+  "reports": [
+    "outputs/audio-feedback-verification/report.json",
+    "outputs/journey-music-verification/report.json",
+    "outputs/audio-loudness-work/ui-hunt-measurements/report.json",
+    "outputs/audio-loudness-work/sfx-levels.json"
+  ],
+  "remainingSounds": "docs/audio-feedback/missing-sounds-audit.md"
+}

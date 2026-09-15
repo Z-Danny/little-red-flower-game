@@ -1,0 +1,215 @@
+{
+  "version": 1,
+  "generation": "OpenAI built-in image_gen, exact empty completion frame edited to a gentle try-again sibling.",
+  "preparation": "Sharp only alpha-bounding crop, transparent padding, proportional resize, rectangular slicing and encoding. Golden primary copied byte-for-byte.",
+  "reference": {
+    "path": "art-source/painted-failure-v1/reference-panel.png",
+    "sha256": "8b73e81b5f15d6297f7d5eace605077d2eaf2cfb6edac650b286127188944caa"
+  },
+  "generatedSources": {
+    "panel": "/Users/danny/.codex/generated_images/01a0a350-9461-7171-b9b2-738b870c448c/exec-2b0a8ef1-49f0-4ee2-9f2a-461800a97727.png",
+    "secondaryButton": "/Users/danny/.codex/generated_images/01a0a350-9461-7171-b9b2-738b870c448c/exec-b19b5786-5c50-41b4-b3a3-2c0bf24b1443.png",
+    "secondaryButtonWideBeforeAdjustment": "/Users/danny/.codex/generated_images/01a0a350-9461-7171-b9b2-738b870c448c/exec-de98c0ee-da27-499a-9dc9-366a79416796.png"
+  },
+  "prompts": [
+    "art-source/painted-failure-v1/prompts.json",
+    "art-source/painted-failure-v1/secondary-button-proportion-prompt.txt"
+  ],
+  "assets": {
+    "panel": {
+      "width": 964,
+      "height": 1272,
+      "png": "public/ui/painted-failure-v1/panel.png",
+      "webp": "public/ui/painted-failure-v1/panel.webp",
+      "pngBytes": 1539591,
+      "webpBytes": 134526,
+      "pngSha256": "7a755681d0e3bf2bc79028777333b9890d5b5af2e8bac317a70de15f5c6bc2d1",
+      "webpSha256": "b6a07c3ce58932e377bdf6945ababe755733a9880cd77a337a8d0280242cc1f3",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.10512572092173596
+      },
+      "source": "art-source/painted-failure-v1/panel-source.png",
+      "sourceSha256": "9c500267e16486a637dc5a19b722210648f47a10dfdb923bb8800dc8f9b732b7",
+      "sourceSize": {
+        "width": 1122,
+        "height": 1402
+      },
+      "crop": {
+        "left": 87,
+        "top": 46,
+        "width": 975,
+        "height": 1288
+      },
+      "transparentOutputBorder": 2
+    },
+    "secondary-button": {
+      "width": 964,
+      "height": 355,
+      "png": "public/ui/painted-failure-v1/secondary-button.png",
+      "webp": "public/ui/painted-failure-v1/secondary-button.webp",
+      "pngBytes": 791554,
+      "webpBytes": 130828,
+      "pngSha256": "f0f345eb6aa3d8e09c36eb192611c2bd9709e6e169d34803b270f44a5822eb7c",
+      "webpSha256": "407cd98bf77b47ec91a324b8b1cb927bc0914b4ebac8104ba7ccc8c8f251799b",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.12356671147215241
+      },
+      "source": "art-source/painted-failure-v1/secondary-button-source.png",
+      "sourceSha256": "88841c49b7ad450a0e79dddc5b567e2aaf4b579a741ab4faf9979413fad2970f",
+      "sourceSize": {
+        "width": 1983,
+        "height": 793
+      },
+      "crop": {
+        "left": 195,
+        "top": 102,
+        "width": 1594,
+        "height": 582
+      },
+      "transparentOutputBorder": 2
+    },
+    "button": {
+      "width": 964,
+      "height": 222,
+      "png": "public/ui/painted-failure-v1/button.png",
+      "webp": "public/ui/painted-failure-v1/button.webp",
+      "pngBytes": 436300,
+      "webpBytes": 73596,
+      "pngSha256": "734bec2a517eb92febc46170cb6ac4e0e36ca521e52deca21043d168f8a9c953",
+      "webpSha256": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.10099155171769279
+      },
+      "reusedFrom": "public/ui/painted-settlement-v1/button.{png,webp}",
+      "creativeModification": "none; identical bytes"
+    },
+    "header": {
+      "width": 964,
+      "height": 250,
+      "png": "public/ui/painted-failure-v1/header.png",
+      "webp": "public/ui/painted-failure-v1/header.webp",
+      "pngBytes": 432249,
+      "webpBytes": 57740,
+      "pngSha256": "f35b38530426904f57a6133770446ee94d357281aa0132778f040274da314115",
+      "webpSha256": "ec23c644c95499baca6814da40a80227fc26eccdae9d4894ac4485e5bc96aeb5",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.22318672199170125
+      },
+      "source": "public/ui/painted-failure-v1/panel.png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 964,
+        "height": 250
+      }
+    },
+    "body": {
+      "width": 964,
+      "height": 830,
+      "png": "public/ui/painted-failure-v1/body.png",
+      "webp": "public/ui/painted-failure-v1/body.webp",
+      "pngBytes": 877577,
+      "webpBytes": 48072,
+      "pngSha256": "7ad194aa0fddd7d59ea4d104c0c839a8e2687e8e30f194b7505409ff42b18ab5",
+      "webpSha256": "1b29f2ac5f4ccba6b80b87c47728f09931427fca7a6d0c9dcbdb443ad0eaa2b7",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.04338599210118482
+      },
+      "source": "public/ui/painted-failure-v1/panel.png",
+      "crop": {
+        "left": 0,
+        "top": 250,
+        "width": 964,
+        "height": 830
+      }
+    },
+    "footer": {
+      "width": 964,
+      "height": 192,
+      "png": "public/ui/painted-failure-v1/footer.png",
+      "webp": "public/ui/painted-failure-v1/footer.webp",
+      "pngBytes": 231561,
+      "webpBytes": 29354,
+      "pngSha256": "ddc49050f8260036fec9aac45c1ca50b5b4ee46ddd0659171aa1a12e6e1d13b6",
+      "webpSha256": "222eaf552d84bd1154ea5486cbb8885d103617ddc30f3349855b9cc1e12d7c3e",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.21829616182572614
+      },
+      "source": "public/ui/painted-failure-v1/panel.png",
+      "crop": {
+        "left": 0,
+        "top": 1080,
+        "width": 964,
+        "height": 192
+      }
+    }
+  },
+  "layout": {
+    "units": "percent of identified image/slice",
+    "titleRelativeToHeaderSlice": {
+      "left": 24,
+      "top": 19,
+      "width": 52,
+      "height": 54
+    },
+    "bodyText": {
+      "left": 9,
+      "width": 81
+    },
+    "buttonLabel": {
+      "left": 12,
+      "top": 17,
+      "width": 76,
+      "height": 62
+    },
+    "secondaryButtonLabel": {
+      "left": 14,
+      "top": 20,
+      "width": 72,
+      "height": 58
+    },
+    "headerHeightToWidthRatio": 0.25933609958506226,
+    "footerHeightToWidthRatio": 0.1991701244813278,
+    "sliceRule": "Full-width continuous slices. Header and footer preserve natural aspect ratio; only body stretches vertically. Main and secondary buttons live in body bottom with normal HTML flow, above footer flower-bud ornament. Do not put body text or buttons into corner decoration.",
+    "nineSliceAlternative": {
+      "top": 250,
+      "left": 50,
+      "right": 50,
+      "bottom": 192
+    },
+    "suggestedButtonsAt390Viewport": {
+      "primaryWidth": 164,
+      "secondaryWidth": 120,
+      "height": 52,
+      "note": "Secondary source is intentionally shorter than primary; proportional source preparation only. Modest CSS size adjustment is permitted for the specified button slots."
+    }
+  },
+  "visualReview": {
+    "text": "none",
+    "hand": "none",
+    "openRewardFlowers": "none",
+    "trophy": "none",
+    "topLeft": "one hopeful closed red bud with two leaves",
+    "bottomRight": "small closed red bud and leaves",
+    "allTipsFullyInsideSource": true,
+    "alpha": "verified"
+  }
+}

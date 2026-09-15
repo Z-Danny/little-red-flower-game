@@ -224,7 +224,7 @@ test('catalog and kitchen configuration share the same 50-second duration',()=>{
 test('default screen contains no answer steps, duplicate narration, intro card or footer UI', () => {
   const html = renderToStaticMarkup(createElement(KitchenPlayer, { totalFlowers: 0, onBack() {}, onFinish() {} }));
   for (const removed of ['关闭火源', '盖住油锅', '安全撤离', 'kitchen-footer', 'kitchen-goals', 'kitchen-start-card', '正在平稳盖住锅口']) assert.ok(!html.includes(removed), removed);
-  assert.ok(html.includes('LEVEL 02') && html.includes('火势紧急程度') && html.includes('暂停游戏'));
+  assert.ok(html.includes('火势紧急程度') && html.includes('暂停游戏'));
   assert.ok(html.includes('role="meter"') && html.includes('thermometer-shell.png'));
   assert.ok(!html.includes('处置时间')&&!html.includes('kitchen-countdown')&&!html.includes('aria-label="50 秒'));
 });

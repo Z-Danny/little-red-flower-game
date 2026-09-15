@@ -8,6 +8,7 @@ test('flood highground unlocks from existing quake exit save without cross-categ
 });
 import {
   entryNode,
+  hasJourneyRecord,
   resumeNode,
   parseLocations,
 } from '../app/game/journey/resume';
@@ -46,13 +47,13 @@ import {
 } from '../app/game/journey/presentation';
 const ids = journeyMap.regions.flatMap((r) => r.nodes.map((n) => n.id)),
   caps = Object.fromEntries(ids.map((id) => [id, 3]));
-void test('map entry helpers preserve rewards and never unlock a bookmarked level', () => {
+void test('map entry helpers preserve rewards and fall back from a locked bookmark', () => {
   const progress = { [ids[0]]: 3 };
   const original = JSON.stringify(progress);
   assert.equal(entryNode({}), ids[0]);
   assert.equal(resumeNode(progress), entryNode(progress));
   const locked = ids.find((id) => nodeStatus(id, progress) === 'locked')!;
-  assert.equal(resumeNode(progress, { levelId: locked, visitedAt: 1 }), locked);
+  assert.equal(resumeNode(progress, { levelId: locked, visitedAt: 1 }), resumeNode(progress));
   assert.equal(canEnter(locked, progress), false);
   assert.equal(JSON.stringify(progress), original);
 });
@@ -66,12 +67,54 @@ void test('bookmarks are separate per player and tolerate invalid or retired dat
       b: { levelId: ids[2], visitedAt: 2 },
       retired: { levelId: 'retired-level', visitedAt: 3 },
       malformed: { levelId: ids[0], visitedAt: 'tomorrow' },
+      emptyTimestamp: { levelId: ids[0], visitedAt: 0 },
+      negativeTimestamp: { levelId: ids[0], visitedAt: -1 },
     }),
   );
   assert.deepEqual(Object.keys(parsed), ['a', 'b']);
   assert.equal(resumeNode({}, parsed.a), ids[0]);
-  assert.equal(resumeNode({}, parsed.b), ids[2]);
+  assert.equal(resumeNode({}, parsed.b), entryNode({}));
   assert.equal(Object.getPrototypeOf(parsed), null);
+});
+void test('cover resume requires earned progress or a valid explored location', () => {
+  const empty = Object.freeze({});
+  const locked = ids.find((id) => nodeStatus(id, empty) === 'locked')!;
+  assert.equal(hasJourneyRecord(empty), false);
+  assert.equal(hasJourneyRecord(empty, { levelId: locked, visitedAt: 1 }), false);
+  assert.equal(hasJourneyRecord(empty, { levelId: 'retired-level', visitedAt: 1 }), false);
+  assert.equal(hasJourneyRecord(empty, { levelId: ids[0], visitedAt: 0 }), false);
+  assert.equal(hasJourneyRecord(empty, { levelId: ids[0], visitedAt: 1 }), true);
+  assert.equal(hasJourneyRecord(Object.freeze({ [ids[0]]: 3 })), true);
+});
+void test('zero-flower exploration resumes each available region entry without awarding progress', () => {
+  const progress = Object.freeze({});
+  for (const region of journeyMap.regions) {
+    const location = Object.freeze({ levelId: region.nodes[0].id, visitedAt: 10 });
+    assert.equal(resumeNode(progress, location), location.levelId);
+    assert.equal(flowerTotal(progress), 0);
+    assert.equal(nodeStatus(location.levelId, progress), 'available');
+  }
+});
+void test('resume preserves enterable legacy completions and rejects every locked or retired destination', () => {
+  const saves = [
+    {},
+    ...ids.map((id) => ({ [id]: 3 })),
+    Object.fromEntries(ids.map((id) => [id, 3])),
+  ];
+  for (const scores of saves) {
+    const progress = Object.freeze(scores);
+    const before = JSON.stringify(progress);
+    for (const levelId of [...ids, 'retired-level']) {
+      const location = Object.freeze({ levelId, visitedAt: 1 });
+      const resumed = resumeNode(progress, location);
+      assert.equal(canEnter(resumed, progress), true);
+      assert.equal(
+        resumed,
+        canEnter(levelId, progress) ? levelId : resumeNode(progress),
+      );
+    }
+    assert.equal(JSON.stringify(progress), before);
+  }
 });
 function setup() {
   const bytes = new Map<string, string>();

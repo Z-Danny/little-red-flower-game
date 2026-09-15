@@ -1,0 +1,310 @@
+{
+  "status": "passed",
+  "startedAt": "2026-09-15T04:47:17.198Z",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "f27d20afa948d94999bba0635f638c1d3a0b23cb22aa6b8179bb22172c8cdee2",
+  "levelId": "oil-fire",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "reducedMotion": "no-preference",
+  "headless": true,
+  "muteAudio": true,
+  "isolatedContexts": 1,
+  "contextsClosed": 1,
+  "browserClosed": true,
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "checks": [
+    {
+      "name": "First receipt starts three settlement-bloom animations and one settlement-petal animation",
+      "status": "passed"
+    },
+    {
+      "name": "Petal becomes visible during its delayed motion",
+      "status": "passed",
+      "elapsedAfterInitialMs": 407.5,
+      "opacity": 0.282528
+    },
+    {
+      "name": "After about two seconds flowers stay visible and the petal is hidden",
+      "status": "passed",
+      "elapsedAfterInitialMs": 2128.399999976158
+    },
+    {
+      "name": "CTA is hittable; map return starts oil-fire planting and stores exactly three flowers",
+      "status": "passed"
+    }
+  ],
+  "coverage": "DOM/computed-style and live Web Animations timing smoke against final offline HTML. Existing mounted journey player onFinish(oil-fire,3) is called once through React fiber after normal entry; other 23 levels preset complete solely for entry unlock. This is a controlled completion-boundary test, not real oil-fire gameplay or human perception validation.",
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "humanMotionPerception": "not_run",
+  "browser": "152.0.7977.83",
+  "boundary": {
+    "owner": "R4",
+    "at": 5832.5,
+    "calls": 1
+  },
+  "initial": {
+    "at": 5977.800000011921,
+    "reducedMotion": false,
+    "awarded": "true",
+    "flowers": [
+      {
+        "animationName": "settlement-bloom",
+        "animationDuration": "0.62s",
+        "animationDelay": "0s",
+        "opacity": 0.135472,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "matrix(0.492121, 0, 0, 0.492121, 0, 2.97817)",
+        "width": 23.62181854248047,
+        "height": 26.57452392578125,
+        "naturalWidth": 1254,
+        "animations": [
+          {
+            "name": "settlement-bloom",
+            "state": "running",
+            "time": 50.06099994508517,
+            "duration": 620
+          }
+        ]
+      },
+      {
+        "animationName": "settlement-bloom",
+        "animationDuration": "0.62s",
+        "animationDelay": "0.18s",
+        "opacity": 0,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "matrix(0.4, 0, 0, 0.4, 0, 2.8)",
+        "width": 22.399993896484375,
+        "height": 24.79998779296875,
+        "naturalWidth": 1254,
+        "animations": [
+          {
+            "name": "settlement-bloom",
+            "state": "running",
+            "time": 50.06099994508517,
+            "duration": 620
+          }
+        ]
+      },
+      {
+        "animationName": "settlement-bloom",
+        "animationDuration": "0.62s",
+        "animationDelay": "0.36s",
+        "opacity": 0,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "matrix(0.4, 0, 0, 0.4, 0, 2.8)",
+        "width": 19.199981689453125,
+        "height": 21.5999755859375,
+        "naturalWidth": 1254,
+        "animations": [
+          {
+            "name": "settlement-bloom",
+            "state": "running",
+            "time": 50.06099994508517,
+            "duration": 620
+          }
+        ]
+      }
+    ],
+    "petals": [
+      {
+        "animationName": "settlement-petal",
+        "animationDuration": "1.2s",
+        "animationDelay": "0.4s",
+        "opacity": 0,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "matrix(0.939693, -0.34202, 0.34202, 0.939693, 8, -8)",
+        "width": 18.2860107421875,
+        "height": 18.8836669921875,
+        "naturalWidth": 184,
+        "animations": [
+          {
+            "name": "settlement-petal",
+            "state": "running",
+            "time": 50.06099994508517,
+            "duration": 1200
+          }
+        ]
+      }
+    ]
+  },
+  "mid": {
+    "at": 6385.300000011921,
+    "reducedMotion": false,
+    "awarded": "true",
+    "flowers": [
+      {
+        "animationName": "settlement-bloom",
+        "animationDuration": "0.62s",
+        "animationDelay": "0s",
+        "opacity": 1,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "matrix(1.05338, 0, 0, 1.05338, 0, 0)",
+        "width": 50.56218719482422,
+        "height": 56.8824462890625,
+        "naturalWidth": 1254,
+        "animations": [
+          {
+            "name": "settlement-bloom",
+            "state": "running",
+            "time": 449.96099994508575,
+            "duration": 620
+          }
+        ]
+      },
+      {
+        "animationName": "settlement-bloom",
+        "animationDuration": "0.62s",
+        "animationDelay": "0.18s",
+        "opacity": 0.926465,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "matrix(1.03, 0, 0, 1.03, 0, 0.530187)",
+        "width": 57.679779052734375,
+        "height": 63.8597412109375,
+        "naturalWidth": 1254,
+        "animations": [
+          {
+            "name": "settlement-bloom",
+            "state": "running",
+            "time": 449.96099994508575,
+            "duration": 620
+          }
+        ]
+      },
+      {
+        "animationName": "settlement-bloom",
+        "animationDuration": "0.62s",
+        "animationDelay": "0.36s",
+        "opacity": 0.348328,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "matrix(0.636863, 0, 0, 0.636863, 0, 2.90518)",
+        "width": 30.569442749023438,
+        "height": 34.390625,
+        "naturalWidth": 1254,
+        "animations": [
+          {
+            "name": "settlement-bloom",
+            "state": "running",
+            "time": 449.96099994508575,
+            "duration": 620
+          }
+        ]
+      }
+    ],
+    "petals": [
+      {
+        "animationName": "settlement-petal",
+        "animationDuration": "1.2s",
+        "animationDelay": "0.4s",
+        "opacity": 0.282528,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "matrix(0.952649, -0.304074, 0.304074, 0.952649, 7.33626, -6.64699)",
+        "width": 17.898162841796875,
+        "height": 18.5467529296875,
+        "naturalWidth": 184,
+        "animations": [
+          {
+            "name": "settlement-petal",
+            "state": "running",
+            "time": 449.96099994508575,
+            "duration": 1200
+          }
+        ]
+      }
+    ]
+  },
+  "settled": {
+    "at": 8106.199999988079,
+    "reducedMotion": false,
+    "awarded": "true",
+    "flowers": [
+      {
+        "animationName": "settlement-bloom",
+        "animationDuration": "0.62s",
+        "animationDelay": "0s",
+        "opacity": 1,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "none",
+        "width": 48,
+        "height": 54,
+        "naturalWidth": 1254,
+        "animations": []
+      },
+      {
+        "animationName": "settlement-bloom",
+        "animationDuration": "0.62s",
+        "animationDelay": "0.18s",
+        "opacity": 1,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "none",
+        "width": 56,
+        "height": 62,
+        "naturalWidth": 1254,
+        "animations": []
+      },
+      {
+        "animationName": "settlement-bloom",
+        "animationDuration": "0.62s",
+        "animationDelay": "0.36s",
+        "opacity": 1,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "none",
+        "width": 48,
+        "height": 54,
+        "naturalWidth": 1254,
+        "animations": []
+      }
+    ],
+    "petals": [
+      {
+        "animationName": "settlement-petal",
+        "animationDuration": "1.2s",
+        "animationDelay": "0.4s",
+        "opacity": 0,
+        "display": "block",
+        "visibility": "visible",
+        "transform": "matrix(0.34202, 0.939693, -0.939693, 0.34202, -18, 45)",
+        "width": 18.8836669921875,
+        "height": 18.2860107421875,
+        "naturalWidth": 184,
+        "animations": [
+          {
+            "name": "settlement-petal",
+            "state": "finished",
+            "time": 1600,
+            "duration": 1200
+          }
+        ]
+      }
+    ]
+  },
+  "cta": {
+    "width": 266.390625,
+    "height": 61.34375,
+    "hits": true
+  },
+  "map": {
+    "planting": "oil-fire",
+    "nodeStatus": "complete",
+    "score": 3,
+    "total": 72
+  },
+  "finalHtmlSha256": "f27d20afa948d94999bba0635f638c1d3a0b23cb22aa6b8179bb22172c8cdee2",
+  "finishedAt": "2026-09-15T04:47:31.930Z"
+}

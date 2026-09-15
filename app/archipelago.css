@@ -1,0 +1,437 @@
+/* Destination art lives inside the shared portrait garden frame. */
+.archipelago {
+  position: absolute;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  z-index: 45;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #9ed4ef;
+  color: #214f40;
+  container-type: inline-size;
+  animation: archipelago-arrive 220ms ease-out both;
+}
+.archipelago img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+.archipelago-sky,
+.archipelago-clouds {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.archipelago-sky {
+  object-fit: cover;
+}
+.archipelago-clouds {
+  z-index: -1;
+  overflow: hidden;
+}
+.archipelago-cloud {
+  position: absolute;
+  width: 88%;
+  height: auto;
+  opacity: 0.8;
+  will-change: transform;
+  animation: archipelago-cloud-drift 32s ease-in-out infinite alternate;
+}
+.archipelago-cloud-far {
+  top: 5%;
+  left: -34%;
+  width: 96%;
+  opacity: 0.64;
+  animation-duration: 35s;
+  animation-delay: -14s;
+}
+.archipelago-cloud-mid {
+  top: 40%;
+  left: 53%;
+  animation-duration: 28s;
+  animation-direction: alternate-reverse;
+  animation-delay: -8s;
+}
+.archipelago-cloud-near {
+  bottom: -6%;
+  left: -35%;
+  width: 120%;
+  opacity: 0.88;
+  animation-duration: 24s;
+  animation-delay: -5s;
+}
+.archipelago-header {
+  position: relative;
+  z-index: 8;
+  flex: 0 0 clamp(68px, 18cqw, 94px);
+  margin-top: max(12px, env(safe-area-inset-top));
+}
+.garden-shell .archipelago-back,
+.archipelago-title {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #214f40;
+  white-space: nowrap;
+  font-family: var(--font-game-title);
+  font-weight: 400;
+  line-height: 1;
+  filter: drop-shadow(0 2px 1px #7158381a);
+}
+.archipelago-title img,
+.archipelago-island-label > img {
+  position: absolute;
+  /* Normalize this source's generous transparent padding without flattening it. */
+  left: -13%;
+  top: -64.13%;
+  width: 126%;
+  max-width: none;
+  height: 229.84%;
+  object-fit: fill;
+  z-index: -1;
+}
+.garden-shell .archipelago-back {
+  top: 10%;
+  left: max(12px, env(safe-area-inset-left));
+  width: clamp(44px, 11cqw, 54px);
+  min-height: 44px;
+  height: clamp(44px, 11cqw, 54px);
+  border: 2px solid #b98a49;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff9df, #f1d59d);
+  box-shadow: inset 0 0 0 3px #fff2ce, 0 2px 0 #98703d;
+}
+.archipelago-back > svg {
+  width: 52%;
+  height: 52%;
+  stroke-width: 2.5;
+  pointer-events: none;
+}
+.archipelago-title {
+  top: 0;
+  left: 28.5%;
+  width: 43%;
+  height: 82%;
+  font-size: clamp(25px, 7.2cqw, 37px);
+  letter-spacing: 0.02em;
+}
+.archipelago-map {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0 3%;
+  container-type: size;
+}
+.archipelago-island-group {
+  position: relative;
+  width: min(100%, 96cqh);
+  aspect-ratio: 1.02;
+  container-type: inline-size;
+}
+.garden-shell button.archipelago-island {
+  position: absolute;
+  display: block;
+  width: 51%;
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 38%;
+  background: transparent;
+  appearance: none;
+  touch-action: manipulation;
+  outline-offset: -8px;
+}
+.archipelago-island[data-island='nature'] {
+  --island-float-duration: 6.2s;
+  --island-float-delay: -1.1s;
+  left: 24.5%;
+  top: 0.5%;
+  z-index: 1;
+}
+.archipelago-island[data-island='public'] {
+  --island-float-duration: 6.8s;
+  --island-float-delay: -3.4s;
+  left: 0;
+  top: 47.5%;
+  z-index: 2;
+}
+.archipelago-island[data-island='home'] {
+  --island-float-duration: 5.8s;
+  --island-float-delay: -2s;
+  left: 49%;
+  top: 47.5%;
+  z-index: 2;
+}
+.archipelago-island-float,
+.archipelago-island-press {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+}
+.archipelago-island-float {
+  animation: archipelago-float var(--island-float-duration) ease-in-out
+    var(--island-float-delay) infinite;
+  will-change: transform;
+}
+.archipelago-island-press {
+  transform-origin: 50% 55%;
+  transition:
+    transform 140ms cubic-bezier(0.2, 0.8, 0.3, 1),
+    filter 180ms ease;
+  filter: drop-shadow(0 8px 5px #557f8b18);
+}
+.archipelago-island-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.archipelago-island-label {
+  position: absolute;
+  left: 50%;
+  bottom: 17%;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  width: 82%;
+  height: clamp(24px, 9.18cqw, 47px);
+  padding: 0 5%;
+  isolation: isolate;
+  color: #214f40;
+  font-family: var(--font-game-title);
+  font-size: clamp(11px, 5.2cqw, 25px);
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  text-shadow: 0 1px #fff8d9;
+}
+.archipelago-island[data-selected='true'] .archipelago-island-press {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 8px #fffbd9b3) drop-shadow(0 9px 5px #46708620);
+}
+.archipelago-island[aria-disabled='true'] {
+  cursor: default;
+}
+.archipelago-flag {
+  position: absolute;
+  z-index: 6;
+  width: clamp(52px, 16cqw, 82px);
+  height: clamp(71px, 23cqw, 116px);
+  transform: translate(-16%, -100%);
+  pointer-events: none;
+  will-change: left, top;
+}
+.archipelago-flag-float,
+.archipelago-flag-landing {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.archipelago-flag-float {
+  animation: archipelago-float 6.2s ease-in-out -1.1s infinite;
+}
+.archipelago-flag[data-flag-category='public'] .archipelago-flag-float {
+  animation-duration: 6.8s;
+  animation-delay: -3.4s;
+}
+.archipelago-flag[data-flag-category='home'] .archipelago-flag-float {
+  animation-duration: 5.8s;
+  animation-delay: -2s;
+}
+.archipelago-flag[data-traveling='true'] .archipelago-flag-float {
+  animation-play-state: paused;
+}
+.archipelago-flag-pole-art,
+.archipelago-flag-face img {
+  position: absolute;
+  left: -41.93%;
+  top: -18.39%;
+  width: 165.87%;
+  height: 136.45%;
+  object-fit: fill;
+}
+.archipelago-flag-pole-art {
+  clip-path: polygon(25% 13%, 35% 13%, 44% 90%, 37% 90%, 28% 28%);
+}
+.archipelago-flag-face {
+  position: absolute;
+  inset: 0;
+  transform-origin: 13% 35%;
+  animation: archipelago-flag-wave 3.5s ease-in-out infinite;
+}
+.archipelago-flag-face img {
+  clip-path: polygon(33% 22%, 87% 21%, 87% 60%, 37% 57%);
+}
+.archipelago-flag-face > span {
+  position: absolute;
+  left: 23%;
+  top: 25%;
+  color: #fff6dc;
+  font-family: var(--font-game-title);
+  font-size: clamp(18px, 4.7cqw, 25px);
+  line-height: 1;
+  white-space: nowrap;
+  transform: rotate(-5deg);
+  text-shadow: 0 1px 2px #a6493280;
+}
+.archipelago[data-phase='landing'] .archipelago-flag-landing {
+  animation: archipelago-flag-land 240ms ease-out both;
+}
+.archipelago[data-phase='selecting']
+  .archipelago-flag[data-traveling='false']
+  .archipelago-flag-landing {
+  animation: archipelago-flag-land 200ms ease-out both;
+}
+.archipelago-instruction {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 2px 0 max(18px, env(safe-area-inset-bottom));
+  padding: 6px 8px;
+  font-family: var(--font-game-title);
+  font-size: clamp(17px, 4.7cqw, 24px);
+  line-height: 1.4;
+  white-space: nowrap;
+  text-shadow: 0 1px 3px #eef8eccc;
+}
+.archipelago-instruction > span {
+  color: #e77745;
+  font-size: 1.1em;
+}
+.archipelago-departure-fog {
+  position: absolute;
+  inset: -15%;
+  z-index: 7;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at 45% 80%,
+    #fffcf4 0%,
+    #f6f8f2ed 30%,
+    #e7f4f0b3 60%,
+    #e8f6f200 85%
+  );
+  opacity: 0;
+  transform: translateY(20%);
+}
+.archipelago[data-phase='departing'] .archipelago-departure-fog {
+  animation: archipelago-depart 180ms ease-in both;
+}
+.archipelago[data-hidden='true'],
+.archipelago[data-hidden='true'] *,
+.archipelago[data-hidden='true'] *::before,
+.archipelago[data-hidden='true'] *::after {
+  animation-play-state: paused !important;
+}
+@keyframes archipelago-arrive {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes archipelago-cloud-drift {
+  from {
+    transform: translateX(-8%);
+  }
+  to {
+    transform: translateX(23%);
+  }
+}
+@keyframes archipelago-float {
+  0%,
+  100% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+@keyframes archipelago-flag-wave {
+  0%,
+  100% {
+    transform: skewY(-2deg) scaleX(1);
+  }
+  50% {
+    transform: skewY(3deg) scaleX(0.96);
+  }
+}
+@keyframes archipelago-flag-land {
+  0% {
+    transform: translateY(-7px);
+  }
+  65% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes archipelago-depart {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.archipelago[data-reduced-motion='true'] .archipelago-cloud,
+.archipelago[data-reduced-motion='true'] .archipelago-island-float,
+.archipelago[data-reduced-motion='true'] .archipelago-flag-float,
+.archipelago[data-reduced-motion='true'] .archipelago-flag-face,
+.archipelago[data-reduced-motion='true'] .archipelago-flag-landing {
+  animation: none;
+}
+.archipelago[data-reduced-motion='true'] .archipelago-island-press {
+  transition: filter 80ms ease;
+  transform: none;
+}
+.archipelago[data-reduced-motion='true'] .archipelago-departure-fog {
+  transform: none;
+  animation-duration: 70ms;
+}
+@media (max-height: 600px) {
+  .archipelago-header {
+    flex-basis: 58px;
+    margin-top: max(5px, env(safe-area-inset-top));
+  }
+  .archipelago-instruction {
+    margin-bottom: max(8px, env(safe-area-inset-bottom));
+    font-size: 16px;
+    padding: 0 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .archipelago,
+  .archipelago *,
+  .archipelago *::before,
+  .archipelago *::after {
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+  }
+  .archipelago-island-press {
+    transition: none;
+  }
+}

@@ -246,7 +246,7 @@ try {
         'complete',
       );
       await page.screenshot({ path: path.join(out, e.id + '-complete.png') });
-      await page.getByRole('button', { name: /返回地图/ }).click();
+      await page.locator('[data-testid="settlement-primary"]').click();
       await page.locator('[data-map-node="' + e.id + '"]').click();
       await page
         .getByRole('button', { name: '再守护一次', exact: true })

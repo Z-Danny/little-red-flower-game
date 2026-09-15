@@ -1,0 +1,62 @@
+{
+  "黄色首页小屋.png": {
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_percent": 41.1,
+    "bbox": [
+      0,
+      2,
+      1248,
+      1254
+    ],
+    "path": "/Users/danny/dannyprojects/小红花/outputs/图标预览/地图透明图标-v1/黄色首页小屋.png",
+    "source": "/Users/danny/.codex/generated_images/01a0a37b-2780-7c13-983e-0f77219bbccf/exec-70b547c8-cef7-4d84-a6e6-f8f151bba21e.png"
+  },
+  "小红花计数.png": {
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_percent": 39.6,
+    "bbox": [
+      0,
+      21,
+      1223,
+      1254
+    ],
+    "path": "/Users/danny/dannyprojects/小红花/outputs/图标预览/地图透明图标-v1/小红花计数.png",
+    "source": "/Users/danny/.codex/generated_images/01a0a37b-2780-7c13-983e-0f77219bbccf/exec-8e7cc617-55aa-477e-a201-cf7cc60fbe56.png"
+  },
+  "设置-花匠调节匣.png": {
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "transparent_percent": 39.2,
+    "bbox": [
+      0,
+      0,
+      1238,
+      1254
+    ],
+    "path": "/Users/danny/dannyprojects/小红花/outputs/图标预览/地图透明图标-v1/设置-花匠调节匣.png",
+    "source": "/Users/danny/.codex/generated_images/01a0a37b-2780-7c13-983e-0f77219bbccf/exec-2f2f3e3e-9677-4fcf-953c-a46d4fc1b885.png"
+  }
+}

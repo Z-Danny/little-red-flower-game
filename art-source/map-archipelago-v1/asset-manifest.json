@@ -1,0 +1,127 @@
+{
+  "generator": "built-in image_gen.imagegen",
+  "status": "alpha_verified",
+  "prompts": "prompts.json",
+  "assets": [
+    {
+      "name": "entry-island",
+      "path": "/ui/archipelago-v1/entry-island.png",
+      "source": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets/entry-island.png",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        197,
+        111,
+        1064,
+        1138
+      ],
+      "trueTransparentFraction": 0.665787,
+      "sha256": "ddc79d60e1193e546cba2c545fbccf477caeec7ff887fab9a4882da1555d6765"
+    },
+    {
+      "name": "nature-island",
+      "path": "/ui/archipelago-v1/nature-island.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-5a00c743-3637-4b97-be61-b1029357a9f6.png",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        65,
+        17,
+        1193,
+        1223
+      ],
+      "trueTransparentFraction": 0.436839,
+      "sha256": "958c7a195b260cf446729be44fce296105849e6bec65d33fd3d8fb8255bdd5c1"
+    },
+    {
+      "name": "public-island",
+      "path": "/ui/archipelago-v1/public-island.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-7f47fc79-eab6-4ff5-9ef8-d6b47b4c529f.png",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        40,
+        34,
+        1198,
+        1234
+      ],
+      "trueTransparentFraction": 0.384594,
+      "sha256": "3d01d99eba86386c5c64b5e74d14609f63fddd219a224f5a1d35a8bf98aa7e6b"
+    },
+    {
+      "name": "home-island",
+      "path": "/ui/archipelago-v1/home-island.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-c7929e4f-0220-4070-8dfd-1808f882532d.png",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        47,
+        92,
+        1213,
+        1221
+      ],
+      "trueTransparentFraction": 0.38045,
+      "sha256": "0db23c73159c462c564a570c4b8f809c653390c5e277c03cc0bdf4107f56d6ff"
+    },
+    {
+      "name": "sky-background",
+      "path": "/ui/archipelago-v1/sky-background.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-7d045481-cf78-4c42-b5f7-13826c9175d6.png",
+      "width": 941,
+      "height": 1672,
+      "alphaBounds": [
+        0,
+        0,
+        941,
+        1672
+      ],
+      "trueTransparentFraction": 0.0,
+      "sha256": "c8f606fb83f5129abed058a907671c08e70c66f2a820e22e80f214d48e09b18d"
+    },
+    {
+      "name": "cloud",
+      "path": "/ui/archipelago-v1/cloud.png",
+      "source": "/Users/danny/.codex/generated_images/01a0a397-afa4-74b2-a49d-a3db9249f805/exec-86b406af-faf3-4530-93e6-c581b9d3730c.png",
+      "width": 1774,
+      "height": 887,
+      "alphaBounds": [
+        73,
+        189,
+        1719,
+        707
+      ],
+      "trueTransparentFraction": 0.677904,
+      "sha256": "a515e1214320098cc1ec103583c4739c54d91b5639a321d75dcca5164ec45f75"
+    },
+    {
+      "name": "wood-plaque",
+      "path": "/ui/archipelago-v1/wood-plaque.png",
+      "source": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets/wood-plaque.png",
+      "width": 2172,
+      "height": 724,
+      "alphaBounds": [
+        224,
+        202,
+        1948,
+        517
+      ],
+      "trueTransparentFraction": 0.667219,
+      "sha256": "257a2b4ac81f279057f50cd10e6e202ec679b1d840fed511d0ce0a933e51b26d"
+    },
+    {
+      "name": "current-flag",
+      "path": "/ui/archipelago-v1/current-flag.png",
+      "source": "/Users/danny/dannyprojects/小红花/art-source/map-archipelago-review-v1/assets/current-flag.png",
+      "width": 1254,
+      "height": 1254,
+      "alphaBounds": [
+        317,
+        169,
+        1073,
+        1088
+      ],
+      "trueTransparentFraction": 0.820521,
+      "sha256": "36a7bbdc4f99b5c929226d1a495f95c7b044c3e1471cb5d9bc219da4b9bb3cd8"
+    }
+  ]
+}

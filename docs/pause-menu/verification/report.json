@@ -1,0 +1,4128 @@
+{
+  "status": "passed",
+  "startedAt": "2026-09-15T07:33:02.029Z",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "95d6015380afd47e45f0a1124a61008f72cc8dac44db128a25c7467b489f75a4",
+  "finalHtmlSha256": "95d6015380afd47e45f0a1124a61008f72cc8dac44db128a25c7467b489f75a4",
+  "browser": "152.0.7977.83",
+  "checks": [
+    {
+      "name": "typhoon-home: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "typhoon-home: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "flood-kit: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "flood-kit: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "thunder-park-v2: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "thunder-park-v2: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "forest-fire-sources-v2: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "forest-fire-sources-v2: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "rain-street-preparation-v1: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "rain-street-preparation-v1: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "flood-house-response-v1: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "flood-house-response-v1: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "quake-cover-practice: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "quake-cover-practice: pause freezes stage clock and hint advances only after the quake stage",
+      "status": "passed"
+    },
+    {
+      "name": "quake-cover-practice: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "quake-exit-practice: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "quake-exit-practice: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "flood-highground-practice: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "flood-highground-practice: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "clear-corridor: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "clear-corridor: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "lift-wait: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "lift-wait: native action advances the pause hint to current gameplay",
+      "status": "passed"
+    },
+    {
+      "name": "lift-wait: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "well-call: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "well-call: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "clear-corridor-check-v2: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "clear-corridor-check-v2: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "car-window-practice: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "car-window-practice: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "lift-contact-practice: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "lift-contact-practice: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "collapse-signal-practice: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "collapse-signal-practice: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "oil-fire: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "oil-fire: native action advances the pause hint to current gameplay",
+      "status": "passed"
+    },
+    {
+      "name": "oil-fire: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "charging-bedroom: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "charging-bedroom: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "bedroom-night-check-v2: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "bedroom-night-check-v2: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "kitchen-before-cooking-v2: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "kitchen-before-cooking-v2: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice: native action advances the pause hint to current gameplay",
+      "status": "passed"
+    },
+    {
+      "name": "fire-shelter-practice: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "fire-stairs-practice: compact shared pause, correct hint type, frozen world, silent audio and one sound switch",
+      "status": "passed"
+    },
+    {
+      "name": "fire-stairs-practice: restart resets this run and paused HUD returns directly to map without changing saved progress",
+      "status": "passed"
+    },
+    {
+      "name": "24 final-HTML pause menus verified, four real gameplay hint transitions, restart/progress isolation and no network/runtime errors",
+      "status": "passed"
+    }
+  ],
+  "menus": [
+    {
+      "id": "typhoon-home",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "600",
+      "audio": [
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "flood-kit",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "599",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "616",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "storm-street-check-v2",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "600",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "thunder-park-v2",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "599",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "600",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "600",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "flood-house-response-v1",
+      "circle": false,
+      "hint": "将被困家人拖到干燥楼梯，靠近向上转移路线。",
+      "frozenAt": "566",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "quake-cover-practice",
+      "circle": false,
+      "hint": "观察桌边成人，试着把它移到合适的位置。",
+      "frozenAt": "567",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "quake-exit-practice",
+      "circle": false,
+      "hint": "观察结实鞋，试着把它移到合适的位置。",
+      "frozenAt": "567",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "flood-highground-practice",
+      "circle": false,
+      "hint": "观察成人与孩子，试着把它移到合适的位置。",
+      "frozenAt": "567",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "clear-corridor",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "600",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "lift-wait",
+      "circle": false,
+      "hint": "观察报警通话按钮，试着点击它。",
+      "frozenAt": "566",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "well-call",
+      "circle": false,
+      "hint": "观察旁观者，试着把它移到合适的位置。",
+      "frozenAt": "566",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "600",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "car-window-practice",
+      "circle": false,
+      "hint": "观察安全带卡扣，试着点击它。",
+      "frozenAt": "567",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "lift-contact-practice",
+      "circle": false,
+      "hint": "观察报警与紧急通话，试着点击它。",
+      "frozenAt": "567",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "collapse-signal-practice",
+      "circle": false,
+      "hint": "观察原位护头，试着点击它。",
+      "frozenAt": "567",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "oil-fire",
+      "circle": false,
+      "hint": "观察灶台上的燃气旋钮，点击可以关闭。",
+      "frozenAt": "558",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "charging-bedroom",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "600",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "600",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "circle": true,
+      "hint": null,
+      "frozenAt": "683",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "running",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "fire-shelter-practice",
+      "circle": false,
+      "hint": "观察通向浓烟的房门，试着点击它。",
+      "frozenAt": "583",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    },
+    {
+      "id": "fire-stairs-practice",
+      "circle": false,
+      "hint": "观察母亲和孩子（到安全位置后点击母亲报警），试着把它移到合适的位置。",
+      "frozenAt": "567",
+      "audio": [
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "closed",
+          "rms": 0
+        },
+        {
+          "state": "suspended",
+          "rms": 0
+        }
+      ],
+      "soundSwitch": true
+    }
+  ],
+  "layouts": [
+    {
+      "id": "typhoon-home",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "typhoon-home",
+      "width": 320,
+      "height": 568,
+      "panel": {
+        "x": 18,
+        "y": 257.5,
+        "right": 302,
+        "bottom": 386.5,
+        "width": 284,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 320,
+        "bottom": 568,
+        "width": 320,
+        "height": 568
+      },
+      "controls": [
+        {
+          "x": 203,
+          "y": 277.5,
+          "right": 275,
+          "bottom": 321.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 40.71875,
+          "y": 326.5,
+          "right": 279.265625,
+          "bottom": 386.5,
+          "width": 238.546875,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "typhoon-home",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "typhoon-home",
+      "width": 430,
+      "height": 932,
+      "panel": {
+        "x": 60,
+        "y": 439.5,
+        "right": 370,
+        "bottom": 568.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 430,
+        "bottom": 932,
+        "width": 430,
+        "height": 932
+      },
+      "controls": [
+        {
+          "x": 271,
+          "y": 459.5,
+          "right": 343,
+          "bottom": 503.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 84.796875,
+          "y": 508.5,
+          "right": 345.1875,
+          "bottom": 568.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "typhoon-home",
+      "width": 1440,
+      "height": 900,
+      "panel": {
+        "x": 565,
+        "y": 423.5,
+        "right": 875,
+        "bottom": 552.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 466.875,
+        "y": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "width": 506.25,
+        "height": 900
+      },
+      "controls": [
+        {
+          "x": 776,
+          "y": 443.5,
+          "right": 848,
+          "bottom": 487.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 589.796875,
+          "y": 492.5,
+          "right": 850.1875,
+          "bottom": 552.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-kit",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-kit",
+      "width": 320,
+      "height": 568,
+      "panel": {
+        "x": 18.953125,
+        "y": 257.5,
+        "right": 301.03125,
+        "bottom": 386.5,
+        "width": 282.078125,
+        "height": 129
+      },
+      "surface": {
+        "x": 0.953125,
+        "y": 0,
+        "right": 319.03125,
+        "bottom": 568,
+        "width": 318.078125,
+        "height": 568
+      },
+      "controls": [
+        {
+          "x": 202.03125,
+          "y": 277.5,
+          "right": 274.03125,
+          "bottom": 321.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 41.515625,
+          "y": 326.5,
+          "right": 278.453125,
+          "bottom": 386.5,
+          "width": 236.9375,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-kit",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-kit",
+      "width": 430,
+      "height": 932,
+      "panel": {
+        "x": 60,
+        "y": 439.5,
+        "right": 370,
+        "bottom": 568.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 430,
+        "bottom": 932,
+        "width": 430,
+        "height": 932
+      },
+      "controls": [
+        {
+          "x": 271,
+          "y": 459.5,
+          "right": 343,
+          "bottom": 503.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 84.796875,
+          "y": 508.5,
+          "right": 345.1875,
+          "bottom": 568.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-kit",
+      "width": 1440,
+      "height": 900,
+      "panel": {
+        "x": 565,
+        "y": 423.5,
+        "right": 875,
+        "bottom": 552.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 468,
+        "y": 0,
+        "right": 972,
+        "bottom": 900,
+        "width": 504,
+        "height": 900
+      },
+      "controls": [
+        {
+          "x": 776,
+          "y": 443.5,
+          "right": 848,
+          "bottom": 487.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 589.796875,
+          "y": 492.5,
+          "right": 850.1875,
+          "bottom": 552.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "quake-bedroom-v2",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "storm-street-check-v2",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "thunder-park-v2",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "forest-fire-sources-v2",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 320,
+      "height": 568,
+      "panel": {
+        "x": 18,
+        "y": 257.5,
+        "right": 302,
+        "bottom": 386.5,
+        "width": 284,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 320,
+        "bottom": 568,
+        "width": 320,
+        "height": 568
+      },
+      "controls": [
+        {
+          "x": 203,
+          "y": 277.5,
+          "right": 275,
+          "bottom": 321.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 40.71875,
+          "y": 326.5,
+          "right": 279.265625,
+          "bottom": 386.5,
+          "width": 238.546875,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 430,
+      "height": 932,
+      "panel": {
+        "x": 60,
+        "y": 439.5,
+        "right": 370,
+        "bottom": 568.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 430,
+        "bottom": 932,
+        "width": 430,
+        "height": 932
+      },
+      "controls": [
+        {
+          "x": 271,
+          "y": 459.5,
+          "right": 343,
+          "bottom": 503.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 84.796875,
+          "y": 508.5,
+          "right": 345.1875,
+          "bottom": 568.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "rain-street-preparation-v1",
+      "width": 1440,
+      "height": 900,
+      "panel": {
+        "x": 565,
+        "y": 423.5,
+        "right": 875,
+        "bottom": 552.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 466.875,
+        "y": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "width": 506.25,
+        "height": 900
+      },
+      "controls": [
+        {
+          "x": 776,
+          "y": 443.5,
+          "right": 848,
+          "bottom": 487.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 589.796875,
+          "y": 492.5,
+          "right": 850.1875,
+          "bottom": 552.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 328.625,
+        "right": 350,
+        "bottom": 591.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 482.375,
+          "right": 323,
+          "bottom": 526.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 531.375,
+          "right": 325.1875,
+          "bottom": 591.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 320,
+      "height": 568,
+      "panel": {
+        "x": 18,
+        "y": 190.625,
+        "right": 302,
+        "bottom": 453.375,
+        "width": 284,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 320,
+        "bottom": 568,
+        "width": 320,
+        "height": 568
+      },
+      "controls": [
+        {
+          "x": 203,
+          "y": 344.375,
+          "right": 275,
+          "bottom": 388.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 40.71875,
+          "y": 393.375,
+          "right": 279.265625,
+          "bottom": 453.375,
+          "width": 238.546875,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 328.625,
+        "right": 350,
+        "bottom": 591.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 482.375,
+          "right": 323,
+          "bottom": 526.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 531.375,
+          "right": 325.1875,
+          "bottom": 591.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 430,
+      "height": 932,
+      "panel": {
+        "x": 60,
+        "y": 372.625,
+        "right": 370,
+        "bottom": 635.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 430,
+        "bottom": 932,
+        "width": 430,
+        "height": 932
+      },
+      "controls": [
+        {
+          "x": 271,
+          "y": 526.375,
+          "right": 343,
+          "bottom": 570.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 84.796875,
+          "y": 575.375,
+          "right": 345.1875,
+          "bottom": 635.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-house-response-v1",
+      "width": 1440,
+      "height": 900,
+      "panel": {
+        "x": 565,
+        "y": 356.625,
+        "right": 875,
+        "bottom": 619.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 466.875,
+        "y": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "width": 506.25,
+        "height": 900
+      },
+      "controls": [
+        {
+          "x": 776,
+          "y": 510.375,
+          "right": 848,
+          "bottom": 554.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 589.796875,
+          "y": 559.375,
+          "right": 850.1875,
+          "bottom": 619.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "quake-cover-practice",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 328.625,
+        "right": 350,
+        "bottom": 591.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 482.375,
+          "right": 323,
+          "bottom": 526.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 531.375,
+          "right": 325.1875,
+          "bottom": 591.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "quake-exit-practice",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 328.625,
+        "right": 350,
+        "bottom": 591.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 482.375,
+          "right": 323,
+          "bottom": 526.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 531.375,
+          "right": 325.1875,
+          "bottom": 591.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "flood-highground-practice",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 328.625,
+        "right": 350,
+        "bottom": 591.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 482.375,
+          "right": 323,
+          "bottom": 526.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 531.375,
+          "right": 325.1875,
+          "bottom": 591.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "clear-corridor",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "lift-wait",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 341.375,
+        "right": 350,
+        "bottom": 578.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 469.625,
+          "right": 323,
+          "bottom": 513.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 518.625,
+          "right": 325.1875,
+          "bottom": 578.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "lift-wait",
+      "width": 320,
+      "height": 568,
+      "panel": {
+        "x": 18,
+        "y": 203.375,
+        "right": 302,
+        "bottom": 440.625,
+        "width": 284,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 320,
+        "bottom": 568,
+        "width": 320,
+        "height": 568
+      },
+      "controls": [
+        {
+          "x": 203,
+          "y": 331.625,
+          "right": 275,
+          "bottom": 375.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 40.71875,
+          "y": 380.625,
+          "right": 279.265625,
+          "bottom": 440.625,
+          "width": 238.546875,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "lift-wait",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 341.375,
+        "right": 350,
+        "bottom": 578.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 469.625,
+          "right": 323,
+          "bottom": 513.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 518.625,
+          "right": 325.1875,
+          "bottom": 578.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "lift-wait",
+      "width": 430,
+      "height": 932,
+      "panel": {
+        "x": 60,
+        "y": 385.375,
+        "right": 370,
+        "bottom": 622.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 430,
+        "bottom": 932,
+        "width": 430,
+        "height": 932
+      },
+      "controls": [
+        {
+          "x": 271,
+          "y": 513.625,
+          "right": 343,
+          "bottom": 557.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 84.796875,
+          "y": 562.625,
+          "right": 345.1875,
+          "bottom": 622.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "lift-wait",
+      "width": 1440,
+      "height": 900,
+      "panel": {
+        "x": 565,
+        "y": 369.375,
+        "right": 875,
+        "bottom": 606.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 466.875,
+        "y": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "width": 506.25,
+        "height": 900
+      },
+      "controls": [
+        {
+          "x": 776,
+          "y": 497.625,
+          "right": 848,
+          "bottom": 541.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 589.796875,
+          "y": 546.625,
+          "right": 850.1875,
+          "bottom": 606.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "well-call",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 328.625,
+        "right": 350,
+        "bottom": 591.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 482.375,
+          "right": 323,
+          "bottom": 526.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 531.375,
+          "right": 325.1875,
+          "bottom": 591.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "clear-corridor-check-v2",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "car-window-practice",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 341.375,
+        "right": 350,
+        "bottom": 578.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 469.625,
+          "right": 323,
+          "bottom": 513.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 518.625,
+          "right": 325.1875,
+          "bottom": 578.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "lift-contact-practice",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 341.375,
+        "right": 350,
+        "bottom": 578.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 469.625,
+          "right": 323,
+          "bottom": 513.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 518.625,
+          "right": 325.1875,
+          "bottom": 578.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "collapse-signal-practice",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 341.375,
+        "right": 350,
+        "bottom": 578.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 469.625,
+          "right": 323,
+          "bottom": 513.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 518.625,
+          "right": 325.1875,
+          "bottom": 578.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "oil-fire",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 328.625,
+        "right": 350,
+        "bottom": 591.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 482.375,
+          "right": 323,
+          "bottom": 526.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 531.375,
+          "right": 325.1875,
+          "bottom": 591.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "oil-fire",
+      "width": 320,
+      "height": 568,
+      "panel": {
+        "x": 18,
+        "y": 190.625,
+        "right": 302,
+        "bottom": 453.375,
+        "width": 284,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 320,
+        "bottom": 568,
+        "width": 320,
+        "height": 568
+      },
+      "controls": [
+        {
+          "x": 203,
+          "y": 344.375,
+          "right": 275,
+          "bottom": 388.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 40.71875,
+          "y": 393.375,
+          "right": 279.265625,
+          "bottom": 453.375,
+          "width": 238.546875,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "oil-fire",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 328.625,
+        "right": 350,
+        "bottom": 591.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 482.375,
+          "right": 323,
+          "bottom": 526.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 531.375,
+          "right": 325.1875,
+          "bottom": 591.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "oil-fire",
+      "width": 430,
+      "height": 932,
+      "panel": {
+        "x": 60,
+        "y": 372.625,
+        "right": 370,
+        "bottom": 635.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 430,
+        "bottom": 932,
+        "width": 430,
+        "height": 932
+      },
+      "controls": [
+        {
+          "x": 271,
+          "y": 526.375,
+          "right": 343,
+          "bottom": 570.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 84.796875,
+          "y": 575.375,
+          "right": 345.1875,
+          "bottom": 635.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "oil-fire",
+      "width": 1440,
+      "height": 900,
+      "panel": {
+        "x": 565,
+        "y": 356.625,
+        "right": 875,
+        "bottom": 619.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 495,
+        "y": 0,
+        "right": 945,
+        "bottom": 900,
+        "width": 450,
+        "height": 900
+      },
+      "controls": [
+        {
+          "x": 776,
+          "y": 510.375,
+          "right": 848,
+          "bottom": 554.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 589.796875,
+          "y": 559.375,
+          "right": 850.1875,
+          "bottom": 619.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "charging-bedroom",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "bedroom-night-check-v2",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "kitchen-before-cooking-v2",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 395.5,
+        "right": 350,
+        "bottom": 524.5,
+        "width": 310,
+        "height": 129
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 415.5,
+          "right": 323,
+          "bottom": 459.5,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 464.5,
+          "right": 325.1875,
+          "bottom": 524.5,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 341.375,
+        "right": 350,
+        "bottom": 578.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 469.625,
+          "right": 323,
+          "bottom": 513.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 518.625,
+          "right": 325.1875,
+          "bottom": 578.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 320,
+      "height": 568,
+      "panel": {
+        "x": 18,
+        "y": 190.625,
+        "right": 302,
+        "bottom": 453.375,
+        "width": 284,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 320,
+        "bottom": 568,
+        "width": 320,
+        "height": 568
+      },
+      "controls": [
+        {
+          "x": 203,
+          "y": 344.375,
+          "right": 275,
+          "bottom": 388.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 40.71875,
+          "y": 393.375,
+          "right": 279.265625,
+          "bottom": 453.375,
+          "width": 238.546875,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 341.375,
+        "right": 350,
+        "bottom": 578.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 469.625,
+          "right": 323,
+          "bottom": 513.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 518.625,
+          "right": 325.1875,
+          "bottom": 578.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 430,
+      "height": 932,
+      "panel": {
+        "x": 60,
+        "y": 385.375,
+        "right": 370,
+        "bottom": 622.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 430,
+        "bottom": 932,
+        "width": 430,
+        "height": 932
+      },
+      "controls": [
+        {
+          "x": 271,
+          "y": 513.625,
+          "right": 343,
+          "bottom": 557.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 84.796875,
+          "y": 562.625,
+          "right": 345.1875,
+          "bottom": 622.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "fire-shelter-practice",
+      "width": 1440,
+      "height": 900,
+      "panel": {
+        "x": 565,
+        "y": 369.375,
+        "right": 875,
+        "bottom": 606.625,
+        "width": 310,
+        "height": 237.25
+      },
+      "surface": {
+        "x": 466.875,
+        "y": 0,
+        "right": 973.125,
+        "bottom": 900,
+        "width": 506.25,
+        "height": 900
+      },
+      "controls": [
+        {
+          "x": 776,
+          "y": 497.625,
+          "right": 848,
+          "bottom": 541.625,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 589.796875,
+          "y": 546.625,
+          "right": 850.1875,
+          "bottom": 606.625,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    },
+    {
+      "id": "fire-stairs-practice",
+      "width": 390,
+      "height": 844,
+      "panel": {
+        "x": 40,
+        "y": 328.625,
+        "right": 350,
+        "bottom": 591.375,
+        "width": 310,
+        "height": 262.75
+      },
+      "surface": {
+        "x": 0,
+        "y": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "x": 251,
+          "y": 482.375,
+          "right": 323,
+          "bottom": 526.375,
+          "width": 72,
+          "height": 44,
+          "label": "开",
+          "centerHits": true
+        },
+        {
+          "x": 64.796875,
+          "y": 531.375,
+          "right": 325.1875,
+          "bottom": 591.375,
+          "width": 260.390625,
+          "height": 60,
+          "label": "重新开始本局游戏",
+          "centerHits": true
+        }
+      ],
+      "textFits": true,
+      "pageOverflow": false,
+      "scale": 1
+    }
+  ],
+  "dynamicHints": [
+    {
+      "id": "quake-cover-practice",
+      "waiting": "抓牢桌腿，另一臂继续护头。回到场景后继续等待。",
+      "after": "观察电池收音机，试着点击它。",
+      "stageClockFrozen": true
+    },
+    {
+      "id": "lift-wait",
+      "before": "观察报警通话按钮，试着点击它。",
+      "after": "观察被困乘客，试着把它移到合适的位置。"
+    },
+    {
+      "id": "oil-fire",
+      "before": "观察灶台上的燃气旋钮，点击可以关闭。",
+      "after": "备菜台上的锅盖可以盖住锅口。"
+    },
+    {
+      "id": "fire-shelter-practice",
+      "before": "观察通向浓烟的房门，试着点击它。",
+      "after": "观察湿毛巾，试着把它移到合适的位置。"
+    }
+  ],
+  "screenshots": [
+    "typhoon-home-pause-320x568.png",
+    "typhoon-home-pause-390x844.png",
+    "typhoon-home-pause-430x932.png",
+    "typhoon-home-pause-1440x900.png",
+    "flood-kit-pause-320x568.png",
+    "flood-kit-pause-390x844.png",
+    "flood-kit-pause-430x932.png",
+    "flood-kit-pause-1440x900.png",
+    "quake-bedroom-v2-pause-390x844.png",
+    "storm-street-check-v2-pause-390x844.png",
+    "thunder-park-v2-pause-390x844.png",
+    "forest-fire-sources-v2-pause-390x844.png",
+    "rain-street-preparation-v1-pause-320x568.png",
+    "rain-street-preparation-v1-pause-390x844.png",
+    "rain-street-preparation-v1-pause-430x932.png",
+    "rain-street-preparation-v1-pause-1440x900.png",
+    "flood-house-response-v1-pause-320x568.png",
+    "flood-house-response-v1-pause-390x844.png",
+    "flood-house-response-v1-pause-430x932.png",
+    "flood-house-response-v1-pause-1440x900.png",
+    "quake-cover-practice-pause-390x844.png",
+    "quake-exit-practice-pause-390x844.png",
+    "flood-highground-practice-pause-390x844.png",
+    "clear-corridor-pause-390x844.png",
+    "lift-wait-pause-320x568.png",
+    "lift-wait-pause-390x844.png",
+    "lift-wait-pause-430x932.png",
+    "lift-wait-pause-1440x900.png",
+    "lift-wait-next-action-hint.png",
+    "well-call-pause-390x844.png",
+    "clear-corridor-check-v2-pause-390x844.png",
+    "car-window-practice-pause-390x844.png",
+    "lift-contact-practice-pause-390x844.png",
+    "collapse-signal-practice-pause-390x844.png",
+    "oil-fire-pause-320x568.png",
+    "oil-fire-pause-390x844.png",
+    "oil-fire-pause-430x932.png",
+    "oil-fire-pause-1440x900.png",
+    "oil-fire-next-action-hint.png",
+    "charging-bedroom-pause-390x844.png",
+    "bedroom-night-check-v2-pause-390x844.png",
+    "kitchen-before-cooking-v2-pause-390x844.png",
+    "fire-shelter-practice-pause-320x568.png",
+    "fire-shelter-practice-pause-390x844.png",
+    "fire-shelter-practice-pause-430x932.png",
+    "fire-shelter-practice-pause-1440x900.png",
+    "fire-shelter-practice-next-action-hint.png",
+    "fire-stairs-practice-pause-390x844.png"
+  ],
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "fixture": "One private profile presets 24 completed levels solely to unlock menu access. Progress is not earned gameplay. All gameplay actions, pause, sound, restart and map navigation use native pointer/keyboard input. Audio observation wraps AudioContext.createAnalyser to retain existing production analysers without changing signals, settings or audio graph.",
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "contextClosed": true,
+  "browserClosed": true,
+  "assets": [
+    {
+      "file": "public/ui/pause-v1/paper.webp",
+      "sha256": "5b78bb788935d10d811063cd3a61b3f59009f46bb834b0604a0c8f3ae9f832b6",
+      "embedded": true
+    },
+    {
+      "file": "public/ui/pause-v1/bookmark.webp",
+      "sha256": "21eb0d64f25140b9c91004d0c1907155d889d0e3d6dc46e71fc1554e6648ba2d",
+      "embedded": true
+    }
+  ],
+  "finishedAt": "2026-09-15T07:34:34.642Z"
+}

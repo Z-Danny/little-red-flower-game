@@ -10,6 +10,7 @@ import {
   phoneFrame,
   pointerToScene,
 } from '@/app/game/scene-hunt/viewport';
+import { useInterfaceSound } from '../use-interface-sound';
 import { HuntSound } from '@/app/game/scene-hunt/sound';
 import { loadHuntArt, type HuntArt } from './art';
 import {SafeFeedback} from '../journey/safe-feedback';
@@ -17,6 +18,10 @@ import { drawHunt } from './renderer';
 import { useHintDisclosure } from './use-hint-disclosure';
 import { CountdownBar } from './countdown-bar';
 import { HintToggle } from './hint-toggle';
+import { PaintedIcon, PaintedLevelIntro } from '../painted-ui';
+import { PaintedFailure } from '../painted-failure';
+import { PauseMenu } from '../pause-menu';
+import { LevelLaunchStatus, useLevelAutoStart } from '../level-launch';
 import {
   presentationOf,
   timerLabel,
@@ -28,11 +33,12 @@ import {
 } from '@/app/game/scene-hunt/performance';
 type Props = {
   journey?: boolean;
+  autoStart?: boolean;
   pack: HuntPack;
   onBack: () => void;
   onFinish: (id: string, stars: number) => void;
 };
-export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props) {
+export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false, autoStart=false }: Props) {
   const view = presentationOf(pack),
     count = pack.rules.targets.length,
     v2 = !!pack.performance;
@@ -46,12 +52,12 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
     [ready, setReady] = useState(false),
     [error, setError] = useState(''),
     [muted, setMuted] = useState(false),
-    [music, setMusic] = useState(true),
     [hint, setHint] = useState<string | null>(null),
     [caption, setCaption] = useState(''),
     [audioState, setAudioState] = useState('locked');
+  const interfaceSound = useInterfaceSound(muted);
   const [hidden, setHidden] = useState(false);
-  const [characterAudio, setCharacterAudio] = useState(true);
+  const [loadAttempt, setLoadAttempt] = useState(0);
   const onDemand = view.clues === 'on-demand';
   const disclosure = useHintDisclosure(onDemand, `${paused}:${hidden}:${r.phase}:${r.found.length}`);
   const [clues, setClues] = useState<ReturnType<typeof clueLayout> | null>(
@@ -161,6 +167,9 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
   }, [pack]);
   useEffect(() => {
     let alive = true;
+    setReady(false);
+    setError('');
+    art.current = null;
     sound.current = new HuntSound(view.audio, pack.performance, {
       character: view.characterAudio,
       seconds: pack.rules.seconds,
@@ -187,7 +196,7 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
       sound.current?.dispose();
       document.removeEventListener('visibilitychange', hide);
     };
-  }, [pack]);
+  }, [pack, loadAttempt]);
   useEffect(() => {
     let frame = 0,
       last = performance.now(),
@@ -250,7 +259,7 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
   }, [pack, journey]);
   useEffect(() => {
     sound.current?.setScene(
-      !paused && r.phase !== 'ready' && r.phase !== 'unfinished' && r.phase !== 'failed',
+      !paused && (r.phase === 'playing' || r.phase === 'reveal'),
       p,
       v2
         ? endingFade(r.phase, r.revealAge) > 0
@@ -288,7 +297,7 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
       sound.current?.cue('resolve');
     }
     if (r.phase === 'complete' && prev.phase !== 'complete') {
-      sound.current?.cue('success');
+      sound.current?.finish();
       if (!award.current) {
         award.current = true;
         onFinish(pack.rules.id, r.stars);
@@ -311,16 +320,19 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
     prev.phase = r.phase;
   }, [r.found, r.phase, r.revealAge, p, r.marking, pack, onFinish, v2]);
   useEffect(() => {
-    if (modal)
+    if (modal && !paused)
       dialog.current?.querySelector<HTMLButtonElement>('button')?.focus();
-  }, [modal]);
+  }, [modal, paused]);
   const begin = async () => {
-    if (!ready) return;
+    if (!ready || r.phase !== 'ready') return;
+    resetFrameClock.current = true;
     dispatch({ type: 'start' });
     await sound.current?.unlock();
     sound.current?.setScene(!latest.current.paused && latest.current.r.phase === 'playing', pressure(pack.rules, latest.current.r), false, latest.current.r.elapsed);
     subtitle(view.opening, 6200);
   };
+  useLevelAutoStart(autoStart, ready, () => { void begin(); }, pack.rules.id);
+  const reload = () => { setReady(false); setError(''); setLoadAttempt(n => n + 1); };
   const tap = (id: string | null, x = 0, y = 0) => {
     disclosure.close();
     if (!ready || paused || r.phase !== 'playing') return;
@@ -346,35 +358,27 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
     captionRemaining.current = 0;
     hintRemaining.current = 0;
     sound.current?.reset();
+    resetFrameClock.current = true;
     dispatch({ type: 'reset' });
+    if (autoStart) { dispatch({ type: 'start' }); void sound.current?.unlock(); subtitle(view.opening, 4200); }
   };
   const retry = () => {
     replay();
-    resetFrameClock.current = true;
-    dispatch({ type: 'start' });
-    void sound.current?.unlock();
-    subtitle(view.opening, 4200);
-  };
-  const askHint = () => {
-    const id = pack.rules.targets.find((t) => !r.found.includes(t.id))?.id;
-    if (!id) return;
-    setPaused(false);
-    setHint(id);
-    sound.current?.setScene(r.phase !== 'ready', p);
-    hintRemaining.current = 3500;
-  };
-  const endObservation = () => {
-    setPaused(false);
-    setCaption('');
-    setHint(null);
-    dispatch({ type: 'end' });
+    if (!autoStart) {
+      dispatch({ type: 'start' });
+      void sound.current?.unlock();
+      subtitle(view.opening, 4200);
+    }
   };
   return (
     <section
+      {...interfaceSound}
       ref={surface}
       className="hunt-player"
       data-layout="portrait-v1"
       data-level={pack.rules.id}
+      data-ready={String(ready)}
+      data-auto-start={autoStart || undefined}
       data-phase={r.phase}
       data-found={r.found.join(',')}
       data-pressure={p.toFixed(3)}
@@ -389,7 +393,7 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
       data-stage={v2 ? performanceTier(r.elapsed, pack.performance?.timing === 'quarters' ? pack.rules.seconds : undefined) : undefined}
       data-animation-paused={paused || hidden}
     >
-      <div className="hunt-world" inert={modal}>
+      <div className="hunt-world" inert={modal || r.phase === 'ready'}>
         <canvas
           ref={canvas}
           aria-label={`${levelTitle(pack.rules.id,pack.rules.title)}：点击场景中的隐患，红圈表示发现`}
@@ -407,25 +411,22 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
               tap(hitMask(pack.skin, art.current.mask, x, y), x, y);
           }}
         />
-        {!ready && (
+        {!ready && !autoStart && (
           <div className="hunt-loading" role="status">
             {error || '正在准备场景…'}
           </div>
         )}
       </div>
-      <header className="hunt-hud" inert={modal} ref={hud}>
+      <header className="hunt-hud painted-game-hud" inert={(!paused && modal) || r.phase === 'ready'} ref={hud}>
         <button
-          onClick={() =>
-            v2 && r.phase === 'playing' ? setPaused(true) : onBack()
-          }
+          className="painted-hud-button pause-menu-navigation"
+          onClick={onBack}
           aria-label="返回关卡"
         >
-          ‹
+          <PaintedIcon name="back" />
         </button>
         <h1 title={levelTitle(pack.rules.id,pack.rules.title)}>
-          <small>
-            LEVEL {String(pack.rules.order).padStart(2, '0')} · 找隐患
-          </small>
+          <small>找隐患</small>
           {levelTitle(pack.rules.id,pack.rules.title)}
         </h1>
         {view.timer !== 'pressure-bar' && <span
@@ -448,9 +449,9 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
                     .toString()
                     .padStart(2, '0')}`}
         </span>}
-        {onDemand && <HintToggle disclosure={disclosure} />}
-        <button onClick={() => setPaused(true)} aria-label="暂停游戏">
-          Ⅱ
+        {onDemand && <HintToggle disclosure={disclosure} disabled={paused} />}
+        <button className="painted-hud-button pause-menu-navigation" onClick={() => setPaused(value => !value)} aria-label={paused ? '继续游戏' : '暂停游戏'} aria-expanded={paused}>
+          <PaintedIcon name="pause" />
         </button>
         {view.timer === 'pressure-bar' && <CountdownBar elapsed={r.elapsed} seconds={pack.rules.seconds} resolved={r.phase === 'reveal' || r.phase === 'complete'} deadline={pack.rules.timeout === 'fail'} pending={!!r.marking && r.found.length === count - 1} />}
       </header>
@@ -470,7 +471,7 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
               }
             : undefined
         }
-        inert={modal}
+        inert={modal || r.phase === 'ready'}
         aria-label={`${count}个物件剪影`}
       >
         {pack.rules.targets.map((t) => (
@@ -492,21 +493,15 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
           </span>
         ))}
       </div>
-      {r.phase === 'ready' && ready && (
-        <div className="hunt-entry">
-          <span>观察整幅场景 · 圈出 {count} 处隐患</span>
-          <button onClick={begin}>
-            进入场景 · 开启声音 <b>›</b>
-          </button>
-          <small>{onDemand ? '灯泡查看剪影 · 可随时静音' : '可随时静音 · 圈选不是实际处置'}</small>
-        </div>
+      {r.phase === 'ready' && !modal && (autoStart ? <LevelLaunchStatus error={error} onRetry={reload} onBack={onBack} /> :
+        <PaintedLevelIntro levelId={pack.rules.id} title={levelTitle(pack.rules.id, pack.rules.title)} ready={ready} error={error} onRetry={reload} onStart={begin} onBack={onBack} />
       )}
       {caption && !modal && r.phase !== 'ready' && (
         <div className="hunt-caption" role="status">
           {caption}
         </div>
       )}
-      <nav className="hunt-keyboard" inert={modal} aria-label="键盘辅助寻找">
+      <nav className="hunt-keyboard" inert={modal || r.phase === 'ready'} aria-label="键盘辅助寻找">
         {pack.rules.targets.map((t) => (
           <button
             disabled={
@@ -520,7 +515,30 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
         ))}
       </nav>
       {journey&&r.phase==='reveal'&&<SafeFeedback label="风险已识别 · 看看安全后的场景"/>}
-      {modal && !(journey&&r.phase==='complete'&&!paused) && (
+      {r.phase === 'failed' && !paused && <PaintedFailure
+        levelId={pack.rules.id}
+        levelTitle={levelTitle(pack.rules.id, pack.rules.title)}
+        kind="timeout"
+        missed={{ count: count - r.found.length, unit: '处' }}
+        reason={`还有 ${count - r.found.length} 处隐患未找到。`}
+        hint={`给你${pack.rules.seconds}秒，把隐患全揪出来。卡住了就点灯泡。`}
+        progress={`已找到 ${r.found.length}/${count} 处隐患`}
+        journey={journey}
+        onRetry={retry}
+        onBack={onBack}
+      />}
+      {paused && <PauseMenu
+        muted={muted}
+        onToggleSound={() => {
+          const next = !muted;
+          setMuted(next);
+          sound.current?.setMuted(next);
+          if (!next) void sound.current?.unlock();
+        }}
+        onRestart={retry}
+        onResume={() => setPaused(false)}
+      />}
+      {modal && !paused && r.phase !== 'failed' && !(journey&&r.phase==='complete') && (
         <div className="hunt-shade">
           <div
             className="hunt-dialog"
@@ -529,7 +547,6 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
             aria-modal="true"
             aria-labelledby="hunt-dialog-title"
             onKeyDown={(e) => {
-              if (e.key === 'Escape' && paused) setPaused(false);
               if (e.key === 'Tab') {
                 const buttons = [
                     ...e.currentTarget.querySelectorAll<HTMLButtonElement>(
@@ -550,59 +567,16 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
             }}
           >
             <small>
-              {paused
-                ? '训练暂停'
-                : r.phase === 'failed' ? '挑战未完成 · 未获得小红花'
-                : r.phase === 'unfinished'
+              {r.phase === 'unfinished'
                   ? '观察已结束 · 未获得小红花'
                   : `${count}处隐患 · 全部识别`}
             </small>
             <h2 id="hunt-dialog-title">
-              {paused
-                ? '休息一下'
-                : r.phase === 'failed' ? '时间到了，再挑战一次吧'
-                : r.phase === 'unfinished'
+              {r.phase === 'unfinished'
                   ? `本次观察未完成 ${r.found.length}/${count}`
                   : view.completeTitle}
             </h2>
-            {paused ? (
-              <>
-                <button
-                  className="hunt-primary"
-                  onClick={() => setPaused(false)}
-                >
-                  继续游戏
-                </button>
-                <div className="hunt-options">
-                  <button
-                    onClick={() => {
-                      const next = !muted;
-                      setMuted(next);
-                      sound.current?.setMuted(next);
-                      if (!next) void sound.current?.unlock();
-                    }}
-                  >
-                    {muted ? '打开声音' : '关闭声音'}
-                  </button>
-                  <button
-                    onClick={() => {
-                      setMusic(!music);
-                      sound.current?.setMusic(!music);
-                    }}
-                  >
-                    背景音乐：{music ? '开' : '关'}
-                  </button>
-                  {view.characterAudio === 'nonverbal-fear' && <button onClick={() => {
-                    setCharacterAudio(!characterAudio);
-                    sound.current?.setCharacter(!characterAudio);
-                  }}>人物反应：{characterAudio ? '开' : '关'}</button>}
-                  <button onClick={askHint}>需要提示</button>
-                </div>
-                <p>{view.pauseNote}</p>
-              </>
-            ) : r.phase === 'failed' ? (
-              <p>还有 <strong>{count - r.found.length}</strong> 处隐患未找到。请在{pack.rules.seconds}秒内找齐全部隐患。重新挑战，再仔细观察一次吧。</p>
-            ) : r.phase === 'unfinished' ? (
+            {r.phase === 'unfinished' ? (
               <p>
                 本次只记录观察结果，不发放小红花、不计入排行榜。可以重新开始，再仔细看看。
               </p>
@@ -628,12 +602,8 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false }: Props
               </>
             )}
             <div className="hunt-footer">
-              <button className={r.phase === 'failed' ? 'hunt-primary' : undefined} onClick={r.phase === 'failed' ? retry : replay}>{r.phase === 'failed' ? '重新挑战' : '重新开始'}</button>
-              {v2 && paused && r.phase === 'playing' ? (
-                <button onClick={endObservation}>结束本次观察</button>
-              ) : (
-                <button onClick={onBack}>返回关卡</button>
-              )}
+              <button onClick={replay}>重新开始</button>
+              <button onClick={onBack}>返回关卡</button>
             </div>
           </div>
         </div>

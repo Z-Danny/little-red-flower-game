@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "id": "busy-rescue-v1",
+  "title": "忙归忙，能搞定",
+  "sourceTitle": "忙乱救场",
+  "selectedByUser": "第三首（用户回复：我喜欢3）",
+  "date": "2026-09-15",
+  "generator": "OriginGame Generate MCP / music_v2",
+  "model": "music_v2",
+  "forceInstrumental": true,
+  "requestedDurationSeconds": 30,
+  "originalDemoId": "03-busy-rescue",
+  "originalDemoPath": "outputs/music-demos/emergency-comedy-v2/03-busy-rescue.mp3",
+  "archivedSource": "art-source/journey-audio-v1/source.mp3",
+  "sourceSha256": "620a8e8c84c52dd8a3c135471e468d636e4238cca38efa9f97497bc7831e5c04",
+  "sourceBytes": 720621,
+  "prompt": "Create an original instrumental loop sketch for a humorous emergency-response challenge game called 'This Neighborhood Needs You' / 这片儿没你不行. Style: FAST FUNKY ACTION CAPER, a bustling comic rescue mission with real time pressure and an audacious can-do hero. 138 BPM driving 4/4. Immediate tight breakbeat drums, a nimble propulsive electric bass riff, clipped electric guitar rhythm, punchy dry muted-brass answers, sharp organ stabs and a few rapid rising staccato string figures. A memorable slightly mischievous short hook that repeats with urgent rhythmic variations. Energetic and spirited, with quick witty stop-and-go accents and musical call-and-response, as though several things need fixing at once but the hero has a plan. Keep the groove fast, tense and confident, not laid-back funk or lounge jazz. Keep bass and drums driving under the amusing melodic answers; no extended solos. Strong clear rhythmic impact, compact readable arrangement, brief rests between lead phrases so game feedback remains audible. Start with full groove immediately, continuous activity without cinematic build-up or long soft breakdown. No vocals, speech, humming or choir. No realistic sirens, alarms, cartoon boings, whistles, explosions, laughter or actual environmental sounds. Avoid circus, nursery music, sentimental piano, cozy puzzle ambience, exaggerated horror or dark tragic drama. Entirely fresh composition, no quotation of known songs or film themes. Approximately 30 seconds, loop-oriented ending, no fadeout.",
+  "generationAction": "No new generation. The user-selected music_v2 demo was copied byte-for-byte and edited locally for looping.",
+  "rightsNote": "Generated source provenance is recorded here; no third-party sample-license claim or legal review is implied.",
+  "checks": {
+    "humanListening": "not_run",
+    "realDevice": "not_run",
+    "perceptualLoopSeam": "not_run"
+  }
+}

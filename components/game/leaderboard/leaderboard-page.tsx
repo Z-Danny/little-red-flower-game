@@ -51,7 +51,7 @@ export function LeaderboardPage({ board, onBack }: Props) {
     <header className="lb-header">
       <button className="lb-icon" onClick={onBack} aria-label="返回关卡首页"><ArrowLeft /></button>
       <span>{journeyCopy.brand}</span>
-      <span className="lb-local-badge">{local ? '本机榜' : '联网榜'}</span>
+      <span className="lb-local-badge">红人榜</span>
     </header>
 
     <div className="lb-hero">

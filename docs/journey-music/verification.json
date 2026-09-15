@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "html": "outputs/本地离线版/小红花应急行动.html",
+  "sha256": "2b4ca25fdc634239ec36f1ffb01d39372da84476c01a42a399bf787ea12e89fa",
+  "browserChecks": [
+    "390: no audio context or decode before gesture; original minimal homepage preserved",
+    "390: homepage gesture starts decoded music; map transition keeps the same source",
+    "390: map switching and map preview preserve music; entering a level stops its source and clock",
+    "390: return resumes position, one source only, independent persistent music toggle visible",
+    "390: muted preference survives reload; explicit unmute starts playback",
+    "synthetic background visibility pauses music and clock; foreground resumes",
+    "one complete loop plays continuously through the native buffer without new or overlapping sources",
+    "320: no audio context or decode before gesture; original minimal homepage preserved",
+    "320: homepage gesture starts decoded music; map transition keeps the same source",
+    "320: map switching and map preview preserve music; entering a level stops its source and clock",
+    "320: return resumes position, one source only, independent persistent music toggle visible",
+    "320: muted preference survives reload; explicit unmute starts playback",
+    "final offline HTML has no page errors or network requests"
+  ],
+  "browserClosed": true,
+  "networkRequests": 0,
+  "pageErrors": 0,
+  "unitTests": {
+    "command": "pnpm test:journey",
+    "passed": 60
+  },
+  "typecheck": "passed",
+  "build": "passed",
+  "humanListening": "not_run",
+  "physicalDevice": "not_run",
+  "perceptualLoopSeam": "not_run"
+}

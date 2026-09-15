@@ -130,12 +130,12 @@ try{
   }
   if(width===320&&!quick){const initial=await heat();await tick(15000);assert((await heat())>initial);await shot('thermometer-rising-320x568');check('waiting visibly raises thermometer liquid', {initial,after:await heat()});}
   await complete(width===375||width===430?['lid','gas']:['gas','lid']);await shot(`complete-${width}x${height}`);
-  assert.equal(await page.locator('.garden-reward>.garden-flower').count(),3);
-  const scores=await saved();await page.getByRole('button',{name:/返回地图/}).click();await tick(3000);
+  assert.equal(await page.locator('.painted-settlement-reward > .garden-flower').count(),3);
+  const scores=await saved();await page.locator('[data-testid="settlement-primary"]').click();await tick(3000);
   assert.equal(await page.locator('[data-map-node="oil-fire"]').getAttribute('data-status'),'complete');
   check(`real tap gas + drag lid/person completion ${width}x${height}`);
   if(width===390){
-   await open();assert.equal(await timer(),50);await complete(['lid','gas']);assert.equal(await page.locator('.garden-reward-label').innerText(),'本关花朵已种下');
+   await open();assert.equal(await timer(),50);await complete(['lid','gas']);assert.equal(await page.locator('[data-testid="settlement-reward"]').innerText(),'小红花已种下 · 本次为巩固练习');
    // Save timestamps may legitimately change; completed flower records may not.
    const completed=s=>{const a=JSON.parse(s);return a.players.find(p=>p.id===a.activePlayerId).completed;};
    assert.deepEqual(completed(await saved()),completed(scores));check('replay resets full 50 seconds; no duplicate flower reward');

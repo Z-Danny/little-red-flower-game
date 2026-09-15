@@ -86,7 +86,7 @@ try{
    for(let i=0;i<10&&(await host.getAttribute('data-phase'))==='playing';i++)await page.touchscreen.tap(wrong.x,wrong.y);
    assert.equal(await host.getAttribute('data-phase'),'failed');assert.equal(await bar.getAttribute('aria-valuenow'),'0');
    assert.equal(await page.evaluate(()=>localStorage.getItem('little-red-flower-leaderboard-v1')),saveBeforeMiss);
-   await page.getByRole('button',{name:'重新挑战',exact:true}).tap();await page.clock.runFor(100);
+   await page.locator('.painted-failure').getByRole('button',{name:'不服，再来！',exact:true}).tap();await page.clock.runFor(260);
    assert.ok((await used())<300,'Retry clears all deductions');
    check(entry.id,'real wrong pixels: -5 each, rapid -10, controls free, zero fails without award, reset');
    if(process.env.CHALLENGE_SMOKE==='1')continue;
@@ -100,7 +100,7 @@ try{
    await advanceTo(50000);assert.equal(await host.getAttribute('data-phase'),'failed');assert.equal(await bar.getAttribute('aria-valuenow'),'0');
    assert.equal(await page.evaluate(()=>localStorage.getItem('little-red-flower-leaderboard-v1')),saved);
    await page.screenshot({path:path.join(out,entry.id+'-failed.png')});
-   await page.getByRole('button',{name:'重新挑战',exact:true}).tap();await page.clock.runFor(100);
+   await page.locator('.painted-failure').getByRole('button',{name:'不服，再来！',exact:true}).tap();await page.clock.runFor(260);
    assert.equal(await host.getAttribute('data-phase'),'playing');assert.equal(await tray.isVisible(),false);assert.ok(Number(await bar.getAttribute('aria-valuenow'))>=49);
    check(entry.id,'50-second deadline, amber/red phases, pause, no failure award, one-click retry');
    {

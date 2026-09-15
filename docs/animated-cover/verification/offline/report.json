@@ -1,0 +1,1285 @@
+{
+  "status": "passed",
+  "mode": "offline",
+  "target": "file:///Users/danny/dannyprojects/%E5%B0%8F%E7%BA%A2%E8%8A%B1/outputs/%E6%9C%AC%E5%9C%B0%E7%A6%BB%E7%BA%BF%E7%89%88/%E5%B0%8F%E7%BA%A2%E8%8A%B1%E5%BA%94%E6%80%A5%E8%A1%8C%E5%8A%A8.html",
+  "checks": [
+    "fresh cover shows only start and none of the removed information blocks",
+    "fresh isolated storage shows only the start button",
+    "8 visible cover layers decode as PNG data URLs",
+    "visible fresh cover and unclipped 44px controls at 320x568",
+    "reduced-motion shows only the fully open flower with no running flower animation",
+    "reduced-motion hides all 10 leaves and disables all decorative and CTA animations",
+    "visible fresh cover and unclipped 44px controls at 390x844",
+    "reduced-motion shows only the fully open flower with no running flower animation",
+    "reduced-motion hides all 10 leaves and disables all decorative and CTA animations",
+    "visible fresh cover and unclipped 44px controls at 430x932",
+    "reduced-motion shows only the fully open flower with no running flower animation",
+    "reduced-motion hides all 10 leaves and disables all decorative and CTA animations",
+    "visible fresh cover and unclipped 44px controls at 1440x900",
+    "reduced-motion shows only the fully open flower with no running flower animation",
+    "reduced-motion hides all 10 leaves and disables all decorative and CTA animations",
+    "another-player-bookmark cover shows only start and none of the removed information blocks",
+    "unknown-level-bookmark cover shows only start and none of the removed information blocks",
+    "invalid-time-bookmark cover shows only start and none of the removed information blocks",
+    "locked-level-without-progress cover shows only start and none of the removed information blocks",
+    "valid-zero-flower-bookmark-storage-event cover shows continue/restart and none of the removed information blocks",
+    "cleared-bookmark-storage-event cover shows only start and none of the removed information blocks",
+    "only valid current-player exploration or scores enable continue; invalid/foreign bookmarks and cross-tab deletion keep start-only state",
+    "reduced-motion starts the map directly without a departing animation state",
+    "map home control returns to the cover without changing scores or the saved exploration position",
+    "zero-flower-explorer cover shows continue/restart and none of the removed information blocks",
+    "zero-flower-explorer-after-reload cover shows continue/restart and none of the removed information blocks",
+    "map home control returns to the cover without changing scores or the saved exploration position",
+    "zero-flower map exploration survives reload, enables continue and restarts without confirmation or leaderboard writes",
+    "fresh cover shows only start and none of the removed information blocks",
+    "water shimmer, flower pollen, title sheen and primary CTA animate, ignore pointer input and pause/resume together",
+    "title arrives once and continues moving from its initial idle phase",
+    "10 shared-texture leaves fall downward, pause/resume with the cover and never intercept menu input",
+    "seeked bud/bloom screenshots show the flower and title glow/scale changing together",
+    "flower opens forward on a 2.8-second loop, briefly holds full bloom, then starts the next bud without closing frames",
+    "start/continue plays a 360ms departure, locks controls and prevents repeated bookmark writes",
+    "map home control returns to the cover without changing scores or the saved exploration position",
+    "start/continue plays a 360ms departure, locks controls and prevents repeated bookmark writes",
+    "flower animation repeats naturally, and both start and continue enter the map",
+    "fresh cover shows only start and none of the removed information blocks",
+    "returning-player cover shows continue/restart and none of the removed information blocks",
+    "9 visible cover layers decode as PNG data URLs",
+    "visible returning cover and unclipped 44px controls at 320x568, with at least 18px between buttons",
+    "visible returning cover and unclipped 44px controls at 390x844, with at least 18px between buttons",
+    "legacy save enables the primary continue button without exposing player or flower information on the cover",
+    "continue enters the map with the same eight flowers and completion records",
+    "map home control returns to the cover without changing scores or the saved exploration position",
+    "returning-from-map cover shows continue/restart and none of the removed information blocks",
+    "canceling new game preserves all player and bookmark bytes and does not start departure",
+    "a concurrent player switch during reset confirmation reports the stale-player error without clearing saves or departing",
+    "confirmed new game clears only current progress, retains the profile and preserves the other player/bookmark",
+    "other-returning-player cover shows continue/restart and none of the removed information blocks",
+    "the preserved other player can still continue their own six-flower save",
+    "no browser runtime errors or network requests"
+  ],
+  "layouts": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568
+      },
+      "controls": [
+        {
+          "name": "开始游戏",
+          "x": 43.203125,
+          "y": 473.390625,
+          "width": 233.59375,
+          "height": 56
+        }
+      ],
+      "horizontalOverflow": false,
+      "verticalOverflow": false,
+      "headingOverlapsMenu": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "name": "开始游戏",
+          "x": 60.453125,
+          "y": 711.5,
+          "width": 269.09375,
+          "height": 71.734375
+        }
+      ],
+      "horizontalOverflow": false,
+      "verticalOverflow": false,
+      "headingOverlapsMenu": false
+    },
+    {
+      "viewport": {
+        "width": 430,
+        "height": 932
+      },
+      "screen": {
+        "x": 0,
+        "y": 0,
+        "width": 430,
+        "height": 932
+      },
+      "controls": [
+        {
+          "name": "开始游戏",
+          "x": 66.65625,
+          "y": 785.6875,
+          "width": 296.6875,
+          "height": 79.21875
+        }
+      ],
+      "horizontalOverflow": false,
+      "verticalOverflow": false,
+      "headingOverlapsMenu": false
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": {
+        "x": 460,
+        "y": 0,
+        "width": 520,
+        "height": 900
+      },
+      "controls": [
+        {
+          "name": "开始游戏",
+          "x": 541,
+          "y": 758.703125,
+          "width": 358,
+          "height": 76.5
+        }
+      ],
+      "horizontalOverflow": false,
+      "verticalOverflow": false,
+      "headingOverlapsMenu": false
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 568
+      },
+      "controls": [
+        {
+          "name": "继续游戏",
+          "x": 43.203125,
+          "y": 411.390625,
+          "width": 233.59375,
+          "height": 56
+        },
+        {
+          "name": "重新开始",
+          "x": 57.21875,
+          "y": 485.390625,
+          "width": 205.5625,
+          "height": 44
+        }
+      ],
+      "horizontalOverflow": false,
+      "verticalOverflow": false,
+      "headingOverlapsMenu": false,
+      "buttonGap": 18
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844
+      },
+      "controls": [
+        {
+          "name": "继续游戏",
+          "x": 60.453125,
+          "y": 637.25,
+          "width": 269.09375,
+          "height": 71.734375
+        },
+        {
+          "name": "重新开始",
+          "x": 76.59375,
+          "y": 734.296875,
+          "width": 236.796875,
+          "height": 48.9375
+        }
+      ],
+      "horizontalOverflow": false,
+      "verticalOverflow": false,
+      "headingOverlapsMenu": false,
+      "buttonGap": 25.3125
+    }
+  ],
+  "assets": [
+    {
+      "layer": "background",
+      "source": "data:image/png;base64,iVBORw0KGg…",
+      "embeddedPng": true,
+      "png": true,
+      "width": 941,
+      "height": 1672
+    },
+    {
+      "layer": "title",
+      "source": "data:image/png;base64,iVBORw0KGg…",
+      "embeddedPng": true,
+      "png": true,
+      "width": 1200,
+      "height": 691
+    },
+    {
+      "layer": "button-primary",
+      "source": "data:image/png;base64,iVBORw0KGg…",
+      "embeddedPng": true,
+      "png": true,
+      "width": 1000,
+      "height": 270
+    },
+    {
+      "layer": "button-secondary",
+      "source": "data:image/png;base64,iVBORw0KGg…",
+      "embeddedPng": true,
+      "png": true,
+      "width": 1000,
+      "height": 199
+    },
+    {
+      "layer": "bud",
+      "source": "data:image/png;base64,iVBORw0KGg…",
+      "embeddedPng": true,
+      "png": true,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "layer": "opening",
+      "source": "data:image/png;base64,iVBORw0KGg…",
+      "embeddedPng": true,
+      "png": true,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "layer": "half-open",
+      "source": "data:image/png;base64,iVBORw0KGg…",
+      "embeddedPng": true,
+      "png": true,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "layer": "bloom",
+      "source": "data:image/png;base64,iVBORw0KGg…",
+      "embeddedPng": true,
+      "png": true,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "layer": "falling-leaves",
+      "source": "data:image/png;base64,iVBORw0KGg…",
+      "embeddedPng": true,
+      "png": true,
+      "width": 192,
+      "height": 192
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "browserClosed": true,
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "sha256": "cfe0624c37e167b6a41111b7dd18f300d4d829ae8d2074117ec3c336ad655f40",
+  "runtime": {
+    "playwright": "/Users/danny/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+    "browser": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+  },
+  "departures": [
+    {
+      "reduced": true,
+      "selector": "[data-home-start]",
+      "writes": 1,
+      "coverWrites": 1,
+      "departing": false,
+      "allDisabled": true,
+      "elapsed": 219.19999998807907,
+      "duringDepartureWrites": null,
+      "initialLabels": [
+        "开始游戏"
+      ],
+      "departureLabels": [],
+      "labelsStable": true,
+      "transitionDurations": []
+    },
+    {
+      "reduced": false,
+      "selector": "[data-home-start]",
+      "writes": 1,
+      "coverWrites": 1,
+      "departing": true,
+      "allDisabled": true,
+      "elapsed": 440.10000002384186,
+      "duringDepartureWrites": 1,
+      "initialLabels": [
+        "开始游戏"
+      ],
+      "departureLabels": [
+        "开始游戏"
+      ],
+      "labelsStable": true,
+      "transitionDurations": [
+        360,
+        360,
+        360,
+        360,
+        650,
+        360,
+        360,
+        360
+      ]
+    },
+    {
+      "reduced": false,
+      "selector": "[data-home-continue]",
+      "writes": 1,
+      "coverWrites": 1,
+      "departing": true,
+      "allDisabled": true,
+      "elapsed": 397.80000001192093,
+      "duringDepartureWrites": 1,
+      "initialLabels": [
+        "继续游戏",
+        "重新开始"
+      ],
+      "departureLabels": [
+        "继续游戏",
+        "重新开始"
+      ],
+      "labelsStable": true,
+      "transitionDurations": [
+        200,
+        360,
+        360,
+        360,
+        360,
+        650,
+        360,
+        360,
+        360
+      ]
+    }
+  ],
+  "mapHomeScreenshot": "map-home-button.png",
+  "challengeDecorations": {
+    "decorations": [
+      {
+        "selector": ".title-lake-light",
+        "exists": true,
+        "animations": 6,
+        "ignoresPointer": true
+      },
+      {
+        "selector": ".title-pollen",
+        "exists": true,
+        "animations": 8,
+        "ignoresPointer": true
+      },
+      {
+        "selector": ".title-logo-sheen",
+        "exists": true,
+        "animations": 1,
+        "ignoresPointer": true
+      },
+      {
+        "selector": ".title-primary .title-button-beacon",
+        "exists": true,
+        "animations": 1,
+        "ignoresPointer": true
+      }
+    ],
+    "secondaryAnimations": 0,
+    "count": 58,
+    "states": [
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused"
+    ],
+    "timeDeltas": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "resumed": [
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running"
+    ]
+  },
+  "titleAnimation": {
+    "entranceCount": 1,
+    "idleCount": 3,
+    "idleStates": [
+      "running",
+      "running",
+      "running"
+    ],
+    "initial": {
+      "entrance": "matrix(0.75974, -0.0198945, 0.0198945, 0.75974, 0, 18)",
+      "float": "matrix(0.999994, -0.00349065, 0.00349065, 0.999994, 0, 0)",
+      "pulse": "matrix(1, 0, 0, 1, 0, 0)",
+      "glow": "drop-shadow(rgba(176, 123, 52, 0.23) 0px 2px 3px) brightness(1.015)",
+      "sheen": "0"
+    },
+    "moving": {
+      "entrance": "matrix(0.993768, 0.0001947, -0.0001947, 0.993768, 0, 0.887746)",
+      "float": "matrix(0.999998, -0.00223221, 0.00223221, 0.999998, 0, -0.961385)",
+      "pulse": "matrix(1.00188, 0, 0, 1.00188, 0, 0)",
+      "glow": "drop-shadow(rgba(207, 159, 79, 0.26) 0px 1.68679px 3.62642px) brightness(1.02283)",
+      "sheen": "0"
+    },
+    "settled": {
+      "entrance": "matrix(1, 0, 0, 1, 0, 0)",
+      "float": "matrix(0.999998, -0.00223221, 0.00223221, 0.999998, 0, -0.961385)",
+      "pulse": "matrix(1.00188, 0, 0, 1.00188, 0, 0)",
+      "glow": "drop-shadow(rgba(207, 159, 79, 0.26) 0px 1.68679px 3.62642px) brightness(1.02283)",
+      "sheen": "0"
+    }
+  },
+  "leaves": {
+    "flightCount": 10,
+    "sizes": [
+      "33px",
+      "19px",
+      "16px",
+      "35px",
+      "18px",
+      "17px",
+      "30px",
+      "15px",
+      "18px",
+      "31px"
+    ],
+    "durations": [
+      "10.5s",
+      "16s",
+      "17.5s",
+      "11.8s",
+      "18s",
+      "15s",
+      "12.2s",
+      "17s",
+      "17.5s",
+      "11s"
+    ],
+    "imageCount": 10,
+    "sourceCount": 1,
+    "pointerEvents": [
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none",
+      "none"
+    ],
+    "animationCount": 30,
+    "early": [
+      {
+        "x": 101.87999725341797,
+        "y": 249.42962646484375,
+        "transform": "matrix(1, 0, 0, 1, 26.88, 131.664)"
+      },
+      {
+        "x": 299.1000061035156,
+        "y": 217.11712646484375,
+        "transform": "matrix(1, 0, 0, 1, -22.4, 131.664)"
+      },
+      {
+        "x": 168.55062866210938,
+        "y": 316.89837646484375,
+        "transform": "matrix(1, 0, 0, 1, 20.16, 131.664)"
+      },
+      {
+        "x": 253.61062622070312,
+        "y": 284.19525146484375,
+        "transform": "matrix(1, 0, 0, 1, -21.28, 131.664)"
+      },
+      {
+        "x": 68.1875,
+        "y": 368.53900146484375,
+        "transform": "matrix(1, 0, 0, 1, 28, 131.664)"
+      },
+      {
+        "x": 319.2074890136719,
+        "y": 292.07025146484375,
+        "transform": "matrix(1, 0, 0, 1, -32.48, 131.664)"
+      },
+      {
+        "x": 139.91062927246094,
+        "y": 205.74212646484375,
+        "transform": "matrix(1, 0, 0, 1, 23.52, 131.664)"
+      },
+      {
+        "x": 198.49374389648438,
+        "y": 240.42962646484375,
+        "transform": "matrix(1, 0, 0, 1, -19.6, 131.664)"
+      },
+      {
+        "x": 309.927490234375,
+        "y": 182.85150146484375,
+        "transform": "matrix(1, 0, 0, 1, 16.24, 131.664)"
+      },
+      {
+        "x": 59.667497634887695,
+        "y": 282.19525146484375,
+        "transform": "matrix(1, 0, 0, 1, 32.48, 131.664)"
+      }
+    ],
+    "later": [
+      {
+        "x": 131.16000366210938,
+        "y": 578.589599609375,
+        "transform": "matrix(1, 0, 0, 1, 56.16, 460.824)"
+      },
+      {
+        "x": 274.70001220703125,
+        "y": 546.277099609375,
+        "transform": "matrix(1, 0, 0, 1, -46.8, 460.824)"
+      },
+      {
+        "x": 190.5106201171875,
+        "y": 646.058349609375,
+        "transform": "matrix(1, 0, 0, 1, 42.12, 460.824)"
+      },
+      {
+        "x": 230.43063354492188,
+        "y": 613.355224609375,
+        "transform": "matrix(1, 0, 0, 1, -44.46, 460.824)"
+      },
+      {
+        "x": 98.6875,
+        "y": 697.698974609375,
+        "transform": "matrix(1, 0, 0, 1, 58.5, 460.824)"
+      },
+      {
+        "x": 283.8275146484375,
+        "y": 621.230224609375,
+        "transform": "matrix(1, 0, 0, 1, -67.86, 460.824)"
+      },
+      {
+        "x": 165.53062438964844,
+        "y": 534.902099609375,
+        "transform": "matrix(1, 0, 0, 1, 49.14, 460.824)"
+      },
+      {
+        "x": 177.1437530517578,
+        "y": 569.589599609375,
+        "transform": "matrix(1, 0, 0, 1, -40.95, 460.824)"
+      },
+      {
+        "x": 327.61749267578125,
+        "y": 512.0114898681641,
+        "transform": "matrix(1, 0, 0, 1, 33.93, 460.824)"
+      },
+      {
+        "x": 95.04750061035156,
+        "y": 611.355224609375,
+        "transform": "matrix(1, 0, 0, 1, 67.86, 460.824)"
+      }
+    ],
+    "pausedStates": [
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused",
+      "paused"
+    ],
+    "pausedTimeDeltas": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "resumedStates": [
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running",
+      "running"
+    ],
+    "buttonHitTargets": [
+      true
+    ]
+  },
+  "animation": {
+    "initial": [
+      {
+        "name": "title-cover-sway",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-cover-bud",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-cover-opening",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-cover-half-open",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-cover-bloom",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentTime": 150.0210000419062,
+        "duration": 2800,
+        "delay": 0,
+        "playState": "running"
+      }
+    ],
+    "cycleTime": 2800,
+    "phases": {
+      "bud": {
+        "time": 0,
+        "budOpacity": 1,
+        "bloomOpacity": 0,
+        "frameOpacities": {
+          "bud": 1,
+          "opening": 0,
+          "half-open": 0,
+          "bloom": 0
+        },
+        "titleFilter": "drop-shadow(rgba(176, 123, 52, 0.23) 0px 2px 3px) brightness(1.015)",
+        "titleTransform": "matrix(1, 0, 0, 1, 0, 0)",
+        "cycleDurations": [
+          2800
+        ]
+      },
+      "bloom": {
+        "time": 1959.9999999999998,
+        "budOpacity": 0,
+        "bloomOpacity": 1,
+        "frameOpacities": {
+          "bud": 0,
+          "opening": 0,
+          "half-open": 0,
+          "bloom": 1
+        },
+        "titleFilter": "drop-shadow(rgba(255, 216, 121, 0.68) 0px 0px 11px) brightness(1.18)",
+        "titleTransform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+        "cycleDurations": [
+          2800
+        ]
+      },
+      "forward": [
+        {
+          "time": 0,
+          "budOpacity": 1,
+          "bloomOpacity": 0,
+          "frameOpacities": {
+            "bud": 1,
+            "opening": 0,
+            "half-open": 0,
+            "bloom": 0
+          },
+          "titleFilter": "drop-shadow(rgba(176, 123, 52, 0.23) 0px 2px 3px) brightness(1.015)",
+          "titleTransform": "matrix(1, 0, 0, 1, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        },
+        {
+          "time": 168,
+          "budOpacity": 1,
+          "bloomOpacity": 0,
+          "frameOpacities": {
+            "bud": 1,
+            "opening": 3.46945e-17,
+            "half-open": 0,
+            "bloom": 0
+          },
+          "titleFilter": "drop-shadow(rgba(180, 127, 55, 0.235) 0px 1.96605px 3.06789px) brightness(1.01585)",
+          "titleTransform": "matrix(1.0002, 0, 0, 1.0002, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        },
+        {
+          "time": 448,
+          "budOpacity": 0.5,
+          "bloomOpacity": 0,
+          "frameOpacities": {
+            "bud": 0.5,
+            "opening": 0.5,
+            "half-open": 0,
+            "bloom": 0
+          },
+          "titleFilter": "drop-shadow(rgba(201, 153, 74, 0.255) 0px 1.74766px 3.50468px) brightness(1.02131)",
+          "titleTransform": "matrix(1.00151, 0, 0, 1.00151, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        },
+        {
+          "time": 728,
+          "budOpacity": 0,
+          "bloomOpacity": 0,
+          "frameOpacities": {
+            "bud": 0,
+            "opening": 1,
+            "half-open": 0,
+            "bloom": 0
+          },
+          "titleFilter": "drop-shadow(rgba(230, 187, 99, 0.286) 0px 1.38876px 4.22247px) brightness(1.03028)",
+          "titleTransform": "matrix(1.00367, 0, 0, 1.00367, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        },
+        {
+          "time": 1036,
+          "budOpacity": 0,
+          "bloomOpacity": 0,
+          "frameOpacities": {
+            "bud": 0,
+            "opening": 0.5,
+            "half-open": 0.5,
+            "bloom": 0
+          },
+          "titleFilter": "drop-shadow(rgba(250, 211, 117, 0.314) 0px 1.07805px 4.8439px) brightness(1.03805)",
+          "titleTransform": "matrix(1.00553, 0, 0, 1.00553, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        },
+        {
+          "time": 1344,
+          "budOpacity": 0,
+          "bloomOpacity": 2.52323e-16,
+          "frameOpacities": {
+            "bud": 0,
+            "opening": 0,
+            "half-open": 1,
+            "bloom": 2.52323e-16
+          },
+          "titleFilter": "drop-shadow(rgba(255, 216, 121, 0.325) 0px 0.986395px 5.08163px) brightness(1.0419)",
+          "titleTransform": "matrix(1.00646, 0, 0, 1.00646, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        },
+        {
+          "time": 1652,
+          "budOpacity": 0,
+          "bloomOpacity": 0.5,
+          "frameOpacities": {
+            "bud": 0,
+            "opening": 0,
+            "half-open": 0.5,
+            "bloom": 0.5
+          },
+          "titleFilter": "drop-shadow(rgba(255, 216, 121, 0.525) 0px 0.428478px 8.42913px) brightness(1.12001)",
+          "titleTransform": "matrix(1.02543, 0, 0, 1.02543, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        },
+        {
+          "time": 1960,
+          "budOpacity": 0,
+          "bloomOpacity": 1,
+          "frameOpacities": {
+            "bud": 0,
+            "opening": 0,
+            "half-open": 0,
+            "bloom": 1
+          },
+          "titleFilter": "drop-shadow(rgba(255, 216, 121, 0.68) 0px 0px 11px) brightness(1.18)",
+          "titleTransform": "matrix(1.04, 0, 0, 1.04, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        },
+        {
+          "time": 2380,
+          "budOpacity": 0,
+          "bloomOpacity": 1,
+          "frameOpacities": {
+            "bud": 0,
+            "opening": 0,
+            "half-open": 0,
+            "bloom": 1
+          },
+          "titleFilter": "drop-shadow(rgba(255, 216, 121, 0.43) 0px 0.265936px 5.73406px) brightness(1.06202)",
+          "titleTransform": "matrix(1.006, 0, 0, 1.006, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        },
+        {
+          "time": 2660,
+          "budOpacity": 0,
+          "bloomOpacity": 1,
+          "frameOpacities": {
+            "bud": 0,
+            "opening": 0,
+            "half-open": 0,
+            "bloom": 1
+          },
+          "titleFilter": "drop-shadow(rgba(252, 212, 118, 0.318) 0px 1.05613px 4.88774px) brightness(1.0386)",
+          "titleTransform": "matrix(1.00566, 0, 0, 1.00566, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        },
+        {
+          "time": 2797.2,
+          "budOpacity": 0,
+          "bloomOpacity": 1,
+          "frameOpacities": {
+            "bud": 0,
+            "opening": 0,
+            "half-open": 0,
+            "bloom": 1
+          },
+          "titleFilter": "drop-shadow(rgba(176, 123, 52, 0.23) 0px 1.99947px 3.00106px) brightness(1.01501)",
+          "titleTransform": "matrix(1, 0, 0, 1, 0, 0)",
+          "cycleDurations": [
+            2800
+          ]
+        }
+      ],
+      "restarted": {
+        "time": 2801,
+        "budOpacity": 1,
+        "bloomOpacity": 0,
+        "frameOpacities": {
+          "bud": 1,
+          "opening": 0,
+          "half-open": 0,
+          "bloom": 0
+        },
+        "titleFilter": "drop-shadow(rgba(176, 123, 52, 0.23) 0px 2px 3px) brightness(1.015)",
+        "titleTransform": "matrix(1, 0, 0, 1, 0, 0)",
+        "cycleDurations": [
+          2800
+        ]
+      }
+    },
+    "dominantOpeningFrames": [
+      "bud",
+      "opening",
+      "half-open",
+      "bloom"
+    ],
+    "afterCycle": [
+      {
+        "name": "title-cover-sway",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-cover-bud",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-cover-opening",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-cover-half-open",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-cover-bloom",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentIteration": 1,
+        "playState": "running"
+      },
+      {
+        "name": "title-pollen-burst",
+        "currentIteration": 1,
+        "playState": "running"
+      }
+    ]
+  }
+}

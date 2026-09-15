@@ -3,7 +3,8 @@ import {levelTitle,journeyTiming} from '@/app/game/journey/presentation';
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { createRun, emotion, enabled, reduceRun } from '@/app/game/runtime/engine';
 import { cameraFor, pickObject, pickZone, scenePoses, toWorld } from '@/app/game/runtime/scene';
-import type { Input, LevelPackage, Run } from '@/app/game/runtime/schema';
+import type { Input, LevelPackage } from '@/app/game/runtime/schema';
+import { configuredPauseHint } from '@/app/game/runtime/pause-hint';
 import { alphaAt, loadArt, type Art } from './art';
 import { render, type Drag } from './renderer';
 import { configuredAudioFrame } from '@/app/game/runtime/response';
@@ -15,19 +16,25 @@ import {SafeFeedback} from '../journey/safe-feedback';
 import { CountdownBar } from '../scene-hunt/countdown-bar';
 import { HintToggle } from '../scene-hunt/hint-toggle';
 import { useHintDisclosure } from '../scene-hunt/use-hint-disclosure';
+import { PaintedIcon, PaintedLevelIntro } from '../painted-ui';
+import { PaintedFailure } from '../painted-failure';
+import { LevelLaunchStatus, useLevelAutoStart } from '../level-launch';
+import { useLegacyResponseAudio } from './use-legacy-response-audio';
+import { useInterfaceSound } from '../use-interface-sound';
+import { PauseMenu } from '../pause-menu';
 
 import { useCollectionSound } from '../scene-hunt/use-collection-sound';
 
-type Props = { pack: LevelPackage; onBack: () => void; onFinish: (id: string, stars: number) => void; journey?:boolean };
+type Props = { pack: LevelPackage; onBack: () => void; onFinish: (id: string, stars: number) => void; journey?:boolean; autoStart?:boolean };
 /** Staged practices opt in without changing the established legacy levels. */
 export function ConfiguredPlayer(props: Props) {
   return props.pack.skin.presentation ? <PracticePlayer {...props}/> : <LegacyConfiguredPlayer {...props}/>;
 }
-function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=false }: Props) {
+function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=false, autoStart=false }: Props) {
   const [pack]=useState(()=>journey?{...originalPack,rules:{...originalPack.rules,completion:{...originalPack.rules.completion,settleMs:journeyTiming.safeHold}}}:originalPack);
   const immersive = pack.rules.kind === 'response';
   const challenge = pack.rules.kind === 'prevention' && pack.rules.risk.timeout === 'fail';
-  const [started, setStarted] = useState(!challenge), [hidden, setHidden] = useState(false);
+  const [started, setStarted] = useState(false), [hidden, setHidden] = useState(false);
   const viewport = useGameViewport(pack.skin.world, immersive);
   const surface = useRef<HTMLElement>(null);
   const cameraObstacles = useCameraObstacles(surface, '.configured-hud > *', viewport.viewportKey, immersive);
@@ -35,23 +42,37 @@ function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=
   const [error, setError] = useState(''), [retry, setRetry] = useState(0), [selected, setSelected] = useState<string | null>(null);
   const canvas = useRef<HTMLCanvasElement>(null), art = useRef<Art | null>(null), drag = useRef<Drag | null>(null), dialog = useRef<HTMLDivElement>(null);
   const reported = useRef(false), reduced = useRef(false), latest = useRef({ run, paused, selected, ready, started });
+  const resetClock = useRef(true);
   latest.current = { run, paused, selected, ready, started };
   const modal = paused || run.phase === 'complete' || run.phase === 'failed';
   const disclosure = useHintDisclosure(challenge, `${paused}:${hidden}:${started}:${run.phase}:${run.resolved.length}`);
-  const collectionSound = useCollectionSound(challenge, pack.rules.risk.seconds, run, ready && started && !paused && !hidden);
+  const collectionSound = useCollectionSound(challenge, pack.rules.risk.seconds, run, ready && started && !paused && !hidden, pack.rules.interactions);
   useEffect(() => { const hide = () => { setHidden(document.hidden); drag.current = null; setSelected(null); }; document.addEventListener('visibilitychange', hide); return () => document.removeEventListener('visibilitychange', hide); }, []);
-  const audio = useResponseAudio(configuredAudioFrame(pack, run, ready && !paused), pack.skin.response?.cues);
+  const audio = useResponseAudio(configuredAudioFrame(pack, run, ready && started && !paused), pack.skin.response?.cues);
+  const legacyAudio = useLegacyResponseAudio(pack, run, ready && started && !paused && !hidden);
+  const interfaceSound = useInterfaceSound(challenge ? collectionSound.muted : legacyAudio.enabled ? legacyAudio.muted : audio.settings.muted, pack.skin.response ? audio.settings.sfx : 1);
+  const soundMuted = challenge ? collectionSound.muted : legacyAudio.enabled ? legacyAudio.muted : audio.settings.muted;
+  const toggleSound = () => {
+    const muted = !soundMuted;
+    if (challenge && collectionSound.muted !== muted) collectionSound.toggle();
+    if (legacyAudio.enabled && legacyAudio.muted !== muted) legacyAudio.toggle();
+    audio.setSettings(settings => ({ ...settings, muted }));
+  };
+  // Read the current rule without adding a notice or changing any game progress.
+  const pauseHint = paused && !challenge ? configuredPauseHint(pack, run) : undefined;
+  const unlock = () => { if (challenge) collectionSound.unlock(); else if (legacyAudio.enabled) legacyAudio.unlock(); else if (pack.skin.response) audio.unlock(); };
+  const pickup = () => { if (challenge) collectionSound.pickup(); else if (legacyAudio.enabled) legacyAudio.pickup(); else if (pack.skin.response) audio.pickup(); };
   useEffect(() => { if (immersive) { drag.current = null; setSelected(null); } }, [immersive, viewport.viewportKey]);
   const interact = (input: Input) => { if (!latest.current.ready || latest.current.paused || !latest.current.started) return; disclosure.close(); setRun(r => reduceRun(pack, r, { type: 'interact', input })); setSelected(null); };
   useEffect(() => {
-    let alive = true; setReady(false); art.current = null;
+    let alive = true; setReady(false); setError(''); art.current = null;
     loadArt(pack.skin).then(result => { if (alive) { art.current = result; setReady(true); } }).catch(e => { if (alive) setError(String(e.message ?? e)); });
     return () => { alive = false; };
   }, [pack, retry]);
   useEffect(() => {
     let frame = 0, last = performance.now(); reduced.current = matchMedia('(prefers-reduced-motion: reduce)').matches;
     const loop = (now: number) => {
-      const ms = Math.min(100, now - last); last = now;
+      const ms = resetClock.current ? 0 : Math.min(100, now - last); resetClock.current = false; last = now;
       if (latest.current.ready && latest.current.started && !latest.current.paused && !document.hidden) setRun(r => reduceRun(pack, r, { type: 'tick', ms }));
       const node = canvas.current, ctx = node?.getContext('2d');
       if (node && ctx && art.current && node.clientWidth && node.clientHeight) {
@@ -82,10 +103,10 @@ function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=
   useEffect(() => {
     if (!modal) return;
     drag.current = null; setSelected(null);
+    if (paused) return; // The shared pause menu owns focus and Escape handling.
     const before = document.activeElement as HTMLElement | null;
     dialog.current?.querySelector<HTMLButtonElement>('button')?.focus();
     const key = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && paused) setPaused(false);
       if (e.key !== 'Tab') return;
       const buttons = Array.from(dialog.current?.querySelectorAll<HTMLButtonElement>('button:not(:disabled)') ?? []);
       if (!buttons.length) return;
@@ -111,6 +132,7 @@ function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=
       return;
     }
     const pose = scenePoses(pack, run, reduced.current).find(p => p.id === id)!;
+    pickup();
     drag.current = { id, point, offset: { x: point.x - pose.x, y: point.y - pose.y }, start: point, moved: false, pointerId: e.pointerId };
     setSelected(id); e.currentTarget.setPointerCapture(e.pointerId);
   };
@@ -125,35 +147,52 @@ function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=
     const point = pointAt(e), pose = scenePoses(pack, run, reduced.current).find(p => p.id === d.id)!;
     interact({ source: d.id, mode: 'drop', target: pickZone(pack, point), point: { x: point.x - d.offset.x + pose.w / 2, y: point.y - d.offset.y + pose.h / 2 } });
   };
-  const replay = () => { audio.reset(); collectionSound.reset(); collectionSound.unlock(); setStarted(true); disclosure.close(); drag.current = null; reported.current = false; setSelected(null); setPaused(false); setRun(createRun(pack)); };
+  const begin = () => { if (!ready || latest.current.started) return; resetClock.current = true; setStarted(true); unlock(); };
+  useLevelAutoStart(autoStart, ready, begin, pack.rules.id);
+  const reload = () => { setReady(false); setError(''); setRetry(n => n + 1); };
+  const replay = () => { audio.reset(); collectionSound.reset(); legacyAudio.reset(); if (challenge) collectionSound.unlock(); else if (pack.skin.response) audio.unlock(); resetClock.current = true; setStarted(true); disclosure.close(); drag.current = null; reported.current = false; setSelected(null); setPaused(false); setRun(createRun(pack)); };
   const elapsedClock=pack.rules.risk.mode==='elapsed';
   const seconds = elapsedClock ? Math.floor(run.elapsed/1000) : Math.max(0, Math.ceil((100 - run.risk) * pack.rules.risk.seconds / 100));
-  return <section ref={surface} style={immersive ? viewport.style : undefined} data-game-surface={immersive ? '' : undefined} data-viewport={immersive ? viewport.viewportKey : undefined} onPointerDownCapture={() => { if (pack.skin.response) audio.unlock(); }} className="configured-player" data-level={pack.rules.id} data-engine="configured-v1" data-challenge={challenge ? '50s' : undefined} data-elapsed={Math.floor(run.elapsed)} data-phase={started ? run.phase : 'ready'} data-emotion={emotion(pack, run)} data-action={run.action?.rule ?? ''} data-resolved={run.resolved.join(',')} data-ready={String(ready)} data-paused={String(paused)}>
-    <div className="configured-world" inert={modal}>
+  return <section {...interfaceSound} ref={surface} style={immersive ? viewport.style : undefined} data-game-surface={immersive ? '' : undefined} data-viewport={immersive ? viewport.viewportKey : undefined} onPointerDownCapture={() => { if (started) unlock(); }} onKeyDownCapture={event => { if (started && (event.key === 'Enter' || event.key === ' ')) unlock(); }} className="configured-player" data-level={pack.rules.id} data-auto-start={autoStart || undefined} data-engine="configured-v1" data-challenge={challenge ? '50s' : undefined} data-elapsed={Math.floor(run.elapsed)} data-phase={started ? run.phase : 'ready'} data-emotion={emotion(pack, run)} data-action={run.action?.rule ?? ''} data-resolved={run.resolved.join(',')} data-ready={String(ready)} data-paused={String(paused)} data-audio-state={challenge ? collectionSound.status.state : legacyAudio.enabled ? legacyAudio.status.state : undefined} data-audio-loops={legacyAudio.enabled ? legacyAudio.status.loops : undefined} data-audio-played={legacyAudio.enabled ? legacyAudio.status.played : undefined} data-audio-cue={challenge ? collectionSound.status.lastCue : legacyAudio.enabled ? legacyAudio.status.lastCue : undefined} data-audio-rms={challenge ? collectionSound.status.rms.toFixed(6) : legacyAudio.enabled ? legacyAudio.status.rms.toFixed(6) : undefined} data-audio-muted={legacyAudio.enabled ? String(legacyAudio.muted) : undefined}>
+    <div className="configured-world" inert={modal || !started}>
       <canvas data-game-canvas={immersive ? '' : undefined} ref={canvas} aria-label={`${levelTitle(pack.rules.id,pack.rules.title)}互动场景`} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={() => { drag.current = null; setSelected(null); }} />
-      {!ready && <div className="configured-loading" role="status">{error || '正在准备场景…'}{error && <button onClick={() => { setError(''); setRetry(n => n + 1); }}>重试</button>}</div>}
+      {!ready && !autoStart && <div className="configured-loading" role="status">{error || '正在准备场景…'}{error && <button onClick={reload}>重试</button>}</div>}
     </div>
-    <header className="configured-hud" inert={modal}>
-      <button onClick={onBack} aria-label="返回关卡">‹</button><span><small>LEVEL {String(pack.rules.order).padStart(2, '0')}</small>{levelTitle(pack.rules.id,pack.rules.title)}</span>
+    <header className="configured-hud painted-game-hud" inert={!paused && (modal || !started)}>
+      <button className="painted-hud-button pause-menu-navigation" onClick={onBack} aria-label="返回关卡"><PaintedIcon name="back" /></button><span>{levelTitle(pack.rules.id,pack.rules.title)}</span>
       {!challenge && <time aria-label={elapsedClock?'训练用时（不是救援到达时间）':'风险倒计时'}>{run.phase !== 'playing' ? (pack.rules.completion.status ?? '安全') : `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`}</time>}
-      {challenge && <HintToggle disclosure={disclosure} />}
-      <button aria-label="暂停" onClick={() => setPaused(true)}>Ⅱ</button>
+      {challenge ? <HintToggle disclosure={disclosure} disabled={paused} /> : <button data-ui-sound="hint" className="painted-hud-button" aria-label="场景提示" disabled={paused} onClick={() => setRun(r => reduceRun(pack, r, { type: 'hint' }))}><PaintedIcon name="hint" /></button>}
+      <button className="painted-hud-button pause-menu-navigation" aria-label={paused ? '继续游戏' : '暂停'} aria-expanded={paused} onClick={() => setPaused(value => !value)}><PaintedIcon name="pause" /></button>
       {challenge && <CountdownBar elapsed={run.elapsed} seconds={pack.rules.risk.seconds} resolved={run.phase === 'settling' || run.phase === 'complete'} deadline />}
     </header>
     {pack.rules.kind === 'prevention' && <div id={disclosure.id} {...disclosure.panelProps} hidden={challenge && !disclosure.expanded} className="configured-targets" inert={modal} aria-label="需要寻找的物件">{pack.rules.goals.filter(g => g.showTarget !== false).map(goal => <div key={goal.id} className={run.resolved.includes(goal.id) ? 'done' : ''} aria-label={`${goal.label}${run.resolved.includes(goal.id) ? '已完成' : '待寻找'}`}><img src={pack.skin.assets[pack.skin.poses[goal.object].asset].src} alt={goal.label} draggable={false} />{run.resolved.includes(goal.id) && <b>✓</b>}</div>)}</div>}
-    {challenge && !started && ready && !modal && <div className="disaster-entry configured-entry"><span>观察场景 · 点击收齐 {pack.rules.goals.length} 件物品</span><button onClick={() => { setStarted(true); collectionSound.unlock(); }}>进入场景 · 开启声音 <b>›</b></button><small>限时训练，不代表现实中必须在这一时限内完成收纳</small></div>}
+    {!started && !modal && (autoStart ? <LevelLaunchStatus error={error} onRetry={reload} onBack={onBack} /> : <PaintedLevelIntro levelId={pack.rules.id} title={levelTitle(pack.rules.id, pack.rules.title)} ready={ready} error={error} onRetry={reload} onStart={begin} onBack={onBack} />)}
     {run.notice && started && !modal && <div className="configured-notice" role="status">{run.notice.text}</div>}
     <nav className="configured-keyboard" aria-label="键盘辅助操作" inert={modal || !started}>
-      {pack.rules.objects.filter(o => enabled(o, run)).map(o => <button key={o.id} disabled={!ready || !started || !!run.action || run.phase !== 'playing'} onClick={() => o.input === 'tap' ? interact({ source: o.id, mode: 'tap' }) : setSelected(o.id)}>{o.label}</button>)}
+      {pack.rules.objects.filter(o => enabled(o, run)).map(o => <button key={o.id} disabled={!ready || !started || !!run.action || run.phase !== 'playing'} onClick={() => { if (o.input === 'tap') interact({ source: o.id, mode: 'tap' }); else { if (selected !== o.id) pickup(); setSelected(o.id); } }}>{o.label}</button>)}
       {selected && Object.entries(pack.skin.zones).map(([id, box]) => <button key={id} onClick={() => interact({ source: selected, mode: 'drop', target: id, point: { x: box.x + box.w / 2, y: box.y + box.h / 2 } })}>放到 {pack.skin.zoneLabels?.[id] ?? id}</button>)}
     </nav>
     {journey&&run.phase==='settling'&&<SafeFeedback label={pack.rules.completion.title}/>}
-    {modal && !(journey&&run.phase==='complete'&&!paused) && <div className="configured-shade"><div className="configured-dialog" ref={dialog} role="dialog" aria-modal="true" aria-labelledby="configured-dialog-title">
-      <h2 id="configured-dialog-title">{paused ? '暂停训练' : run.phase === 'failed' ? '时间到了，再挑战一次吧' : (pack.rules.completion.title ?? '这一关，安全了')}</h2>
-      {paused ? <><button onClick={() => setPaused(false)}>继续游戏</button><button onClick={() => { setPaused(false); setRun(r => reduceRun(pack, r, { type: 'hint' })); }}>需要提示</button></> : run.phase === 'failed' ? <><p>还有 {pack.rules.goals.length - run.resolved.length} 件物品未收好。观察剪影，再试一次。</p><small>本次不发放小红花，不影响已有最高纪录。</small></> : <><div className="configured-flowers" aria-label={`获得 ${run.stars} 朵小红花`}>{'✿'.repeat(run.stars)}</div><p>{pack.rules.completion.summary}</p></>}
-      {challenge && <button onClick={collectionSound.toggle}>{collectionSound.muted ? '打开声音' : '关闭声音'}</button>}
-      {pack.skin.response && <button onClick={() => audio.setSettings(s => ({ ...s, muted: !s.muted }))}>{audio.settings.muted ? '打开声音' : '关闭声音'}</button>}
-      <button onClick={replay}>{run.phase === 'failed' ? '重新挑战' : '重新开始'}</button><button onClick={onBack}>返回关卡</button>{paused && <small>{pack.rules.safety}</small>}
+    {run.phase === 'failed' && !paused && <PaintedFailure
+      levelId={pack.rules.id}
+      levelTitle={levelTitle(pack.rules.id, pack.rules.title)}
+      kind={challenge ? 'timeout' : 'unsafe-action'}
+      missed={challenge ? { count: pack.rules.goals.length - run.resolved.length, unit: '件' } : undefined}
+      reason={challenge ? `还有 ${pack.rules.goals.length - run.resolved.length} 件物品未收好。` : (run.notice?.text ?? '这次操作触发了风险，请先查看场景中的提示。')}
+      hint={challenge ? `限时${pack.rules.risk.seconds}秒，物品和位置得对上号。卡住了就点灯泡。` : '先看清这次提醒。救急靠判断，可别硬莽。'}
+      progress={challenge ? `已收好 ${run.resolved.length}/${pack.rules.goals.length} 件物品` : `已完成 ${run.resolved.length}/${pack.rules.goals.length} 项训练`}
+      journey={journey}
+      onRetry={replay}
+      onBack={onBack}
+    />}
+    {paused && <PauseMenu hint={pauseHint} muted={soundMuted} onToggleSound={toggleSound} onRestart={replay} onResume={() => { setPaused(false); unlock(); }} />}
+    {modal && !paused && run.phase !== 'failed' && !(journey&&run.phase==='complete') && <div className="configured-shade"><div className="configured-dialog" ref={dialog} role="dialog" aria-modal="true" aria-labelledby="configured-dialog-title">
+      <h2 id="configured-dialog-title">{pack.rules.completion.title ?? '这一关，安全了'}</h2>
+      <div className="configured-flowers" aria-label={`获得 ${run.stars} 朵小红花`}>{'✿'.repeat(run.stars)}</div><p>{pack.rules.completion.summary}</p>
+      {challenge && <button data-ui-sound="off" onClick={collectionSound.toggle}>{collectionSound.muted ? '打开声音' : '关闭声音'}</button>}
+      {legacyAudio.enabled && <button data-ui-sound="off" onClick={legacyAudio.toggle}>{legacyAudio.muted ? '打开声音' : '关闭声音'}</button>}
+      {pack.skin.response && <button data-ui-sound="off" onClick={() => audio.setSettings(s => ({ ...s, muted: !s.muted }))}>{audio.settings.muted ? '打开声音' : '关闭声音'}</button>}
+      <button onClick={replay}>重新开始</button><button onClick={onBack}>返回关卡</button>
     </div></div>}
   </section>;
 }

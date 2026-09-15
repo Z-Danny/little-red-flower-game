@@ -1,0 +1,42 @@
+{
+  "testedAt": "2026-09-15T06:01:50.430782+00:00",
+  "scope": "painted failure v2 and interaction motion",
+  "protectedContentAndEngineFiles": {
+    "count": 185,
+    "changed": []
+  },
+  "checks": {
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "gitDiffCheck": "passed",
+    "sceneHuntTests": 317,
+    "disasterTests": 32,
+    "responseTests": 19,
+    "journeyTests": 77,
+    "unitTestsPassed": 445
+  },
+  "offline": {
+    "bytes": 252869599,
+    "sha256": "780267e8fc0208868321719e6b6bf43b5e42a45d7f0c99f94bcb51d70336e921",
+    "selfContained": true,
+    "checks": [
+      "JavaScript syntax",
+      "No external module imports",
+      "No CSS imports",
+      "Embedded scene images",
+      "Single inline script",
+      "No external HTML resource references",
+      "No typhoon AI narration assets"
+    ]
+  },
+  "browser": {
+    "status": "passed",
+    "cases": 8,
+    "layouts": 16,
+    "exits": 17,
+    "report": "report.json"
+  },
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "commitPushPublish": "not_requested_not_run"
+}

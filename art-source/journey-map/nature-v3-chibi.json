@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "asset": "public/levels/journey-map/nature-v3-chibi.png",
+  "source": "/Users/danny/.codex/generated_images/01a0a2a1-2ec8-7721-8dee-6174d675ebc6/exec-344a8fbc-eb35-45aa-8575-b042fe3d4765.png",
+  "tool": "built-in image_gen",
+  "sourceDimensions": {
+    "width": 726,
+    "height": 2167
+  },
+  "sha256": "5b4635ba8c0517f863f6827f13bacce31e9a81e88ca262b1968cdf723bae81ef",
+  "selectedByUser": true,
+  "logicalMap": {
+    "width": 720,
+    "height": 2160
+  },
+  "changes": "减少装饰树木；七栋主建筑使用独立配色；Q版手绘轮廓。由用户确认后替换地图背景。",
+  "scope": "地图背景；关内规则、ID、皮肤、蒙版和存档不变。",
+  "generationBrief": "以原自然灾害地图为布局参考、封面为暖色手绘参考，保留11处关卡地标和贯穿路线，局部简化为圆润Q版建筑。最后一版重新贴近原始地图布局。"
+}

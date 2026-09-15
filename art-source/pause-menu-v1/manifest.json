@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-09-15T07:17:24.755Z",
+  "tool": "image_gen",
+  "kind": "pause-menu-ui-only",
+  "sourcePreview": "/Users/danny/.codex/generated_images/01a0a3cc-418b-7840-aaa7-7095d4b385b0/exec-04007085-87f9-47f0-ab02-f3210121c0e3.png",
+  "files": [
+    {
+      "path": "art-source/pause-menu-v1/approved-preview.png",
+      "bytes": 1695406,
+      "sha256": "b03843a25f73a6aad20cb524b8ca7c8d69edda4a5f2a0384af2353aab8594e2f"
+    },
+    {
+      "path": "art-source/pause-menu-v1/paper-source.png",
+      "bytes": 1926418,
+      "sha256": "72d336fc72ecca943d996f60d51bab07b81cd496961e4da19a7fb3d852bde9bd"
+    },
+    {
+      "path": "art-source/pause-menu-v1/bookmark-source.png",
+      "bytes": 1498264,
+      "sha256": "233dd46d6ba3dd6c99e7576b58df7124c59fae2eda51ce6c6ed07c201aa56066"
+    },
+    {
+      "path": "public/ui/pause-v1/paper.webp",
+      "bytes": 188686,
+      "sha256": "5b78bb788935d10d811063cd3a61b3f59009f46bb834b0604a0c8f3ae9f832b6"
+    },
+    {
+      "path": "public/ui/pause-v1/bookmark.webp",
+      "bytes": 252376,
+      "sha256": "21eb0d64f25140b9c91004d0c1907155d889d0e3d6dc46e71fc1554e6648ba2d"
+    }
+  ]
+}

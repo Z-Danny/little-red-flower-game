@@ -1,0 +1,418 @@
+{
+  "status": "passed",
+  "artifact": "outputs/地图轮盘版/小红花应急行动.html",
+  "sha256": "1ab9e4ed9f61751844b9e2cf0f3493aae57ffe7d17c735e769f5999fe6ded4af",
+  "browser": "152.0.7977.83",
+  "checks": [
+    {
+      "name": "fresh 自然灾害 collapsed 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 自然灾害 expanded 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 自然灾害: top/bottom map entries remain visible and clickable at 320x568",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全 collapsed 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全 expanded 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全: top/bottom map entries remain visible and clickable at 320x568",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公 collapsed 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公 expanded 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公: top/bottom map entries remain visible and clickable at 320x568",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 自然灾害 collapsed 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 自然灾害 expanded 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全 collapsed 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全 expanded 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公 collapsed 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公 expanded 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 自然灾害 collapsed 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 自然灾害 expanded 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全 collapsed 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全 expanded 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公 collapsed 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公 expanded 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 自然灾害 collapsed 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 自然灾害 expanded 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全 collapsed 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全 expanded 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公 collapsed 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公 expanded 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 自然灾害 collapsed 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 自然灾害 expanded 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全 collapsed 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 公共安全 expanded 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公 collapsed 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh 居家校园办公 expanded 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "fresh: touch, Enter/Space, Tab navigation, Escape and outside dismissal work",
+      "status": "passed"
+    },
+    {
+      "name": "fresh: fan disclosure and all category choices preserve progress",
+      "status": "passed"
+    },
+    {
+      "name": "fresh: flower/achievement entries show current medals; archive sound and leaderboard controls work",
+      "status": "passed"
+    },
+    {
+      "name": "fresh: level opens, unfinished return and home/reload continue preserve progress",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害 collapsed 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害 expanded 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害: top/bottom map entries remain visible and clickable at 320x568",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全 collapsed 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全 expanded 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全: top/bottom map entries remain visible and clickable at 320x568",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公 collapsed 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公 expanded 320x568: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公: top/bottom map entries remain visible and clickable at 320x568",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害 collapsed 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害 expanded 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全 collapsed 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全 expanded 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公 collapsed 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公 expanded 390x844: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害 collapsed 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害 expanded 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全 collapsed 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全 expanded 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公 collapsed 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公 expanded 430x932: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害 collapsed 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害 expanded 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全 collapsed 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全 expanded 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公 collapsed 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公 expanded 520x960: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害 collapsed 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 自然灾害 expanded 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全 collapsed 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 公共安全 expanded 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公 collapsed 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63 居家校园办公 expanded 1440x900: quarter fan and vertical tools fit and stay in their corners",
+      "status": "passed"
+    },
+    {
+      "name": "completed63: touch, Enter/Space, Tab navigation, Escape and outside dismissal work",
+      "status": "passed"
+    },
+    {
+      "name": "completed63: fan disclosure and all category choices preserve progress",
+      "status": "passed"
+    },
+    {
+      "name": "completed63: flower/achievement entries show current medals; archive sound and leaderboard controls work",
+      "status": "passed"
+    },
+    {
+      "name": "completed63: level opens, unfinished return and home/reload continue preserve progress",
+      "status": "passed"
+    },
+    {
+      "name": "All five icons decode, match source SHA-256, and are embedded in the final offline HTML",
+      "status": "passed"
+    },
+    {
+      "name": "Final offline HTML runs without browser errors, failed requests or HTTP(S) dependencies",
+      "status": "passed"
+    }
+  ],
+  "layoutCount": 60,
+  "viewports": [
+    "320x568",
+    "390x844",
+    "430x932",
+    "520x960",
+    "1440x900"
+  ],
+  "pinnedScrollSamples": 180,
+  "mapEdgeSamples": 12,
+  "mapEdgeFailures": [],
+  "assets": [
+    {
+      "file": "/levels/journey-map/map-wheel-v1/flower.webp",
+      "sha256": "531bbacf5422c98cc1c25499144da967ad97bb24a4ffd3505145b337b7f79426",
+      "width": 384,
+      "height": 384,
+      "embeddedMatchesSource": true
+    },
+    {
+      "file": "/levels/journey-map/map-wheel-v1/trophy.webp",
+      "sha256": "78316873e736845c231632f9f609d38281b4223da7f3dc0f957fad24e6e241c6",
+      "width": 384,
+      "height": 384,
+      "embeddedMatchesSource": true
+    },
+    {
+      "file": "/levels/journey-map/map-wheel-v1/category-nature.webp",
+      "sha256": "f53c0e547697576a32028e904f28d02e11a6fb2bd150f3e9d26aeedb6f8ca7d7",
+      "width": 384,
+      "height": 384,
+      "embeddedMatchesSource": true
+    },
+    {
+      "file": "/levels/journey-map/map-wheel-v1/category-public.webp",
+      "sha256": "ed743ff440200012dbbfa8f5a4199fecd48e298e18bec4b34514dc6a8916252f",
+      "width": 384,
+      "height": 384,
+      "embeddedMatchesSource": true
+    },
+    {
+      "file": "/levels/journey-map/map-wheel-v1/category-home.webp",
+      "sha256": "c7e414c3c69cce2222ef8292391760eff9f29eee0ed93a68ad648d7b172f1a61",
+      "width": 384,
+      "height": 384,
+      "embeddedMatchesSource": true
+    }
+  ],
+  "fixtures": {
+    "fresh": "Isolated storage; no preset progress.",
+    "completed63": "First 21 mapped levels preset to 3 flowers (63 total); last 3 remain incomplete. Display/navigation fixture only, not earned gameplay."
+  },
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "contextClosed": [
+    "fresh",
+    "completed63"
+  ],
+  "browserClosed": true,
+  "manualVisualReview": [
+    "fresh-nature-collapsed-390x844.png",
+    "fresh-nature-expanded-390x844.png",
+    "completed63-nature-expanded-320x568.png"
+  ],
+  "additionalChecks": {
+    "typecheck": "passed",
+    "targetedOxlint": "passed",
+    "journeyUnitTests": {
+      "passed": 47,
+      "failed": 0
+    }
+  },
+  "fullReport": "outputs/map-fan-verification/report.json",
+  "screenshots": [
+    "fresh-nature-map-top-320x568.png",
+    "fresh-public-map-top-320x568.png",
+    "fresh-home-map-top-320x568.png",
+    "fresh-nature-collapsed-390x844.png",
+    "fresh-nature-expanded-390x844.png",
+    "fresh-public-collapsed-390x844.png",
+    "fresh-public-expanded-390x844.png",
+    "fresh-home-collapsed-390x844.png",
+    "fresh-home-expanded-390x844.png",
+    "fresh-achievements-390x844.png",
+    "completed63-nature-collapsed-320x568.png",
+    "completed63-nature-expanded-320x568.png",
+    "completed63-nature-map-top-320x568.png",
+    "completed63-public-map-top-320x568.png",
+    "completed63-home-map-top-320x568.png",
+    "completed63-nature-collapsed-390x844.png",
+    "completed63-nature-expanded-390x844.png",
+    "completed63-public-collapsed-390x844.png",
+    "completed63-public-expanded-390x844.png",
+    "completed63-home-collapsed-390x844.png",
+    "completed63-home-expanded-390x844.png",
+    "completed63-nature-collapsed-430x932.png",
+    "completed63-nature-expanded-430x932.png",
+    "completed63-nature-collapsed-520x960.png",
+    "completed63-nature-expanded-520x960.png",
+    "completed63-nature-collapsed-1440x900.png",
+    "completed63-nature-expanded-1440x900.png",
+    "completed63-achievements-390x844.png"
+  ]
+}

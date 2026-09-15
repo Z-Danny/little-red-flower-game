@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "4bd24bb78fc44107c2c4fa7c0149435154959f9d0ecb114aca2680ad13df826c",
+  "bytes": 252721634,
+  "unitTests": 1015,
+  "targetedLegacyTests": 10,
+  "targetedJourneyFeedbackTests": 17,
+  "typecheck": "passed",
+  "build": "passed",
+  "exportChecks": 7,
+  "feedbackBrowserChecks": 27,
+  "musicBrowserChecks": 13,
+  "pageErrors": 0,
+  "networkRequests": 0,
+  "browserClosed": true,
+  "ruleFilesUnchanged": 23,
+  "humanListening": "not_run",
+  "physicalDevice": "not_run",
+  "reports": [
+    "outputs/audio-feedback-verification/report.json",
+    "outputs/journey-music-verification/report.json"
+  ],
+  "builtAudioSourceSnapshot": {
+    "app/game/runtime/practice-audio.ts": "ba0c82a77b51ddc18e801d555269e3356ebde23fc7690f5e53bb267a444c592f",
+    "app/game/runtime/legacy-response-audio.ts": "2af72f5be6ae024562ab10fab19d47555a0448524afd8d8534cd5adf8ef8122f",
+    "app/game/scene-hunt/collection-cues.ts": "e1969a091834fcb9682af27ad0c187c27a132b710b1fc7fb43b32fab4b37d704",
+    "app/game/journey/planting-audio.ts": "c8af432f324914d788dd25c30097b8968689e170df6e271968d36d2169d78d0a",
+    "components/game/journey/reward-sound.ts": "1777e3f5b13f0c8a5a663f6fc318c316c7025b3612480c521c55473612d4b7a4",
+    "components/game/use-interface-sound.ts": "b247385536d3d11246a9fe71fff7361562d0ac0ab1312d6e270b4cd3d523d993",
+    "components/game/configured/use-legacy-response-audio.ts": "41b55b8a7912619a30d048d51f567244d359c792d898fb081042a58ec6c7e684",
+    "components/game/configured/player.tsx": "763ab849473624ae2be4bb533cb77fda780afd6e9590ddfe6f732858cf4e4936",
+    "components/game/scene-hunt/use-collection-sound.ts": "6fb34dd4f19905378d41b61175466749d2ba16c050af0ba7846f9f8cded154b0",
+    "components/game/journey/use-map-journey.ts": "88a943d150beafd0b054e2bd060aa83c6a99fafac33f7dbf1bb7339692b3ed68",
+    "components/game/game-app.tsx": "da8a00c8b1e24e87d641d5038e80e184977eeaac39913d55c612577da9289439",
+    "components/game/level-hub.tsx": "4b43c8cb950598a52421403edace2cf0f20dc4aad3408a35c7105ae74fbc31a0",
+    "components/game/journey/archive.tsx": "3deb98f2d1ed36ddb854437973df0c8b267e054487b5f3cad296c6f531804740",
+    "components/game/scene-hunt/hint-toggle.tsx": "86cdc26e9730f82fcc3682746de932ea57fef547acd9c035e1231cd4b2a08d00",
+    "components/game/scene-hunt/player.tsx": "3583bcc63bfddbe16e6cf05c475c7a1c7503ae5e1fea5b5bb990f8949bc99ed0",
+    "components/game/disaster/player.tsx": "9f52f65fd399abddca5ffde0ca4c462bcf7be81bf08adb397940a86c4a944b47",
+    "components/game/configured/practice-player.tsx": "865a3676aa0619c695f078d67f826d33c7870d917e44124bf9458b79f50e5dde",
+    "components/game/kitchen/kitchen-player.tsx": "9ee340380ce6d0125e65bcceffd0699c7fcbee01a206769bceb848826e9d2d56",
+    "content/legacy-response-audio.json": "5edcc86fd56edf15a25fce4a3ee3542bfc8767407d89d687fe55319bc45cc88d",
+    "components/game/journey/settings.tsx": "98d02da6824512d4306b64571bac2257f041067981a9744dec5f4d36472acbe4"
+  },
+  "concurrentSourceChangesAfterBuild": [
+    "components/game/configured/player.tsx",
+    "components/game/scene-hunt/player.tsx",
+    "components/game/disaster/player.tsx",
+    "components/game/configured/practice-player.tsx"
+  ],
+  "concurrentSourceNote": "The live workspace continued receiving painted-failure UI changes in four player files after this export. The HTML SHA above is the actual independently browser-tested audio deliverable; the later failure UI edits were preserved and are not claimed as part of this audio validation."
+}

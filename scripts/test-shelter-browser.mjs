@@ -21,7 +21,7 @@ async function source(id){const run=await state(),pose=rt.scene.scenePoses(pack,
 return page.evaluate(ps=>ps.find(p=>document.elementFromPoint(p.x,p.y)?.tagName==='CANVAS'),points).then(p=>{assert(p,'visible hit '+id);return p;});}
 async function tap(id){const p=await source(id);await page.touchscreen.tap(p.x,p.y);}
 async function drop(id,zone,edge=false){const a=await source(id),z=pack.skin.zones[zone],b=await xy({x:z.x+z.w*(edge?.92:.5),y:z.y+z.h*.5});await page.mouse.move(a.x,a.y);await page.mouse.down();await page.mouse.move(b.x,b.y,{steps:12});await page.mouse.up();}
-async function restart(){await page.getByRole('button',{name:'重新开始',exact:true}).click();await tick(100);assert.equal(await surface.getAttribute('data-phase'),'playing');}
+async function restart(){const failed=(await surface.getAttribute('data-phase'))==='failed';await (failed?page.locator('.painted-failure').getByRole('button',{name:'不服，再来！',exact:true}):page.getByRole('button',{name:'重新开始',exact:true})).click();await tick(failed?300:100);assert.equal(await surface.getAttribute('data-phase'),'playing');}
 const order=['close-room-door','block-door-gaps','reinforce-seal','contact-fire-service','shelter-family','signal-rescue'];
 async function correct(id){const r=pack.rules.interactions.find(r=>r.id===id);if(r.mode==='tap')await tap(r.source);else await drop(r.source,r.target,true);assert.equal(await surface.getAttribute('data-action'),id);await tick(pack.skin.animations[id].durationMs+150);assert((await state()).resolved.includes(r.grants[0]),id+' committed');}
 try{
@@ -31,7 +31,7 @@ try{
    const enterMain=async()=>{const node=page.locator('[data-map-node="fire-shelter-practice"]');await node.scrollIntoViewIfNeeded();await node.click();await page.getByRole('button',{name:/^(进入场景|再守护一次)$/}).click();await page.waitForFunction(()=>document.querySelector('.configured-player')?.dataset.ready==='true');await page.locator('.configured-dialog').getByRole('button',{name:'进入场景',exact:true}).click();await tick(100);};
    await enterMain();await shot('main-opening');await drop('family','corridor-zone');assert.equal(await surface.getAttribute('data-phase'),'failed');assert.deepEqual(await saved(),{});check('main map fatal input earns nothing');await restart();
    for(const id of order)await correct(id);await tick(7500);await page.locator('.garden-settlement').waitFor();await shot('main-complete');assert.equal((await saved())['fire-shelter-practice'],3);check('actual main map six-step completion awards three');
-   await page.getByRole('button',{name:/返回地图/}).click();await tick(3400);assert.equal(await page.locator('[data-map-node="fire-shelter-practice"]').getAttribute('data-status'),'complete');await enterMain();
+   await page.locator('[data-testid="settlement-primary"]').click();await tick(3400);assert.equal(await page.locator('[data-map-node="fire-shelter-practice"]').getAttribute('data-status'),'complete');await enterMain();
    for(const id of order)await correct(id);await tick(7500);await page.locator('.garden-settlement').waitFor();assert.equal((await saved())['fire-shelter-practice'],3);check('main replay does not duplicate reward');
  }else{
  await page.goto(pathToFileURL(file).href+'#level=fire-shelter-practice&skin=paper-gouache');await page.getByRole('button',{name:'进入场景',exact:true}).waitFor();await page.waitForFunction(()=>document.querySelector('.configured-player')?.dataset.ready==='true');await page.clock.install();await page.getByRole('button',{name:'进入场景',exact:true}).click();await tick(150);await shot('opening');

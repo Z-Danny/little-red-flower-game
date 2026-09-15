@@ -1,0 +1,50 @@
+{
+  "generator": "built-in image_gen.imagegen",
+  "purpose": "Approved production archipelago page. Restore the user's rich hand-painted island reference and separate layers for motion.",
+  "assets": [
+    {
+      "key": "nature-island",
+      "label": "自然灾害岛 · 恢复参考画风",
+      "args": {
+        "referenced_image_paths": [
+          "/var/folders/tc/g95v1w8s22j01cl_0st0sg9m0000gn/T/codex-clipboard-6d508074-0a92-421d-89a2-ff92b4649472.png"
+        ],
+        "prompt": "Use case: background-extraction and precise-object-edit. Input image is the edit target. Extract ONLY the LARGE TOP-CENTER NATURAL DISASTER ISLAND, keeping the mountain, small shelter, bent conifer trees, turbulent muddy flood river, branching earthquake crack and waterfall cascading below the front. INCLUDE its localized grey storm cloud, short slanting rain and yellow lightning above the mountain as part of the same complete sprite. Keep the reference's elaborate hand-painted floating stone underside and greenery, with recognizable original proportions. REMOVE title plaque \"自然灾害\" and fill behind it, remove top \"选择地图\" title and every other UI element, remove other two islands and overall blue sky. Preserve the EXACT rich warm hand-painted picture-book style of the reference: detailed but readable vegetation, warm limestone cliffs, terracotta roof tiles, soft brushwork, lovely illustrated architecture. The user explicitly prefers THIS richer island style over simplified toy-like islands. Do not simplify to flat chunky geometry or change the camera angle. Preserve the island's identity, arrangement and recognizably same composition.\nOutput is a standalone production game sprite. Use a genuine TRANSPARENT alpha background; all sky, clouds unrelated to the subject, text labels, beige plaques, other islands, UI, paper rectangle, flags and cast background shadows must be removed. No checkerboard drawn into the image. Keep every edge of the complete island in frame, with around 8–10% alpha margin. Repaint the area hidden by its original label plausibly to complete the rock face and plants. ONE complete sprite, square canvas, no text. The localized dark storm cloud is part of this sprite, unlike the white sky clouds which must disappear."
+      }
+    },
+    {
+      "key": "public-island",
+      "label": "公共安全岛 · 恢复参考画风",
+      "args": {
+        "referenced_image_paths": [
+          "/var/folders/tc/g95v1w8s22j01cl_0st0sg9m0000gn/T/codex-clipboard-6d508074-0a92-421d-89a2-ff92b4649472.png"
+        ],
+        "prompt": "Use case: background-extraction and precise-object-edit. Input image is the edit target. Extract ONLY the LOWER-LEFT PUBLIC SAFETY ISLAND, retain its group of warm stone townhouses, striped shop awning, arched stone bridge over a turquoise river, two dark street lamps, small garden shrubs, warm rocky floating base. Keep detailed hand-painted roof tiles, modest windows and bridge railing exactly in the reference's visual language. Remove the \"当前\" flag including its pole, remove \"公共安全\" wooden label and rebuild the hidden stone/greenery behind it. Preserve the EXACT rich warm hand-painted picture-book style of the reference: detailed but readable vegetation, warm limestone cliffs, terracotta roof tiles, soft brushwork, lovely illustrated architecture. The user explicitly prefers THIS richer island style over simplified toy-like islands. Do not simplify to flat chunky geometry or change the camera angle. Preserve the island's identity, arrangement and recognizably same composition.\nOutput is a standalone production game sprite. Use a genuine TRANSPARENT alpha background; all sky, clouds unrelated to the subject, text labels, beige plaques, other islands, UI, paper rectangle, flags and cast background shadows must be removed. No checkerboard drawn into the image. Keep every edge of the complete island in frame, with around 8–10% alpha margin. Repaint the area hidden by its original label plausibly to complete the rock face and plants. ONE complete sprite, square canvas, no text."
+      }
+    },
+    {
+      "key": "home-island",
+      "label": "居家校园办公岛 · 恢复参考画风",
+      "args": {
+        "referenced_image_paths": [
+          "/var/folders/tc/g95v1w8s22j01cl_0st0sg9m0000gn/T/codex-clipboard-6d508074-0a92-421d-89a2-ff92b4649472.png"
+        ],
+        "prompt": "Use case: background-extraction and precise-object-edit. Input image is the edit target. Extract ONLY the LOWER-RIGHT HOME/SCHOOL/OFFICE ISLAND. Preserve the small orange-roof cottage at front-left, taller ochre school with clock behind it, pale-blue modest office at right, courtyard, short white picket fence, trees, tiny flower garden, and warm layered floating cliff base. Remove the school roof red flag to avoid competing current-location flags. Remove the wooden title \"居家校园办公\" completely and reconstruct cliff and plants behind it. Preserve the EXACT rich warm hand-painted picture-book style of the reference: detailed but readable vegetation, warm limestone cliffs, terracotta roof tiles, soft brushwork, lovely illustrated architecture. The user explicitly prefers THIS richer island style over simplified toy-like islands. Do not simplify to flat chunky geometry or change the camera angle. Preserve the island's identity, arrangement and recognizably same composition.\nOutput is a standalone production game sprite. Use a genuine TRANSPARENT alpha background; all sky, clouds unrelated to the subject, text labels, beige plaques, other islands, UI, paper rectangle, flags and cast background shadows must be removed. No checkerboard drawn into the image. Keep every edge of the complete island in frame, with around 8–10% alpha margin. Repaint the area hidden by its original label plausibly to complete the rock face and plants. ONE complete sprite, square canvas, no text."
+      }
+    },
+    {
+      "key": "cloud",
+      "label": "可漂动的独立云层",
+      "args": {
+        "prompt": "Use case: illustration-story. Asset: one horizontally elongated cream-white hand-painted cloud sprite for a warm children's picture-book sky. Genuine transparent PNG alpha background with generous clear margin, no sky rectangle, no baked checkerboard. A beautiful asymmetrical soft fluffy cloud made of several broad gentle overlapping painted forms, pale ivory center with subtle dusty-blue underside, delicate gouache texture matching a richly illustrated floating-island world. Feathered semi-transparent wispy edges with readable body. No heavy outline, no island, no text, no sparkles, no sun, no rain. Whole cloud centered on landscape 2:1 canvas, only one cloud bank, suitable for slow lateral movement behind a game UI."
+      }
+    },
+    {
+      "key": "sky-background",
+      "label": "群岛页天空底图",
+      "args": {
+        "prompt": "Use case: illustration-story. Asset: full opaque portrait 9:16 sky background for a children's hand-painted floating-island map selector. ONLY beautiful calm soft powder-blue sky with gentle broad gouache brush texture and a very subtle lighter cream-blue glow near the bottom. Harmonize with warm green foliage and ochre limestone islands that will be composited later. NO clouds (separate cloud sprites will move over this background), no islands, no land or water, no silhouettes, no text, no UI, no sun disk, no gradient banding, no checkerboard. Low contrast spacious pure painted sky, carefully textured rather than flat digital gradient. Full edge-to-edge opaque background."
+      }
+    }
+  ]
+}

@@ -1,0 +1,466 @@
+{
+  "version": 1,
+  "generator": "OpenAI built-in ImageGen",
+  "preparation": "Sharp only rectangular crop, proportional resize, frame slicing and PNG/WebP encoding. Preserves generated RGBA alpha and RGB pixels; no programmatic drawing, color edits or background removal.",
+  "generatedOriginals": {
+    "frame": "/Users/danny/.codex/generated_images/01a0a3e0-80c6-7693-8caa-202b4abeb734/exec-d1631faa-c0aa-44a1-a899-e42fa3bf86a5.png",
+    "parts": "/Users/danny/.codex/generated_images/01a0a3e0-80c6-7693-8caa-202b4abeb734/exec-4738586b-2899-45f3-b82a-86bfe43d4799.png",
+    "islands": "/Users/danny/.codex/generated_images/01a0a3e0-80c6-7693-8caa-202b4abeb734/exec-35587bfc-a201-4635-bb15-d751e0261ca8.png",
+    "avatar": "/Users/danny/.codex/generated_images/01a0a3e0-80c6-7693-8caa-202b4abeb734/exec-02489328-a540-450c-ba48-b6419b36cd7d.png"
+  },
+  "promptFile": "art-source/painted-journal-v1/prompts.json",
+  "referenceFiles": [
+    "art-source/painted-journal-v1/reference-progress.png",
+    "art-source/painted-journal-v1/reference-board.png"
+  ],
+  "assets": {
+    "frame": {
+      "width": 960,
+      "height": 1406,
+      "png": "public/ui/painted-journal-v1/frame.png",
+      "webp": "public/ui/painted-journal-v1/frame.webp",
+      "pngBytes": 2331547,
+      "webpBytes": 243882,
+      "pngSha256": "0a649f0566dc954ad3cd0b90c40484e77489f17f8d7b66465292896e0e860191",
+      "webpSha256": "2dba042ed193b8ee448c3b65cfc03386634720bd533d809b4e1b1f4438d56fe3",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.07310633001422476
+      },
+      "source": "art-source/painted-journal-v1/frame-source.png",
+      "sourceSha256": "5008f2a16695f462e4b6ba4863f4bc785034027584a09869aee7714e87dd2b75",
+      "sheetRegion": null,
+      "silhouetteCrop": {
+        "left": 14,
+        "top": 32,
+        "width": 996,
+        "height": 1459
+      }
+    },
+    "frame-header": {
+      "width": 960,
+      "height": 224,
+      "png": "public/ui/painted-journal-v1/frame-header.png",
+      "webp": "public/ui/painted-journal-v1/frame-header.webp",
+      "pngBytes": 485884,
+      "webpBytes": 73612,
+      "pngSha256": "b2454cf89dead9974d8f10b0b7dc390a8dec52356c0f7ee43da112ded475b988",
+      "webpSha256": "cb912d83f57bb0371526588904858b4a0eff1742bba43f75d9bc6fff1c61d674",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.15205078125
+      },
+      "source": "public/ui/painted-journal-v1/frame.png",
+      "sourceCrop": {
+        "left": 0,
+        "top": 0,
+        "width": 960,
+        "height": 224
+      }
+    },
+    "frame-body": {
+      "width": 960,
+      "height": 1026,
+      "png": "public/ui/painted-journal-v1/frame-body.png",
+      "webp": "public/ui/painted-journal-v1/frame-body.webp",
+      "pngBytes": 1535899,
+      "webpBytes": 123176,
+      "pngSha256": "fc11d1abacf4be9af4f861de046bddbb8a11d0e3af1fb1f66c17f8a84403fc03",
+      "webpSha256": "f0bda2b9409aa3491ade40ad09cd8d45297d829b63693936ef1cc301f1dfc99c",
+      "alpha": {
+        "min": 0,
+        "max": 254,
+        "transparentFraction": 0.05844805880441845
+      },
+      "source": "public/ui/painted-journal-v1/frame.png",
+      "sourceCrop": {
+        "left": 0,
+        "top": 224,
+        "width": 960,
+        "height": 1026
+      }
+    },
+    "frame-footer": {
+      "width": 960,
+      "height": 156,
+      "png": "public/ui/painted-journal-v1/frame-footer.png",
+      "webp": "public/ui/painted-journal-v1/frame-footer.webp",
+      "pngBytes": 311921,
+      "webpBytes": 46552,
+      "pngSha256": "3b639eabb273706ede6883442f4b99f6344e7e4a2335e4445505987fb0010713",
+      "webpSha256": "7c51e248694e60a4c4c3d917f6451ff090ad3da1a18a718f30146932407c0947",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.056156517094017096
+      },
+      "source": "public/ui/painted-journal-v1/frame.png",
+      "sourceCrop": {
+        "left": 0,
+        "top": 1250,
+        "width": 960,
+        "height": 156
+      }
+    },
+    "stat-flowers": {
+      "width": 640,
+      "height": 218,
+      "png": "public/ui/painted-journal-v1/stat-flowers.png",
+      "webp": "public/ui/painted-journal-v1/stat-flowers.webp",
+      "pngBytes": 278432,
+      "webpBytes": 40218,
+      "pngSha256": "c4b9150f006047aa25f5775ea13e8f1a19b52bfdb69b7eefe52e1cc48390fd71",
+      "webpSha256": "3d62dcd234bf0a329efb40da6263f76a9f34d3538839c374669d2dd4bf2c614e",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.10070240825688073
+      },
+      "source": "art-source/painted-journal-v1/parts-source.png",
+      "sourceSha256": "08b7d21e5acc33c899f29256f90126b0da6f9de6319b979668ad2eb2b02b7457",
+      "sheetRegion": {
+        "left": 0,
+        "top": 0,
+        "width": 768,
+        "height": 340
+      },
+      "silhouetteCrop": {
+        "left": 21,
+        "top": 72,
+        "width": 728,
+        "height": 248
+      }
+    },
+    "island-sign": {
+      "width": 640,
+      "height": 136,
+      "png": "public/ui/painted-journal-v1/island-sign.png",
+      "webp": "public/ui/painted-journal-v1/island-sign.webp",
+      "pngBytes": 168336,
+      "webpBytes": 29044,
+      "pngSha256": "d62a82c470ddc2c4b2aaa016ebeede597d0fd1b9c786eda59e97f7c4156d932c",
+      "webpSha256": "89ff4b2b12deef06f1214f2fdcbe9da547065632a908b001cb7869be73ba4d98",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.18107766544117648
+      },
+      "source": "art-source/painted-journal-v1/parts-source.png",
+      "sourceSha256": "08b7d21e5acc33c899f29256f90126b0da6f9de6319b979668ad2eb2b02b7457",
+      "sheetRegion": {
+        "left": 768,
+        "top": 0,
+        "width": 768,
+        "height": 340
+      },
+      "silhouetteCrop": {
+        "left": 22,
+        "top": 114,
+        "width": 727,
+        "height": 155
+      }
+    },
+    "count-tag": {
+      "width": 384,
+      "height": 202,
+      "png": "public/ui/painted-journal-v1/count-tag.png",
+      "webp": "public/ui/painted-journal-v1/count-tag.webp",
+      "pngBytes": 147709,
+      "webpBytes": 30388,
+      "pngSha256": "608b38ddb4ecd22e376a1b14237d7a716a77eda7ab1bc4501da401e258df843a",
+      "webpSha256": "7a1d1d6f95acfe260aa6582bdb3322cd795bf6d9ad3d25cba417ec9763dd457f",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.2919502887788779
+      },
+      "source": "art-source/painted-journal-v1/parts-source.png",
+      "sourceSha256": "08b7d21e5acc33c899f29256f90126b0da6f9de6319b979668ad2eb2b02b7457",
+      "sheetRegion": {
+        "left": 0,
+        "top": 340,
+        "width": 768,
+        "height": 340
+      },
+      "silhouetteCrop": {
+        "left": 137,
+        "top": 35,
+        "width": 496,
+        "height": 261
+      }
+    },
+    "rank-leaf": {
+      "width": 384,
+      "height": 143,
+      "png": "public/ui/painted-journal-v1/rank-leaf.png",
+      "webp": "public/ui/painted-journal-v1/rank-leaf.webp",
+      "pngBytes": 107959,
+      "webpBytes": 23588,
+      "pngSha256": "29239e5be0e4943ba969f19c12165f957a9f8b60d81d1339deb927d70f0c9066",
+      "webpSha256": "bc382750142c2d83582d00f796704453ce5dcc939ce3a2194ba60b9c14f6ede8",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.27999344405594406
+      },
+      "source": "art-source/painted-journal-v1/parts-source.png",
+      "sourceSha256": "08b7d21e5acc33c899f29256f90126b0da6f9de6319b979668ad2eb2b02b7457",
+      "sheetRegion": {
+        "left": 768,
+        "top": 340,
+        "width": 768,
+        "height": 340
+      },
+      "silhouetteCrop": {
+        "left": 93,
+        "top": 59,
+        "width": 599,
+        "height": 223
+      }
+    },
+    "tab-active": {
+      "width": 640,
+      "height": 227,
+      "png": "public/ui/painted-journal-v1/tab-active.png",
+      "webp": "public/ui/painted-journal-v1/tab-active.webp",
+      "pngBytes": 256694,
+      "webpBytes": 39504,
+      "pngSha256": "305ca6e02a3e573942b21517861c573399f30d80528a9295c8f9540ea8752d83",
+      "webpSha256": "7ccd1454a78e9c18791ff4e46fccef443616636dfc76624379dad3f3f398537d",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.2376101321585903
+      },
+      "source": "art-source/painted-journal-v1/parts-source.png",
+      "sourceSha256": "08b7d21e5acc33c899f29256f90126b0da6f9de6319b979668ad2eb2b02b7457",
+      "sheetRegion": {
+        "left": 0,
+        "top": 680,
+        "width": 768,
+        "height": 344
+      },
+      "silhouetteCrop": {
+        "left": 31,
+        "top": 15,
+        "width": 719,
+        "height": 255
+      }
+    },
+    "tab-inactive": {
+      "width": 640,
+      "height": 228,
+      "png": "public/ui/painted-journal-v1/tab-inactive.png",
+      "webp": "public/ui/painted-journal-v1/tab-inactive.webp",
+      "pngBytes": 259863,
+      "webpBytes": 41488,
+      "pngSha256": "5f15af6ba4cc029206b711b666d406b77bdd89adad717037e42b398d538a1cd1",
+      "webpSha256": "46e8757730238419e34f39a7865af0f1cfbeef149439edb7c0d83061fc4d725e",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.2379797149122807
+      },
+      "source": "art-source/painted-journal-v1/parts-source.png",
+      "sourceSha256": "08b7d21e5acc33c899f29256f90126b0da6f9de6319b979668ad2eb2b02b7457",
+      "sheetRegion": {
+        "left": 768,
+        "top": 680,
+        "width": 768,
+        "height": 344
+      },
+      "silhouetteCrop": {
+        "left": 21,
+        "top": 14,
+        "width": 719,
+        "height": 256
+      }
+    },
+    "stat-progress": {
+      "width": 640,
+      "height": 218,
+      "png": "public/ui/painted-journal-v1/stat-progress.png",
+      "webp": "public/ui/painted-journal-v1/stat-progress.webp",
+      "pngBytes": 278432,
+      "webpBytes": 40218,
+      "pngSha256": "c4b9150f006047aa25f5775ea13e8f1a19b52bfdb69b7eefe52e1cc48390fd71",
+      "webpSha256": "3d62dcd234bf0a329efb40da6263f76a9f34d3538839c374669d2dd4bf2c614e",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.10070240825688073
+      },
+      "reusedFrom": "public/ui/painted-journal-v1/stat-flowers.png",
+      "modification": "none; same empty gold-rimmed plaque"
+    },
+    "island-nature": {
+      "width": 640,
+      "height": 531,
+      "png": "public/ui/painted-journal-v1/island-nature.png",
+      "webp": "public/ui/painted-journal-v1/island-nature.webp",
+      "pngBytes": 817411,
+      "webpBytes": 166852,
+      "pngSha256": "484b24c0fdb6f77682efd0bbc373091b6d1539d89dce9905f345cad3e0b71137",
+      "webpSha256": "31c2e8edd2b655ee52834f2a593fdaabee97c12952a28b120da3a645af328837",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.3044167843691149
+      },
+      "source": "art-source/painted-journal-v1/islands-source.png",
+      "sourceSha256": "ed88a55c4f8f1e030e73c0344c66467294a46164a9516f626392355b9bdb0264",
+      "sheetRegion": {
+        "left": 0,
+        "top": 0,
+        "width": 746,
+        "height": 724
+      },
+      "silhouetteCrop": {
+        "left": 15,
+        "top": 57,
+        "width": 731,
+        "height": 606
+      }
+    },
+    "island-public": {
+      "width": 640,
+      "height": 537,
+      "png": "public/ui/painted-journal-v1/island-public.png",
+      "webp": "public/ui/painted-journal-v1/island-public.webp",
+      "pngBytes": 851625,
+      "webpBytes": 175354,
+      "pngSha256": "c82fc9b01e080138cf36ab5cf12098115b935aee8af001b1d4deedccd7d0c7d7",
+      "webpSha256": "eee6cee079686cd6706780ed561da838aed4281b1a5f43ecf1daa18f4e8deaf9",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.2748021415270019
+      },
+      "source": "art-source/painted-journal-v1/islands-source.png",
+      "sourceSha256": "ed88a55c4f8f1e030e73c0344c66467294a46164a9516f626392355b9bdb0264",
+      "sheetRegion": {
+        "left": 746,
+        "top": 0,
+        "width": 712,
+        "height": 724
+      },
+      "silhouetteCrop": {
+        "left": 0,
+        "top": 68,
+        "width": 712,
+        "height": 597
+      }
+    },
+    "island-home": {
+      "width": 640,
+      "height": 537,
+      "png": "public/ui/painted-journal-v1/island-home.png",
+      "webp": "public/ui/painted-journal-v1/island-home.webp",
+      "pngBytes": 876333,
+      "webpBytes": 176338,
+      "pngSha256": "9cfa262097f9913fdfbfd78369ab1da74d2d74bb79189126c97fe981932e5597",
+      "webpSha256": "f278e2880ef5a3bc15f23733cb8fd87a009db6029d8e8b5f65337337ce1a6f6b",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.2581762104283054
+      },
+      "source": "art-source/painted-journal-v1/islands-source.png",
+      "sourceSha256": "ed88a55c4f8f1e030e73c0344c66467294a46164a9516f626392355b9bdb0264",
+      "sheetRegion": {
+        "left": 1458,
+        "top": 0,
+        "width": 714,
+        "height": 724
+      },
+      "silhouetteCrop": {
+        "left": 0,
+        "top": 76,
+        "width": 700,
+        "height": 587
+      }
+    },
+    "avatar": {
+      "width": 512,
+      "height": 500,
+      "png": "public/ui/painted-journal-v1/avatar.png",
+      "webp": "public/ui/painted-journal-v1/avatar.webp",
+      "pngBytes": 475457,
+      "webpBytes": 85962,
+      "pngSha256": "3256c9d17822a2a0922090d417811cda52a63fd46053724b4b3644633d383f40",
+      "webpSha256": "08cdb4c06b705525679017fe3e7b4eb8442d338c39d675d748caae63df9d332c",
+      "alpha": {
+        "min": 0,
+        "max": 255,
+        "transparentFraction": 0.34875
+      },
+      "source": "art-source/painted-journal-v1/avatar-source.png",
+      "sourceSha256": "428b927bd4f39519001c74def747eae84441d1ef73f706be2b54b45121f5ee6e",
+      "sheetRegion": null,
+      "silhouetteCrop": {
+        "left": 56,
+        "top": 42,
+        "width": 1172,
+        "height": 1144
+      }
+    }
+  },
+  "layout": {
+    "frameWidth": 960,
+    "frameHeight": 1406,
+    "headerAspect": "960 / 224",
+    "footerAspect": "960 / 156",
+    "titleSafeBoxPercentOfHeader": {
+      "left": 24,
+      "top": 12,
+      "width": 52,
+      "height": 56
+    },
+    "contentSafeHorizontalPercent": {
+      "left": 8,
+      "right": 8
+    },
+    "statPlaqueTextSafePercent": {
+      "left": 12,
+      "top": 15,
+      "width": 74,
+      "height": 64
+    },
+    "islandSignTextSafePercent": {
+      "left": 18,
+      "top": 18,
+      "width": 74,
+      "height": 64
+    },
+    "rankLeafTextSafePercent": {
+      "left": 27,
+      "top": 19,
+      "width": 61,
+      "height": 60
+    },
+    "countTagTextSafePercent": {
+      "left": 12,
+      "top": 30,
+      "width": 76,
+      "height": 52
+    },
+    "tabTextSafePercent": {
+      "left": 23,
+      "top": 36,
+      "width": 62,
+      "height": 47
+    },
+    "frameRule": "Keep header/footer at their natural ratios; stretch only body vertically, with continuous full-width slices. No bitmap text. Frame has no title flower, close or back controls.",
+    "islandRule": "All source islands fully colored; runtime may reveal color over grayscale using actual category progress. No generated fake numbers, labels, cloud overlays or partial progress.",
+    "avatarRule": "One compact smug flower adjusting sunglasses. Whole avatar can tilt on activation; no separate facial animation layers."
+  },
+  "visualValidation": {
+    "bakedText": false,
+    "fakeStatistics": false,
+    "genuineAlpha": true,
+    "avatarPose": "one leaf lowering sunglasses, side-eye and raised brow",
+    "islands": "three distinct irregular coastlines, fully colored; names and progress remain DOM text"
+  }
+}

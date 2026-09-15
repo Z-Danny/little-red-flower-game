@@ -1,0 +1,291 @@
+/* Shared painted UI. Artwork coordinates are relative to modal.webp, never to
+   a level's camera or viewport. Import after the engine-specific styles. */
+.painted-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+button.painted-hud-button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 2px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  color: #284d32;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button.painted-hud-button:focus-visible {
+  outline: 3px solid #fff2ce;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #284d32;
+}
+
+button.painted-hud-button:active .painted-icon {
+  transform: translateY(1px);
+}
+
+/* The panel and action are separate art so each can keep a compact scale. */
+.painted-intro-shade {
+  --painted-modal-ratio: 1.0971428571;
+  --painted-intro-footer-room: 0px;
+  position: absolute;
+  z-index: 40;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  padding: max(12px, env(safe-area-inset-top, 0px))
+    max(12px, env(safe-area-inset-right, 0px))
+    max(12px, env(safe-area-inset-bottom, 0px))
+    max(12px, env(safe-area-inset-left, 0px));
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: rgb(24 38 29 / 36%);
+  font-family: var(--font-game-body, 'PingFang SC', sans-serif);
+  color: #284d32;
+  pointer-events: auto;
+  touch-action: none;
+  isolation: isolate;
+  container-type: size;
+  animation: painted-shade-in 180ms ease-out both;
+}
+.painted-map-entry {
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+.painted-intro-shade[data-has-note='true'] {
+  --painted-intro-footer-room: 64px;
+}
+.painted-intro-dialog {
+  position: relative;
+  inset: auto;
+  display: block;
+  box-sizing: border-box;
+  width: min(88%, 400px);
+  max-height: 100%;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  outline: none;
+  text-align: center;
+  animation: painted-panel-in 220ms cubic-bezier(.2,.7,.3,1) both;
+}
+@supports (width: 1cqh) {
+  .painted-intro-dialog {
+    width: min(88%, 400px, calc((100cqh - var(--painted-intro-footer-room)) * var(--painted-modal-ratio)));
+  }
+}
+.painted-intro-card {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: var(--painted-modal-ratio);
+  container-type: inline-size;
+  container-name: painted-intro-card;
+  filter: drop-shadow(0 10px 18px rgb(15 28 16 / 22%));
+}
+.painted-intro-art,
+.painted-intro-button-art {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.painted-intro-title,
+.painted-intro-description,
+.painted-intro-start {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+.painted-intro-title {
+  inset: 5% 21% auto;
+  height: 16%;
+  color: #fff2ce;
+  font-family: var(--font-game-title, 'PingFang SC', sans-serif);
+  font-size: clamp(20px, 7.2cqi, 25px);
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.24;
+  letter-spacing: 0;
+}
+.painted-intro-title[data-long-title='true'] {
+  font-size: clamp(17px, 5.5cqi, 22px);
+}
+.painted-intro-description {
+  inset: 31% 13% auto;
+  height: 30%;
+  color: #284d32;
+  font-size: clamp(14px, 4.8cqi, 16px);
+  font-weight: 500;
+  line-height: 1.75;
+  white-space: pre-line;
+}
+button.painted-intro-start {
+  left: 16%;
+  top: 68%;
+  width: 68%;
+  aspect-ratio: 4.2;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 4px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  box-shadow: none;
+  color: #264b31;
+  font-family: var(--font-game-title, 'PingFang SC', sans-serif);
+  font-size: clamp(17px, 6cqi, 21px);
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.3;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 110ms ease-out, filter 110ms ease-out;
+  filter: drop-shadow(0 3px 3px rgb(91 62 19 / 20%));
+}
+.painted-intro-button-art {
+  position: absolute;
+  inset: 0;
+}
+.painted-intro-start > span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.painted-intro-start svg { width: 17px; height: 17px; flex: none; }
+button.painted-intro-start[data-long-label='true'] {
+  font-size: clamp(14px, 4.8cqi, 18px);
+}
+button.painted-intro-start:disabled {
+  color: #596045;
+  cursor: default;
+}
+.painted-intro-shade[data-locked='true'] .painted-intro-button-art {
+  filter: saturate(.2) brightness(.94);
+  opacity: .8;
+}
+button.painted-intro-start:not(:disabled):active {
+  transform: translateY(1px) scale(.97);
+  filter: drop-shadow(0 1px 1px rgb(91 62 19 / 16%));
+}
+button.painted-intro-start:focus-visible {
+  outline: 2px solid #244a31;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgb(255 242 206 / 80%);
+}
+.painted-intro-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px 0;
+}
+.painted-intro-note,
+.painted-intro-status {
+  max-width: 36em;
+  margin: 0;
+  color: #fff2ce;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.65;
+  text-wrap: balance;
+  text-shadow: 0 1px 3px #183021;
+}
+.painted-intro-shade[data-closing='true'] {
+  animation: painted-shade-out 140ms ease-in both;
+}
+.painted-intro-shade[data-closing='true'] .painted-intro-dialog {
+  animation: painted-panel-out 140ms ease-in both;
+}
+[data-auto-start='true'] {
+  animation: painted-shade-in 220ms ease-out both;
+}
+.level-launch-status {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  padding: 24px;
+  background: transparent;
+  color: #fff2ce;
+  text-align: center;
+  font: 15px/1.65 var(--font-game-body);
+  text-shadow: 0 1px 3px #183021;
+}
+.level-launch-status[data-visible='true'] { background: rgb(24 38 29 / 36%); }
+.level-launch-actions { display: flex; justify-content: center; gap: 12px; }
+.level-launch-actions button {
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid #eee1b6;
+  border-radius: 20px;
+  background: #f9f0d8;
+  color: #284d32;
+  text-shadow: none;
+}
+@keyframes painted-shade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes painted-shade-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes painted-panel-in {
+  from { opacity: 0; transform: translateY(8px) scale(.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes painted-panel-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(4px) scale(.98); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .painted-intro-shade,
+  .painted-intro-dialog,
+  [data-auto-start='true'] { animation: none !important; }
+  button.painted-intro-start { transition: none; }
+  button.painted-intro-start:not(:disabled):active { transform: none; }
+}
+@media (forced-colors: active) {
+  .painted-intro-card {
+    background: Canvas;
+    border: 2px solid CanvasText;
+    border-radius: 24px;
+    filter: none;
+  }
+  .painted-intro-art, .painted-intro-button-art { opacity: 0; }
+  .painted-intro-title, .painted-intro-description { color: CanvasText; }
+  button.painted-intro-start {
+    border: 2px solid ButtonText;
+    background: ButtonFace;
+    color: ButtonText;
+  }
+}

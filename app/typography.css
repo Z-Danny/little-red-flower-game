@@ -45,7 +45,6 @@ html body,
   font-family: var(--font-game-body);
 }
 .garden-title-group h1,
-.garden-node .garden-node-label,
 .garden-dialog h2,
 .lb-hero h1,
 .lb-list-title h2,
@@ -73,20 +72,6 @@ html body,
   font-family: var(--font-game-body);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.03em;
-}
-.garden-node .garden-node-label {
-  font-size: 16px;
-  line-height: 1.45;
-  letter-spacing: 0;
-  text-shadow:
-    0 1px 2px #fffef5,
-    1px 0 2px #fffef5,
-    -1px 0 2px #fffef5,
-    0 -1px 2px #fffef5;
-  text-wrap: balance;
-}
-.garden-node[data-status='locked'] .garden-node-label {
-  color: #5a6d5b;
 }
 .garden-tabs button {
   color: #5e7364;
@@ -304,9 +289,6 @@ html body,
     font-size: 13px;
     padding-left: 5px;
   }
-  .garden-node .garden-node-label {
-    font-size: 15px;
-  }
   .garden-tab-caption {
     font-size: 11px;
   }
@@ -358,9 +340,6 @@ html body,
   }
   .garden-title-group h1 {
     font-size: 20px;
-  }
-  .garden-node .garden-node-label {
-    font-size: 17px;
   }
   .garden-tab-caption {
     font-size: 13px;

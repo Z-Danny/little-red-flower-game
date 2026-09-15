@@ -1,0 +1,122 @@
+{
+  "date": "2026-09-15",
+  "status": "passed",
+  "scope": "Approved three material signs, 24 level motifs, completed-flower stamp, brighter available highlight and map presentation effects.",
+  "artifact": {
+    "file": "outputs/绘本路牌动效版/小红花应急行动.html",
+    "bytes": 252869598,
+    "sha256": "7908a2d4a633e0c4d9cdcf51836da3730344935cc168213aca14c1903af53688",
+    "exportChecks": 7
+  },
+  "sourceChecks": {
+    "journeyTests": "passed (60 tests)",
+    "typecheck": "passed",
+    "targetedLint": "passed",
+    "build": "passed"
+  },
+  "layout": {
+    "report": "outputs/map-signs-integration-verification/layout/report.json",
+    "checks": 121,
+    "samples": 288,
+    "failures": 0,
+    "viewports": [
+      "320x568",
+      "375x667",
+      "390x844",
+      "430x932",
+      "540x960",
+      "1440x900"
+    ],
+    "levelIds": 24,
+    "runtimeAssetsMatchApprovedBytes": 28,
+    "minimumFontCssPx": 14,
+    "minimumRawTextureContrast": 4.622873921259868,
+    "clickAssociations": 48,
+    "resizeAndScrollReturnChecks": 48,
+    "maximumReturnDriftCssPx": 0,
+    "routeGeometryChecks": 57,
+    "routeStateSamples": 413,
+    "contextsClosed": 23,
+    "browserClosed": true
+  },
+  "motion": {
+    "report": "outputs/map-signs-integration-verification/motion/report.json",
+    "checks": 10,
+    "branches": {
+      "normal": {
+        "status": "passed",
+        "description": "Fresh context: normal first completion, native stamp/sweep/bud starts, map revisit, actual replay and reload; no reduced-motion interruption during the reward."
+      },
+      "stampPreference": {
+        "status": "passed",
+        "description": "Separate fresh context and four real object clicks: after native stamp end, toggle reduced motion inside the same planting window. Pending sweep cancellation is allowed in this branch."
+      }
+    },
+    "nativeFirstCompletionAnimations": [
+      {
+        "phase": "start",
+        "name": "garden-sign-stamp",
+        "id": "clear-corridor",
+        "at": 33781.19999998808,
+        "elapsedTime": 0,
+        "durationMs": 380
+      },
+      {
+        "phase": "end",
+        "name": "garden-sign-stamp",
+        "id": "clear-corridor",
+        "at": 34147.39999997616,
+        "elapsedTime": 0.38,
+        "durationMs": 380
+      },
+      {
+        "phase": "start",
+        "name": "garden-sign-bud-response",
+        "id": "lift-wait",
+        "at": 34197.59999996424,
+        "elapsedTime": 0,
+        "durationMs": 650
+      },
+      {
+        "phase": "start",
+        "name": "garden-sign-sweep",
+        "id": "lift-wait",
+        "at": 34197.80000001192,
+        "elapsedTime": 0,
+        "durationMs": 1000
+      },
+      {
+        "phase": "end",
+        "name": "garden-sign-bud-response",
+        "id": "lift-wait",
+        "at": 34953.59999996424,
+        "elapsedTime": 0.65,
+        "durationMs": 650
+      },
+      {
+        "phase": "end",
+        "name": "garden-sign-sweep",
+        "id": "lift-wait",
+        "at": 35230.89999997616,
+        "elapsedTime": 1,
+        "durationMs": 1000
+      }
+    ],
+    "contextsClosed": 2,
+    "browserClosed": true,
+    "backgroundLifecycle": "Synthetic document.hidden + visibilityState and visibilitychange; native OS backgrounding not tested."
+  },
+  "browserErrors": 0,
+  "externalRequests": 0,
+  "failedRequests": 0,
+  "visualReview": [
+    "outputs/map-signs-integration-verification/layout/final-nature-10-320x568.png",
+    "outputs/map-signs-integration-verification/layout/final-nature-10-390x844.png",
+    "outputs/map-signs-integration-verification/layout/fresh-public-01-390x844.png",
+    "outputs/map-signs-integration-verification/layout/fresh-home-01-390x844.png",
+    "outputs/map-signs-integration-verification/motion/earned-next-level.png"
+  ],
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "nativeOsBackgrounding": "not_run"
+}

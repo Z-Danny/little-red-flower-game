@@ -1,0 +1,49 @@
+{
+  "regions": {
+    "nature": {
+      "image": "/levels/journey-map/nature-v3-chibi.png",
+      "width": 720,
+      "height": 2160,
+      "areas": {
+        "typhoon-home": { "x": 0, "y": 1570, "width": 430, "height": 420 },
+        "flood-kit": { "x": 380, "y": 1310, "width": 340, "height": 320 },
+        "quake-bedroom-v2": { "x": 20, "y": 1200, "width": 385, "height": 315 },
+        "storm-street-check-v2": { "x": 400, "y": 1005, "width": 320, "height": 355 },
+        "thunder-park-v2": { "x": 15, "y": 870, "width": 395, "height": 325 },
+        "forest-fire-sources-v2": { "x": 365, "y": 775, "width": 355, "height": 245 },
+        "rain-street-preparation-v1": { "x": 0, "y": 675, "width": 360, "height": 225 },
+        "flood-house-response-v1": { "x": 375, "y": 485, "width": 345, "height": 305 },
+        "quake-cover-practice": { "x": 35, "y": 340, "width": 365, "height": 260 },
+        "quake-exit-practice": { "x": 380, "y": 185, "width": 340, "height": 270 },
+        "flood-highground-practice": { "x": 65, "y": 0, "width": 310, "height": 315 }
+      }
+    },
+    "public": {
+      "image": "/levels/journey-map/public-v3-handpainted.png",
+      "width": 720,
+      "height": 2160,
+      "areas": {
+        "clear-corridor": { "x": 55, "y": 1590, "width": 375, "height": 405 },
+        "lift-wait": { "x": 375, "y": 1170, "width": 345, "height": 570 },
+        "well-call": { "x": 0, "y": 1065, "width": 395, "height": 345 },
+        "clear-corridor-check-v2": { "x": 390, "y": 620, "width": 330, "height": 480 },
+        "car-window-practice": { "x": 45, "y": 575, "width": 350, "height": 300 },
+        "lift-contact-practice": { "x": 375, "y": 160, "width": 300, "height": 440 },
+        "collapse-signal-practice": { "x": 35, "y": 55, "width": 400, "height": 255 }
+      }
+    },
+    "home": {
+      "image": "/levels/journey-map/home-v3-handpainted.png",
+      "width": 720,
+      "height": 2160,
+      "areas": {
+        "oil-fire": { "x": 0, "y": 1575, "width": 410, "height": 435 },
+        "charging-bedroom": { "x": 325, "y": 1300, "width": 395, "height": 395 },
+        "bedroom-night-check-v2": { "x": 0, "y": 985, "width": 385, "height": 375 },
+        "kitchen-before-cooking-v2": { "x": 265, "y": 685, "width": 455, "height": 365 },
+        "fire-shelter-practice": { "x": 0, "y": 260, "width": 415, "height": 455 },
+        "fire-stairs-practice": { "x": 405, "y": 0, "width": 315, "height": 380 }
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "asset": "public/levels/journey-map/home-v3-handpainted.png",
+  "source": "/Users/danny/.codex/generated_images/01a0a2a3-2f80-7293-aa08-b7eb47458317/exec-64e233bd-d8a9-46c8-a43e-86b3a22a8bd2.png",
+  "tool": "built-in image_gen",
+  "sourceDimensions": {
+    "width": 726,
+    "height": 2167
+  },
+  "sha256": "458438411449d8f5574fa88c814530b6f8486d0bf67c428c77bcd51737d45e7a",
+  "selectedByUser": true,
+  "previousImage": "/levels/journey-map/home-v2.png",
+  "logicalMap": {
+    "width": 720,
+    "height": 2160
+  },
+  "generationBrief": "保持六处地标与原始道路布局，减少装饰树木；使用石木厨房、木屋儿童房、弧顶卧室与挑檐校园工坊等不同造型；依照封面强化温暖光线、墙面与树叶的绘画笔触。",
+  "scope": "用户确认的地图背景替换；沿用稳定关卡ID、节点、规则与成绩。"
+}

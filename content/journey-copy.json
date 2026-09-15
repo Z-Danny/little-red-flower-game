@@ -1,102 +1,102 @@
 {
-  "brand": "小红花应急行动",
+  "brand": "这片儿没我不行",
   "regionSuffix": "应急区",
   "levels": {
     "typhoon-home": {
-      "title": "台风前的家",
-      "preview": ""
+      "title": "台风居家准备",
+      "preview": "观察客厅与阳台，圈出台风来临前的隐患。"
     },
     "oil-fire": {
-      "title": "厨房着火了",
-      "preview": ""
+      "title": "油锅起火处置",
+      "preview": "油锅起火了，练习关火、盖锅与撤离。"
     },
     "charging-bedroom": {
-      "title": "充电中的卧室",
-      "preview": ""
+      "title": "卧室充电巡查",
+      "preview": "观察卧室中的充电设备，圈出三处隐患。"
     },
     "bedroom-night-check-v2": {
-      "title": "睡前的卧室",
-      "preview": ""
+      "title": "睡前防火巡查",
+      "preview": "检查冬夜卧室，圈出五处充电与取暖隐患。"
     },
     "kitchen-before-cooking-v2": {
-      "title": "开火前的厨房",
-      "preview": ""
+      "title": "厨房开火检查",
+      "preview": "开火前仔细观察，圈出厨房里的五处隐患。"
     },
     "clear-corridor-check-v2": {
-      "title": "让生命通道畅通",
-      "preview": ""
+      "title": "楼道隐患巡查",
+      "preview": "观察公共楼道，圈出五处通行与消防隐患。"
     },
     "quake-bedroom-v2": {
-      "title": "日常家庭防震准备",
-      "preview": ""
+      "title": "家庭防震准备",
+      "preview": "检查平日家中布置，圈出五处防震隐患。"
     },
     "storm-street-check-v2": {
-      "title": "风雨中的街口",
-      "preview": ""
+      "title": "风雨街口找险",
+      "preview": "在室内观察街口，圈出风雨中的五处危险。"
     },
     "thunder-park-v2": {
-      "title": "雷雨来临的公园",
-      "preview": ""
+      "title": "雷雨公园找险",
+      "preview": "在教学图中辨认五处不能避雷的位置。"
     },
     "forest-fire-sources-v2": {
-      "title": "林缘的五处火源",
-      "preview": ""
+      "title": "林缘火源识别",
+      "preview": "观察林缘教学图，辨认五处不当火源。"
     },
     "rain-street-preparation-v1": {
-      "title": "暴雨前的街道",
-      "preview": ""
+      "title": "暴雨街道找险",
+      "preview": "暴雨将至，限时圈出街道里的七处隐患。"
     },
     "flood-house-response-v1": {
-      "title": "洪水围困",
-      "preview": ""
+      "title": "洪水居家避险",
+      "preview": "洪水围住房屋，练习室内准备与向楼上转移。"
     },
     "flood-kit": {
       "title": "汛期应急包",
-      "preview": ""
+      "preview": "找齐五类应急物品，练习提前备好应急包。"
     },
     "clear-corridor": {
-      "title": "畅通的生命通道",
-      "preview": ""
+      "title": "楼道杂物清理",
+      "preview": "把占道的四件自家杂物，收进储物空间。"
     },
     "lift-wait": {
-      "title": "电梯停住了",
-      "preview": ""
+      "title": "电梯故障待援",
+      "preview": "电梯突然停住，练习报警通话与轿厢待援。"
     },
     "well-call": {
-      "title": "井口边的求助",
-      "preview": ""
+      "title": "井口遇险求助",
+      "preview": "发现井内有人遇险，在外围联络救援。"
     },
     "quake-cover-practice": {
       "title": "地震室内避险",
-      "preview": ""
+      "preview": "强震来临，练习就近避险与震后联络。"
     },
     "quake-exit-practice": {
-      "title": "震动停止后的撤离",
-      "preview": ""
+      "title": "震后楼梯撤离",
+      "preview": "晃动停止后，按指引经可用楼梯撤离。"
     },
     "collapse-signal-practice": {
       "title": "塌陷被困求救",
-      "preview": ""
+      "preview": "下肢被困无法脱身，练习防护与发信求救。"
     },
     "car-window-practice": {
       "title": "汽车落水离车",
-      "preview": ""
+      "preview": "车辆刚落水，练习经可用侧窗离车并求助。"
     },
     "flood-highground-practice": {
-      "title": "洪水围困待援",
-      "preview": ""
+      "title": "洪水高处待援",
+      "preview": "沿干燥楼梯上楼，练习高处求救与待援。"
     },
     "lift-contact-practice": {
-      "title": "电梯被困求助",
-      "preview": ""
+      "title": "电梯定位求助",
+      "preview": "电梯停在两层之间，练习报告位置与人数。"
     },
     "fire-shelter-practice": {
-      "title": "隔烟与定位待援",
-      "preview": ""
+      "title": "火灾隔烟待援",
+      "preview": "走廊被浓烟封堵，练习关门隔烟与求救。"
     },
     "fire-stairs-practice": {
-      "title": "沿可用楼梯撤离",
-      "preview": ""
+      "title": "火灾楼梯撤离",
+      "preview": "楼梯路线可用，练习带孩子撤到室外。"
     }
   }
 }

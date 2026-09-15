@@ -272,13 +272,12 @@ test('seven original profiles, bounded mix, no indoor invented ambience', () => 
   assert.equal(performanceMix.missMs, 160);
   assert.equal(performanceMix.foundMs, 90);
 });
-test('UI emits resolve only when fade is positive and offers unfinished action', () => {
+test('UI emits resolve only when fade is positive and preserves unfinished results', () => {
   const src = readFileSync('components/game/scene-hunt/player.tsx', 'utf8');
   assert.match(
     src,
     /endingFade\(r.phase,\s*r.revealAge\)\s*>\s*0\s*&&\s*!prev.resolved/,
   );
-  assert.match(src, /结束本次观察/);
   assert.match(src, /本次观察未完成/);
   assert.match(src, /data-stage=/);
   assert.match(src, /animationDelay/);

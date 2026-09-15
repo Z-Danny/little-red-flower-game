@@ -1,10 +1,15 @@
 /* oxlint-disable next/no-img-element -- Raw local images are embedded as data URLs in the standalone offline build. */
 import type { CSSProperties, RefObject } from 'react';
-import { Check, LockKeyhole } from 'lucide-react';
+import { LockKeyhole } from 'lucide-react';
 import { getLevel } from '@/app/game/levels';
-import { journeySkin } from '@/app/game/journey/presentation';
+import { journeyFog, journeySkin } from '@/app/game/journey/presentation';
+import { routeFor } from '@/app/game/journey/routes';
 import { Flower } from './flower';
 import { MapSignal, useSignalPress, useSceneHover } from './map-signal';
+import { useHudSafeSigns } from './use-hud-safe-signs';
+import { MapSign } from './map-sign';
+import { useSignCelebration } from './use-sign-celebration';
+import { signMotion } from '@/app/game/journey/signs';
 import {
   nodeStatus,
   journeyTiming,
@@ -32,13 +37,27 @@ export function MapScene({
   age,
   done,
   ratio,
-  current,
   scroller,
   world,
   onInspect,
 }: Props) {
   const { pressedId, pressHandlers } = useSignalPress();
   const { activeId, sceneHandlers } = useSceneHover(region, !!planting);
+  const signOffsets = useHudSafeSigns(scroller, world, region.id);
+  const { reveal, finishReveal } = useSignCelebration(
+    region,
+    progress,
+    planting,
+    age,
+  );
+  const fog = journeyFog[region.id];
+  // A replacement map must supply its own scenery bounds.
+  const fogAreas =
+    fog?.image === region.image &&
+    fog.width === region.width &&
+    fog.height === region.height
+      ? fog.areas
+      : {};
   return (
     <div
       className="garden-scroll"
@@ -73,9 +92,26 @@ export function MapScene({
                 ? 'restored'
                 : 'growing'
           }
-          style={{ '--recovery': ratio } as CSSProperties}
         >
-          <div className="garden-atmosphere" />
+          {region.nodes.map((node) => {
+            const area = fogAreas[node.id];
+            if (nodeStatus(node.id, progress) !== 'locked' || !area)
+              return null;
+            return (
+              <div
+                key={node.id}
+                className="garden-location-fog"
+                data-fog-node={node.id}
+                aria-hidden="true"
+                style={{
+                  left: `${(area.x / region.width) * 100}%`,
+                  top: `${(area.y / region.height) * 100}%`,
+                  width: `${(area.width / region.width) * 100}%`,
+                  height: `${(area.height / region.height) * 100}%`,
+                }}
+              />
+            );
+          })}
           {region.restoration.flowers
             .slice(0, Math.floor(ratio * region.restoration.flowers.length))
             .map((p, i) => (
@@ -114,12 +150,17 @@ export function MapScene({
           {region.nodes.slice(1).map((n, i) => {
             const prev = region.nodes[i],
               live = nodeStatus(n.id, progress) !== 'locked',
-              d = `M${prev.x} ${prev.y} C${prev.x} ${(prev.y + n.y) / 2},${n.x} ${(prev.y + n.y) / 2},${n.x} ${n.y}`;
+              route = routeFor(region, prev, n);
             return (
-              <g key={n.id}>
-                <path d={d} className="garden-path-bed" />
+              <g
+                key={n.id}
+                data-route-from={prev.id}
+                data-route-to={n.id}
+                data-route-source={route.source}
+              >
+                <path d={route.d} className="garden-path-bed" />
                 <path
-                  d={d}
+                  d={route.d}
                   className={`garden-path ${live ? 'connected' : ''}`}
                 />
               </g>
@@ -127,38 +168,85 @@ export function MapScene({
           })}
         </svg>
         {region.nodes.map((n, i) => {
+          const signLayout = signOffsets.get(n.id);
           const state = nodeStatus(n.id, progress),
             plant = planting?.levelId === n.id,
+            title = getLevel(n.id)?.title,
+            signSide =
+              signLayout?.side ??
+              n.signSide ??
+              (n.x <= region.width / 2 ? 'right' : 'left'),
             flower =
               state === 'complete' || (plant && age >= journeyTiming.land);
+          const revealing = reveal?.levelId === n.id;
+          const signAdjusted =
+            !!signLayout &&
+            (signLayout.offsetX !== 0 || signLayout.offsetY !== 0);
           return (
             <button
               key={n.id}
               data-map-node={n.id}
               data-status={state}
+              data-sign-side={signSide}
+              data-sign-adjusted={signAdjusted}
+              data-hud-avoiding={signOffsets.has(n.id)}
               data-pressed={pressedId === n.id}
               data-scene-active={activeId === n.id}
               {...pressHandlers(n.id)}
-              aria-label={`${getLevel(n.id)?.title}，${state === 'complete' ? '已完成' : state === 'available' ? '可进入' : '未解锁'}`}
+              aria-label={`${title}，${state === 'complete' ? '已完成' : state === 'available' ? '可进入' : '未解锁'}`}
               aria-disabled={!!planting}
               className={`garden-node ${state} ${plant ? 'planting' : ''}`}
-              style={{
-                left: `${(n.x / region.width) * 100}%`,
-                top: `${(n.y / region.height) * 100}%`,
-              }}
+              style={
+                {
+                  left: `${(n.x / region.width) * 100}%`,
+                  top: `${(n.y / region.height) * 100}%`,
+                  '--sign-room': `${((signSide === 'left' ? n.x : region.width - n.x) / region.width) * 100}cqw`,
+                  '--sign-offset-x': `${signLayout?.offsetX ?? 0}px`,
+                  '--sign-offset-y': `${signLayout?.offsetY ?? 0}px`,
+                  '--sign-width': signLayout
+                    ? `${signLayout.width}px`
+                    : undefined,
+                  '--sign-bud-ms': `${signMotion.budResponseMs}ms`,
+                } as CSSProperties
+              }
               onClick={() => {
                 if (!planting) onInspect(n.id);
               }}
             >
-              {state === 'locked' && <span className="garden-node-fog" />}
+              {signAdjusted && (
+                <svg
+                  className="garden-sign-connector"
+                  viewBox="0 0 56 56"
+                  aria-hidden="true"
+                >
+                  <path
+                    d={`M28 40 L${(signSide === 'right' ? 58 : -2) + signLayout.offsetX} ${28 + signLayout.offsetY}`}
+                    className="garden-sign-connector-edge"
+                  />
+                  <path
+                    d={`M28 40 L${(signSide === 'right' ? 58 : -2) + signLayout.offsetX} ${28 + signLayout.offsetY}`}
+                  />
+                </svg>
+              )}
               <MapSignal levelId={n.id} status={state} paused={!!planting} />
-              {state === 'complete' && (
-                <span className="garden-scene-replay">情景回顾 · 已种花</span>
-              )}
-              {current?.id === n.id && !planting && (
-                <span className="garden-next-flag">↑ 出发</span>
-              )}
-              <span className="garden-node-bed">
+              <MapSign
+                levelId={n.id}
+                regionId={region.id}
+                title={title ?? ''}
+                status={state}
+                revealNonce={revealing ? reveal.nonce : undefined}
+                stampNonce={
+                  !!plant &&
+                  state === 'complete' &&
+                  nodeStatus(n.id, planting.before) !== 'complete'
+                    ? planting.nonce
+                    : undefined
+                }
+                onRevealEnd={finishReveal}
+              />
+              <span
+                className={`garden-node-bed${revealing ? ' sign-unlock-bud' : ''}`}
+              >
                 {flower ? (
                   <Flower className={plant ? 'new-flower' : ''} />
                 ) : state === 'locked' ? (
@@ -194,17 +282,9 @@ export function MapScene({
                   </span>
                 )}
                 <span className="garden-node-number">
-                  {state === 'complete' ||
-                  (plant && age >= journeyTiming.bloom) ? (
-                    <Check />
-                  ) : (
-                    String(i + 1).padStart(2, '0')
-                  )}
+                  {String(i + 1).padStart(2, '0')}
                 </span>
               </span>
-              <strong className="garden-node-label">
-                {getLevel(n.id)?.title}
-              </strong>
               {plant &&
                 age < 1000 &&
                 [0, 1, 2].map((k) => (

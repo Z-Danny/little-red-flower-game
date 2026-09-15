@@ -1,0 +1,11 @@
+Use case: stylized-concept.
+Asset type: a production-ready isolated blank horizontal signboard texture for a Chinese children's storybook mobile safety adventure game.
+Primary request: ONE forest-green hand-painted wooden village signboard, front-facing, no words, no symbols in its central writing area. It should feel like a small physical painted sign in a warm, charming, richly illustrated storybook town.
+Canvas: landscape 1536 by 1024 if possible. The sign itself is a very wide compact rounded rectangle, width-to-height ratio exactly 4.25:1, centered on the canvas, occupying about 88 percent of canvas width. True transparent alpha background everywhere outside the sign and its tiny contact shadow.
+Silhouette: straight horizontal upper and lower edges, subtly asymmetric hand-carved rounded corners, almost rectangular. No posts, brackets, chains, ribbons, foliage outside the outline, arrows, hanging legs or separate objects. Flat frontal orthographic view, absolutely no perspective tilt.
+Material: deep muted forest-green painted wood (#385c48), beautifully restrained fine horizontal paint strokes and extremely subtle grain. The broad central 78 percent area must remain dark, quiet, clean and completely empty to hold a highly readable six-character cream Chinese level title later.
+Frame: thin warm honey-wood perimeter, approximately 4 percent of sign height, softly beveled; top-left rim catches a delicate cream highlight, bottom rim has warm brown painted depth. Small understated leaf incision worked into the upper-left frame, not an attached leaf. Leave upper-right corner clear for a separate tiny level engraving later.
+Style: painterly illustration, soft gouache and controlled hand-painted 2.5D form, polished mobile game UI asset; not photorealistic wood, not flat vector, not glossy casino fantasy.
+Lighting: gentle natural upper-left light only. This is the NORMAL base state; no glowing aura, no sparkling particles, no neon, no bright halo.
+Text: none. No letters, numbers, logos, watermarks or labels.
+Deliver only this single isolated transparent sign asset, not a mockup page, not a sprite sheet, not multiple variants.

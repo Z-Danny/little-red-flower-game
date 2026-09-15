@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "status": "integrated_and_verified",
+  "generation": "OpenAI built-in image_gen; images copied without pixel edits. Motifs and stamp are original SVG.",
+  "bases": {
+    "nature": {
+      "file": "assets/nature-base.png",
+      "width": 2043,
+      "height": 770,
+      "bounds": {
+        "left": 32,
+        "top": 132,
+        "width": 1980,
+        "height": 480
+      },
+      "visualAlphaBounds24": [
+        41,
+        140,
+        2003,
+        604
+      ],
+      "bytes": 1413523,
+      "sha256": "0d36f9cf17190364a87c95622a69d36fb22ff12884c519361194f9e9c111f520",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentFraction": 0.4137161419099745,
+      "prompt": "nature-base.prompt.txt",
+      "generatedSource": "/Users/danny/.codex/generated_images/01a0a371-7efc-7270-b999-58115341a57b/exec-42a5aa43-67bb-4456-acdb-297603cf71dc.png"
+    },
+    "public": {
+      "file": "assets/public-base.png",
+      "width": 2043,
+      "height": 770,
+      "bounds": {
+        "left": 32,
+        "top": 132,
+        "width": 1980,
+        "height": 480
+      },
+      "visualAlphaBounds24": [
+        38,
+        138,
+        2006,
+        602
+      ],
+      "bytes": 1238006,
+      "sha256": "3d18badb9cf039cbc0fb3da9ae5a43a6763d48d530f9dcaeeccc5956b8de242d",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentFraction": 0.41199916089783933,
+      "prompt": "public-base.prompt.txt",
+      "generatedSource": "/Users/danny/.codex/generated_images/01a0a371-7efc-7270-b999-58115341a57b/exec-c4932cc3-add7-477c-8869-9bf016673194.png"
+    },
+    "home": {
+      "file": "assets/home-base.png",
+      "width": 2043,
+      "height": 770,
+      "bounds": {
+        "left": 32,
+        "top": 132,
+        "width": 1980,
+        "height": 480
+      },
+      "visualAlphaBounds24": [
+        38,
+        138,
+        2006,
+        605
+      ],
+      "bytes": 1306637,
+      "sha256": "77094757a495a6af8e89fe047b1b8c4f069c0c10b4cfb49d7f91fdf20fa22932",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "fullyTransparentFraction": 0.41198390449491773,
+      "prompt": "home-base.prompt.txt",
+      "generatedSource": "/Users/danny/.codex/generated_images/01a0a371-7efc-7270-b999-58115341a57b/exec-1378ce4d-fb07-4f8e-8a97-a65ce3383783.png"
+    }
+  },
+  "runtimeIntegration": "integrated_and_verified",
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "contextPreview": {
+    "file": "map-context-preview.png",
+    "purpose": "AI-generated static visual proposal only, not a gameplay screenshot or replacement map",
+    "prompt": "map-context.prompt.txt",
+    "generatedSource": "/Users/danny/.codex/generated_images/01a0a371-7efc-7270-b999-58115341a57b/exec-9a8d6fa9-9190-46a0-8ec6-956331fb0464.png",
+    "sha256": "0d88607e0a7e9a3aefeead15aab36bfb0d86a88fa44ffa19e60b6a645f9b9939"
+  },
+  "vectorAssets": [
+    {
+      "file": "assets/completed-flower.svg",
+      "sha256": "e558092d2517cd152d3c4e87e8ea5154275b54c586b31b86c38801c3d7e48750"
+    },
+    {
+      "file": "assets/motifs/bedroom-night-check-v2.svg",
+      "sha256": "2918bc9f033f5c19281c82966c5bff63698b77550c30f50802ac0d94c22e364d"
+    },
+    {
+      "file": "assets/motifs/car-window-practice.svg",
+      "sha256": "92e16e1d8e2f9b379bc2d0c0986381d27bdb7f2121d0ff3f36fc45029b34fcca"
+    },
+    {
+      "file": "assets/motifs/charging-bedroom.svg",
+      "sha256": "4d580e6d6d42e4e67d94bc7b2311fa179ebe37b96e585676645683e140c75100"
+    },
+    {
+      "file": "assets/motifs/clear-corridor-check-v2.svg",
+      "sha256": "a1f26643299518a0c4f0a6bc0d86aa07f35d153723b0c7d48dc29a2a2c1b1b1d"
+    },
+    {
+      "file": "assets/motifs/clear-corridor.svg",
+      "sha256": "c848ca5c70d829a2d31580e95e5bb12ba6a2834d9b273c8c2cae3b3f49cdbc85"
+    },
+    {
+      "file": "assets/motifs/collapse-signal-practice.svg",
+      "sha256": "9bfa7494a0f541098766ca23e57c41f9609774cdd03e7314007abdb02d772a34"
+    },
+    {
+      "file": "assets/motifs/fire-shelter-practice.svg",
+      "sha256": "f3a16a1c992157810c8eff8feed4df03e352ff6f4637ecc5a3d0dbf9e91552ba"
+    },
+    {
+      "file": "assets/motifs/fire-stairs-practice.svg",
+      "sha256": "ef0eb27026fee88f9eccd9d4d5f7b1635810c645ee02013ad9c59e0ed8cae5a6"
+    },
+    {
+      "file": "assets/motifs/flood-highground-practice.svg",
+      "sha256": "d79b0388e2327bf3cfe781fc8907b080d26166b800efcea2726e4c0a75faa360"
+    },
+    {
+      "file": "assets/motifs/flood-house-response-v1.svg",
+      "sha256": "d47262ca008121639b5a5e6f2ebd11f686e5b9b65966dad15947d6d49a72333b"
+    },
+    {
+      "file": "assets/motifs/flood-kit.svg",
+      "sha256": "4b8f5562ee1b1cfbab6dd81bc1c3fe21cba8c07bb5b5b2bb694a74bb0f5dba50"
+    },
+    {
+      "file": "assets/motifs/forest-fire-sources-v2.svg",
+      "sha256": "cfd587f24bb731083e75f5bb40948002765d0e214fb77a9c3459afd6ae7f5ac0"
+    },
+    {
+      "file": "assets/motifs/kitchen-before-cooking-v2.svg",
+      "sha256": "bb54a6c7827874e7ac38d99f2386a6a1c56035443ee83d08bbec31c110d73af1"
+    },
+    {
+      "file": "assets/motifs/lift-contact-practice.svg",
+      "sha256": "b8fcdaed3c6fee92dcfa08c50f1b350a2461612198b558209f9d7697783d1618"
+    },
+    {
+      "file": "assets/motifs/lift-wait.svg",
+      "sha256": "85cdde8396992ac361153a899cabd0c1cb2a4aa10690b3482e01cb11a249cfa0"
+    },
+    {
+      "file": "assets/motifs/oil-fire.svg",
+      "sha256": "128e431ca3dbb301a67b719f4345cb6864be3ce5e4d7bba93984261a81c35ef0"
+    },
+    {
+      "file": "assets/motifs/quake-bedroom-v2.svg",
+      "sha256": "5843111d995a056cebf6b147952ad369481287592ac5891125b4abb517e6e73a"
+    },
+    {
+      "file": "assets/motifs/quake-cover-practice.svg",
+      "sha256": "fd7b61412de0bb0bc180650a71af855347986d998eb181f650f8831675d9a6bc"
+    },
+    {
+      "file": "assets/motifs/quake-exit-practice.svg",
+      "sha256": "a3726c908be90499e47468338ef8cb08b80f276f5cef5863a61df47b2c4b0ca0"
+    },
+    {
+      "file": "assets/motifs/rain-street-preparation-v1.svg",
+      "sha256": "395b19fb124a3fd6774cbfa297501bf4f99b560ed8a59461f41405503621cfa3"
+    },
+    {
+      "file": "assets/motifs/storm-street-check-v2.svg",
+      "sha256": "e3b36bbbf647970a859bf71490c34c5fe4207d178d8adbea9c10aafb9547a7a6"
+    },
+    {
+      "file": "assets/motifs/thunder-park-v2.svg",
+      "sha256": "7907db98cbf94214164990295281de2d0ac739f41c121e2d048745c605228d63"
+    },
+    {
+      "file": "assets/motifs/typhoon-home.svg",
+      "sha256": "eedf7edc637766e623e8b9fbeba4424b8c60ecf420b4bb18f07ff4660eb95557"
+    },
+    {
+      "file": "assets/motifs/well-call.svg",
+      "sha256": "28b9572661b92a0b32a217f51a8af769658d243f74de9ae796df8c43d000d231"
+    }
+  ],
+  "reviewArtifact": {
+    "file": "outputs/路牌素材待确认-v1/index.html",
+    "sha256": "052061b85813fa1486b92f0d5b198dcffeda37e912f1b1753217650f0ac2da48",
+    "verification": "verification.json",
+    "status": "passed"
+  },
+  "approvalHistory": [
+    {
+      "date": "2026-09-15",
+      "previousStatus": "awaiting_user_review",
+      "status": "approved_for_integration",
+      "userRequest": "可以， 把它替换到游戏里边,然后把你说的小巧思那些都加上,就是包括动效什么的。",
+      "reviewArtifact": "outputs/路牌素材待确认-v1/index.html",
+      "reviewArtifactSha256": "052061b85813fa1486b92f0d5b198dcffeda37e912f1b1753217650f0ac2da48",
+      "scope": "Three approved base PNGs, 24 approved motif SVGs and the completed-flower stamp; presentation and motion only."
+    }
+  ],
+  "runtimeAssetCopy": {
+    "date": "2026-09-15",
+    "root": "public/ui/map-signs-v1",
+    "config": "content/journey-signs.json",
+    "assets": 28,
+    "basePngs": 3,
+    "motifSvgs": 24,
+    "stampSvgs": 1,
+    "allBytesMatchSourceSha256": true,
+    "journeyLevelCoverage": "24/24",
+    "status": "passed"
+  },
+  "runtimeVerification": {
+    "date": "2026-09-15",
+    "status": "passed",
+    "file": "docs/flower-journey/painted-map-signs-verification.json",
+    "artifact": "outputs/绘本路牌动效版/小红花应急行动.html",
+    "sha256": "7908a2d4a633e0c4d9cdcf51836da3730344935cc168213aca14c1903af53688"
+  }
+}

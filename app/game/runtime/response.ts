@@ -9,6 +9,8 @@ export function configuredPressure(pack: LevelPackage, run: Run) {
 export function configuredAudioFrame(pack: LevelPackage, run: Run, active: boolean): AudioFrame {
   const pressure = configuredPressure(pack, run), action = run.action;
   return { ...pressure, elapsed: run.elapsed, active: !!pack.skin.response && active,
+    result: pack.skin.response ? run.phase === 'failed' ? 'failure' : run.phase === 'complete' && !run.escaped ? 'victory' : null : undefined,
+    paused: !active,
     action: action ? { id: `${action.rule}:${Math.round(run.elapsed - action.age)}`, kind: action.rule ?? 'bounce', age: action.age, duration: action.duration } : undefined,
     milestones: [...run.resolved, ...(pressure.resolved ? ['controlled'] : [])],
   };

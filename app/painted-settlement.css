@@ -1,0 +1,358 @@
+/* Completion cards share one frame and flow layout across all level engines. */
+.garden-dialog.garden-settlement.painted-settlement {
+  --settlement-ink: #123e28;
+  width: min(440px, calc(100vw - 20px));
+  max-width: none;
+  max-height: calc(
+    100dvh - max(12px, env(safe-area-inset-top)) -
+      max(12px, env(safe-area-inset-bottom))
+  );
+  top: auto;
+  bottom: max(12px, env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  translate: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  outline: none;
+  color: var(--settlement-ink);
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #bb994e transparent;
+  -webkit-overflow-scrolling: touch;
+  filter: drop-shadow(0 8px 16px #152c2540);
+}
+.painted-settlement-card {
+  width: 100%;
+}
+.painted-settlement-header,
+.painted-settlement-footer {
+  position: relative;
+}
+.painted-settlement-header > img,
+.painted-settlement-footer > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+.painted-settlement-header {
+  aspect-ratio: 964 / 250;
+}
+.painted-settlement .painted-settlement-header h2 {
+  position: absolute;
+  left: 24%;
+  top: 19%;
+  width: 52%;
+  height: 52%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #fff4ce;
+  font-family: var(--font-game-title);
+  font-size: clamp(30px, 9.3vw, 42px);
+  font-weight: 700;
+  line-height: 1.1;
+  white-space: nowrap;
+  letter-spacing: 0;
+  text-shadow: 0 2px 1px #06281966;
+  outline: none;
+}
+.painted-settlement-body {
+  background: url('/ui/painted-settlement-v1/body.webp') center / 100% 100%
+    no-repeat;
+}
+.painted-settlement-inner {
+  padding: 0 10% 0 9%;
+}
+.painted-settlement .painted-settlement-level {
+  margin: 0;
+  font-family: var(--font-game-title);
+  font-size: clamp(23px, 6.7vw, 29px);
+  font-weight: 700;
+  line-height: 1.35;
+  text-wrap: balance;
+}
+.painted-settlement .painted-settlement-message {
+  margin: 5px 0 8px;
+  color: #325438;
+  font-family: var(--font-game-title);
+  font-size: 16px;
+  line-height: 1.55;
+  text-wrap: balance;
+}
+.painted-settlement-reward {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 62px;
+  gap: 9px;
+}
+.painted-settlement-reward > .garden-flower {
+  width: 48px;
+  height: 54px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 2px #3e4b2829);
+  transform-origin: bottom center;
+}
+.painted-settlement-reward > .settlement-flower-1 {
+  width: 56px;
+  height: 62px;
+}
+.painted-settlement-card[data-awarded='true']
+  .painted-settlement-reward
+  > .garden-flower {
+  animation: settlement-bloom 620ms backwards;
+}
+.painted-settlement-card[data-replay='true']
+  .painted-settlement-reward
+  > .garden-flower {
+  opacity: 0.8;
+}
+.painted-settlement-card[data-awarded='false'][data-replay='false']
+  .painted-settlement-reward {
+  opacity: 0.55;
+}
+.painted-settlement-petal {
+  position: absolute;
+  width: 14px;
+  height: 15px;
+  object-fit: contain;
+  top: -8px;
+  left: calc(50% + 40px);
+  pointer-events: none;
+  opacity: 0;
+  animation: settlement-petal 1200ms 400ms both;
+}
+.painted-settlement-reward-label {
+  display: block;
+  margin: 3px 0 11px;
+  min-height: 24px;
+  font-family: var(--font-game-body);
+  color: #b93430;
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+.painted-settlement-card[data-replay='true'] .painted-settlement-reward-label {
+  color: #52663c;
+  font-size: 13px;
+}
+.painted-settlement-knowledge {
+  position: relative;
+  padding-top: 9px;
+  border-top: 2px solid #7b8b43;
+  border-radius: 40% 30% 0 0 / 3px 2px 0 0;
+  text-align: left;
+}
+.painted-settlement-knowledge::before,
+.painted-settlement-knowledge::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  width: 12px;
+  height: 6px;
+  background: #648439;
+  border: 1px solid #4a642b;
+  border-radius: 0 90% 0 90%;
+  transform: rotate(18deg);
+}
+.painted-settlement-knowledge::before {
+  left: -2px;
+}
+.painted-settlement-knowledge::after {
+  right: -2px;
+  transform: rotate(-28deg);
+}
+.painted-settlement .painted-settlement-knowledge h3 {
+  font-family: var(--font-game-title);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 8px;
+}
+.painted-settlement-knowledge ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 9px;
+}
+.painted-settlement-knowledge li {
+  display: grid;
+  grid-template-columns: 23px minmax(0, 1fr);
+  gap: 7px;
+}
+.painted-settlement-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1.8px solid #315437;
+  border-radius: 50%;
+  font-family: var(--font-game-body);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 1px;
+}
+.painted-settlement-knowledge li strong {
+  display: block;
+  color: var(--settlement-ink);
+  font-family: var(--font-game-body);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+.painted-settlement-explanation {
+  display: block;
+  color: #31513d;
+  font-family: var(--font-game-body);
+  font-size: 13px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.painted-settlement-sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 6px;
+  margin: 7px 0 0 30px;
+  color: #516347;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.painted-settlement-sources a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  max-width: 100%;
+  color: #365a3f;
+  text-decoration: underline;
+  text-decoration-color: #8d9a6c;
+  text-underline-offset: 3px;
+}
+.painted-settlement .painted-settlement-error {
+  margin: 5px 0 10px;
+  color: #a22d27;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: left;
+}
+.painted-settlement-footer {
+  aspect-ratio: 964 / 248;
+}
+.painted-settlement .painted-settlement-primary {
+  position: absolute;
+  left: 11%;
+  top: 6%;
+  width: 72%;
+  aspect-ratio: 964 / 222;
+  min-height: 48px;
+  padding: 5px 16px 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 100px;
+  background: url('/ui/painted-settlement-v1/button.webp') center / 100% 100%
+    no-repeat;
+  box-shadow: none;
+  color: #123e28;
+  font-family: var(--font-game-title);
+  font-size: clamp(24px, 7vw, 31px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    filter 150ms,
+    transform 150ms;
+  touch-action: manipulation;
+}
+.painted-settlement .painted-settlement-primary:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+.painted-settlement .painted-settlement-primary:active:not(:disabled) {
+  transform: translateY(2px);
+}
+.painted-settlement .painted-settlement-primary:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.painted-settlement .painted-settlement-primary:focus-visible,
+.painted-settlement-sources a:focus-visible {
+  outline: 3px solid #205039;
+  outline-offset: 3px;
+}
+@keyframes settlement-bloom {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) translateY(7px);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes settlement-petal {
+  0% {
+    opacity: 0;
+    transform: translate(8px, -8px) rotate(-20deg);
+  }
+  20% {
+    opacity: 0.9;
+  }
+  85% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-18px, 45px) rotate(70deg);
+  }
+}
+@media (max-width: 350px) {
+  .painted-settlement .painted-settlement-message {
+    font-size: 14px;
+  }
+  .painted-settlement-knowledge li strong {
+    font-size: 14px;
+  }
+  .painted-settlement-reward {
+    height: 55px;
+  }
+  .painted-settlement-reward > .garden-flower {
+    width: 43px;
+    height: 49px;
+  }
+  .painted-settlement-reward > .settlement-flower-1 {
+    width: 49px;
+    height: 55px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .painted-settlement *,
+  .painted-settlement *::before,
+  .painted-settlement *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .painted-settlement-petal {
+    display: none;
+  }
+}

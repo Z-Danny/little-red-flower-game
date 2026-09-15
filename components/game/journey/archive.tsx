@@ -1,4 +1,4 @@
-import { Medal, RotateCcw, Trophy } from 'lucide-react';
+import { Medal, Trophy } from 'lucide-react';
 import {
   flowerTotal,
   plantedTotal,
@@ -16,14 +16,12 @@ export function JourneyArchive({
   playerName,
   completed,
   onLeaderboard,
-  onReset,
 }: {
   archive: boolean;
   setArchive: (value: boolean) => void;
   playerName: string;
   completed: Progress;
   onLeaderboard: () => void;
-  onReset: () => void;
 }) {
   return (
     <>
@@ -37,7 +35,7 @@ export function JourneyArchive({
             <span>
               累计小红花
               <br />
-              已种下 {plantedTotal(completed)} 朵关卡主花
+              已完成 {plantedTotal(completed)} 个关卡
             </span>
           </div>
           <div className="garden-medals">
@@ -60,22 +58,18 @@ export function JourneyArchive({
             })}
           </div>
           <p className="garden-footnote">
-            每关首次完成获得 3
-            朵小红花，地图种下一朵主花。旧版花数保留，重玩不重复领奖。
+            每关首次完成可获得 3 朵小红花，重玩不重复获得。
           </p>
           <button
             className="garden-secondary"
+            aria-label="打开排行榜"
             onClick={() => {
               setArchive(false);
               onLeaderboard();
             }}
           >
-            本机排行榜
+            红人榜
             <Trophy />
-          </button>
-          <button className="garden-reset" onClick={onReset}>
-            <RotateCcw />
-            重置当前玩家记录
           </button>
         </GardenDialog>
       )}

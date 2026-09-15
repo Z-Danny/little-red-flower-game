@@ -1,0 +1,22 @@
+{
+  "mode": "OpenAI built-in image_gen",
+  "created": "2026-09-15",
+  "edits": [
+    {
+      "output": "modal-source.png",
+      "target": "/Users/danny/.codex/generated_images/01a0a2fb-7936-7ca3-b977-d5a07ef86420/exec-3c57f783-a3a0-4f0c-9d74-93c44db1f2c0.png",
+      "prompt": "Use case: precise-object-edit. Asset type: production transparent hand-painted game modal. Input image is the edit target. Make exactly one tiny edit: erase the dark green right-pointing arrow inside the gold button and seamlessly restore the surrounding golden painted texture. Keep the entire modal, dark-green title panel, blank cream middle description area, blank golden rounded button, gold and brown border, leaves, shape, relative size, canvas size, placement, watercolor/gouache textures and all other pixels and transparency as unchanged as possible. No letters, words, symbols or arrows anywhere. This is the same UI asset with an empty gold button for dynamic per-level text. Output PNG with genuine transparent background and preserve full outline without cropping."
+    },
+    {
+      "output": "timer-full-source.png",
+      "target": "/Users/danny/.codex/generated_images/01a0a2fb-7936-7ca3-b977-d5a07ef86420/exec-8aa24b2b-7ee9-4b9d-9385-0fb140a1fe99.png",
+      "prompt": "Use case: precise-object-edit. Asset type: production transparent hand-painted game countdown bar FULL state. Input image is the edit target. Keep the EXACT long slender horizontal gold-and-brown frame, left and right small dark-green leaves, dimensions, placement, outline, narrow thickness and transparency. Edit ONLY inside the inner groove: extend the existing golden fill from its 72 percent position all the way to the inner right end, so the groove is 100 percent full with contiguous same warm golden painted texture. There must be zero dark-green empty region inside the groove. Preserve every surrounding border and leaf. No text, labels, numbers, pointer, symbols, arrows, background scene or extra decoration. Keep same canvas and coordinate geometry as the reference, transparent background, full silhouette uncropped. Output a single bar."
+    },
+    {
+      "output": "timer-empty-source.png",
+      "target": "/Users/danny/.codex/generated_images/01a0a339-aadf-74b2-90dc-7b7e0e0ea48d/exec-9e2bba45-af3e-4bd7-8690-7109c4c766d6.png",
+      "prompt": "Use case: precise-object-edit. Asset type: production transparent hand-painted game countdown bar EMPTY state. Input image is the FULL bar and must remain the same asset. Make ONLY the entire inner groove deep leaf-green instead of golden. This is a 0 percent full state: absolutely no golden fill inside the slot. Keep the exact external warm-gold-and-brown frame and highlights, leaves on both ends, same 2169 by 725 canvas, same x/y coordinates, exact outline, external proportions, border thickness, same subtle painted texture and genuine transparent alpha background. The empty green trough should have the same texture/color as the original prior partial fill's empty right section, dark forest leaf green. It will be aligned directly under the FULL bar in an animated game so geometry must not shift or change. No text, labels, numbers, pointer, arrow or new decorations. Output one single bar with full silhouette uncropped."
+    }
+  ],
+  "priorAssets": "User-selected prior generated hint, pause, back and petal artworks were copied without creative edits; only crop, resize, compression."
+}

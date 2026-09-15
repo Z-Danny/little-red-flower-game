@@ -55,7 +55,10 @@ async function openLevel() {
   assert.equal(await player().getAttribute('data-level'), id);
 }
 async function retry() {
-  await page.getByRole('button', { name: '重新开始', exact: true }).click(); await tick(100);
+  const failed = (await player().getAttribute('data-phase')) === 'failed';
+  await (failed
+    ? page.locator('.painted-failure').getByRole('button', { name: '不服，再来！', exact: true })
+    : page.getByRole('button', { name: '重新开始', exact: true })).click(); await tick(failed ? 300 : 100);
   run = rt.engine.createRun(pack); await syncRun();
   assert.equal(run.phase, 'playing'); assert.deepEqual(run.resolved, []);
   assert.equal(await player().getAttribute('data-failure'), null); assert.equal(await player().getAttribute('data-escaped'), 'false');
@@ -130,18 +133,19 @@ async function fatal(name, suffix) {
   const a = await sendInput(name);
   assert.equal(await player().getAttribute('data-phase'), 'failed', 'wrong choice immediately locks gameplay');
   assert.equal(await player().getAttribute('data-failure'), name); assert.equal(await player().getAttribute('data-failure-revealing'), 'true');
-  assert.equal(await page.getByRole('heading', { name: '本次训练中止', exact: true }).count(), 0, 'no premature popup');
+  assert.equal(await page.locator('[data-testid="failure-title"]').count(), 0, 'no premature popup');
   const frozenElapsed = await player().getAttribute('data-elapsed');
   await page.touchscreen.tap(blockedTap.x, blockedTap.y); await tick(640);
   assert.equal(await player().getAttribute('data-action'), '', 'no new action while failure is revealing');
   assert.equal(await player().getAttribute('data-elapsed'), frozenElapsed, 'gameplay time frozen during failure');
   assert.equal(await player().getAttribute('data-failure-revealing'), 'true');
   assert(Number(await player().getAttribute('data-failure-age')) >= 600, 'presentation clock advances');
-  assert.equal(await page.getByRole('heading', { name: '本次训练中止', exact: true }).count(), 0);
+  assert.equal(await page.locator('[data-testid="failure-title"]').count(), 0);
   await shot('failure-mid-' + name + '-' + suffix); await tick(a.duration - 640 + 100);
-  await page.getByRole('heading', { name: '本次训练中止', exact: true }).waitFor();
+  await page.locator('[data-testid="failure-title"]').waitFor();
+  assert.equal(await page.locator('[data-testid="failure-title"]').innerText(), '怎么回事！');
   await syncRun(); assert.deepEqual(run.resolved, previousGoals); assert.deepEqual(await scores(), previousScores);
-  assert.equal(await page.locator('.garden-settlement').count(), 0); assert.equal(await player().getAttribute('data-failure-revealing'), 'false');
+  assert.equal(await page.locator('.painted-settlement').count(), 0); assert.equal(await player().getAttribute('data-failure-revealing'), 'false');
   await shot('failure-result-' + name + '-' + suffix);
   check('fatal choice locks input, shows consequence first, then retry popup; no reward: ' + name + ' ' + suffix);
   await retry(); assert.deepEqual(await scores(), previousScores);
@@ -194,9 +198,9 @@ try {
       await tick(6200); await page.locator('.garden-settlement').waitFor(); assert.equal((await scores())[id], 3); await shot('complete-' + width);
       check('seven real interactions complete and award three flowers ' + width);
       if (width === 390) {
-        const saved = await scores(); await page.getByRole('button', { name: /返回地图/ }).click(); await tick(3000); await openLevel();
+        const saved = await scores(); await page.locator('[data-testid="settlement-primary"]').click(); await tick(3000); await openLevel();
         for (const name of ['approach-stairs', 'turn-off-power', 'send-location', 'pack-water', 'pack-light', 'combine-float', 'evacuate-roof']) await action(name);
-        await tick(6200); await page.locator('.garden-settlement').waitFor(); assert.deepEqual(await scores(), saved); assert.equal(await page.locator('.garden-reward-label').innerText(), '本关花朵已种下'); check('replay does not duplicate flowers or mutate prerequisite scores');
+        await tick(6200); await page.locator('.garden-settlement').waitFor(); assert.deepEqual(await scores(), saved); assert.equal(await page.locator('[data-testid="settlement-reward"]').innerText(), '小红花已种下 · 本次为巩固练习'); check('replay does not duplicate flowers or mutate prerequisite scores');
       }
     } catch (error) { await shot('FAIL-' + width).catch(() => {}); throw error; }
     finally { await context.close(); }

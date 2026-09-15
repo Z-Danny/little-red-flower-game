@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/地图图标清晰版/小红花应急行动.html",
+  "sha256": "4dbc7fccaaf09102f0874745bb3f8f4f6ad9adf81eb569a742e8b33134f0dd64",
+  "finalHtmlUnchanged": true,
+  "checks": [
+    {
+      "command": "pnpm test:journey",
+      "exitCode": 0,
+      "passed": 77
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm build",
+      "exitCode": 0
+    },
+    {
+      "command": "node scripts/export-offline.mjs --output outputs/地图图标清晰版",
+      "exitCode": 0,
+      "checks": 7
+    },
+    {
+      "command": "OFFLINE_FILE='outputs/地图图标清晰版/小红花应急行动.html' MAP_CORNER_GARDEN_TEST_OUTPUT='outputs/map-corner-clarity-verification' node scripts/test-map-corner-storybook-browser.mjs",
+      "exitCode": 0,
+      "checks": 20,
+      "layouts": 15
+    }
+  ],
+  "browser": "152.0.7977.83",
+  "browserClosed": true,
+  "contextsClosed": [
+    0,
+    9,
+    63
+  ],
+  "errors": 0,
+  "networkRequests": 0,
+  "visualReview": {
+    "status": "passed",
+    "screenshots": [
+      "outputs/map-corner-clarity-verification/garden-0-nature-390x844.png",
+      "outputs/map-corner-clarity-verification/garden-63-public-top-390x844.png",
+      "outputs/map-corner-clarity-verification/garden-63-nature-320x568.png"
+    ],
+    "findings": "Fine cream contours, blue settings body, subtle feathered scenery adjustment without hard panel boundaries or exterior shadows; count remains legible."
+  },
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "nonzeroSafeArea": "not_run",
+  "sources": [
+    {
+      "file": "app/map-wheel.css",
+      "sha256": "63e9ada274470f5ed3be5c08f7d3e78db3d6391a93d4b7aa5706d38f814e4937"
+    },
+    {
+      "file": "components/game/journey/map-chrome.tsx",
+      "sha256": "1b4061f1dc94a8f54c619ffd0709516c4978f25c997680f82da088d77f7bc1c8"
+    },
+    {
+      "file": "public/ui/map-corner-garden-v2/home.png",
+      "sha256": "9a08dc76b63174ab32ebdd54fdac877589e6c889820175d96a58a49fa71085e3"
+    },
+    {
+      "file": "public/ui/map-corner-garden-v2/flower-counter.png",
+      "sha256": "3d38535b9cccba6dd1b861f24e722026c48afa0a213aa57204b792662c1e1dab"
+    },
+    {
+      "file": "public/ui/map-corner-garden-v2/settings-blue.png",
+      "sha256": "0eaa5e3c5b216c2e14030c780c23f414f172cbdced406befc8ff8007dcc18725"
+    }
+  ]
+}

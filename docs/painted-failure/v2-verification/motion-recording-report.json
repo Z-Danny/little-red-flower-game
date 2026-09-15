@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "startedAt": "2026-09-15T06:09:44.999Z",
+  "html": "/Users/danny/dannyprojects/小红花/outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "780267e8fc0208868321719e6b6bf43b5e42a45d7f0c99f94bcb51d70336e921",
+  "cases": [],
+  "layouts": [],
+  "exits": [],
+  "checks": [
+    {
+      "name": "Continuous 390px browser recording: existing engine timeout, actual failure motion and real retry click",
+      "status": "passed"
+    }
+  ],
+  "screenshots": [],
+  "videos": [
+    {
+      "file": "quake-normal-motion-390x844.webm",
+      "note": "Continuous actual browser video at 390×844, from isolated page load through a controlled real-engine timeout, authored failure motion, and a real retry click. No viewport changes, artificial animation, or time splices."
+    }
+  ],
+  "errors": [],
+  "network": [],
+  "failedRequests": [],
+  "contextsCreated": 1,
+  "contextsClosed": 1,
+  "browserClosed": true,
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "fixture": "Each private test profile presets the other 23 levels complete only for access. The existing modelContext start callback opens a real autoStart player. First normal-motion hunt failure uses real target input and Playwright RAF timeout; collection and repeat timeouts use documented mounted-engine clock boundaries. Flood/shelter mistakes use real canvas input. No completion/reward callback is injected.",
+  "motionInstrumentation": "Native setTimeout/clearTimeout are wrapped transparently after Playwright clock installation. Actual animation events and DOM phase changes are recorded with document.timeline.currentTime. First actions use real click/keyboard; captured existing React button handlers are then repeated to challenge the synchronous lock without altering callbacks or React state. One optional interrupted-animation check cancels only the current CSS exit animation to exercise the existing fallback.",
+  "sourceArtwork": [
+    {
+      "name": "header",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v2/header.webp",
+      "sha256": "121d741cfc7227e1cd535972b8bec20b4fbe14d714f9bc8c3ab6c123e1a538ca"
+    },
+    {
+      "name": "body",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v2/body.webp",
+      "sha256": "75dacdf9b91f8eaf43d527947ffa17d44bace55a01da0acf94216702380c8106"
+    },
+    {
+      "name": "footer",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v2/footer.webp",
+      "sha256": "80670012ec5098516863ca59d12bbdc44f23176d2c2ddd1245620f1956f71a98"
+    },
+    {
+      "name": "button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v2/button.webp",
+      "sha256": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9"
+    },
+    {
+      "name": "secondary-button",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v2/secondary-button.webp",
+      "sha256": "b3d8b133d0d2f5593dcecfedd0fb14f526c4d401723349a8756276f7501610f4"
+    },
+    {
+      "name": "mascot",
+      "file": "/Users/danny/dannyprojects/小红花/public/ui/painted-failure-v2/mascot.webp",
+      "sha256": "bc840f1d2ae3f05f259eb760e1ce935d56732963fb9e268f67f9882ccc5b9a1b"
+    }
+  ],
+  "browser": "152.0.7977.83",
+  "finalHtmlSha256": "780267e8fc0208868321719e6b6bf43b5e42a45d7f0c99f94bcb51d70336e921",
+  "finishedAt": "2026-09-15T06:09:56.199Z"
+}

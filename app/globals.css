@@ -13,6 +13,8 @@
 @import './map-signals.css';
 @import './title-screen.css';
 @import './journey-frame.css';
+@import './map-wheel.css';
+@import './archipelago.css';
 @import './placement.css';
 
 :root {

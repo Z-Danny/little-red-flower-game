@@ -50,9 +50,9 @@ try {
   });
   await p.goto(pathToFileURL(file).href);
   await p.locator('[data-title-screen]').waitFor();
-  await p.getByRole('button', { name: '关闭奖励声音', exact: true }).click();
-  assert(await p.getByRole('button', { name: '打开奖励声音', exact: true }).isVisible());
-  await p.getByRole('button', { name: '打开奖励声音', exact: true }).click();
+  await p.getByRole('button', { name: '关闭按钮和奖励音效', exact: true }).click();
+  assert(await p.getByRole('button', { name: '打开按钮和奖励音效', exact: true }).isVisible());
+  await p.getByRole('button', { name: '打开按钮和奖励音效', exact: true }).click();
   check('reward sound control identifies its scope and toggles');
   await p.evaluate(() => document.fonts.ready);
   assert(await p.locator('[data-home-continue]').isDisabled());

@@ -1,33 +1,59 @@
 /* oxlint-disable next/no-img-element -- Artwork must embed in the standalone offline game. */
-import { ArrowRight, Play, Trophy, Volume2, VolumeX } from 'lucide-react';
-import type { CSSProperties } from 'react';
+import { useEffect, useState, type CSSProperties } from 'react';
 import home from '@/content/journey-home.json';
+
+export const COVER_DEPARTURE_MS = 360;
+
 type Props = {
-  playerName: string;
-  flowers: number;
   canContinue: boolean;
-  muted: boolean;
-  onMute: () => void;
   onStart: () => void;
   onContinue: () => void;
-  onLeaderboard: () => void;
-  regionName?: string;
   busy: boolean;
   error: string;
+  departing?: boolean;
 };
 export function TitleScreen({
-  playerName,
-  flowers,
   canContinue,
-  muted,
-  onMute,
   onStart,
   onContinue,
-  onLeaderboard,
-  regionName,
   busy,
   error,
+  departing = false,
 }: Props) {
+  const [paused, setPaused] = useState(false);
+  const [artReady, setArtReady] = useState(false);
+  useEffect(() => {
+    let active = true;
+    // Start every decorative layer together, from the bud, even on a cold load.
+    const images = [home.image, ...Object.values(home.art)].map((src) => {
+      const image = new Image();
+      image.src = src;
+      return image.decode();
+    });
+    void Promise.allSettled(images).then(() => {
+      if (active) setArtReady(true);
+    });
+    return () => { active = false; };
+  }, []);
+  useEffect(() => {
+    const updateVisibility = () => setPaused(document.hidden);
+    updateVisibility();
+    document.addEventListener('visibilitychange', updateVisibility);
+    return () => document.removeEventListener('visibilitychange', updateVisibility);
+  }, []);
+  const buttonArt = (primary: boolean) => (
+    <>
+      <img
+        className="title-button-art"
+        src={primary ? home.art.primary : home.art.secondary}
+        data-cover-layer={primary ? 'button-primary' : 'button-secondary'}
+        alt=""
+        aria-hidden="true"
+        draggable={false}
+      />
+      {primary && <span className="title-button-beacon" aria-hidden="true" />}
+    </>
+  );
   const start = (
     <button
       key="start"
@@ -36,9 +62,8 @@ export function TitleScreen({
       data-home-start
       disabled={busy}
     >
-      <Play aria-hidden="true" />
-      <span>{home.start}</span>
-      <ArrowRight aria-hidden="true" />
+      {buttonArt(!canContinue)}
+      <span>{canContinue ? home.restart : home.start}</span>
     </button>
   );
   const resume = (
@@ -49,84 +74,100 @@ export function TitleScreen({
       disabled={!canContinue || busy}
       data-home-continue
     >
+      {buttonArt(canContinue)}
       <span>{home.continue}</span>
-      <ArrowRight aria-hidden="true" />
     </button>
   );
   return (
     <section
       className="title-screen"
       data-title-screen
+      data-cover-paused={paused || !artReady}
+      data-cover-ready={artReady}
+      data-cover-departing={departing}
       style={
         {
           '--home-ink': home.colors.ink,
           '--home-accent': home.colors.accent,
           '--home-paper': home.colors.paper,
+          '--cover-flower-art': `url("${home.art.flower}")`,
+          '--cover-title-art': `url("${home.art.title}")`,
+          '--cover-primary-art': `url("${home.art.primary}")`,
+          '--cover-departure-ms': `${COVER_DEPARTURE_MS}ms`,
         } as CSSProperties
       }
-      aria-label="小红花应急行动首页"
+      aria-label={`${home.title.join('')}首页`}
     >
-      <img
-        className="title-art"
-        src={home.image}
-        alt=""
-        fetchPriority="high"
-        draggable={false}
-      />
+      <div className="title-landscape" aria-hidden="true">
+        <img
+          className="title-art"
+          data-cover-layer="background"
+          src={home.image}
+          alt=""
+          fetchPriority="high"
+          draggable={false}
+        />
+        <div className="title-lake-light">
+          {[0, 1, 2, 3, 4, 5].map((glint) => <i key={glint} />)}
+        </div>
+      </div>
       <div className="title-wash" aria-hidden="true" />
-      <div className="title-tools">
-        <button
-          onClick={onMute}
-          aria-label={muted ? '打开奖励声音' : '关闭奖励声音'}
-          title="结算与种花音效"
-        >
-          {muted ? <VolumeX /> : <Volume2 />}
-        </button>
+      <div className="title-falling-leaves" data-cover-layer="falling-leaves" aria-hidden="true">
+        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((leaf) => (
+          <span className="title-leaf-flight" data-depth={leaf % 3 === 0 ? 'near' : 'far'} key={leaf}>
+            <span className="title-leaf-gust">
+              <img src={home.art.leaf} alt="" width={192} height={192} draggable={false} />
+            </span>
+          </span>
+        ))}
       </div>
       <header className="title-heading">
-        <p className="title-kicker">一朵花，一份守护</p>
         <h1>
-          <span>{home.title[0]}</span>
-          <span>{home.title[1]}</span>
-        </h1>
-        <p className="title-tagline">{home.tagline}</p>
-      </header>
-      <div className="title-menu">
-        {canContinue ? (
-          <p className="title-progress">
-            <span>{playerName}</span>
-            <i aria-hidden="true" />
-            <span>
-              已收获 <strong data-home-flowers>{flowers}</strong> 朵小红花
+          <span className="title-accessible-name">{home.title.join('')}</span>
+          <span className="title-logo-motion" aria-hidden="true">
+            <span className="title-logo-stage">
+              <img
+                className="title-logo"
+                data-cover-layer="title"
+                src={home.art.title}
+                width={1200}
+                height={691}
+                alt=""
+                draggable={false}
+              />
+              <span className="title-logo-sheen" />
             </span>
-          </p>
-        ) : (
-          <p className="title-welcome">{home.emptyHint}</p>
-        )}
-        <div className="title-buttons">
-          {canContinue ? [resume, start] : [start, resume]}
+          </span>
+        </h1>
+      </header>
+      <div className="title-flower" data-cover-flower aria-hidden="true">
+        {['bud', 'opening', 'half-open', 'bloom'].map((frame) => (
+          <span
+            key={frame}
+            className={`title-flower-frame title-flower-${frame}`}
+            data-cover-layer={frame}
+          />
+        ))}
+        <div className="title-pollen">
+          {[0, 1, 2, 3, 4, 5, 6, 7].map((pollen) => <i key={pollen} />)}
         </div>
-        <p className="title-resume-hint">
-          {canContinue ? (
-            <>
-              {home.continueHint}
-              {regionName && <span> · {regionName}</span>}
-            </>
-          ) : (
-            '完成关卡后，小红花会留在你的地图上'
-          )}
-        </p>
+      </div>
+      <div className="title-motes" aria-hidden="true">
+        <i />
+        <i />
+        <i />
+        <i />
+      </div>
+      <div className="title-menu">
+        <div className="title-buttons">
+          {canContinue ? [resume, start] : start}
+        </div>
         {error && (
           <p className="title-error" role="alert">
             {error}
           </p>
         )}
-        <button className="title-board" onClick={onLeaderboard} disabled={busy}>
-          <Trophy aria-hidden="true" />
-          本机排行榜
-        </button>
       </div>
-      <footer className="title-footer">{home.footer}</footer>
     </section>
   );
 }

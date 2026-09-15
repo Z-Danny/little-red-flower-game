@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "regions": {
+    "nature": {
+      "image": "/ui/map-signs-v1/nature-base.png",
+      "width": 2043,
+      "height": 770,
+      "bounds": {
+        "left": 32,
+        "top": 132,
+        "width": 1980,
+        "height": 480
+      }
+    },
+    "public": {
+      "image": "/ui/map-signs-v1/public-base.png",
+      "width": 2043,
+      "height": 770,
+      "bounds": {
+        "left": 32,
+        "top": 132,
+        "width": 1980,
+        "height": 480
+      }
+    },
+    "home": {
+      "image": "/ui/map-signs-v1/home-base.png",
+      "width": 2043,
+      "height": 770,
+      "bounds": {
+        "left": 32,
+        "top": 132,
+        "width": 1980,
+        "height": 480
+      }
+    }
+  },
+  "motifs": {
+    "typhoon-home": "/ui/map-signs-v1/motifs/typhoon-home.svg",
+    "flood-kit": "/ui/map-signs-v1/motifs/flood-kit.svg",
+    "quake-bedroom-v2": "/ui/map-signs-v1/motifs/quake-bedroom-v2.svg",
+    "storm-street-check-v2": "/ui/map-signs-v1/motifs/storm-street-check-v2.svg",
+    "thunder-park-v2": "/ui/map-signs-v1/motifs/thunder-park-v2.svg",
+    "forest-fire-sources-v2": "/ui/map-signs-v1/motifs/forest-fire-sources-v2.svg",
+    "rain-street-preparation-v1": "/ui/map-signs-v1/motifs/rain-street-preparation-v1.svg",
+    "flood-house-response-v1": "/ui/map-signs-v1/motifs/flood-house-response-v1.svg",
+    "quake-cover-practice": "/ui/map-signs-v1/motifs/quake-cover-practice.svg",
+    "quake-exit-practice": "/ui/map-signs-v1/motifs/quake-exit-practice.svg",
+    "flood-highground-practice": "/ui/map-signs-v1/motifs/flood-highground-practice.svg",
+    "clear-corridor": "/ui/map-signs-v1/motifs/clear-corridor.svg",
+    "lift-wait": "/ui/map-signs-v1/motifs/lift-wait.svg",
+    "well-call": "/ui/map-signs-v1/motifs/well-call.svg",
+    "clear-corridor-check-v2": "/ui/map-signs-v1/motifs/clear-corridor-check-v2.svg",
+    "car-window-practice": "/ui/map-signs-v1/motifs/car-window-practice.svg",
+    "lift-contact-practice": "/ui/map-signs-v1/motifs/lift-contact-practice.svg",
+    "collapse-signal-practice": "/ui/map-signs-v1/motifs/collapse-signal-practice.svg",
+    "oil-fire": "/ui/map-signs-v1/motifs/oil-fire.svg",
+    "charging-bedroom": "/ui/map-signs-v1/motifs/charging-bedroom.svg",
+    "bedroom-night-check-v2": "/ui/map-signs-v1/motifs/bedroom-night-check-v2.svg",
+    "kitchen-before-cooking-v2": "/ui/map-signs-v1/motifs/kitchen-before-cooking-v2.svg",
+    "fire-shelter-practice": "/ui/map-signs-v1/motifs/fire-shelter-practice.svg",
+    "fire-stairs-practice": "/ui/map-signs-v1/motifs/fire-stairs-practice.svg"
+  },
+  "completedStamp": "/ui/map-signs-v1/completed-flower.svg",
+  "motion": {
+    "breatheMs": 3200,
+    "sweepMs": 1000,
+    "budResponseMs": 650,
+    "stampMs": 380
+  }
+}

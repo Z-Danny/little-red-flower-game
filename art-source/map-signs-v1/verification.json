@@ -1,0 +1,130 @@
+{
+  "artifact": "independent_asset_review_html",
+  "checks": [
+    {
+      "viewport": 1200,
+      "status": "passed",
+      "scrollWidth": 1200,
+      "images": 67,
+      "cards": 24,
+      "actual": [
+        {
+          "title": "风雨街口找险",
+          "width": 150,
+          "height": 37.5,
+          "fontSize": 14,
+          "motifSize": 14,
+          "gap": 17.875,
+          "titleInside": true
+        },
+        {
+          "title": "楼道杂物清理",
+          "width": 150,
+          "height": 37.5,
+          "fontSize": 14,
+          "motifSize": 14,
+          "gap": 17.875,
+          "titleInside": true
+        },
+        {
+          "title": "油锅起火处置",
+          "width": 150,
+          "height": 37.5,
+          "fontSize": 14,
+          "motifSize": 14,
+          "gap": 17.875,
+          "titleInside": true
+        }
+      ]
+    },
+    {
+      "viewport": 390,
+      "status": "passed",
+      "scrollWidth": 390,
+      "images": 67,
+      "cards": 24,
+      "actual": [
+        {
+          "title": "风雨街口找险",
+          "width": 150,
+          "height": 37.5,
+          "fontSize": 14,
+          "motifSize": 14,
+          "gap": 17.875,
+          "titleInside": true
+        },
+        {
+          "title": "楼道杂物清理",
+          "width": 150,
+          "height": 37.5,
+          "fontSize": 14,
+          "motifSize": 14,
+          "gap": 17.875,
+          "titleInside": true
+        },
+        {
+          "title": "油锅起火处置",
+          "width": 150,
+          "height": 37.5,
+          "fontSize": 14,
+          "motifSize": 14,
+          "gap": 17.875,
+          "titleInside": true
+        }
+      ]
+    },
+    {
+      "viewport": 320,
+      "status": "passed",
+      "scrollWidth": 320,
+      "images": 67,
+      "cards": 24,
+      "actual": [
+        {
+          "title": "风雨街口找险",
+          "width": 150,
+          "height": 37.5,
+          "fontSize": 14,
+          "motifSize": 14,
+          "gap": 17.875,
+          "titleInside": true
+        },
+        {
+          "title": "楼道杂物清理",
+          "width": 150,
+          "height": 37.5,
+          "fontSize": 14,
+          "motifSize": 14,
+          "gap": 17.875,
+          "titleInside": true
+        },
+        {
+          "title": "油锅起火处置",
+          "width": 150,
+          "height": 37.5,
+          "fontSize": 14,
+          "motifSize": 14,
+          "gap": 17.875,
+          "titleInside": true
+        }
+      ]
+    },
+    {
+      "reducedMotion": "passed",
+      "runningAnimations": 0
+    }
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "gameIntegration": "not_run",
+  "contextsClosed": [
+    1200,
+    390,
+    320,
+    "reducedMotion"
+  ],
+  "browserClosed": true,
+  "status": "passed"
+}

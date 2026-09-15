@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "generation": "OpenAI built-in image_gen; approved modal edited into reusable artwork.",
+  "preparation": "Sharp only: alpha bounding crop, transparent border, proportional resize, rectangular slicing and format compression.",
+  "approvedReference": {
+    "path": "art-source/painted-settlement-v1/approved-reference.png",
+    "sha256": "e20b0246d85e274b92ec179190500c0384337572a791ed159fe438d3b5f0ea06"
+  },
+  "generatedSources": {
+    "panel": "/Users/danny/.codex/generated_images/01a0a350-9461-7171-b9b2-738b870c448c/exec-8296a705-0758-4dd0-9369-6e45b7ca7056.png",
+    "button": "/Users/danny/.codex/generated_images/01a0a350-9461-7171-b9b2-738b870c448c/exec-b88f36cd-9402-4ce2-ba0c-4e8dd83d3ec4.png",
+    "initialPanelBeforeMarginFix": "/Users/danny/.codex/generated_images/01a0a350-9461-7171-b9b2-738b870c448c/exec-b07e7588-5129-4aec-a4d3-94012cb2d32d.png"
+  },
+  "prompts": [
+    "art-source/painted-settlement-v1/prompts.json",
+    "art-source/painted-settlement-v1/panel-margin-prompt.txt"
+  ],
+  "assets": {
+    "panel": {
+      "width": 964,
+      "height": 1258,
+      "png": "public/ui/painted-settlement-v1/panel.png",
+      "webp": "public/ui/painted-settlement-v1/panel.webp",
+      "pngBytes": 1560245,
+      "webpBytes": 138988,
+      "pngSha256": "2c7c43cb8cc72ef6bd6bb6925e71f0cf219d34daf82f0e84da03703604746859",
+      "webpSha256": "faef33ec8881f9f85544f6f94c580b2aeee5a69e3a88744cb0fc0e2c4414cd4b",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.10836538271246594
+      },
+      "source": "art-source/painted-settlement-v1/panel-source.png",
+      "sourceSha256": "8b73e81b5f15d6297f7d5eace605077d2eaf2cfb6edac650b286127188944caa",
+      "sourceSize": {
+        "width": 1122,
+        "height": 1402
+      },
+      "crop": {
+        "left": 78,
+        "top": 52,
+        "width": 982,
+        "height": 1283
+      },
+      "transparentOutputBorder": 2
+    },
+    "button": {
+      "width": 964,
+      "height": 222,
+      "png": "public/ui/painted-settlement-v1/button.png",
+      "webp": "public/ui/painted-settlement-v1/button.webp",
+      "pngBytes": 436300,
+      "webpBytes": 73596,
+      "pngSha256": "734bec2a517eb92febc46170cb6ac4e0e36ca521e52deca21043d168f8a9c953",
+      "webpSha256": "b2800023c6197ffbce2bd6f2a7731c6601a82387b0655aa7b9e8690c3e49d0c9",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.10099155171769279
+      },
+      "source": "art-source/painted-settlement-v1/button-source.png",
+      "sourceSha256": "cece4f6224f63337b71cd163de23fc826248bd51dc6febec9fcd2371702665ab",
+      "sourceSize": {
+        "width": 2079,
+        "height": 756
+      },
+      "crop": {
+        "left": 66,
+        "top": 147,
+        "width": 1946,
+        "height": 441
+      },
+      "transparentOutputBorder": 2
+    },
+    "header": {
+      "width": 964,
+      "height": 250,
+      "png": "public/ui/painted-settlement-v1/header.png",
+      "webp": "public/ui/painted-settlement-v1/header.webp",
+      "pngBytes": 441701,
+      "webpBytes": 58386,
+      "pngSha256": "45597180b5841bb9587968c9063f75021e8aae1126d0a07ed5fd74b895464ed3",
+      "webpSha256": "16aff69db3828b8cc4aea510c6fa2190e9723ef08eeb21adb1f6bde3426121de",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.19608298755186723
+      },
+      "source": "public/ui/painted-settlement-v1/panel.png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 964,
+        "height": 250
+      }
+    },
+    "body": {
+      "width": 964,
+      "height": 760,
+      "png": "public/ui/painted-settlement-v1/body.png",
+      "webp": "public/ui/painted-settlement-v1/body.webp",
+      "pngBytes": 824713,
+      "webpBytes": 46056,
+      "pngSha256": "0eb50d067818b3e61cd69bf910df2aaba7eb6d45e862884b40a8e1271cfdbe16",
+      "webpSha256": "9a4776787f8e8688db825754b2928e75a09cd9fbdd9e323eac3b1b65ce3ea7ae",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.0527708014850404
+      },
+      "source": "public/ui/painted-settlement-v1/panel.png",
+      "crop": {
+        "left": 0,
+        "top": 250,
+        "width": 964,
+        "height": 760
+      }
+    },
+    "footer": {
+      "width": 964,
+      "height": 248,
+      "png": "public/ui/painted-settlement-v1/footer.png",
+      "webp": "public/ui/painted-settlement-v1/footer.webp",
+      "pngBytes": 295607,
+      "webpBytes": 35608,
+      "pngSha256": "7baf8293482abd8dfb158957f7e7d311c470c99c3fc7e8adef07c1c79739c66e",
+      "webpSha256": "ac5c0006850ac7fcbf81a669d24b800386d5b94643f34d13df27ecac6613aecd",
+      "validation": {
+        "hasAlpha": true,
+        "alphaMin": 0,
+        "alphaMax": 255,
+        "fullyTransparentFraction": 0.1903108686922768
+      },
+      "source": "public/ui/painted-settlement-v1/panel.png",
+      "crop": {
+        "left": 0,
+        "top": 1010,
+        "width": 964,
+        "height": 248
+      }
+    }
+  },
+  "layout": {
+    "units": "percent of final full panel image unless stated otherwise",
+    "title": {
+      "left": 24,
+      "top": 3.8,
+      "width": 52,
+      "height": 10.4
+    },
+    "titleRelativeToHeaderSlice": {
+      "left": 24,
+      "top": 19,
+      "width": 52,
+      "height": 52
+    },
+    "bodyText": {
+      "left": 9,
+      "width": 81
+    },
+    "footerSafeContent": {
+      "left": 10,
+      "width": 73
+    },
+    "buttonLabel": {
+      "left": 12,
+      "top": 17,
+      "width": 76,
+      "height": 62
+    },
+    "headerHeightToWidthRatio": 0.25933609958506226,
+    "footerHeightToWidthRatio": 0.2572614107883817,
+    "recommendedMinimumModalWidthCssPx": 280,
+    "recommendedBodyTextCssPx": 15,
+    "sliceRule": "Stack header/body/footer at identical CSS widths without gaps. Preserve aspect ratio of header and footer; stretch body in height to fit real HTML content. Body ends before corner leaves. Keep HTML content above the footer decorative corner and use normal document flow, never a fixed-height overlay for long science copy.",
+    "nineSliceAlternative": {
+      "top": 250,
+      "right": 54,
+      "bottom": 248,
+      "left": 50,
+      "note": "Prefer the three full-width slices: horizontal stretching of header would distort the hand; vertical stretching belongs only in body."
+    }
+  },
+  "visualReview": {
+    "textInArtwork": "none",
+    "embeddedButtonInPanel": "none",
+    "centralRewardFlowersInPanel": "none",
+    "hand": "pointing at viewer, top left",
+    "cornerFlower": "bottom right with intact leaf tips",
+    "actualAlpha": "verified"
+  }
+}
