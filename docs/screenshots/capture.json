@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "capturedAt": "2026-09-15T08:14:50.917Z",
+  "sourceCommit": "834914cbed9579b3adc20354d4815296bfcc9980",
+  "html": "outputs/本地离线版/小红花应急行动.html",
+  "htmlSha256": "c9fe685fc9a43082474f593f1272b20639554e2281be6061efd4e69cacca13f8",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "deviceScaleFactor": 2,
+  "storage": "Fresh disposable context. Native navigation only; no progress or scores injected.",
+  "screenshots": [
+    {
+      "file": "home.png",
+      "label": "绘本首页",
+      "sha256": "437cc862ace3b8c51b87a4d09b6a042a5bb930f85b1a8282c1bdf700f8a94fd1"
+    },
+    {
+      "file": "map.png",
+      "label": "自然灾害关卡地图",
+      "sha256": "a75e8ef46513c6784263afb3ff907ca2d3dbb88a2947190a0ea3a82aba02efb5"
+    },
+    {
+      "file": "archipelago.png",
+      "label": "天空群岛：三个主题区域",
+      "sha256": "fa37f65773bc2eba85160ea05b80e09fa53691dfd24eaf43c3c375697ff1c90a"
+    },
+    {
+      "file": "journal.png",
+      "label": "我的进度：新玩家的三岛记录",
+      "sha256": "40b80f21b04f8b5a5b028a65adb4c298cd3f7b9747b3cb1fb54f2212b4e824fa"
+    },
+    {
+      "file": "level-entry.png",
+      "label": "台风居家准备：关卡介绍",
+      "sha256": "a77a21b8c3894369a16163279492a2ca29fd4ed83e4288c3a96384933a49f631"
+    },
+    {
+      "file": "gameplay.png",
+      "label": "台风居家准备：寻找真实隐患",
+      "sha256": "9aa664e19a19c96b5bbcacae987e3e88b898783f89c8c647ca7370cd57259808"
+    }
+  ],
+  "errors": [],
+  "externalRequests": [],
+  "failedRequests": [],
+  "contextClosed": true,
+  "browserClosed": true,
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "browser": "152.0.7977.83",
+  "pageTitle": "这片儿没我不行 · 本地离线版"
+}
