@@ -2,7 +2,9 @@
 
 一款面向手机竖屏的绘本风应急科普游戏。在三张场景地图中寻找隐患、练习正确处置，让危险区域恢复安全，再种下一朵小红花。
 
-**[在线试玩](https://keepingmoving.github.io/little-red-flower-game/) · [下载离线游戏](https://github.com/KeepingMoving/little-red-flower-game/releases/latest) · [反馈问题](https://github.com/KeepingMoving/little-red-flower-game/issues)**
+**[在线试玩](https://play.origingame.dev/7ukyctdhbk/) · [GitHub 源码](https://github.com/Z-Danny/little-red-flower-game) · [离线版本](https://github.com/Z-Danny/little-red-flower-game/releases) · [反馈问题](https://github.com/Z-Danny/little-red-flower-game/issues)**
+
+当前源码由 **Z-Danny** 在本公开仓库维护，在线试玩托管于 OriginGame。本仓库尚未发布离线 Release；现在可以直接在线游玩，或按第 5 节从源码导出离线 HTML。
 
 当前正式地图有 **24 个可玩关卡**。首次完成每关获得 **3 朵小红花**，一位玩家的一轮完整进度最多 **72 朵**。支持开始新游戏、继续游戏、多个本机玩家和本机排行榜。无需注册账号、API Key、数据库或后端服务。
 
@@ -15,13 +17,13 @@
 
 | 你想做什么 | 打开方式 | 开发工具 |
 | --- | --- | --- |
-| 马上体验 | [在线试玩](https://keepingmoving.github.io/little-red-flower-game/) | 不需要 |
-| 下载后断网玩，或发给朋友 | Release 中的 `red-flower-offline.zip` | 不需要 |
+| 马上体验 | [在线试玩](https://play.origingame.dev/7ukyctdhbk/) | 不需要 |
+| 下载后断网玩，或发给朋友 | 离线 Release 发布后下载 `red-flower-offline.zip`；目前可按第 5 节自行导出 | 下载已发布包不需要；自行导出需要 |
 | 修改代码、图片或关卡 | 下载源码后按第 5 节运行 | Node.js、pnpm |
 
-### 下载即玩：推荐给普通玩家
+### 离线包发布后的下载方式
 
-1. 打开 [Releases 最新版本](https://github.com/KeepingMoving/little-red-flower-game/releases/latest)。
+1. 打开本仓库的 [Releases](https://github.com/Z-Danny/little-red-flower-game/releases)，选择带有离线包的版本；如果列表为空，请先使用在线试玩或自行导出。
 2. 展开 **Assets**，下载 **`red-flower-offline.zip`**。
 3. **先解压**，不要在压缩软件内直接预览。
 4. 双击 `小红花应急行动.html`，或右键选择“打开方式 → Edge / Chrome”。
@@ -40,7 +42,7 @@ LICENSE              许可证
 
 电脑推荐现代版本的 Edge、Chrome、Firefox 或 Safari。手机请下载后使用支持本地 HTML 的浏览器打开；微信、QQ、网盘的文件预览可能无法执行脚本或保存记录，遇到白屏可换浏览器或使用在线试玩。
 
-在线版素材较多，首次加载需要一些时间。在线试玩以最新成功的 Pages 部署为准，推送代码后需要等待 Actions 完成；需要稳定断网体验时请下载离线包。
+在线版素材较多，首次加载需要一些时间。上方试玩入口以最近一次成功的 OriginGame 发布为准，向 GitHub 推送源码不会自动更新该入口。需要稳定断网体验时，可自行导出，或在离线 Release 发布后下载。
 
 ## 2. 第一次玩：从首页到种花
 
@@ -118,7 +120,7 @@ pnpm --version
 ### 获取代码并安装
 
 ```sh
-git clone --depth 1 https://github.com/KeepingMoving/little-red-flower-game.git
+git clone --depth 1 https://github.com/Z-Danny/little-red-flower-game.git
 cd little-red-flower-game
 pnpm install --frozen-lockfile
 ```
@@ -170,7 +172,7 @@ pnpm verify
 
 ## 6. 以后如何更新 GitHub
 
-### 更新源码和在线试玩
+### 更新本仓库源码
 
 修改后，在仓库根目录执行：
 
@@ -181,12 +183,14 @@ git status
 git add .
 git diff --cached
 git commit -m "更新关卡或界面"
-git push origin main
+git push
 ```
 
 检查暂存内容后再提交，不要上传账号密钥、本地存档或依赖目录。`.gitignore` 已忽略 `node_modules/`、`outputs/`、`dist/`、`work/`、`site/index.html` 等产物；历史已跟踪的文件不会因为新增忽略规则自动取消跟踪。
 
-推送 `main` 后，在仓库 **Actions** 查看 **Verify game** 和 **Deploy playable game**。部署成功后在线试玩才会更新；离线玩家需要重新下载新版本，不会自动升级。
+按第 5 节克隆后，`main` 默认跟踪本仓库的 `origin/main`。保留原仓库为 `origin` 的现有开发目录使用 `personal/main` 跟踪本仓库；上面的 `git push` 会推送到当前分支的跟踪远程。可用 `git remote -v` 和 `git branch -vv` 核对，目标应为 `Z-Danny/little-red-flower-game`。
+
+推送 `main` 后，在本仓库的 [Actions](https://github.com/Z-Danny/little-red-flower-game/actions) 查看 **Verify game** 和 **Deploy playable game**。仓库已包含 Pages 工作流，但尚未启用 Pages；启用步骤见下方。OriginGame 试玩需要另外发布更新；离线玩家需要重新下载或导出新版本。
 
 ### 发布新版离线包
 
@@ -194,18 +198,22 @@ git push origin main
 
 ```sh
 git tag v0.2.1
-git push origin v0.2.1
+git push https://github.com/Z-Danny/little-red-flower-game.git v0.2.1
 ```
 
 `v*` 标签触发 **Release offline game**：安装依赖 → 验证 → 导出 → 压缩 → 创建 Release。完成后 Releases 中会出现 `red-flower-offline.zip` 和 `SHA256SUMS.txt`。请替换示例版本号，不要覆盖已发布标签。
 
 不要把生成的巨大 HTML 用 `git add -f` 强行提交。GitHub 普通 Git 仓库有单文件大小限制，离线包通过 Release 分发；`site/index.html` 由 Actions 生成，不纳入源码提交。[GitHub 大文件说明](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github)
 
-### 上传到自己的仓库
+### 启用本仓库的 GitHub Pages
 
-优先 Fork，或将克隆仓库的 `origin` 改为自己新建的空仓库地址，再推送。保留 `.github/workflows/`，允许 Actions 运行，并在 **Settings → Pages → Source** 选择 **GitHub Actions**。修改本 README、克隆命令和贡献指南中指向原仓库的链接。
+1. 在本仓库 **Settings → Pages → Source** 选择 **GitHub Actions**，并允许 Actions 运行。
+2. 在 **Actions → Deploy playable game** 手动运行工作流，或推送新的 `main` 提交。
+3. 确认工作流成功后，使用部署输出的 Pages 地址。启用后预期地址为 `https://z-danny.github.io/little-red-flower-game/`；成功部署前，上方在线试玩继续使用 OriginGame。
 
 Pages 构建命令为 `pnpm build:site`，产物目录为 `site/`；不需要上传 Node 开发服务器或 `node_modules`。
+
+如果要复制到其他账号，可 Fork 或新建仓库后推送，并同步修改本文的源码、反馈、Release 和克隆地址。
 
 ## 7. 目录与修改入口
 
@@ -268,7 +276,7 @@ docs/                     开发文档、知识依据与验收记录
 | 没有声音 | 先点击开始，再检查游戏内开关和浏览器标签页是否静音 |
 | 找不到 `pnpm` | 安装指定版本后重新打开终端；Windows 可尝试 `pnpm.cmd` |
 | 安装提示锁文件不一致 | 使用仓库对应 pnpm；改依赖后重新生成并提交锁文件，不要随意删除它 |
-| 推送后在线仍是旧版 | 检查 Actions 部署结果，完成后刷新或强制刷新 |
+| 推送后在线仍是旧版 | OriginGame 试玩需另行发布更新；使用 Pages 时检查 Actions 部署结果，成功后刷新 |
 | 本机记录消失 | 检查浏览器、玩家、访问地址与文件路径；项目没有云端备份 |
 
 ## 9. 许可证与内容说明
