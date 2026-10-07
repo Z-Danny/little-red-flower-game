@@ -31,8 +31,9 @@
   },
   {
     "id": "quake-bedroom-v2",
-    "skin": "skins/readable-v3.json",
-    "enabled": true
+    "skin": "skin.json",
+    "enabled": true,
+    "migrated": true
   },
   {
     "id": "storm-street-check-v2",

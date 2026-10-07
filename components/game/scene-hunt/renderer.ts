@@ -198,24 +198,7 @@ export function drawHunt(
   if (fade < 1) {
     ctx.save();
     ctx.globalAlpha = 1 - fade;
-    for (const id of r.found) {
-      const b = s.targets[id].bounds;
-      ring(ctx, b, 1, t);
-      const label = view.targetFeedback?.[id]?.label;
-      if (label) {
-        // Scene-space, non-interactive teaching badge. No extra hotspot or camera.
-        ctx.save();
-        ctx.font = 'bold 24px sans-serif';
-        const bw = ctx.measureText(label).width + 24;
-        const x = b.x + b.w / 2, y = b.y + b.h / 2;
-        ctx.fillStyle = '#fff4df';
-        ctx.strokeStyle = '#ab352b';
-        ctx.lineWidth = 2;
-        ctx.beginPath();ctx.roundRect(x - bw / 2, y - 21, bw, 42, 12);ctx.fill();ctx.stroke();
-        ctx.textAlign = 'center';ctx.textBaseline = 'middle';ctx.fillStyle = '#862d26';
-        ctx.fillText(label, x, y);ctx.restore();
-      }
-    }
+    for (const id of r.found) ring(ctx, s.targets[id].bounds, 1, t);
     if (r.marking)
       ring(
         ctx,

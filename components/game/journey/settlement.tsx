@@ -6,8 +6,6 @@ import { GardenDialog } from './dialog';
 import type { LevelConfig } from '@/app/game/types';
 import type { CompletionReceipt } from '@/app/game/leaderboard/model';
 import { journeyTiming } from '@/app/game/journey/presentation';
-import { LearningReview } from './learning-review';
-import { getHunt } from '@/app/game/scene-hunt/registry';
 import { lessonFor } from '@/app/game/journey/knowledge';
 
 export function Settlement({
@@ -148,7 +146,6 @@ export function Settlement({
                 ))}
               </div>
             </section>
-            <LearningReview key={level.id} lesson={lesson} pack={getHunt(level.id)} />
             {saveFailed && (
               <p className="painted-settlement-error" role="alert">
                 {error}

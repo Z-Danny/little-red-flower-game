@@ -18,7 +18,7 @@ import p4_skin from '@/content/scenes/clear-corridor-check-v2/skin.json';
 import p4_presentation from '@/content/scenes/clear-corridor-check-v2/presentation.json';
 import p4_performance from '@/content/scenes/clear-corridor-check-v2/performance.json';
 import p5_rules from '@/content/scenes/quake-bedroom-v2/rules.json';
-import p5_skin from '@/content/scenes/quake-bedroom-v2/skins/readable-v3.json';
+import p5_skin from '@/content/scenes/quake-bedroom-v2/skin.json';
 import p5_presentation from '@/content/scenes/quake-bedroom-v2/presentation.json';
 import p5_performance from '@/content/scenes/quake-bedroom-v2/performance.json';
 import p6_rules from '@/content/scenes/storm-street-check-v2/rules.json';

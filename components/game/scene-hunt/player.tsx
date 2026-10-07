@@ -280,15 +280,13 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false, autoSta
       const t = pack.rules.targets.find((t) => t.id === r.found.at(-1))!;
       sound.current?.cue('found');
       if (r.phase === 'playing') {
-        subtitle(view.targetFeedback?.[t.id]?.caption ?? t.lesson, 6000);
+        subtitle(t.lesson, 6000);
       }
     }
     if (r.phase === 'reveal' && prev.phase !== 'reveal') {
       setHint(null);
       if (!v2) sound.current?.cue('resolve');
-      const last = pack.rules.targets.find(t => t.id === r.found.at(-1));
-      const lastLesson = last && (view.targetFeedback?.[last.id]?.caption ?? last.lesson);
-      subtitle(view.retainLastLesson && lastLesson ? lastLesson + ' ' + view.reveal : view.reveal, pack.rules.revealMs);
+      subtitle(view.reveal, pack.rules.revealMs);
     }
     if (
       v2 &&
@@ -517,7 +515,7 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false, autoSta
           </button>
         ))}
       </nav>
-      {journey&&r.phase==='reveal'&&<SafeFeedback label={view.retainLastLesson ? view.completeTitle : "风险已识别 · 看看安全后的场景"}/>}
+      {journey&&r.phase==='reveal'&&<SafeFeedback label="风险已识别 · 看看安全后的场景"/>}
       {r.phase === 'failed' && !paused && <PaintedFailure
         levelId={pack.rules.id}
         levelTitle={levelTitle(pack.rules.id, pack.rules.title)}

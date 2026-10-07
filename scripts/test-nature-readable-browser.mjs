@@ -25,7 +25,8 @@ try {
  for(const id of selected){
  const entry=catalog().find(e=>e.id===id);const pack=readPack({...entry,skin:process.env.NATURE_SKIN || entry.skin});
  const s=pack.skin;const raster=await dependency('sharp')(path.join(root,'public',s.mask.slice(1))).ensureAlpha().raw().toBuffer({resolveWithObject:true});
- const legacyLayout = id==='storm-street-check-v2' && (process.env.NATURE_SKIN || entry.skin)==='skin.json';
+ const originalMode = !pack.presentation.retainLastLesson;
+ const legacyLayout = (process.env.NATURE_SKIN || entry.skin)==='skin.json';
  const sampleFile=path.join(root,'public',path.dirname(s.mask).slice(1),'hit-samples.json');const samples=JSON.parse(fs.readFileSync(sampleFile,'utf8'));
  for(const [width,height] of sizes){
  const label=`${id}-${width}x${height}`;let page;
@@ -41,18 +42,18 @@ try {
  await page.waitForFunction(()=>document.querySelector('.hunt-player')?.dataset.ready==='true' && document.querySelector('.hunt-player')?.dataset.phase==='playing');
  await page.clock.pauseAt(new Date(await page.evaluate(()=>Date.now()+100)));await page.clock.runFor(200);
  const scene=page.locator('.hunt-player');
- const tapWorld=async(x,y)=>{const b=await page.locator('.hunt-world canvas').boundingBox();const scale=Math.max(b.width/s.width,b.height/s.height);const p={x:b.x+(b.width-s.width*scale)/2+x*scale,y:b.y+(b.height-s.height*scale)/2+y*scale};assert.equal(await page.evaluate(p=>document.elementFromPoint(p.x,p.y)?.tagName,p),'CANVAS','actual point unobstructed');await page.touchscreen.tap(p.x,p.y);await page.clock.runFor(950);};
+ const tapWorld=async(x,y,mouse=false)=>{const b=await page.locator('.hunt-world canvas').boundingBox();const scale=Math.max(b.width/s.width,b.height/s.height);const p={x:b.x+(b.width-s.width*scale)/2+x*scale,y:b.y+(b.height-s.height*scale)/2+y*scale};assert.equal(await page.evaluate(p=>document.elementFromPoint(p.x,p.y)?.tagName,p),'CANVAS','actual point unobstructed');if(mouse)await page.mouse.click(p.x,p.y);else await page.touchscreen.tap(p.x,p.y);await page.clock.runFor(950);};
  const target=async(t)=>{
  // The compiler's inspected interior point is supplemented by runtime mask color verification.
  const q=samples.targets?.[t.id] ?? samples[t.id];const point=Array.isArray(q)?q:q?.point;
  assert(point,`missing sample ${t.id}: ${JSON.stringify(samples).slice(0,200)}`);
  const [x,y]=point,ix=(Math.floor(y)*s.width+Math.floor(x))*4;
  assert(s.targets[t.id].color.every((c,j)=>raster.data[ix+j]===c),'sample matches current mask');
- let px=x+.5,py=y+.5;
- if(legacyLayout){const b=await page.locator('.hunt-world canvas').boundingBox(),scale=Math.max(b.width/s.width,b.height/s.height),points=[];for(let yy=0;yy<s.height;yy+=3)for(let xx=0;xx<s.width;xx+=3){const k=(yy*s.width+xx)*4;if([[-4,0],[4,0],[0,-4],[0,4],[0,0]].every(([dx,dy])=>xx+dx>=0 && xx+dx<s.width && yy+dy>=0 && yy+dy<s.height && s.targets[t.id].color.every((c,j)=>raster.data[((yy+dy)*s.width+xx+dx)*4+j]===c)))points.push({x:b.x+(b.width-s.width*scale)/2+(xx+.5)*scale,y:b.y+(b.height-s.height*scale)/2+(yy+.5)*scale,wx:xx+.5,wy:yy+.5});}const visible=await page.evaluate(points=>{const buttons=[...document.querySelectorAll('.hunt-hud button')].map(e=>e.getBoundingClientRect());return points.filter(p=>document.elementFromPoint(p.x,p.y)?.tagName==='CANVAS' && !buttons.some(b=>p.x>b.left-16 && p.x<b.right+16 && p.y>b.top-16 && p.y<b.bottom+16));},points);assert(visible.length,'legacy target still tappable');const hit=visible[Math.floor(visible.length/2)];px=hit.wx;py=hit.wy;}
- await tapWorld(px,py);assert((await scene.getAttribute('data-found')).split(',').includes(t.id),t.id+' hit did not commit at '+[px,py]);
- const caption=await page.locator('.hunt-caption').innerText();assert(caption.includes(pack.presentation.targetFeedback?.[t.id]?.caption ?? t.lesson),'target-specific lesson survives, including final target');
- pass(`${label}: ${t.id}`,{samplePoint:point,actualWorldPoint:[px,py],caption});
+ let px=x+.5,py=y+.5,mouse=false;
+ if(legacyLayout){const b=await page.locator('.hunt-world canvas').boundingBox(),scale=Math.max(b.width/s.width,b.height/s.height),points=[];for(let yy=0;yy<s.height;yy+=3)for(let xx=0;xx<s.width;xx+=3){const k=(yy*s.width+xx)*4;if([[-4,0],[4,0],[0,-4],[0,4],[0,0]].every(([dx,dy])=>xx+dx>=0 && xx+dx<s.width && yy+dy>=0 && yy+dy<s.height && s.targets[t.id].color.every((c,j)=>raster.data[((yy+dy)*s.width+xx+dx)*4+j]===c)))points.push({x:b.x+(b.width-s.width*scale)/2+(xx+.5)*scale,y:b.y+(b.height-s.height*scale)/2+(yy+.5)*scale,wx:xx+.5,wy:yy+.5});}const visible=await page.evaluate(points=>{const buttons=[...document.querySelectorAll('.hunt-hud button')].map(e=>e.getBoundingClientRect());return points.filter(p=>document.elementFromPoint(p.x,p.y)?.tagName==='CANVAS' && !buttons.some(b=>p.x>b.left-16 && p.x<b.right+16 && p.y>b.top-16 && p.y<b.bottom+16));},points);if(!visible.length){visible.push(...await page.evaluate(points=>points.filter(p=>document.elementFromPoint(p.x,p.y)?.tagName==='CANVAS'),points));mouse=true;report.knownLayoutIssues.push({label,targetId:t.id,note:'Original target too close to controls for 16px touch clearance; verified with real mouse click instead. Touch usability not claimed improved.'});}assert(visible.length,'original target has visible canvas pixels');const hit=visible[Math.floor(visible.length/2)];px=hit.wx;py=hit.wy;}
+ await tapWorld(px,py,mouse);assert((await scene.getAttribute('data-found')).split(',').includes(t.id),t.id+' hit did not commit at '+[px,py]);
+ const caption=await page.locator('.hunt-caption').innerText();const last=(await scene.getAttribute('data-found')).split(',').length===pack.rules.targets.length;const expected=originalMode && last ? pack.presentation.reveal : (pack.presentation.targetFeedback?.[t.id]?.caption ?? t.lesson);assert(caption.includes(expected),'caption matches selected original/redesigned presentation');
+ pass(`${label}: ${t.id}`,{samplePoint:point,actualWorldPoint:[px,py],input:mouse?'mouse':'touch',caption});
  };
  const bulb=page.getByRole('button',{name:'物件剪影提示',exact:true});
  await bulb.click();await page.clock.runFor(50);await shot(page,label+'-clues');
@@ -61,7 +62,7 @@ try {
  for(const [targetId,t] of Object.entries(s.targets)){
  const r=t.bounds,x=b.x+cx+r.x*scale,y=b.y+cy+r.y*scale;
  const cropped=x<b.x-.2 || x+r.w*scale>b.x+b.width+.2;const occluded=y<hudBottom;
- if(legacyLayout){if(cropped||occluded)report.knownLayoutIssues.push({label,targetId,cropped,occluded,note:'Existing shipped artwork retained. Replacement failed review; not claimed fixed.'});}
+ if(legacyLayout){if(cropped||occluded)report.knownLayoutIssues.push({label,targetId,cropped,occluded,note:'Original shipped artwork restored on user request; pre-existing edge/HUD limitations are not claimed fixed.'});}
  else{assert(!cropped,'target not horizontally cropped');assert(!occluded,`${targetId} does not collide with visible clue row (${y} vs ${hudBottom})`);}
  }
  pass(label+(legacyLayout ? ': existing artwork layout audited (see knownLayoutIssues)' : ': visible targets clear HUD and frame'));
@@ -78,7 +79,9 @@ try {
  assert((await page.locator('[data-testid="settlement-reward"]').innerText()).includes('+3'));
  const saved=()=>page.evaluate(()=>{const v=JSON.parse(localStorage.getItem('little-red-flower-leaderboard-v1'));return v.players.find(p=>p.id===v.activePlayerId).completed;});
  assert.equal((await saved())[id],3);
- if(id==='quake-bedroom-v2'){
+ if(originalMode){
+ assert.equal(await page.locator('[data-testid="ending-comparison"],[data-testid="settlement-question"],.learning-review').count(),0,'redesign review and quiz removed');await shot(page,label+'-original-settlement');
+ }else if(id==='quake-bedroom-v2'){
  await page.locator('[data-testid="ending-comparison"] summary').click();
  await page.getByRole('button',{name:'准备前',exact:true}).click();assert((await page.locator('[data-testid="ending-comparison"] img').getAttribute('alt')).startsWith('准备前'));
  await shot(page,label+'-compare-before');await page.getByRole('button',{name:'准备后',exact:true}).click();await shot(page,label+'-compare-after');
@@ -87,7 +90,7 @@ try {
  await page.locator('[data-answer="stay"]').click();assert.equal(await page.locator('[data-testid="question-feedback"]').getAttribute('data-correct'),'true');await shot(page,label+'-correct-answer');
  await page.locator('[data-answer="stay"]').click();assert.equal((await saved())[id],3,'review cannot award twice');
  }
- pass(label+': optional teaching review and single reward');
+ pass(label+(originalMode ? ': original settlement without comparison/quiz, current reward preserved' : ': optional teaching review and single reward'));
  await page.locator('[data-testid="settlement-primary"]').click();await page.clock.runFor(400);await page.locator(`[data-map-node="${id}"]`).waitFor();
  pass(label+': returned to map');
  }catch(e){if(page)await shot(page,label+'-FAILED').catch(()=>{});throw e;}finally{await context.close();}

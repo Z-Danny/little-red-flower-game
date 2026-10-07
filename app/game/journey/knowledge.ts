@@ -6,12 +6,7 @@ type BaseLesson = {
   url: string;
   result?: string;
 };
-export type LearningQuestion = {
-  question: string;
-  options: Array<{ id: string; text: string; correct: boolean; explanation: string }>;
-};
 export type Lesson = BaseLesson & {
-  question?: LearningQuestion;
   message: string;
   points: Array<{ title: string; body: string }>;
   sources: Array<{ publisher: string; url: string }>;
@@ -174,7 +169,7 @@ const source = {
   gas: { publisher: '国家消防救援局', url: 'https://www.119.gov.cn/xw/xfyw/2022/14384.shtml' },
 };
 
-const completion: Record<string, Pick<Lesson, 'message' | 'points' | 'sources' | 'question'>> = {
+const completion: Record<string, Pick<Lesson, 'message' | 'points' | 'sources'>> = {
   'typhoon-home': {
     message: '这片儿的风雨防备，有你一份。',
     points: [
@@ -204,13 +199,6 @@ const completion: Record<string, Pick<Lesson, 'message' | 'points' | 'sources' |
   },
   'storm-street-check-v2': {
     message: '这片儿的危险路口，你看清了。',
-    question: {
-      question: '五处危险都圈出来了，现在能去街上查看吗？',
-      options: [
-        { id: 'inspect', text: '可以，已经找完危险了', correct: false, explanation: '红圈只代表发现，积水和危险设施并没有被修复。继续远离，不外出查看。' },
-        { id: 'stay', text: '不能，继续在安全处避险', correct: true, explanation: '对。识别不等于处置，仍需远离积水和危险设施，关注官方指引。' },
-      ],
-    },
     points: [
       { title: '积水下面看不清', body: '浑水可能盖住缺失井盖和受损路面，不要试探深浅；避开地下通道等低洼积水区域。' },
       { title: '危险设施绕远些', body: '受淹电箱、断线可能带电，松动广告牌和围挡可能倒落；不要靠近检查或自行修理。' },
