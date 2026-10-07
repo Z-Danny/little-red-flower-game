@@ -33,6 +33,14 @@
     "whistle": {
       "src": "/levels/transcript-v1/whistle.png",
       "alpha": true
+    },
+    "tv-remote": {
+      "src": "/levels/flood-kit-distractors/tv-remote.png",
+      "alpha": true
+    },
+    "ceramic-ornament": {
+      "src": "/levels/flood-kit-distractors/ceramic-ornament.png",
+      "alpha": true
     }
   },
   "background": "kit-room",
@@ -83,6 +91,22 @@
       "y": 891,
       "w": 85,
       "h": 69.59862385321101,
+      "depth": 10
+    },
+    "tv-remote": {
+      "asset": "tv-remote",
+      "x": 155,
+      "y": 922,
+      "w": 138,
+      "h": 92.47422680412372,
+      "depth": 10
+    },
+    "ceramic-ornament": {
+      "asset": "ceramic-ornament",
+      "x": 313,
+      "y": 705,
+      "w": 103,
+      "h": 123.44072164948453,
       "depth": 10
     }
   },
@@ -329,6 +353,68 @@
               "y": 791,
               "w": 25.5,
               "h": 20.879587155963304,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "pack-tv-remote": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "tv-remote",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "y": 884,
+              "rotation": -0.08
+            },
+            {
+              "at": 0.74,
+              "x": 475,
+              "y": 734,
+              "w": 96.6,
+              "h": 64.73195876288659,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "x": 494,
+              "y": 791,
+              "w": 41.4,
+              "h": 27.742268041237114,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "pack-ceramic-ornament": {
+      "durationMs": 1100,
+      "tracks": [
+        {
+          "object": "ceramic-ornament",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "y": 667,
+              "rotation": -0.08
+            },
+            {
+              "at": 0.74,
+              "x": 475,
+              "y": 734,
+              "w": 72.1,
+              "h": 86.40850515463917,
+              "rotation": 0
+            },
+            {
+              "at": 1,
+              "x": 494,
+              "y": 791,
+              "w": 30.9,
+              "h": 37.03221649484536,
               "opacity": 0
             }
           ]

@@ -1,11 +1,20 @@
 /* oxlint-disable next/no-img-element -- Artwork must embed in the standalone offline game. */
 import { useEffect, useState, type CSSProperties } from 'react';
 import home from '@/content/journey-home.json';
+import { HomeSoundControl } from './home-sound-control';
+import { HomeSaveControl } from './home-save-control';
 
 export const COVER_DEPARTURE_MS = 360;
 
 type Props = {
+  muted: boolean;
+  onMute: () => void;
+  musicMuted: boolean;
+  onMusicMute: () => void;
   canContinue: boolean;
+  allLevelsUnlocked: boolean;
+  onUnlockAll: () => void;
+  onManageSave?: () => void;
   onStart: () => void;
   onContinue: () => void;
   busy: boolean;
@@ -13,7 +22,14 @@ type Props = {
   departing?: boolean;
 };
 export function TitleScreen({
+  muted,
+  onMute,
+  musicMuted,
+  onMusicMute,
   canContinue,
+  allLevelsUnlocked,
+  onUnlockAll,
+  onManageSave,
   onStart,
   onContinue,
   busy,
@@ -98,6 +114,10 @@ export function TitleScreen({
       }
       aria-label={`${home.title.join('')}首页`}
     >
+      <div className="title-home-tools" role="group" aria-label="首页工具">
+        <HomeSoundControl muted={muted} onMute={onMute} musicMuted={musicMuted} onMusicMute={onMusicMute} disabled={departing} />
+        {onManageSave && <HomeSaveControl onClick={onManageSave} disabled={busy || departing} />}
+      </div>
       <div className="title-landscape" aria-hidden="true">
         <img
           className="title-art"
@@ -161,6 +181,16 @@ export function TitleScreen({
       <div className="title-menu">
         <div className="title-buttons">
           {canContinue ? [resume, start] : start}
+          <button
+            type="button"
+            className="title-secondary title-unlock-all"
+            data-home-unlock-all
+            onClick={onUnlockAll}
+            disabled={busy || allLevelsUnlocked}
+          >
+            {buttonArt(false)}
+            <span>{allLevelsUnlocked ? '全部关卡已解锁' : '解锁全部关卡'}</span>
+          </button>
         </div>
         {error && (
           <p className="title-error" role="alert">

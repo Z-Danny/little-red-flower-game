@@ -21,6 +21,7 @@ import {
 type Props = {
   region: Region;
   progress: Progress;
+  allLevelsUnlocked?: boolean;
   planting: Planting | null;
   age: number;
   done: number;
@@ -33,6 +34,7 @@ type Props = {
 export function MapScene({
   region,
   progress,
+  allLevelsUnlocked = false,
   planting,
   age,
   done,
@@ -95,7 +97,7 @@ export function MapScene({
         >
           {region.nodes.map((node) => {
             const area = fogAreas[node.id];
-            if (nodeStatus(node.id, progress) !== 'locked' || !area)
+            if (nodeStatus(node.id, progress, allLevelsUnlocked) !== 'locked' || !area)
               return null;
             return (
               <div
@@ -149,7 +151,7 @@ export function MapScene({
         >
           {region.nodes.slice(1).map((n, i) => {
             const prev = region.nodes[i],
-              live = nodeStatus(n.id, progress) !== 'locked',
+              live = nodeStatus(n.id, progress, allLevelsUnlocked) !== 'locked',
               route = routeFor(region, prev, n);
             return (
               <g
@@ -169,7 +171,7 @@ export function MapScene({
         </svg>
         {region.nodes.map((n, i) => {
           const signLayout = signOffsets.get(n.id);
-          const state = nodeStatus(n.id, progress),
+          const state = nodeStatus(n.id, progress, allLevelsUnlocked),
             plant = planting?.levelId === n.id,
             title = getLevel(n.id)?.title,
             signSide =

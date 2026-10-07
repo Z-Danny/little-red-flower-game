@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-27",
+  "status": "integrated-locally",
+  "levelId": "flood-kit",
+  "mapRegion": "nature",
+  "unlockAfter": "typhoon-home",
+  "duplicateLevelAdded": false,
+  "html": "outputs/本地离线版/小红花应急行动.html",
+  "sha256": "ac8f8a9a9ac4c345493819fb8d93db0a1aef9d5dc65757552c63dadfb2584c59",
+  "backup": "outputs/版本备份/20260927-五格背包接入前-e06f03adefb8",
+  "backupSha256": "e06f03adefb84136a674dd549202324131093fa68adb0b528572028ca2c387e2",
+  "typecheck": "passed",
+  "fullTestChain": "passed",
+  "browserReport": "outputs/inventory-production-verification/report.json",
+  "browserChecks": [
+    "390x844: actual bag opens; 5 slots; capacity enforced; inspect/remove/repack; wrong departure fails with 0 flowers; corrected departure awards 3; pause and keyboard work",
+    "repeat success does not duplicate reward; a correct full bag still times out without departure; retry resets inventory",
+    "320x568: actual bag opens; 5 slots; capacity enforced; inspect/remove/repack; wrong departure fails with 0 flowers; corrected departure awards 3; pause and keyboard work",
+    "1280x900: actual bag opens; 5 slots; capacity enforced; inspect/remove/repack; wrong departure fails with 0 flowers; corrected departure awards 3; pause and keyboard work"
+  ],
+  "browserClosed": true,
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "committed": false,
+  "pushed": false,
+  "published": false
+}

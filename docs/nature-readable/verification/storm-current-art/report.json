@@ -1,0 +1,732 @@
+{
+  "status": "passed_with_known_layout_limitations",
+  "startedAt": "2026-10-07T07:10:46.051Z",
+  "html": "C:\\Users\\LEGION\\Documents\\Codex\\2026-09-19\\https-github-com-z-danny-little-2\\little-red-flower-game\\outputs\\hunt-preview\\nature-quake-v3\\小红花应急行动.html",
+  "htmlSha256": "b3199e67e31ae2cfdd17ac075a82adbd65097ca6fee1e27925720ab579dc1326",
+  "fixture": "Only other levels are completed in an isolated save to unlock entry. Test levels are uncompleted. All hits, pause/retry and review answers use real pointer input. Browser clock is controlled for deterministic inspection; no reducer/completion/reward injection.",
+  "checks": [
+    {
+      "name": "storm-street-check-v2-320x568: existing artwork layout audited (see knownLayoutIssues)",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-320x568: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        114.5,
+        252.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-320x568: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-320x568: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        114.5,
+        252.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-320x568: wet_power_box",
+      "status": "passed",
+      "samplePoint": [
+        602,
+        515
+      ],
+      "actualWorldPoint": [
+        597.5,
+        513.5
+      ],
+      "caption": "涉水电力：电箱周围有积水，远离，不触碰、不自行断电。"
+    },
+    {
+      "name": "storm-street-check-v2-320x568: missing_cover",
+      "status": "passed",
+      "samplePoint": [
+        219,
+        484
+      ],
+      "actualWorldPoint": [
+        327.5,
+        480.5
+      ],
+      "caption": "井口缺盖：水下可能藏着坑洞，不能靠近查看或涉水。"
+    },
+    {
+      "name": "storm-street-check-v2-320x568: loose_sign",
+      "status": "passed",
+      "samplePoint": [
+        556,
+        110
+      ],
+      "actualWorldPoint": [
+        435.5,
+        126.5
+      ],
+      "caption": "高空坠物：广告牌连接已松脱，不走到牌下，也不伸手扶正。"
+    },
+    {
+      "name": "storm-street-check-v2-320x568: leaning_fence",
+      "status": "passed",
+      "samplePoint": [
+        232,
+        674
+      ],
+      "actualWorldPoint": [
+        243.5,
+        663.5
+      ],
+      "caption": "围挡倾倒：临时围挡已经倾斜，应远离，不靠着避雨。 已识别不等于已安全，继续在安全处避险。"
+    },
+    {
+      "name": "storm-street-check-v2-320x568: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-320x568: returned to map",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-375x667: existing artwork layout audited (see knownLayoutIssues)",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-375x667: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        228.5,
+        243.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-375x667: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-375x667: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        228.5,
+        243.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-375x667: wet_power_box",
+      "status": "passed",
+      "samplePoint": [
+        602,
+        515
+      ],
+      "actualWorldPoint": [
+        597.5,
+        513.5
+      ],
+      "caption": "涉水电力：电箱周围有积水，远离，不触碰、不自行断电。"
+    },
+    {
+      "name": "storm-street-check-v2-375x667: missing_cover",
+      "status": "passed",
+      "samplePoint": [
+        219,
+        484
+      ],
+      "actualWorldPoint": [
+        327.5,
+        480.5
+      ],
+      "caption": "井口缺盖：水下可能藏着坑洞，不能靠近查看或涉水。"
+    },
+    {
+      "name": "storm-street-check-v2-375x667: loose_sign",
+      "status": "passed",
+      "samplePoint": [
+        556,
+        110
+      ],
+      "actualWorldPoint": [
+        450.5,
+        129.5
+      ],
+      "caption": "高空坠物：广告牌连接已松脱，不走到牌下，也不伸手扶正。"
+    },
+    {
+      "name": "storm-street-check-v2-375x667: leaning_fence",
+      "status": "passed",
+      "samplePoint": [
+        232,
+        674
+      ],
+      "actualWorldPoint": [
+        243.5,
+        663.5
+      ],
+      "caption": "围挡倾倒：临时围挡已经倾斜，应远离，不靠着避雨。 已识别不等于已安全，继续在安全处避险。"
+    },
+    {
+      "name": "storm-street-check-v2-375x667: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-375x667: returned to map",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-390x844: existing artwork layout audited (see knownLayoutIssues)",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-390x844: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        99.5,
+        240.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-390x844: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-390x844: leaning_fence",
+      "status": "passed",
+      "samplePoint": [
+        232,
+        674
+      ],
+      "actualWorldPoint": [
+        243.5,
+        663.5
+      ],
+      "caption": "围挡倾倒：临时围挡已经倾斜，应远离，不靠着避雨。"
+    },
+    {
+      "name": "storm-street-check-v2-390x844: loose_sign",
+      "status": "passed",
+      "samplePoint": [
+        556,
+        110
+      ],
+      "actualWorldPoint": [
+        420.5,
+        141.5
+      ],
+      "caption": "高空坠物：广告牌连接已松脱，不走到牌下，也不伸手扶正。"
+    },
+    {
+      "name": "storm-street-check-v2-390x844: missing_cover",
+      "status": "passed",
+      "samplePoint": [
+        219,
+        484
+      ],
+      "actualWorldPoint": [
+        327.5,
+        480.5
+      ],
+      "caption": "井口缺盖：水下可能藏着坑洞，不能靠近查看或涉水。"
+    },
+    {
+      "name": "storm-street-check-v2-390x844: wet_power_box",
+      "status": "passed",
+      "samplePoint": [
+        602,
+        515
+      ],
+      "actualWorldPoint": [
+        594.5,
+        513.5
+      ],
+      "caption": "涉水电力：电箱周围有积水，远离，不触碰、不自行断电。"
+    },
+    {
+      "name": "storm-street-check-v2-390x844: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        99.5,
+        240.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。 已识别不等于已安全，继续在安全处避险。"
+    },
+    {
+      "name": "storm-street-check-v2-390x844: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-390x844: returned to map",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-430x932: existing artwork layout audited (see knownLayoutIssues)",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-430x932: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        183.5,
+        234.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-430x932: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-430x932: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        183.5,
+        234.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-430x932: wet_power_box",
+      "status": "passed",
+      "samplePoint": [
+        602,
+        515
+      ],
+      "actualWorldPoint": [
+        594.5,
+        513.5
+      ],
+      "caption": "涉水电力：电箱周围有积水，远离，不触碰、不自行断电。"
+    },
+    {
+      "name": "storm-street-check-v2-430x932: missing_cover",
+      "status": "passed",
+      "samplePoint": [
+        219,
+        484
+      ],
+      "actualWorldPoint": [
+        327.5,
+        480.5
+      ],
+      "caption": "井口缺盖：水下可能藏着坑洞，不能靠近查看或涉水。"
+    },
+    {
+      "name": "storm-street-check-v2-430x932: loose_sign",
+      "status": "passed",
+      "samplePoint": [
+        556,
+        110
+      ],
+      "actualWorldPoint": [
+        483.5,
+        144.5
+      ],
+      "caption": "高空坠物：广告牌连接已松脱，不走到牌下，也不伸手扶正。"
+    },
+    {
+      "name": "storm-street-check-v2-430x932: leaning_fence",
+      "status": "passed",
+      "samplePoint": [
+        232,
+        674
+      ],
+      "actualWorldPoint": [
+        243.5,
+        663.5
+      ],
+      "caption": "围挡倾倒：临时围挡已经倾斜，应远离，不靠着避雨。 已识别不等于已安全，继续在安全处避险。"
+    },
+    {
+      "name": "storm-street-check-v2-430x932: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-430x932: returned to map",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-540x960: existing artwork layout audited (see knownLayoutIssues)",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-540x960: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        222.5,
+        228.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-540x960: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-540x960: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        222.5,
+        228.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-540x960: wet_power_box",
+      "status": "passed",
+      "samplePoint": [
+        602,
+        515
+      ],
+      "actualWorldPoint": [
+        597.5,
+        513.5
+      ],
+      "caption": "涉水电力：电箱周围有积水，远离，不触碰、不自行断电。"
+    },
+    {
+      "name": "storm-street-check-v2-540x960: missing_cover",
+      "status": "passed",
+      "samplePoint": [
+        219,
+        484
+      ],
+      "actualWorldPoint": [
+        327.5,
+        480.5
+      ],
+      "caption": "井口缺盖：水下可能藏着坑洞，不能靠近查看或涉水。"
+    },
+    {
+      "name": "storm-street-check-v2-540x960: loose_sign",
+      "status": "passed",
+      "samplePoint": [
+        556,
+        110
+      ],
+      "actualWorldPoint": [
+        444.5,
+        126.5
+      ],
+      "caption": "高空坠物：广告牌连接已松脱，不走到牌下，也不伸手扶正。"
+    },
+    {
+      "name": "storm-street-check-v2-540x960: leaning_fence",
+      "status": "passed",
+      "samplePoint": [
+        232,
+        674
+      ],
+      "actualWorldPoint": [
+        243.5,
+        663.5
+      ],
+      "caption": "围挡倾倒：临时围挡已经倾斜，应远离，不靠着避雨。 已识别不等于已安全，继续在安全处避险。"
+    },
+    {
+      "name": "storm-street-check-v2-540x960: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-540x960: returned to map",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-1440x900: existing artwork layout audited (see knownLayoutIssues)",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-1440x900: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        186.5,
+        231.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-1440x900: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-1440x900: flooded_underpass",
+      "status": "passed",
+      "samplePoint": [
+        140,
+        305
+      ],
+      "actualWorldPoint": [
+        186.5,
+        231.5
+      ],
+      "caption": "低洼积水：地下通道已进水，不进入，也不试探深浅。"
+    },
+    {
+      "name": "storm-street-check-v2-1440x900: wet_power_box",
+      "status": "passed",
+      "samplePoint": [
+        602,
+        515
+      ],
+      "actualWorldPoint": [
+        597.5,
+        513.5
+      ],
+      "caption": "涉水电力：电箱周围有积水，远离，不触碰、不自行断电。"
+    },
+    {
+      "name": "storm-street-check-v2-1440x900: missing_cover",
+      "status": "passed",
+      "samplePoint": [
+        219,
+        484
+      ],
+      "actualWorldPoint": [
+        327.5,
+        480.5
+      ],
+      "caption": "井口缺盖：水下可能藏着坑洞，不能靠近查看或涉水。"
+    },
+    {
+      "name": "storm-street-check-v2-1440x900: loose_sign",
+      "status": "passed",
+      "samplePoint": [
+        556,
+        110
+      ],
+      "actualWorldPoint": [
+        441.5,
+        126.5
+      ],
+      "caption": "高空坠物：广告牌连接已松脱，不走到牌下，也不伸手扶正。"
+    },
+    {
+      "name": "storm-street-check-v2-1440x900: leaning_fence",
+      "status": "passed",
+      "samplePoint": [
+        232,
+        674
+      ],
+      "actualWorldPoint": [
+        243.5,
+        663.5
+      ],
+      "caption": "围挡倾倒：临时围挡已经倾斜，应远离，不靠着避雨。 已识别不等于已安全，继续在安全处避险。"
+    },
+    {
+      "name": "storm-street-check-v2-1440x900: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "storm-street-check-v2-1440x900: returned to map",
+      "status": "passed"
+    }
+  ],
+  "knownLayoutIssues": [
+    {
+      "label": "storm-street-check-v2-320x568",
+      "targetId": "flooded_underpass",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-320x568",
+      "targetId": "loose_sign",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-375x667",
+      "targetId": "flooded_underpass",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-375x667",
+      "targetId": "loose_sign",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-390x844",
+      "targetId": "flooded_underpass",
+      "cropped": true,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-390x844",
+      "targetId": "wet_power_box",
+      "cropped": true,
+      "occluded": false,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-390x844",
+      "targetId": "loose_sign",
+      "cropped": true,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-390x844",
+      "targetId": "leaning_fence",
+      "cropped": true,
+      "occluded": false,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-430x932",
+      "targetId": "flooded_underpass",
+      "cropped": true,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-430x932",
+      "targetId": "wet_power_box",
+      "cropped": true,
+      "occluded": false,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-430x932",
+      "targetId": "loose_sign",
+      "cropped": true,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-430x932",
+      "targetId": "leaning_fence",
+      "cropped": true,
+      "occluded": false,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-540x960",
+      "targetId": "flooded_underpass",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-540x960",
+      "targetId": "loose_sign",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-1440x900",
+      "targetId": "flooded_underpass",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-1440x900",
+      "targetId": "loose_sign",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    }
+  ],
+  "screenshots": [
+    "storm-street-check-v2-320x568-clues.png",
+    "storm-street-check-v2-320x568-start.png",
+    "storm-street-check-v2-320x568-last-feedback.png",
+    "storm-street-check-v2-320x568-ending.png",
+    "storm-street-check-v2-320x568-wrong-answer.png",
+    "storm-street-check-v2-320x568-correct-answer.png",
+    "storm-street-check-v2-375x667-clues.png",
+    "storm-street-check-v2-375x667-start.png",
+    "storm-street-check-v2-375x667-last-feedback.png",
+    "storm-street-check-v2-375x667-ending.png",
+    "storm-street-check-v2-375x667-wrong-answer.png",
+    "storm-street-check-v2-375x667-correct-answer.png",
+    "storm-street-check-v2-390x844-clues.png",
+    "storm-street-check-v2-390x844-start.png",
+    "storm-street-check-v2-390x844-last-feedback.png",
+    "storm-street-check-v2-390x844-ending.png",
+    "storm-street-check-v2-390x844-wrong-answer.png",
+    "storm-street-check-v2-390x844-correct-answer.png",
+    "storm-street-check-v2-430x932-clues.png",
+    "storm-street-check-v2-430x932-start.png",
+    "storm-street-check-v2-430x932-last-feedback.png",
+    "storm-street-check-v2-430x932-ending.png",
+    "storm-street-check-v2-430x932-wrong-answer.png",
+    "storm-street-check-v2-430x932-correct-answer.png",
+    "storm-street-check-v2-540x960-clues.png",
+    "storm-street-check-v2-540x960-start.png",
+    "storm-street-check-v2-540x960-last-feedback.png",
+    "storm-street-check-v2-540x960-ending.png",
+    "storm-street-check-v2-540x960-wrong-answer.png",
+    "storm-street-check-v2-540x960-correct-answer.png",
+    "storm-street-check-v2-1440x900-clues.png",
+    "storm-street-check-v2-1440x900-start.png",
+    "storm-street-check-v2-1440x900-last-feedback.png",
+    "storm-street-check-v2-1440x900-ending.png",
+    "storm-street-check-v2-1440x900-wrong-answer.png",
+    "storm-street-check-v2-1440x900-correct-answer.png"
+  ],
+  "errors": [],
+  "network": [],
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "browserClosed": true,
+  "browser": "154.0.4258.37",
+  "finishedAt": "2026-10-07T07:12:04.744Z"
+}

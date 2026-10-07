@@ -5,14 +5,14 @@
   "kind": "prevention",
   "order": 10,
   "location": "楼道 · 日常巡查",
-  "description": "平日巡查，把占用楼道的四件物品收进自家储物空间。",
-  "safety": "日常、无火烟时整理轻便自家物品；火灾时不要因收拾物品耽误撤离。不得占用另一条通道或挪动消防设备。",
-  "briefing": "日常整理：找出挡住通路的物品，收进右侧自家储物间。",
+  "description": "选择自家轻便杂物和正确去处，收好后检查通道、出口前和消防设施前是否畅通。",
+  "safety": "仅在无火烟时整理自家轻便杂物。公共楼道不是储物空间；他人物品联系物主或物业，不擅自丢弃。不移动消防设施。火灾时不要因收拾物品耽误避险。人物试走只是演示，不是现实通道宽度验收。",
+  "briefing": "平日整理：先点物品，再选去处；也可以直接拖动。",
   "objects": [
     {
       "id": "box",
       "label": "纸箱",
-      "input": "tap",
+      "input": "drag",
       "disabledWhen": [
         "box-stored"
       ]
@@ -20,7 +20,7 @@
     {
       "id": "chair",
       "label": "折叠椅",
-      "input": "tap",
+      "input": "drag",
       "disabledWhen": [
         "chair-stored"
       ]
@@ -28,7 +28,7 @@
     {
       "id": "case",
       "label": "空行李箱",
-      "input": "tap",
+      "input": "drag",
       "disabledWhen": [
         "case-stored"
       ]
@@ -36,9 +36,24 @@
     {
       "id": "scooter",
       "label": "玩具滑板车",
-      "input": "tap",
+      "input": "drag",
       "disabledWhen": [
         "scooter-stored"
+      ]
+    },
+    {
+      "id": "inspector",
+      "label": "检查通道",
+      "input": "tap",
+      "hudAction": true,
+      "requires": [
+        "box-stored",
+        "chair-stored",
+        "case-stored",
+        "scooter-stored"
+      ],
+      "disabledWhen": [
+        "route-checked"
       ]
     }
   ],
@@ -62,48 +77,159 @@
       "id": "scooter-stored",
       "label": "玩具滑板车",
       "object": "scooter"
+    },
+    {
+      "id": "route-checked",
+      "label": "检查通道",
+      "object": "inspector",
+      "showTarget": false
     }
   ],
   "interactions": [
     {
       "id": "store-box",
       "source": "box",
-      "mode": "tap",
+      "mode": "drop",
+      "target": "storage",
       "grants": [
         "box-stored"
       ],
       "outcome": "correct",
-      "animation": "store-box"
+      "animation": "store-box",
+      "feedback": "纸箱收进自家：公共楼道不是储物空间。"
+    },
+    {
+      "id": "box-to-corner",
+      "source": "box",
+      "mode": "drop",
+      "target": "corner",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "return-box",
+      "feedback": "这里还是公共楼道，换个角落也不行。请收回自家。"
+    },
+    {
+      "id": "box-to-fire-access",
+      "source": "box",
+      "mode": "drop",
+      "target": "fire-access",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "return-box",
+      "feedback": "这里要留给消防设施使用，不能把杂物挪到这里。"
     },
     {
       "id": "store-chair",
       "source": "chair",
-      "mode": "tap",
+      "mode": "drop",
+      "target": "storage",
       "grants": [
         "chair-stored"
       ],
       "outcome": "correct",
-      "animation": "store-chair"
+      "animation": "store-chair",
+      "feedback": "折叠椅收好：门前也不能堆物。"
+    },
+    {
+      "id": "chair-to-corner",
+      "source": "chair",
+      "mode": "drop",
+      "target": "corner",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "return-chair",
+      "feedback": "这里还是公共楼道，换个角落也不行。请收回自家。"
+    },
+    {
+      "id": "chair-to-fire-access",
+      "source": "chair",
+      "mode": "drop",
+      "target": "fire-access",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "return-chair",
+      "feedback": "这里要留给消防设施使用，不能把杂物挪到这里。"
     },
     {
       "id": "store-case",
       "source": "case",
-      "mode": "tap",
+      "mode": "drop",
+      "target": "storage",
       "grants": [
         "case-stored"
       ],
       "outcome": "correct",
-      "animation": "store-case"
+      "animation": "store-case",
+      "feedback": "行李箱收好：靠墙摆整齐，也不等于可以占道。"
+    },
+    {
+      "id": "case-to-corner",
+      "source": "case",
+      "mode": "drop",
+      "target": "corner",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "return-case",
+      "feedback": "这里还是公共楼道，换个角落也不行。请收回自家。"
+    },
+    {
+      "id": "case-to-fire-access",
+      "source": "case",
+      "mode": "drop",
+      "target": "fire-access",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "return-case",
+      "feedback": "这里要留给消防设施使用，不能把杂物挪到这里。"
     },
     {
       "id": "store-scooter",
       "source": "scooter",
-      "mode": "tap",
+      "mode": "drop",
+      "target": "storage",
       "grants": [
         "scooter-stored"
       ],
       "outcome": "correct",
-      "animation": "store-scooter"
+      "animation": "store-scooter",
+      "feedback": "滑板车收好：消防设施前要保持可接近。"
+    },
+    {
+      "id": "scooter-to-corner",
+      "source": "scooter",
+      "mode": "drop",
+      "target": "corner",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "return-scooter",
+      "feedback": "这里还是公共楼道，换个角落也不行。请收回自家。"
+    },
+    {
+      "id": "scooter-to-fire-access",
+      "source": "scooter",
+      "mode": "drop",
+      "target": "fire-access",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "return-scooter",
+      "feedback": "这里要留给消防设施使用，不能把杂物挪到这里。"
+    },
+    {
+      "id": "check-route",
+      "source": "inspector",
+      "mode": "tap",
+      "requires": [
+        "box-stored",
+        "chair-stored",
+        "case-stored",
+        "scooter-stored"
+      ],
+      "grants": [
+        "route-checked"
+      ],
+      "outcome": "correct",
+      "animation": "check-route",
+      "feedback": "杂物收回自家，公共通道、出口前和消防设施前都要保持畅通。"
     }
   ],
   "risk": {
@@ -111,7 +237,7 @@
     "seconds": 50,
     "initial": 0,
     "warningAt": 65,
-    "peakFeedback": "时间到了，本次未能收齐全部物件。再挑战一次吧。",
+    "peakFeedback": "训练时间到了，还没有完成收纳和检查。再试一次，不用着急。",
     "timeout": "fail"
   },
   "completion": {
@@ -119,11 +245,26 @@
       "box-stored",
       "chair-stored",
       "case-stored",
-      "scooter-stored"
+      "scooter-stored",
+      "route-checked"
     ],
     "settleMs": 1800,
     "title": "通道，畅通了",
     "status": "完成",
-    "summary": "楼道和安全出口不能堆放物品。日常及时整理，不把杂物搬到另一条通道；发生火灾时，人员安全优先。"
-  }
+    "summary": "收回自家，不换角落；通道、出口和消防设施前都不堆物。平时及时整理，有火烟时不为收拾物品耽误避险。",
+    "fixedStars": 3
+  },
+  "stages": [
+    {
+      "id": "ready-to-check",
+      "requires": [
+        "box-stored",
+        "chair-stored",
+        "case-stored",
+        "scooter-stored"
+      ],
+      "afterMs": 0,
+      "feedback": "四件物品收好了！还要检查通道，才算真正完成。"
+    }
+  ]
 }

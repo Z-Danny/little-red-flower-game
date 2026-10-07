@@ -1,3 +1,4 @@
+import { parseBackup, serializeBackup } from './backup';
 import { MAX_PLAYERS, parseState, rankPlayers, recordBest, claimFirstCompletion, sanitizeScores, validateProfile, type BoardSnapshot, type BoardState, type LeaderboardProvider, type ProfileInput, type ScoreCaps } from './model';
 
 export const BOARD_STORAGE_KEY = 'little-red-flower-leaderboard-v1';
@@ -82,6 +83,22 @@ export function createLocalLeaderboard(options: Options): LeaderboardProvider {
 
   return {
     async read() { return snapshot(load()); },
+    async exportBackup(expectedPlayerId) {
+      const state = load();
+      if (state.activePlayerId !== expectedPlayerId) throw new Error('当前玩家已切换，请重新打开存档管理。');
+      return serializeBackup(state.players.find(p => p.id === expectedPlayerId)!, now());
+    },
+    async importBackup(text, expectedPlayerId) {
+      const backup = parseBackup(text);
+      return mutate(state => {
+        if (state.activePlayerId !== expectedPlayerId) throw new Error('当前玩家已切换，请重新检查后导入。');
+        if (state.players.length >= MAX_PLAYERS) throw new Error('本机玩家已达50位，无法新增导入；原有记录未改变。');
+        const id = options.id();
+        if (state.players.some(p => p.id === id)) throw new Error('创建导入玩家失败，请重试。');
+        // Always create a separate player, even for our own backup: never erase newer local progress.
+        return { ...state, activePlayerId:id, players:[...state.players, { ...backup.player, id, createdAt:now() }] };
+      });
+    },
     async createPlayer(input: ProfileInput) {
       const profile = validateProfile(input);
       return mutate(state => {
@@ -102,18 +119,25 @@ export function createLocalLeaderboard(options: Options): LeaderboardProvider {
       });
     },
     async recordResult(id, flowers, playerId) { return mutate(state => recordBest(state, id, flowers, options.caps, playerId)); },
-    async claimCompletion(id,playerId) {
+    async claimCompletion(id,playerId,flowers) {
       const state=load(),player=state.players.find(p=>p.id===playerId);
-      if(player&&options.canEnter&&!options.canEnter(id,player.completed))throw new Error('请先完成本区域的上一关。');
-      const next=claimFirstCompletion(state,id,playerId,options.caps);
+      if(player&&!player.allLevelsUnlocked&&options.canEnter&&!options.canEnter(id,player.completed))throw new Error('请先完成本区域的上一关。');
+      const next=claimFirstCompletion(state,id,playerId,options.caps,flowers);
       save(next.state);
       return {snapshot:snapshot(next.state),receipt:next.receipt};
+    },
+    async unlockAllLevels(expectedPlayerId) {
+      return mutate(state => {
+        if (state.activePlayerId !== expectedPlayerId)
+          throw new Error('当前玩家已在其他页面切换，请刷新后重试。');
+        return { ...state, players: state.players.map(player => player.id === expectedPlayerId ? { ...player, allLevelsUnlocked: true } : player) };
+      });
     },
     async resetCurrentProgress(expectedPlayerId) {
       return mutate(state => {
         if (expectedPlayerId && state.activePlayerId !== expectedPlayerId)
           throw new Error('当前玩家已在其他页面切换，请刷新后重新确认。');
-        return { ...state, players: state.players.map(player => player.id === state.activePlayerId ? { ...player, completed: {} } : player) };
+        return { ...state, players: state.players.map(player => player.id === state.activePlayerId ? { ...player, completed: {}, allLevelsUnlocked: false } : player) };
       });
     },
     subscribe: options.listen,

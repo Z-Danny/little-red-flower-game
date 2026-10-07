@@ -359,7 +359,7 @@ void test('claim awards exactly 3 once and receipt survives fresh provider read'
   assert.equal(reload.current.completed['typhoon-home'], 3);
   assert.equal(nodeStatus('flood-kit', reload.current.completed), 'available');
 });
-void test('replaying legacy 1/2-flower runs never tops up first-clear rewards', () => {
+void test('replaying legacy 1/2-flower runs tops up only the improvement', () => {
   for (const score of [1, 2]) {
     const state: BoardState = {
       version: 1,
@@ -374,9 +374,10 @@ void test('replaying legacy 1/2-flower runs never tops up first-clear rewards', 
         },
       ],
     };
-    const r = claimFirstCompletion(state, 'oil-fire', 'a', caps);
-    assert.equal(r.receipt.reward, 0);
-    assert.deepEqual(r.state, state);
+    const r = claimFirstCompletion(state, 'oil-fire', 'a', caps, 3);
+    assert.equal(r.receipt.reward, 3 - score);
+    assert.equal(r.state.players[0].completed['oil-fire'], 3);
+    assert.equal(state.players[0].completed['oil-fire'], score);
   }
 });
 void test('two providers claiming same completed level return a single reward', async () => {
@@ -456,4 +457,20 @@ void test('storage failure reports session-only persistence, never falsely says 
   assert.equal(r.snapshot.persistence, 'session');
   assert(r.snapshot.notice);
   assert.equal(r.receipt.reward, 3);
+});
+
+
+test('unlock all opens every map node without changing completion or rewards', () => {
+  const completed = Object.freeze({ 'typhoon-home': 3 });
+  for (const node of journeyMap.regions.flatMap(region => region.nodes)) {
+    assert.equal(canEnter(node.id, completed, true), true);
+    assert.equal(nodeStatus(node.id, completed, true), node.id === 'typhoon-home' ? 'complete' : 'available');
+  }
+  assert.equal(nodeStatus('unknown-level', completed, true), 'locked');
+  assert.equal(canEnter('unknown-level', completed, true), false);
+  assert.equal(flowerTotal(completed), 3);
+  assert.equal(plantedTotal(completed), 1);
+  const last = journeyMap.regions.at(-1)!.nodes.at(-1)!.id;
+  assert.equal(resumeNode({}, { levelId: last, visitedAt: 1 }, true), last);
+  assert.equal(nodeStatus(last, {}), 'locked');
 });

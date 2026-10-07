@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-07",
+  "html": "C:\\Users\\LEGION\\Documents\\Codex\\2026-09-19\\https-github-com-z-danny-little-2\\little-red-flower-game\\outputs\\本地离线版\\小红花应急行动.html",
+  "sha256": "c3d407d816feb89017d67407e9c85fed74e0d9853b69c4fb4d2930fe65442c21",
+  "unitRegression": {
+    "status": "passed",
+    "passed": 1145
+  },
+  "typecheck": "passed",
+  "offlineExport": {
+    "status": "passed",
+    "gates": 7
+  },
+  "browser": {
+    "status": "passed",
+    "checks": [
+      "390x844: completed progress survives closed page; JSON download, invalid reject, cancel unchanged, import new player, old save retained, continue works",
+      "320x568: completed progress survives closed page; JSON download, invalid reject, cancel unchanged, import new player, old save retained, continue works",
+      "1280x900: completed progress survives closed page; JSON download, invalid reject, cancel unchanged, import new player, old save retained, continue works",
+      "390x844 denied storage: completed progress honestly session-only; JSON download, invalid reject, cancel unchanged, import new player, old save retained, continue works"
+    ],
+    "closed": true,
+    "errors": [],
+    "network": []
+  },
+  "processRestart": {
+    "status": "passed",
+    "checks": [
+      "Imported test fixture through the actual UI and saved to isolated profile",
+      "Closed entire browser, reopened same isolated profile, active player and 2 flowers survive; Continue opens map"
+    ],
+    "contextsClosed": 2
+  },
+  "standardWebsiteBuild": "blocked_by_windows_application_control_rolldown_native_binding",
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "published": false
+}

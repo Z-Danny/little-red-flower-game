@@ -15,8 +15,10 @@ import {
 import { categoryForRegion } from '@/app/game/journey/categories';
 type Props = {
   completed: Record<string, number>;
+  allLevelsUnlocked?: boolean;
   onStart: (id: string) => void;
   onReset: () => void;
+  onManageSave?: () => void;
   onLeaderboard: () => void;
   playerName: string;
   planting: Planting | null;
@@ -74,6 +76,7 @@ export function LevelHub(props: Props) {
       >
         <MapScene
           {...view}
+          allLevelsUnlocked={props.allLevelsUnlocked}
           planting={planting}
           onInspect={(id) => {
             props.onVisit(id);
@@ -101,6 +104,7 @@ export function LevelHub(props: Props) {
             musicMuted={props.musicMuted}
             onMusicMute={props.onMusicMute}
             onReset={onReset}
+            onManageSave={()=>{setSettings(false);props.onManageSave?.();}}
             navigationLocked={!!planting}
           />
         )}
@@ -109,6 +113,7 @@ export function LevelHub(props: Props) {
         inspect={inspect}
         setInspect={setInspect}
         completed={completed}
+        allLevelsUnlocked={props.allLevelsUnlocked}
         onStart={onStart}
       />
       {archipelagoOpen && (

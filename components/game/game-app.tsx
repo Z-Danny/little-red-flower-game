@@ -24,6 +24,7 @@ import { DisasterPlayer } from './disaster/player';
 import { useLeaderboard } from './leaderboard/use-leaderboard';
 import { PlayerJournal } from './journey/player-journal';
 import { journalEntries } from '@/app/game/journey/journal';
+import { SaveManager } from './journey/save-manager';
 import { Settlement } from './journey/settlement';
 import type { RewardSound, PlantingSoundStage, InterfaceCue } from './journey/reward-sound';
 import { useInterfaceSound } from './use-interface-sound';
@@ -35,6 +36,8 @@ import { useJourneyLocation } from './journey/use-journey-location';
 import { entryNode, hasJourneyRecord, resumeNode } from '@/app/game/journey/resume';
 import home from '@/content/journey-home.json';
 import { primeLevelAudioContext, releaseLevelAudioContext } from '@/app/game/level-audio-context';
+import { timeReward, type CompletionTiming, type TimeReward } from '@/app/game/journey/time-reward';
+import { rewardReferenceSeconds } from '@/app/game/journey/level-reward';
 const EMPTY: Record<string, number> = {};
 const UI_MUTE_KEY = 'red-flower:interface-muted';
 function readInterfaceMuted() {
@@ -73,6 +76,7 @@ export function GameApp() {
   );
 }
 function MainGameApp() {
+  const [showSaveManager, setShowSaveManager] = useState(false);
   const [showTitle, setShowTitle] = useState(true);
   const [departingTitle, setDepartingTitle] = useState(false);
   const [departureCanContinue, setDepartureCanContinue] = useState(false);
@@ -89,7 +93,7 @@ function MainGameApp() {
   const reportLevelInterfacePolicy = useCallback((policy: LevelInterfaceSoundPolicy) => {
     setLevelInterfacePolicy(current => current.muted === policy.muted && current.volume === policy.volume ? current : policy);
   }, []);
-  const session = useRef({ playerId: '', levelId: '', finished: false }),
+  const session = useRef<{playerId: string; levelId: string; finished: boolean; result?: TimeReward}>({ playerId: '', levelId: '', finished: false }),
     sound = useRef<RewardSound | null>(null);
   const launchingLevel = useRef(false);
   const completed = board.snapshot?.current.completed ?? EMPTY,
@@ -108,8 +112,9 @@ function MainGameApp() {
   const bookmark = useJourneyLocation(playerId);
   const startingNewGame = useRef(false);
   const remember = bookmark.remember;
-  const continueId = resumeNode(completed, bookmark.location);
-  const canContinue = hasJourneyRecord(completed, bookmark.location);
+  const allLevelsUnlocked = board.snapshot?.current.allLevelsUnlocked === true;
+  const continueId = resumeNode(completed, bookmark.location, allLevelsUnlocked);
+  const canContinue = allLevelsUnlocked || hasJourneyRecord(completed, bookmark.location);
   const toggleMute = () => {
     const next = !muted;
     setMuted(next);
@@ -184,7 +189,7 @@ function MainGameApp() {
   useEffect(() => () => releaseLevelAudioContext(), []);
   const startLevel = useCallback(
     (id: string) => {
-      if (launchingLevel.current || !playerId || !getLevel(id)?.playable || !canEnter(id, completed))
+      if (launchingLevel.current || !playerId || !getLevel(id)?.playable || !canEnter(id, completed, allLevelsUnlocked))
         return;
       launchingLevel.current = true;
       primeLevelAudioContext();
@@ -199,13 +204,16 @@ function MainGameApp() {
       remember(id);
       sound.current?.unlock();
     },
-    [playerId, completed, remember],
+    [playerId, completed, allLevelsUnlocked, remember],
   );
   const claim = board.claimCompletion;
   const saveCompletion = useCallback(async () => {
-    const { playerId, levelId } = session.current;
-    const saved = await claim(levelId, playerId);
+    const currentSession = session.current;
+    const { playerId, levelId, result } = currentSession;
+    if (!result) return;
+    const saved = await claim(levelId, playerId, result.flowers);
     if (
+      session.current === currentSession &&
       session.current.playerId === playerId &&
       session.current.levelId === levelId &&
       saved
@@ -215,16 +223,18 @@ function MainGameApp() {
     }
   }, [claim]);
   const finishLevel = useCallback(
-    (id: string, stars: number) => {
+    (id: string, stars: number, timing: CompletionTiming) => {
       // Only a successful engine completion can call this boundary. Failed/partial runs never claim.
       if (
         id !== session.current.levelId ||
         !Number.isInteger(stars) ||
         stars < 1 ||
         stars > 3 ||
+        !timing || !Number.isFinite(timing.elapsedMs) || timing.elapsedMs < 0 ||
         session.current.finished
       )
         return;
+      session.current.result = timeReward(timing.elapsedMs, rewardReferenceSeconds(id));
       session.current.finished = true;
       setFinished(true);
       void saveCompletion();
@@ -291,7 +301,7 @@ function MainGameApp() {
             const candidate = (input as { levelId?: unknown })?.levelId;
             const id = typeof candidate === 'string' ? candidate : '';
             if (!playerId) throw new Error('存档正在载入');
-            if (!getLevel(id)?.playable || !canEnter(id, completed))
+            if (!getLevel(id)?.playable || !canEnter(id, completed, allLevelsUnlocked))
               throw new Error('该关卡尚未解锁');
             startLevel(id);
             return { status: 'opened', levelId: id };
@@ -320,7 +330,7 @@ function MainGameApp() {
       ),
     ).catch(() => undefined);
     return () => lifecycle.abort();
-  }, [completed, totalFlowers, playerId, startLevel]);
+  }, [completed, totalFlowers, playerId, startLevel, allLevelsUnlocked]);
   const shell = (content: ReactNode) => (
     <main
       {...interfaceSound}
@@ -336,7 +346,8 @@ function MainGameApp() {
       }}
     >
       {content}
-      {(board.error || board.snapshot?.notice) && (
+      {showSaveManager && board.snapshot && <SaveManager board={board} onClose={()=>setShowSaveManager(false)} onImported={()=>{setFocusId(null);setPlanting(null);setShowTitle(true);}} />}
+      {!showSaveManager && !finished && (board.error || board.snapshot?.notice) && (
         <output className="game-save-notice">
           {board.error || board.snapshot?.notice}
         </output>
@@ -399,7 +410,9 @@ function MainGameApp() {
         {finished && (
           <Settlement
             level={active}
+            result={session.current.result}
             receipt={receipt}
+            persistence={board.snapshot.persistence}
             error={board.error}
             onRetry={() => void saveCompletion()}
             onMap={returnMap}
@@ -411,7 +424,14 @@ function MainGameApp() {
   if (showTitle)
     return shell(
       <TitleScreen
+        muted={muted}
+        onMute={toggleMute}
+        musicMuted={music.muted}
+        onMusicMute={music.toggle}
         canContinue={departingTitle ? departureCanContinue : canContinue}
+        allLevelsUnlocked={allLevelsUnlocked}
+        onUnlockAll={() => void board.unlockAllLevels()}
+        onManageSave={()=>setShowSaveManager(true)}
         onStart={() => void startNewGame()}
         busy={board.busy || departingTitle}
         departing={departingTitle}
@@ -424,6 +444,7 @@ function MainGameApp() {
     <LevelHub
       key={playerId}
       completed={completed}
+      allLevelsUnlocked={allLevelsUnlocked}
       onStart={startLevel}
       onReset={resetProgress}
       onLeaderboard={() => {
@@ -436,6 +457,7 @@ function MainGameApp() {
       onPlantSound={onPlantSound}
       onArchipelagoSound={onArchipelagoSound}
       onHome={() => setShowTitle(true)}
+      onManageSave={()=>setShowSaveManager(true)}
       onVisit={bookmark.remember}
       focusId={focusId}
       muted={muted}

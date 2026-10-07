@@ -1,0 +1,583 @@
+{
+  "pipelineVersion": 3,
+  "id": "storm-street-check-v2",
+  "authorId": "storm-street-check-v2",
+  "skinName": "readable-v4",
+  "sourceSha256": "a52f9eecdcd087b4d03c3ba426c55977bd3d28e30865e0d6924b210b6cbef878",
+  "draftSkinSha256": "a0c83fff5f479e0e2fb7b908e44f8034105706b85136d1e24dfc3288cfe37477",
+  "world": [
+    720,
+    1280
+  ],
+  "output": "public/levels/hunts/storm-street-check-v2/readable-v4",
+  "skin": "content/scenes/storm-street-check-v2/skins/readable-v4.json",
+  "targets": [
+    {
+      "id": "flooded_underpass",
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "wet_power_box",
+      "color": [
+        0,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "missing_cover",
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "loose_sign",
+      "color": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "leaning_fence",
+      "color": [
+        255,
+        0,
+        255
+      ]
+    }
+  ],
+  "criticalRegions": [
+    {
+      "x": 455,
+      "y": 729,
+      "w": 112,
+      "h": 112
+    },
+    {
+      "x": 390,
+      "y": 814,
+      "w": 92,
+      "h": 92
+    },
+    {
+      "x": 390,
+      "y": 681,
+      "w": 146,
+      "h": 141
+    },
+    {
+      "x": 231,
+      "y": 839,
+      "w": 111,
+      "h": 126
+    }
+  ],
+  "corrections": {
+    "targets": {
+      "flooded_underpass": {
+        "keepPolygons": [
+          [
+            [
+              118,
+              386
+            ],
+            [
+              289,
+              387
+            ],
+            [
+              289,
+              445
+            ],
+            [
+              324,
+              478
+            ],
+            [
+              335,
+              486
+            ],
+            [
+              349,
+              531
+            ],
+            [
+              343,
+              540
+            ],
+            [
+              135,
+              548
+            ],
+            [
+              129,
+              497
+            ],
+            [
+              119,
+              488
+            ]
+          ]
+        ],
+        "reason": "Follow visible stair entrance structure and railing, remove generated speckle on adjacent street."
+      },
+      "wet_power_box": {
+        "keepPolygons": [
+          [
+            [
+              468,
+              542
+            ],
+            [
+              503,
+              531
+            ],
+            [
+              578,
+              547
+            ],
+            [
+              578,
+              667
+            ],
+            [
+              566,
+              679
+            ],
+            [
+              534,
+              681
+            ],
+            [
+              467,
+              657
+            ]
+          ]
+        ],
+        "fillEnclosedHoles": true,
+        "closeGapsPx": 1,
+        "reason": "The cabinet is solid; remove background fringe and close 1px generated surface cracks."
+      },
+      "missing_cover": {
+        "keepPolygons": [
+          [
+            [
+              232,
+              591
+            ],
+            [
+              246,
+              583
+            ],
+            [
+              269,
+              579
+            ],
+            [
+              296,
+              581
+            ],
+            [
+              315,
+              575
+            ],
+            [
+              333,
+              577
+            ],
+            [
+              352,
+              586
+            ],
+            [
+              381,
+              609
+            ],
+            [
+              396,
+              623
+            ],
+            [
+              391,
+              632
+            ],
+            [
+              371,
+              626
+            ],
+            [
+              341,
+              610
+            ],
+            [
+              323,
+              620
+            ],
+            [
+              299,
+              626
+            ],
+            [
+              267,
+              625
+            ],
+            [
+              244,
+              619
+            ],
+            [
+              232,
+              608
+            ]
+          ]
+        ],
+        "hitFillPolygons": [
+          [
+            [
+              253,
+              598
+            ],
+            [
+              262,
+              593
+            ],
+            [
+              283,
+              590
+            ],
+            [
+              302,
+              593
+            ],
+            [
+              319,
+              599
+            ],
+            [
+              326,
+              606
+            ],
+            [
+              312,
+              614
+            ],
+            [
+              284,
+              618
+            ],
+            [
+              262,
+              612
+            ]
+          ]
+        ],
+        "reason": "Calibrated to visible rim and lid; the open hole inside the rim is also a valid recognition hit, not a rectangular hotspot."
+      },
+      "loose_sign": {
+        "keepPolygons": [
+          [
+            [
+              417,
+              378
+            ],
+            [
+              543,
+              326
+            ],
+            [
+              561,
+              400
+            ],
+            [
+              567,
+              310
+            ],
+            [
+              595,
+              308
+            ],
+            [
+              595,
+              333
+            ],
+            [
+              580,
+              335
+            ],
+            [
+              579,
+              358
+            ],
+            [
+              594,
+              392
+            ],
+            [
+              590,
+              400
+            ],
+            [
+              575,
+              386
+            ],
+            [
+              569,
+              368
+            ],
+            [
+              568,
+              410
+            ],
+            [
+              426,
+              434
+            ]
+          ]
+        ],
+        "fillEnclosedHoles": true,
+        "reason": "Clip mask proposal to the newly lowered sign and broken chain, remove generated peripheral noise."
+      },
+      "leaning_fence": {
+        "keepPolygons": [
+          [
+            [
+              119,
+              616
+            ],
+            [
+              182,
+              634
+            ],
+            [
+              193,
+              630
+            ],
+            [
+              204,
+              637
+            ],
+            [
+              299,
+              670
+            ],
+            [
+              309,
+              665
+            ],
+            [
+              319,
+              679
+            ],
+            [
+              346,
+              681
+            ],
+            [
+              342,
+              735
+            ],
+            [
+              329,
+              752
+            ],
+            [
+              343,
+              780
+            ],
+            [
+              342,
+              795
+            ],
+            [
+              323,
+              797
+            ],
+            [
+              310,
+              789
+            ],
+            [
+              303,
+              797
+            ],
+            [
+              279,
+              796
+            ],
+            [
+              272,
+              787
+            ],
+            [
+              261,
+              774
+            ],
+            [
+              181,
+              746
+            ],
+            [
+              178,
+              752
+            ],
+            [
+              158,
+              755
+            ],
+            [
+              149,
+              747
+            ],
+            [
+              159,
+              733
+            ],
+            [
+              118,
+              718
+            ]
+          ]
+        ],
+        "fillEnclosedHoles": true,
+        "closeGapsPx": 1,
+        "reason": "Keep actual visible fence panels and feet, not indoor window edge. Closing only fine generated cracks in solid panels."
+      }
+    },
+    "characters": {
+      "keepPolygons": [
+        [
+          [
+            449,
+            727
+          ],
+          [
+            518,
+            724
+          ],
+          [
+            561,
+            750
+          ],
+          [
+            588,
+            800
+          ],
+          [
+            610,
+            879
+          ],
+          [
+            614,
+            992
+          ],
+          [
+            610,
+            1254
+          ],
+          [
+            554,
+            1266
+          ],
+          [
+            485,
+            1238
+          ],
+          [
+            435,
+            1238
+          ],
+          [
+            381,
+            1227
+          ],
+          [
+            381,
+            1050
+          ],
+          [
+            354,
+            1000
+          ],
+          [
+            353,
+            909
+          ],
+          [
+            380,
+            849
+          ],
+          [
+            392,
+            812
+          ],
+          [
+            429,
+            814
+          ],
+          [
+            449,
+            831
+          ],
+          [
+            468,
+            817
+          ],
+          [
+            451,
+            788
+          ]
+        ]
+      ],
+      "reason": "Bound foreground family proposal to inspected person outlines and exclude generated white floor reflection below shoes."
+    }
+  },
+  "effects": {
+    "weatherPolygons": [
+      [
+        [
+          119,
+          207
+        ],
+        [
+          605,
+          207
+        ],
+        [
+          605,
+          852
+        ],
+        [
+          119,
+          852
+        ]
+      ]
+    ],
+    "waterPolygons": [
+      [
+        [
+          119,
+          465
+        ],
+        [
+          605,
+          465
+        ],
+        [
+          605,
+          852
+        ],
+        [
+          119,
+          852
+        ]
+      ]
+    ]
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-07",
+  "status": "partial_delivery",
+  "html": "C:/Users/LEGION/Documents/Codex/2026-09-19/https-github-com-z-danny-little-3/outputs/交互优化离线版/小红花应急行动.html",
+  "sha256": "9e9fdbf5333f893be4f56f9badcc3d43a125ab38a31f8a5cd7ce2d0043e1a876",
+  "exportAndTestShaMatch": true,
+  "browserChecks": 120,
+  "browserClosed": true,
+  "thirdLevel": "complete: readable-v3 enabled",
+  "fourthLevel": "teaching feedback and quiz delivered; existing skin retained, new layout NOT approved",
+  "knownLayoutIssues": [
+    {
+      "label": "storm-street-check-v2-320x568",
+      "targetId": "flooded_underpass",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-320x568",
+      "targetId": "loose_sign",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-375x667",
+      "targetId": "flooded_underpass",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-375x667",
+      "targetId": "loose_sign",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-390x844",
+      "targetId": "flooded_underpass",
+      "cropped": true,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-390x844",
+      "targetId": "wet_power_box",
+      "cropped": true,
+      "occluded": false,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-390x844",
+      "targetId": "loose_sign",
+      "cropped": true,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-390x844",
+      "targetId": "leaning_fence",
+      "cropped": true,
+      "occluded": false,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-430x932",
+      "targetId": "flooded_underpass",
+      "cropped": true,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-430x932",
+      "targetId": "wet_power_box",
+      "cropped": true,
+      "occluded": false,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-430x932",
+      "targetId": "loose_sign",
+      "cropped": true,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-430x932",
+      "targetId": "leaning_fence",
+      "cropped": true,
+      "occluded": false,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-540x960",
+      "targetId": "flooded_underpass",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-540x960",
+      "targetId": "loose_sign",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-1440x900",
+      "targetId": "flooded_underpass",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    },
+    {
+      "label": "storm-street-check-v2-1440x900",
+      "targetId": "loose_sign",
+      "cropped": false,
+      "occluded": true,
+      "note": "Existing shipped artwork retained. Replacement failed review; not claimed fixed."
+    }
+  ],
+  "commands": {
+    "node scripts/test-nature-readable.mjs": {
+      "status": "passed",
+      "exitCode": 0
+    },
+    "node node_modules/typescript/bin/tsc --noEmit": {
+      "status": "passed",
+      "exitCode": 0
+    },
+    "npm.cmd test": {
+      "status": "passed",
+      "exitCode": 0
+    },
+    "npm.cmd run build": {
+      "status": "failed_environment",
+      "exitCode": 1,
+      "reason": "Windows Application Control blocked rolldown native binding. No system protections disabled."
+    },
+    "node scripts/export-offline.mjs": {
+      "status": "passed",
+      "exitCode": 0
+    },
+    "final offline browser": {
+      "status": "passed_with_known_layout_limitations",
+      "exitCode": 0
+    }
+  },
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "published": false,
+  "committed": false
+}

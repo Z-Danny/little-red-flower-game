@@ -58,6 +58,7 @@ async function action(id,target,{stopAt=0}={}){
    const end=xy({x:dest.x+p.world.x-home.x,y:dest.y+p.world.y-home.y});
    await page.mouse.move(p.screen.x,p.screen.y);await page.mouse.down();await page.mouse.move(end.x,end.y,{steps:12});await page.mouse.up();
  }
+ if(id==='water'||id==='cloth'){assert.equal(await player().getAttribute('data-phase'),'failing');assert.equal(await heat(),1);assert.equal(await page.locator('.painted-failure-card').count(),0);await tick(250);await new Promise(resolve=>setTimeout(resolve,1750));await tick(rt.config.timing.failureFeedback);assert.equal(await player().getAttribute('data-phase'),'failed');return 0;}
  const kinds={gas:'shutoff',lid:'cover',person:'evacuate',water:'water',cloth:'cloth',plate:'bounce',knife:'bounce'};
  assert.equal(await player().getAttribute('data-action'),kinds[id],`real input ${id}`);
  const duration=rt.config.timing[id==='gas'?'gas':id==='person'?'person':['water','cloth'].includes(id)?'wrong':['plate','knife'].includes(id)?'bounce':'lid'];
@@ -116,17 +117,17 @@ try{
    await page.getByRole('button',{name:'打开声音',exact:true}).click();await page.waitForTimeout(1400);await tick(600);
    audio=await soundStatus();assert(audio.rms>0);check('unmute restores audible signal, not duplicate loops',audio);
    for(const id of ['water','cloth']){
-    await page.waitForTimeout(1400);const before=await heat(),remain=await action(id,'pan',{stopAt:300});await page.waitForTimeout(100);await tick(500);
-    assert((await heat())>=before,'wrong action raises urgency');
-    assert.equal(await player().getAttribute('data-emotion'),'panicked');assert.equal((await soundStatus()).cue,'');assert.equal((await soundStatus()).plays,0);await shot(`wrong-${id}-390x844`);await tick(remain+80);
-    const started=await page.evaluate(()=>window.__kitchenStarts.map(s=>s.id));assert(started.includes(id==='water'?'fx-water':'cloth'));assert(started.includes('flare'));assert(!started.some(id=>characterIds.includes(id)));
-    check(id+' retains visible panic and material/flare audio without character cries',await soundStatus());
+    await action(id,'pan');assert.equal(await heat(),1);assert.equal(await player().getAttribute('data-phase'),'failed');
+    assert.equal((await soundStatus()).plays,0);await shot(`wrong-${id}-390x844`);
+    check(id+' fills thermometer, plays action audio, then fails without character cries',await soundStatus());
+    await page.locator('[data-testid="failure-retry"]').click();await tick(100);local=rt.model.reduceRun(rt.model.createRun(),{type:'start'});
    }
    const e=Number(await player().getAttribute('data-elapsed'));await tick(Math.max(0,22500-e));await shot('thermometer-mid-danger');
    const n=(await soundStatus()).plays;await page.waitForTimeout(1400);await tick(16000);
    assert.equal(await page.getByRole('meter').getAttribute('data-tone'),'critical');assert.equal((await soundStatus()).plays,n);assert.equal(n,0);await shot('thermometer-critical');
-   await tick(12500);assert.equal(await timer(),0);assert.equal(await player().getAttribute('data-phase'),'playing');assert((await heat())>.9);await shot('peak-can-continue');
-   check('thermometer rises to critical; 50-second internal pressure peak never locks play',await soundStatus());
+   await tick(12500);assert.equal(await player().getAttribute('data-phase'),'failed');assert.equal(await heat(),1);await shot('peak-failure');
+   check('thermometer reaches full and locks play with failure',await soundStatus());
+   await page.locator('[data-testid="failure-retry"]').click();await tick(100);
   }
   if(width===320&&!quick){const initial=await heat();await tick(15000);assert((await heat())>initial);await shot('thermometer-rising-320x568');check('waiting visibly raises thermometer liquid', {initial,after:await heat()});}
   await complete(width===375||width===430?['lid','gas']:['gas','lid']);await shot(`complete-${width}x${height}`);

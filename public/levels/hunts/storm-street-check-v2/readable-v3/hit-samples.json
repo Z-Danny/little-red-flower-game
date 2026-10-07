@@ -1,0 +1,42 @@
+{
+  "world": [
+    720,
+    1280
+  ],
+  "targets": {
+    "flooded_underpass": [
+      197,
+      505
+    ],
+    "wet_power_box": [
+      522,
+      609
+    ],
+    "missing_cover": [
+      361,
+      597
+    ],
+    "loose_sign": [
+      517,
+      343
+    ],
+    "leaning_fence": [
+      218,
+      668
+    ]
+  },
+  "background": [
+    174,
+    1001
+  ],
+  "targetInteriorRadius": {
+    "flooded_underpass": 34.0147027033899,
+    "wet_power_box": 54.12947441089743,
+    "missing_cover": 18.867962264113206,
+    "loose_sign": 38.07886552931954,
+    "leaning_fence": 20.615528128088304
+  },
+  "backgroundRadius": 175.0,
+  "method": "max Euclidean distance to exterior of real object-mask; no bbox centers",
+  "visualStatus": "samples require browser/semantic confirmation"
+}

@@ -5,9 +5,9 @@
   "kind": "prevention",
   "order": 9,
   "location": "家中 · 事前准备",
-  "description": "平日备灾，找齐五类物品，把应急包准备好。",
+  "description": "挑选五件应急物品装进背包，检查后再出发。",
   "safety": "这是事前准备。五件物品不是完整储备清单；按家庭需要补足。收到转移通知应及时行动，不因收拾物品拖延。",
-  "briefing": "平日备灾：观察剪影，把五件物品收到应急包里。",
+  "briefing": "背包最多放5件。点物品装入，点背包查看或取出；装满后确认出发。",
   "objects": [
     {
       "id": "water",
@@ -48,6 +48,21 @@
       "disabledWhen": [
         "whistle-packed"
       ]
+    },
+    {
+      "id": "tv-remote",
+      "label": "电视遥控器",
+      "input": "tap"
+    },
+    {
+      "id": "ceramic-ornament",
+      "label": "陶瓷装饰摆件",
+      "input": "tap"
+    },
+    {
+      "id": "bag",
+      "label": "查看背包",
+      "input": "tap"
     }
   ],
   "goals": [
@@ -127,6 +142,22 @@
       ],
       "outcome": "correct",
       "animation": "pack-whistle"
+    },
+    {
+      "id": "pack-tv-remote",
+      "source": "tv-remote",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "pack-tv-remote"
+    },
+    {
+      "id": "pack-ceramic-ornament",
+      "source": "ceramic-ornament",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "pack-ceramic-ornament"
     }
   ],
   "risk": {
@@ -134,7 +165,7 @@
     "seconds": 50,
     "initial": 0,
     "warningAt": 65,
-    "peakFeedback": "时间到了，本次未能收齐全部物件。再挑战一次吧。",
+    "peakFeedback": "时间到了，还没有检查背包并确认出发。再试一次吧。",
     "timeout": "fail"
   },
   "completion": {
@@ -149,5 +180,29 @@
     "title": "准备好了",
     "status": "完成",
     "summary": "提前准备饮水、方便食品、照明和联络工具，并按家庭需要补足应急物资。收到转移通知，及时行动，不因收拾物品拖延。"
+  },
+  "inventory": {
+    "container": "bag",
+    "capacity": 5,
+    "items": [
+      "water",
+      "food",
+      "torch",
+      "radio",
+      "whistle",
+      "tv-remote",
+      "ceramic-ornament"
+    ],
+    "required": [
+      "water",
+      "food",
+      "torch",
+      "radio",
+      "whistle"
+    ],
+    "failureReasons": {
+      "tv-remote": "电视遥控器不能代替收音机。",
+      "ceramic-ornament": "陶瓷摆件是装饰品，不是本次应急用品。"
+    }
   }
 }

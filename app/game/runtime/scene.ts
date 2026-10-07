@@ -16,6 +16,7 @@ export function interpolate(a: Pose, b: Pose, p: number): Pose {
 export function scenePoses(pack: LevelPackage, run: Run, reduced = false): ScenePose[] {
   const poses: Record<string, Pose> = Object.fromEntries(Object.entries(pack.skin.poses).map(([id, pose]) => [id, { ...pose }]));
   for (const state of pack.skin.states) if (matches(pack, run, state.when)) poses[state.object] = { ...poses[state.object], ...state.pose };
+  for (const id of run.inventory ?? []) if (poses[id]) poses[id] = { ...poses[id], opacity: 0, blockInput: false };
   // A staged input object is not a second visible copy of the same character.
   for (const object of pack.rules.objects) if (!hasAll(run.stages ?? [], object.stages)) {
     poses[object.id] = { ...poses[object.id], opacity: 0, blockInput: false };

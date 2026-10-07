@@ -1,4 +1,5 @@
 'use client';
+import type { CompletionTiming } from '@/app/game/journey/time-reward';
 import { huntMissCaption } from '@/app/game/challenge/rules';
 import {levelTitle,journeyTiming} from '@/app/game/journey/presentation';
 import { useEffect, useReducer, useRef, useState } from 'react';
@@ -36,7 +37,7 @@ type Props = {
   autoStart?: boolean;
   pack: HuntPack;
   onBack: () => void;
-  onFinish: (id: string, stars: number) => void;
+  onFinish: (id: string, stars: number, timing: CompletionTiming) => void;
 };
 export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false, autoStart=false }: Props) {
   const view = presentationOf(pack),
@@ -279,13 +280,15 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false, autoSta
       const t = pack.rules.targets.find((t) => t.id === r.found.at(-1))!;
       sound.current?.cue('found');
       if (r.phase === 'playing') {
-        subtitle(t.lesson, 6000);
+        subtitle(view.targetFeedback?.[t.id]?.caption ?? t.lesson, 6000);
       }
     }
     if (r.phase === 'reveal' && prev.phase !== 'reveal') {
       setHint(null);
       if (!v2) sound.current?.cue('resolve');
-      subtitle(view.reveal, pack.rules.revealMs);
+      const last = pack.rules.targets.find(t => t.id === r.found.at(-1));
+      const lastLesson = last && (view.targetFeedback?.[last.id]?.caption ?? last.lesson);
+      subtitle(view.retainLastLesson && lastLesson ? lastLesson + ' ' + view.reveal : view.reveal, pack.rules.revealMs);
     }
     if (
       v2 &&
@@ -300,7 +303,7 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false, autoSta
       sound.current?.finish();
       if (!award.current) {
         award.current = true;
-        onFinish(pack.rules.id, r.stars);
+        onFinish(pack.rules.id, r.stars, { elapsedMs: r.elapsed });
       }
     }
     const tier = p >= 1 ? 3 : p >= 0.7 ? 2 : p >= 0.42 ? 1 : 0;
@@ -514,7 +517,7 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false, autoSta
           </button>
         ))}
       </nav>
-      {journey&&r.phase==='reveal'&&<SafeFeedback label="风险已识别 · 看看安全后的场景"/>}
+      {journey&&r.phase==='reveal'&&<SafeFeedback label={view.retainLastLesson ? view.completeTitle : "风险已识别 · 看看安全后的场景"}/>}
       {r.phase === 'failed' && !paused && <PaintedFailure
         levelId={pack.rules.id}
         levelTitle={levelTitle(pack.rules.id, pack.rules.title)}

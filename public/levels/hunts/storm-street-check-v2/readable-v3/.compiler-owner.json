@@ -1,0 +1,9 @@
+{
+  "compiler": "prepare-hazard-batch.py",
+  "version": 1,
+  "id": "storm-street-check-v2",
+  "sourceSha256": "7349cc756bff948818d77086156a35cd8b3b553daa93571cb2ef94648234c775",
+  "specPath": "art-source/hunts/storm-street-check-v2/readable-v3/production.json",
+  "skinSha256": "449a96a70c70669d8d589c1cd500b9ab99129b7ea4e98fd1e8429b628ffc2df0",
+  "createdAt": "2026-09-27T08:13:41.541624+00:00"
+}

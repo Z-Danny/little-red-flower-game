@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hunts/storm-street-check-v2/readable-v3/scene.webp",
+  "clean": "/levels/hunts/storm-street-check-v2/readable-v3/clean.webp",
+  "safe": "/levels/hunts/storm-street-check-v2/readable-v3/ending.webp",
+  "mask": "/levels/hunts/storm-street-check-v2/readable-v3/id-mask.png",
+  "family": "/levels/hunts/storm-street-check-v2/readable-v3/family.png",
+  "familyBox": {
+    "x": 357,
+    "y": 724,
+    "w": 257,
+    "h": 539
+  },
+  "targets": {
+    "flooded_underpass": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 112,
+        "y": 380,
+        "w": 225,
+        "h": 167
+      },
+      "icon": "/levels/hunts/storm-street-check-v2/readable-v3/flooded_underpass.png"
+    },
+    "wet_power_box": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 459,
+        "y": 531,
+        "w": 124,
+        "h": 153
+      },
+      "icon": "/levels/hunts/storm-street-check-v2/readable-v3/wet_power_box.png"
+    },
+    "missing_cover": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 226,
+        "y": 569,
+        "w": 172,
+        "h": 56
+      },
+      "icon": "/levels/hunts/storm-street-check-v2/readable-v3/missing_cover.png"
+    },
+    "loose_sign": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 413,
+        "y": 274,
+        "w": 191,
+        "h": 132
+      },
+      "icon": "/levels/hunts/storm-street-check-v2/readable-v3/loose_sign.png"
+    },
+    "leaning_fence": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 116,
+        "y": 612,
+        "w": 230,
+        "h": 188
+      },
+      "icon": "/levels/hunts/storm-street-check-v2/readable-v3/leaning_fence.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hunts/storm-street-check-v2/readable-v3/character-mask.png",
+    "weatherMask": "/levels/hunts/storm-street-check-v2/readable-v3/weather-mask.png",
+    "waterMask": "/levels/hunts/storm-street-check-v2/readable-v3/water-mask.png"
+  },
+  "criticalRegions": [
+    {
+      "x": 455,
+      "y": 729,
+      "w": 112,
+      "h": 112
+    },
+    {
+      "x": 390,
+      "y": 814,
+      "w": 92,
+      "h": 92
+    },
+    {
+      "x": 345,
+      "y": 646,
+      "w": 132,
+      "h": 147
+    },
+    {
+      "x": 204,
+      "y": 811,
+      "w": 117,
+      "h": 127
+    }
+  ]
+}

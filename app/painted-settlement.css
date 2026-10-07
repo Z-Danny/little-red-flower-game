@@ -356,3 +356,11 @@
     display: none;
   }
 }
+
+/* Shared rating panel: all level engines use the existing painted result card. */
+.settlement-time-rating { display: grid; gap: 4px; margin: 0 0 12px; padding: 8px 10px; border: 1px solid #9c823d60; border-radius: 9px; background: #fff2c966; color: #354f35; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.settlement-time-rating strong { font-size: 14px; }
+.settlement-time-rating small { font-size: 11px; }
+
+.painted-settlement .settlement-save-status { margin:4px 0 8px; color:#275735; font-size:12px; line-height:1.5; }
+.painted-settlement .settlement-save-status[data-persistence="session"] { color:#9b3025; font-weight:700; }

@@ -1,0 +1,110 @@
+{
+  "note": "Exact image_gen request parameters recovered from this task tool-call log. Tool call IDs may identify a parallel wrapper; generated-file call IDs are recorded separately in generation.json.",
+  "calls": [
+    {
+      "call_id": "call_tPZFNocVYnINrEYIatZMxdev",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/Documents/Codex/2026-09-19/https-github-com-z-danny-little-2/little-red-flower-game/public/levels/hazard-batch-v2/quake-bedroom-v2/scene.webp"
+      ],
+      "prompt": "Edit this game illustration into a newly composed FULL 9:16 PORTRAIT bedroom scene, same warm hand-painted storybook style and same mother and boy identities. No UI, no red circles, no labels, no diagrams. This is the BEFORE/hazard scene for earthquake preparedness, not an earthquake in progress. CRITICAL COMPOSITION: top 20% is calm ceiling/plain wall ONLY; leftmost and rightmost 14% are expendable noncritical room background. All FIVE hazards must be fully within the central 70% width, below y=25% and above y=90%, unobscured by people. Retain exactly these hazards with very clear visible evidence: (1) on the right-middle, one tall blue-green bookcase with a LARGE visibly disconnected wall anti-tip strap: wall plate fixed to wall, strap fastened at ONE end only, detached buckle hangs with a visible gap from its mating cabinet bracket. Entire connector comfortably BELOW top 24% and LEFT of rightmost 15%. (2) on a shorter wooden bookcase at left-middle, a heavy brown ceramic pot at its top; pot entirely visible at about x=26%, y=33%, not at the image edge. This wooden bookcase's own metal fixing is visibly secure and closed, distinguishing it from the blue bookcase. (3) a thick heavy framed mirror above the bed in the center-left, entirely visible. (4) large cardboard storage box blocking the left doorway passage in lower-left, not cut off. (5) sturdy wooden table at lower-right with bulky storage boxes filling the under-table shelter space, all within safe central area. The mother and boy stand in a clear central foreground gap, looking thoughtful; their faces are well away from edges. Preserve believable indoor perspective and physical furniture supports. Broaden the view of the room as needed rather than squeezing objects at edges. Important: do not add additional hazardous objects; target evidence is much more important than matching exact old placement. Render a beautiful cohesive finished scene, no collage and no transparent cutouts."
+    },
+    {
+      "call_id": "call_XV86AcLuiuUrNsbZRNzBTgZA",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/Documents/Codex/2026-09-19/https-github-com-z-danny-little-2/little-red-flower-game/public/levels/hazard-batch-v2/storm-street-check-v2/scene.webp"
+      ],
+      "prompt": "Edit this full game illustration into a recomposed 9:16 PORTRAIT rainy street viewed safely from INSIDE a sturdy building. Keep the same hand-painted warm storybook style, same mother in orange cardigan and child in green jacket with teddy. No UI, no hazard circles, no labels/arrows. TOP 22% is window lintel/sky/distant noncritical architecture ONLY; leftmost/rightmost 14% are expendable window/room or street background. All FIVE distinct hazards lie fully inside x=15%-85%, y=26%-78%, and remain fully visible: (1) flooded descending underground walkway on middle-left with clearly submerged steps; (2) utility electrical cabinet standing in accumulated water at middle-right, fully visible including base; (3) open uncovered manhole with the displaced round cover leaning beside it in center; (4) loose red shop sign at UPPER-MIDDLE RIGHT around x=58%-78%, y=27%-37%, NOT at top of frame. Its bracket must clearly be disconnected: one fastener still supports it, one broken connector hangs with a visible separation. Keep the entire sign AND broken connector far below top UI space. The shop sign may read '阳光超市'. (5) leaning lightweight green construction fence in lower-middle-left with a visibly loose brace. Do not add extra hazards. The mother and child are wholly inside, behind a visible interior window/sill, in the lower foreground center-right; both faces are below street targets but above the bottom 12%, entirely inside central 70% width. Their bodies can continue lower but not obscure street hazards. Unified correct perspective, stormy wet reflections outside and dry floor inside. Important: all hazards must be moved away from top/side edges, especially shop sign connector. Beautiful coherent whole illustration, no collage."
+    },
+    {
+      "call_id": "call_8Pl4OWgN3v7BU8uOJZ499AiY",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_tPZFNocVYnINrEYIatZMxdev.png"
+      ],
+      "prompt": "CRITICAL CORRECTION of this illustration: the objects are STILL TOO CLOSE TO LEFT/RIGHT EDGES. Change the COMPOSITION, not merely colors. Move the virtual observer much farther back so ALL existing furniture and both people appear 65% of their current size, clustered in the central two-thirds of the full 9:16 portrait illustration. Paint newly visible EMPTY plaster walls/door jambs on the outer LEFT 18% and RIGHT 18%, ceiling across upper 22%, wooden floor lower 15%. DO NOT add objects in these margins. The complete pot, doorway blocking box, blue cabinet INCLUDING dangling wall strap, and complete under-table boxes must be fully within x=20%-80%. No furniture crosses these vertical lines. Preserve the five hazards and their identities: disconnected antitip strap on blue cabinet, heavy pot on wooden shelf (wooden shelf securely fixed), mirror over bed, box in doorway, full storage boxes under sturdy table. The cabinet's loose end must be obvious and large. Both mother and child fully visible centrally; furniture does not cover their faces. This is a wider view of a room from farther back, not a bordered miniature picture: seamlessly extend ceiling, blank walls and floor. SAME storybook art style. No text, no UI, no borders, no guides."
+    },
+    {
+      "call_id": "call_WsZ18zbZORnP2bgUayHd9Cne",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_XV86AcLuiuUrNsbZRNzBTgZA.png"
+      ],
+      "prompt": "CRITICAL CORRECTION: the street hazards and faces are still too close to the sides. Recompose this 9:16 portrait illustration as a WIDER view from farther INSIDE the room. Scale the whole street view AND the mother/child down to about 65% of their current size and CENTER them. Make the actual visible window occupy ONLY the middle 65% of total image width (x=18% through x=82%). The outer left and right 18% of the canvas are wide plain interior plaster walls/columns, not hazard objects. Window top begins below y=22%. All five hazards, including the entire tilted fence, flooded tunnel, open manhole, wet electrical cabinet, and red loose shop sign with disconnected dangling bracket, must be COMPLETELY INSIDE the middle x=20%-80% width and between y=27%-73%. Do not cut off any hazard at the window edges. ALL face pixels of the mother and child must fit between x=40%-70%, y=76%-91%; move them LEFT from the right edge. They stand safely inside on dry floor, behind the sill, not outside. Keep the same storm, same identities, same cohesive warm storybook illustration style. No UI, no hazard marks or extra text except the existing shop sign. Add normal indoor wall/ceiling/floor in newly revealed space, not a blank border."
+    },
+    {
+      "call_id": "call_bOswhedFTQ3Lrtnt3h8JZb64",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_8Pl4OWgN3v7BU8uOJZ499AiY.png"
+      ],
+      "prompt": "Make ONLY TWO precise composition corrections to this image, preserve everything else including mother/child identity, ceiling, pot, mirror, blue cabinet and its dangling strap. 1) The large cardboard box in the bottom-left is still too far left: move this entire box RIGHT by about one box width / 12% of image width, so its LEFT edge is at 20% of total image width, while it still obstructs the passage in front of the open left door. Do not leave a duplicate box. 2) The desk and stored boxes in the bottom-right are still cut off: make the whole desk NARROWER and move its right edge LEFT so the entire desk with all its under-table storage boxes ends at 83% of image width. The rightmost 17% must show plain room floor and wall, not desk or storage. Preserve the five hazards and all other image geometry. All box silhouettes must be COMPLETELY VISIBLE away from side edges. 9:16 portrait, same finished storybook illustration, no UI or guides."
+    },
+    {
+      "call_id": "call_vIGAzcLsgkKX5GwV6YPrCisN",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_WsZ18zbZORnP2bgUayHd9Cne.png"
+      ],
+      "prompt": "Create a pixel-aligned FLAT COLOR SEGMENTATION MASK for the exact reference image. Keep same 9:16 aspect, exact image layout, exact silhouettes and geometry. Pure BLACK background everywhere. Fill only visible actual entity outlines as follows: flooded tunnel entrance/stairs/handrail structure in pure RED #ff0000 (do not include sky or adjacent road); entire electrical utility cabinet in pure GREEN #00ff00; open manhole hole/rim and displaced round lid in pure BLUE #0000ff (not surrounding puddle); entire red shop sign AND its visible dangling separated connection/bracket in pure YELLOW #ffff00; leaning green construction fence including braces in pure MAGENTA #ff00ff; both mother and child together including clothes/hair/shoes and teddy in pure WHITE #ffffff. Do not draw any other white regions. Preserve black gaps between legs and outside arms. No lighting, texture, antialias gradients, text, outlines, guides or rectangles. This is a technical ID mask, NOT an illustration. Never move or resize any entity."
+    },
+    {
+      "call_id": "call_8SpW8ToSH7r7Vllg2aomDoZV",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_WsZ18zbZORnP2bgUayHd9Cne.png"
+      ],
+      "prompt": "Remove ONLY the mother, child and teddy from this exact illustration and plausibly inpaint the dry interior floor, window sill, wall, and any small exterior road parts that were behind them. Keep the image dimensions and perspective EXACTLY fixed. Lock every other object and all five outdoor hazards in their current position and current dangerous state: the loose shop sign and broken connector, flooded subway stairs, wet utility box, open manhole, leaning fence must be unchanged. This is a CLEAN BACKGROUND plate for transparent actor extraction, not a new scene or ending. No humans, no new objects. Preserve painterly grain and lighting. No UI, no circles."
+    },
+    {
+      "call_id": "call_tXON1NP9eCwCuq8dSCmiDiJb",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_bOswhedFTQ3Lrtnt3h8JZb64.png"
+      ],
+      "prompt": "Edit this exact portrait bedroom illustration minimally. Keep same composition, style, furniture, mother and boy and aspect ratio. Only move the large cardboard box near the bottom-left doorway slightly right by 7% of total canvas width, leaving its size unchanged. Its entire left edge must be at least 15% from the left canvas edge. Also move the tall blue cabinet and its clearly dangling unattached anti-tip strap and the entire desk with clutter underneath left by 5% of canvas width, so their right edges and the strap stay within 85% of canvas width. Keep both mother's and boy's silhouettes unchanged. Keep the wooden cabinet's visibly attached wall anchor and the heavy clay pot on top, the heavy mirror over the bed, and the clutter blocking underneath the desk. These are five identifiable hazards; blue cabinet strap remains disconnected. Do not change any other layout, no text or UI. Fully opaque rectangular image."
+    },
+    {
+      "call_id": "call_fNvg8VOblgn5hyk4at6cf8F1",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_WsZ18zbZORnP2bgUayHd9Cne.png"
+      ],
+      "prompt": "Create a clean background plate of THIS EXACT portrait image. Remove ONLY the mother, child and teddy bear in the lower right. Seamlessly reconstruct the window bottom ledge, plain warm indoor wall and golden tile floor behind their precise former silhouette. Retain EXACTLY the entire original composition, dimensions, aspect ratio, large window, all five outdoor hazards and all furniture. Do not move or repaint any outdoor object. VERY IMPORTANT the entire rectangular image must be fully opaque RGB: NO transparency, NO black patches, NO blank corners. The lower right where the mother's feet used to be must be continuous golden tile floor down to the very bottom edge. This is an inpainting background plate, not a cutout."
+    },
+    {
+      "call_id": "call_Ffi9gLbJyJuG58yCWfwpSULH",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_WsZ18zbZORnP2bgUayHd9Cne.png"
+      ],
+      "prompt": "Create the ending illustration for this exact portrait educational rainstorm scene. Keep exact window, room and outdoor street camera/composition. All five outdoor hazards MUST remain: flooded underground stairs, electrical cabinet standing in floodwater, open manhole, loose red hanging shop sign with broken chain, leaning green construction fence. NO magical repairs, NO drained street, NO child outside, NO captions. Only change mother and boy: they have stepped several paces away from the glass into the room, slightly leftward toward the foreground rug, facing away from the window and calmly heading deeper indoors together, both complete heads visible in center of composition. Keep warm illustrated storybook style and rain outside. Fully opaque rectangular portrait, no transparency."
+    },
+    {
+      "call_id": "call_CVjbikg07MAGPnimLaBZu48p",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_tXON1NP9eCwCuq8dSCmiDiJb.png"
+      ],
+      "prompt": "Make an exact pixel-aligned semantic segmentation ID mask of this portrait bedroom reference; preserve reference dimensions and camera, no rearranging. Pure black background RGB 0,0,0. Fill these exact visible object silhouettes only with flat colors, no outlines, gradients or text: RED 255,0,0 = the tall blue cabinet on right including dangling unattached anti-tip strap and wall bracket, but excluding plant, desk and lamp occluding it. GREEN 0,255,0 = heavy clay pot on top of left wooden cabinet including plant leaves growing from that pot, NOT the wooden cabinet. BLUE 0,0,255 = entire heavy framed mirror above bed (including reflective interior). YELLOW 255,255,0 = whole large cardboard box near lower left doorway. MAGENTA 255,0,255 = all storage boxes/basket clutter UNDER the desk, NOT desk legs or tabletop. WHITE 255,255,255 = precise mother and boy silhouettes, hair clothes hands shoes, preserve black gaps between arms/legs. Everything else black. Exact reference registration is critical, do not shift or scale any object. Completely opaque PNG."
+    },
+    {
+      "call_id": "call_SxXjsYudg2Z3o2YKZhqfcQ09",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_tXON1NP9eCwCuq8dSCmiDiJb.png"
+      ],
+      "prompt": "Create a clean background plate from this exact portrait bedroom. Remove ONLY mother and boy. Fill their silhouettes with the bed/quilt, rug and wood floor naturally behind them. Preserve exact camera, dimensions, aspect ratio and ALL furniture/objects: high blue cabinet with dangling strap, potted plant above wooden cabinet, mirror above bed, large doorway cardboard box and clutter under desk. Do not move, scale or alter anything else. Fully opaque entire rectangle, no black/transparent patches. Same illustration style. Background inpainting plate, not cutout."
+    },
+    {
+      "call_id": "call_9bqiffeYVDdyVQm1RT2BPiEZ",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_tXON1NP9eCwCuq8dSCmiDiJb.png"
+      ],
+      "prompt": "Create the AFTER earthquake-preparation illustration of this exact bedroom, same camera and aspect ratio, mother and boy in exact same positions now calmly smiling. Show five visibly resolved hazards as results of prior adult preparation, not mid-action: 1 blue tall cabinet now anchored to wall with a conspicuous short sturdy metal anti-tip bracket connecting both wall and cabinet (no dangling strap); 2 REMOVE the heavy clay pot and its plant from the top of left wooden cabinet, place that pot low on the floor alongside left cabinet without obstructing the exit; 3 REMOVE heavy mirror from above the bed, leave empty wall there; 4 REMOVE large cardboard box from doorway, leaving clear rug and floor; 5 REMOVE all storage boxes/basket clutter from under the desk leaving generous empty shelter space and visible desk legs. Keep furniture, bed, mother, child, room and warm lighting otherwise identical. No text, no UI, no diagrams, no extra objects. Fully opaque portrait."
+    },
+    {
+      "call_id": "call_L4iIHurKxcYr8ZTRwXJx6G8h",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_WsZ18zbZORnP2bgUayHd9Cne.png"
+      ],
+      "prompt": "Trace an EXACTLY REGISTERED flat segmentation mask over this reference. Do NOT redraw the composition: preserve each object position, camera and reference 941x1672 aspect. Background black. Red flood stairs silhouette should be around x155..457 y505..716 including frame/rails/steps, not above. Green electric box silhouette around x605..759 y696..889. Blue open manhole rim and detached lid around x305..519 y753..819; keep hole interior black. Yellow tilted red shop sign AND its broken chain bracket around x545..778 y366..533. Magenta leaning fence only within window, x154..474 y804..1045; do NOT extend its left edge beyond window at x154. White mother and boy exact joined silhouette x471..799 y950..1648; head mother begins y950, NOT y915. Other pixels pure black. Use pure red 255,0,0 green 0,255,0 blue 0,0,255 yellow 255,255,0 magenta 255,0,255 white 255,255,255. Trace visible contours precisely including body outlines and gaps; no outlines, shading, gradients or labels. This is an image-space ID mask, not a new design."
+    },
+    {
+      "call_id": "call_bLEBWZChtEXhDdrH50Xa6PiC",
+      "referenced_image_paths": [
+        "C:/Users/LEGION/.codex/generated_images/01a0e195-d762-73f0-94da-bc5beb2f9b68/call_9bqiffeYVDdyVQm1RT2BPiEZ.png"
+      ],
+      "prompt": "Minimal correction to this exact after-preparation bedroom illustration. Restore a visible metal anti-tip bracket attaching the upper left wooden bookcase to the adjacent wall, on its top left corner (around x140 y510 in this 941x1672 reference). The wooden cabinet must be visibly secured just like the blue cabinet is visibly secured at upper right. Keep everything else exactly unchanged: clear doorway, clear desk underside, no mirror over bed, clay pot on low floor, smiling mother and boy. Do not add any other furniture, objects or text. Fully opaque exact same composition."
+    }
+  ]
+}

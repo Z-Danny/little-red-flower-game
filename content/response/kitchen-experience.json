@@ -1,7 +1,7 @@
 {
   "version": 1,
   "id": "kitchen-fire-v1",
-  "timing": { "durationSeconds": 50, "initialRisk": 22, "musicRate": [1.08, 1.24], "animations": { "lid": 850, "gas": 650, "person": 1000, "wrong": 900, "bounce": 450, "spray": 950, "settling": 1800, "reaction": 2200 } },
+  "timing": { "durationSeconds": 50, "initialRisk": 22, "musicRate": [1.08, 1.24], "animations": { "lid": 850, "gas": 650, "person": 1000, "wrong": 900, "failureFeedback": 1900, "bounce": 450, "spray": 950, "settling": 1800, "reaction": 2200 } },
   "thresholds": [0.42, 0.72],
   "pressure": { "riskWeight": 0.9, "impulseWeight": 0.7, "initial": 0.12 },
   "visual": { "flameMaxScale": 2.65, "smokeParticles": 26, "ceilingOpacity": 0.48, "heatOpacity": 0.19, "settleMs": 1600 },

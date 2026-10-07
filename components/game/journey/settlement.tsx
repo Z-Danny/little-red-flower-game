@@ -1,21 +1,28 @@
 'use client';
+import { rewardRuleLabel, rewardSecondsLabel, type TimeReward } from '@/app/game/journey/time-reward';
 import { useRef } from 'react';
 import { Flower } from './flower';
 import { GardenDialog } from './dialog';
 import type { LevelConfig } from '@/app/game/types';
 import type { CompletionReceipt } from '@/app/game/leaderboard/model';
 import { journeyTiming } from '@/app/game/journey/presentation';
+import { LearningReview } from './learning-review';
+import { getHunt } from '@/app/game/scene-hunt/registry';
 import { lessonFor } from '@/app/game/journey/knowledge';
 
 export function Settlement({
   level,
   receipt,
+  result,
+  persistence,
   onMap,
   onRetry,
   error,
 }: {
   level: LevelConfig;
   receipt: CompletionReceipt | undefined;
+  result?: TimeReward;
+  persistence?: 'saved' | 'session';
   onMap: () => void;
   onRetry: () => void;
   error: string;
@@ -41,6 +48,8 @@ export function Settlement({
         data-level-id={level.id}
         data-replay={replay}
         data-awarded={awarded}
+        data-rating={result?.flowers}
+        data-score-ms={result?.elapsedMs}
       >
         <header className="painted-settlement-header">
           <img
@@ -63,7 +72,7 @@ export function Settlement({
             </h3>
             <p className="painted-settlement-message">{lesson.message}</p>
             <div className="painted-settlement-reward" aria-hidden="true">
-              {[0, 1, 2].map((i) => (
+              {Array.from({ length: result?.flowers ?? receipt?.score ?? 0 }, (_, i) => (
                 <Flower
                   key={i}
                   className={`settlement-flower-${i}`}
@@ -91,9 +100,15 @@ export function Settlement({
                 : !receipt
                   ? '正在保存…'
                   : replay
-                    ? '小红花已种下 · 本次为巩固练习'
-                    : '+3 朵小红花'}
+                    ? `本次${result?.flowers ?? receipt.score}朵 · 最佳${receipt.best}朵（不重复发放）`
+                    : `+${receipt.reward} 朵小红花${receipt.before[level.id] ? ' · 已补发进步奖励' : ''}`}
             </strong>
+            {receipt && <p className="settlement-save-status" data-testid="settlement-save-status" data-persistence={persistence} role="status">{persistence === 'saved' ? '进度已保存 · 下次可继续游戏' : '仅暂存于当前页面，关闭可能丢失。请返回首页，在“存档管理”中导出备份。'}</p>}
+            {result && <div className="settlement-time-rating" data-testid="settlement-time-rating">
+              <strong>评分用时 {rewardSecondsLabel(result.elapsedMs)} 秒 · 本次 {result.flowers} 朵</strong>
+              <span>{rewardRuleLabel(result.referenceSeconds)}</span>
+              <small>含误操作扣时；暂停、结局演出不计时。每关保留最佳成绩，重玩仅补差额。</small>
+            </div>}
             <section
               className="painted-settlement-knowledge"
               data-testid="settlement-knowledge"
@@ -133,6 +148,7 @@ export function Settlement({
                 ))}
               </div>
             </section>
+            <LearningReview key={level.id} lesson={lesson} pack={getHunt(level.id)} />
             {saveFailed && (
               <p className="painted-settlement-error" role="alert">
                 {error}

@@ -8,6 +8,9 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "test:corridor-browser": "node scripts/test-corridor-learning-browser.mjs",
+    "test:home-sound-browser": "node scripts/test-home-sound-browser.mjs",
+    "test:unlock-all-browser": "node scripts/test-unlock-all-browser.mjs",
     "test:pause-menu-browser": "node scripts/test-pause-menu-browser.mjs",
     "test:pause-hint": "node scripts/test-pause-hint.mjs",
     "test:sfx-levels": "node scripts/test-sfx-levels.mjs",
@@ -70,7 +73,8 @@
     "test:level-audio-context": "node scripts/test-level-audio-context.mjs",
     "test:single-entry-browser": "node scripts/test-single-entry-browser.mjs",
     "test:audio-feedback-browser": "node scripts/test-audio-feedback-browser.mjs",
-    "test:legacy-audio": "node scripts/test-legacy-response-audio.mjs"
+    "test:legacy-audio": "node scripts/test-legacy-response-audio.mjs",
+    "test:save-backup-browser": "node scripts/test-save-backup-browser.mjs"
   },
   "dependencies": {
     "@base-ui/react": "1.7.0",

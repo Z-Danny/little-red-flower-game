@@ -13,6 +13,8 @@ export class CollectionCueTimeline {
     this.lastAction = key;
     if (run.action.rule === null) return 'invalid-return';
     const rule = rules.find(rule => rule.id === run.action?.rule);
+    if (rule?.mode === 'drop' && rule.outcome !== 'correct') return 'invalid-return';
+    if (run.inventory && rule?.mode === 'tap') return 'pickup';
     return rule?.outcome === 'correct' && rule.mode === 'tap' ? 'pickup' : null;
   }
   reset() { this.lastAction = ''; }

@@ -1,0 +1,2 @@
+﻿import fs from 'node:fs';import path from 'node:path';import {spawnSync} from 'node:child_process';import {dependency,root} from './lib/dependencies.mjs';
+const out=path.join(root,'outputs/nature-readable-unit.mjs');await dependency('esbuild').build({entryPoints:[path.join(root,'tests/nature-readable.test.ts')],outfile:out,bundle:true,platform:'node',format:'esm',logLevel:'silent'});const r=spawnSync(process.execPath,['--test',out],{stdio:'inherit',cwd:root});process.exitCode=r.status??1;

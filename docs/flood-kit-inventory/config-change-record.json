@@ -1,0 +1,8 @@
+{
+  "date": "2026-09-27",
+  "reason": "User requested five-slot inventory with inspectable/removable items and explicit departure. Both distractors can be packed. Departure with any unwanted item fails; five required items succeed. This supersedes the prior neutral-distractor mechanic.",
+  "files": {
+    "content/levels/flood-kit/level.json": "c51f70004c63cae35e36e6ed302b0e00b851ad54b5e6d824aded1b83ad9154b4",
+    "content/levels/flood-kit/skins/paperbook.json": "9881a65f96f4e35bcb586dd356086ee55fc738fb15262db22b8d7a25d7eb0c1b"
+  }
+}

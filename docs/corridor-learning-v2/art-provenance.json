@@ -1,0 +1,42 @@
+{
+  "date": "2026-09-19",
+  "generator": "image_gen.imagegen",
+  "model": "not_exposed_by_tool",
+  "original": {
+    "path": "public/levels/corridor-learning-v2/resident-walk.png",
+    "sha256": "10713c4afe1293d66eb2c264745ec76ce31c4d58081f215c4f60390d5bc14401",
+    "width": 1254,
+    "height": 1254
+  },
+  "references": [
+    {
+      "path": "public/levels/transcript-v1/citizen-relieved.png",
+      "sha256": "a39c19a80d36dde148067518d6ac18536402fadeb3ec6424aa7c280dc5ae77c7"
+    },
+    {
+      "path": "public/levels/transcript-v1/corridor-room.webp",
+      "sha256": "ff8da9e9c26ad512d37b8e3d267ff73aac684cecbb264441fb573a79d39d4325"
+    }
+  ],
+  "processing": "Split equal 627px cells; add a 2px transparent atlas gutter on every edge without changing the painted pixels. Original generated sheet retained. Four original item sprites and room art unchanged.",
+  "outputs": [
+    {
+      "path": "public/levels/corridor-learning-v2/resident-walk-0.png",
+      "sha256": "959dd6d637fd64215e2774bd73fc0f68cce4554df5dfcda502812978b1bf3af4"
+    },
+    {
+      "path": "public/levels/corridor-learning-v2/resident-walk-1.png",
+      "sha256": "776c65a82d167e730d42984ab80211e6d493d786d405d7bb8677a63231144c59"
+    },
+    {
+      "path": "public/levels/corridor-learning-v2/resident-walk-2.png",
+      "sha256": "4f6d8f878ebb0a5024ecb98cb362e520895f8586f6158944b09a427bbe9820b6"
+    },
+    {
+      "path": "public/levels/corridor-learning-v2/resident-walk-3.png",
+      "sha256": "28124b955ffd058ac2001d9a4854afb0e950e24225bc4aee724896c28ef68de2"
+    }
+  ],
+  "promptFile": "docs/corridor-learning-v2/generation-prompt.txt",
+  "actualOutputDiffersFromRequestedSize": "Tool returned 1254x1254; actual 627x627 cells used, not requested 512px cells."
+}

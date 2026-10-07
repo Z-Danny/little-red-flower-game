@@ -84,8 +84,11 @@ try {
       await page.waitForFunction(() => document.querySelector('.game-page')?.dataset.journeyMusicState);
       assert.equal(await page.evaluate(() => window.__journeyMusicProbe.contexts), 0);
       assert.equal((await state(page)).decoded, false);
-      assert.equal(await page.locator('[data-title-screen] button').count(), 1);
-      pass(`${width}: no audio context or decode before gesture; original minimal homepage preserved`);
+      assert.equal(await page.locator('[data-home-start]').count(), 1);
+      assert.equal(await page.locator('[data-home-sound]').count(), 1);
+      assert.equal(await page.locator('[data-home-unlock-all]').count(), 1);
+      assert.equal(await page.locator('[data-home-continue]').count(), 0);
+      pass(`${width}: no audio context or decode before gesture; home controls are present without auto-playing`);
       await page.locator('[data-title-screen]').click({ position: { x: 20, y: 120 } });
       await waitPlaying(page, true);
       const beforeStart = await state(page);

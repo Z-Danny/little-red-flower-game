@@ -154,37 +154,38 @@ void test('collection returns sound once per invalid action and never label a co
   timeline.reset(); assert.equal(timeline.advance(bounce, rules), 'invalid-return');
 });
 
+
 for (const pack of [validatePackage(kitRules, kitSkin), validatePackage(corridorRules, corridorSkin)]) {
-  void test(`${pack.rules.id}: every real tap collection gets one pickup; busy, disabled and rejected inputs stay silent`, () => {
+  void test(`${pack.rules.id}: tap pickups and manual drop pickups do not duplicate; busy/rejected inputs stay silent`, () => {
     const timeline = new CollectionCueTimeline(), rules = pack.rules.interactions;
+    const correct = rules.filter(rule => rule.outcome === 'correct');
     let run = createRun(pack), pickups = 0, completedGoals = 0;
-    assert(pack.rules.objects.every(object => object.input === 'tap'));
-    for (const rule of rules) {
-      assert.equal(rule.outcome, 'correct'); assert.equal(rule.mode, 'tap');
-      // Both canvas taps and keyboard buttons dispatch this same engine input.
-      const input: Input = { source: rule.source, mode: 'tap' };
-      const invalid = reduceRun(pack, run, { type: 'interact', input: { ...input, mode: 'drop' } });
+    for (const rule of correct) {
+      const input: Input = { source: rule.source, mode: rule.mode, target: rule.target };
+      const invalid = reduceRun(pack, run, { type: 'interact', input: { ...input, mode: rule.mode === 'tap' ? 'drop' : 'tap' } });
       assert.equal(invalid, run); assert.equal(timeline.advance(invalid, rules), null);
-      assert.equal(timeline.advance(reduceRun(pack, run, { type: 'interact', input: { source: 'missing-object', mode: 'tap' } }), rules), null);
       run = reduceRun(pack, run, { type: 'interact', input });
-      assert.equal(run.action?.rule, rule.id); assert.equal(timeline.advance(run, rules), 'pickup'); pickups++;
-      assert.equal(run.resolved.length, completedGoals, 'pickup must precede collection confirmation');
+      assert.equal(run.action?.rule, rule.id);
+      assert.equal(timeline.advance(run, rules), rule.mode === 'tap' ? 'pickup' : null);
+      pickups += Number(rule.mode === 'tap');
+      assert.equal(run.resolved.length, completedGoals);
       const busy = reduceRun(pack, run, { type: 'interact', input });
       assert.equal(busy, run); assert.equal(timeline.advance(busy, rules), null);
-      const nextObject = rules.find(other => other.id !== rule.id)!;
-      assert.equal(timeline.advance(reduceRun(pack, run, { type: 'interact', input: { source: nextObject.source, mode: 'tap' } }), rules), null);
       while (run.action) {
         run = reduceRun(pack, run, { type: 'tick', ms: 100 });
-        assert.equal(timeline.advance(run, rules), null, 'animation ticks and goal commit cannot duplicate pickup');
+        assert.equal(timeline.advance(run, rules), null, 'animation ticks cannot duplicate pickup');
       }
       completedGoals += rule.grants.length;
       assert.equal(run.resolved.length, completedGoals);
       const repeated = reduceRun(pack, run, { type: 'interact', input });
       assert.equal(repeated, run); assert.equal(timeline.advance(repeated, rules), null);
     }
-    assert.equal(pickups, pack.rules.objects.length); assert.equal(run.phase, 'settling');
+    assert.equal(pickups, correct.filter(rule => rule.mode === 'tap').length);
+    if (pack.rules.inventory) { assert.equal(run.phase, 'playing'); run = reduceRun(pack, run, { type: 'depart' }); }
+    assert.equal(run.phase, 'settling');
     timeline.reset(); run = createRun(pack);
-    run = reduceRun(pack, run, { type: 'interact', input: { source: rules[0].source, mode: 'tap' } });
-    assert.equal(timeline.advance(run, rules), 'pickup');
+    const first = correct[0];
+    run = reduceRun(pack, run, { type: 'interact', input: { source: first.source, mode: first.mode, target: first.target } });
+    assert.equal(timeline.advance(run, rules), first.mode === 'tap' ? 'pickup' : null);
   });
 }

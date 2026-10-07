@@ -101,22 +101,41 @@
   border-bottom: 1px solid #93885462;
 }
 .journal-tabs > button {
+  position: relative;
+  isolation: isolate;
   min-height: 49px;
   padding: 16px 7px 7px 21px;
   border: 0;
   border-radius: 12px 12px 0 0;
-  background: url('/ui/painted-journal-v1/tab-inactive.webp') center / 100% 100% no-repeat;
+  background: transparent;
   font-family: var(--font-game-title);
   font-weight: 700;
-  color: var(--journal-ink);
+  color: #615c46;
   font-size: clamp(20px, 5.5vw, 26px);
   line-height: 1.25;
   transition: transform 140ms ease, filter 140ms ease;
 }
+/* Tint artwork independently so the label and focus ring retain their contrast. */
+.journal-tabs > button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url('/ui/painted-journal-v1/tab-inactive.webp') center / 100% 100% no-repeat;
+  filter: saturate(.4) brightness(.96);
+}
 .journal-tabs > button[aria-selected='true'] {
+  color: #ffe58a;
+  text-shadow: 0 1px 2px #102d20;
+  text-decoration: underline;
+  text-decoration-color: #f5cc63;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.journal-tabs > button[aria-selected='true']::before {
   background-image: url('/ui/painted-journal-v1/tab-active.webp');
-  color: #fff8d9;
-  text-shadow: 0 1px 1px #163223;
+  filter: saturate(1.55) brightness(1.25) drop-shadow(0 2px 2px #80551a55);
 }
 .journal-tabs > button:active { transform: translateY(2px) scale(.98); }
 .journal-panel {

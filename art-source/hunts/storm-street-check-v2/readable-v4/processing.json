@@ -1,0 +1,587 @@
+{
+  "compilerVersion": 1,
+  "id": "storm-street-check-v2",
+  "authorId": "storm-street-check-v2",
+  "sourceSha256": "a52f9eecdcd087b4d03c3ba426c55977bd3d28e30865e0d6924b210b6cbef878",
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "inputHashes": {
+    "scene-original.png": "a52f9eecdcd087b4d03c3ba426c55977bd3d28e30865e0d6924b210b6cbef878",
+    "mask-candidate.png": "12c5602290055835a41f6e9b789c6d64bf721382a0b56e4ff2f5d85ab799bbbb",
+    "clean-candidate.png": "1d10447fcdf130de6c8f3590ba111feddc11605b46ceea8961648801baa6d2c3",
+    "ending.png": "5874d855e2da71aa6879f875cf26fcfa4004e58f00b6147f27c67c7a8ef26d35"
+  },
+  "specSha256": "e72af692fa8eec87f7f986fc40c9e4fa467817dd7b818b53474ebf43522ba803",
+  "corrections": {
+    "targets": {
+      "flooded_underpass": {
+        "keepPolygons": [
+          [
+            [
+              118,
+              386
+            ],
+            [
+              289,
+              387
+            ],
+            [
+              289,
+              445
+            ],
+            [
+              324,
+              478
+            ],
+            [
+              335,
+              486
+            ],
+            [
+              349,
+              531
+            ],
+            [
+              343,
+              540
+            ],
+            [
+              135,
+              548
+            ],
+            [
+              129,
+              497
+            ],
+            [
+              119,
+              488
+            ]
+          ]
+        ],
+        "reason": "Follow visible stair entrance structure and railing, remove generated speckle on adjacent street."
+      },
+      "wet_power_box": {
+        "keepPolygons": [
+          [
+            [
+              468,
+              542
+            ],
+            [
+              503,
+              531
+            ],
+            [
+              578,
+              547
+            ],
+            [
+              578,
+              667
+            ],
+            [
+              566,
+              679
+            ],
+            [
+              534,
+              681
+            ],
+            [
+              467,
+              657
+            ]
+          ]
+        ],
+        "fillEnclosedHoles": true,
+        "closeGapsPx": 1,
+        "reason": "The cabinet is solid; remove background fringe and close 1px generated surface cracks."
+      },
+      "missing_cover": {
+        "keepPolygons": [
+          [
+            [
+              232,
+              591
+            ],
+            [
+              246,
+              583
+            ],
+            [
+              269,
+              579
+            ],
+            [
+              296,
+              581
+            ],
+            [
+              315,
+              575
+            ],
+            [
+              333,
+              577
+            ],
+            [
+              352,
+              586
+            ],
+            [
+              381,
+              609
+            ],
+            [
+              396,
+              623
+            ],
+            [
+              391,
+              632
+            ],
+            [
+              371,
+              626
+            ],
+            [
+              341,
+              610
+            ],
+            [
+              323,
+              620
+            ],
+            [
+              299,
+              626
+            ],
+            [
+              267,
+              625
+            ],
+            [
+              244,
+              619
+            ],
+            [
+              232,
+              608
+            ]
+          ]
+        ],
+        "hitFillPolygons": [
+          [
+            [
+              253,
+              598
+            ],
+            [
+              262,
+              593
+            ],
+            [
+              283,
+              590
+            ],
+            [
+              302,
+              593
+            ],
+            [
+              319,
+              599
+            ],
+            [
+              326,
+              606
+            ],
+            [
+              312,
+              614
+            ],
+            [
+              284,
+              618
+            ],
+            [
+              262,
+              612
+            ]
+          ]
+        ],
+        "reason": "Calibrated to visible rim and lid; the open hole inside the rim is also a valid recognition hit, not a rectangular hotspot."
+      },
+      "loose_sign": {
+        "keepPolygons": [
+          [
+            [
+              417,
+              378
+            ],
+            [
+              543,
+              326
+            ],
+            [
+              561,
+              400
+            ],
+            [
+              567,
+              310
+            ],
+            [
+              595,
+              308
+            ],
+            [
+              595,
+              333
+            ],
+            [
+              580,
+              335
+            ],
+            [
+              579,
+              358
+            ],
+            [
+              594,
+              392
+            ],
+            [
+              590,
+              400
+            ],
+            [
+              575,
+              386
+            ],
+            [
+              569,
+              368
+            ],
+            [
+              568,
+              410
+            ],
+            [
+              426,
+              434
+            ]
+          ]
+        ],
+        "fillEnclosedHoles": true,
+        "reason": "Clip mask proposal to the newly lowered sign and broken chain, remove generated peripheral noise."
+      },
+      "leaning_fence": {
+        "keepPolygons": [
+          [
+            [
+              119,
+              616
+            ],
+            [
+              182,
+              634
+            ],
+            [
+              193,
+              630
+            ],
+            [
+              204,
+              637
+            ],
+            [
+              299,
+              670
+            ],
+            [
+              309,
+              665
+            ],
+            [
+              319,
+              679
+            ],
+            [
+              346,
+              681
+            ],
+            [
+              342,
+              735
+            ],
+            [
+              329,
+              752
+            ],
+            [
+              343,
+              780
+            ],
+            [
+              342,
+              795
+            ],
+            [
+              323,
+              797
+            ],
+            [
+              310,
+              789
+            ],
+            [
+              303,
+              797
+            ],
+            [
+              279,
+              796
+            ],
+            [
+              272,
+              787
+            ],
+            [
+              261,
+              774
+            ],
+            [
+              181,
+              746
+            ],
+            [
+              178,
+              752
+            ],
+            [
+              158,
+              755
+            ],
+            [
+              149,
+              747
+            ],
+            [
+              159,
+              733
+            ],
+            [
+              118,
+              718
+            ]
+          ]
+        ],
+        "fillEnclosedHoles": true,
+        "closeGapsPx": 1,
+        "reason": "Keep actual visible fence panels and feet, not indoor window edge. Closing only fine generated cracks in solid panels."
+      }
+    },
+    "characters": {
+      "keepPolygons": [
+        [
+          [
+            449,
+            727
+          ],
+          [
+            518,
+            724
+          ],
+          [
+            561,
+            750
+          ],
+          [
+            588,
+            800
+          ],
+          [
+            610,
+            879
+          ],
+          [
+            614,
+            992
+          ],
+          [
+            610,
+            1254
+          ],
+          [
+            554,
+            1266
+          ],
+          [
+            485,
+            1238
+          ],
+          [
+            435,
+            1238
+          ],
+          [
+            381,
+            1227
+          ],
+          [
+            381,
+            1050
+          ],
+          [
+            354,
+            1000
+          ],
+          [
+            353,
+            909
+          ],
+          [
+            380,
+            849
+          ],
+          [
+            392,
+            812
+          ],
+          [
+            429,
+            814
+          ],
+          [
+            449,
+            831
+          ],
+          [
+            468,
+            817
+          ],
+          [
+            451,
+            788
+          ]
+        ]
+      ],
+      "reason": "Bound foreground family proposal to inspected person outlines and exclude generated white floor reflection below shoes."
+    }
+  },
+  "targetPixels": {
+    "flooded_underpass": 22913,
+    "wet_power_box": 13934,
+    "missing_cover": 3997,
+    "loose_sign": 10987,
+    "leaning_fence": 24581
+  },
+  "hitPixels": {
+    "flooded_underpass": 22913,
+    "wet_power_box": 13934,
+    "missing_cover": 5142,
+    "loose_sign": 10987,
+    "leaning_fence": 24581
+  },
+  "familyBox": {
+    "x": 357,
+    "y": 724,
+    "w": 258,
+    "h": 535
+  },
+  "familyPixels": 100661,
+  "effectsPixels": {
+    "weather": 205809,
+    "water": 104064,
+    "sky": 0,
+    "fire": 0,
+    "smoke": 0
+  },
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "effectMasksExcludeTargetsAndCharacters": true,
+  "objectAndHitMasksIdentical": false,
+  "approval": "draft; semantic visual inspection and runtime tests pending",
+  "files": [
+    {
+      "path": "character-mask.png",
+      "sha256": "933c6fcabfced1db08557c23c75ade20e3ce14f5639ae5c84c358eae025c88e9"
+    },
+    {
+      "path": "clean.webp",
+      "sha256": "90e197b034b4c3a01a338555cd0832c57b48fc7e99d1eff801cbaabd891879d6"
+    },
+    {
+      "path": "ending.webp",
+      "sha256": "8c192a4e7f92503464833b1249034d2c6852013bc2e70a31793ecc2278137bff"
+    },
+    {
+      "path": "family.png",
+      "sha256": "f9a50cd197d0b313027002cf8e98c683405bab6eeed4f3893b27b43a1d899976"
+    },
+    {
+      "path": "fire-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    },
+    {
+      "path": "flooded_underpass.png",
+      "sha256": "21c7eb740098f5d3c4de5fd083d183713fb3bf176a68de507701506cfeb05b4e"
+    },
+    {
+      "path": "hit-samples.json",
+      "sha256": "03d7592cfae9404e97373339db60bacc57fe2090c887779c79edd827d8a8a333"
+    },
+    {
+      "path": "id-mask.png",
+      "sha256": "16740ee9c501b67a6e7e7ff65d63d606d2c6fb996a719e07eb69a2f4e5240ea9"
+    },
+    {
+      "path": "leaning_fence.png",
+      "sha256": "19f121b38d212cb391efcfe7dc9f0763e7ba49bd71ad29d6d150606b831d3a7c"
+    },
+    {
+      "path": "loose_sign.png",
+      "sha256": "970608d5ae19d931721c697fc245002ba664924a7afbe8ea9cef8511853d0d4c"
+    },
+    {
+      "path": "missing_cover.png",
+      "sha256": "51a222ac8e52a1ed04c0b2b0f4ef8b749141e2918f2056ff09be6842efbbf019"
+    },
+    {
+      "path": "object-mask.png",
+      "sha256": "1a2ae15200bc9626473f6c3413979ffbfd6a06bc35409986e13c4899d1c58b38"
+    },
+    {
+      "path": "scene.webp",
+      "sha256": "be0b7285e23c881bfb9f579714547c25a4dfc00dd79dbe5a4e55267bc114f7e8"
+    },
+    {
+      "path": "sky-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    },
+    {
+      "path": "smoke-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    },
+    {
+      "path": "water-mask.png",
+      "sha256": "d0c8584f87be152f180e720ab5be6dba6e75ea5b8bd96d7d87540a13c8f3aeff"
+    },
+    {
+      "path": "weather-mask.png",
+      "sha256": "8015c8f65f594e8e35f673df62537507f3cfe1cb5b4c86f571a4715cd32e72e6"
+    },
+    {
+      "path": "wet_power_box.png",
+      "sha256": "a898a4476c194fbdbf083ce0667ed274c900a46e446203b3e0f319a9e585a982"
+    }
+  ]
+}

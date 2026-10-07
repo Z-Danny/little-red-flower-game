@@ -8,7 +8,7 @@ import { render, alphaHit, type Drag } from '../components/game/kitchen/renderer
 import type { Art } from '../components/game/kitchen/asset-loader';
 import { levels } from '../app/game/levels';
 import { cameraFor } from '../app/game/kitchen/camera';
-import { briefFeedback, riskClock, countdown, thermometerState } from '../app/game/kitchen/presentation';
+import { departureFeedback, briefFeedback, riskClock, countdown, thermometerState } from '../app/game/kitchen/presentation';
 import { kitchenPressure } from '../app/game/kitchen/experience';
 import { KitchenThermometer } from '../components/game/kitchen/kitchen-thermometer';
 import { createElement } from 'react';
@@ -40,16 +40,22 @@ test('evacuation gate tests both requirements independently', () => {
     r = finish(drop(r, 'person', 'exit')); assert.equal(r.evacuated, false); assert.equal(r.phase, 'playing'); assert.match(r.notice.text, /现实/);
   }
 });
-for (const item of ['water', 'cloth'] as const) test(`${item} grows fire and changes expression immediately, then is recoverable`, () => {
-  const before = start(); let r = drop(before, item, 'pan');
+for (const item of ['water', 'cloth'] as const) test(`${item} fills the thermometer, preserves the sound action, then fails`, () => {
+  const before = start(), r = drop(before, item, 'pan');
   assert.ok(fireLevel(r) > fireLevel(before) + .5); assert.ok(smokeLevel(r) > smokeLevel(before)); assert.equal(emotion(r), 'panicked');
-  assert.equal(r.mistakes, 1); assert.equal(r.notice.tone, 'danger'); r = finish(r);
-  r = finish(drop(r, 'gas', 'off')); r = finish(drop(r, 'lid', 'pan')); r = finish(drop(r, 'person', 'exit')); r = tick(r, timing.settling);
-  assert.equal(r.phase, 'complete'); assert.equal(r.stars, 2);
+  assert.equal(r.mistakes, 1); assert.equal(r.notice.tone, 'danger'); assert.equal(r.risk, 100);
+  assert.equal(kitchenPressure(r).heat, 1); assert.equal(r.phase, 'failing'); assert.equal(r.action?.kind, item); assert.equal(r.stars, 0);
+  assert.equal(r.elapsed, before.elapsed); assert.equal(drop(r, 'gas', 'off'), r);
+  assert.equal(reduceRun(r, { type: 'hint' }), r);
+  const feedback = tick(r, timing.failureFeedback - 10); assert.equal(feedback.phase, 'failing');
+  assert.equal(feedback.action?.kind, item); assert.equal(kitchenPressure(feedback).heat, 1);
+  const failed = tick(feedback, 10); assert.equal(failed.phase, 'failed'); assert.equal(failed.action, null);
+  assert.equal(tick(failed, 5000), failed);
+  assert.match(r.notice.text, item === 'water' ? /不能泼水/ : /化纤抹布/);
 });
 test('repeated wrong attempts cannot overflow heat or risk', () => {
-  let r = start(); for (let i = 0; i < 15; i++) r = finish(drop(r, 'water', 'pan'));
-  assert.ok(r.risk <= 100); assert.ok(r.boost <= .9); assert.equal(r.phase, 'playing');
+  let r = start(); for (let i = 0; i < 15; i++) { r = drop(r, 'water', 'pan'); if (r.action) r = tick(r, timing.failureFeedback); }
+  assert.ok(r.risk <= 100); assert.ok(r.boost <= .9); assert.equal(r.phase, 'failed');
 });
 test('peak risk never overwrites the water feedback mid-animation', () => {
   const r = tick(drop({ ...start(), risk: 90 }, 'water', 'pan'), 100);
@@ -76,10 +82,10 @@ test('double drops and briefing inputs are ignored', () => {
   const initial = createRun(); assert.equal(drop(initial, 'lid', 'pan'), initial);
   const active = drop(start(), 'lid', 'pan'); assert.equal(drop(active, 'gas', 'off'), active);
 });
-test('risk reaches 100 without locking progress; notice fires once', () => {
+test('peak locks progress, freezes time and awards no flowers', () => {
   let r = tick(start(), 100000); assert.equal(r.risk, 100); assert.equal(r.peakReached, true); assert.equal(emotion(r), 'panicked');
   const serial = r.serial; r = tick(r, 5000); assert.equal(r.serial, serial);
-  r = finish(drop(r, 'gas', 'off')); r = finish(drop(r, 'lid', 'pan')); r = finish(drop(r, 'person', 'exit')); assert.equal(r.evacuated, true);
+  const frozen = r; r = tick(r, 5000); assert.equal(r, frozen); assert.equal(drop(r, 'gas', 'off'), r); assert.equal(reduceRun(r, { type: 'hint' }), r); assert.equal(r.evacuated, false); assert.equal(r.stars, 0); assert.equal(r.action, null); assert.deepEqual(reduceRun(r, { type: 'reset' }), createRun());
 });
 test('briefing and complete do not advance time; giant or invalid deltas are safe', () => {
   const r = createRun(); assert.equal(tick(r, 5000), r);
@@ -150,7 +156,7 @@ test('only the physical gas knob is clickable; no hidden label target survives',
   const r = finish(drop(start(), 'gas', 'off'));
   assert.equal(pickSceneItem(center(layout.gas), r), null);
 });
-for (const [id, zone] of [['water', 'pan'], ['cloth', 'pan'], ['plate', 'pan'], ['knife', 'pan']] as const) test(`${id} returns to its original scene position after ${zone}`, () => {
+for (const [id, zone] of [['plate', 'pan'], ['knife', 'pan']] as const) test(`${id} returns to its original scene position after ${zone}`, () => {
   const r = drop(start(), id, zone), a = r.action!;
   const result = movingItem({ ...r, action: { ...a, age: a.duration } });
   assert.deepEqual(result?.box, layout.props[id]); assert.equal(result?.opacity, 1);
@@ -211,11 +217,10 @@ test('50-second timer is independent of risk and never refills or becomes negati
   assert.equal(countdown(tick(start(),51000)).ratio,0);
   assert.equal(riskClock(tick(start(),51000)),'00:00');
 });
-test('untreated fire reaches its training peak at 50 active seconds, still recoverable',()=>{
+test('thermometer reaches exactly full at 50 active seconds and immediately fails',()=>{
   let r=tick(start(),49990);assert.ok(r.risk<100);assert.equal(r.peakReached,false);
-  r=tick(r,10);assert.equal(r.risk,100);assert.equal(r.peakReached,true);assert.equal(r.phase,'playing');
-  r=finish(drop(r,'gas','off'));r=finish(drop(r,'lid','pan'));r=finish(drop(r,'person','exit'));r=tick(r,timing.settling);
-  assert.equal(r.phase,'complete');assert.equal(thermometerState(kitchenPressure(r).heat,controlled(r)).tone,'safe');
+  r=tick(r,10);assert.equal(r.risk,100);assert.equal(r.peakReached,true);assert.equal(r.phase,'failed');
+  assert.equal(thermometerState(kitchenPressure(r).heat,controlled(r)).ratio,1);
 });
 test('catalog and kitchen configuration share the same 50-second duration',()=>{
   assert.equal(levels.find(l=>l.id==='oil-fire')?.riskSeconds,50);
@@ -261,4 +266,58 @@ for (const [width, height] of [[320,740], [390,844], [430,932], [400,800], [360,
     assert.ok(c.x + b.x * c.scale >= -1 && c.x + (b.x + b.w) * c.scale <= width + 1);
     assert.ok(c.y + b.y * c.scale >= 0 && c.y + (b.y + b.h) * c.scale <= height);
   }
+});
+
+for (const item of ['water', 'cloth'] as const) test(`${item} only triggers on the open pan and remains fatal after gas shutoff`, () => {
+  for (const zone of ['miss', 'exit', 'off'] as const) {
+    const r = drop(start(), item, zone);
+    assert.equal(r.phase, 'playing'); assert.equal(r.risk, start().risk);
+  }
+  const r = drop(finish(drop(start(), 'gas', 'off')), item, 'pan');
+  assert.equal(r.phase, 'failing'); assert.equal(kitchenPressure(r).heat, 1); assert.equal(tick(r, timing.failureFeedback).phase, 'failed');
+});
+test('peak takes precedence over an in-flight action; controlled fire never fails', () => {
+  let r = drop({ ...start(), elapsed: 49900, risk: 99.9 }, 'gas', 'off');
+  r = tick(r, 100); assert.equal(r.phase, 'failed'); assert.equal(r.gasOff, false);
+  r = finish(drop(finish(drop(start(), 'gas', 'off')), 'lid', 'pan'));
+  r = tick(r, 60000); assert.equal(r.phase, 'playing'); assert.equal(kitchenPressure(r).heat, 0);
+  r = tick(finish(drop(r, 'person', 'exit')), timing.settling); assert.equal(r.phase, 'complete');
+});
+
+test('the full thermometer snaps to its peak without a delayed visual transition', () => {
+  const html = renderToStaticMarkup(createElement(KitchenThermometer, { heat: 1, safe: false }));
+  assert.ok(html.includes('--meter-transition:0ms'));
+});
+
+test('failure feedback crosses the training deadline without skipping sound and reset cancels it', () => {
+  const r = drop({ ...start(), elapsed: 49990 }, 'water', 'pan');
+  assert.equal(tick(r, 100).phase, 'failing');
+  assert.deepEqual(reduceRun(r, { type: 'reset' }), createRun());
+  assert.equal(tick(reduceRun(r, { type: 'reset' }), 5000).phase, 'briefing');
+});
+
+test('knife selection and drops display actionable feedback without changing hazards or rewards', () => {
+  let r = start(); const before = r;
+  r = reduceRun(r, { type: 'select', item: 'knife' });
+  assert.match(briefFeedback(r)!, /操作不当.*菜刀不能用来灭火/);
+  assert.equal(r.risk, before.risk); assert.equal(r.elapsed, before.elapsed); assert.equal(r.mistakes, before.mistakes); assert.equal(r.action, null);
+  const repeated = reduceRun(r, { type: 'select', item: 'knife' }); assert.ok(repeated.notice.serial > r.notice.serial);
+  for (const zone of ['pan', 'exit', 'miss'] as const) {
+    const moved = drop(r, 'knife', zone); assert.match(briefFeedback(moved)!, /菜刀/);
+    assert.equal(moved.action?.kind, 'bounce'); assert.equal(moved.mistakes, 0); assert.equal(moved.risk, r.risk);
+    assert.equal(finish(moved).covered, false); assert.equal(finish(moved).evacuated, false);
+  }
+  const busy = drop(before, 'lid', 'pan'); assert.equal(reduceRun(busy, { type: 'select', item: 'knife' }), busy);
+  const unstarted = createRun(); assert.equal(reduceRun(unstarted, { type: 'select', item: 'knife' }), unstarted);
+  assert.equal(reduceRun(before, { type: 'select', item: 'plate' }), before);
+});
+for (const order of [['gas', 'lid'], ['lid', 'gas']] as const) test('automatic departure reminder after '+order.join(' > '), () => {
+  let r = start(); assert.equal(departureFeedback(r), null);
+  r = finish(drop(r, order[0], order[0] === 'gas' ? 'off' : 'pan')); assert.equal(departureFeedback(r), null);
+  r = drop(r, order[1], order[1] === 'gas' ? 'off' : 'pan'); assert.equal(departureFeedback(r), null);
+  r = finish(r); assert.match(departureFeedback(r)!, /人物.*右侧门外.*离开厨房/);
+  r = tick(r, 4000); assert.match(departureFeedback(r)!, /离开厨房/); assert.equal(r.phase, 'playing');
+  r = drop(r, 'person', 'exit'); assert.equal(departureFeedback(r), null);
+  r = finish(r); assert.equal(departureFeedback(r), null);
+  assert.equal(departureFeedback(reduceRun(r, { type: 'reset' })), null);
 });

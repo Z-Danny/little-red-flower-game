@@ -1,0 +1,176 @@
+{
+  "compilerVersion": 1,
+  "id": "storm-street-check-v2",
+  "authorId": "storm-street-check-v2",
+  "sourceSha256": "7349cc756bff948818d77086156a35cd8b3b553daa93571cb2ef94648234c775",
+  "sourceSize": [
+    941,
+    1672
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "inputHashes": {
+    "scene-original.png": "7349cc756bff948818d77086156a35cd8b3b553daa93571cb2ef94648234c775",
+    "mask-candidate.png": "555b8de5caca94b2d7d6f6e68aaf3a6f813b67f77e10bc4c8d9c66dc02ac72a0",
+    "clean-candidate.png": "76d1f3e6ed0e884be9823af5f3da4508105bcfd997bdd60b652b23813946453a",
+    "ending.png": "7d03101a748672e579c9d9295a8661286efb2c680f49d03d4303f1e6d603c7fb"
+  },
+  "specSha256": "230b89090e11874885cc8b89a0aaf66255da5c11d4b4702a08e5d072a197b3c3",
+  "corrections": {
+    "targets": {
+      "missing_cover": {
+        "hitFillPolygons": [
+          [
+            [
+              252,
+              598
+            ],
+            [
+              261,
+              592
+            ],
+            [
+              280,
+              589
+            ],
+            [
+              300,
+              591
+            ],
+            [
+              320,
+              598
+            ],
+            [
+              327,
+              606
+            ],
+            [
+              314,
+              614
+            ],
+            [
+              284,
+              618
+            ],
+            [
+              262,
+              613
+            ]
+          ]
+        ],
+        "reason": "Clicking inside the visibly open manhole is valid; fill only the hole within its physical rim."
+      }
+    },
+    "characters": {}
+  },
+  "targetPixels": {
+    "flooded_underpass": 22753,
+    "wet_power_box": 14794,
+    "missing_cover": 4203,
+    "loose_sign": 11641,
+    "leaning_fence": 23052
+  },
+  "hitPixels": {
+    "flooded_underpass": 22753,
+    "wet_power_box": 14794,
+    "missing_cover": 5735,
+    "loose_sign": 11641,
+    "leaning_fence": 23052
+  },
+  "familyBox": {
+    "x": 357,
+    "y": 724,
+    "w": 257,
+    "h": 539
+  },
+  "familyPixels": 98713,
+  "effectsPixels": {
+    "weather": 203222,
+    "water": 103177,
+    "sky": 0,
+    "fire": 0,
+    "smoke": 0
+  },
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "effectMasksExcludeTargetsAndCharacters": true,
+  "objectAndHitMasksIdentical": false,
+  "approval": "draft; semantic visual inspection and runtime tests pending",
+  "files": [
+    {
+      "path": "character-mask.png",
+      "sha256": "adb87990ac75354815ea9d1c37abb6615ec0a61629cf65cf6f50a713fd301132"
+    },
+    {
+      "path": "clean.webp",
+      "sha256": "7e443311d0a4193f9af440d4ffb57b1198d665f53da43f9c029ad951d248d3de"
+    },
+    {
+      "path": "ending.webp",
+      "sha256": "693a6661b05b300bf4d7b5d1a27bf009654883390d214211d133421c7c0e84b8"
+    },
+    {
+      "path": "family.png",
+      "sha256": "f15aeea8a155badd4d5944ddf8ada5d6ded51b573bc1a53166e79c4b98b730d7"
+    },
+    {
+      "path": "fire-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    },
+    {
+      "path": "flooded_underpass.png",
+      "sha256": "0b2132523f4c6c6faa0f15da84f667b3753959e1d7aff46129bb8bdb5088ddb5"
+    },
+    {
+      "path": "hit-samples.json",
+      "sha256": "54350a6f099eb1e5e2001c0de3bc7d87f720270b5a5f77c453c06ccebdf7acda"
+    },
+    {
+      "path": "id-mask.png",
+      "sha256": "a9e6826472c0355e0cf66f28e7366b8b0adb906a9a06a05008b13c94d40762f5"
+    },
+    {
+      "path": "leaning_fence.png",
+      "sha256": "4047a106d3be2b8f50b54cb1e2ac4b721e85e6577d684f4ab6447747aeb6a4a7"
+    },
+    {
+      "path": "loose_sign.png",
+      "sha256": "3e01c2e3638c2fcd3de21d8bc847553d511d990e792e41e285525eb2fc29ad77"
+    },
+    {
+      "path": "missing_cover.png",
+      "sha256": "2f45725f88bea0ba40f37744251310e73212556d090ccbe761baf10bae14e579"
+    },
+    {
+      "path": "object-mask.png",
+      "sha256": "5da83f3ef57e038b227c2fcbe5864a810b02ad83a7ea21d2e4ca02f9171cef2c"
+    },
+    {
+      "path": "scene.webp",
+      "sha256": "654a2aa3c6520b714f35f632dbb78498e816d0df20857c8d8979571a9370936d"
+    },
+    {
+      "path": "sky-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    },
+    {
+      "path": "smoke-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    },
+    {
+      "path": "water-mask.png",
+      "sha256": "854a0672a06c34d9b1a90ad98a7cb125706038473538d846476502008d5e5bc2"
+    },
+    {
+      "path": "weather-mask.png",
+      "sha256": "e585d6eeb20921c9a0a05baf693f334f164162b7e7e778338f6004060dda3005"
+    },
+    {
+      "path": "wet_power_box.png",
+      "sha256": "7846738b9deb4ade578695613e592f7a5bef2259de8d0376d0f704dc7dff6bd4"
+    }
+  ]
+}

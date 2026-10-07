@@ -11,18 +11,18 @@ export const nodeFor = (id: string) =>
   regionFor(id)?.nodes.find((n) => n.id === id);
 export const isComplete = (progress: Progress, id: string) =>
   Object.hasOwn(progress, id) && progress[id] > 0;
-export function nodeStatus(id: string, progress: Progress): NodeStatus {
+export function nodeStatus(id: string, progress: Progress, allLevelsUnlocked = false): NodeStatus {
   const region = regionFor(id);
   if (!region) return 'locked';
   if (isComplete(progress, id)) return 'complete';
   const prerequisite = region.nodes.find((n) => n.id === id)!.unlockAfter;
   // Scene positions may change; saved access follows stable level IDs.
-  return prerequisite === null || isComplete(progress, prerequisite)
+  return allLevelsUnlocked || prerequisite === null || isComplete(progress, prerequisite)
     ? 'available'
     : 'locked';
 }
-export const canEnter = (id: string, progress: Progress) =>
-  nodeStatus(id, progress) !== 'locked';
+export const canEnter = (id: string, progress: Progress, allLevelsUnlocked = false) =>
+  nodeStatus(id, progress, allLevelsUnlocked) !== 'locked';
 export const regionProgress = (region: Region, progress: Progress) =>
   region.nodes.filter((n) => isComplete(progress, n.id)).length;
 export function nextNode(id: string, progress: Progress) {

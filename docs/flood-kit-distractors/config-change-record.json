@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-27",
+  "reason": "User requested two unnecessary tabletop objects in the existing flood-kit level. Add two neutral explanatory interactions; original five goals, risk, correct interactions, poses and completion are unchanged. No new level or camera.",
+  "before": {
+    "rules": "4f3dabccb994484f74ab4972d8d312db1429ef7bed371b31c1c3cb343109f779",
+    "skin": "fd45bfdbe99ac79e5712243ebf89e0b9b8ea922e0cf62eea400d3b86753c4121"
+  },
+  "files": {
+    "content/levels/flood-kit/level.json": "c26074bcc226a1abc1a1cf4232a32a71834255ad0240ca0f84e41b7b7f45c652",
+    "content/levels/flood-kit/skins/paperbook.json": "7d951f0b740028994fe7e67e8b9de0c313d56736385c2fc76fef6391ad88d768"
+  }
+}

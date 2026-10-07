@@ -45,3 +45,9 @@ export const timing = experience.timing.animations;
 export const emotionLabels: Record<Emotion, string> = {
   worried: '紧张 · 需要你的帮助', panicked: '惊慌 · 火势正在威胁安全', focused: '镇定一些 · 做对了', relieved: '安心 · 处置已完成',
 };
+
+/** Action feedback shared by input, state and visible HUD; no score penalty implied. */
+export const kitchenFeedback = {
+  knife: '操作不当：菜刀不能用来灭火，请放下菜刀。',
+  leave: '油锅明火已熄灭。请将人物拖到右侧门外安全区，离开厨房。',
+} as const;

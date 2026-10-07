@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-27",
+  "entries": [
+    {
+      "stage": "B",
+      "tool": "image_gen.imagegen",
+      "callId": "call_ARnGZjtIwbSgO6IbtCggenJb",
+      "output": "scene-original.png",
+      "sha256": "a52f9eecdcd087b4d03c3ba426c55977bd3d28e30865e0d6924b210b6cbef878"
+    },
+    {
+      "stage": "C",
+      "tool": "image_gen.imagegen",
+      "callId": "call_1PX6CYFAxyQc9DzwKG0jC203",
+      "output": "mask-candidate.png",
+      "sha256": "12c5602290055835a41f6e9b789c6d64bf721382a0b56e4ff2f5d85ab799bbbb"
+    },
+    {
+      "stage": "D",
+      "tool": "image_gen.imagegen",
+      "callId": "call_hgn9824mOGy61VwtPt9EQCzB",
+      "output": "clean-candidate.png",
+      "sha256": "1d10447fcdf130de6c8f3590ba111feddc11605b46ceea8961648801baa6d2c3"
+    },
+    {
+      "stage": "F",
+      "tool": "image_gen.imagegen",
+      "callId": "call_fvgYQUwUBvLKuxx4HX8Upsk8",
+      "output": "ending.png",
+      "sha256": "5874d855e2da71aa6879f875cf26fcfa4004e58f00b6147f27c67c7a8ef26d35"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-27",
+  "entries": [
+    {
+      "stage": "B",
+      "tool": "image_gen.imagegen",
+      "callId": "call_tXON1NP9eCwCuq8dSCmiDiJb",
+      "original": "C:\\Users\\LEGION\\.codex\\generated_images\\01a0e195-d762-73f0-94da-bc5beb2f9b68\\call_tXON1NP9eCwCuq8dSCmiDiJb.png",
+      "inputOutputNote": "Mother illustration",
+      "originalSha256": "ee50f79c12e6fbb5bf725a31ec8fe3184e43705c15eb5ff8cf353a00771c5bc0",
+      "output": "scene-original.png",
+      "outputSha256": "581e3fa30a28e137147da5ebe5d2a77de1c479af2c7c08ade5259c93d8c61c7d",
+      "normalization": [
+        941,
+        1671
+      ]
+    },
+    {
+      "stage": "C",
+      "tool": "image_gen.imagegen",
+      "callId": "call_CVjbikg07MAGPnimLaBZu48p",
+      "original": "C:\\Users\\LEGION\\.codex\\generated_images\\01a0e195-d762-73f0-94da-bc5beb2f9b68\\call_CVjbikg07MAGPnimLaBZu48p.png",
+      "inputOutputNote": "Derived from same B mother",
+      "originalSha256": "501e2abc7a22eb9ee95d84d6ee10915ab95d3c89cd3060fa961ad1c88d1b0578",
+      "output": "mask-candidate.png",
+      "outputSha256": "f3804fce8a49a7759da3192b9834469319ba28cb451b078c3d14287aed9a77df",
+      "normalization": [
+        941,
+        1671
+      ]
+    },
+    {
+      "stage": "D",
+      "tool": "image_gen.imagegen",
+      "callId": "call_SxXjsYudg2Z3o2YKZhqfcQ09",
+      "original": "C:\\Users\\LEGION\\.codex\\generated_images\\01a0e195-d762-73f0-94da-bc5beb2f9b68\\call_SxXjsYudg2Z3o2YKZhqfcQ09.png",
+      "inputOutputNote": "Derived from same B mother",
+      "originalSha256": "8b9532699426a197abff335c545cb7e0bdbe77c6dad973f824aa16ee4c344d0e",
+      "output": "clean-candidate.png",
+      "outputSha256": "68e588bfeaa868a2a35b0a6db4978fc8ac46a3df9470004f4dc5ee6d2473ee7a",
+      "normalization": [
+        941,
+        1671
+      ]
+    },
+    {
+      "stage": "F",
+      "tool": "image_gen.imagegen",
+      "callId": "call_bLEBWZChtEXhDdrH50Xa6PiC",
+      "original": "C:\\Users\\LEGION\\.codex\\generated_images\\01a0e195-d762-73f0-94da-bc5beb2f9b68\\call_bLEBWZChtEXhDdrH50Xa6PiC.png",
+      "inputOutputNote": "Derived from same B mother",
+      "originalSha256": "cd9a9b990dda3e93abcabd4e5a25fc7848fe09fde460fc255a22021016db0000",
+      "output": "ending.png",
+      "outputSha256": "c5edcd6860ee78c62492ed78f9f13e71ff464ba457b7127b4ce64f4b1ed011d0",
+      "normalization": [
+        941,
+        1671
+      ]
+    }
+  ]
+}

@@ -102,12 +102,27 @@ async function fixture(kind, reducedMotion = 'reduce', viewport = { width: 390, 
 }
 async function closeContext(context) { await context.close(); contexts.delete(context); report.contextsClosed++; }
 async function shot(page, name) { const file = `${name}.png`; await page.screenshot({ path: path.join(output, file) }); report.screenshots.push(file); }
+async function tabEmphasis(page) {
+  const tabs = await page.getByRole('tablist', { name: '玩家档案' }).getByRole('tab').evaluateAll(elements => elements.map(element => {
+    const style = getComputedStyle(element), art = getComputedStyle(element, '::before');
+    return { selected: element.getAttribute('aria-selected') === 'true', color: style.color, decoration: style.textDecorationLine, filter: art.filter, art: art.backgroundImage };
+  }));
+  assert.equal(tabs.filter(tab => tab.selected).length, 1);
+  const active = tabs.find(tab => tab.selected), inactive = tabs.find(tab => !tab.selected);
+  assert.equal(active.color, 'rgb(255, 229, 138)', 'selected tab uses bright gold lettering');
+  assert.equal(inactive.color, 'rgb(97, 92, 70)', 'inactive tab uses muted ink');
+  assert.equal(active.decoration, 'underline', 'selection is not indicated by color alone');
+  assert.equal(inactive.decoration, 'none');
+  assert.notEqual(active.filter, inactive.filter, 'painted background emphasis follows selection');
+  assert.notEqual(active.art, 'none');
+}
 async function open(page) {
   await page.locator('[data-journal-open]').click();
   await card(page).waitFor();
   await page.waitForTimeout(450);
   assert.equal(await card(page).getAttribute('data-view'), 'mine', 'Journal must default to my progress');
   assert.equal(await page.getByTestId('journal-tab-mine').getAttribute('aria-selected'), 'true');
+  await tabEmphasis(page);
   return card(page);
 }
 async function stats(page, completed, viewedId = activeId) {
@@ -137,6 +152,7 @@ async function board(page, keyboard = false) {
   await page.waitForTimeout(300);
   assert.equal(await card(page).getAttribute('data-view'), 'board');
   assert.equal(await tab.getAttribute('aria-selected'), 'true');
+  await tabEmphasis(page);
 }
 async function outside(page, touch = false) {
   const rect = await card(page).boundingBox();

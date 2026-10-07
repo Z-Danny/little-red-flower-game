@@ -41,8 +41,8 @@ export function entryNode(progress: Progress) {
     first.nodes[0].id
   );
 }
-export function resumeNode(progress: Progress, location?: JourneyLocation) {
-  if (location && nodeStatus(location.levelId, progress) !== 'locked')
+export function resumeNode(progress: Progress, location?: JourneyLocation, allLevelsUnlocked = false) {
+  if (location && nodeStatus(location.levelId, progress, allLevelsUnlocked) !== 'locked')
     return location.levelId;
   return (
     journeyMap.regions

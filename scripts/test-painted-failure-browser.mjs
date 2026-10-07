@@ -385,7 +385,14 @@ async function runCase(page, spec) {
 async function negativeCases(page, spec) {
   const original = await board(page);
   await open(page, spec.id);
-  if (spec.id === 'fire-shelter-practice' || spec.id === 'oil-fire') {
+  if (spec.id === 'oil-fire') {
+    await page.clock.runFor(spec.seconds * 1000 + 600);
+    assert.equal(await scene(page).getAttribute('data-phase'), 'failed');
+    assert.equal(await page.locator(popup).count(), 1);
+    assert.equal(await page.locator('[role="meter"]').getAttribute('data-heat'), '1.0000');
+    assert.equal(await board(page), original);
+    passed('oil-fire: full thermometer fails immediately without reward');
+  } else if (spec.id === 'fire-shelter-practice') {
     await page.clock.runFor(spec.seconds * 1000 + 600);
     assert.equal(await scene(page).getAttribute('data-phase'), 'playing', `${spec.id}: continue training timer became a failure`);
     assert.equal(await page.locator(popup).count(), 0);
@@ -510,7 +517,7 @@ try {
     '- 当前未开启failureReveal的正式practice即时失败；如果既有flag开启，则先验证演出期间没有失败弹窗，再验证演出结束出现。',
     ...(!quickSmoke ? ['- 台风恢复闭环：真实超时0花 → 重新挑战 → 5个真实目标点击 → 原成功Settlement → 仅发3花。'] : []),
     '- 覆盖窄屏滚动、两按钮可达、无横向溢出、正反Tab焦点限制、reduced-motion、来源图片内嵌完整解码。',
-    ...(!quickSmoke ? ['- 单独核对洪水危险动作的实际原因、提前转移高处仍为安全退出，以及火灾隔烟/油锅训练计时归零仍可继续。'] : []),
+    ...(!quickSmoke ? ['- 单独核对洪水危险动作的实际原因、提前转移高处仍为安全退出，以及火灾隔烟训练计时归零仍可继续、油锅温度计到顶立即失败。'] : []),
     `- 运行时错误 ${report.errors.length}；HTTP(S)请求 ${report.network.length}；失败请求 ${report.failedRequests.length}。`,
     '- physicalDevice: not_run', '- humanAudio: not_run',
     ...(report.failure ? ['', '## 失败', '', '```text', report.failure, '```'] : []),

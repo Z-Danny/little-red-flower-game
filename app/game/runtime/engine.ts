@@ -2,7 +2,7 @@ import type { Condition, Emotion, Event, Input, LevelPackage, ObjectSpec, Run } 
 import { huntMissCaption, penalizedElapsed } from '../challenge/rules';
 
 export const hasAll = (resolved: readonly string[], ids: readonly string[] = []) => ids.every(id => resolved.includes(id));
-export const finished = (pack: LevelPackage, run: Run) => hasAll(run.resolved, pack.rules.completion.requires);
+export const finished = (pack: LevelPackage, run: Run) => hasAll(run.resolved, pack.rules.completion.requires) && (!pack.rules.inventory || run.departed === true);
 export const failureRevealing = (run: Run) => run.phase === 'failed' && !!run.failure && run.failure.age < run.failure.duration;
 /** Both the UI and tests use this boundary; early safety exits never advance a journey. */
 export const completedForReward = (run: Run) => run.phase === 'complete' && !run.escaped;
@@ -17,9 +17,10 @@ export function matches(pack: LevelPackage, run: Run, condition: Condition) {
 }
 export const enabled = (object: ObjectSpec, run: Run) => object.input !== 'none' && hasAll(run.resolved, object.requires)
   && hasAll(run.stages ?? [], object.stages)
+  && !run.inventory?.includes(object.id)
   && !(object.disabledWhen ?? []).some(id => run.resolved.includes(id));
 export function createRun(pack: LevelPackage): Run {
-  return { phase: 'playing', resolved: [], stages: [], stageAges: {}, action: null, elapsed: 0, risk: pack.rules.risk.initial, mistakes: 0,
+  return { ...(pack.rules.inventory ? { inventory: [], departed: false } : {}), phase: 'playing', resolved: [], stages: [], stageAges: {}, action: null, elapsed: 0, risk: pack.rules.risk.initial, mistakes: 0,
     peakSeen: false, settleAge: 0, reaction: null, reactionMs: 0, boost: 0,
     notice: pack.rules.briefing ? { text: pack.rules.briefing, remaining: 5500 } : null, stars: 0 };
 }
@@ -37,11 +38,36 @@ const timedOut = (pack: LevelPackage, run: Run) => pack.rules.risk.timeout === '
 const failRun = (pack: LevelPackage, run: Run): Run => ({ ...run, phase: 'failed', elapsed: pack.rules.risk.seconds * 1000, action: null, stars: 0, notice: { text: pack.rules.risk.peakFeedback, remaining: 5000 } });
 /** A last correct input accepted before the deadline may finish its existing animation. */
 function finalAction(pack: LevelPackage, run: Run) {
+  if (pack.rules.inventory) return false; // Packing is not the required explicit departure.
   const rule = run.action && pack.rules.interactions.find(r => r.id === run.action?.rule);
   return !!rule && rule.outcome === 'correct' && hasAll([...run.resolved, ...rule.grants], pack.rules.completion.requires);
 }
 export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
   if (event.type === 'reset') return createRun(pack);
+  if (event.type === 'unpack' || event.type === 'depart') {
+    const spec = pack.rules.inventory;
+    if (!spec || run.phase !== 'playing' || run.action) return run;
+    if (timedOut(pack, run)) return failRun(pack, run);
+    const inventory = run.inventory ?? [];
+    if (event.type === 'unpack') {
+      if (!inventory.includes(event.source)) return run;
+      const grants = pack.rules.interactions.filter(rule => rule.source === event.source).flatMap(rule => rule.grants);
+      const resolvedAt = { ...run.resolvedAt };
+      grants.forEach(goal => { delete resolvedAt[goal]; });
+      return { ...run, inventory: inventory.filter(id => id !== event.source), resolved: run.resolved.filter(id => !grants.includes(id)), resolvedAt,
+        notice: { text: '已取出，放回原处，可以重新选择。', remaining: 2400 } };
+    }
+    if (inventory.length !== spec.capacity || new Set(inventory).size !== spec.capacity) return { ...run,
+      notice: { text: '请先装满 ' + spec.capacity + ' 件物品，再检查出发。', remaining: 2600 } };
+    const unwanted = inventory.filter(id => !spec.required.includes(id));
+    if (unwanted.length || !hasAll(inventory, spec.required)) {
+      const labels = (ids: string[]) => ids.map(id => pack.rules.objects.find(object => object.id === id)?.label ?? id).join('、');
+      const missing = spec.required.filter(id => !inventory.includes(id));
+      return { ...run, phase: 'failed', inventoryRejected: true, stars: 0, reaction: 'panicked',
+        notice: { text: '背包里装了不需要的物品：' + labels(unwanted) + '。' + unwanted.map(id => spec.failureReasons[id] ?? '').join('') + (missing.length ? '还缺：' + labels(missing) + '。' : ''), remaining: 5000 } };
+    }
+    return { ...run, departed: true, phase: 'settling', settleAge: 0, stars: pack.rules.completion.fixedStars ?? 3, reaction: 'relieved', notice: null };
+  }
   if (event.type === 'miss') {
     if (pack.rules.kind !== 'prevention' || pack.rules.risk.timeout !== 'fail' || run.phase !== 'playing' || run.action) return run;
     const next = { ...run, elapsed: penalizedElapsed(run.elapsed, pack.rules.risk.seconds), notice: { text: huntMissCaption(), remaining: 1800 } };
@@ -79,6 +105,9 @@ export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
       if (next.action.age >= next.action.duration) {
         const rule = pack.rules.interactions.find(r => r.id === run.action?.rule);
         next.action = null;
+        if (rule && pack.rules.inventory?.items.includes(rule.source)) {
+          next.inventory = [...new Set([...(run.inventory ?? []), rule.source])];
+        }
         if (rule?.escape) return { ...next, escaped: true, escapeRule: rule.id, phase: 'settling', settleAge: 0,
           stars: 0, reaction: 'relieved', reactionMs: 0, boost: 0,
           notice: rule.feedback ? { text: rule.feedback, remaining: 5000 } : null };
@@ -91,6 +120,10 @@ export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
           if (rule.feedback) next.notice = { text: rule.feedback, remaining: 4000 };
         }
       }
+    }
+    if (run.action && !next.action && pack.rules.inventory?.items.includes(run.action.source)) {
+      const label = pack.rules.objects.find(object => object.id === run.action?.source)?.label ?? '物品';
+      next.notice = { text: '已装入' + label + '（' + next.inventory!.length + '/' + pack.rules.inventory.capacity + '）。' + (next.inventory!.length === pack.rules.inventory.capacity ? '点背包检查，再决定出发。' : '点背包可查看或取出。'), remaining: 3000 };
     }
     // Start a stage clock only after its prerequisites are visibly committed.
     // New goals earned on this tick do not retroactively count the whole tick.
@@ -114,6 +147,9 @@ export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
   if (timedOut(pack, run)) return failRun(pack, run);
   const object = pack.rules.objects.find(o => o.id === event.input.source);
   if (!object || !enabled(object, run) || (object.input !== 'both' && (object.input === 'tap' ? event.input.mode !== 'tap' : event.input.mode !== 'drop'))) return run;
+  const spec = pack.rules.inventory;
+  if (spec?.items.includes(object.id) && (run.inventory ?? []).length >= spec.capacity) return { ...run,
+    notice: { text: '背包已满，最多放 ' + spec.capacity + ' 件。点背包取出物品后再装。', remaining: 2800 } };
   const rule = findRule(pack, run, event.input);
   const action = { rule: rule?.id ?? null, source: object.id, age: 0, duration: rule ? pack.skin.animations[rule.animation].durationMs : 450, point: event.input.point };
   if (!rule) return { ...run, action };

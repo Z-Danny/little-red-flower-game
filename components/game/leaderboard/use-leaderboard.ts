@@ -58,9 +58,11 @@ export function useLeaderboard(provided?: LeaderboardProvider) {
 
   return {
     snapshot, error, busy,
-    claimCompletion:useCallback(async(id:string,playerId:string)=>{
+    exportBackup: useCallback((id:string) => provider.exportBackup(id), [provider]),
+    importBackup: useCallback((text:string,id:string) => run(() => provider.importBackup(text,id)), [provider,run]),
+    claimCompletion:useCallback(async(id:string,playerId:string,flowers?:number)=>{
       let receipt:import('@/app/game/leaderboard/model').CompletionReceipt|undefined;
-      const ok=await run(async()=>{const result=await provider.claimCompletion(id,playerId);receipt=result.receipt;return result.snapshot;});
+      const ok=await run(async()=>{const result=await provider.claimCompletion(id,playerId,flowers);receipt=result.receipt;return result.snapshot;});
       return ok?receipt:undefined;
     },[provider,run]),
     refresh: useCallback(() => run(() => provider.read()), [provider, run]),
@@ -68,6 +70,7 @@ export function useLeaderboard(provided?: LeaderboardProvider) {
     createPlayer: (profile: ProfileInput) => run(() => provider.createPlayer(profile)),
     updateProfile: (profile: ProfileInput) => run(() => provider.updateProfile(profile)),
     switchPlayer: (id: string) => run(() => provider.switchPlayer(id)),
+    unlockAllLevels: useCallback(() => currentPlayerId ? run(() => provider.unlockAllLevels(currentPlayerId)) : Promise.resolve(false), [provider, run, currentPlayerId]),
     resetProgress: useCallback(() => run(() => provider.resetCurrentProgress(currentPlayerId)), [provider, run, currentPlayerId]),
   };
 }

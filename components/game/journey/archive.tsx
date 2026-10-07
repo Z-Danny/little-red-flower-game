@@ -58,7 +58,7 @@ export function JourneyArchive({
             })}
           </div>
           <p className="garden-footnote">
-            每关首次完成可获得 3 朵小红花，重玩不重复获得。
+            每关按通关用时获得 1～3 朵小红花；保留最佳成绩，重玩只补发差额。
           </p>
           <button
             className="garden-secondary"

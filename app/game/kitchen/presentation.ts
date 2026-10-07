@@ -1,5 +1,5 @@
-import { level } from './config';
-import { type Run } from './model';
+import { kitchenFeedback, level } from './config';
+import { controlled, type Run } from './model';
 /** Gameplay elapsed time is the sole clock; hazard rewards cannot refill it. */
 export function countdown(r: Run) {
   const remaining = Math.max(0, level.riskSeconds - r.elapsed / 1000);
@@ -10,7 +10,11 @@ export function riskClock(r: Run) {
   const seconds = countdown(r).seconds;
   return `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
 }
+export function departureFeedback(r: Run): string | null {
+  return r.phase === 'playing' && controlled(r) && !r.evacuated && r.action?.kind !== 'evacuate' ? kitchenFeedback.leave : null;
+}
 export function briefFeedback(r: Run): string | null {
+  if (r.notice.text === kitchenFeedback.knife) return kitchenFeedback.knife;
   if (r.notice.tone === 'danger') {
     if (/不能泼水/.test(r.notice.text)) return '油锅起火不能泼水';
     if (/化纤抹布/.test(r.notice.text)) return '这块抹布不能盖严锅口';

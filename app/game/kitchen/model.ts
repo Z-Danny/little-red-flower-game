@@ -1,15 +1,15 @@
-import { level, timing, isPlayableItem, type Emotion, type GoalId, type ItemId, type Point, type ZoneId } from './config';
+import { kitchenFeedback, level, timing, isPlayableItem, type Emotion, type GoalId, type ItemId, type Point, type ZoneId } from './config';
 
 export type ActionKind = 'cover' | 'shutoff' | 'evacuate' | 'water' | 'cloth' | 'spray' | 'miss-spray' | 'bounce';
 export type Action = { kind: ActionKind; item: ItemId; from: Point; at: Point; age: number; duration: number; goal?: GoalId };
 export type Notice = { serial: number; tone: 'success' | 'danger' | 'neutral'; text: string };
 export type Run = {
-  phase: 'briefing' | 'playing' | 'settling' | 'complete'; elapsed: number; risk: number;
+  phase: 'briefing' | 'playing' | 'settling' | 'complete' | 'failing' | 'failed'; elapsed: number; risk: number;
   covered: boolean; gasOff: boolean; evacuated: boolean; mistakes: number;
   action: Action | null; reaction: Emotion | null; reactionAge: number; boost: number; suppression: number;
   notice: Notice; serial: number; settlingAge: number; stars: number; peakReached: boolean;
 };
-export type Event = { type: 'start' | 'reset' | 'hint' } | { type: 'tick'; ms: number }
+export type Event = { type: 'start' | 'reset' | 'hint' } | { type: 'select'; item: ItemId } | { type: 'tick'; ms: number }
   | { type: 'drop'; item: ItemId; zone: ZoneId; at: Point; from: Point };
 
 export const createRun = (): Run => ({
@@ -19,6 +19,16 @@ export const createRun = (): Run => ({
   settlingAge: 0, stars: 0, peakReached: false,
 });
 export const controlled = (r: Run) => r.covered && r.gasOff;
+/** Shared by the thermometer and terminal failure: never a separate visual threshold. */
+export const kitchenHeat = (r: Run) => controlled(r) ? 0 : Math.max(0, Math.min(1, r.risk / 100));
+function failAtPeak(r: Run): Run {
+  if ((r.phase !== 'playing' && r.phase !== 'failing') || kitchenHeat(r) < 1) return r;
+  // Preserve the original action/keyframe so Foley can play before the result.
+  if (r.phase === 'playing' && (r.action?.kind === 'water' || r.action?.kind === 'cloth'))
+    return { ...r, phase: 'failing', peakReached: true, stars: 0 };
+  const reason = r.notice.tone === 'danger' ? r.notice.text + ' ' : '';
+  return tell({ ...r, phase: 'failed', peakReached: true, action: null, stars: 0, reaction: 'panicked', reactionAge: timing.reaction }, reason + '温度计已到顶，火势失控，本次处置失败。', 'danger');
+}
 export const completedCount = (r: Run) => Number(r.covered) + Number(r.gasOff) + Number(r.evacuated);
 export const emotion = (r: Run): Emotion => controlled(r) ? 'relieved' : r.reaction ?? (r.risk >= 70 ? 'panicked' : 'worried');
 export function fireLevel(r: Run) {
@@ -39,14 +49,24 @@ function begin(r: Run, e: Extract<Event, { type: 'drop' }>, kind: ActionKind, du
 export function reduceRun(r: Run, e: Event, presentation?:{settleMs:number}): Run {
   if (e.type === 'reset') return createRun();
   if (e.type === 'start') return r.phase === 'briefing' ? { ...r, phase: 'playing' } : r;
+  if (e.type === 'select') {
+    if (e.item !== 'knife' || r.phase !== 'playing' || r.action) return r;
+    return tell(r, kitchenFeedback.knife);
+  }
   if (e.type === 'hint') {
     if (r.phase !== 'playing' || r.action) return r;
     return tell(r, !r.gasOff ? '点击灶台面板上的燃气开关，让它原位旋转关闭。' : !r.covered ? '锅盖在左下方备菜台上，把它拖到着火的油锅上。' : '两项处置都完成了，把人物拖到右侧门外安全区。');
   }
   if (e.type === 'tick') {
-    if (r.phase === 'briefing' || r.phase === 'complete' || !Number.isFinite(e.ms) || e.ms <= 0) return r;
+    if (r.phase === 'briefing' || r.phase === 'complete' || r.phase === 'failed' || !Number.isFinite(e.ms) || e.ms <= 0) return r;
     const ms = Math.min(e.ms, 100), safe = controlled(r);
     const elapsed = r.elapsed + ms;
+    if (r.phase === 'failing') {
+      const action = r.action && { ...r.action, age: r.action.age + ms };
+      const n = { ...r, elapsed, action };
+      // Gameplay time respects pause/visibility; muted or unavailable audio cannot trap a run.
+      return !action || action.age >= timing.failureFeedback ? failAtPeak({ ...n, action: null }) : n;
+    }
     // Exactly 50 active seconds to the training peak. Correct/incorrect actions
     // change the fire, never refill or shorten the separate countdown clock.
     const risk = safe ? Math.max(0, r.risk - ms / 25) : elapsed >= level.riskSeconds * 1000 ? 100
@@ -55,11 +75,8 @@ export function reduceRun(r: Run, e: Event, presentation?:{settleMs:number}): Ru
       boost: Math.max(0, r.boost - ms / 14000), suppression: Math.max(0, r.suppression - ms / 9000),
       reactionAge: Math.max(0, r.reactionAge - ms), reaction: r.reactionAge > ms ? r.reaction : null,
       settlingAge: safe ? r.settlingAge + ms : 0 };
-    if (!n.peakReached && n.risk >= 100) {
-      n.peakReached = true;
-      // Never replace an actionable wrong-operation explanation with a generic peak notice.
-      if (!r.action && r.reactionAge <= 0) n = tell({ ...n, reaction: 'panicked', reactionAge: timing.reaction }, '火势已很危险！训练仍可继续；现实中请立即撤离并拨打 119。', 'danger');
-    }
+    n = failAtPeak(n);
+    if (n.phase === 'failed') return n;
     if (r.action) {
       const action = { ...r.action, age: r.action.age + ms };
       n.action = action;
@@ -84,6 +101,7 @@ export function reduceRun(r: Run, e: Event, presentation?:{settleMs:number}): Ru
   if (e.type !== 'drop' || r.phase !== 'playing' || r.action) return r;
   if (!isPlayableItem(e.item)) return r;
   if ((e.item === 'lid' && r.covered) || (e.item === 'gas' && r.gasOff) || (e.item === 'person' && r.evacuated)) return r;
+  if (e.item === 'knife') return begin(r, e, 'bounce', timing.bounce, kitchenFeedback.knife);
   if (e.item === 'lid' && e.zone === 'pan') return begin(r, e, 'cover', timing.lid, '正在平稳盖住锅口…', 'covered');
   if (e.item === 'gas' && e.zone === 'off') return begin(r, e, 'shutoff', timing.gas, '正在关闭燃气开关…', 'gasOff');
   if (e.item === 'person' && e.zone === 'exit') {
@@ -93,7 +111,7 @@ export function reduceRun(r: Run, e: Event, presentation?:{settleMs:number}): Ru
   if ((e.item === 'water' || e.item === 'cloth') && e.zone === 'pan') {
     if (r.covered) return begin(r, e, 'bounce', timing.bounce, '锅口已经盖住，请保持覆盖，不要添加水或其他物品。');
     const text = e.item === 'water' ? '油锅起火不能泼水！火焰突然蹿高了。' : '不要用易燃物覆盖火焰！这块小化纤抹布无法盖严锅口，已经着火。';
-    return tell({ ...begin(r, e, e.item, timing.wrong, text), mistakes: r.mistakes + 1, risk: Math.min(100, r.risk + 15), boost: Math.min(.9, r.boost + .6), reaction: 'panicked', reactionAge: timing.reaction }, text, 'danger');
+    return failAtPeak(tell({ ...begin(r, e, e.item, timing.wrong, text), mistakes: r.mistakes + 1, risk: 100, boost: Math.min(.9, r.boost + .6), reaction: 'panicked', reactionAge: timing.reaction }, text, 'danger'));
   }
   if (e.item === 'extinguisher') {
     const aimed = e.zone === 'pan';
@@ -102,5 +120,5 @@ export function reduceRun(r: Run, e: Event, presentation?:{settleMs:number}): Ru
       reaction: aimed ? 'focused' : r.risk >= 70 ? 'panicked' : 'worried', reactionAge: timing.reaction },
     aimed ? '已对准火焰根部，火势暂时降低。本关仍需完成关火和盖锅盖。' : '喷射偏移了，请对准火焰根部。', aimed ? 'success' : 'neutral');
   }
-  return begin(r, e, 'bounce', timing.bounce, e.item === 'plate' || e.item === 'knife' ? '这件物品不能用于本关处置，已放回原位。' : '目标没有对上，再试试。');
+  return begin(r, e, 'bounce', timing.bounce, e.item === 'plate' ? '这件物品不能用于本关处置，已放回原位。' : '目标没有对上，再试试。');
 }

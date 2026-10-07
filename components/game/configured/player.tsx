@@ -1,8 +1,12 @@
 'use client';
+import type { CompletionTiming } from '@/app/game/journey/time-reward';
 import {levelTitle,journeyTiming} from '@/app/game/journey/presentation';
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { createRun, emotion, enabled, reduceRun } from '@/app/game/runtime/engine';
-import { cameraFor, pickObject, pickZone, scenePoses, toWorld } from '@/app/game/runtime/scene';
+import { cameraFor, pickObject, scenePoses, toWorld } from '@/app/game/runtime/scene';
+import { pickRelevantZone, relevantZones, resolveDragPlacement } from '@/app/game/runtime/drop-zones';
+import { InventoryControls } from './inventory-controls';
+import { CollectionControls } from './collection-controls';
 import type { Input, LevelPackage } from '@/app/game/runtime/schema';
 import { configuredPauseHint } from '@/app/game/runtime/pause-hint';
 import { alphaAt, loadArt, type Art } from './art';
@@ -25,7 +29,7 @@ import { PauseMenu } from '../pause-menu';
 
 import { useCollectionSound } from '../scene-hunt/use-collection-sound';
 
-type Props = { pack: LevelPackage; onBack: () => void; onFinish: (id: string, stars: number) => void; journey?:boolean; autoStart?:boolean };
+type Props = { pack: LevelPackage; onBack: () => void; onFinish: (id: string, stars: number, timing: CompletionTiming) => void; journey?:boolean; autoStart?:boolean };
 /** Staged practices opt in without changing the established legacy levels. */
 export function ConfiguredPlayer(props: Props) {
   return props.pack.skin.presentation ? <PracticePlayer {...props}/> : <LegacyConfiguredPlayer {...props}/>;
@@ -33,7 +37,10 @@ export function ConfiguredPlayer(props: Props) {
 function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=false, autoStart=false }: Props) {
   const [pack]=useState(()=>journey?{...originalPack,rules:{...originalPack.rules,completion:{...originalPack.rules.completion,settleMs:journeyTiming.safeHold}}}:originalPack);
   const immersive = pack.rules.kind === 'response';
+  const teachingCollection = pack.rules.objects.some(object => object.hudAction);
+  const visibleGoals = pack.rules.goals.filter(goal => goal.showTarget !== false);
   const challenge = pack.rules.kind === 'prevention' && pack.rules.risk.timeout === 'fail';
+  const [inventoryOpen, setInventoryOpen] = useState(false);
   const [started, setStarted] = useState(false), [hidden, setHidden] = useState(false);
   const viewport = useGameViewport(pack.skin.world, immersive);
   const surface = useRef<HTMLElement>(null);
@@ -63,7 +70,7 @@ function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=
   const unlock = () => { if (challenge) collectionSound.unlock(); else if (legacyAudio.enabled) legacyAudio.unlock(); else if (pack.skin.response) audio.unlock(); };
   const pickup = () => { if (challenge) collectionSound.pickup(); else if (legacyAudio.enabled) legacyAudio.pickup(); else if (pack.skin.response) audio.pickup(); };
   useEffect(() => { if (immersive) { drag.current = null; setSelected(null); } }, [immersive, viewport.viewportKey]);
-  const interact = (input: Input) => { if (!latest.current.ready || latest.current.paused || !latest.current.started) return; disclosure.close(); setRun(r => reduceRun(pack, r, { type: 'interact', input })); setSelected(null); };
+  const interact = (input: Input) => { if (!latest.current.ready || latest.current.paused || !latest.current.started) return; if (pack.rules.inventory?.container === input.source) { setInventoryOpen(value => !value); return; } disclosure.close(); setRun(r => reduceRun(pack, r, { type: 'interact', input })); setSelected(null); };
   useEffect(() => {
     let alive = true; setReady(false); setError(''); art.current = null;
     loadArt(pack.skin).then(result => { if (alive) { art.current = result; setReady(true); } }).catch(e => { if (alive) setError(String(e.message ?? e)); });
@@ -98,7 +105,7 @@ function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=
     return () => cancelAnimationFrame(frame);
   }, [pack]);
   useEffect(() => {
-    if (run.phase === 'complete' && !reported.current) { reported.current = true; onFinish(pack.rules.id, run.stars); }
+    if (run.phase === 'complete' && !reported.current) { reported.current = true; onFinish(pack.rules.id, run.stars, { elapsedMs: Math.max(0, run.elapsed - run.settleAge) }); }
   }, [run.phase, run.stars, onFinish, pack.rules.id]);
   useEffect(() => {
     if (!modal) return;
@@ -124,11 +131,11 @@ function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=
     const object = pack.rules.objects.find(o => o.id === id);
     if (object && !enabled(object, run)) return;
     if (object?.input === 'tap') { interact({ source: object.id, mode: 'tap' }); return; }
-    const zone = pickZone(pack, point);
-    if (selected && zone) { interact({ source: selected, mode: 'drop', target: zone, point }); return; }
+    const zone = selected ? pickRelevantZone(pack, run, point, selected) : undefined;
+    if (selected && zone && !object) { interact({ source: selected, mode: 'drop', target: zone, point }); return; }
     if (!id || !object) {
       setSelected(null);
-      if (challenge) { disclosure.close(); collectionSound.wrong(); setRun(r => reduceRun(pack, r, { type: 'miss' })); }
+      if (challenge && !teachingCollection) { disclosure.close(); collectionSound.wrong(); setRun(r => reduceRun(pack, r, { type: 'miss' })); }
       return;
     }
     const pose = scenePoses(pack, run, reduced.current).find(p => p.id === id)!;
@@ -145,15 +152,15 @@ function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=
     drag.current = null; if (e.currentTarget.hasPointerCapture(e.pointerId)) e.currentTarget.releasePointerCapture(e.pointerId);
     if (!d.moved) return;
     const point = pointAt(e), pose = scenePoses(pack, run, reduced.current).find(p => p.id === d.id)!;
-    interact({ source: d.id, mode: 'drop', target: pickZone(pack, point), point: { x: point.x - d.offset.x + pose.w / 2, y: point.y - d.offset.y + pose.h / 2 } });
+    interact({ source: d.id, mode: 'drop', ...resolveDragPlacement(pack, run, d.id, point, d.offset, pose) });
   };
   const begin = () => { if (!ready || latest.current.started) return; resetClock.current = true; setStarted(true); unlock(); };
   useLevelAutoStart(autoStart, ready, begin, pack.rules.id);
   const reload = () => { setReady(false); setError(''); setRetry(n => n + 1); };
-  const replay = () => { audio.reset(); collectionSound.reset(); legacyAudio.reset(); if (challenge) collectionSound.unlock(); else if (pack.skin.response) audio.unlock(); resetClock.current = true; setStarted(true); disclosure.close(); drag.current = null; reported.current = false; setSelected(null); setPaused(false); setRun(createRun(pack)); };
+  const replay = () => { setInventoryOpen(false); audio.reset(); collectionSound.reset(); legacyAudio.reset(); if (challenge) collectionSound.unlock(); else if (pack.skin.response) audio.unlock(); resetClock.current = true; setStarted(true); disclosure.close(); drag.current = null; reported.current = false; setSelected(null); setPaused(false); setRun(createRun(pack)); };
   const elapsedClock=pack.rules.risk.mode==='elapsed';
   const seconds = elapsedClock ? Math.floor(run.elapsed/1000) : Math.max(0, Math.ceil((100 - run.risk) * pack.rules.risk.seconds / 100));
-  return <section {...interfaceSound} ref={surface} style={immersive ? viewport.style : undefined} data-game-surface={immersive ? '' : undefined} data-viewport={immersive ? viewport.viewportKey : undefined} onPointerDownCapture={() => { if (started) unlock(); }} onKeyDownCapture={event => { if (started && (event.key === 'Enter' || event.key === ' ')) unlock(); }} className="configured-player" data-level={pack.rules.id} data-auto-start={autoStart || undefined} data-engine="configured-v1" data-challenge={challenge ? '50s' : undefined} data-elapsed={Math.floor(run.elapsed)} data-phase={started ? run.phase : 'ready'} data-emotion={emotion(pack, run)} data-action={run.action?.rule ?? ''} data-resolved={run.resolved.join(',')} data-ready={String(ready)} data-paused={String(paused)} data-audio-state={challenge ? collectionSound.status.state : legacyAudio.enabled ? legacyAudio.status.state : undefined} data-audio-loops={legacyAudio.enabled ? legacyAudio.status.loops : undefined} data-audio-played={legacyAudio.enabled ? legacyAudio.status.played : undefined} data-audio-cue={challenge ? collectionSound.status.lastCue : legacyAudio.enabled ? legacyAudio.status.lastCue : undefined} data-audio-rms={challenge ? collectionSound.status.rms.toFixed(6) : legacyAudio.enabled ? legacyAudio.status.rms.toFixed(6) : undefined} data-audio-muted={legacyAudio.enabled ? String(legacyAudio.muted) : undefined}>
+  return <section {...interfaceSound} ref={surface} style={immersive ? viewport.style : undefined} data-game-surface={immersive ? '' : undefined} data-viewport={immersive ? viewport.viewportKey : undefined} onPointerDownCapture={() => { if (started) unlock(); }} onKeyDownCapture={event => { if (started && (event.key === 'Enter' || event.key === ' ')) unlock(); }} className="configured-player" data-inventory={pack.rules.inventory ? (run.inventory ?? []).join(',') : undefined} data-teaching-collection={teachingCollection || undefined} data-selected={selected ?? ''} data-level={pack.rules.id} data-auto-start={autoStart || undefined} data-engine="configured-v1" data-challenge={challenge ? '50s' : undefined} data-elapsed={Math.floor(run.elapsed)} data-phase={started ? run.phase : 'ready'} data-emotion={emotion(pack, run)} data-action={run.action?.rule ?? ''} data-resolved={run.resolved.join(',')} data-ready={String(ready)} data-paused={String(paused)} data-audio-state={challenge ? collectionSound.status.state : legacyAudio.enabled ? legacyAudio.status.state : undefined} data-audio-loops={legacyAudio.enabled ? legacyAudio.status.loops : undefined} data-audio-played={legacyAudio.enabled ? legacyAudio.status.played : undefined} data-audio-cue={challenge ? collectionSound.status.lastCue : legacyAudio.enabled ? legacyAudio.status.lastCue : undefined} data-audio-rms={challenge ? collectionSound.status.rms.toFixed(6) : legacyAudio.enabled ? legacyAudio.status.rms.toFixed(6) : undefined} data-audio-muted={legacyAudio.enabled ? String(legacyAudio.muted) : undefined}>
     <div className="configured-world" inert={modal || !started}>
       <canvas data-game-canvas={immersive ? '' : undefined} ref={canvas} aria-label={`${levelTitle(pack.rules.id,pack.rules.title)}互动场景`} onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={() => { drag.current = null; setSelected(null); }} />
       {!ready && !autoStart && <div className="configured-loading" role="status">{error || '正在准备场景…'}{error && <button onClick={reload}>重试</button>}</div>}
@@ -167,20 +174,22 @@ function LegacyConfiguredPlayer({ pack: originalPack, onBack, onFinish, journey=
     </header>
     {pack.rules.kind === 'prevention' && <div id={disclosure.id} {...disclosure.panelProps} hidden={challenge && !disclosure.expanded} className="configured-targets" inert={modal} aria-label="需要寻找的物件">{pack.rules.goals.filter(g => g.showTarget !== false).map(goal => <div key={goal.id} className={run.resolved.includes(goal.id) ? 'done' : ''} aria-label={`${goal.label}${run.resolved.includes(goal.id) ? '已完成' : '待寻找'}`}><img src={pack.skin.assets[pack.skin.poses[goal.object].asset].src} alt={goal.label} draggable={false} />{run.resolved.includes(goal.id) && <b>✓</b>}</div>)}</div>}
     {!started && !modal && (autoStart ? <LevelLaunchStatus error={error} onRetry={reload} onBack={onBack} /> : <PaintedLevelIntro levelId={pack.rules.id} title={levelTitle(pack.rules.id, pack.rules.title)} ready={ready} error={error} onRetry={reload} onStart={begin} onBack={onBack} />)}
-    {run.notice && started && !modal && <div className="configured-notice" role="status">{run.notice.text}</div>}
-    <nav className="configured-keyboard" aria-label="键盘辅助操作" inert={modal || !started}>
+    {teachingCollection && started && !modal && <CollectionControls pack={pack} run={run} selected={selected} disabled={!ready || !!run.action} onInteract={interact} />}
+    {pack.rules.inventory && started && !modal && <InventoryControls pack={pack} run={run} open={inventoryOpen} disabled={!ready || paused} onOpen={setInventoryOpen} onEvent={event => { if (!paused) setRun(run => reduceRun(pack, run, event)); }} />}
+    {run.notice && started && !modal && !teachingCollection && !(pack.rules.inventory && inventoryOpen) && <div className="configured-notice" role="status">{run.notice.text}</div>}
+    <nav className="configured-keyboard" aria-label="键盘辅助操作" inert={modal || !started || inventoryOpen}>
       {pack.rules.objects.filter(o => enabled(o, run)).map(o => <button key={o.id} disabled={!ready || !started || !!run.action || run.phase !== 'playing'} onClick={() => { if (o.input === 'tap') interact({ source: o.id, mode: 'tap' }); else { if (selected !== o.id) pickup(); setSelected(o.id); } }}>{o.label}</button>)}
-      {selected && Object.entries(pack.skin.zones).map(([id, box]) => <button key={id} onClick={() => interact({ source: selected, mode: 'drop', target: id, point: { x: box.x + box.w / 2, y: box.y + box.h / 2 } })}>放到 {pack.skin.zoneLabels?.[id] ?? id}</button>)}
+      {selected && relevantZones(pack, run, selected).map(id => { const box = pack.skin.zones[id]; return <button key={id} onClick={() => interact({ source: selected, mode: 'drop', target: id, point: { x: box.x + box.w / 2, y: box.y + box.h / 2 } })}>放到 {pack.skin.zoneLabels?.[id] ?? id}</button>; })}
     </nav>
     {journey&&run.phase==='settling'&&<SafeFeedback label={pack.rules.completion.title}/>}
     {run.phase === 'failed' && !paused && <PaintedFailure
       levelId={pack.rules.id}
       levelTitle={levelTitle(pack.rules.id, pack.rules.title)}
-      kind={challenge ? 'timeout' : 'unsafe-action'}
-      missed={challenge ? { count: pack.rules.goals.length - run.resolved.length, unit: '件' } : undefined}
-      reason={challenge ? `还有 ${pack.rules.goals.length - run.resolved.length} 件物品未收好。` : (run.notice?.text ?? '这次操作触发了风险，请先查看场景中的提示。')}
-      hint={challenge ? `限时${pack.rules.risk.seconds}秒，物品和位置得对上号。卡住了就点灯泡。` : '先看清这次提醒。救急靠判断，可别硬莽。'}
-      progress={challenge ? `已收好 ${run.resolved.length}/${pack.rules.goals.length} 件物品` : `已完成 ${run.resolved.length}/${pack.rules.goals.length} 项训练`}
+      kind={run.inventoryRejected ? 'wrong-inventory' : challenge ? 'timeout' : 'unsafe-action'}
+      missed={challenge && !pack.rules.inventory && visibleGoals.some(goal => !run.resolved.includes(goal.id)) ? { count: visibleGoals.filter(goal => !run.resolved.includes(goal.id)).length, unit: '件' } : undefined}
+      reason={run.inventoryRejected ? (run.notice?.text ?? '背包里有不需要的物品。') : pack.rules.inventory ? '时间到了，还没有检查背包并确认出发。' : challenge ? (teachingCollection && visibleGoals.every(goal => run.resolved.includes(goal.id)) ? '物品已收好，但还没有完成通道检查。' : `还有 ${visibleGoals.filter(goal => !run.resolved.includes(goal.id)).length} 件物品未收好。`) : (run.notice?.text ?? '这次操作触发了风险，请先查看场景中的提示。')}
+      hint={pack.rules.inventory ? `背包最多${pack.rules.inventory.capacity}件。点背包查看，可取出重选；确认后再出发。` : challenge ? `限时${pack.rules.risk.seconds}秒，物品和位置得对上号。卡住了就点灯泡。` : '先看清这次提醒。救急靠判断，可别硬莽。'}
+      progress={pack.rules.inventory ? `背包已装 ${(run.inventory ?? []).length}/${pack.rules.inventory.capacity} 件物品` : challenge ? `已收好 ${visibleGoals.filter(goal => run.resolved.includes(goal.id)).length}/${visibleGoals.length} 件物品` : `已完成 ${run.resolved.length}/${pack.rules.goals.length} 项训练`}
       journey={journey}
       onRetry={replay}
       onBack={onBack}

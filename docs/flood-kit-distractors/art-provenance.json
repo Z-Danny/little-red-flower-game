@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-27",
+  "generator": "image_gen.imagegen",
+  "references": [
+    {
+      "file": "public/levels/transcript-v1/kit-room.webp",
+      "sha256": "8f55867bdb2061f1a367c168ad75778a49e220462b65f2df4baf3f486695be47"
+    },
+    {
+      "file": "public/levels/transcript-v1/food.png",
+      "sha256": "6c9c7b585354c874e10af65790ddef86888fcf4481489ba2c1897a27dc90e8df"
+    }
+  ],
+  "assets": [
+    {
+      "id": "tv-remote",
+      "source": "docs/flood-kit-distractors/source-art/tv-remote.png",
+      "sourceSha256": "d7a51133465e41ea69a4b99a33f38d9585763691edb67008211bedc719cb7485",
+      "output": "public/levels/flood-kit-distractors/tv-remote.png",
+      "outputSha256": "ca9ce823dd3b5f464feb668981096cb202979c9591888e89e750cb3faff1a2f5",
+      "width": 388,
+      "height": 260,
+      "compiler": "sharp: proportional resize to width 384 + 2px transparent gutter; generated alpha preserved, no recoloring/keying or scene edits"
+    },
+    {
+      "id": "ceramic-ornament",
+      "source": "docs/flood-kit-distractors/source-art/ceramic-ornament.png",
+      "sourceSha256": "7058dcc170f830198c35eb94869621f4a281dcdbb94b8bf56a62a889f61a41af",
+      "output": "public/levels/flood-kit-distractors/ceramic-ornament.png",
+      "outputSha256": "221b84c000e51ac279c37e75390bfec559896b5d56e7eb148a2e3776417162ff",
+      "width": 388,
+      "height": 465,
+      "compiler": "sharp: proportional resize to width 384 + 2px transparent gutter; generated alpha preserved, no recoloring/keying or scene edits"
+    }
+  ]
+}

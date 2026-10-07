@@ -1,0 +1,28 @@
+{
+  "fingerprint": "5091955a77d523fad0a181909fe381f5e86a1fc64eb8ceb9ec207793e36cce80",
+  "knowledge": {
+    "status": "passed",
+    "reviewer": "Codex agent — actual offline browser and image review, physical device/listening not_run",
+    "evidence": "docs/nature-readable/REVIEW.md"
+  },
+  "art": {
+    "status": "passed",
+    "reviewer": "Codex agent — actual offline browser and image review, physical device/listening not_run",
+    "evidence": "docs/nature-readable/REVIEW.md"
+  },
+  "mobile": {
+    "status": "passed",
+    "reviewer": "Codex agent — actual offline browser and image review, physical device/listening not_run",
+    "evidence": "docs/nature-readable/verification/quake-preview-current/report.json"
+  },
+  "playthrough": {
+    "status": "passed",
+    "reviewer": "Codex agent — actual offline browser and image review, physical device/listening not_run",
+    "evidence": "docs/nature-readable/verification/quake-preview-current/report.json"
+  },
+  "offline": {
+    "status": "passed",
+    "reviewer": "Codex agent — actual offline browser and image review, physical device/listening not_run",
+    "evidence": "docs/nature-readable/verification/quake-preview-current/report.json"
+  }
+}

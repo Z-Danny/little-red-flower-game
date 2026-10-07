@@ -8,6 +8,7 @@ export function JourneySettings({
   musicMuted,
   onMusicMute,
   onReset,
+  onManageSave,
   navigationLocked,
 }: {
   onClose: () => void;
@@ -16,6 +17,7 @@ export function JourneySettings({
   musicMuted: boolean;
   onMusicMute: () => void;
   onReset: () => void;
+  onManageSave?: () => void;
   navigationLocked: boolean;
 }) {
   return (
@@ -48,6 +50,7 @@ export function JourneySettings({
           {musicMuted ? '首页／地图音乐已关' : '首页／地图音乐已开'}
         </button>
       </div>
+      {onManageSave && <button type="button" className="garden-reset" disabled={navigationLocked} onClick={onManageSave}>存档管理 / 导入导出</button>}
       <button
         type="button"
         className="garden-reset"

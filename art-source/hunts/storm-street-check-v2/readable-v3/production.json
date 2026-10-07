@@ -1,0 +1,172 @@
+{
+  "pipelineVersion": 3,
+  "id": "storm-street-check-v2",
+  "authorId": "storm-street-check-v2",
+  "skinName": "readable-v3",
+  "sourceSha256": "7349cc756bff948818d77086156a35cd8b3b553daa93571cb2ef94648234c775",
+  "draftSkinSha256": "b58d86656c45449d5ccda738259c3c9f185b92dfece1db90d56861f4f4697208",
+  "world": [
+    720,
+    1280
+  ],
+  "output": "public/levels/hunts/storm-street-check-v2/readable-v3",
+  "skin": "content/scenes/storm-street-check-v2/skins/readable-v3.json",
+  "targets": [
+    {
+      "id": "flooded_underpass",
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "wet_power_box",
+      "color": [
+        0,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "missing_cover",
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "loose_sign",
+      "color": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "leaning_fence",
+      "color": [
+        255,
+        0,
+        255
+      ]
+    }
+  ],
+  "criticalRegions": [
+    {
+      "x": 455,
+      "y": 729,
+      "w": 112,
+      "h": 112
+    },
+    {
+      "x": 390,
+      "y": 814,
+      "w": 92,
+      "h": 92
+    },
+    {
+      "x": 345,
+      "y": 646,
+      "w": 132,
+      "h": 147
+    },
+    {
+      "x": 204,
+      "y": 811,
+      "w": 117,
+      "h": 127
+    }
+  ],
+  "corrections": {
+    "targets": {
+      "missing_cover": {
+        "hitFillPolygons": [
+          [
+            [
+              252,
+              598
+            ],
+            [
+              261,
+              592
+            ],
+            [
+              280,
+              589
+            ],
+            [
+              300,
+              591
+            ],
+            [
+              320,
+              598
+            ],
+            [
+              327,
+              606
+            ],
+            [
+              314,
+              614
+            ],
+            [
+              284,
+              618
+            ],
+            [
+              262,
+              613
+            ]
+          ]
+        ],
+        "reason": "Clicking inside the visibly open manhole is valid; fill only the hole within its physical rim."
+      }
+    },
+    "characters": {}
+  },
+  "effects": {
+    "weatherPolygons": [
+      [
+        [
+          119,
+          207
+        ],
+        [
+          605,
+          207
+        ],
+        [
+          605,
+          852
+        ],
+        [
+          119,
+          852
+        ]
+      ]
+    ],
+    "waterPolygons": [
+      [
+        [
+          119,
+          465
+        ],
+        [
+          605,
+          465
+        ],
+        [
+          605,
+          852
+        ],
+        [
+          119,
+          852
+        ]
+      ]
+    ]
+  }
+}

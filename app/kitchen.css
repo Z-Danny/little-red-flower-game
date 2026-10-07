@@ -70,3 +70,6 @@
 
 @media(max-width:360px){.kitchen-hud h1{font-size:12px}.kitchen-menu,.kitchen-result{padding:20px}}
 @media(prefers-reduced-motion:reduce){.kitchen-player *{animation:none!important;transition:none!important}}
+
+.kitchen-toast[data-feedback="wrong-tool"]{background:#6a3029f0;color:#fff0d7;border:1px solid #f5b49a}
+.kitchen-toast[data-feedback="evacuate"]{background:#314c3bf0;color:#fff0ca;border:1px solid #efd494;line-height:1.5}

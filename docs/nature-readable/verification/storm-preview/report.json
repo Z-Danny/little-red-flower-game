@@ -1,0 +1,20 @@
+{
+  "status": "failed",
+  "startedAt": "2026-10-07T06:15:13.225Z",
+  "html": "C:\\Users\\LEGION\\Documents\\Codex\\2026-09-19\\https-github-com-z-danny-little-2\\little-red-flower-game\\outputs\\hunt-preview\\nature-storm-v4\\小红花应急行动.html",
+  "htmlSha256": "c20a080b19d96d0f6d98ce6765a1521612e1be64c8800a5ee22bcc6b26a85b5f",
+  "fixture": "Only other levels are completed in an isolated save to unlock entry. Test levels are uncompleted. All hits, pause/retry and review answers use real pointer input. Browser clock is controlled for deterministic inspection; no reducer/completion/reward injection.",
+  "checks": [],
+  "screenshots": [
+    "storm-street-check-v2-320x568-clues.png",
+    "storm-street-check-v2-320x568-FAILED.png"
+  ],
+  "errors": [],
+  "network": [],
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "browserClosed": true,
+  "browser": "154.0.4258.37",
+  "failure": "AssertionError [ERR_ASSERTION]: loose_sign does not collide with visible clue row (136.44444444444443 vs 151)\n    at file:///C:/Users/LEGION/Documents/Codex/2026-09-19/https-github-com-z-danny-little-2/little-red-flower-game/scripts/test-nature-readable-browser.mjs:61:2",
+  "finishedAt": "2026-10-07T06:15:18.362Z"
+}

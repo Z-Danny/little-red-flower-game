@@ -1,5 +1,9 @@
 /** Presentation profiles are independent of the recognition/reward state machine. */
 export type HuntPresentation = {
+  /** Optional teaching overlays; never modify hit areas, time or rewards. */
+  targetFeedback?: Record<string, { label: string; caption: string }>;
+  retainLastLesson?: boolean;
+  compareEnding?: boolean;
   location: string;
   environment: 'storm' | 'none';
   characters: 'storm' | 'breathing' | 'static';

@@ -4,7 +4,7 @@
     "startLabel": "开始居家检查"
   },
   "flood-kit": {
-    "description": "汛期临近，家里的应急包还没备齐。找出场景中需要准备的物品。",
+    "description": "背包只能放五件物品。挑选应急用品装入，点背包查看或取出，装满后确认出发。",
     "startLabel": "开始整理应急包"
   },
   "quake-bedroom-v2": {
@@ -44,7 +44,7 @@
     "startLabel": "开始转移待援"
   },
   "clear-corridor": {
-    "description": "回家的楼道被自家杂物占住了。整理眼前的物品，让通道重新畅通。",
+    "description": "平日的楼道被自家杂物占住了。选择物品和合适去处，别把问题搬到别的角落；收好后，再检查通道。",
     "startLabel": "开始整理楼道"
   },
   "lift-wait": {

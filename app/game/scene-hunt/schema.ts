@@ -109,6 +109,15 @@ export function checkHunt(pack: HuntPack) {
     typeof view.celebration !== 'boolean'
   )
     throw Error('Missing hunt presentation text');
+  if (view.targetFeedback) {
+    for (const [id, feedback] of Object.entries(view.targetFeedback)) {
+      if (!r.targets.some(t => t.id === id) || !feedback.label?.trim() ||
+          feedback.label.length > 8 || !feedback.caption?.trim())
+        throw Error('Invalid target teaching feedback');
+    }
+  }
+  if ([view.retainLastLesson, view.compareEnding].some(v => v !== undefined && typeof v !== 'boolean'))
+    throw Error('Invalid optional teaching presentation');
   if (view.environment === 'storm' && (!s.outside || !s.entry))
     throw Error('Storm requires weather regions');
   if (s.outside) checkBox(s.outside);

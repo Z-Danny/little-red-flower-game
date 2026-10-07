@@ -60,3 +60,7 @@ next-env.d.ts
 /h5/node_modules/
 /h5/test-results/
 /.pnpm-store/
+
+# Local Python bytecode cache
+__pycache__/
+*.pyc

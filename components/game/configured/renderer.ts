@@ -1,5 +1,6 @@
 import { scenePoses } from '@/app/game/runtime/scene';
 import { canvasLabelFont } from '@/app/game/typography';
+import { relevantZones } from '@/app/game/runtime/drop-zones';
 import { matches } from '@/app/game/runtime/engine';
 import type { LevelPackage, Point, Run } from '@/app/game/runtime/schema';
 import type { Art } from './art';
@@ -10,10 +11,22 @@ export function render(ctx: CanvasRenderingContext2D, pack: LevelPackage, art: A
   const { width, height } = pack.skin.world;
   const backgroundBox = pack.skin.assets[pack.skin.background].sceneBounds ?? { x: 0, y: 0, w: width, h: height };
   ctx.drawImage(art[pack.skin.background].image, backgroundBox.x, backgroundBox.y, backgroundBox.w, backgroundBox.h);
-  if (selected || drag) for (const [id,label] of Object.entries(pack.skin.zoneLabels ?? {})) {
+  const source = drag?.id ?? selected;
+  if (source) for (const id of relevantZones(pack, run, source)) {
+    const label = pack.skin.zoneLabels?.[id] ?? id;
     const b=pack.skin.zones[id]; ctx.save(); ctx.strokeStyle='#f6d89b'; ctx.fillStyle='#24493b55'; ctx.lineWidth=3; ctx.setLineDash([10,8]);
     ctx.beginPath(); ctx.roundRect(b.x,b.y,b.w,b.h,18); ctx.fill(); ctx.stroke(); ctx.setLineDash([]);
     ctx.fillStyle='#fff4d9'; ctx.font=canvasLabelFont(20); ctx.textAlign='center'; ctx.fillText(label,b.x+b.w/2,b.y+b.h-15,b.w-12); ctx.restore();
+  }
+  const checkingRule = run.action && pack.rules.interactions.find(rule => rule.id === run.action?.rule);
+  const checks = checkingRule ? pack.skin.animations[checkingRule.animation].checks : undefined;
+  if (checks && run.action) {
+    const time = run.action.age / run.action.duration;
+    for (const check of checks) if (time >= check.at) {
+      const box = pack.skin.zones[check.zone];
+      ctx.save(); ctx.fillStyle = '#87cfa329'; ctx.strokeStyle = '#3f805b'; ctx.lineWidth = 4;
+      ctx.setLineDash([12, 9]); ctx.beginPath(); ctx.roundRect(box.x, box.y, box.w, box.h, 16); ctx.fill(); ctx.stroke(); ctx.restore();
+    }
   }
   const poses = scenePoses(pack, run, reduced);
   const response = pack.skin.response, pressure = configuredPressure(pack, run); let smokeDrawn = false;

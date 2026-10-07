@@ -1,0 +1,170 @@
+[
+  {
+    "id": "typhoon-home",
+    "title": "台风居家准备",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "flood-kit",
+    "title": "汛期应急包",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "quake-bedroom-v2",
+    "title": "家庭防震准备",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "storm-street-check-v2",
+    "title": "风雨街口找险",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "thunder-park-v2",
+    "title": "雷雨公园找险",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "forest-fire-sources-v2",
+    "title": "林缘火源识别",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "rain-street-preparation-v1",
+    "title": "暴雨街道找险",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "flood-house-response-v1",
+    "title": "洪水居家避险",
+    "referenceSeconds": 120,
+    "threeSeconds": 60,
+    "twoSeconds": 96
+  },
+  {
+    "id": "quake-cover-practice",
+    "title": "地震室内避险",
+    "referenceSeconds": 60,
+    "threeSeconds": 30,
+    "twoSeconds": 48
+  },
+  {
+    "id": "quake-exit-practice",
+    "title": "震后楼梯撤离",
+    "referenceSeconds": 75,
+    "threeSeconds": 37.5,
+    "twoSeconds": 60
+  },
+  {
+    "id": "flood-highground-practice",
+    "title": "洪水高处待援",
+    "referenceSeconds": 90,
+    "threeSeconds": 45,
+    "twoSeconds": 72
+  },
+  {
+    "id": "clear-corridor",
+    "title": "楼道杂物清理",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "lift-wait",
+    "title": "电梯故障待援",
+    "referenceSeconds": 90,
+    "threeSeconds": 45,
+    "twoSeconds": 72
+  },
+  {
+    "id": "well-call",
+    "title": "井口遇险求助",
+    "referenceSeconds": 90,
+    "threeSeconds": 45,
+    "twoSeconds": 72
+  },
+  {
+    "id": "clear-corridor-check-v2",
+    "title": "楼道隐患巡查",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "car-window-practice",
+    "title": "汽车落水离车",
+    "referenceSeconds": 60,
+    "threeSeconds": 30,
+    "twoSeconds": 48
+  },
+  {
+    "id": "lift-contact-practice",
+    "title": "电梯定位求助",
+    "referenceSeconds": 300,
+    "threeSeconds": 150,
+    "twoSeconds": 240
+  },
+  {
+    "id": "collapse-signal-practice",
+    "title": "塌陷被困求救",
+    "referenceSeconds": 80,
+    "threeSeconds": 40,
+    "twoSeconds": 64
+  },
+  {
+    "id": "oil-fire",
+    "title": "油锅起火处置",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "charging-bedroom",
+    "title": "卧室充电巡查",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "bedroom-night-check-v2",
+    "title": "睡前防火巡查",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "kitchen-before-cooking-v2",
+    "title": "厨房开火检查",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "fire-shelter-practice",
+    "title": "火灾隔烟待援",
+    "referenceSeconds": 50,
+    "threeSeconds": 25,
+    "twoSeconds": 40
+  },
+  {
+    "id": "fire-stairs-practice",
+    "title": "火灾楼梯撤离",
+    "referenceSeconds": 75,
+    "threeSeconds": 37.5,
+    "twoSeconds": 60
+  }
+]

@@ -10,6 +10,7 @@ import rules from '../content/templates/response/level.json';
 import skin from '../content/templates/response/skins/illustrated.json';
 import { validatePackage } from '../app/game/runtime/validate';
 import { kitchenPressure, kitchenTempo } from '../app/game/kitchen/experience';
+import { timing } from '../app/game/kitchen/config';
 import { createRun, reduceRun } from '../app/game/kitchen/model';
 const frame: AudioFrame = { elapsed: 1000, active: true, intensity: .3, flame: 1, smoke: .5, resolved: false, tier: 0, milestones: [] };
 test('waiting increases flame, soot, heat and fear monotonically',()=>{
@@ -156,4 +157,23 @@ test('kitchen character policy rejects voice loading/playback while preserving m
 test('optional per-scene character policy is validated without changing old templates',()=>{
  const s=structuredClone(skin) as any;s.response.cues.characterEnabled=false;assert.ok(validatePackage(rules,s));
  for(const value of ['false',0,null]){s.response.cues.characterEnabled=value;assert.throws(()=>validatePackage(rules,s),/characterEnabled/);}
+});
+
+test('kitchen failure feedback leaves enough time for the complete material and flare WAVs', () => {
+ const durationMs = (id: 'fx-water' | 'cloth' | 'flare') => {
+  const bytes = readFileSync(resolve('public', manifest.assets[id].src.slice(1)));
+  let byteRate = 0, dataLength = 0;
+  for (let p = 12; p + 8 <= bytes.length;) {
+   const type = bytes.toString('ascii', p, p + 4), size = bytes.readUInt32LE(p + 4);
+   if (type === 'fmt ') byteRate = bytes.readUInt32LE(p + 16);
+   if (type === 'data') dataLength = size;
+   p += 8 + size + size % 2;
+  }
+  assert.ok(byteRate > 0 && dataLength > 0);return dataLength / byteRate * 1000;
+ };
+ for (const kind of ['water', 'cloth'] as const) {
+  const startsAt = timing.wrong * kitchen50sCues.actions[kind].at;
+  const soundDuration = Math.max(durationMs(kind === 'water' ? 'fx-water' : 'cloth'), durationMs('flare'));
+  assert.ok(timing.failureFeedback >= startsAt + soundDuration + 100, kind + ' sound would be cut off by failure');
+ }
 });

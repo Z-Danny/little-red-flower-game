@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-27",
+  "htmlSha256": "f2e928dac9b3013b57f02291858a79603f2b08aa88f348fed99d4abf4b099ff5",
+  "exportChecks": 7,
+  "typecheck": "passed",
+  "transcriptUnitTests": 234,
+  "fullTestChain": "passed",
+  "browser": {
+    "status": "passed",
+    "checks": [
+      "390x844: actual bag opens; 5 slots; capacity enforced; inspect/remove/repack; wrong departure fails with 0 flowers; corrected departure awards 3; pause and keyboard work",
+      "repeat success does not duplicate reward; a correct full bag still times out without departure; retry resets inventory",
+      "320x568: actual bag opens; 5 slots; capacity enforced; inspect/remove/repack; wrong departure fails with 0 flowers; corrected departure awards 3; pause and keyboard work",
+      "1280x900: actual bag opens; 5 slots; capacity enforced; inspect/remove/repack; wrong departure fails with 0 flowers; corrected departure awards 3; pause and keyboard work"
+    ],
+    "pageErrors": 0,
+    "networkRequests": 0,
+    "closed": true
+  },
+  "physicalDevice": "not_run",
+  "humanListening": "not_run"
+}

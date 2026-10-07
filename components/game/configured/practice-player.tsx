@@ -1,4 +1,5 @@
 'use client';
+import type { CompletionTiming } from '@/app/game/journey/time-reward';
 import { levelTitle } from '@/app/game/journey/presentation';
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { completedForReward, createRun, emotion, enabled, failureRevealing, findRule, reduceRun } from '@/app/game/runtime/engine';
@@ -21,7 +22,7 @@ import { LevelLaunchStatus, useLevelAutoStart } from '../level-launch';
 import { CountdownBar } from '../scene-hunt/countdown-bar';
 import { PauseMenu } from '../pause-menu';
 
-type Props = { pack: LevelPackage; onBack: () => void; onFinish: (id: string, stars: number) => void; journey?: boolean; autoStart?: boolean };
+type Props = { pack: LevelPackage; onBack: () => void; onFinish: (id: string, stars: number, timing: CompletionTiming) => void; journey?: boolean; autoStart?: boolean };
 export function PracticePlayer({ pack, onBack, onFinish, journey=false, autoStart=false }: Props) {
   const viewport = useGameViewport(pack.skin.world);
   const surface = useRef<HTMLElement>(null);
@@ -89,7 +90,7 @@ export function PracticePlayer({ pack, onBack, onFinish, journey=false, autoStar
     return () => cancelAnimationFrame(frame);
   }, [pack]);
   useEffect(() => {
-    if (runOwner===pack.rules.id && completedForReward(run) && !reported.current) { reported.current = true; onFinish(pack.rules.id, run.stars); }
+    if (runOwner===pack.rules.id && completedForReward(run) && !reported.current) { reported.current = true; onFinish(pack.rules.id, run.stars, { elapsedMs: Math.max(0, run.elapsed - run.settleAge) }); }
   }, [run.phase, run.stars, run.escaped, onFinish, pack.rules.id,runOwner]);
   const stageKey=(run.stages??[]).join('|'), resolvedKey=run.resolved.join('|');
   useEffect(() => { if(practice){drag.current=null;setSelected(null);} },[practice,stageKey,resolvedKey,run.phase]);

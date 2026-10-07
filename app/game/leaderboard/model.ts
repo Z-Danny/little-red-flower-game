@@ -1,9 +1,9 @@
 /** Pure leaderboard rules. No browser, rendering or level-engine dependencies. */
 export type ScoreCaps = Readonly<Record<string, number>>;
 export type ProfileInput = { name: string; region: string };
-export type Player = ProfileInput & { id: string; createdAt: number; completed: Record<string, number> };
+export type Player = ProfileInput & { id: string; createdAt: number; allLevelsUnlocked?: boolean; completed: Record<string, number> };
 export type BoardState = { version: 1; activePlayerId: string; players: Player[] };
-export type CompletionReceipt = { levelId:string; playerId:string; reward:number; before:Record<string,number> };
+export type CompletionReceipt = { levelId:string; playerId:string; reward:number; score?:number; best?:number; before:Record<string,number> };
 export type RankedPlayer = ProfileInput & { id: string; flowers: number; rank: number | null };
 export type BoardSnapshot = {
   scope: 'local' | 'online';
@@ -19,11 +19,14 @@ export type BoardSnapshot = {
 /** Async seam for a future authenticated API. Online results must be verified server-side. */
 export interface LeaderboardProvider {
   read(): Promise<BoardSnapshot>;
+  exportBackup(expectedPlayerId: string): Promise<string>;
+  importBackup(text: string, expectedPlayerId: string): Promise<BoardSnapshot>;
   createPlayer(profile: ProfileInput): Promise<BoardSnapshot>;
   updateProfile(profile: ProfileInput): Promise<BoardSnapshot>;
   switchPlayer(id: string): Promise<BoardSnapshot>;
   recordResult(levelId: string, flowers: number, playerId: string): Promise<BoardSnapshot>;
-  claimCompletion(levelId: string, playerId: string): Promise<{ snapshot:BoardSnapshot; receipt:CompletionReceipt }>;
+  claimCompletion(levelId: string, playerId: string, flowers?: number): Promise<{ snapshot:BoardSnapshot; receipt:CompletionReceipt }>;
+  unlockAllLevels(expectedPlayerId: string): Promise<BoardSnapshot>;
   resetCurrentProgress(expectedPlayerId?: string): Promise<BoardSnapshot>;
   subscribe?(onChange: () => void): () => void;
 }
@@ -81,14 +84,17 @@ export function recordBest(state: BoardState, id: string, flowers: number, caps:
     : player) };
 }
 
-/** Completion rewards are collectible once. Legacy best scores remain byte-for-byte values. */
-export function claimFirstCompletion(state:BoardState,id:string,playerId:string,caps:ScoreCaps) {
+/** Store the best rating; award only the improvement. Old saves never lose flowers. */
+export function claimFirstCompletion(state:BoardState,id:string,playerId:string,caps:ScoreCaps, flowers = 3) {
   if (!own(caps,id)) throw new Error('该关卡尚未开放。');
   const player=state.players.find(p=>p.id===playerId);
   if(!player)throw new Error('找不到本次游玩的玩家，成绩未写入。');
-  const reward=own(player.completed,id)&&player.completed[id]>0?0:3;
-  const receipt:CompletionReceipt={levelId:id,playerId,reward,before:sanitizeScores(player.completed,caps)};
-  return {state:reward?recordBest(state,id,3,caps,playerId):state,receipt};
+  if (!Number.isInteger(flowers) || flowers < 1 || flowers > caps[id]) throw new Error('无效的关卡成绩。');
+  const before = sanitizeScores(player.completed, caps);
+  const best = Math.max(before[id] ?? 0, flowers);
+  const reward = best - (before[id] ?? 0);
+  const receipt:CompletionReceipt={levelId:id,playerId,reward,score:flowers,best,before};
+  return {state:reward?recordBest(state,id,best,caps,playerId):state,receipt};
 }
 
 /** Do not erase unknown/disabled level records; only active caps contribute to rankings. */
@@ -104,7 +110,7 @@ export function parseState(value: unknown): BoardState {
     if (isRecord(item.completed)) for (const [key, score] of Object.entries(item.completed)) {
       if (/^[a-z0-9][a-z0-9_-]{0,99}$/i.test(key) && key !== 'constructor' && key !== 'prototype' && typeof score === 'number' && Number.isInteger(score) && score >= 1 && score <= 3) completed[key] = score;
     }
-    return { ...profile, id: item.id, createdAt: item.createdAt, completed };
+    return { ...profile, id: item.id, createdAt: item.createdAt, completed, ...(item.allLevelsUnlocked === true ? { allLevelsUnlocked: true } : {}) };
   });
   return { version: 1, players, activePlayerId: typeof value.activePlayerId === 'string' && ids.has(value.activePlayerId) ? value.activePlayerId : players[0].id };
 }

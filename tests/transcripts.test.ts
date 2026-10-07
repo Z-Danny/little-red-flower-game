@@ -15,6 +15,7 @@ const pack=(id:string)=>validatePackage(json(`content/levels/${id}/level.json`),
 const tick=(p:LevelPackage,r:Run,ms:number)=>{for(let n=0;n<ms;n+=100)r=reduceRun(p,r,{type:'tick',ms:Math.min(100,ms-n)});return r;};
 const start=(p:LevelPackage,r:Run,i:Interaction)=>reduceRun(p,r,{type:'interact',input:{source:i.source,mode:i.mode,target:i.target}});
 const act=(p:LevelPackage,r:Run,i:Interaction)=>tick(p,start(p,r,i),p.skin.animations[i.animation].durationMs);
+const depart=(p:LevelPackage,r:Run)=>{if(p.rules.inventory){assert.equal(r.phase,'playing','packing all items must not auto-complete');return reduceRun(p,r,{type:'depart'});}return r;};
 const permutations=<T,>(a:T[]):T[][]=>a.length?a.flatMap((v,i)=>permutations(a.filter((_,j)=>i!==j)).map(rest=>[v,...rest])):[[]];
 test('all 53 manuscripts have explicit dispositions; missing14 and specialist gates not silently enabled',()=>{
  const d=json('docs/transcript-batch-v1/设计与审查清单.json');assert.equal(d.entries.length,53);assert.equal(new Set(d.entries.map((e:any)=>e.number)).size,53);assert.equal(d.entries.some((e:any)=>e.number===14),false);assert.equal(d.firstBatch.length,4);
@@ -22,18 +23,19 @@ test('all 53 manuscripts have explicit dispositions; missing14 and specialist ga
 });
 for(const id of ids){
  const p=pack(id),correct=p.rules.interactions.filter(i=>i.outcome==='correct');
- for(const [n,order] of permutations(correct).entries())test(`${id}: legal order ${n+1}/${permutations(correct).length}`,()=>{
-  let r=createRun(p);for(const i of order)r=act(p,r,i);r=tick(p,r,2000);
+ const legalOrders=permutations(correct).filter(order=>{const done=new Set<string>();return order.every(rule=>{const object=p.rules.objects.find(o=>o.id===rule.source)!;if([...object.requires??[],...rule.requires??[]].some(id=>!done.has(id)))return false;rule.grants.forEach(id=>done.add(id));return true;});});
+ for(const [n,order] of legalOrders.entries())test(`${id}: legal order ${n+1}/${legalOrders.length}`,()=>{
+  let r=createRun(p);for(const i of order)r=act(p,r,i);r=tick(p,depart(p,r),2000);
   assert.equal(r.phase,'complete');assert.deepEqual([...r.resolved].sort(),[...p.rules.completion.requires].sort());assert.equal(r.stars,3);
  });
  test(`${id}: waiting never invents a disaster; timed collection expires while response practice stays open`,()=>{
   let r=tick(p,createRun(p),20*60*1000);assert.equal(r.risk,0);assert.equal(r.peakSeen,false);assert.equal(r.phase,p.rules.risk.timeout==='fail'?'failed':'playing');
   if(p.rules.risk.timeout==='fail'){assert.equal(r.stars,0);assert.equal(r.elapsed,50000);r=reduceRun(p,r,{type:'reset'});}
-  for(const i of correct)r=act(p,r,i);assert.equal(tick(p,r,2000).stars,3);
+  for(const i of correct)r=act(p,r,i);assert.equal(tick(p,depart(p,r),2000).stars,3);
  });
  test(`${id}: animation durations, late commits, duplicate immunity, final pose continuity`,()=>{
   let r=createRun(p);
-  for(const i of correct){const duration=p.skin.animations[i.animation].durationMs;assert.ok(duration>=500&&duration<=1500);
+  for(const i of correct){const duration=p.skin.animations[i.animation].durationMs;assert.ok(duration>=500&&duration<=(p.skin.animations[i.animation].checks ? 6000 : 1500));
    let during=tick(p,start(p,r,i),duration-1);assert.ok(i.grants.every(g=>!during.resolved.includes(g)));assert.equal(start(p,during,i),during);
    const endPoses=scenePoses(p,{...during,action:{...during.action!,age:duration}});
    r=tick(p,during,1);assert.ok(i.grants.every(g=>r.resolved.includes(g)));assert.equal(start(p,r,i),r);
@@ -55,7 +57,7 @@ for(const id of ids){
  test(`${id}: HUD does not expose response answer checklist or fake disaster countdown`,()=>{
   const html=renderToStaticMarkup(createElement(ConfiguredPlayer,{pack:p,onBack:()=>{},onFinish:()=>{}}));assert.ok(!html.includes('风险倒计时'));if(p.rules.risk.timeout==='fail'){assert.ok(html.includes('role="progressbar"'));assert.ok(!html.includes('<time'));assert.ok(html.includes('物件剪影提示'));}else assert.ok(html.includes('训练用时'));
   if(p.rules.kind==='response')assert.ok(!html.includes('configured-targets'));
-  else for(const g of p.rules.goals)assert.ok(html.includes(p.skin.assets[p.skin.poses[g.object].asset].src));
+  else for(const g of p.rules.goals.filter(goal=>goal.showTarget!==false))assert.ok(html.includes(p.skin.assets[p.skin.poses[g.object].asset].src));
  });
 }
 test('waiting/rescue endings never open elevator doors or remove the open hazardous well',()=>{

@@ -36,7 +36,7 @@ function box(value: unknown, p: string, partial = false) {
 /** Fail closed, before a package is registered or exported. All messages include a JSON field path. */
 export function validatePackage(rulesInput: unknown, skinInput: unknown, options: { embedded?: boolean } = {}): LevelPackage {
   const r = obj(rulesInput, 'level'), s = obj(skinInput, 'skin');
-  exactKeys(r, ['schemaVersion','id','kind','title','order','location','description','safety','briefing','objects','goals','interactions','risk','completion','stages'], 'level');
+  exactKeys(r, ['schemaVersion','id','kind','title','order','location','description','safety','briefing','objects','goals','interactions','risk','completion','stages','inventory'], 'level');
   exactKeys(s, ['schemaVersion','id','world','framing','assets','background','poses','zones','states','animations','effects','labels','zoneLabels','response','presentation','zoneConditions'], 'skin');
   oneOf(r.schemaVersion, [1], 'level.schemaVersion'); oneOf(s.schemaVersion, [1], 'skin.schemaVersion');
   id(r.id, 'level.id'); id(s.id, 'skin.id'); oneOf(r.kind, ['prevention', 'response'], 'level.kind');
@@ -70,8 +70,9 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
     return when;
   };
   for (const o of objects) {
-    exactKeys(o, ['id','label','input','requires','disabledWhen','stages'], `objects.${o.id}`);
+    exactKeys(o, ['id','label','input','requires','disabledWhen','stages','hudAction'], `objects.${o.id}`);
     text(o.label, `objects.${o.id}.label`); oneOf(o.input, ['tap','drag','both','none'], `objects.${o.id}.input`);
+    if (o.hudAction !== undefined && (typeof o.hudAction !== 'boolean' || o.input !== 'tap')) fail(`objects.${o.id}.hudAction`, '只适用于点击动作的布尔标记');
     refs(o.requires, goalIds, `objects.${o.id}.requires`); refs(o.disabledWhen, goalIds, `objects.${o.id}.disabledWhen`);
     refs(o.stages, stageIds, `objects.${o.id}.stages`);
   }
@@ -144,8 +145,22 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
   }
   const motions = obj(s.animations, 'skin.animations');
   for (const [key, value] of Object.entries(motions)) {
-    id(key, `animations.${key}`); const a = obj(value, `animations.${key}`); exactKeys(a, ['durationMs','tracks'], `animations.${key}`);
-    number(a.durationMs, `animations.${key}.durationMs`, 500, 1500);
+    id(key, `animations.${key}`); const a = obj(value, `animations.${key}`); exactKeys(a, ['durationMs','tracks','checks'], `animations.${key}`);
+    number(a.durationMs, `animations.${key}.durationMs`, 500, a.checks === undefined ? 1500 : 6000);
+    if (a.checks !== undefined) {
+      const checks = array(a.checks, `animations.${key}.checks`);
+      if (!checks.length || checks.length > 6) fail(`animations.${key}.checks`, '检查动画需要 1～6 项');
+      let previous = -1;
+      for (const [i, raw] of checks.entries()) {
+        const p = `animations.${key}.checks[${i}]`, check = obj(raw, p);
+        exactKeys(check, ['at','zone','label'], p);
+        const at = number(check.at, p + '.at', 0, .95);
+        if (at <= previous) fail(p, '检查点必须按时间递增');
+        previous = at;
+        refs([check.zone], new Set(Object.keys(zones)), p + '.zone');
+        text(check.label, p + '.label');
+      }
+    }
     const tracks = array(a.tracks, `animations.${key}.tracks`), seen = new Set<string>();
     if (!tracks.length) fail(`animations.${key}.tracks`, '处理动画至少有一条轨道');
     for (const [i, raw] of tracks.entries()) {
@@ -331,6 +346,31 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
         if (/(?:voice|speech|tts|narrat)/i.test(value)) fail(`${q}.cues.${key}`, '禁止文字朗读或语句音轨');
       }
     }
+  }
+  if (r.inventory !== undefined) {
+    const p = 'level.inventory', inventory = obj(r.inventory, p);
+    exactKeys(inventory, ['container','capacity','items','required','failureReasons'], p);
+    if (r.kind !== 'prevention' || r.risk.mode !== 'elapsed' || r.risk.timeout !== 'fail' || stages.length) fail(p, '背包仅适用于无阶段的限时收纳');
+    refs([inventory.container], objectIds, p + '.container');
+    if (objects.find(o => o.id === inventory.container)?.input !== 'tap') fail(p, '容器必须可点击');
+    number(inventory.capacity, p + '.capacity', 1, 6);
+    if (!Number.isInteger(inventory.capacity)) fail(p, '容量必须是整数');
+    refs(inventory.items, objectIds, p + '.items', false); refs(inventory.required, objectIds, p + '.required', false);
+    if (new Set(inventory.items).size !== inventory.items.length || inventory.items.length > 12 || inventory.items.includes(inventory.container)) fail(p, '物品不得重复或包括容器，最多12件');
+    if (inventory.required.length !== inventory.capacity || new Set(inventory.required).size !== inventory.required.length || inventory.required.some((id: string) => !inventory.items.includes(id))) fail(p, '正确物品必须唯一、属于候选物品且恰好填满容量');
+    const explanations = obj(inventory.failureReasons, p + '.failureReasons');
+    exactKeys(explanations, inventory.items.filter((id: string) => !inventory.required.includes(id)), p + '.failureReasons');
+    for (const item of inventory.items) {
+      if (!inventory.required.includes(item)) text(explanations[item], p + '.failureReasons.' + item);
+      const object = objects.find(o => o.id === item), interactions = rules.filter(rule => rule.source === item);
+      if (object.input !== 'tap' || object.requires?.length || object.stages?.length || interactions.length !== 1) fail(p, '每件物品需一个无前置点击收纳动作');
+      const rule = interactions[0];
+      if (rule.mode !== 'tap' || rule.failure || rule.escape || rule.requires?.length || rule.unless?.length || rule.outcome === 'danger') fail(p, '物品装入时不判输赢');
+      if (inventory.required.includes(item) ? rule.outcome !== 'correct' || rule.grants.length !== 1 : rule.outcome !== 'neutral' || rule.grants.length !== 0) fail(p, '正确物品授予一个目标，干扰物不授予目标');
+      if (inventory.required.includes(item) && goals.find(goal => goal.id === rule.grants[0])?.object !== item) fail(p, '收纳目标必须属于该物品');
+      if (inventory.required.includes(item) && (object.disabledWhen?.length !== 1 || object.disabledWhen[0] !== rule.grants[0])) fail(p, '正确物品禁用条件必须绑定自身目标');
+    }
+    if (goals.length !== inventory.capacity || goals.some(goal => !inventory.required.includes(goal.object)) || rules.some(rule => !inventory.items.includes(rule.source))) fail(p, '目标与动作只能对应背包物品');
   }
   // Exhaust all monotone goal states, not just a topological approximation. This catches
   // mutually exclusive locks, shadowed rules, premature disabled objects and dead-end choices.

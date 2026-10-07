@@ -1,0 +1,205 @@
+{
+  "pipelineVersion": 3,
+  "id": "quake-bedroom-v2",
+  "authorId": "quake-bedroom-v2",
+  "skinName": "readable-v3",
+  "sourceSha256": "581e3fa30a28e137147da5ebe5d2a77de1c479af2c7c08ade5259c93d8c61c7d",
+  "draftSkinSha256": "4ca54b39e595fa42d3e2efcee66223179c9f0e93f1229d74a147c46e00904a27",
+  "world": [
+    720,
+    1280
+  ],
+  "output": "public/levels/hunts/quake-bedroom-v2/readable-v3",
+  "skin": "content/scenes/quake-bedroom-v2/skins/readable-v3.json",
+  "targets": [
+    {
+      "id": "unsecured_cabinet",
+      "color": [
+        255,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "heavy_top",
+      "color": [
+        0,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "overbed_frame",
+      "color": [
+        0,
+        0,
+        255
+      ]
+    },
+    {
+      "id": "exit_boxes",
+      "color": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "id": "blocked_shelter",
+      "color": [
+        255,
+        0,
+        255
+      ]
+    }
+  ],
+  "criticalRegions": [
+    {
+      "x": 266,
+      "y": 500,
+      "w": 70,
+      "h": 90
+    },
+    {
+      "x": 346,
+      "y": 596,
+      "w": 60,
+      "h": 70
+    }
+  ],
+  "corrections": {
+    "targets": {
+      "overbed_frame": {
+        "keepPolygons": [
+          [
+            [
+              333,
+              417
+            ],
+            [
+              456,
+              406
+            ],
+            [
+              456,
+              526
+            ],
+            [
+              333,
+              526
+            ]
+          ]
+        ],
+        "reason": "Mirror silhouette recalibrated against new mother, excluding the adjacent wall."
+      },
+      "heavy_top": {
+        "keepPolygons": [
+          [
+            [
+              111,
+              352
+            ],
+            [
+              202,
+              347
+            ],
+            [
+              215,
+              391
+            ],
+            [
+              207,
+              465
+            ],
+            [
+              176,
+              459
+            ],
+            [
+              177,
+              425
+            ],
+            [
+              116,
+              413
+            ]
+          ]
+        ],
+        "reason": "Trim generated fringe to visible pot and its plant; not the secure wooden cabinet."
+      },
+      "unsecured_cabinet": {
+        "keepPolygons": [
+          [
+            [
+              500,
+              393
+            ],
+            [
+              534,
+              363
+            ],
+            [
+              567,
+              358
+            ],
+            [
+              575,
+              366
+            ],
+            [
+              600,
+              342
+            ],
+            [
+              612,
+              436
+            ],
+            [
+              609,
+              445
+            ],
+            [
+              594,
+              439
+            ],
+            [
+              583,
+              412
+            ],
+            [
+              586,
+              594
+            ],
+            [
+              575,
+              601
+            ],
+            [
+              566,
+              621
+            ],
+            [
+              566,
+              690
+            ],
+            [
+              501,
+              680
+            ]
+          ]
+        ],
+        "reason": "Exclude background and foreground desk/lamp; retain cabinet and disconnected strap only."
+      },
+      "exit_boxes": {
+        "fillEnclosedHoles": true,
+        "reason": "The handle opening is inside the solid box footprint, not a pass-through target."
+      },
+      "blocked_shelter": {
+        "fillEnclosedHoles": true,
+        "reason": "Small handles within solid storage boxes are part of the visible clutter."
+      }
+    },
+    "characters": {}
+  },
+  "effects": {}
+}

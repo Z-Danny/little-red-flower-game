@@ -1,0 +1,7 @@
+{
+  "reason": "User requested upgrading corridor cleanup to choosing destinations, explanatory recovery and explicit passage inspection. This is an intentional rules change, not a skin-only change. Historical baselines remain untouched.",
+  "files": {
+    "content/levels/clear-corridor/level.json": "5dd24abfd9c6a43ca061cc2c3c98bbddabd322a29ea7a1d5ebc2fc7802188491",
+    "content/levels/clear-corridor/skins/paperbook.json": "c8e62c3dd9206831403bcd6f0ec192d98353f26c4d48ddc07d39dd75554514d4"
+  }
+}

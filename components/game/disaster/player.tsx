@@ -1,4 +1,5 @@
 'use client';
+import type { CompletionTiming } from '@/app/game/journey/time-reward';
 import {levelTitle,journeyTiming} from '@/app/game/journey/presentation';
 import { useEffect, useReducer, useRef, useState } from 'react';
 import type { DisasterPack, Point } from '@/app/game/disaster/schema';
@@ -41,7 +42,7 @@ export function DisasterPlayer({
   autoStart?:boolean;
   pack: DisasterPack;
   onBack: () => void;
-  onFinish: (id: string, flowers: number) => void;
+  onFinish: (id: string, flowers: number, timing: CompletionTiming) => void;
 }) {
   const viewport = useGameViewport(pack.skin);
   const [run, dispatch] = useReducer(
@@ -250,7 +251,7 @@ export function DisasterPlayer({
         s?.finish();
         if (!awardSent.current) {
           awardSent.current = true;
-          onFinish(pack.rules.id, run.stars);
+          onFinish(pack.rules.id, run.stars, { elapsedMs: run.elapsed + run.penalty });
         }
       }
       if (run.phase === 'evacuated') {

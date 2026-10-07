@@ -1,0 +1,42 @@
+{
+  "world": [
+    720,
+    1280
+  ],
+  "targets": {
+    "unsecured_cabinet": [
+      541,
+      415
+    ],
+    "heavy_top": [
+      144,
+      388
+    ],
+    "overbed_frame": [
+      403,
+      464
+    ],
+    "exit_boxes": [
+      201,
+      905
+    ],
+    "blocked_shelter": [
+      571,
+      873
+    ]
+  },
+  "background": [
+    442,
+    1022
+  ],
+  "targetInteriorRadius": {
+    "unsecured_cabinet": 41.0,
+    "heavy_top": 28.284271247461902,
+    "overbed_frame": 53.150729063673246,
+    "exit_boxes": 89.56003573022959,
+    "blocked_shelter": 29.732137494637012
+  },
+  "backgroundRadius": 158.0,
+  "method": "max Euclidean distance to exterior of real object-mask; no bbox centers",
+  "visualStatus": "samples require browser/semantic confirmation"
+}

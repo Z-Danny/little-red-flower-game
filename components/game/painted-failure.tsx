@@ -5,7 +5,7 @@ import { GardenDialog } from './journey/dialog';
 type FailureProps = {
   levelId: string;
   levelTitle: string;
-  kind: 'timeout' | 'unsafe-action';
+  kind: 'timeout' | 'unsafe-action' | 'wrong-inventory';
   reason: string;
   hint: string;
   progress: string;
@@ -68,7 +68,7 @@ export function PaintedFailure({
     };
   }, [finish]);
   const count = missed ? Math.max(0, Math.floor(missed.count)) : 0;
-  const roast = kind === 'unsafe-action'
+  const roast = kind === 'wrong-inventory' ? ['背包装满了，', '但还没选对。'] : kind === 'unsafe-action'
     ? ['这操作，', '小红花都看愣了。']
     : count > 0
       ? missed?.unit === '件'
@@ -123,7 +123,7 @@ export function PaintedFailure({
             <div className="painted-failure-review">
               <div className="painted-failure-review-heading">
                 <strong>
-                  {kind === 'timeout' ? '时间到！' : '这步踩雷了！'}
+                  {kind === 'timeout' ? '时间到！' : kind === 'wrong-inventory' ? '物品选错了！' : '这步踩雷了！'}
                 </strong>
                 <span data-testid="failure-progress">{progress}</span>
               </div>

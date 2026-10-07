@@ -214,3 +214,56 @@ test('new enabled levels change caps and rankings without editing UI or provider
   await provider.updateProfile({ name: '改名保留成绩', region: '' });
   assert.equal((await expanded.read()).entries[0].flowers, 3);
 });
+
+
+test('unlock all persists per player without awarding flowers; reset restores progression', async () => {
+  const { storage, provider } = setup();
+  const before = await provider.read();
+  const id = before.current.id;
+  const unlocked = await provider.unlockAllLevels(id);
+  assert.equal(unlocked.current.allLevelsUnlocked, true);
+  assert.deepEqual(unlocked.current.completed, before.current.completed);
+  assert.deepEqual(unlocked.entries, before.entries);
+  assert.deepEqual((await provider.unlockAllLevels(id)).entries, before.entries);
+  const reloaded = setup(storage, 'reloaded').provider;
+  assert.equal((await reloaded.read()).current.allLevelsUnlocked, true);
+  const other = await reloaded.createPlayer({ name: '另一位玩家', region: '' });
+  assert.notEqual(other.current.allLevelsUnlocked, true);
+  await assert.rejects(reloaded.unlockAllLevels(id), /切换/);
+  assert.notEqual((await reloaded.read()).current.allLevelsUnlocked, true);
+  await reloaded.switchPlayer(id);
+  await reloaded.recordResult('typhoon-home', 3, id);
+  assert.equal((await reloaded.read()).current.allLevelsUnlocked, true);
+  const reset = await reloaded.resetCurrentProgress(id);
+  assert.notEqual(reset.current.allLevelsUnlocked, true);
+  assert.deepEqual(reset.current.completed, {});
+});
+
+test('unlocked players can claim a later level once without completing prerequisites', async () => {
+  const storage = new MemoryStorage();
+  const provider = createLocalLeaderboard({ storage: () => storage, caps, id: () => 'unlocked-player', canEnter: () => false });
+  const { current } = await provider.read();
+  await assert.rejects(provider.claimCompletion('oil-fire', current.id), /上一关/);
+  await provider.unlockAllLevels(current.id);
+  const first = await provider.claimCompletion('oil-fire', current.id);
+  assert.equal(first.receipt.reward, 3);
+  assert.deepEqual(first.snapshot.current.completed, { 'oil-fire': 3 });
+  assert.equal((await provider.claimCompletion('oil-fire', current.id)).receipt.reward, 0);
+  await assert.rejects(provider.claimCompletion('unknown-level', current.id), /尚未开放/);
+});
+
+test('unlock flag only accepts boolean true and works in session-only storage', async () => {
+  const original = state();
+  original.players.forEach(player => { player.completed = {}; });
+  const malformed = JSON.parse(JSON.stringify(original));
+  malformed.players[0].allLevelsUnlocked = 'true';
+  assert.notEqual(parseState(malformed).players[0].allLevelsUnlocked, true);
+  assert.deepEqual(parseState(original), original);
+  const storage = new MemoryStorage();
+  storage.failWrite = true;
+  const { provider } = setup(storage);
+  const { current } = await provider.read();
+  const result = await provider.unlockAllLevels(current.id);
+  assert.equal(result.persistence, 'session');
+  assert.equal((await provider.read()).current.allLevelsUnlocked, true);
+});

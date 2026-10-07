@@ -31,12 +31,22 @@ test('batch: exact seven additions and preserved original identities',()=>{
   assert.equal(getHunt('charging-bedroom')?.performance,undefined);assert.equal(getHunt('typhoon-home')?.performance,undefined);
   assert.equal(huntPacks.length,9);
 });
-test('batch: original art/config bytes remain frozen; only approved lift/well display fields may differ',()=>{
+test('batch: original art/config bytes remain frozen; only explicitly recorded HUD/display and user-approved collection updates may differ',()=>{
   const audit=JSON.parse(readFileSync('docs/hazard-batch-v2/baseline-source-hashes.json','utf8')) as {files:{path:string;sha256:string}[]};
   const files=audit.files.filter(f=>f.path.startsWith('content/scenes/')||f.path.startsWith('public/levels/')||f.path.startsWith('content/levels/'));
   assert.ok(files.length>10,'Insufficient baseline evidence');
   for(const file of files){
     assert.ok(existsSync(file.path),file.path);
+    if (['content/levels/flood-kit/level.json','content/levels/flood-kit/skins/paperbook.json'].includes(file.path)) {
+      const approved=JSON.parse(readFileSync('docs/flood-kit-inventory/config-change-record.json','utf8')).files;
+      assert.equal(createHash('sha256').update(readFileSync(file.path)).digest('hex'),approved[file.path],file.path+' differs from the explicit five-slot inventory update');
+      continue;
+    }
+    const corridorUpdate=JSON.parse(readFileSync('docs/corridor-learning-v2/config-change-record.json','utf8')).files;
+    if (['content/levels/clear-corridor/level.json','content/levels/clear-corridor/skins/paperbook.json'].includes(file.path)) {
+      assert.equal(createHash('sha256').update(readFileSync(file.path)).digest('hex'),corridorUpdate[file.path],file.path+' differs from the explicit corridor update');
+      continue;
+    }
     const review=JSON.parse(readFileSync('docs/challenge-hud/config-review.json','utf8')).files[file.path];
     if(review){const v=JSON.parse(readFileSync(file.path,'utf8'));
       if(file.path.endsWith('level.json')){assert.equal(v.risk.seconds,50);assert.equal(v.risk.timeout,'fail');delete v.risk.seconds;delete v.risk.timeout;delete v.risk.peakFeedback;}

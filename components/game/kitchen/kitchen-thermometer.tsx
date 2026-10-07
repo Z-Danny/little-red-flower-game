@@ -8,7 +8,7 @@ export function KitchenThermometer({heat,safe}:{heat:number;safe:boolean}){
  // The minimum makes ongoing danger legible, but must not imply danger after resolution.
  const fill=safe?0:liquid.minimumFill+(1-liquid.minimumFill)*state.ratio;
  const y=liquid.bottom-(liquid.bottom-liquid.top)*fill;
- const style={'--meter-width':`${skin.display.width}px`,'--meter-top':`${skin.display.top}px`,'--meter-left':`${skin.display.left}px`,'--meter-transition':`${skin.display.transitionMs}ms`,'--meter-color':liquid.color} as CSSProperties;
+ const style={'--meter-width':`${skin.display.width}px`,'--meter-top':`${skin.display.top}px`,'--meter-left':`${skin.display.left}px`,'--meter-transition':`${state.ratio === 1 ? 0 : skin.display.transitionMs}ms`,'--meter-color':liquid.color} as CSSProperties;
  return <div className="kitchen-thermometer" style={style} data-tone={state.tone} data-heat={state.ratio.toFixed(4)} role="meter" aria-label="火势紧急程度" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(state.ratio*100)} aria-valuetext={state.label}>
   <svg viewBox={skin.viewBox.join(' ')} aria-hidden="true">
    <defs>

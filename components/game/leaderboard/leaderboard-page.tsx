@@ -105,7 +105,7 @@ export function LeaderboardPage({ board, onBack }: Props) {
     <p className="lb-announcement" role="status">{announcement}</p>
     <footer className="lb-rules">
       <h2>小红花怎样计算？</h2>
-      <p>每关首次完成获得 3 朵小红花，重复游玩不重复领奖。旧版花数保留。同分并列排名，0 朵暂不上榜。</p>
+      <p>每关按通关用时获得 1～3 朵小红花，提升最佳成绩时只补发差额。旧版花数保留。同分并列排名，0 朵暂不上榜。</p>
       <p>{local ? '仅展示此浏览器、此游戏地址保存的玩家，不是全网排名。清理浏览器数据会丢失本机记录；不同设备、浏览器或离线文件不会自动同步。' : '联网榜由服务端更新。'}</p>
     </footer>
     <button className="lb-play" onClick={onBack}>返回地图 <ChevronRight /></button>

@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-07",
+  "html": "C:\\Users\\LEGION\\Documents\\Codex\\2026-09-19\\https-github-com-z-danny-little-2\\little-red-flower-game\\outputs\\本地离线版\\小红花应急行动.html",
+  "sha256": "29fa27c8524be8b039a134c84d7c334c80e65db1ae2ecf7901bd30071c3751aa",
+  "unitRegression": {
+    "status": "passed",
+    "passed": 1137
+  },
+  "typecheck": "passed",
+  "offlineExport": {
+    "status": "passed",
+    "gates": 7
+  },
+  "browser": {
+    "status": "passed",
+    "checks": [
+      "390x844: rating 1, delta 1, best 1; correct flowers, pause and ending excluded",
+      "390x844: rating 2, delta 1, best 2; correct flowers, pause and ending excluded",
+      "390x844: rating 3, delta 1, best 3; correct flowers, pause and ending excluded",
+      "390x844: rating 2, delta 0, best 3; correct flowers, pause and ending excluded",
+      "390x844: failed replay leaves best intact",
+      "320x568: rating 2, delta 2, best 2; correct flowers, pause and ending excluded",
+      "320x568: failed replay leaves best intact",
+      "1280x900: rating 2, delta 2, best 2; correct flowers, pause and ending excluded",
+      "1280x900: failed replay leaves best intact"
+    ],
+    "errors": [],
+    "network": [],
+    "closed": true
+  },
+  "standardBuild": "blocked_by_windows_application_control_rolldown_native_binding",
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "all24LiveBrowserCompletions": "not_run",
+  "published": false
+}

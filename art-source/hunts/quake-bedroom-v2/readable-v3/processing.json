@@ -1,0 +1,262 @@
+{
+  "compilerVersion": 1,
+  "id": "quake-bedroom-v2",
+  "authorId": "quake-bedroom-v2",
+  "sourceSha256": "581e3fa30a28e137147da5ebe5d2a77de1c479af2c7c08ade5259c93d8c61c7d",
+  "sourceSize": [
+    941,
+    1671
+  ],
+  "world": [
+    720,
+    1280
+  ],
+  "inputHashes": {
+    "scene-original.png": "581e3fa30a28e137147da5ebe5d2a77de1c479af2c7c08ade5259c93d8c61c7d",
+    "mask-candidate.png": "f3804fce8a49a7759da3192b9834469319ba28cb451b078c3d14287aed9a77df",
+    "clean-candidate.png": "68e588bfeaa868a2a35b0a6db4978fc8ac46a3df9470004f4dc5ee6d2473ee7a",
+    "ending.png": "c5edcd6860ee78c62492ed78f9f13e71ff464ba457b7127b4ce64f4b1ed011d0"
+  },
+  "specSha256": "e90ca96ce40dae3fab93659ce750c1e9070dda2395612f3c5cf9514c57cac404",
+  "corrections": {
+    "targets": {
+      "overbed_frame": {
+        "keepPolygons": [
+          [
+            [
+              333,
+              417
+            ],
+            [
+              456,
+              406
+            ],
+            [
+              456,
+              526
+            ],
+            [
+              333,
+              526
+            ]
+          ]
+        ],
+        "reason": "Mirror silhouette recalibrated against new mother, excluding the adjacent wall."
+      },
+      "heavy_top": {
+        "keepPolygons": [
+          [
+            [
+              111,
+              352
+            ],
+            [
+              202,
+              347
+            ],
+            [
+              215,
+              391
+            ],
+            [
+              207,
+              465
+            ],
+            [
+              176,
+              459
+            ],
+            [
+              177,
+              425
+            ],
+            [
+              116,
+              413
+            ]
+          ]
+        ],
+        "reason": "Trim generated fringe to visible pot and its plant; not the secure wooden cabinet."
+      },
+      "unsecured_cabinet": {
+        "keepPolygons": [
+          [
+            [
+              500,
+              393
+            ],
+            [
+              534,
+              363
+            ],
+            [
+              567,
+              358
+            ],
+            [
+              575,
+              366
+            ],
+            [
+              600,
+              342
+            ],
+            [
+              612,
+              436
+            ],
+            [
+              609,
+              445
+            ],
+            [
+              594,
+              439
+            ],
+            [
+              583,
+              412
+            ],
+            [
+              586,
+              594
+            ],
+            [
+              575,
+              601
+            ],
+            [
+              566,
+              621
+            ],
+            [
+              566,
+              690
+            ],
+            [
+              501,
+              680
+            ]
+          ]
+        ],
+        "reason": "Exclude background and foreground desk/lamp; retain cabinet and disconnected strap only."
+      },
+      "exit_boxes": {
+        "fillEnclosedHoles": true,
+        "reason": "The handle opening is inside the solid box footprint, not a pass-through target."
+      },
+      "blocked_shelter": {
+        "fillEnclosedHoles": true,
+        "reason": "Small handles within solid storage boxes are part of the visible clutter."
+      }
+    },
+    "characters": {}
+  },
+  "targetPixels": {
+    "unsecured_cabinet": 25627,
+    "heavy_top": 5805,
+    "overbed_frame": 13142,
+    "exit_boxes": 29465,
+    "blocked_shelter": 15235
+  },
+  "hitPixels": {
+    "unsecured_cabinet": 25627,
+    "heavy_top": 5805,
+    "overbed_frame": 13142,
+    "exit_boxes": 29465,
+    "blocked_shelter": 15235
+  },
+  "familyBox": {
+    "x": 259,
+    "y": 499,
+    "w": 167,
+    "h": 355
+  },
+  "familyPixels": 35697,
+  "effectsPixels": {
+    "weather": 0,
+    "water": 0,
+    "sky": 0,
+    "fire": 0,
+    "smoke": 0
+  },
+  "unchangedOutsideAllowedRepair": true,
+  "hazardPixelsUnchanged": true,
+  "effectMasksExcludeTargetsAndCharacters": true,
+  "objectAndHitMasksIdentical": true,
+  "approval": "draft; semantic visual inspection and runtime tests pending",
+  "files": [
+    {
+      "path": "blocked_shelter.png",
+      "sha256": "2e0e09183e4f41b4ade008fddafc5b2f5fc138c2cded0f20bbb0f9d508b09d2f"
+    },
+    {
+      "path": "character-mask.png",
+      "sha256": "63409e241328c5cbfc591664adbaf75152914b1bd45a0fc039915ce8f27ce194"
+    },
+    {
+      "path": "clean.webp",
+      "sha256": "11f34061aea3469157d693d3dc448a9ee604cfa5528e30b325869e88c017f656"
+    },
+    {
+      "path": "ending.webp",
+      "sha256": "0d0f9e3138ff8ee8a22bedab45e094d153a52f8c93ab226d681e001995a45c90"
+    },
+    {
+      "path": "exit_boxes.png",
+      "sha256": "64be6c6abbf9af730dfddf6cb3c036b38904bdbae9041d80829bbd5ecd8fc432"
+    },
+    {
+      "path": "family.png",
+      "sha256": "6601c040b0b9820b9e4bc089617d178c9650d2ddfacad4981eaf80d232c2b3c4"
+    },
+    {
+      "path": "fire-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    },
+    {
+      "path": "heavy_top.png",
+      "sha256": "a3570b16161f328df9eee6cd194c1b4763052b92350b390fe88b0e07faecc627"
+    },
+    {
+      "path": "hit-samples.json",
+      "sha256": "ee7e0a4ef88c7e97d3d6cd779a3ff7284d5fbe9df6d641b08af8bab4b4de9884"
+    },
+    {
+      "path": "id-mask.png",
+      "sha256": "946bda048f70ce0270be031dc4e8226245655e41c07b42679ae4a5d2e26da1fc"
+    },
+    {
+      "path": "object-mask.png",
+      "sha256": "946bda048f70ce0270be031dc4e8226245655e41c07b42679ae4a5d2e26da1fc"
+    },
+    {
+      "path": "overbed_frame.png",
+      "sha256": "85786792cf6be8e4c04a9234f793c979ff26cb71da9a1b292dc0f43c4d954883"
+    },
+    {
+      "path": "scene.webp",
+      "sha256": "1bab4508ee23e8c50e1678c78f17b6aaa246d381a1eef9d99a267389a1358877"
+    },
+    {
+      "path": "sky-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    },
+    {
+      "path": "smoke-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    },
+    {
+      "path": "unsecured_cabinet.png",
+      "sha256": "fbf801acf20eedfd38bb073531da66213e7b03b6af64d26e60d6482e0bbf7954"
+    },
+    {
+      "path": "water-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    },
+    {
+      "path": "weather-mask.png",
+      "sha256": "4e62b270bf4c58a2f92e723650fe6b6c269cc4aa01e14e5a884bfb195d83f5b1"
+    }
+  ]
+}

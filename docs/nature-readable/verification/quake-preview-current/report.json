@@ -1,0 +1,475 @@
+{
+  "status": "passed",
+  "startedAt": "2026-10-07T07:06:13.627Z",
+  "html": "C:\\Users\\LEGION\\Documents\\Codex\\2026-09-19\\https-github-com-z-danny-little-2\\little-red-flower-game\\outputs\\hunt-preview\\nature-quake-v3\\小红花应急行动.html",
+  "htmlSha256": "b3199e67e31ae2cfdd17ac075a82adbd65097ca6fee1e27925720ab579dc1326",
+  "fixture": "Only other levels are completed in an isolated save to unlock entry. Test levels are uncompleted. All hits, pause/retry and review answers use real pointer input. Browser clock is controlled for deterministic inspection; no reducer/completion/reward injection.",
+  "checks": [
+    {
+      "name": "quake-bedroom-v2-320x568: visible targets clear HUD and frame",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-320x568: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-320x568: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-320x568: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-320x568: heavy_top",
+      "status": "passed",
+      "point": [
+        144,
+        388
+      ],
+      "caption": "沉重物品应放在低处。"
+    },
+    {
+      "name": "quake-bedroom-v2-320x568: overbed_frame",
+      "status": "passed",
+      "point": [
+        403,
+        464
+      ],
+      "caption": "床上方不要悬挂重物。"
+    },
+    {
+      "name": "quake-bedroom-v2-320x568: exit_boxes",
+      "status": "passed",
+      "point": [
+        201,
+        905
+      ],
+      "caption": "门口通道要保持畅通。"
+    },
+    {
+      "name": "quake-bedroom-v2-320x568: blocked_shelter",
+      "status": "passed",
+      "point": [
+        571,
+        873
+      ],
+      "caption": "坚固桌下应预留避震空间。 对照准备前后：固定、移低、移走、清空。"
+    },
+    {
+      "name": "quake-bedroom-v2-320x568: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-320x568: returned to map",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-375x667: visible targets clear HUD and frame",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-375x667: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-375x667: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-375x667: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-375x667: heavy_top",
+      "status": "passed",
+      "point": [
+        144,
+        388
+      ],
+      "caption": "沉重物品应放在低处。"
+    },
+    {
+      "name": "quake-bedroom-v2-375x667: overbed_frame",
+      "status": "passed",
+      "point": [
+        403,
+        464
+      ],
+      "caption": "床上方不要悬挂重物。"
+    },
+    {
+      "name": "quake-bedroom-v2-375x667: exit_boxes",
+      "status": "passed",
+      "point": [
+        201,
+        905
+      ],
+      "caption": "门口通道要保持畅通。"
+    },
+    {
+      "name": "quake-bedroom-v2-375x667: blocked_shelter",
+      "status": "passed",
+      "point": [
+        571,
+        873
+      ],
+      "caption": "坚固桌下应预留避震空间。 对照准备前后：固定、移低、移走、清空。"
+    },
+    {
+      "name": "quake-bedroom-v2-375x667: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-375x667: returned to map",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-390x844: visible targets clear HUD and frame",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-390x844: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-390x844: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-390x844: blocked_shelter",
+      "status": "passed",
+      "point": [
+        571,
+        873
+      ],
+      "caption": "坚固桌下应预留避震空间。"
+    },
+    {
+      "name": "quake-bedroom-v2-390x844: exit_boxes",
+      "status": "passed",
+      "point": [
+        201,
+        905
+      ],
+      "caption": "门口通道要保持畅通。"
+    },
+    {
+      "name": "quake-bedroom-v2-390x844: overbed_frame",
+      "status": "passed",
+      "point": [
+        403,
+        464
+      ],
+      "caption": "床上方不要悬挂重物。"
+    },
+    {
+      "name": "quake-bedroom-v2-390x844: heavy_top",
+      "status": "passed",
+      "point": [
+        144,
+        388
+      ],
+      "caption": "沉重物品应放在低处。"
+    },
+    {
+      "name": "quake-bedroom-v2-390x844: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。 对照准备前后：固定、移低、移走、清空。"
+    },
+    {
+      "name": "quake-bedroom-v2-390x844: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-390x844: returned to map",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-430x932: visible targets clear HUD and frame",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-430x932: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-430x932: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-430x932: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-430x932: heavy_top",
+      "status": "passed",
+      "point": [
+        144,
+        388
+      ],
+      "caption": "沉重物品应放在低处。"
+    },
+    {
+      "name": "quake-bedroom-v2-430x932: overbed_frame",
+      "status": "passed",
+      "point": [
+        403,
+        464
+      ],
+      "caption": "床上方不要悬挂重物。"
+    },
+    {
+      "name": "quake-bedroom-v2-430x932: exit_boxes",
+      "status": "passed",
+      "point": [
+        201,
+        905
+      ],
+      "caption": "门口通道要保持畅通。"
+    },
+    {
+      "name": "quake-bedroom-v2-430x932: blocked_shelter",
+      "status": "passed",
+      "point": [
+        571,
+        873
+      ],
+      "caption": "坚固桌下应预留避震空间。 对照准备前后：固定、移低、移走、清空。"
+    },
+    {
+      "name": "quake-bedroom-v2-430x932: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-430x932: returned to map",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-540x960: visible targets clear HUD and frame",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-540x960: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-540x960: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-540x960: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-540x960: heavy_top",
+      "status": "passed",
+      "point": [
+        144,
+        388
+      ],
+      "caption": "沉重物品应放在低处。"
+    },
+    {
+      "name": "quake-bedroom-v2-540x960: overbed_frame",
+      "status": "passed",
+      "point": [
+        403,
+        464
+      ],
+      "caption": "床上方不要悬挂重物。"
+    },
+    {
+      "name": "quake-bedroom-v2-540x960: exit_boxes",
+      "status": "passed",
+      "point": [
+        201,
+        905
+      ],
+      "caption": "门口通道要保持畅通。"
+    },
+    {
+      "name": "quake-bedroom-v2-540x960: blocked_shelter",
+      "status": "passed",
+      "point": [
+        571,
+        873
+      ],
+      "caption": "坚固桌下应预留避震空间。 对照准备前后：固定、移低、移走、清空。"
+    },
+    {
+      "name": "quake-bedroom-v2-540x960: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-540x960: returned to map",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-1440x900: visible targets clear HUD and frame",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-1440x900: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-1440x900: pause and retry",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-1440x900: unsecured_cabinet",
+      "status": "passed",
+      "point": [
+        541,
+        415
+      ],
+      "caption": "高柜需要可靠固定。"
+    },
+    {
+      "name": "quake-bedroom-v2-1440x900: heavy_top",
+      "status": "passed",
+      "point": [
+        144,
+        388
+      ],
+      "caption": "沉重物品应放在低处。"
+    },
+    {
+      "name": "quake-bedroom-v2-1440x900: overbed_frame",
+      "status": "passed",
+      "point": [
+        403,
+        464
+      ],
+      "caption": "床上方不要悬挂重物。"
+    },
+    {
+      "name": "quake-bedroom-v2-1440x900: exit_boxes",
+      "status": "passed",
+      "point": [
+        201,
+        905
+      ],
+      "caption": "门口通道要保持畅通。"
+    },
+    {
+      "name": "quake-bedroom-v2-1440x900: blocked_shelter",
+      "status": "passed",
+      "point": [
+        571,
+        873
+      ],
+      "caption": "坚固桌下应预留避震空间。 对照准备前后：固定、移低、移走、清空。"
+    },
+    {
+      "name": "quake-bedroom-v2-1440x900: optional teaching review and single reward",
+      "status": "passed"
+    },
+    {
+      "name": "quake-bedroom-v2-1440x900: returned to map",
+      "status": "passed"
+    }
+  ],
+  "knownLayoutIssues": [],
+  "screenshots": [
+    "quake-bedroom-v2-320x568-clues.png",
+    "quake-bedroom-v2-320x568-start.png",
+    "quake-bedroom-v2-320x568-last-feedback.png",
+    "quake-bedroom-v2-320x568-ending.png",
+    "quake-bedroom-v2-320x568-compare-before.png",
+    "quake-bedroom-v2-320x568-compare-after.png",
+    "quake-bedroom-v2-375x667-clues.png",
+    "quake-bedroom-v2-375x667-start.png",
+    "quake-bedroom-v2-375x667-last-feedback.png",
+    "quake-bedroom-v2-375x667-ending.png",
+    "quake-bedroom-v2-375x667-compare-before.png",
+    "quake-bedroom-v2-375x667-compare-after.png",
+    "quake-bedroom-v2-390x844-clues.png",
+    "quake-bedroom-v2-390x844-start.png",
+    "quake-bedroom-v2-390x844-last-feedback.png",
+    "quake-bedroom-v2-390x844-ending.png",
+    "quake-bedroom-v2-390x844-compare-before.png",
+    "quake-bedroom-v2-390x844-compare-after.png",
+    "quake-bedroom-v2-430x932-clues.png",
+    "quake-bedroom-v2-430x932-start.png",
+    "quake-bedroom-v2-430x932-last-feedback.png",
+    "quake-bedroom-v2-430x932-ending.png",
+    "quake-bedroom-v2-430x932-compare-before.png",
+    "quake-bedroom-v2-430x932-compare-after.png",
+    "quake-bedroom-v2-540x960-clues.png",
+    "quake-bedroom-v2-540x960-start.png",
+    "quake-bedroom-v2-540x960-last-feedback.png",
+    "quake-bedroom-v2-540x960-ending.png",
+    "quake-bedroom-v2-540x960-compare-before.png",
+    "quake-bedroom-v2-540x960-compare-after.png",
+    "quake-bedroom-v2-1440x900-clues.png",
+    "quake-bedroom-v2-1440x900-start.png",
+    "quake-bedroom-v2-1440x900-last-feedback.png",
+    "quake-bedroom-v2-1440x900-ending.png",
+    "quake-bedroom-v2-1440x900-compare-before.png",
+    "quake-bedroom-v2-1440x900-compare-after.png"
+  ],
+  "errors": [],
+  "network": [],
+  "physicalDevice": "not_run",
+  "humanListening": "not_run",
+  "browserClosed": true,
+  "browser": "154.0.4258.37",
+  "finishedAt": "2026-10-07T07:07:27.816Z"
+}
