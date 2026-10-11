@@ -25,6 +25,8 @@ import rules10 from '../../../content/levels/fire-shelter-practice/level.json';
 import skin10 from '../../../content/levels/fire-shelter-practice/skins/paper-gouache.json';
 import rules11 from '../../../content/levels/fire-stairs-practice/level.json';
 import skin11 from '../../../content/levels/fire-stairs-practice/skins/paper-gouache.json';
+import rules12 from '../../../content/levels/first-aid-aed/level.json';
+import skin12 from '../../../content/levels/first-aid-aed/skins/realistic-v2.json';
 export const configuredPackages: LevelPackage[] = [
   validatePackage(rules0, skin0, { embedded: true }),
   validatePackage(rules1, skin1, { embedded: true }),
@@ -38,4 +40,5 @@ export const configuredPackages: LevelPackage[] = [
   validatePackage(rules9, skin9, { embedded: true }),
   validatePackage(rules10, skin10, { embedded: true }),
   validatePackage(rules11, skin11, { embedded: true }),
+  validatePackage(rules12, skin12, { embedded: true }),
 ];

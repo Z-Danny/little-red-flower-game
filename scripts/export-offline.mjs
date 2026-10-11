@@ -33,6 +33,24 @@ const output =
   outputArg < 0
     ? join(root, 'outputs', '本地离线版')
     : resolve(root, process.argv[outputArg + 1]);
+const responseIndex = process.argv.indexOf('--preview-response');
+const responseId = responseIndex < 0 ? null : process.argv[responseIndex + 1];
+let responseSource;
+if (responseIndex >= 0) {
+  assert.ok(responseId && /^[a-z][a-z0-9-]+$/.test(responseId) && outputArg >= 0 && output.includes('response-preview'), '处置预览必须指定有效ID和独立 response-preview 输出目录');
+  const rulesFile = join(root, 'content/levels', responseId, 'level.json');
+  const responseSkinIndex = process.argv.indexOf('--response-skin');
+  const responseSkin = responseSkinIndex < 0 ? 'illustrated' : process.argv[responseSkinIndex + 1];
+  assert.ok(responseSkin && /^[a-z][a-z0-9-]+$/.test(responseSkin), '非法处置预览皮肤 ID');
+  const skinFile = join(root, 'content/levels', responseId, 'skins', responseSkin + '.json');
+  const { getRuntime, checkArt } = await import('./lib/packages.mjs');
+  await checkArt((await getRuntime()).validatePackage(JSON.parse(readFileSync(rulesFile,'utf8')), JSON.parse(readFileSync(skinFile,'utf8'))));
+  responseSource = `import {createRoot} from 'react-dom/client';
+    import {ResponsePreview} from './components/game/response-preview';
+    import rules from ${JSON.stringify(rulesFile.replaceAll('\\','/'))};
+    import skin from ${JSON.stringify(skinFile.replaceAll('\\','/'))};
+    createRoot(document.getElementById('game-root')).render(<ResponsePreview rules={rules} skin={skin}/>);`;
+}
 const previewIndex = process.argv.indexOf('--preview-hunt');
 const previewId = previewIndex < 0 ? null : process.argv[previewIndex + 1];
 let previewSource;
@@ -103,7 +121,7 @@ const result = await esbuild.build({
   metafile: true,
   legalComments: 'inline',
   logLevel: 'silent',
-  plugins: previewSource
+  plugins: responseSource ? [{ name: 'isolated-response-preview', setup(build) { build.onLoad({ filter: /offline[\\/]main\.tsx$/ }, () => ({ contents: responseSource, loader: 'tsx', resolveDir: root })); } }] : previewSource
     ? [
         {
           name: 'isolated-hunt-preview',
@@ -267,8 +285,8 @@ const htmlPath = join(output, '小红花应急行动.html');
 writeFileSync(htmlPath, html, 'utf8');
 copyFileSync(join(root, 'offline', 'README.md'), join(output, '使用说明.md'));
 const manifest = {
-  mode: previewId ? 'draft-preview-not-production' : 'production',
-  previewId,
+  mode: (previewId || responseId) ? 'draft-preview-not-production' : 'production',
+  previewId: previewId || responseId,
   file: '小红花应急行动.html',
   bytes: Buffer.byteLength(html),
   sha256: createHash('sha256').update(html).digest('hex'),

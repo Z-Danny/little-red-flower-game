@@ -71,6 +71,8 @@
     no-repeat;
 }
 .painted-settlement-inner {
+  /* Keep child action margins on the paper, not between the body and footer art. */
+  display: flow-root;
   padding: 0 10% 0 9%;
 }
 .painted-settlement .painted-settlement-level {

@@ -1,0 +1,70 @@
+{
+  "id": "first-aid-comprehensive",
+  "number": "4-9",
+  "title": "综合急救挑战",
+  "version": 2,
+  "release": "isolated-draft",
+  "enabled": false,
+  "prerequisites": [
+    "first-aid-cpr",
+    "first-aid-aed"
+  ],
+  "phases": [
+    "prepare",
+    "review",
+    "respond"
+  ],
+  "inventory": [
+    "gloves",
+    "dressing",
+    "bandage",
+    "saline",
+    "blanket"
+  ],
+  "siteChecks": [
+    "aed-location",
+    "access-route"
+  ],
+  "reviewTargets": [
+    "give-water",
+    "wait-for-bag",
+    "film-patient"
+  ],
+  "case": {
+    "adult": true,
+    "responsive": false,
+    "normalBreathing": false,
+    "setting": "dry-safe-community-plaza"
+  },
+  "aedBranches": [
+    "shock",
+    "no-shock"
+  ],
+  "scoring": {
+    "axes": [
+      "preparation",
+      "recognition",
+      "action-cooperation"
+    ],
+    "recoveryRequired": false,
+    "liveRewards": false
+  },
+  "timer": null,
+  "professionalReview": "not_run",
+  "interaction": {
+    "presentation": "full-scene-actions",
+    "assessment": [
+      "response",
+      "breathing"
+    ],
+    "aedTravelActiveMs": 1800,
+    "padPlacement": "pointer-drag-or-keyboard-select-target",
+    "clearContact": [
+      "self",
+      "caller",
+      "runner"
+    ],
+    "handover": "drag-record-to-professional",
+    "requiredCompressionClickCount": null
+  }
+}

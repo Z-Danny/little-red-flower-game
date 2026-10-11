@@ -1,6 +1,6 @@
 {
   "source": {
-    "title": "用户指定的三类主题",
+    "title": "用户指定的四章主题",
     "url": "",
     "checkedAt": "2026-09-12"
   },
@@ -30,6 +30,15 @@
       "icon": "home",
       "regionIds": [
         "home"
+      ]
+    },
+    {
+      "id": "first-aid",
+      "name": "急救岛",
+      "scope": "第四章：擦伤、鼻血、扭伤、烫伤、晕倒、气道异物、心肺复苏、自动除颤与综合急救（已开放心肺复苏与自动除颤协作，其余玩法待开放）",
+      "icon": "heart",
+      "regionIds": [
+        "first-aid"
       ]
     }
   ]

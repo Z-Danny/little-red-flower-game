@@ -68,5 +68,10 @@
     "id": "fire-stairs-practice",
     "skin": "paper-gouache",
     "enabled": true
+  },
+  {
+    "id": "first-aid-aed",
+    "skin": "realistic-v2",
+    "enabled": true
   }
 ]

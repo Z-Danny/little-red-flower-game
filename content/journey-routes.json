@@ -1003,6 +1003,179 @@
           ]
         }
       ]
+    },
+    "first-aid": {
+      "image": "/levels/journey-map/first-aid-v1-handpainted.png",
+      "width": 720,
+      "height": 2160,
+      "segments": [
+        {
+          "from": "first-aid-abrasion",
+          "to": "first-aid-nosebleed",
+          "points": [
+            [
+              490,
+              1750
+            ],
+            [
+              505,
+              1695
+            ],
+            [
+              473,
+              1642
+            ],
+            [
+              407,
+              1600
+            ],
+            [
+              338,
+              1570
+            ]
+          ]
+        },
+        {
+          "from": "first-aid-nosebleed",
+          "to": "first-aid-sprain",
+          "points": [
+            [
+              338,
+              1570
+            ],
+            [
+              294,
+              1510
+            ],
+            [
+              298,
+              1465
+            ],
+            [
+              361,
+              1420
+            ],
+            [
+              443,
+              1380
+            ]
+          ]
+        },
+        {
+          "from": "first-aid-sprain",
+          "to": "first-aid-burn",
+          "points": [
+            [
+              443,
+              1380
+            ],
+            [
+              458,
+              1310
+            ],
+            [
+              431,
+              1260
+            ],
+            [
+              374,
+              1210
+            ]
+          ]
+        },
+        {
+          "from": "first-aid-burn",
+          "to": "first-aid-fainting",
+          "points": [
+            [
+              374,
+              1210
+            ],
+            [
+              323,
+              1150
+            ],
+            [
+              320,
+              1100
+            ],
+            [
+              378,
+              1050
+            ]
+          ]
+        },
+        {
+          "from": "first-aid-fainting",
+          "to": "first-aid-airway",
+          "points": [
+            [
+              378,
+              1050
+            ],
+            [
+              420,
+              1000
+            ],
+            [
+              416,
+              954
+            ],
+            [
+              365,
+              910
+            ]
+          ]
+        },
+        {
+          "from": "first-aid-airway",
+          "to": "first-aid-cpr",
+          "points": [
+            [
+              365,
+              910
+            ],
+            [
+              335,
+              848
+            ],
+            [
+              322,
+              791
+            ],
+            [
+              354,
+              752
+            ],
+            [
+              413,
+              718
+            ]
+          ]
+        },
+        {
+          "from": "first-aid-cpr",
+          "to": "first-aid-aed",
+          "points": [
+            [
+              413,
+              718
+            ],
+            [
+              458,
+              650
+            ],
+            [
+              462,
+              612
+            ],
+            [
+              419,
+              556
+            ]
+          ]
+        }
+      ]
     }
   }
 }

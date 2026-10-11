@@ -97,6 +97,38 @@
     "fire-stairs-practice": {
       "title": "火灾楼梯撤离",
       "preview": "楼梯路线可用，练习带孩子撤到室外。"
+    },
+    "first-aid-abrasion": {
+      "title": "擦伤处理入门",
+      "preview": "纱布、绷带与清洁水盆，组成擦伤护理主题的小站。"
+    },
+    "first-aid-nosebleed": {
+      "title": "鼻血应急处置",
+      "preview": "座椅、纸巾与纱布，布置成鼻血应急主题的校医室。"
+    },
+    "first-aid-sprain": {
+      "title": "扭伤现场救护",
+      "preview": "球场旁的长椅、拐杖、弹性绷带与冷敷袋，呈现运动救护主题。"
+    },
+    "first-aid-burn": {
+      "title": "烫伤紧急处理",
+      "preview": "水槽、水龙头与独立放置的水壶，呈现烫伤处置主题。"
+    },
+    "first-aid-fainting": {
+      "title": "晕倒现场应对",
+      "preview": "树荫下的休息床、毯子与联络电话，组成现场应对主题空间。"
+    },
+    "first-aid-airway": {
+      "title": "气道异物急救",
+      "preview": "餐桌与专用训练模型，呼应气道异物急救主题。"
+    },
+    "first-aid-cpr": {
+      "title": "心肺复苏实战",
+      "preview": "蓝色训练垫与心肺复苏模型，构成心肺复苏实训地点。"
+    },
+    "first-aid-aed": {
+      "title": "自动除颤协作",
+      "preview": "协助者正在CPR，你操作刚取来的AED：准备、贴片、清场，按设备判断配合电击或不电击，并立即恢复CPR。"
     }
   }
 }

@@ -90,11 +90,8 @@ async function open(page, id) {
   await page.getByRole('button', { name: /打开群岛选择/ }).waitFor();
   const region = rt.journey.regionFor(id);
   await page.getByRole('button', { name: /打开群岛选择/ }).click();
-  await page
-    .getByRole('button', {
-      name: new RegExp('^' + region.name + '，.*点击前往$'),
-    })
-    .click();
+  // The local archipelago has chapter-specific display names; navigate by its stable region ID.
+  await page.locator(`[data-island="${region.id}"]`).click();
   const node = page.locator(`[data-map-node="${id}"]`);
   await node.scrollIntoViewIfNeeded();
   await node.click();

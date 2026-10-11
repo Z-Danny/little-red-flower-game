@@ -1,0 +1,408 @@
+{
+  "id": "paperbook-chinese-interactive-v3",
+  "width": 1024,
+  "height": 1536,
+  "illustrationUse": "narrative-stills-not-medical-technique-diagrams",
+  "art": {
+    "prepare": "/levels/first-aid-comprehensive/prepare-cn-v2.png",
+    "review": "/levels/first-aid-comprehensive/review-cn-v2.png",
+    "respond": "/levels/first-aid-comprehensive/response-cn-v2.png",
+    "complete": "/levels/first-aid-comprehensive/handover-cn-v2.png"
+  },
+  "criticalRegions": {
+    "prepare": [
+      {
+        "x": 39,
+        "y": 936,
+        "w": 956,
+        "h": 177
+      },
+      {
+        "x": 790,
+        "y": 455,
+        "w": 142,
+        "h": 94
+      }
+    ],
+    "review": [
+      {
+        "x": 230,
+        "y": 450,
+        "w": 670,
+        "h": 185
+      }
+    ],
+    "respond": [
+      {
+        "x": 48,
+        "y": 348,
+        "w": 960,
+        "h": 700
+      }
+    ],
+    "complete": [
+      {
+        "x": 184,
+        "y": 359,
+        "w": 790,
+        "h": 368
+      }
+    ]
+  },
+  "reviewMarkers": {
+    "give-water": {
+      "x": 0.31,
+      "y": 0.495
+    },
+    "wait-for-bag": {
+      "x": 0.565,
+      "y": 0.479
+    },
+    "film-patient": {
+      "x": 0.79,
+      "y": 0.403
+    }
+  },
+  "pixelMasks": "not_applicable-to-labelled-teaching-plate",
+  "productionLayerCompilation": "same-source-props-authored-alpha-polygons",
+  "props": {
+    "gloves": {
+      "box": {
+        "x": 39,
+        "y": 960,
+        "w": 218,
+        "h": 146
+      },
+      "polygon": [
+        [
+          46,
+          1030
+        ],
+        [
+          127,
+          961
+        ],
+        [
+          252,
+          965
+        ],
+        [
+          251,
+          1056
+        ],
+        [
+          221,
+          1101
+        ],
+        [
+          42,
+          1092
+        ]
+      ]
+    },
+    "dressing": {
+      "box": {
+        "x": 239,
+        "y": 1007,
+        "w": 195,
+        "h": 104
+      },
+      "polygon": [
+        [
+          241,
+          1101
+        ],
+        [
+          282,
+          1010
+        ],
+        [
+          428,
+          1016
+        ],
+        [
+          398,
+          1107
+        ]
+      ]
+    },
+    "bandage": {
+      "box": {
+        "x": 447,
+        "y": 1009,
+        "w": 153,
+        "h": 104
+      },
+      "polygon": [
+        [
+          456,
+          1049
+        ],
+        [
+          477,
+          1033
+        ],
+        [
+          550,
+          1013
+        ],
+        [
+          572,
+          1017
+        ],
+        [
+          593,
+          1042
+        ],
+        [
+          595,
+          1071
+        ],
+        [
+          577,
+          1087
+        ],
+        [
+          500,
+          1107
+        ],
+        [
+          470,
+          1103
+        ],
+        [
+          454,
+          1080
+        ]
+      ]
+    },
+    "saline": {
+      "box": {
+        "x": 651,
+        "y": 963,
+        "w": 67,
+        "h": 136
+      },
+      "polygon": [
+        [
+          669,
+          966
+        ],
+        [
+          693,
+          966
+        ],
+        [
+          697,
+          981
+        ],
+        [
+          697,
+          995
+        ],
+        [
+          709,
+          1012
+        ],
+        [
+          714,
+          1083
+        ],
+        [
+          704,
+          1093
+        ],
+        [
+          667,
+          1093
+        ],
+        [
+          655,
+          1083
+        ],
+        [
+          657,
+          1015
+        ],
+        [
+          668,
+          995
+        ]
+      ]
+    },
+    "blanket": {
+      "box": {
+        "x": 742,
+        "y": 936,
+        "w": 253,
+        "h": 164
+      },
+      "polygon": [
+        [
+          747,
+          973
+        ],
+        [
+          785,
+          953
+        ],
+        [
+          931,
+          939
+        ],
+        [
+          967,
+          952
+        ],
+        [
+          978,
+          986
+        ],
+        [
+          980,
+          1011
+        ],
+        [
+          991,
+          1045
+        ],
+        [
+          984,
+          1060
+        ],
+        [
+          991,
+          1086
+        ],
+        [
+          966,
+          1097
+        ],
+        [
+          760,
+          1096
+        ],
+        [
+          746,
+          1080
+        ],
+        [
+          753,
+          1061
+        ],
+        [
+          745,
+          1045
+        ],
+        [
+          751,
+          1028
+        ],
+        [
+          746,
+          1005
+        ]
+      ]
+    }
+  },
+  "assets": {
+    "gloves": "/levels/first-aid-comprehensive/prop-gloves-v3.png",
+    "dressing": "/levels/first-aid-comprehensive/prop-dressing-v3.png",
+    "bandage": "/levels/first-aid-comprehensive/prop-bandage-v3.png",
+    "saline": "/levels/first-aid-comprehensive/prop-saline-v3.png",
+    "blanket": "/levels/first-aid-comprehensive/prop-blanket-v3.png",
+    "bagFront": "/levels/first-aid-comprehensive/bag-front-v3.png",
+    "wood": "/levels/first-aid-comprehensive/table-grain-v3.png",
+    "aedOff": "/levels/aed-cooperation/device-off.png",
+    "aedOn": "/levels/aed-cooperation/device-on.png",
+    "padUpper": "/levels/aed-cooperation/pad-upper.png",
+    "padSide": "/levels/aed-cooperation/pad-side.png"
+  },
+  "points": {
+    "bag": {
+      "x": 511,
+      "y": 882
+    },
+    "cabinet": {
+      "x": 503,
+      "y": 475
+    },
+    "route": {
+      "x": 732,
+      "y": 713
+    },
+    "safe": {
+      "x": 589,
+      "y": 1120
+    },
+    "shoulder": {
+      "x": 265,
+      "y": 900
+    },
+    "breathing": {
+      "x": 396,
+      "y": 914
+    },
+    "caller": {
+      "x": 350,
+      "y": 640
+    },
+    "runner": {
+      "x": 907,
+      "y": 550
+    },
+    "responseCabinet": {
+      "x": 100,
+      "y": 468
+    },
+    "compress": {
+      "x": 354,
+      "y": 910
+    },
+    "device": {
+      "x": 778,
+      "y": 1172
+    },
+    "handover": {
+      "x": 432,
+      "y": 716
+    }
+  },
+  "reviewTargets": {
+    "give-water": {
+      "x": 252,
+      "y": 704,
+      "w": 118,
+      "h": 118
+    },
+    "wait-for-bag": {
+      "x": 488,
+      "y": 687,
+      "w": 169,
+      "h": 139
+    },
+    "film-patient": {
+      "x": 674,
+      "y": 596,
+      "w": 137,
+      "h": 101
+    }
+  },
+  "composition": {
+    "background": "shared-cover",
+    "foreground": "shared-contain-full-width-with-soft-vertical-blend",
+    "note": "Two existing shared transforms; source master unchanged, no per-level camera. Cover paints every screen corner; intact foreground preserves all faces."
+  },
+  "bagBox": {
+    "x": 300,
+    "y": 741,
+    "w": 411,
+    "h": 270
+  },
+  "tableSurface": {
+    "x": 0,
+    "y": 935,
+    "w": 1024,
+    "h": 189
+  }
+}

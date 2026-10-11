@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-07",
+  "rulesSha256": "c16a55a5dfbbe632f5b4412a4a28fab6bd0bbdd800d3402a2002a6b5e7d832c6",
+  "generationAttempt": {
+    "tool": "image_gen.imagegen",
+    "result": "503 model_not_found; no new image generated"
+  },
+  "sources": [
+    {
+      "file": "patient-source.png",
+      "origin": "Previous-turn original generated realistic patient",
+      "sha256": "7c76e1dbbbd6f94a5004be6d08f847b54e2357a3da042fa47dcf146e849e7b87"
+    },
+    {
+      "file": "rescuer-source.png",
+      "origin": "Existing project public/levels/first-aid-cpr/helper.png, reused licensed project actor, not a copied level template",
+      "sha256": "e40a1855e2466a8982912251defa84f5b4d1ed190437413f111764878a1da300"
+    }
+  ],
+  "processing": "Proportional runtime encoding and transparent padding only; no repainting of raster anatomy. New native vector garment and cables.",
+  "motion": "Existing realistic rescuer cutout: subtle posture motion during CPR; body visibly retreats to remove contact for analysis/shock. Not a new raised-hand photograph.",
+  "outputs": [
+    {
+      "file": "cable-side.png",
+      "sha256": "bcb888df59f87967478cd6111a204a98a634b74923dc2f58dda4a1ad9ac36d5d"
+    },
+    {
+      "file": "cable-upper.png",
+      "sha256": "5dcc93ca76fb011bcb38fcd6c45795cb7d2187e12cf1136d241fcf3ac8f7f584"
+    },
+    {
+      "file": "moisture.png",
+      "sha256": "38dc56c551202fec2abc80747b5bdf643d2393cc89f77c5d476956117299915f"
+    },
+    {
+      "file": "painted-button.webp",
+      "sha256": "9ef24fbaa1fd3332a99b86a892023b0c921fe875c680b7f9c557645c006d937d"
+    },
+    {
+      "file": "patient.webp",
+      "sha256": "a730f9d4778b6908819048a97398de83b279c3c096ddf8bc5d944d078f9a3040"
+    },
+    {
+      "file": "rescuer.webp",
+      "sha256": "d24536295b3a757197917a9145c5bc8ca79b589380786df322fda3cb73a28308"
+    },
+    {
+      "file": "shirt.png",
+      "sha256": "50eacaaf5697ee89c7dab558a472e802eee818b91f76571fc04bd694a6d23436"
+    }
+  ]
+}

@@ -36,7 +36,7 @@ function box(value: unknown, p: string, partial = false) {
 /** Fail closed, before a package is registered or exported. All messages include a JSON field path. */
 export function validatePackage(rulesInput: unknown, skinInput: unknown, options: { embedded?: boolean } = {}): LevelPackage {
   const r = obj(rulesInput, 'level'), s = obj(skinInput, 'skin');
-  exactKeys(r, ['schemaVersion','id','kind','title','order','location','description','safety','briefing','objects','goals','interactions','risk','completion','stages','inventory','coaching'], 'level');
+  exactKeys(r, ['schemaVersion','id','kind','title','order','location','description','safety','briefing','objects','goals','interactions','risk','completion','stages','scenarios','inventory','coaching'], 'level');
   exactKeys(s, ['schemaVersion','id','world','framing','assets','background','poses','zones','states','animations','effects','labels','zoneLabels','response','presentation','zoneConditions','feedback'], 'skin');
   oneOf(r.schemaVersion, [1], 'level.schemaVersion'); oneOf(s.schemaVersion, [1], 'skin.schemaVersion');
   id(r.id, 'level.id'); id(s.id, 'skin.id'); oneOf(r.kind, ['prevention', 'response'], 'level.kind');
@@ -50,6 +50,18 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
   if (r.kind === 'prevention' && (targetCount < 3 || targetCount > 6)) fail('level.goals', '找隐患必须有 3～6 个剪影目标，辅助目标可设 showTarget=false');
   const objectIds = uniqueIds(objects, 'level.objects'), goalIds = uniqueIds(goals, 'level.goals');
   uniqueIds(rules, 'level.interactions');
+  const scenarios = r.scenarios === undefined ? [] : array(r.scenarios, 'level.scenarios');
+  if (r.scenarios !== undefined && (r.kind !== 'response' || !scenarios.length || scenarios.length > 8)) fail('level.scenarios', '仅处置关可声明1～8个情境');
+  uniqueIds(scenarios, 'level.scenarios');
+  const initialIds = new Set<string>();
+  for (const scenario of scenarios) {
+    exactKeys(obj(scenario, 'scenario'), ['id','initialGoals'], 'scenario');
+    for (const key of refs(scenario.initialGoals, goalIds, 'scenario.initialGoals', false)) {
+      if (goals.find(g => g.id === key)?.showTarget !== false) fail('scenario.initialGoals', '情境只能设置隐藏条件，不能预先完成玩家任务');
+      initialIds.add(key);
+    }
+  }
+  if (rules.some(rule => (rule.grants ?? []).some((key: string) => initialIds.has(key)))) fail('level.scenarios', '情境条件只读，不得通过玩家动作产生');
   const stages = array(r.stages ?? [], 'level.stages');
   if (stages.length > 16) fail('level.stages', '每关至多 16 个阶段');
   const stageIds = uniqueIds(stages, 'level.stages');
@@ -241,7 +253,7 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
   const completion = obj(r.completion, 'level.completion'); exactKeys(completion, ['requires','settleMs','observeMs','fixedStars','summary','title','status'], 'level.completion');
   for (const k of ['title','status']) if (completion[k] !== undefined) text(completion[k], `completion.${k}`);
   const required = refs(completion.requires, goalIds, 'completion.requires', false); if (!required.length) fail('completion.requires', '通关条件不能为空');
-  if (required.length !== goals.length) fail('completion.requires', '所有声明的目标都必须参与通关，避免剪影未完成却结算');
+  if ((!scenarios.length && required.length !== goals.length) || goals.some(g => g.showTarget !== false && !required.includes(g.id)) || required.some(key => initialIds.has(key))) fail('completion.requires', '所有声明的目标都必须参与通关，避免剪影未完成却结算');
   number(completion.settleMs, 'completion.settleMs', 0, 5000); text(completion.summary, 'completion.summary');
   if (completion.observeMs !== undefined) number(completion.observeMs, 'completion.observeMs', 0, 60000);
   if (completion.fixedStars !== undefined) {
@@ -288,8 +300,9 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
   }
   if (s.presentation !== undefined) {
     const p = 'skin.presentation', presentation = obj(s.presentation, p);
-    exactKeys(presentation, ['durationMs','effects','actors','audio','timer','roomSmoke','failureReveal'], p);
+    exactKeys(presentation, ['durationMs','effects','actors','audio','timer','roomSmoke','failureReveal','noticeAppearance'], p);
     if (presentation.failureReveal !== undefined && (presentation.failureReveal !== true || r.kind !== 'response')) fail(`${p}.failureReveal`, '仅处置关可显式启用失败演出');
+    if (presentation.noticeAppearance !== undefined) oneOf(presentation.noticeAppearance, ['scene'], p + '.noticeAppearance');
     number(presentation.durationMs, `${p}.durationMs`, 1000, 600000);
     if(presentation.timer!==undefined)oneOf(presentation.timer,['countdown'],p+'.timer');
     if(presentation.roomSmoke!==undefined){
@@ -352,7 +365,8 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
       refs(actor.until, goalIds, `${q}.until`);
       if(actor.performance){
         const path = `${q}.performance`, v=obj(actor.performance,path);
-        exactKeys(v,['lean','periodMs','cough','cycle'],path); number(v.lean,`${path}.lean`,0,.15); number(v.periodMs,`${path}.periodMs`,500,10000);
+        exactKeys(v,['lean','periodMs','cough','cycle','activeAssets'],path); number(v.lean,`${path}.lean`,0,.15); number(v.periodMs,`${path}.periodMs`,500,10000);
+        if(v.activeAssets!==undefined){const assets=refs(v.activeAssets,assetIds,`${path}.activeAssets`,false);if(!assets.length)fail(path,'动作素材条件不能为空');}
         if(v.cough){exactKeys(obj(v.cough,path),['asset','w','h','everyMs','durationMs','until'],path);refs([v.cough.asset],assetIds,path);number(v.cough.w,path,1,world.width);number(v.cough.h,path,1,world.height);number(v.cough.everyMs,path,3000,30000);number(v.cough.durationMs,path,300,2000);refs(v.cough.until,goalIds,path);}
         if(v.cycle!==undefined){
           const cyclePath=`${path}.cycle`, cycle=obj(v.cycle,cyclePath);
@@ -412,7 +426,8 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
   }
   // Exhaust all monotone goal states, not just a topological approximation. This catches
   // mutually exclusive locks, shadowed rules, premature disabled objects and dead-end choices.
-  const queue: string[][] = [[]], visited = new Set(['']), full = [...goalIds].sort().join('|');
+  const queue: string[][] = scenarios.length ? scenarios.map(scenario => [...scenario.initialGoals].sort()) : [[]];
+  const visited = new Set(queue.map(done => done.join('|')));
   let fullFound = false;
   for (let index = 0; index < queue.length; index++) {
     const done = queue[index], all = (ids: string[] = []) => ids.every(v => done.includes(v)), any = (ids: string[] = []) => ids.some(v => done.includes(v));
@@ -427,7 +442,7 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
         && !(c.notStages ?? []).some((stage: string) => availableStages.includes(stage))
         && !(risk.mode === 'elapsed' && (c.riskAtLeast ?? 0) > 0));
     };
-    if ([...done].sort().join('|') === full) { fullFound = true; continue; }
+    if (all(required)) { fullFound = true; continue; }
     const conversation = conversations.find(card => all(card.requires) && !any(card.unless));
     let outgoing = false;
     for (const o of objects) {

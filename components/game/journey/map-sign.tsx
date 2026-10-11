@@ -14,6 +14,7 @@ type Props = {
   levelId: string;
   regionId: string;
   title: string;
+  subtitle?: string;
   status: NodeStatus;
   revealNonce?: number;
   stampNonce?: number;
@@ -25,6 +26,7 @@ export function MapSign({
   levelId,
   regionId,
   title,
+  subtitle,
   status,
   revealNonce,
   stampNonce,
@@ -54,6 +56,8 @@ export function MapSign({
       className="garden-node-label"
       aria-hidden="true"
       data-sign-theme={regionId}
+      data-has-motif={!!motif}
+      data-has-subtitle={!!subtitle}
       data-motion={visible ? 'on' : 'off'}
       data-revealing={revealNonce !== undefined}
       data-stamping={stamping}
@@ -92,6 +96,7 @@ export function MapSign({
         />
       </span>
       <strong className="garden-node-title">{title}</strong>
+      {subtitle && <span className="garden-node-subtitle">{subtitle}</span>}
       {motif && (
         <img
           className="garden-sign-motif"

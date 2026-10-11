@@ -3,6 +3,7 @@
   --journey-frame-max-width: 520px;
 }
 .game-page:has(> :is(.title-screen, .garden-shell)) {
+  position: relative;
   padding: 0;
   background: #e5ece5;
 }

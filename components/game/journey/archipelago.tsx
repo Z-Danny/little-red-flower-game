@@ -115,7 +115,10 @@ export function Archipelago({
 
   const select = useCallback(
     (categoryId: ArchipelagoCategoryId) => {
-      if (journey.current || closing.current || document.hidden) return;
+      if (
+        !archipelagoCategory(categoryId).available ||
+        journey.current || closing.current || document.hidden
+      ) return;
       const moveFlag = categoryId !== flagCategory;
       const finishAt = reducedMotion
         ? archipelagoTiming.reducedEnter
@@ -328,10 +331,11 @@ export function Archipelago({
               className="archipelago-island"
               data-island={island.id}
               data-selected={target === island.id}
+              data-available={island.available}
               data-ui-sound="off"
-              aria-label={`${island.name}${island.id === current.id ? '，当前地图' : ''}，点击前往`}
+              aria-label={`${island.name}${!island.available ? '，筹备中，暂未开放' : `${island.id === current.id ? '，当前地图' : ''}，点击前往`}`}
               aria-pressed={island.id === flagCategory}
-              aria-disabled={phase !== 'idle'}
+              aria-disabled={!island.available || phase !== 'idle'}
               onClick={() => select(island.id)}
             >
               <span className="archipelago-island-float">
@@ -343,10 +347,13 @@ export function Archipelago({
                     alt=""
                     draggable={false}
                   />
-                  <span className="archipelago-island-label">
-                    <img src={archipelagoArt.plaque} alt="" draggable={false} />
-                    <span data-island-title={island.id}>{island.name}</span>
+                  <span className="archipelago-island-label" data-label-island={island.id}>
+                    <img src={archipelagoArt.labels} alt="" draggable={false} />
+                    <span className="archipelago-island-title-text" data-island-title={island.id}>{island.name}</span>
                   </span>
+                  {!island.available && (
+                    <span className="archipelago-island-coming-soon">筹备中</span>
+                  )}
                 </span>
               </span>
             </button>

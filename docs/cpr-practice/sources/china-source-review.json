@@ -1,0 +1,23 @@
+{
+  "checkedOn": "2026-10-07",
+  "scope": "first-aid-cpr reference links only",
+  "source": {
+    "publisher": "北京市卫生健康委员会",
+    "authorInstitution": "首都医科大学附属北京友谊医院",
+    "title": "【友谊科普】生活急救小常识 关键时刻能救命",
+    "publishedOn": "2024-09-12",
+    "url": "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202409/t20240912_3865801.html",
+    "httpStatus": 200
+  },
+  "verifiedTopics": [
+    "无反应时立即派人呼救并寻找AED",
+    "患者仰卧于硬质平面",
+    "双手重叠、双臂伸直、肩部在手上方",
+    "每分钟100至120次及充分回弹",
+    "AED取得后按设备指示使用"
+  ],
+  "limitations": "医院科普原文还介绍人工呼吸等内容；本关仍只训练分工与输入节奏。链接核对不是临床认证。",
+  "previousSources": "AHA/美国红十字会不再作为本关运行时参考链接；历史核对记录保留，不覆盖。",
+  "beforeSha256": "5dbbec99abf68eb1008662d97b51a3b9c19433b01ccdd3a878b276ee5947d2e5",
+  "afterSha256": "815bd6970963fdc6855f2af60d699ed60193026d4a48310473e30ae04e08df65"
+}

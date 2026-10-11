@@ -1,0 +1,15 @@
+﻿{
+  "version": 2,
+  "requirement": "所有人物均设定为中国人，包括背景人物与海报人物",
+  "setting": "中国社区活动广场",
+  "characters": [
+    {"id":"patient","nationality":"中国","age":45,"appearance":"黑色短发、浅蓝衬衫、深灰长裤，成人男性"},
+    {"id":"volunteer-teal","nationality":"中国","age":35,"appearance":"黑发低髻、青绿色马甲、米色袖衫，成人女性"},
+    {"id":"helper-mustard","nationality":"中国","age":40,"appearance":"黑色短发、芥黄色上衣、深色长裤，成人男性"},
+    {"id":"teaching-cast","nationality":"中国","appearance":"教学定格中的三位中国成人，含戴眼镜的青马甲男演员"},
+    {"id":"medical-team","nationality":"中国","appearance":"三位中国专业人员，深蓝制服、浅色反光条，现代职业装"},
+    {"id":"background-and-posters","nationality":"中国","appearance":"背景活动参与者、宣传海报内人物同样遵守设定"}
+  ],
+  "avoid": ["刻板夸张五官", "古装民族服装代替现代社区着装", "用外观声称证明真实国籍", "未经审核的CPR手位和电极位置示范"],
+  "scope": "4-9本关；不擅自修改其他关卡美术"
+}

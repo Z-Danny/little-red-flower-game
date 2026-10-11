@@ -1,0 +1,5 @@
+Source verification record, 2026-10-07
+URL: https://www.redcross.org/take-a-class/cpr/performing-cpr/hands-only-cpr
+HTTP fetch succeeded via PowerShell. Reviewed instructions: kneel beside person; heel of hand in center of chest, other hand on top; straight arms and shoulders above hands; 100–120/minute; full recoil. Stored as paraphrase, not a copy of the source page.
+AHA supplied PDF returned HTTP 403; its full 2025 text was not independently read.
+Clinical professional review: not_run.

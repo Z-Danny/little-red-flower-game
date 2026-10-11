@@ -71,6 +71,45 @@ export function useHudSafeSigns(
         return;
 
       let next: Map<string, SignLayout> | undefined;
+      // An explicitly authored return side wins again once the HUD is clear.
+      // Ordinary signs keep their existing remembered HUD-avoidance behavior.
+      for (const node of painting.querySelectorAll<HTMLElement>(
+        '.garden-node[data-sign-return-side="right"]',
+      )) {
+        const id = node.dataset.mapNode;
+        const label = node.querySelector<HTMLElement>('.garden-node-label');
+        if (!id || !label || !remembered.current.has(id)) continue;
+        const anchor = node.getBoundingClientRect();
+        const centerX = (anchor.left + anchor.right) / 2;
+        const width = Math.min(152, bounds.right - centerX - 40);
+        const oldWidth = label.style.width;
+        let height: number;
+        try {
+          label.style.width = `${width}px`;
+          height = label.getBoundingClientRect().height;
+        } finally {
+          label.style.width = oldWidth;
+        }
+        const centerY = (anchor.top + anchor.bottom) / 2;
+        const preferred = touchRect({
+          left: anchor.right + 2, right: anchor.right + 2 + width,
+          top: centerY - height / 2, bottom: centerY + height / 2,
+        });
+        if (width >= 44 && preferred.left >= bounds.left + 10 &&
+            preferred.right <= bounds.right - 10 &&
+            preferred.top >= bounds.top && preferred.bottom <= bounds.bottom &&
+            !intersects(preferred, visible) &&
+            !Array.from(painting.querySelectorAll<HTMLElement>('.garden-node-label, .garden-node-bed'))
+              .some(other => !node.contains(other) && intersects(preferred, touchRect(other.getBoundingClientRect())))) {
+          next ??= new Map(remembered.current);
+          next.delete(id);
+        }
+      }
+      if (next) {
+        remembered.current = next;
+        setLayouts(next);
+        return;
+      }
       for (const node of painting.querySelectorAll<HTMLElement>(
         '.garden-node[data-sign-side="right"]',
       )) {

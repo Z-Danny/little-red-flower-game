@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "world": {
     "width": 720,
     "height": 1280
@@ -497,6 +497,166 @@
         ]
       },
       "width": 720
+    },
+    {
+      "id": "first-aid",
+      "name": "急救岛",
+      "short": "第四章 · 急救岛",
+      "subtitle": "把关心化作行动",
+      "medal": "生命守护者",
+      "image": "/levels/journey-map/first-aid-v1-handpainted.png",
+      "top": 0,
+      "height": 2160,
+      "width": 720,
+      "nodes": [
+        {
+          "id": "first-aid-abrasion",
+          "x": 490,
+          "y": 1750,
+          "place": "海边清洁护理小站",
+          "unlockAfter": null,
+          "signSide": "left"
+        },
+        {
+          "id": "first-aid-nosebleed",
+          "x": 338,
+          "y": 1570,
+          "place": "紫顶校医室",
+          "unlockAfter": "first-aid-abrasion",
+          "signSide": "right"
+        },
+        {
+          "id": "first-aid-sprain",
+          "x": 443,
+          "y": 1380,
+          "place": "运动场救护角",
+          "unlockAfter": "first-aid-nosebleed",
+          "signSide": "left"
+        },
+        {
+          "id": "first-aid-burn",
+          "x": 374,
+          "y": 1210,
+          "place": "厨房用水体验屋",
+          "unlockAfter": "first-aid-sprain",
+          "signSide": "right"
+        },
+        {
+          "id": "first-aid-fainting",
+          "x": 378,
+          "y": 1050,
+          "place": "林荫休息长廊",
+          "unlockAfter": "first-aid-burn",
+          "signSide": "left"
+        },
+        {
+          "id": "first-aid-airway",
+          "x": 365,
+          "y": 910,
+          "place": "气道急救训练亭",
+          "unlockAfter": "first-aid-fainting",
+          "signSide": "right"
+        },
+        {
+          "id": "first-aid-cpr",
+          "x": 413,
+          "y": 718,
+          "place": "心肺复苏练习台",
+          "unlockAfter": "first-aid-airway",
+          "signSide": "left"
+        },
+        {
+          "id": "first-aid-aed",
+          "x": 419,
+          "y": 556,
+          "place": "自动除颤协作站",
+          "unlockAfter": "first-aid-cpr",
+          "signSide": "right",
+          "signReturnSide": "right"
+        }
+      ],
+      "restoration": {
+        "flowers": [
+          {
+            "x": 465,
+            "y": 1768
+          },
+          {
+            "x": 513,
+            "y": 1762
+          },
+          {
+            "x": 313,
+            "y": 1588
+          },
+          {
+            "x": 361,
+            "y": 1582
+          },
+          {
+            "x": 418,
+            "y": 1398
+          },
+          {
+            "x": 466,
+            "y": 1392
+          },
+          {
+            "x": 349,
+            "y": 1228
+          },
+          {
+            "x": 397,
+            "y": 1222
+          },
+          {
+            "x": 353,
+            "y": 1068
+          },
+          {
+            "x": 401,
+            "y": 1062
+          },
+          {
+            "x": 340,
+            "y": 928
+          },
+          {
+            "x": 388,
+            "y": 922
+          },
+          {
+            "x": 388,
+            "y": 736
+          },
+          {
+            "x": 436,
+            "y": 730
+          },
+          {
+            "x": 394,
+            "y": 574
+          },
+          {
+            "x": 442,
+            "y": 568
+          }
+        ],
+        "lights": [
+          {
+            "x": 423,
+            "y": 1635
+          },
+          {
+            "x": 314,
+            "y": 1257
+          },
+          {
+            "x": 382,
+            "y": 884
+          }
+        ]
+      }
     }
   ],
   "direction": "up"

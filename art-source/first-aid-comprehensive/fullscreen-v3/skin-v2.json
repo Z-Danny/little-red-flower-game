@@ -1,0 +1,25 @@
+{
+  "id": "paperbook-chinese-cast-v2",
+  "width": 1024,
+  "height": 1536,
+  "illustrationUse": "narrative-stills-not-medical-technique-diagrams",
+  "art": {
+    "prepare": "/levels/first-aid-comprehensive/prepare-cn-v2.png",
+    "review": "/levels/first-aid-comprehensive/review-cn-v2.png",
+    "respond": "/levels/first-aid-comprehensive/response-cn-v2.png",
+    "complete": "/levels/first-aid-comprehensive/handover-cn-v2.png"
+  },
+  "criticalRegions": {
+    "prepare": [{"x": 65,"y": 745,"w": 910,"h": 380}],
+    "review": [{"x": 24,"y": 450,"w": 986,"h": 483}],
+    "respond": [{"x": 25,"y": 343,"w": 989,"h": 699}],
+    "complete": [{"x": 150,"y": 360,"w": 870,"h": 815}]
+  },
+  "reviewMarkers": {
+    "give-water": {"x": 0.31,"y": 0.495},
+    "wait-for-bag": {"x": 0.565,"y": 0.479},
+    "film-patient": {"x": 0.79,"y": 0.403}
+  },
+  "pixelMasks": "not_applicable-to-labelled-teaching-plate",
+  "productionLayerCompilation": "not_run"
+}

@@ -121,7 +121,7 @@ export function createLocalLeaderboard(options: Options): LeaderboardProvider {
     async recordResult(id, flowers, playerId) { return mutate(state => recordBest(state, id, flowers, options.caps, playerId)); },
     async claimCompletion(id,playerId,flowers) {
       const state=load(),player=state.players.find(p=>p.id===playerId);
-      if(player&&!player.allLevelsUnlocked&&options.canEnter&&!options.canEnter(id,player.completed))throw new Error('请先完成本区域的上一关。');
+      if(player&&options.canEnter&&!options.canEnter(id,player.completed))throw new Error('请先完成本区域的上一关。');
       const next=claimFirstCompletion(state,id,playerId,options.caps,flowers);
       save(next.state);
       return {snapshot:snapshot(next.state),receipt:next.receipt};

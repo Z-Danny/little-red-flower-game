@@ -1,0 +1,52 @@
+{
+  "date": "2026-09-27",
+  "source": "Original SVG paths extending the existing map-sign motif system; no image model or external assets",
+  "placement": "Shared MapSign upper-right motif slot",
+  "assets": [
+    {
+      "id": "first-aid-abrasion",
+      "path": "public/ui/map-signs-v1/motifs/first-aid-abrasion.svg",
+      "sha256": "95fed74c69e38cd6bb24b4ae67e7a500068455e52459675dc5cac497723d4e80"
+    },
+    {
+      "id": "first-aid-nosebleed",
+      "path": "public/ui/map-signs-v1/motifs/first-aid-nosebleed.svg",
+      "sha256": "a9593028bd57a29d5160aa00135317c8acf4dac6e26dcc2e014a319994e55d27"
+    },
+    {
+      "id": "first-aid-sprain",
+      "path": "public/ui/map-signs-v1/motifs/first-aid-sprain.svg",
+      "sha256": "df59589bd7a8299f0c3216f0ce11ebdb845f3e6da1707382120639982dcf027e"
+    },
+    {
+      "id": "first-aid-burn",
+      "path": "public/ui/map-signs-v1/motifs/first-aid-burn.svg",
+      "sha256": "0b56599559615877c23072e7d94da8bb12f063db643dc65771c7fcd9991cbb36"
+    },
+    {
+      "id": "first-aid-fainting",
+      "path": "public/ui/map-signs-v1/motifs/first-aid-fainting.svg",
+      "sha256": "ae9afba1e2fb48d6f6e7aada124c50a712489a9493438fb88ab080e692345632"
+    },
+    {
+      "id": "first-aid-airway",
+      "path": "public/ui/map-signs-v1/motifs/first-aid-airway.svg",
+      "sha256": "656c38f86f167ae64cf39205ddf405c5b51bc82cbb57e4a841f43d7ab6b42c4f"
+    },
+    {
+      "id": "first-aid-cpr",
+      "path": "public/ui/map-signs-v1/motifs/first-aid-cpr.svg",
+      "sha256": "3054e1bf17b8012c6be264b75c16e0980b8877f37549a60192bbe5d8bf55024e"
+    },
+    {
+      "id": "first-aid-aed",
+      "path": "public/ui/map-signs-v1/motifs/first-aid-aed.svg",
+      "sha256": "5be81bee0baf5a751e9f59db1467db40159745f012d6f8f2da7be4b380b704d0"
+    },
+    {
+      "id": "first-aid-comprehensive",
+      "path": "public/ui/map-signs-v1/motifs/first-aid-comprehensive.svg",
+      "sha256": "94345293a75291ff313581e46234ecc3715664b7b88f1bafac3cae0112d39cdc"
+    }
+  ]
+}

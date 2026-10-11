@@ -241,10 +241,13 @@ test('unlock all persists per player without awarding flowers; reset restores pr
 
 test('unlocked players can claim a later level once without completing prerequisites', async () => {
   const storage = new MemoryStorage();
-  const provider = createLocalLeaderboard({ storage: () => storage, caps, id: () => 'unlocked-player', canEnter: () => false });
+  let sessionUnlocked = false;
+  const provider = createLocalLeaderboard({ storage: () => storage, caps, id: () => 'unlocked-player', canEnter: () => sessionUnlocked });
   const { current } = await provider.read();
   await assert.rejects(provider.claimCompletion('oil-fire', current.id), /上一关/);
   await provider.unlockAllLevels(current.id);
+  await assert.rejects(provider.claimCompletion('oil-fire', current.id), /上一关/, 'saved unlock must not bypass the current access policy');
+  sessionUnlocked = true;
   const first = await provider.claimCompletion('oil-fire', current.id);
   assert.equal(first.receipt.reward, 3);
   assert.deepEqual(first.snapshot.current.completed, { 'oil-fire': 3 });

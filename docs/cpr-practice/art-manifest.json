@@ -1,0 +1,42 @@
+{
+  "tool": "image_gen.imagegen",
+  "model": "not_exposed_by_tool",
+  "records": [
+    {
+      "id": "plaza-safe",
+      "input": "public/levels/first-aid-cpr/plaza.png",
+      "output": "public/levels/first-aid-cpr/plaza-safe.png",
+      "prompt": "Precise game background edit. Preserve the exact current composition, pavement, foliage, kiosk and supine patient, especially patient location and proportions. ONLY change the two standing bystanders: reduce each entire person uniformly to about 78% of their current size, keeping their FEET at the SAME positions as now. Thus their heads will move DOWN in the image from y~17% to y~23%. Woman still centered at x36% with feet y42%; man centered x64% with feet y43%. They are a little farther away and smaller to fit the game framing. Head tops MUST be at or below 22% image height. Do not move the unconscious patient at all. No additional people, no rescuer, no texts, no overlays, no interface. Preserve same warm storybook gouache aesthetic, adult proportions and existing scene details. Keep full portrait aspect ratio.",
+      "inputSha256": "198bb3d9519862e8b0f2b14d59343f579c6a93f545bfc4fe5456c015bb7d648b",
+      "outputSha256": "158d3e17f65e8b4894e886795ccfb4ca3e1895703c1bb714070171ea2d9a18b3"
+    },
+    {
+      "id": "rescuer",
+      "input": null,
+      "output": "public/levels/first-aid-cpr/rescuer.png",
+      "prompt": "Generate a single isolated adult CPR rescuer character sprite on a genuinely TRANSPARENT background (alpha), full body no cropping, NO patient, NO ground, NO shadow, NO scene, NO text. Original warm hand-painted storybook gouache, subtle paper texture in painted areas, realistic anatomy and calm focused expression, dark short hair adult woman, terracotta-red short sleeve shirt and slate blue trousers. Three-quarter front-left view elevated slightly, knees bent kneeling on the ground facing toward lower left of image. Both knees planted. Her upper body leans forward with shoulders DIRECTLY vertically above her overlapping hands; both arms absolutely STRAIGHT with locked elbows, hands heel-over-heel stacked together at the lowest-front-left point in front of her knees. Fingers lifted off imaginary chest. This is a medically plausible hands-only adult CPR posture. Stacked hands are the anchor point around x=33% y=78% of sprite. Head at 46% 20%, shoulder center 40% 40%. Keep the arms roughly vertical in projection. Hands reach down to an imaginary supine adult chest located in front of her left knee. Knees and feet rest at about y=90% and extend to right side of the sprite. Include absolutely no patient, blanket, mannequin, furniture, icons, arrows, circles or additional figures. This sprite will be layered onto a separately painted unconscious adult. Clear strong silhouette, clean transparency without checkerboard painted in, warm gentle shading, coherent adult body proportions.",
+      "inputSha256": null,
+      "outputSha256": "16e8242bab8413541cde42ac8bf4f6d911bf86ae4ea4069e056f92dc5404e3c8"
+    },
+    {
+      "id": "helper",
+      "input": "public/levels/first-aid-cpr/rescuer.png",
+      "output": "public/levels/first-aid-cpr/helper.png",
+      "prompt": "Create a matching transparent-background game sprite of a DIFFERENT CPR rescuer replacing this woman: an adult professional helper with short dark hair, clean shaven face, sage-teal short sleeve shirt and dark navy trousers. Preserve the exact same kneeling posture, size, composition, hand position and hand contact anchor as the reference. Straight elbows, shoulders vertically above overlapping hands, neutral focused expression, stacked palms with heel contact. No patient, no background, no shadow, no text, no props. The helper kneels facing lower left, hands anchored at the exact same position. Same original warm storybook gouache style. Full body entirely visible, genuine transparent alpha background.",
+      "inputSha256": "16e8242bab8413541cde42ac8bf4f6d911bf86ae4ea4069e056f92dc5404e3c8",
+      "outputSha256": "e40a1855e2466a8982912251defa84f5b4d1ed190437413f111764878a1da300"
+    }
+  ],
+  "codeNativeAssets": [
+    {
+      "path": "public/levels/first-aid-cpr/aed-case.svg",
+      "sha256": "87bb20502904c29faab6455573cfa2bc5f80e211ef978bae033578710995a0d7",
+      "method": "original editable SVG, not bitmap generation"
+    }
+  ],
+  "uncompletedArt": {
+    "id": "runner-away-background",
+    "status": "failed",
+    "reason": "image generation HTTP 503 model_not_found, 2026-10-07; no fallback used"
+  }
+}

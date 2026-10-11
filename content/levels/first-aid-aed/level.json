@@ -1,0 +1,554 @@
+{
+  "schemaVersion": 1,
+  "id": "first-aid-aed",
+  "kind": "response",
+  "title": "自动除颤协作",
+  "order": 408,
+  "location": "急救岛 · 社区协作站",
+  "description": "4-8｜协助者正在 CPR，你负责刚取来的 AED。依设备提示完成贴片、清场与后续配合。",
+  "safety": "教学模拟，不替代正规培训。题设已确认成人无反应、无正常呼吸，已呼叫120并开始CPR。设备为预连接成人贴片的半自动AED；真实操作遵循具体设备和调度员提示。",
+  "briefing": "120 已呼叫，协助者正在 CPR。先将 AED 拖到患者身旁，再开机。",
+  "scenarios": [
+    {
+      "id": "shock-advised",
+      "initialGoals": [
+        "shockable"
+      ]
+    },
+    {
+      "id": "no-shock-advised",
+      "initialGoals": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "device",
+      "label": "放置 AED",
+      "input": "drag",
+      "requires": [],
+      "disabledWhen": [
+        "placed"
+      ]
+    },
+    {
+      "id": "power",
+      "label": "开启 AED",
+      "input": "tap",
+      "requires": [
+        "placed"
+      ],
+      "disabledWhen": [
+        "powered"
+      ]
+    },
+    {
+      "id": "shirt",
+      "label": "解开上衣，露出胸部",
+      "input": "tap",
+      "requires": [
+        "powered"
+      ],
+      "disabledWhen": [
+        "exposed"
+      ]
+    },
+    {
+      "id": "cloth",
+      "label": "干毛巾擦干贴片区域",
+      "input": "drag",
+      "requires": [
+        "exposed"
+      ],
+      "disabledWhen": [
+        "dry"
+      ]
+    },
+    {
+      "id": "pad-upper",
+      "label": "电极片 ①",
+      "input": "drag",
+      "requires": [
+        "dry"
+      ],
+      "disabledWhen": [
+        "pad-upper-on"
+      ]
+    },
+    {
+      "id": "pad-side",
+      "label": "电极片 ②",
+      "input": "drag",
+      "requires": [
+        "dry"
+      ],
+      "disabledWhen": [
+        "pad-side-on"
+      ]
+    },
+    {
+      "id": "clear",
+      "label": "清场：大家离开，不要接触",
+      "input": "tap",
+      "requires": [
+        "powered"
+      ],
+      "disabledWhen": [
+        "branch-ready"
+      ]
+    },
+    {
+      "id": "shock",
+      "label": "电击按钮",
+      "input": "tap",
+      "requires": [
+        "powered"
+      ],
+      "disabledWhen": [
+        "branch-ready"
+      ]
+    },
+    {
+      "id": "helper",
+      "label": "协助者：立即恢复 CPR",
+      "input": "tap",
+      "requires": [],
+      "disabledWhen": [
+        "resumed"
+      ]
+    },
+    {
+      "id": "handover",
+      "label": "接应并告知急救人员",
+      "input": "tap",
+      "requires": [
+        "resumed"
+      ],
+      "disabledWhen": [
+        "handed-over"
+      ]
+    },
+    {
+      "id": "patient",
+      "label": "成人训练模型",
+      "input": "none",
+      "requires": [],
+      "disabledWhen": []
+    },
+    {
+      "id": "guide",
+      "label": "设备贴片图示",
+      "input": "none",
+      "requires": [],
+      "disabledWhen": []
+    },
+    {
+      "id": "screen",
+      "label": "设备短提示",
+      "input": "none",
+      "requires": [],
+      "disabledWhen": []
+    },
+    {
+      "id": "context",
+      "label": "题设说明",
+      "input": "none",
+      "requires": [],
+      "disabledWhen": []
+    },
+    {
+      "id": "cue",
+      "label": "协作提示",
+      "input": "none",
+      "requires": [],
+      "disabledWhen": []
+    },
+    {
+      "id": "water",
+      "label": "胸部水迹",
+      "input": "none",
+      "requires": [],
+      "disabledWhen": []
+    },
+    {
+      "id": "lead-upper",
+      "label": "已连接的导线①",
+      "input": "none",
+      "requires": [],
+      "disabledWhen": []
+    },
+    {
+      "id": "lead-side",
+      "label": "已连接的导线②",
+      "input": "none",
+      "requires": [],
+      "disabledWhen": []
+    }
+  ],
+  "goals": [
+    {
+      "id": "placed",
+      "label": "设备放稳",
+      "object": "device"
+    },
+    {
+      "id": "powered",
+      "label": "开机",
+      "object": "power"
+    },
+    {
+      "id": "exposed",
+      "label": "露出胸部",
+      "object": "shirt"
+    },
+    {
+      "id": "dry",
+      "label": "擦干皮肤",
+      "object": "cloth"
+    },
+    {
+      "id": "pad-upper-on",
+      "label": "贴片①固定",
+      "object": "pad-upper"
+    },
+    {
+      "id": "pad-side-on",
+      "label": "贴片②固定",
+      "object": "pad-side"
+    },
+    {
+      "id": "cleared",
+      "label": "分析前清场",
+      "object": "clear"
+    },
+    {
+      "id": "branch-ready",
+      "label": "遵循分析结果",
+      "object": "shock"
+    },
+    {
+      "id": "resumed",
+      "label": "立即恢复 CPR",
+      "object": "helper"
+    },
+    {
+      "id": "handed-over",
+      "label": "继续帮助与交接",
+      "object": "handover"
+    },
+    {
+      "id": "shockable",
+      "label": "设备预设：可电击心律",
+      "object": "screen",
+      "showTarget": false
+    },
+    {
+      "id": "shock-clear",
+      "label": "电击前再次确认清场",
+      "object": "clear",
+      "showTarget": false
+    }
+  ],
+  "interactions": [
+    {
+      "id": "place-device",
+      "source": "device",
+      "mode": "drop",
+      "target": "device-zone",
+      "requires": [],
+      "grants": [
+        "placed"
+      ],
+      "outcome": "correct",
+      "animation": "place-device",
+      "feedback": "设备放在身旁干燥、稳固的地面。协助者继续 CPR。"
+    },
+    {
+      "id": "power-on",
+      "source": "power",
+      "mode": "tap",
+      "requires": [
+        "placed"
+      ],
+      "grants": [
+        "powered"
+      ],
+      "outcome": "correct",
+      "animation": "power-on",
+      "feedback": "AED 已开机。按设备图示准备贴片；协助者继续 CPR。"
+    },
+    {
+      "id": "expose-chest",
+      "source": "shirt",
+      "mode": "tap",
+      "requires": [
+        "powered"
+      ],
+      "grants": [
+        "exposed"
+      ],
+      "outcome": "correct",
+      "animation": "expose-chest",
+      "feedback": "已露出胸部。本题贴片区域有汗水，用干毛巾擦干。"
+    },
+    {
+      "id": "dry-chest",
+      "source": "cloth",
+      "mode": "drop",
+      "target": "chest-zone",
+      "requires": [
+        "exposed"
+      ],
+      "grants": [
+        "dry"
+      ],
+      "outcome": "correct",
+      "animation": "dry-chest",
+      "feedback": "贴片区域已擦干。按照设备图示贴片，不中断协助者按压。"
+    },
+    {
+      "id": "attach-upper",
+      "source": "pad-upper",
+      "mode": "drop",
+      "target": "upper-zone",
+      "requires": [
+        "dry"
+      ],
+      "grants": [
+        "pad-upper-on"
+      ],
+      "outcome": "correct",
+      "animation": "attach-upper",
+      "feedback": "① 固定在患者右上胸、锁骨下方（画面左侧）。"
+    },
+    {
+      "id": "attach-side",
+      "source": "pad-side",
+      "mode": "drop",
+      "target": "side-zone",
+      "requires": [
+        "dry"
+      ],
+      "grants": [
+        "pad-side-on"
+      ],
+      "outcome": "correct",
+      "animation": "attach-side",
+      "feedback": "② 固定在患者左侧胸、腋下（画面右侧），避开按压位置。"
+    },
+    {
+      "id": "clear-analysis",
+      "source": "clear",
+      "mode": "tap",
+      "requires": [
+        "pad-upper-on",
+        "pad-side-on"
+      ],
+      "grants": [
+        "cleared"
+      ],
+      "outcome": "correct",
+      "animation": "clear-analysis",
+      "feedback": "大家离开，不要接触！协助者抬手，AED 开始分析。",
+      "unless": [
+        "cleared"
+      ]
+    },
+    {
+      "id": "clear-shock",
+      "source": "clear",
+      "mode": "tap",
+      "requires": [
+        "cleared",
+        "shockable"
+      ],
+      "grants": [
+        "shock-clear"
+      ],
+      "outcome": "correct",
+      "animation": "clear-shock",
+      "feedback": "设备建议电击。再次确认无人接触患者，等待设备就绪。",
+      "stages": [
+        "analyzed"
+      ]
+    },
+    {
+      "id": "deliver-shock",
+      "source": "shock",
+      "mode": "tap",
+      "requires": [
+        "cleared",
+        "shockable",
+        "shock-clear"
+      ],
+      "grants": [
+        "branch-ready"
+      ],
+      "outcome": "correct",
+      "animation": "deliver-shock",
+      "feedback": "已按设备提示完成电击。立即请协助者恢复 CPR！",
+      "stages": [
+        "shock-ready"
+      ]
+    },
+    {
+      "id": "resume-after-shock",
+      "source": "helper",
+      "mode": "tap",
+      "requires": [
+        "branch-ready"
+      ],
+      "grants": [
+        "resumed"
+      ],
+      "outcome": "correct",
+      "animation": "resume-after-shock",
+      "feedback": "协助者已立即恢复 CPR。贴片保持连接，继续按设备提示。"
+    },
+    {
+      "id": "resume-without-shock",
+      "source": "helper",
+      "mode": "tap",
+      "requires": [
+        "cleared"
+      ],
+      "grants": [
+        "branch-ready",
+        "resumed"
+      ],
+      "outcome": "correct",
+      "animation": "resume-without-shock",
+      "feedback": "设备不建议电击。没有按电击键，立即恢复 CPR；这不代表已经恢复。",
+      "unless": [
+        "shockable"
+      ],
+      "stages": [
+        "analyzed"
+      ]
+    },
+    {
+      "id": "handover-help",
+      "source": "handover",
+      "mode": "tap",
+      "requires": [
+        "resumed"
+      ],
+      "grants": [
+        "handed-over"
+      ],
+      "outcome": "correct",
+      "animation": "handover-help",
+      "feedback": "已让旁人接应急救人员并说明情况。继续 CPR，AED 保持连接，听从后续提示。"
+    },
+    {
+      "id": "wrong-upper",
+      "source": "pad-upper",
+      "mode": "drop",
+      "target": "side-zone",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "blocked",
+      "feedback": "① 不是这里。看设备图示：患者右上胸、锁骨下方。"
+    },
+    {
+      "id": "wrong-side",
+      "source": "pad-side",
+      "mode": "drop",
+      "target": "upper-zone",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "blocked",
+      "feedback": "② 不是这里。看设备图示：患者左侧胸、腋下。"
+    },
+    {
+      "id": "early-clear",
+      "source": "clear",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "blocked",
+      "feedback": "设备准备时让协助者继续 CPR。两片贴好、设备提示分析时再清场。",
+      "unless": [
+        "cleared"
+      ]
+    },
+    {
+      "id": "unsafe-shock",
+      "source": "shock",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "blocked",
+      "feedback": "不能自行决定电击。仅在 AED 建议电击、无人接触且设备就绪时按键。"
+    },
+    {
+      "id": "early-resume",
+      "source": "helper",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "danger",
+      "animation": "blocked",
+      "feedback": "正在分析或等待电击。所有人保持不接触，按设备提示再立即恢复 CPR。",
+      "requires": [
+        "cleared"
+      ]
+    },
+    {
+      "id": "keep-compressions",
+      "source": "helper",
+      "mode": "tap",
+      "requires": [],
+      "unless": [
+        "cleared"
+      ],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "blocked",
+      "feedback": "协助者正在 CPR。你负责准备 AED，不要让他停手等待。"
+    }
+  ],
+  "stages": [
+    {
+      "id": "analyzed",
+      "requires": [
+        "cleared"
+      ],
+      "afterMs": 1600,
+      "feedback": "分析结束：只按 AED 当前提示操作。"
+    },
+    {
+      "id": "shock-ready",
+      "requires": [
+        "shock-clear"
+      ],
+      "afterMs": 900,
+      "feedback": "设备就绪：确认无人接触，按电击键。"
+    }
+  ],
+  "risk": {
+    "mode": "elapsed",
+    "timeout": "continue",
+    "seconds": 180,
+    "initial": 0,
+    "warningAt": 90,
+    "peakFeedback": "从容练习，操作依设备提示；训练用时不是救援时限。"
+  },
+  "completion": {
+    "requires": [
+      "placed",
+      "powered",
+      "exposed",
+      "dry",
+      "pad-upper-on",
+      "pad-side-on",
+      "cleared",
+      "branch-ready",
+      "resumed",
+      "handed-over"
+    ],
+    "settleMs": 1200,
+    "fixedStars": 3,
+    "title": "协作完成，继续施救",
+    "status": "训练流程完成 ≠ 患者已经恢复",
+    "summary": "准备时持续 CPR，分析和电击时无人接触；是否电击由 AED 决定。提示后立即恢复 CPR，保持贴片连接，继续配合直到专业人员接手。"
+  }
+}

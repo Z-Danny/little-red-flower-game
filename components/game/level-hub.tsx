@@ -14,6 +14,8 @@ import {
 } from '@/app/game/journey/archipelago';
 import { categoryForRegion } from '@/app/game/journey/categories';
 type Props = {
+  /** Paint the destination beneath the departing cover without accepting input. */
+  entering?: boolean;
   completed: Record<string, number>;
   allLevelsUnlocked?: boolean;
   onStart: (id: string) => void;
@@ -63,6 +65,9 @@ export function LevelHub(props: Props) {
     <section
       className="garden-shell"
       data-journey-map
+      data-map-entering={props.entering || undefined}
+      inert={props.entering || undefined}
+      aria-hidden={props.entering || undefined}
       data-region={view.region.id}
       data-archipelago-open={archipelagoOpen}
       data-planting={planting?.levelId ?? ''}

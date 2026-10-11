@@ -17,6 +17,7 @@ import {
 import type { CompletionReceipt } from '@/app/game/leaderboard/model';
 import { LevelHub } from './level-hub';
 import type { ArchipelagoSound } from '@/app/game/journey/archipelago';
+import { CprPlayer } from './first-aid/cpr-player';
 import { KitchenPlayer } from './kitchen/kitchen-player';
 import { ConfiguredPlayer } from './configured/player';
 import { SceneHuntPlayer } from './scene-hunt/player';
@@ -81,7 +82,8 @@ function MainGameApp() {
   const [departingTitle, setDepartingTitle] = useState(false);
   const [departureCanContinue, setDepartureCanContinue] = useState(false);
   const departurePending = useRef(false);
-  const board = useLeaderboard(),
+  const [allLevelsUnlocked, setAllLevelsUnlocked] = useState(false);
+  const board = useLeaderboard(undefined, allLevelsUnlocked),
     [activeId, setActiveId] = useState<string | null>(null),
     [showLeaderboard, setShowLeaderboard] = useState(false);
   const [finished, setFinished] = useState(false),
@@ -93,11 +95,11 @@ function MainGameApp() {
   const reportLevelInterfacePolicy = useCallback((policy: LevelInterfaceSoundPolicy) => {
     setLevelInterfacePolicy(current => current.muted === policy.muted && current.volume === policy.volume ? current : policy);
   }, []);
-  const session = useRef<{playerId: string; levelId: string; finished: boolean; result?: TimeReward}>({ playerId: '', levelId: '', finished: false }),
+  const session = useRef<{playerId: string; levelId: string; finished: boolean; flowers?: number; result?: TimeReward}>({ playerId: '', levelId: '', finished: false }),
     sound = useRef<RewardSound | null>(null);
   const launchingLevel = useRef(false);
-  const completed = board.snapshot?.current.completed ?? EMPTY,
-    playerId = board.snapshot?.current.id,
+  const completed = board.snapshot?.current.completed ?? EMPTY;
+  const playerId = board.snapshot?.current.id,
     totalFlowers = flowerTotal(completed),
     active = activeId ? getLevel(activeId) : undefined;
   const music = useJourneyMusic(!active);
@@ -112,7 +114,8 @@ function MainGameApp() {
   const bookmark = useJourneyLocation(playerId);
   const startingNewGame = useRef(false);
   const remember = bookmark.remember;
-  const allLevelsUnlocked = board.snapshot?.current.allLevelsUnlocked === true;
+  // Explicit session opt-in. Old saved unlock flags never change normal play.
+  useEffect(() => { setAllLevelsUnlocked(false); }, [playerId]);
   const continueId = resumeNode(completed, bookmark.location, allLevelsUnlocked);
   const canContinue = allLevelsUnlocked || hasJourneyRecord(completed, bookmark.location);
   const toggleMute = () => {
@@ -138,12 +141,37 @@ function MainGameApp() {
   }, [showTitle]);
   useEffect(() => {
     if (!departingTitle) return;
-    const timer = window.setTimeout(() => {
+    let elapsed = 0;
+    let previous = performance.now();
+    let frame = 0;
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const finish = () => {
+      cancelAnimationFrame(frame);
       setShowTitle(false);
       setDepartingTitle(false);
       departurePending.current = false;
-    }, COVER_DEPARTURE_MS);
-    return () => window.clearTimeout(timer);
+    };
+    const advance = (now: number) => {
+      if (document.hidden) return;
+      elapsed += now - previous;
+      previous = now;
+      if (elapsed >= COVER_DEPARTURE_MS || preference.matches) finish();
+      else frame = requestAnimationFrame(advance);
+    };
+    const visibility = () => {
+      cancelAnimationFrame(frame);
+      previous = performance.now();
+      if (!document.hidden) frame = requestAnimationFrame(advance);
+    };
+    const motion = () => { if (preference.matches) finish(); };
+    visibility();
+    document.addEventListener('visibilitychange', visibility);
+    preference.addEventListener('change', motion);
+    return () => {
+      cancelAnimationFrame(frame);
+      document.removeEventListener('visibilitychange', visibility);
+      preference.removeEventListener('change', motion);
+    };
   }, [departingTitle]);
   const enterMap = (resume: boolean) => {
     if (!playerId || board.busy || departurePending.current) return;
@@ -209,9 +237,9 @@ function MainGameApp() {
   const claim = board.claimCompletion;
   const saveCompletion = useCallback(async () => {
     const currentSession = session.current;
-    const { playerId, levelId, result } = currentSession;
-    if (!result) return;
-    const saved = await claim(levelId, playerId, result.flowers);
+    const { playerId, levelId, flowers } = currentSession;
+    if (!flowers) return;
+    const saved = await claim(levelId, playerId, flowers);
     if (
       session.current === currentSession &&
       session.current.playerId === playerId &&
@@ -234,7 +262,10 @@ function MainGameApp() {
         session.current.finished
       )
         return;
-      session.current.result = timeReward(timing.elapsedMs, rewardReferenceSeconds(id));
+      // Keep the local, untimed CPR exercise: its existing rhythm/hand-off goals are not a speed challenge.
+      session.current.result = getLevel(id)?.engine === 'first-aid-cpr'
+        ? undefined : timeReward(timing.elapsedMs, rewardReferenceSeconds(id));
+      session.current.flowers = session.current.result?.flowers ?? stars;
       session.current.finished = true;
       setFinished(true);
       void saveCompletion();
@@ -365,7 +396,9 @@ function MainGameApp() {
     const hunt = getHunt(active.id),
       disaster = getDisaster(active.id),
       pack = getPackage(active.id);
-    const player = disaster ? (
+    const player = active.engine === 'first-aid-cpr' ? (
+      <CprPlayer key={active.id} onBack={returnMap} onFinish={finishLevel} />
+    ) : disaster ? (
       <DisasterPlayer
         key={active.id}
         pack={disaster}
@@ -421,28 +454,11 @@ function MainGameApp() {
       </>,
     );
   }
-  if (showTitle)
-    return shell(
-      <TitleScreen
-        muted={muted}
-        onMute={toggleMute}
-        musicMuted={music.muted}
-        onMusicMute={music.toggle}
-        canContinue={departingTitle ? departureCanContinue : canContinue}
-        allLevelsUnlocked={allLevelsUnlocked}
-        onUnlockAll={() => void board.unlockAllLevels()}
-        onManageSave={()=>setShowSaveManager(true)}
-        onStart={() => void startNewGame()}
-        busy={board.busy || departingTitle}
-        departing={departingTitle}
-        error={board.error}
-        onContinue={() => enterMap(true)}
-      />,
-    );
   return shell(
     <>
-    <LevelHub
+    {(!showTitle || departingTitle) && <LevelHub
       key={playerId}
+      entering={departingTitle}
       completed={completed}
       allLevelsUnlocked={allLevelsUnlocked}
       onStart={startLevel}
@@ -464,8 +480,26 @@ function MainGameApp() {
       onMute={toggleMute}
       musicMuted={music.muted}
       onMusicMute={music.toggle}
-    />
-    {showLeaderboard && (
+    />}
+    {showTitle && (
+      <TitleScreen
+        key="cover"
+        canContinue={departingTitle ? departureCanContinue : canContinue}
+        onStart={() => void startNewGame()}
+        muted={muted}
+        onMute={toggleMute}
+        musicMuted={music.muted}
+        onMusicMute={music.toggle}
+        allLevelsUnlocked={allLevelsUnlocked}
+        onUnlockAll={() => { if (playerId && !board.busy) setAllLevelsUnlocked(true); }}
+        onManageSave={() => setShowSaveManager(true)}
+        busy={board.busy || departingTitle}
+        departing={departingTitle}
+        error={board.error}
+        onContinue={() => enterMap(true)}
+      />
+    )}
+    {!showTitle && showLeaderboard && (
       <PlayerJournal
         board={{
           ...board,

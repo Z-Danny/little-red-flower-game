@@ -59,7 +59,15 @@
     "bedroom-night-check-v2": "/ui/map-signs-v1/motifs/bedroom-night-check-v2.svg",
     "kitchen-before-cooking-v2": "/ui/map-signs-v1/motifs/kitchen-before-cooking-v2.svg",
     "fire-shelter-practice": "/ui/map-signs-v1/motifs/fire-shelter-practice.svg",
-    "fire-stairs-practice": "/ui/map-signs-v1/motifs/fire-stairs-practice.svg"
+    "fire-stairs-practice": "/ui/map-signs-v1/motifs/fire-stairs-practice.svg",
+    "first-aid-abrasion": "/ui/map-signs-v1/motifs/first-aid-abrasion.svg",
+    "first-aid-nosebleed": "/ui/map-signs-v1/motifs/first-aid-nosebleed.svg",
+    "first-aid-sprain": "/ui/map-signs-v1/motifs/first-aid-sprain.svg",
+    "first-aid-burn": "/ui/map-signs-v1/motifs/first-aid-burn.svg",
+    "first-aid-fainting": "/ui/map-signs-v1/motifs/first-aid-fainting.svg",
+    "first-aid-airway": "/ui/map-signs-v1/motifs/first-aid-airway.svg",
+    "first-aid-cpr": "/ui/map-signs-v1/motifs/first-aid-cpr.svg",
+    "first-aid-aed": "/ui/map-signs-v1/motifs/first-aid-aed.svg"
   },
   "completedStamp": "/ui/map-signs-v1/completed-flower.svg",
   "motion": {

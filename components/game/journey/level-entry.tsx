@@ -1,7 +1,8 @@
 import { rewardRuleLabel } from '@/app/game/journey/time-reward';
 import { rewardReferenceSeconds } from '@/app/game/journey/level-reward';
 import { getLevel } from '@/app/game/levels';
-import { canEnter, nodeStatus, nodeFor, type Progress } from '@/app/game/journey/progress';
+import { journeyEntryFor } from '@/app/game/journey/entry';
+import type { Progress } from '@/app/game/journey/progress';
 import { PaintedLevelIntro } from '../painted-ui';
 
 /** The map owns the only introduction in a normal journey. */
@@ -12,25 +13,24 @@ export function LevelEntry({ inspect, completed, allLevelsUnlocked = false, setI
   setInspect: (id: string | null) => void;
   onStart: (id: string) => void;
 }) {
-  const level = inspect ? getLevel(inspect) : undefined;
-  if (!level) return null;
-  const status = nodeStatus(level.id, completed, allLevelsUnlocked);
-  const prerequisite = getLevel(nodeFor(level.id)?.unlockAfter ?? '')?.title ?? '前置关卡';
+  const entry = inspect ? journeyEntryFor(inspect, completed, allLevelsUnlocked) : undefined;
+  if (!entry) return null;
   return (
     <PaintedLevelIntro
-      key={level.id}
-      levelId={level.id}
-      title={level.title}
+      key={entry.id}
+      levelId={entry.id}
+      title={entry.title}
       className="painted-map-entry"
       mapEntry
-      note={`${rewardRuleLabel(rewardReferenceSeconds(level.id))}。先正确处置，再挑战速度；重玩只补差额。`}
-      lockedReason={status === 'locked' || !level.playable ? `先完成「${prerequisite}」，即可解锁本关。` : undefined}
-      startLabel={status === 'complete' ? '再玩一次' : undefined}
+      lockedReason={entry.lockedReason}
+      lockedLabel={entry.lockedLabel}
+      startLabel={entry.startLabel}
+      note={[entry.note, getLevel(entry.id)?.playable && getLevel(entry.id)?.engine !== 'first-aid-cpr' ? `${rewardRuleLabel(rewardReferenceSeconds(entry.id))}。先正确处置，再挑战速度；重玩只补差额。` : undefined].filter(Boolean).join(' · ')}
       onBack={() => setInspect(null)}
       onStart={() => {
-        // Validate again at the action boundary, including programmatic clicks.
-        if (!level.playable || !canEnter(level.id, completed, allLevelsUnlocked)) return;
-        onStart(level.id);
+        // Recheck both prerequisites and actual gameplay availability at the action boundary.
+        if (!journeyEntryFor(entry.id, completed, allLevelsUnlocked)?.canStart) return;
+        onStart(entry.id);
         setInspect(null);
       }}
     />

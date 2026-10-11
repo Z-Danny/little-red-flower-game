@@ -55,6 +55,7 @@ export function presentationActors(pack: LevelPackage, run: Run, poses: Record<s
     const home=poses[actor.object]; if(!home)continue;
     if(actor.performance){
       const perf=actor.performance,cough=perf.cough;
+      if (perf.activeAssets && !perf.activeAssets.includes(home.asset)) continue;
       let next={...home};
       const cycle=perf.cycle;
       if(cycle && !reduced && run.phase==='playing' && cycle.frames.includes(home.asset)
@@ -72,7 +73,7 @@ export function presentationActors(pack: LevelPackage, run: Run, poses: Record<s
         const pressure=presentationPressure(pack,run);
         const wobble=Math.sin(run.elapsed/perf.periodMs*Math.PI*2);
         next.rotation=(home.rotation??0)+wobble*perf.lean*(run.phase==='playing'?.55+pressure*.45:.25)+(coughing?Math.sin(run.elapsed/65)*.018:0);
-        next.pivot={x:.5,y:1};
+        next.pivot=home.pivot ?? {x:.5,y:1};
       }
       poses[actor.object]=next;
     }else poses[actor.object] = practiceActorPose(home, run.elapsed, actor.amplitude, reduced, danger);

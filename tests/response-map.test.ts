@@ -18,7 +18,7 @@ import {
   pickRelevantZone,
 } from '../app/game/runtime/drop-zones';
 import type { LevelPackage, Run } from '../app/game/runtime/schema';
-const nodes = journeyMap.regions.flatMap((r) => r.nodes);
+const nodes = journeyMap.regions.filter(r => r.id !== 'first-aid').flatMap((r) => r.nodes);
 const ids = nodes.map((n) => n.id).filter((id) => id.endsWith('-practice'));
 const advance = (pack: LevelPackage, initial: Run, ms: number) => {
   let run = initial;

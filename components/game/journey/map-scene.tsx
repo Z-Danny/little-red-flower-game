@@ -8,6 +8,7 @@ import { Flower } from './flower';
 import { MapSignal, useSignalPress, useSceneHover } from './map-signal';
 import { useHudSafeSigns } from './use-hud-safe-signs';
 import { MapSign } from './map-sign';
+import { firstAidPreview } from '@/app/game/journey/first-aid';
 import { useSignCelebration } from './use-sign-celebration';
 import { signMotion } from '@/app/game/journey/signs';
 import {
@@ -173,7 +174,8 @@ export function MapScene({
           const signLayout = signOffsets.get(n.id);
           const state = nodeStatus(n.id, progress, allLevelsUnlocked),
             plant = planting?.levelId === n.id,
-            title = getLevel(n.id)?.title,
+            preview = firstAidPreview(n.id),
+            title = getLevel(n.id)?.title ?? preview?.title,
             signSide =
               signLayout?.side ??
               n.signSide ??
@@ -189,13 +191,15 @@ export function MapScene({
               key={n.id}
               data-map-node={n.id}
               data-status={state}
+              data-preview-only={!!preview && !getLevel(n.id)?.playable}
               data-sign-side={signSide}
+              data-sign-return-side={'signReturnSide' in n ? n.signReturnSide : undefined}
               data-sign-adjusted={signAdjusted}
               data-hud-avoiding={signOffsets.has(n.id)}
               data-pressed={pressedId === n.id}
               data-scene-active={activeId === n.id}
               {...pressHandlers(n.id)}
-              aria-label={`${title}，${state === 'complete' ? '已完成' : state === 'available' ? '可进入' : '未解锁'}`}
+              aria-label={`${preview ? `${preview.number} ${title}，${preview.difficulty}${getLevel(n.id)?.playable ? '' : '，地图预览，玩法待开放'}` : title}，${state === 'complete' ? '已完成' : state === 'available' ? (preview && !getLevel(n.id)?.playable ? '已解锁，玩法待开放' : '可进入') : '未解锁'}`}
               aria-disabled={!!planting}
               className={`garden-node ${state} ${plant ? 'planting' : ''}`}
               style={

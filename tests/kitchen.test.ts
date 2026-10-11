@@ -118,7 +118,7 @@ test('lid animation ends exactly at configured pan cover and remains above pan',
   assert.deepEqual(pose?.box, layout.lid);
 });
 test('catalog retains both original modular levels alongside data-driven additions', () => {
-  assert.deepEqual(levels.filter(l => l.playable && l.engine !== 'configured-v1' && l.engine !== 'scene-hunt' && l.engine !== 'disaster-v1').map(l => l.id), ['typhoon-home', 'oil-fire']);
+  assert.deepEqual(levels.filter(l => l.playable && l.engine !== 'configured-v1' && l.engine !== 'scene-hunt' && l.engine !== 'disaster-v1' && l.engine !== 'first-aid-cpr').map(l => l.id), ['typhoon-home', 'oil-fire']);
   assert.equal(levels.find(l=>l.id==='charging-bedroom')?.engine,'scene-hunt');
   assert.equal(new Set(levels.map(l=>l.id)).size,levels.length);
 });

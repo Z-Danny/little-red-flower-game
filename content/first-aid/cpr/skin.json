@@ -1,0 +1,71 @@
+{
+  "width": 1024,
+  "height": 1536,
+  "scene": "/levels/first-aid-cpr/plaza-safe.png",
+  "actor": "/levels/first-aid-cpr/rescuer.png",
+  "actorBox": {
+    "x": 313,
+    "y": 569,
+    "w": 280,
+    "h": 295
+  },
+  "handsAnchor": {
+    "x": 410,
+    "y": 835
+  },
+  "caller": {
+    "x": 372,
+    "y": 480
+  },
+  "runner": {
+    "x": 646,
+    "y": 485
+  },
+  "position": {
+    "x": 514,
+    "y": 754
+  },
+  "wrongPosition": {
+    "x": 727,
+    "y": 1020
+  },
+  "criticalRegions": [
+    {
+      "x": 284,
+      "y": 780,
+      "w": 488,
+      "h": 200
+    },
+    {
+      "x": 367,
+      "y": 317,
+      "w": 58,
+      "h": 67
+    },
+    {
+      "x": 605,
+      "y": 303,
+      "w": 51,
+      "h": 66
+    },
+    {
+      "x": 356,
+      "y": 576,
+      "w": 109,
+      "h": 111
+    },
+    {
+      "x": 661,
+      "y": 735,
+      "w": 128,
+      "h": 103
+    }
+  ],
+  "aed": "/levels/first-aid-cpr/aed-case.svg",
+  "sceneBounds": {
+    "x": 96,
+    "y": 0,
+    "w": 832,
+    "h": 1344
+  }
+}

@@ -1,6 +1,7 @@
+import { getLevel } from '../app/game/levels';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { archipelagoDestinationId } from '../app/game/journey/archipelago';
+import { archipelagoDestinationId, archipelagoIslands } from '../app/game/journey/archipelago';
 import {
   journeyCategories,
   mapsForCategory,
@@ -18,10 +19,10 @@ void test('island selection follows the chosen map progress without unlocking or
       const destination = archipelagoDestinationId(category.id, completed);
       assert.equal(
         destination,
-        nodes[count]?.id ?? nodes[0].id,
+        nodes.find(n=>nodeStatus(n.id,completed)==='available')?.id ?? nodes[0].id,
         `${category.id}: select the next available level, or the entry after all levels are complete`,
       );
-      assert(canEnter(destination!, completed));
+      assert.equal(canEnter(destination!, completed), !!getLevel(destination!)?.playable, 'map previews may be inspected, but never started');
       assert.equal(JSON.stringify(completed), before);
     }
   }
@@ -40,8 +41,8 @@ void test('island selection tolerates legacy out-of-order saves and stays within
         nodes.some((node) => node.id === destination),
         `${category.id}: stay within the requested topic`,
       );
-      assert(canEnter(destination!, completed));
-      assert.equal(nodeStatus(destination!, completed), 'available');
+      assert.equal(canEnter(destination!, completed), !!getLevel(destination!)?.playable, 'map previews may be inspected, but never started');
+      assert.equal(nodeStatus(destination!, completed), getLevel(destination!)?.playable ? 'available' : 'locked');
       assert.deepEqual(completed, { [savedNode.id]: 2 });
     }
   }
@@ -53,4 +54,11 @@ void test('unknown or retired island destinations cannot route to an arbitrary m
     assert.equal(archipelagoDestinationId(categoryId, completed), null);
   }
   assert.deepEqual(completed, { 'typhoon-home': 3 });
+});
+
+void test('four brush-labelled islands include the first-aid map preview', () => {
+  assert.deepEqual(archipelagoIslands.map(island => island.id), ['nature', 'public', 'home', 'first-aid']);
+  assert.deepEqual(archipelagoIslands.filter(island => island.available).map(island => island.id), journeyCategories.map(category => category.id));
+  assert.equal(archipelagoIslands[3].name, '急救生命守护');
+  assert.equal(archipelagoDestinationId('first-aid', {}), 'first-aid-abrasion');
 });

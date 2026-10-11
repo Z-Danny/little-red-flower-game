@@ -1,5 +1,7 @@
 /** Narrow, paraphrased lessons checked against official sources on 2026-09-15.
  * This is a source check, not an endorsement/certification of the game. */
+import { aedLesson } from '../first-aid/aed-content';
+import { cprLesson } from '../first-aid/cpr-content';
 type BaseLesson = {
   summary: string;
   publisher: string;
@@ -389,6 +391,8 @@ const completion: Record<string, Pick<Lesson, 'message' | 'points' | 'sources'>>
 };
 
 export function lessonFor(id: string): Lesson {
+  if (id === 'first-aid-cpr') return cprLesson;
+  if (id === 'first-aid-aed') return aedLesson;
   const base = lessons[id];
   const detail = completion[id];
   if (!base || !detail) throw new Error(`缺少已核对的关卡知识：${id}`);

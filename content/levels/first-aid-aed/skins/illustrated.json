@@ -1,0 +1,1242 @@
+{
+  "schemaVersion": 1,
+  "id": "illustrated",
+  "world": {
+    "width": 720,
+    "height": 1080
+  },
+  "assets": {
+    "background": {
+      "src": "/levels/aed-cooperation/background.webp",
+      "alpha": false
+    },
+    "button-power": {
+      "src": "/levels/aed-cooperation/button-power.png",
+      "alpha": true
+    },
+    "button-shock": {
+      "src": "/levels/aed-cooperation/button-shock.png",
+      "alpha": true
+    },
+    "cable-side": {
+      "src": "/levels/aed-cooperation/cable-side.png",
+      "alpha": true
+    },
+    "cable-upper": {
+      "src": "/levels/aed-cooperation/cable-upper.png",
+      "alpha": true
+    },
+    "card": {
+      "src": "/levels/aed-cooperation/card.png",
+      "alpha": true
+    },
+    "cloth": {
+      "src": "/levels/aed-cooperation/cloth.png",
+      "alpha": true
+    },
+    "device-off": {
+      "src": "/levels/aed-cooperation/device-off.png",
+      "alpha": true
+    },
+    "device-on": {
+      "src": "/levels/aed-cooperation/device-on.png",
+      "alpha": true
+    },
+    "diagram": {
+      "src": "/levels/aed-cooperation/diagram.png",
+      "alpha": true
+    },
+    "helper-clear": {
+      "src": "/levels/aed-cooperation/helper-clear.png",
+      "alpha": true
+    },
+    "helper-press-a": {
+      "src": "/levels/aed-cooperation/helper-press-a.png",
+      "alpha": true
+    },
+    "helper-press-b": {
+      "src": "/levels/aed-cooperation/helper-press-b.png",
+      "alpha": true
+    },
+    "moisture": {
+      "src": "/levels/aed-cooperation/moisture.png",
+      "alpha": true
+    },
+    "pad-side": {
+      "src": "/levels/aed-cooperation/pad-side.png",
+      "alpha": true
+    },
+    "pad-upper": {
+      "src": "/levels/aed-cooperation/pad-upper.png",
+      "alpha": true
+    },
+    "patient": {
+      "src": "/levels/aed-cooperation/patient.png",
+      "alpha": true
+    },
+    "shirt": {
+      "src": "/levels/aed-cooperation/shirt.png",
+      "alpha": true
+    }
+  },
+  "background": "background",
+  "poses": {
+    "patient": {
+      "asset": "patient",
+      "x": 265,
+      "y": 345,
+      "w": 192,
+      "h": 416,
+      "depth": 3,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "shirt": {
+      "asset": "shirt",
+      "x": 265,
+      "y": 345,
+      "w": 192,
+      "h": 416,
+      "depth": 5,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "water": {
+      "asset": "moisture",
+      "x": 265,
+      "y": 345,
+      "w": 192,
+      "h": 416,
+      "depth": 4,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "helper": {
+      "asset": "helper-press-a",
+      "x": 165,
+      "y": 380,
+      "w": 195,
+      "h": 225,
+      "depth": 12,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "device": {
+      "asset": "device-off",
+      "x": 441,
+      "y": 803,
+      "w": 128,
+      "h": 156,
+      "depth": 6,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "power": {
+      "asset": "button-power",
+      "x": 456,
+      "y": 727,
+      "w": 36,
+      "h": 36,
+      "depth": 9,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "shock": {
+      "asset": "button-shock",
+      "x": 508,
+      "y": 726,
+      "w": 38,
+      "h": 38,
+      "depth": 10,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "cloth": {
+      "asset": "cloth",
+      "x": 198,
+      "y": 814,
+      "w": 80,
+      "h": 68,
+      "depth": 9,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "pad-upper": {
+      "asset": "pad-upper",
+      "x": 292,
+      "y": 807,
+      "w": 69,
+      "h": 84,
+      "depth": 9,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "pad-side": {
+      "asset": "pad-side",
+      "x": 364,
+      "y": 807,
+      "w": 69,
+      "h": 84,
+      "depth": 9,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "guide": {
+      "asset": "diagram",
+      "x": 453,
+      "y": 367,
+      "w": 112,
+      "h": 160,
+      "depth": 5,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "screen": {
+      "asset": "card",
+      "x": 450,
+      "y": 648,
+      "w": 114,
+      "h": 65,
+      "depth": 11,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "context": {
+      "asset": "card",
+      "x": 168,
+      "y": 195,
+      "w": 398,
+      "h": 116,
+      "depth": 10,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "cue": {
+      "asset": "card",
+      "x": 177,
+      "y": 310,
+      "w": 380,
+      "h": 52,
+      "depth": 11,
+      "opacity": 1,
+      "blockInput": false
+    },
+    "clear": {
+      "asset": "card",
+      "x": 198,
+      "y": 900,
+      "w": 233,
+      "h": 64,
+      "depth": 9,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "handover": {
+      "asset": "card",
+      "x": 198,
+      "y": 900,
+      "w": 350,
+      "h": 64,
+      "depth": 10,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "lead-upper": {
+      "asset": "cable-upper",
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1080,
+      "depth": 6,
+      "opacity": 0,
+      "blockInput": false
+    },
+    "lead-side": {
+      "asset": "cable-side",
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1080,
+      "depth": 6,
+      "opacity": 0,
+      "blockInput": false
+    }
+  },
+  "zones": {
+    "device-zone": {
+      "x": 440,
+      "y": 620,
+      "w": 133,
+      "h": 166
+    },
+    "chest-zone": {
+      "x": 305,
+      "y": 428,
+      "w": 115,
+      "h": 128
+    },
+    "upper-zone": {
+      "x": 305,
+      "y": 422,
+      "w": 65,
+      "h": 71
+    },
+    "side-zone": {
+      "x": 376,
+      "y": 498,
+      "w": 59,
+      "h": 73
+    }
+  },
+  "zoneLabels": {
+    "device-zone": "身旁干燥地面",
+    "chest-zone": "擦干贴片区域",
+    "upper-zone": "右上胸 ①",
+    "side-zone": "左侧胸 ②"
+  },
+  "zoneConditions": {
+    "device-zone": {
+      "not": [
+        "placed"
+      ]
+    },
+    "chest-zone": {
+      "all": [
+        "exposed"
+      ],
+      "not": [
+        "dry"
+      ]
+    },
+    "upper-zone": {
+      "all": [
+        "dry"
+      ]
+    },
+    "side-zone": {
+      "all": [
+        "dry"
+      ]
+    }
+  },
+  "states": [
+    {
+      "object": "device",
+      "when": {
+        "all": [
+          "placed"
+        ]
+      },
+      "pose": {
+        "x": 441,
+        "y": 620
+      }
+    },
+    {
+      "object": "device",
+      "when": {
+        "all": [
+          "powered"
+        ]
+      },
+      "pose": {
+        "asset": "device-on"
+      }
+    },
+    {
+      "object": "power",
+      "when": {
+        "all": [
+          "placed"
+        ],
+        "not": [
+          "powered"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "shock",
+      "when": {
+        "all": [
+          "powered"
+        ]
+      },
+      "pose": {
+        "opacity": 0.45
+      }
+    },
+    {
+      "object": "shock",
+      "when": {
+        "all": [
+          "shock-clear"
+        ],
+        "stages": [
+          "shock-ready"
+        ],
+        "not": [
+          "branch-ready"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "screen",
+      "when": {
+        "all": [
+          "placed"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "shirt",
+      "when": {
+        "all": [
+          "exposed"
+        ]
+      },
+      "pose": {
+        "opacity": 0
+      }
+    },
+    {
+      "object": "water",
+      "when": {
+        "all": [
+          "dry"
+        ]
+      },
+      "pose": {
+        "opacity": 0
+      }
+    },
+    {
+      "object": "cloth",
+      "when": {
+        "all": [
+          "dry"
+        ]
+      },
+      "pose": {
+        "opacity": 0.4
+      }
+    },
+    {
+      "object": "pad-upper",
+      "when": {
+        "all": [
+          "pad-upper-on"
+        ]
+      },
+      "pose": {
+        "x": 314,
+        "y": 428,
+        "w": 40,
+        "h": 64
+      }
+    },
+    {
+      "object": "pad-side",
+      "when": {
+        "all": [
+          "pad-side-on"
+        ]
+      },
+      "pose": {
+        "x": 392,
+        "y": 497,
+        "w": 36,
+        "h": 64
+      }
+    },
+    {
+      "object": "lead-upper",
+      "when": {
+        "all": [
+          "pad-upper-on"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "lead-side",
+      "when": {
+        "all": [
+          "pad-side-on"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "helper",
+      "when": {
+        "all": [
+          "cleared"
+        ],
+        "not": [
+          "resumed"
+        ]
+      },
+      "pose": {
+        "asset": "helper-clear"
+      }
+    },
+    {
+      "object": "helper",
+      "when": {
+        "all": [
+          "resumed"
+        ]
+      },
+      "pose": {
+        "asset": "helper-press-a"
+      }
+    },
+    {
+      "object": "clear",
+      "when": {
+        "all": [
+          "powered"
+        ],
+        "not": [
+          "branch-ready"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    },
+    {
+      "object": "clear",
+      "when": {
+        "all": [
+          "cleared"
+        ],
+        "not": [
+          "shockable"
+        ]
+      },
+      "pose": {
+        "opacity": 0
+      }
+    },
+    {
+      "object": "clear",
+      "when": {
+        "all": [
+          "shock-clear"
+        ]
+      },
+      "pose": {
+        "opacity": 0.5
+      }
+    },
+    {
+      "object": "clear",
+      "when": {
+        "all": [
+          "branch-ready"
+        ]
+      },
+      "pose": {
+        "opacity": 0
+      }
+    },
+    {
+      "object": "handover",
+      "when": {
+        "all": [
+          "resumed"
+        ]
+      },
+      "pose": {
+        "opacity": 1
+      }
+    }
+  ],
+  "animations": {
+    "blocked": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "cue",
+          "keyframes": [
+            {
+              "at": 0.00001,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "place-device": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "device",
+          "keyframes": [
+            {
+              "at": 1,
+              "x": 441,
+              "y": 620
+            }
+          ]
+        }
+      ]
+    },
+    "power-on": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "cue",
+          "keyframes": [
+            {
+              "at": 0.00001,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "expose-chest": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "shirt",
+          "keyframes": [
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "dry-chest": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "cloth",
+          "keyframes": [
+            {
+              "at": 0.25,
+              "x": 305,
+              "y": 420
+            },
+            {
+              "at": 0.75,
+              "x": 360,
+              "y": 505
+            },
+            {
+              "at": 1,
+              "x": 198,
+              "y": 814
+            }
+          ]
+        },
+        {
+          "object": "water",
+          "keyframes": [
+            {
+              "at": 1,
+              "opacity": 0
+            }
+          ]
+        }
+      ]
+    },
+    "attach-upper": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "pad-upper",
+          "keyframes": [
+            {
+              "at": 1,
+              "x": 314,
+              "y": 428,
+              "w": 40,
+              "h": 64
+            }
+          ]
+        }
+      ]
+    },
+    "attach-side": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "pad-side",
+          "keyframes": [
+            {
+              "at": 1,
+              "x": 392,
+              "y": 497,
+              "w": 36,
+              "h": 64
+            }
+          ]
+        }
+      ]
+    },
+    "clear-analysis": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "helper",
+          "keyframes": [
+            {
+              "at": 0.00001,
+              "asset": "helper-clear"
+            },
+            {
+              "at": 1,
+              "asset": "helper-clear"
+            }
+          ]
+        }
+      ]
+    },
+    "clear-shock": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "cue",
+          "keyframes": [
+            {
+              "at": 0.00001,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "deliver-shock": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "cue",
+          "keyframes": [
+            {
+              "at": 0.00001,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "resume-after-shock": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "helper",
+          "keyframes": [
+            {
+              "at": 0.00001,
+              "asset": "helper-press-a"
+            },
+            {
+              "at": 1,
+              "asset": "helper-press-a"
+            }
+          ]
+        }
+      ]
+    },
+    "resume-without-shock": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "helper",
+          "keyframes": [
+            {
+              "at": 0.00001,
+              "asset": "helper-press-a"
+            },
+            {
+              "at": 1,
+              "asset": "helper-press-a"
+            }
+          ]
+        }
+      ]
+    },
+    "handover-help": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "cue",
+          "keyframes": [
+            {
+              "at": 0.00001,
+              "opacity": 1
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "effects": [],
+  "labels": [
+    {
+      "object": "context",
+      "text": "4-8  自动除颤协作\n模拟患者仰卧 · 120 已呼叫\n本题：胸部有汗水，贴片已预连接",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 21,
+      "color": "#4c5947"
+    },
+    {
+      "object": "cue",
+      "text": "你操作设备 · 协助者持续 CPR",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 19,
+      "color": "#4c5947",
+      "when": {
+        "not": [
+          "cleared"
+        ]
+      }
+    },
+    {
+      "object": "cue",
+      "text": "所有人离开 · 正在分析",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 20,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "cleared"
+        ],
+        "notStages": [
+          "analyzed"
+        ]
+      }
+    },
+    {
+      "object": "cue",
+      "text": "建议电击 · 再确认无人接触",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 20,
+      "color": "#975c2d",
+      "when": {
+        "all": [
+          "cleared",
+          "shockable"
+        ],
+        "stages": [
+          "analyzed"
+        ],
+        "not": [
+          "branch-ready"
+        ]
+      }
+    },
+    {
+      "object": "cue",
+      "text": "不建议电击 · 立即点击协助者恢复 CPR",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 19,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "cleared"
+        ],
+        "stages": [
+          "analyzed"
+        ],
+        "not": [
+          "shockable",
+          "resumed"
+        ]
+      }
+    },
+    {
+      "object": "cue",
+      "text": "立即点击协助者 · 恢复 CPR",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 20,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "branch-ready"
+        ],
+        "not": [
+          "resumed"
+        ]
+      }
+    },
+    {
+      "object": "cue",
+      "text": "CPR 已恢复 · 保持贴片连接",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 20,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "resumed"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "请开机",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#4c5947",
+      "when": {
+        "not": [
+          "powered"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "露出胸部",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "powered"
+        ],
+        "not": [
+          "exposed"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "擦干皮肤",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "exposed"
+        ],
+        "not": [
+          "dry"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "按图贴片",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "dry"
+        ],
+        "not": [
+          "pad-upper-on"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "按图贴片",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "dry",
+          "pad-upper-on"
+        ],
+        "not": [
+          "pad-side-on"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "准备分析\n请清场",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "pad-upper-on",
+          "pad-side-on"
+        ],
+        "not": [
+          "cleared"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "分析中\n勿接触",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "cleared"
+        ],
+        "notStages": [
+          "analyzed"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "建议电击",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#9c5828",
+      "when": {
+        "all": [
+          "cleared",
+          "shockable"
+        ],
+        "stages": [
+          "analyzed"
+        ],
+        "not": [
+          "shock-clear",
+          "branch-ready"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "正在准备",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "shock-clear"
+        ],
+        "notStages": [
+          "shock-ready"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "按电击键",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#9c5828",
+      "when": {
+        "all": [
+          "shock-clear"
+        ],
+        "stages": [
+          "shock-ready"
+        ],
+        "not": [
+          "branch-ready"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "不建议电击\n立即 CPR",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 17,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "cleared"
+        ],
+        "stages": [
+          "analyzed"
+        ],
+        "not": [
+          "shockable",
+          "resumed"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "恢复 CPR",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "branch-ready"
+        ],
+        "not": [
+          "resumed"
+        ]
+      }
+    },
+    {
+      "object": "screen",
+      "text": "继续 CPR",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 18,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "resumed"
+        ]
+      }
+    },
+    {
+      "object": "clear",
+      "text": "清场：大家离开！",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 22,
+      "color": "#4c5947",
+      "when": {
+        "not": [
+          "cleared"
+        ]
+      }
+    },
+    {
+      "object": "clear",
+      "text": "电击前再次清场",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 22,
+      "color": "#4c5947",
+      "when": {
+        "all": [
+          "cleared"
+        ]
+      }
+    },
+    {
+      "object": "handover",
+      "text": "让旁人接应 · 告知急救人员",
+      "x": 0.5,
+      "y": 0.5,
+      "size": 22,
+      "color": "#4c5947"
+    }
+  ],
+  "presentation": {
+    "durationMs": 180000,
+    "effects": [],
+    "actors": [
+      {
+        "object": "helper",
+        "amplitude": 0,
+        "performance": {
+          "lean": 0,
+          "periodMs": 545,
+          "cycle": {
+            "frames": [
+              "helper-press-a",
+              "helper-press-b"
+            ],
+            "periodMs": 545
+          }
+        }
+      }
+    ],
+    "audio": {
+      "theme": "medical",
+      "cues": {
+        "pickup": "soft-tap",
+        "bounce": "warning",
+        "danger": "warning",
+        "goal": "soft-tap",
+        "complete": "success",
+        "power-on": "switch",
+        "clear-analysis": "button-tap",
+        "analyzed": "button-tap",
+        "clear-shock": "button-tap",
+        "shock-ready": "button-tap",
+        "deliver-shock": "switch",
+        "attach-upper": "fabric",
+        "attach-side": "fabric",
+        "dry-chest": "fabric"
+      },
+      "calmWhen": [
+        "resumed"
+      ]
+    }
+  },
+  "framing": {
+    "sceneBounds": {
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1080
+    },
+    "criticalRegions": [
+      {
+        "x": 168,
+        "y": 195,
+        "w": 398,
+        "h": 116
+      },
+      {
+        "x": 165,
+        "y": 345,
+        "w": 400,
+        "h": 445
+      },
+      {
+        "x": 192,
+        "y": 802,
+        "w": 373,
+        "h": 141
+      }
+    ]
+  }
+}

@@ -1,3 +1,4 @@
+import { cprLevel } from './first-aid/cpr-content';
 import type { LevelConfig } from './types';
 import {levelTitle} from './journey/presentation';
 import { configuredPackages } from './content/generated';
@@ -134,7 +135,7 @@ const additionalHunts: LevelConfig[] = huntPacks.filter(p=>!builtInLevels.some(l
   sceneRoom:'living', sceneMood:'calm', goals:p.rules.targets.map(t=>t.id), playable:true, previewImage:p.skin.scene,
 }));
 const additionalDisasters:LevelConfig[]=disasterPacks.map(({rules:r,skin:s})=>({id:r.id,engine:'disaster-v1',order:r.order,kind:r.kind,title:r.title,shortTitle:r.title,location:r.kind==='prevention'?'街道 · 社区':'住宅 · 楼梯',knowledge:r.summary,task:r.opening,briefing:r.safety,duration:r.kind==='prevention'?'限时 90 秒':'约 2 分钟',riskSeconds:r.seconds,accent:'#d27a45',sceneRoom:'living',sceneMood:'storm',goals:r.goals.map(g=>g.id),playable:true,previewImage:s.scene}));
-export const levels: LevelConfig[] = [...builtInLevels, ...additionalHunts, ...additionalDisasters, ...configuredPackages.map(({ rules: r, skin: s }): LevelConfig => ({
+export const levels: LevelConfig[] = [...builtInLevels, cprLevel, ...additionalHunts, ...additionalDisasters, ...configuredPackages.map(({ rules: r, skin: s }): LevelConfig => ({
   id: r.id, engine: 'configured-v1', order: r.order, kind: r.kind, title: r.title, shortTitle: r.title,
   location: r.location, knowledge: r.completion.summary, task: r.description, briefing: r.description,
   duration: r.risk.mode === 'elapsed' ? '从容练习 · 不限时' : `约 ${r.risk.seconds} 秒`, riskSeconds: r.risk.seconds, accent: '#d7784e', sceneRoom: r.kind === 'prevention' ? 'living' : 'kitchen',
@@ -148,7 +149,7 @@ function validateLevels(configs: LevelConfig[]) {
   for (const level of configs) {
     if (levelIds.has(level.id)) throw new Error(`Duplicate level id: ${level.id}`);
     levelIds.add(level.id);
-    if (level.engine === 'configured-v1' || level.engine === 'scene-hunt' || level.engine === 'disaster-v1') continue; // Full data validation happens at package registration.
+    if (level.engine === 'first-aid-cpr' || level.engine === 'configured-v1' || level.engine === 'scene-hunt' || level.engine === 'disaster-v1') continue; // Full data validation happens at package registration.
     const goals = new Set(level.goals);
     if (goals.size !== level.goals.length) throw new Error(`Duplicate goal in ${level.id}`);
     if (level.kind === 'prevention') {

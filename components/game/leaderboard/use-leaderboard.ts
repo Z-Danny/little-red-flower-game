@@ -4,14 +4,14 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { levels } from '@/app/game/levels';
 import { BOARD_STORAGE_KEY, createLocalLeaderboard } from '@/app/game/leaderboard/local-provider';
 import type { BoardSnapshot, LeaderboardProvider, ProfileInput } from '@/app/game/leaderboard/model';
-import {canEnter} from '@/app/game/journey/progress';
+import {canEnter, withTestUnlock} from '@/app/game/journey/progress';
 
 /** Composition root. Inject a different provider here; players and game engines stay unchanged. */
-function browserProvider(): LeaderboardProvider {
+function browserProvider(testUnlocked: () => boolean): LeaderboardProvider {
   return createLocalLeaderboard({
     caps: Object.fromEntries(levels.filter(level => level.playable).map(level => [level.id, 3])),
     storage: () => window.localStorage,
-    canEnter,
+    canEnter: (id, completed) => canEnter(id, withTestUnlock(completed, testUnlocked())),
     id: () => crypto.randomUUID(),
     listen(callback) {
       const onStorage = (event: StorageEvent) => { if (event.key === BOARD_STORAGE_KEY || event.key === null) callback(); };
@@ -21,8 +21,10 @@ function browserProvider(): LeaderboardProvider {
   });
 }
 
-export function useLeaderboard(provided?: LeaderboardProvider) {
-  const [provider] = useState(() => provided ?? browserProvider());
+export function useLeaderboard(provided?: LeaderboardProvider, testUnlocked = false) {
+  const testUnlockRef = useRef(testUnlocked);
+  testUnlockRef.current = testUnlocked;
+  const [provider] = useState(() => provided ?? browserProvider(() => testUnlockRef.current));
   const [snapshot, setSnapshot] = useState<BoardSnapshot | null>(null);
   const [error, setError] = useState('');
   const [busy, setBusy] = useState(false);

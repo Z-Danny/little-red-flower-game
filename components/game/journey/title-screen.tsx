@@ -4,7 +4,13 @@ import home from '@/content/journey-home.json';
 import { HomeSoundControl } from './home-sound-control';
 import { HomeSaveControl } from './home-save-control';
 
-export const COVER_DEPARTURE_MS = 360;
+import {
+  COVER_DEPARTURE_MS,
+  COVER_IDLE_LEAF_COUNT,
+  coverGustLeaves,
+} from '@/app/game/journey/cover-motion';
+export { COVER_DEPARTURE_MS } from '@/app/game/journey/cover-motion';
+const departureLeaves = coverGustLeaves();
 
 type Props = {
   muted: boolean;
@@ -38,6 +44,12 @@ export function TitleScreen({
 }: Props) {
   const [paused, setPaused] = useState(false);
   const [artReady, setArtReady] = useState(false);
+  const [flowerReacting, setFlowerReacting] = useState(false);
+  useEffect(() => {
+    if (!flowerReacting) return;
+    const timer = window.setTimeout(() => setFlowerReacting(false), 1000);
+    return () => window.clearTimeout(timer);
+  }, [flowerReacting]);
   useEffect(() => {
     let active = true;
     // Start every decorative layer together, from the bud, even on a cold load.
@@ -49,13 +61,16 @@ export function TitleScreen({
     void Promise.allSettled(images).then(() => {
       if (active) setArtReady(true);
     });
-    return () => { active = false; };
+    return () => {
+      active = false;
+    };
   }, []);
   useEffect(() => {
     const updateVisibility = () => setPaused(document.hidden);
     updateVisibility();
     document.addEventListener('visibilitychange', updateVisibility);
-    return () => document.removeEventListener('visibilitychange', updateVisibility);
+    return () =>
+      document.removeEventListener('visibilitychange', updateVisibility);
   }, []);
   const buttonArt = (primary: boolean) => (
     <>
@@ -128,19 +143,68 @@ export function TitleScreen({
           draggable={false}
         />
         <div className="title-lake-light">
-          {[0, 1, 2, 3, 4, 5].map((glint) => <i key={glint} />)}
+          {[0, 1, 2, 3, 4, 5].map((glint) => (
+            <i key={glint} />
+          ))}
         </div>
       </div>
       <div className="title-wash" aria-hidden="true" />
-      <div className="title-falling-leaves" data-cover-layer="falling-leaves" aria-hidden="true">
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((leaf) => (
-          <span className="title-leaf-flight" data-depth={leaf % 3 === 0 ? 'near' : 'far'} key={leaf}>
+      <div
+        className="title-falling-leaves"
+        data-cover-layer="falling-leaves"
+        aria-hidden="true"
+      >
+        {Array.from({ length: COVER_IDLE_LEAF_COUNT }, (_, leaf) => (
+          <span
+            className="title-leaf-flight"
+            data-depth={leaf % 3 === 0 ? 'near' : 'far'}
+            key={leaf}
+          >
             <span className="title-leaf-gust">
-              <img src={home.art.leaf} alt="" width={192} height={192} draggable={false} />
+              <img
+                src={home.art.leaf}
+                alt=""
+                width={192}
+                height={192}
+                draggable={false}
+              />
             </span>
           </span>
         ))}
       </div>
+      {departing && (
+        <div
+          className="title-departure-leaves"
+          data-cover-gust
+          aria-hidden="true"
+        >
+          {departureLeaves.map((leaf) => (
+            <span
+              key={leaf.id}
+              className="title-gust-flight"
+              data-depth={leaf.near ? 'near' : 'far'}
+              style={
+                {
+                  '--gust-x': leaf.x + '%',
+                  '--gust-y': leaf.y + '%',
+                  '--gust-size': leaf.size + 'px',
+                  '--gust-delay': leaf.delay + 'ms',
+                  '--gust-duration': leaf.duration + 'ms',
+                  '--gust-drift': leaf.drift + 'px',
+                  '--gust-sway': leaf.sway + 'px',
+                  '--gust-angle': leaf.angle + 'deg',
+                  '--gust-turn': leaf.turn + 'deg',
+                  '--gust-opacity': leaf.opacity,
+                } as CSSProperties
+              }
+            >
+              <span className="title-gust-sway">
+                <img src={home.art.leaf} alt="" draggable={false} />
+              </span>
+            </span>
+          ))}
+        </div>
+      )}
       <header className="title-heading">
         <h1>
           <span className="title-accessible-name">{home.title.join('')}</span>
@@ -160,17 +224,41 @@ export function TitleScreen({
           </span>
         </h1>
       </header>
-      <div className="title-flower" data-cover-flower aria-hidden="true">
-        {['bud', 'opening', 'half-open', 'bloom'].map((frame) => (
-          <span
-            key={frame}
-            className={`title-flower-frame title-flower-${frame}`}
-            data-cover-layer={frame}
-          />
-        ))}
-        <div className="title-pollen">
-          {[0, 1, 2, 3, 4, 5, 6, 7].map((pollen) => <i key={pollen} />)}
+      <div
+        className="title-flower"
+        data-cover-flower
+        data-flower-reacting={flowerReacting}
+      >
+        <div className="title-flower-response" aria-hidden="true">
+          {['bud', 'opening', 'half-open', 'bloom'].map((frame) => (
+            <span
+              key={frame}
+              className={`title-flower-frame title-flower-${frame}`}
+              data-cover-layer={frame}
+            />
+          ))}
+          <div className="title-pollen">
+            {[0, 1, 2, 3, 4, 5, 6, 7].map((pollen) => (
+              <i key={pollen} />
+            ))}
+          </div>
+          {flowerReacting && (
+            <div className="title-touch-pollen">
+              <i />
+              <i />
+              <i />
+            </div>
+          )}
         </div>
+        <button
+          type="button"
+          className="title-flower-touch"
+          data-cover-flower-touch
+          data-ui-sound="off"
+          aria-label="轻触小红花"
+          disabled={busy}
+          onClick={() => setFlowerReacting(true)}
+        />
       </div>
       <div className="title-motes" aria-hidden="true">
         <i />
@@ -181,16 +269,7 @@ export function TitleScreen({
       <div className="title-menu">
         <div className="title-buttons">
           {canContinue ? [resume, start] : start}
-          <button
-            type="button"
-            className="title-secondary title-unlock-all"
-            data-home-unlock-all
-            onClick={onUnlockAll}
-            disabled={busy || allLevelsUnlocked}
-          >
-            {buttonArt(false)}
-            <span>{allLevelsUnlocked ? '全部关卡已解锁' : '解锁全部关卡'}</span>
-          </button>
+
         </div>
         {error && (
           <p className="title-error" role="alert">
@@ -198,6 +277,17 @@ export function TitleScreen({
           </p>
         )}
       </div>
+      <button
+            type="button"
+            className="title-secondary title-unlock-all"
+            data-home-unlock-all
+            onClick={onUnlockAll}
+            disabled={busy || allLevelsUnlocked}
+            title="仅本次页面解锁已制作关卡；刷新后恢复正常进度，未开放关卡不会解锁。"
+          >
+            {buttonArt(false)}
+            <span>{allLevelsUnlocked ? '本次已解锁' : '解锁已制作关卡'}</span>
+          </button>
     </section>
   );
 }

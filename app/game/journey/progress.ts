@@ -1,7 +1,13 @@
+import { getLevel } from '@/app/game/levels';
 import map from '@/content/journey-map.json';
 
 export const journeyMap = map;
-export type Progress = Readonly<Record<string, number>>;
+const TEST_UNLOCK = Symbol('test-unlock-all');
+export type Progress = Readonly<Record<string, number>> & { readonly [TEST_UNLOCK]?: boolean };
+/** Runtime-only access override: never invent scores or persist a test flag in saves. */
+export function withTestUnlock(progress: Progress, enabled: boolean): Progress {
+  return enabled ? { ...progress, [TEST_UNLOCK]: true } : progress;
+}
 export type MapNode = (typeof map.regions)[number]['nodes'][number];
 export type Region = (typeof map.regions)[number];
 export type NodeStatus = 'locked' | 'available' | 'complete';
@@ -13,8 +19,9 @@ export const isComplete = (progress: Progress, id: string) =>
   Object.hasOwn(progress, id) && progress[id] > 0;
 export function nodeStatus(id: string, progress: Progress, allLevelsUnlocked = false): NodeStatus {
   const region = regionFor(id);
-  if (!region) return 'locked';
+  if (!region || !getLevel(id)?.playable) return 'locked';
   if (isComplete(progress, id)) return 'complete';
+  if (progress[TEST_UNLOCK]) return 'available';
   const prerequisite = region.nodes.find((n) => n.id === id)!.unlockAfter;
   // Scene positions may change; saved access follows stable level IDs.
   return allLevelsUnlocked || prerequisite === null || isComplete(progress, prerequisite)

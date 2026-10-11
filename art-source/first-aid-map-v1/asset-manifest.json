@@ -1,0 +1,42 @@
+{
+  "createdAt": "2026-09-27",
+  "generator": "image_gen.imagegen",
+  "model": "not_reported",
+  "postProcessing": "none; copied generated PNG bytes unchanged",
+  "assets": [
+    {
+      "path": "public/levels/journey-map/first-aid-v1-handpainted.png",
+      "sourceFile": "call_vObrmiHccA723o3RDwQ0PV7l.png",
+      "width": 724,
+      "height": 2172,
+      "hasAlpha": false,
+      "sha256": "407508a0424dc6c083168ca79b5f4cb31b5fb3173e0e011867885d891f571f22"
+    },
+    {
+      "path": "public/ui/archipelago-v1/first-aid-island.png",
+      "sourceFile": "call_ybdBjJ10ifbkgkI5ZQi3oZ97.png",
+      "width": 1254,
+      "height": 1254,
+      "hasAlpha": true,
+      "sha256": "8cfb3fa502cc1b9a2ea7d30a104c32ba010e14c647499dd25a345e9bf6a4a5ff"
+    }
+  ],
+  "references": [
+    {
+      "path": "public/levels/journey-map/nature-v3-chibi.png",
+      "sha256": "5b4635ba8c0517f863f6827f13bacce31e9a81e88ca262b1968cdf723bae81ef"
+    },
+    {
+      "path": "public/levels/journey-map/public-v3-handpainted.png",
+      "sha256": "3fa5e2ba8ca79feb6356db53da9930fb8e684682185f5ce0d3cc45c319a65ec9"
+    },
+    {
+      "path": "public/levels/journey-map/home-v3-handpainted.png",
+      "sha256": "458438411449d8f5574fa88c814530b6f8486d0bf67c428c77bcd51737d45e7a"
+    },
+    {
+      "path": "public/ui/archipelago-v1/home-island.png",
+      "sha256": "0db23c73159c462c564a570c4b8f809c653390c5e277c03cc0bdf4107f56d6ff"
+    }
+  ]
+}

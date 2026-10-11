@@ -16,8 +16,11 @@ export function Settlement({
   onMap,
   onRetry,
   error,
+  practice,
 }: {
-  level: LevelConfig;
+  level: Pick<LevelConfig, 'id' | 'title'>;
+  /** Reuse the same artwork for isolated practices without pretending to save rewards. */
+  practice?: { title: string; summary: string; status?: string; onReplay: () => void };
   receipt: CompletionReceipt | undefined;
   result?: TimeReward;
   persistence?: 'saved' | 'session';
@@ -26,7 +29,7 @@ export function Settlement({
   error: string;
 }) {
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const lesson = lessonFor(level.id);
+  const lesson = practice ? { message: practice.summary, points: [], sources: [] } : lessonFor(level.id);
   const replay = receipt?.reward === 0;
   const awarded = !!receipt && receipt.reward > 0;
   const saveFailed = !!error && !receipt;
@@ -35,7 +38,7 @@ export function Settlement({
     <GardenDialog
       title={`${level.title}完成结算`}
       onClose={() => {
-        if (receipt) onMap();
+        if (receipt || practice) onMap();
       }}
       settlement
       className="painted-settlement"
@@ -45,7 +48,7 @@ export function Settlement({
         className="painted-settlement-card"
         data-level-id={level.id}
         data-replay={replay}
-        data-awarded={awarded}
+        data-awarded={awarded} data-practice={Boolean(practice)}
         data-rating={result?.flowers}
         data-score-ms={result?.elapsedMs}
       >
@@ -57,7 +60,7 @@ export function Settlement({
             draggable={false}
           />
           <h2 ref={titleRef} tabIndex={-1} data-testid="settlement-title">
-            还得是你！
+            {practice ? practice.title : '还得是你！'}
           </h2>
         </header>
         <div className="painted-settlement-body">
@@ -68,7 +71,7 @@ export function Settlement({
             >
               {level.title}
             </h3>
-            <p className="painted-settlement-message">{lesson.message}</p>
+            <p className="painted-settlement-message">{practice?.summary ?? lesson.message}</p>
             <div className="painted-settlement-reward" aria-hidden="true">
               {Array.from({ length: result?.flowers ?? receipt?.score ?? 0 }, (_, i) => (
                 <Flower
@@ -93,7 +96,7 @@ export function Settlement({
               data-testid="settlement-reward"
               role="status"
             >
-              {saveFailed
+              {practice ? '演练完成 · 不写入正式成绩' : saveFailed
                 ? '记录尚未保存'
                 : !receipt
                   ? '正在保存…'
@@ -107,7 +110,7 @@ export function Settlement({
               <span>{rewardRuleLabel(result.referenceSeconds)}</span>
               <small>含误操作扣时；暂停、结局演出不计时。每关保留最佳成绩，重玩仅补差额。</small>
             </div>}
-            <section
+            {practice ? <><p className="painted-settlement-message">{practice.status}</p><button className="garden-secondary" onClick={onMap}>返回关卡</button></> : <section
               className="painted-settlement-knowledge"
               data-testid="settlement-knowledge"
               aria-labelledby="settlement-knowledge-title"
@@ -145,7 +148,7 @@ export function Settlement({
                   </a>
                 ))}
               </div>
-            </section>
+            </section>}
             {saveFailed && (
               <p className="painted-settlement-error" role="alert">
                 {error}
@@ -165,10 +168,10 @@ export function Settlement({
             className="painted-settlement-primary"
             data-testid="settlement-primary"
             data-ui-sound="approved-button"
-            disabled={!receipt && !saveFailed}
-            onClick={saveFailed ? onRetry : onMap}
+            disabled={!practice && !receipt && !saveFailed}
+            onClick={practice ? practice.onReplay : saveFailed ? onRetry : onMap}
           >
-            {saveFailed
+            {practice ? '再练一次' : saveFailed
               ? '重试保存'
               : !receipt
                 ? '正在保存…'

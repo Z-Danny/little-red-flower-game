@@ -1,0 +1,8 @@
+{
+  "app/game/types.ts": "b125c36b4a479278a53ddbb7af712b40614eead5a90515f06808f6ac567d16ee",
+  "app/game/levels.ts": "756fcc907e6ce197bce6ce61a70da8d3284d556f453cfc9acf67d35f0dd6f0f7",
+  "app/game/journey/knowledge.ts": "dbba61ab92a151b26c21588510fcf335b33ba02e0ea21b470004c85f7446aeb4",
+  "components/game/game-app.tsx": "5a4525db8443757fd8a3d9c44b7e3cb5130a4219670f5b02c3bc6cabf565ce1d",
+  "app/configured.css": "e4a7b5fa66e81403bf9ba02ae366d3cd93a67c746c890851b0c4f62ff5c4b5e9",
+  "content/journey-first-aid.json": "e201cdfdea8f0dd7c8f3eb2f28a82d3ba167b41980ae94327996f7ecb4271b42"
+}

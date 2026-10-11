@@ -1,0 +1,368 @@
+{
+  "source": "public/levels/first-aid-comprehensive/prepare-cn-v2.png",
+  "sourceSha256": "8d8a9030ee218556e71a949a46f6aa4bd60ad97938110f7e01f35fad5861ad58",
+  "method": "manually-traced-source-alpha-polygons-and-source-wood-texture; not AI-generated masks",
+  "specs": {
+    "gloves": {
+      "box": {
+        "x": 39,
+        "y": 960,
+        "w": 218,
+        "h": 146
+      },
+      "polygon": [
+        [
+          46,
+          1030
+        ],
+        [
+          127,
+          961
+        ],
+        [
+          252,
+          965
+        ],
+        [
+          251,
+          1056
+        ],
+        [
+          221,
+          1101
+        ],
+        [
+          42,
+          1092
+        ]
+      ]
+    },
+    "dressing": {
+      "box": {
+        "x": 239,
+        "y": 1007,
+        "w": 195,
+        "h": 104
+      },
+      "polygon": [
+        [
+          241,
+          1101
+        ],
+        [
+          282,
+          1010
+        ],
+        [
+          428,
+          1016
+        ],
+        [
+          398,
+          1107
+        ]
+      ]
+    },
+    "bandage": {
+      "box": {
+        "x": 447,
+        "y": 1009,
+        "w": 153,
+        "h": 104
+      },
+      "polygon": [
+        [
+          456,
+          1049
+        ],
+        [
+          477,
+          1033
+        ],
+        [
+          550,
+          1013
+        ],
+        [
+          572,
+          1017
+        ],
+        [
+          593,
+          1042
+        ],
+        [
+          595,
+          1071
+        ],
+        [
+          577,
+          1087
+        ],
+        [
+          500,
+          1107
+        ],
+        [
+          470,
+          1103
+        ],
+        [
+          454,
+          1080
+        ]
+      ]
+    },
+    "saline": {
+      "box": {
+        "x": 651,
+        "y": 963,
+        "w": 67,
+        "h": 136
+      },
+      "polygon": [
+        [
+          669,
+          966
+        ],
+        [
+          693,
+          966
+        ],
+        [
+          697,
+          981
+        ],
+        [
+          697,
+          995
+        ],
+        [
+          709,
+          1012
+        ],
+        [
+          714,
+          1083
+        ],
+        [
+          704,
+          1093
+        ],
+        [
+          667,
+          1093
+        ],
+        [
+          655,
+          1083
+        ],
+        [
+          657,
+          1015
+        ],
+        [
+          668,
+          995
+        ]
+      ]
+    },
+    "blanket": {
+      "box": {
+        "x": 742,
+        "y": 936,
+        "w": 253,
+        "h": 164
+      },
+      "polygon": [
+        [
+          747,
+          973
+        ],
+        [
+          785,
+          953
+        ],
+        [
+          931,
+          939
+        ],
+        [
+          967,
+          952
+        ],
+        [
+          978,
+          986
+        ],
+        [
+          980,
+          1011
+        ],
+        [
+          991,
+          1045
+        ],
+        [
+          984,
+          1060
+        ],
+        [
+          991,
+          1086
+        ],
+        [
+          966,
+          1097
+        ],
+        [
+          760,
+          1096
+        ],
+        [
+          746,
+          1080
+        ],
+        [
+          753,
+          1061
+        ],
+        [
+          745,
+          1045
+        ],
+        [
+          751,
+          1028
+        ],
+        [
+          746,
+          1005
+        ]
+      ]
+    }
+  },
+  "bag": {
+    "box": {
+      "x": 300,
+      "y": 741,
+      "w": 411,
+      "h": 270
+    },
+    "polygon": [
+      [
+        323,
+        874
+      ],
+      [
+        342,
+        831
+      ],
+      [
+        361,
+        778
+      ],
+      [
+        392,
+        752
+      ],
+      [
+        612,
+        749
+      ],
+      [
+        646,
+        773
+      ],
+      [
+        658,
+        855
+      ],
+      [
+        684,
+        872
+      ],
+      [
+        680,
+        944
+      ],
+      [
+        650,
+        960
+      ],
+      [
+        650,
+        1003
+      ],
+      [
+        357,
+        1005
+      ],
+      [
+        328,
+        987
+      ],
+      [
+        310,
+        936
+      ]
+    ]
+  },
+  "files": [
+    {
+      "file": "bag-front-v3.png",
+      "sha256": "07bf21bbb0f7cab34b5a2b82e4d2d7d32d3aab8fe694beccae37a62c28d07b1a"
+    },
+    {
+      "file": "prop-bandage-v3.png",
+      "sha256": "f1c7b397fb5bc7491fbddc528790de7e9d4b0fd3b54451f8d2e443fcb23fc986"
+    },
+    {
+      "file": "prop-blanket-v3.png",
+      "sha256": "e4d6499057e199b406567f4c3192ab5de9fed3c32d5752dfa6f53581b390080d"
+    },
+    {
+      "file": "prop-dressing-v3.png",
+      "sha256": "46682343a445915ec5c51ed43d489efbab414b1437f7a21fe126d9154bff3bf4"
+    },
+    {
+      "file": "prop-gloves-v3.png",
+      "sha256": "a5b4a5f1133f8582709a68d70558fe2ce83b2923a2da164c0b158df2818be239"
+    },
+    {
+      "file": "prop-saline-v3.png",
+      "sha256": "71b2a4b57b612c9a4b020e352f53ac323421983d961669556303d551e7c01d47"
+    },
+    {
+      "file": "silhouette-bandage-v3.png",
+      "sha256": "5a53fd0850649e7979873584a416511e03934723ca5141f6cc39a0e2cf5d2711"
+    },
+    {
+      "file": "silhouette-blanket-v3.png",
+      "sha256": "c0cbd1d75b9647bb80700939d3438e355409bc11ce349b6a3e4ebd9f7d3744ad"
+    },
+    {
+      "file": "silhouette-dressing-v3.png",
+      "sha256": "5426ba0e333272e981f5c7d7dc404e4eff560e5c69bfa10ba8c4b8b7d1e165d8"
+    },
+    {
+      "file": "silhouette-gloves-v3.png",
+      "sha256": "39b4dbccc84409982ffa4bd1e149aec39cc429cb6603fdeeed37f603266bfe9d"
+    },
+    {
+      "file": "silhouette-saline-v3.png",
+      "sha256": "af956af0f8bd53d63c3d02f8e5edb5a51cec5dd6e0d75b92407e8185529fe611"
+    },
+    {
+      "file": "table-grain-v3.png",
+      "sha256": "f25d542c167461de7848c06d14b5df00f6c8b92bb1460049f6a60d24aafa950d"
+    }
+  ],
+  "failedGeneration": {
+    "tool": "image_gen.imagegen",
+    "date": "2026-10-07",
+    "status": "503 model_not_found",
+    "outputs": 0
+  },
+  "medicalReview": "not_run"
+}

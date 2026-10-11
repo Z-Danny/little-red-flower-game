@@ -1,0 +1,83 @@
+{
+  "date": "2026-09-27",
+  "background": {
+    "tool": "image_gen.imagegen",
+    "source": "background-generated.png",
+    "note": "Original generated plate; resize/encoding only."
+  },
+  "layers": "Original authored SVG medical diagrams and articulated teaching illustrations, rasterized with sharp. No previous level coordinates or assets reused.",
+  "assets": [
+    {
+      "file": "background.webp",
+      "sha256": "75dc903c41611f2bea2942744ecd676d1eb18561964548515471fd3d9c2ab844"
+    },
+    {
+      "file": "button-power.png",
+      "sha256": "4d1e7f74d3eb22d73c83be3229a3a4b16b666afd6a850f6ec304ddfc7f790818"
+    },
+    {
+      "file": "button-shock.png",
+      "sha256": "62ba4aab5ed4e18d4317ee373286beec6318de507e0072fb2427f9c429b2c53b"
+    },
+    {
+      "file": "cable-side.png",
+      "sha256": "c2ced6ed6dbc948cedfe3e352bd4cfec84b1b3b361c055eb0edb7990a0f593fd"
+    },
+    {
+      "file": "cable-upper.png",
+      "sha256": "4d553377a1545f5f6491f5cc853426bce44bd56ee70e29ce2cba21512c9ec69f"
+    },
+    {
+      "file": "card.png",
+      "sha256": "3844406fa5c41710b089d7807336590a3319ba7f6ae4b859d0ddb556860a6507"
+    },
+    {
+      "file": "cloth.png",
+      "sha256": "c204bcdaf9737cd7a08344bfaf57131f79a02a565f6ad4621f215e404c3d5398"
+    },
+    {
+      "file": "device-off.png",
+      "sha256": "a3cfac1cc01de425d7ea5cba20a8891c426fe89f55536fad0cca8dab44da8ba5"
+    },
+    {
+      "file": "device-on.png",
+      "sha256": "7da92d38d432e40863b1c3a3d95cb86fdc5b1d4f082a12878866a74d71c92470"
+    },
+    {
+      "file": "diagram.png",
+      "sha256": "cc6d7b418becff2587f3b887f1c31d0467aed8ae49c01b26e664815981705a9a"
+    },
+    {
+      "file": "helper-clear.png",
+      "sha256": "8bd3ab471847178457338701ba5b239c7dbef1687d39cb2605dadc9260b96297"
+    },
+    {
+      "file": "helper-press-a.png",
+      "sha256": "f46bcd6df44b55ae98d130b2e7617dee56ae3bc4e3dae2df7abd2f38ddaf13a4"
+    },
+    {
+      "file": "helper-press-b.png",
+      "sha256": "d975354175787d9652b660c82c4a45822eba7aacfa4f73e28b6a31aebd3509a3"
+    },
+    {
+      "file": "moisture.png",
+      "sha256": "ea2c4f34abcce6e20665d5f2747e4e36c337f68dcf8cf38f5391ef2b19852d46"
+    },
+    {
+      "file": "pad-side.png",
+      "sha256": "ee73d5bb93eadd234e2efe1e1815c2609f50206d04da988a57346c73519919d0"
+    },
+    {
+      "file": "pad-upper.png",
+      "sha256": "cced492c0bf17ba4fe356e609364bfc3330d73386509725e2f0d980981ff3d50"
+    },
+    {
+      "file": "patient.png",
+      "sha256": "7baa2e1094d49b0f3a3cfdca5e87d87ff838d8a1d23310eeb9dc742cc3987084"
+    },
+    {
+      "file": "shirt.png",
+      "sha256": "6feef067d68d2a58a5831ce4a97d1f32ad314d58235cd4fb2b5f09203a1ea4ce"
+    }
+  ]
+}

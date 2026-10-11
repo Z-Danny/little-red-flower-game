@@ -1,0 +1,57 @@
+{
+  "status": "draft-narrative-assets",
+  "cast": "all-Chinese-fictional-adults",
+  "items": [
+    {
+      "file": "prepare-cn-v2.png",
+      "source": "retired-prepare-v1.png",
+      "call": "call_FtEiHCJSQgQqwk30jgBm1H26.png",
+      "prompt": "Edit this exact portrait hand-painted community first-aid game illustration. USER REQUIREMENT: EVERY human in this Chinese community story is a CHINESE adult, including the two small distant volunteers and any tiny figures on posters. Redesign ALL humans consistently as natural, contemporary Chinese adults with East Asian facial features, dark brown/black hair and natural varied Chinese skin tones, not Caucasian characters. The teal-vest volunteer is a Chinese woman age 35 with black hair tied in a low bun; the mustard-shirt helper is a Chinese man age 40 with short straight black hair, clean shaven. Any poster portraits also depict Chinese people. Avoid caricatures or stereotyped costume. Preserve EXACT scene composition, portrait dimensions, props, five supplies on table, open orange emergency bag, AED cabinet, clear path, warm sage/ochre watercolor gouache paper style. NO injured person in this first scene. No UI, no extra text, no flag or red cross. Change only the cast as requested, maintain all positions and scale.",
+      "tool": "image_gen.imagegen",
+      "model": "not_exposed_by_tool",
+      "inputSha256": "f8832e2d4e10c2354dfdec67f75771c295b78dbef1d592de0be7b98f984a77b5",
+      "outputSha256": "8d8a9030ee218556e71a949a46f6aa4bd60ad97938110f7e01f35fad5861ad58",
+      "professionalReview": "not_run"
+    },
+    {
+      "file": "review-cn-v2.png",
+      "source": "retired-review-v1.png",
+      "call": "call_4R4M8NoqEcbvUafZzf927Alr.png",
+      "prompt": "Edit this exact portrait watercolor teaching-demonstration illustration. ALL characters must now be Chinese adults, set in a contemporary Chinese community, natural East Asian faces, black/dark brown hair, not Caucasian. LEFT mustard-shirt man: Chinese age 40, clean-shaven, short straight black hair. CENTER coral-shirt woman: Chinese age 35, black hair in bun, natural Chinese face. RIGHT teal-vest man with glasses: Chinese age 35, short black hair, East Asian face. Keep all body poses, composition, prop placement and scale unchanged. There are THREE deliberately INCORRECT examples around a visibly plastic CPR torso training mannequin: left holding a cup to mannequin mouth, center waiting behind bag rather than acting, right photographing mannequin rather than calling for help. These are later labelled incorrect by game UI. Mannequin stays visibly beige molded plastic with no lower body, not a real patient. Preserve sage pavilion, green AED cabinet, warm hand-painted paper texture, blue mat, blank teaching board and quiet paving. No new people, no text, no UI, no watermark, no red cross. Avoid caricature or traditional costumes; ordinary Chinese adults in modern casual clothes.",
+      "tool": "image_gen.imagegen",
+      "model": "not_exposed_by_tool",
+      "inputSha256": "aaef68bbe77b07d8f5958b82765373e81eede2ec198c4b943a15817b88bf8f8c",
+      "outputSha256": "598e53e373206e3765bc33c7cd8cd05c7355b77291ee0cab1716e76b69dfea0c",
+      "professionalReview": "not_run"
+    },
+    {
+      "file": "response-cn-v2.png",
+      "source": "retired-response-v1.png",
+      "call": "call_8FqhjSOVF4S4rePlppc5YaXt.png",
+      "prompt": "Edit this exact portrait watercolor game scene, preserving positions, setting, costumes, scale and medically neutral establishing-shot action. ALL THREE HUMAN CHARACTERS are now CHINESE adults in a contemporary Chinese community, natural East Asian facial features, black hair, not Caucasian. Patient: Chinese man age 45 with short straight black hair, clean shaven, wearing SAME light-blue shirt and charcoal pants, lying supine on flat dry paving, eyes closed, head left, feet right. Teal-vest helper: Chinese woman age 35, black hair in low bun, cream sleeves and khaki trousers, kneels beside shoulders with empty hands, same posture. Mustard-shirt helper: Chinese man age 40, short straight black hair, clean-shaven, dark jeans, same standing position. Avoid exaggerated caricature and traditional costumes. Preserve green AED cabinet, sage pavilion, orange pennants, cream canopy, clear gate and warm hand-painted gouache texture. NO CPR technique depicted, no cup, no extra patient, no text, no UI, no red cross, no flag. Change only character identities/appearance, keep full body visibility and same portrait dimensions.",
+      "tool": "image_gen.imagegen",
+      "model": "not_exposed_by_tool",
+      "inputSha256": "a76d643c42c674fcf011ee0a85e445158da42d6ca266612c790b2c5c3afdf06b",
+      "outputSha256": "8cffe3a056deb70c60a95911416701d64891ab340c14cd119c117db3404b45fd",
+      "professionalReview": "not_run"
+    },
+    {
+      "file": "handover-cn-v2.png",
+      "source": "retired-handover-v1.png",
+      "call": "call_E4vymlGEJV6lnclZtWImNhIz.png",
+      "prompt": "Edit the supplied portrait hand-painted professional handover illustration. User requires EVERY human character to be CHINESE. Redesign all FIVE visible people as natural contemporary Chinese adults, East Asian facial features, black or dark brown hair; no Caucasian faces, no caricatures. Teal-vest woman left is Chinese age 35 with black hair in bun. Mustard-shirt man at gate is Chinese age 40, short straight black hair and clean-shaven. The standing navy-uniform female responder with back partly turned is Chinese with straight black ponytail. BOTH navy-uniform clinicians visible shoulders-up behind screen are Chinese adults with straight black hair, man clean-shaven, woman tied hair. Preserve EXACT existing positions, cream waist-high privacy screen, patient fully hidden, paper handover, sage pavilion, AED cabinet, clear gate, warm watercolor gouache paper texture and full portrait composition. No medical procedures or electrode placement become visible. No recovered patient, no celebration, no text, no UI, no cross emblem, no flag. Modern ordinary clothing and professional navy uniforms as reference, consistent with a Chinese community activity.",
+      "tool": "image_gen.imagegen",
+      "model": "not_exposed_by_tool",
+      "inputSha256": "b52d76a70dc49673cd697d17ec4687071071202301a7a0a1bb1afc25a79b8af9",
+      "outputSha256": "db0936acf108e87f8956e9c6cd3cdd3999869dc9278b111c4e59117063aa9b90",
+      "professionalReview": "not_run"
+    }
+  ],
+  "rejected": [
+    {
+      "file": "rejected-handover-v1.png",
+      "sha256": "3559cbd2c3ddaad7705bbb02277ded9fac652a211ca16f4201ad7ffb29add7f0",
+      "reason": "生成的按压手位与贴片位置不适合教学，已弃用，未导出。"
+    }
+  ]
+}

@@ -95,8 +95,8 @@ try {
   await page.locator('[data-map-settings]').click();
   const settings = page.getByRole('dialog', { name: '游戏设置', exact: true });
   await settings.waitFor();
-  await settings.getByRole('button', { name: '关闭首页和地图音乐' }).click();
-  await settings.getByRole('button', { name: '关闭按钮和奖励音效' }).click();
+  await settings.getByRole('switch', { name: '背景音乐：首页与地图', exact: true }).click();
+  await settings.getByRole('switch', { name: '游戏音效：按钮与奖励', exact: true }).click();
   await settings.getByRole('button', { name: '关闭', exact: true }).click();
   await page.locator('[data-map-home]').click();
   assert.equal(await trigger.getAttribute('data-muted'), 'true');

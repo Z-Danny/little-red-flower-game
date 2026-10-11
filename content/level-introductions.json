@@ -94,5 +94,9 @@
   "fire-stairs-practice": {
     "description": "上方楼层起火，本场景通往地面的楼梯已确认可用。练习带孩子撤到室外。",
     "startLabel": "开始楼梯撤离"
+  },
+  "first-aid-aed": {
+    "description": "协助者正在做 CPR，你负责刚取来的 AED。胸部有汗水，请按设备提示准备贴片、清场并继续配合。",
+    "startLabel": "开始协作"
   }
 }

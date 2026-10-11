@@ -54,7 +54,7 @@ test('journal preserves legacy flower values and actual completion counts, with 
   assert.equal(demos.length, 4);
   assert.equal(new Set(entries.map(entry => entry.id)).size, entries.length);
   const ahua = demos.find(entry => entry.name === '阿花')!;
-  assert.deepEqual(journeyCategories.map(category => categoryProgress(category, ahua.completed).completed), [7, 5, 4]);
+  assert.deepEqual(journeyCategories.map(category => categoryProgress(category, ahua.completed).completed), [7, 5, 4, 0]);
   assert.equal(ahua.flowers, 48);
   assert.equal(plantedTotal(ahua.completed), 16);
   assert.equal(entries.find(entry => entry.id === 'other')?.rank, mine.rank);

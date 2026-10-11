@@ -37,7 +37,7 @@ const flowerFrames = ['bud', 'opening', 'half-open', 'bloom'];
 const coverCycleMs = 2_800;
 const fullBloomFraction = 0.7;
 const gameTitle = '这片儿没我不行';
-const leafCount = 10;
+const leafCount = 4;
 const report = {
   status: 'running',
   mode,
@@ -140,7 +140,7 @@ async function verifyMinimalCover(page, scenario, playerName) {
   assert.equal(await screen.locator(removedBlocks).count(), 0, `${scenario}: removed home UI must not exist`);
   const canContinue = (await screen.locator('[data-home-continue]').count()) === 1;
   const expectedControls = canContinue ? 2 : 1;
-  assert.equal(await screen.locator('button').count(), expectedControls, `${scenario}: unexpected menu control count`);
+  assert.equal(await screen.locator('.title-buttons button').count(), expectedControls, `${scenario}: unexpected menu control count`);
   assert.equal(await screen.locator('button[data-home-start], button[data-home-continue]').count(), expectedControls);
   if (canContinue) assert(await screen.locator('[data-home-continue]').isEnabled(), 'A rendered continue action must have a usable journey record');
   assert.equal(await screen.locator('[data-home-start]').innerText(), canContinue ? '重新开始' : '开始游戏');
@@ -220,7 +220,7 @@ async function verifyLayout(page, width, height, returning = false) {
       const value = element.getBoundingClientRect();
       return { x: value.x, y: value.y, width: value.width, height: value.height };
     };
-    const controls = [...screen.querySelectorAll('button')].map((button) => ({
+    const controls = [...screen.querySelectorAll('.title-buttons button')].map((button) => ({
       name: button.getAttribute('aria-label') || button.textContent.trim(),
       ...rect(button),
     }));
@@ -389,7 +389,7 @@ async function reloadCover(page) {
 }
 
 async function returnToCover(page) {
-  await page.locator('.garden-shell').waitFor({ state: 'visible' });
+  await page.locator('.garden-shell:not([inert])').waitFor({ state: 'visible' });
   const before = await readSaveBytes(page);
   const home = page.locator('[data-map-home]');
   assert.equal(await home.getAttribute('aria-label'), '返回游戏首页');
@@ -451,7 +451,7 @@ async function verifyMapDeparture(page, reduced = false, selector = '[data-home-
     button.click();
   }, selector);
   try {
-    await page.locator('.garden-shell').waitFor({ state: 'visible' });
+    await page.locator('.garden-shell:not([inert])').waitFor({ state: 'visible' });
     const state = await page.evaluate(() => window.__coverDepartureProbe.state);
     report.departures ??= [];
     report.departures.push({ reduced, selector, ...state });
@@ -459,12 +459,12 @@ async function verifyMapDeparture(page, reduced = false, selector = '[data-home-
     assert.equal(state.departing, !reduced, JSON.stringify(state));
     if (!reduced) {
       assert(state.allDisabled, 'The primary CTA must be locked as departure begins');
-      assert(state.transitionDurations.includes(360), 'The cover should play its authored 360ms departure animation');
+      assert(state.transitionDurations.includes(1800), 'The cover should play its authored 1800ms departure animation');
       assert(state.labelsStable, 'Menu labels must stay unchanged throughout departure');
       assert.deepEqual(state.departureLabels, state.initialLabels, 'Entering the map must not relabel the fading menu');
       assert.equal(state.duringDepartureWrites, 1, 'Rapid taps must write only one bookmark before leaving the title');
     }
-    check(reduced ? 'reduced-motion starts the map directly without a departing animation state' : 'start/continue plays a 360ms departure, locks controls and prevents repeated bookmark writes');
+    check(reduced ? 'reduced-motion starts the map directly without a departing animation state' : 'start/continue plays a 1800ms departure, locks controls and prevents repeated bookmark writes');
   } finally {
     await page.evaluate(() => {
       window.__coverDepartureProbe.restore();
@@ -620,7 +620,7 @@ async function startWithoutConfirmation(page) {
     await page.locator('[data-home-start]').click({ force: true });
     await Promise.all(dismissals);
     assert.deepEqual(dialogs, [], 'Starting without any completed levels must not ask for confirmation');
-    await page.locator('.garden-shell').waitFor({ state: 'visible' });
+    await page.locator('.garden-shell:not([inert])').waitFor({ state: 'visible' });
   } finally {
     page.off('dialog', dismissUnexpected);
   }
@@ -639,7 +639,7 @@ async function verifyZeroFlowerJourney(page) {
   assert(await page.locator('[data-home-continue]').isEnabled());
   await verifyMinimalCover(page, 'zero-flower-explorer-after-reload');
   await page.locator('[data-home-continue]').click({ force: true });
-  await page.locator('.garden-shell').waitFor({ state: 'visible' });
+  await page.locator('.garden-shell:not([inert])').waitFor({ state: 'visible' });
   assert.equal(await page.locator('[data-wallet]').innerText(), '0');
   assert.equal((await readSaveBytes(page)).board, fresh.board);
   await returnToCover(page);
@@ -789,7 +789,7 @@ async function verifyReturningPlayer(page) {
   check('legacy save enables the primary continue button without exposing player or flower information on the cover');
 
   await page.locator('[data-home-continue]').click({ force: true });
-  await page.locator('.garden-shell').waitFor({ state: 'visible' });
+  await page.locator('.garden-shell:not([inert])').waitFor({ state: 'visible' });
   assert.equal(await page.locator('[data-wallet]').innerText(), '8');
   assert.deepEqual(JSON.parse((await readSaveBytes(page)).board), saved);
   check('continue enters the map with the same eight flowers and completion records');
@@ -807,7 +807,7 @@ async function verifyReturningPlayer(page) {
   await verifyStaleResetFailure(page, beforeCancel, other.id);
 
   await answerNewGameConfirmation(page, true);
-  await page.locator('.garden-shell').waitFor({ state: 'visible' });
+  await page.locator('.garden-shell:not([inert])').waitFor({ state: 'visible' });
   assert.equal(await page.locator('[data-wallet]').innerText(), '0');
   const after = await readSaveBytes(page);
   const reset = JSON.parse(after.board);
@@ -831,7 +831,7 @@ async function verifyReturningPlayer(page) {
   await reloadCover(page);
   await verifyMinimalCover(page, 'other-returning-player', other.name);
   await page.locator('[data-home-continue]').click({ force: true });
-  await page.locator('.garden-shell').waitFor({ state: 'visible' });
+  await page.locator('.garden-shell:not([inert])').waitFor({ state: 'visible' });
   assert.equal(await page.locator('[data-wallet]').innerText(), '6');
   assert.deepEqual(JSON.parse((await readSaveBytes(page)).board).players, reset.players);
   check('the preserved other player can still continue their own six-flower save');

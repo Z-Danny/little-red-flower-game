@@ -1,0 +1,72 @@
+{
+  "chapter": 4,
+  "id": "first-aid",
+  "name": "急救岛",
+  "status": "partially-playable",
+  "levels": [
+    {
+      "id": "first-aid-abrasion",
+      "number": "4-1",
+      "title": "擦伤处理入门",
+      "difficulty": "入门",
+      "place": "海边清洁护理小站",
+      "preview": "纱布、绷带与清洁水盆，组成擦伤护理主题的小站。"
+    },
+    {
+      "id": "first-aid-nosebleed",
+      "number": "4-2",
+      "title": "鼻血应急处置",
+      "difficulty": "入门",
+      "place": "紫顶校医室",
+      "preview": "座椅、纸巾与纱布，布置成鼻血应急主题的校医室。"
+    },
+    {
+      "id": "first-aid-sprain",
+      "number": "4-3",
+      "title": "扭伤现场救护",
+      "difficulty": "基础",
+      "place": "运动场救护角",
+      "preview": "球场旁的长椅、拐杖、弹性绷带与冷敷袋，呈现运动救护主题。"
+    },
+    {
+      "id": "first-aid-burn",
+      "number": "4-4",
+      "title": "烫伤紧急处理",
+      "difficulty": "基础",
+      "place": "厨房用水体验屋",
+      "preview": "水槽、水龙头与独立放置的水壶，呈现烫伤处置主题。"
+    },
+    {
+      "id": "first-aid-fainting",
+      "number": "4-5",
+      "title": "晕倒现场应对",
+      "difficulty": "进阶",
+      "place": "林荫休息长廊",
+      "preview": "树荫下的休息床、毯子与联络电话，组成现场应对主题空间。"
+    },
+    {
+      "id": "first-aid-airway",
+      "number": "4-6",
+      "title": "气道异物急救",
+      "difficulty": "进阶",
+      "place": "气道急救训练亭",
+      "preview": "餐桌与专用训练模型，呼应气道异物急救主题。"
+    },
+    {
+      "id": "first-aid-cpr",
+      "number": "4-7",
+      "title": "心肺复苏实战",
+      "difficulty": "挑战",
+      "place": "社区广场救助现场",
+      "preview": "成人突然倒地：与旁人分工呼救、取AED，定位手位、练习输入节奏，并由协助者接替帮助。"
+    },
+    {
+      "id": "first-aid-aed",
+      "number": "4-8",
+      "title": "自动除颤协作",
+      "difficulty": "挑战",
+      "place": "自动除颤协作站",
+      "preview": "协助者正在CPR，你操作刚取来的AED：准备、贴片、清场，按设备判断配合电击或不电击，并立即恢复CPR。"
+    }
+  ]
+}

@@ -44,6 +44,7 @@ type PaintedLevelIntroProps = {
   mapEntry?: boolean;
   lockedReason?: string;
   startLabel?: string;
+  lockedLabel?: string;
 };
 
 const stopSceneEvent = (event: SyntheticEvent) => event.stopPropagation();
@@ -62,6 +63,7 @@ export function PaintedLevelIntro({
   mapEntry = false,
   lockedReason,
   startLabel: labelOverride,
+  lockedLabel = '尚未解锁',
 }: PaintedLevelIntroProps) {
   const { description, startLabel } = getLevelIntroduction(levelId);
   const id = useId();
@@ -76,7 +78,7 @@ export function PaintedLevelIntro({
   const [closing, setClosing] = useState(false);
   const canRetry = Boolean(error && onRetry);
   const disabled = Boolean(lockedReason) || closing || (canRetry ? false : !ready || Boolean(error));
-  const actionLabel = lockedReason ? '尚未解锁' : error
+  const actionLabel = lockedReason ? lockedLabel : error
     ? canRetry
       ? '重新准备场景'
       : '场景准备失败'

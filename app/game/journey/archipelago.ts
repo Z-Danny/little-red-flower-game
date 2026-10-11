@@ -1,7 +1,7 @@
 import { journeyCategories, mapsForCategory } from './categories';
 import { nodeStatus, type Progress } from './progress';
 
-export type ArchipelagoCategoryId = 'nature' | 'public' | 'home';
+export type ArchipelagoCategoryId = 'nature' | 'public' | 'home' | 'first-aid';
 export type ArchipelagoSound = 'select' | 'land';
 export type ArchipelagoPhase = 'idle' | 'selecting' | 'landing' | 'departing';
 
@@ -11,6 +11,7 @@ export const archipelagoArt = {
   sky: '/ui/archipelago-v1/sky-background.png',
   cloud: '/ui/archipelago-v1/cloud.png',
   plaque: '/ui/archipelago-v1/wood-plaque.png',
+  labels: '/ui/archipelago-v1/island-labels-brush-v1.png',
   flag: '/ui/archipelago-v1/current-flag.png',
 } as const;
 
@@ -19,19 +20,29 @@ export const archipelagoIslands = [
     id: 'nature',
     name: '自然灾害',
     art: '/ui/archipelago-v1/nature-island.png',
-    flag: { x: 34, y: 34 },
+    flag: { x: 10, y: 34 },
+    available: true,
   },
   {
     id: 'public',
     name: '公共安全',
     art: '/ui/archipelago-v1/public-island.png',
-    flag: { x: 12, y: 77 },
+    flag: { x: 62, y: 34 },
+    available: true,
   },
   {
     id: 'home',
     name: '居家校园办公',
     art: '/ui/archipelago-v1/home-island.png',
-    flag: { x: 63, y: 77 },
+    flag: { x: 10, y: 86 },
+    available: true,
+  },
+  {
+    id: 'first-aid',
+    name: '急救生命守护',
+    art: '/ui/archipelago-v1/first-aid-island-clean-v1.png',
+    flag: { x: 62, y: 86 },
+    available: true,
   },
 ] as const;
 

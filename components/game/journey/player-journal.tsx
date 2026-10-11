@@ -14,6 +14,8 @@ import {
   categoryProgress,
   journeyCategories,
 } from '@/app/game/journey/categories';
+import { levels } from '@/app/game/levels';
+import { mapsForCategory } from '@/app/game/journey/categories';
 import { plantedTotal } from '@/app/game/journey/progress';
 import type { JournalPlayer } from '@/app/game/journey/journal';
 import type { LeaderboardController } from '../leaderboard/use-leaderboard';
@@ -31,6 +33,7 @@ type JournalView = 'mine' | 'board' | 'player';
 type JournalTab = 'board' | 'mine';
 
 const islandArt: Record<string, string> = {
+  'first-aid': '/ui/archipelago-v1/first-aid-island.png',
   nature: '/ui/painted-journal-v1/island-nature.webp',
   public: '/ui/painted-journal-v1/island-public.webp',
   home: '/ui/painted-journal-v1/island-home.webp',
@@ -40,10 +43,7 @@ const categoryNames: Record<string, string> = {
   public: '公共安全',
   home: '居家 · 校园 · 办公',
 };
-const totalLevels = journeyCategories.reduce(
-  (total, category) => total + categoryProgress(category, {}).total,
-  0,
-);
+const totalLevels = levels.filter(level => level.playable).length;
 const reduceMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -341,10 +341,13 @@ export function PlayerJournal({ board, entries, onClose, onCue }: JournalProps) 
                         <span>已通关</span>
                       </div>
                     </div>
-                    <h4 className="journal-islands-title"><span>三片地儿，闯到哪儿了</span></h4>
+                    <h4 className="journal-islands-title"><span>四片地儿，闯到哪儿了</span></h4>
                     <div className="journal-islands">
                       {journeyCategories.map((category) => {
                         const progress = categoryProgress(category, viewed.completed);
+                        const availableCount = mapsForCategory(category).flatMap(region => region.nodes).filter(node => levels.some(level => level.id === node.id && level.playable)).length;
+                        const previewOnly = availableCount === 0;
+                        const partial = availableCount > 0 && availableCount < progress.total;
                         const fraction = progress.total ? Math.min(1, Math.max(0, progress.completed / progress.total)) : 0;
                         const selected = islandPoke === category.id;
                         return (
@@ -358,7 +361,7 @@ export function PlayerJournal({ board, entries, onClose, onCue }: JournalProps) 
                             data-progress={fraction}
                             data-selected={selected}
                             style={{ '--island-progress': `${fraction * 100}%` } as CSSProperties}
-                            aria-label={`${category.name}，已完成 ${progress.completed} / ${progress.total} 关，${progress.completed === progress.total ? '全拿下了' : `还差 ${progress.total - progress.completed} 关`}`}
+                            aria-label={previewOnly ? `${category.name}，9 关地图预览，玩法待开放` : `${category.name}，已完成 ${progress.completed} / ${progress.total} 关${partial ? `，已开放 ${availableCount} 关` : ''}`}
                             aria-pressed={selected}
                             onClick={() => { onCue('tap'); setIslandPoke(selected ? null : category.id); }}
                           >
@@ -367,8 +370,8 @@ export function PlayerJournal({ board, entries, onClose, onCue }: JournalProps) 
                               <img className="journal-island-color" data-testid={`journal-island-color-${category.id}`} src={islandArt[category.id]} alt="" draggable={false} />
                             </span>
                             <span className="journal-island-sign">{categoryNames[category.id] ?? category.name}</span>
-                            <span className="journal-island-count">{progress.completed}<span> / </span>{progress.total}</span>
-                            {selected && <span className="journal-island-insight" data-testid="journal-island-insight" role="status">{progress.completed === progress.total ? '这片儿全拿下了！' : `还差 ${progress.total - progress.completed} 关`}</span>}
+                            <span className="journal-island-count">{previewOnly ? <span>9 关 · 待开放</span> : <>{progress.completed}<span> / </span>{progress.total}</>}</span>
+                            {selected && <span className="journal-island-insight" data-testid="journal-island-insight" role="status">{previewOnly ? '地图已开放，训练玩法筹备中' : partial ? `已开放 ${availableCount} 关，其余训练筹备中` : progress.completed === progress.total ? '这片儿全拿下了！' : `还差 ${progress.total - progress.completed} 关`}</span>}
                           </button>
                         );
                       })}

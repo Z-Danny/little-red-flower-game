@@ -14,8 +14,12 @@ import {
 } from '../app/game/journey/resume';
 import assert from 'node:assert/strict';
 import { levels } from '../app/game/levels';
+import { journeyEntryFor } from '../app/game/journey/entry';
+import { signMotifFor } from '../app/game/journey/signs';
+import { firstAidChapter, firstAidPreview } from '../app/game/journey/first-aid';
 import {
   journeyMap,
+  withTestUnlock,
   nodeStatus,
   canEnter,
   regionProgress,
@@ -90,9 +94,9 @@ void test('zero-flower exploration resumes each available region entry without a
   const progress = Object.freeze({});
   for (const region of journeyMap.regions) {
     const location = Object.freeze({ levelId: region.nodes[0].id, visitedAt: 10 });
-    assert.equal(resumeNode(progress, location), location.levelId);
+    assert.equal(resumeNode(progress, location), levels.some(l=>l.id===location.levelId&&l.playable) ? location.levelId : entryNode(progress));
     assert.equal(flowerTotal(progress), 0);
-    assert.equal(nodeStatus(location.levelId, progress), 'available');
+    assert.equal(nodeStatus(location.levelId, progress), levels.some(l=>l.id===location.levelId&&l.playable) ? 'available' : 'locked');
   }
 });
 void test('resume preserves enterable legacy completions and rejects every locked or retired destination', () => {
@@ -134,9 +138,11 @@ function setup() {
     });
   return { bytes, provider };
 }
-void test('map covers all 24 enabled levels once, excludes pending professional reviews', () => {
-  assert.equal(ids.length, 24);
-  assert.equal(new Set(ids).size, 24);
+const implementedFirstAid = new Set(['first-aid-cpr', 'first-aid-aed']);
+void test('map covers 26 enabled levels and six remaining map-only previews once', () => {
+  assert.equal(ids.length, 32);
+  assert.equal(levels.filter(l => l.playable).length, 26);
+  assert.equal(new Set(ids).size, 32);
   for (const id of [
     'bleeding-pressure-practice',
     'electric-isolate-practice',
@@ -146,31 +152,31 @@ void test('map covers all 24 enabled levels once, excludes pending professional 
     assert(!canEnter(id, {}));
   }
   assert.deepEqual(
-    ids.toSorted(),
+    ids.filter(id => !firstAidPreview(id) || implementedFirstAid.has(id)).toSorted(),
     levels
       .filter((l) => l.playable)
       .map((l) => l.id)
       .toSorted(),
   );
 });
-void test('all 24 nodes follow their displayed map number; only each map first node starts open', () => {
+void test('all map nodes follow their displayed map number; only each map first node starts open', () => {
   for (const r of journeyMap.regions) {
     for (const [index, n] of r.nodes.entries()) {
       assert.equal(n.unlockAfter, index === 0 ? null : r.nodes[index - 1].id,
         `${r.id} #${index + 1}: prerequisite must be the preceding map node`);
       assert.equal(
         nodeStatus(n.id, {}),
-        index === 0 ? 'available' : 'locked',
+        index === 0 && levels.some(l=>l.id===n.id&&l.playable) ? 'available' : 'locked',
       );
-      assert.equal(canEnter(n.id, {}), index === 0);
+      assert.equal(canEnter(n.id, {}), index === 0 && levels.some(l=>l.id===n.id&&l.playable));
     }
   }
 });
-void test('three topic labels map each playable scene exactly once', () => {
-  assert.equal(journeyMap.regions.length, 3);
+void test('four topic labels map each playable scene and preview exactly once', () => {
+  assert.equal(journeyMap.regions.length, 4);
   assert.deepEqual(
     journeyMap.regions.map((r) => r.nodes.length),
-    [11, 7, 6],
+    [11, 7, 6, 8],
   );
   for (const [id, region] of Object.entries({
     'quake-cover-practice': 'nature',
@@ -188,7 +194,7 @@ void test('three topic labels map each playable scene exactly once', () => {
     );
   assert.deepEqual(
     journeyCategories.map((c) => c.name),
-    ['自然灾害', '公共安全', '居家校园办公'],
+    ['自然灾害', '公共安全', '居家校园办公', '急救岛'],
   );
   assert.deepEqual(
     journeyCategories
@@ -252,14 +258,14 @@ void test('every sequential completion prefix opens exactly the next node and ne
     for (let count = 0; count <= region.nodes.length; count++) {
       const saved = Object.freeze(Object.fromEntries(region.nodes.slice(0, count).map(n => [n.id, 3])));
       for (const r of journeyMap.regions) for (const [index, n] of r.nodes.entries()) {
-        const expected = r.id === region.id
+        const expected = !levels.some(l=>l.id===n.id&&l.playable) ? 'locked' : r.id === region.id
           ? index < count ? 'complete' : index === count ? 'available' : 'locked'
-          : index === 0 ? 'available' : 'locked';
+          : index === 0 && levels.some(l=>l.id===n.id&&l.playable) ? 'available' : 'locked';
         assert.equal(nodeStatus(n.id, saved), expected, `${region.id} prefix ${count}: ${n.id}`);
         assert.equal(canEnter(n.id, saved), expected !== 'locked');
       }
       assert.equal(flowerTotal(saved), count * 3);
-      if (count > 0 && count < region.nodes.length)
+      if (count > 0 && count < region.nodes.length && levels.some(l=>l.id===region.nodes[count].id&&l.playable))
         assert.equal(nextNode(region.nodes[count - 1].id, saved)?.id, region.nodes[count].id);
     }
   }
@@ -308,11 +314,15 @@ void test('region medal only completes after every node, no bonus flowers fabric
   delete p[r.nodes[0].id];
   assert.equal(regionProgress(r, p), 5);
 });
-void test('all nodes have sourced narrow lessons and inside-world positions', () => {
+void test('all nodes have inside-world positions; playable nodes have sourced narrow lessons', () => {
   for (const r of journeyMap.regions)
     for (const n of r.nodes) {
       assert(n.x >= 100 && n.x <= 620);
       assert(n.y > r.top && n.y < r.top + r.height);
+      if (firstAidPreview(n.id) && !implementedFirstAid.has(n.id)) {
+        assert(!levels.some(level => level.id === n.id), 'previews must not register fake medical gameplay');
+        continue;
+      }
       const lesson = lessonFor(n.id);
       assert(lesson.summary.length > 10);
       assert(lesson.url.startsWith('https://'));
@@ -432,7 +442,7 @@ void test('new game resets only confirmed player, relocks successors and permits
   assert.equal(reset.current.name, a.current.name);
   assert.equal(nodeStatus('flood-kit', reset.current.completed), 'locked');
   for (const r of journeyMap.regions) for (const [index, n] of r.nodes.entries())
-    assert.equal(nodeStatus(n.id, reset.current.completed), index === 0 ? 'available' : 'locked');
+    assert.equal(nodeStatus(n.id, reset.current.completed), index === 0 && levels.some(l=>l.id===n.id&&l.playable) ? 'available' : 'locked');
   assert.deepEqual((await s.provider().read()).current.completed, {});
   const first = await p.claimCompletion('typhoon-home', a.current.id);
   assert.equal(first.receipt.reward, 3);
@@ -460,11 +470,125 @@ void test('storage failure reports session-only persistence, never falsely says 
 });
 
 
+test('test unlock opens every mapped level without changing saved scores or rewards', () => {
+  const saved = Object.freeze({ 'typhoon-home': 3 });
+  const testing = withTestUnlock(saved, true);
+  for (const id of ids) {
+    assert.equal(canEnter(id, testing), !!levels.find(l => l.id === id)?.playable, id);
+    assert.equal(nodeStatus(id, testing), !levels.find(l => l.id === id)?.playable ? 'locked' : id === 'typhoon-home' ? 'complete' : 'available');
+  }
+  assert.equal(canEnter('unknown-level', testing), false);
+  assert.equal(flowerTotal(testing), 3);
+  assert.equal(plantedTotal(testing), 1);
+  assert.equal(JSON.stringify(testing), JSON.stringify(saved));
+  assert.deepEqual(saved, { 'typhoon-home': 3 });
+  assert.equal(withTestUnlock(saved, false), saved);
+  assert.equal(nodeStatus('flood-kit', withTestUnlock({}, false)), 'locked');
+});
+
+test('test unlock allows real completion rewards without granting prerequisite scores', async () => {
+  let enabled = true;
+  const store = new Map<string, string>();
+  const provider = createLocalLeaderboard({
+    storage: () => ({ getItem: key => store.get(key) ?? null, setItem: (key, value) => { store.set(key, value); } }),
+    caps,
+    id: () => 'test-player',
+    canEnter: (id, progress) => canEnter(id, withTestUnlock(progress, enabled)),
+  });
+  const initial = await provider.read();
+  const result = await provider.claimCompletion('flood-kit', initial.current.id);
+  assert.deepEqual(result.snapshot.current.completed, { 'flood-kit': 3 });
+  enabled = false;
+  await assert.rejects(() => provider.claimCompletion('flood-highground-practice', initial.current.id), /上一关/);
+});
+
+void test('chapter four preserves the remaining eight names, difficulty ladder and explicit CPR/AED playable scope', () => {
+  assert.equal(firstAidChapter.status, 'partially-playable');
+  assert.deepEqual(firstAidChapter.levels.map(l => [l.number, l.title, l.difficulty]), [
+    ['4-1', '擦伤处理入门', '入门'], ['4-2', '鼻血应急处置', '入门'],
+    ['4-3', '扭伤现场救护', '基础'], ['4-4', '烫伤紧急处理', '基础'],
+    ['4-5', '晕倒现场应对', '进阶'], ['4-6', '气道异物急救', '进阶'],
+    ['4-7', '心肺复苏实战', '挑战'], ['4-8', '自动除颤协作', '挑战'],
+  ]);
+  assert.deepEqual(journeyMap.regions.find(r => r.id === 'first-aid')!.nodes.map(n => n.id), firstAidChapter.levels.map(l => l.id));
+  for (const preview of firstAidChapter.levels) assert.equal(levels.some(l => l.id === preview.id && l.playable), implementedFirstAid.has(preview.id));
+});
+
+void test('chapter four shares prerequisite and completed/replay state with every other map', () => {
+  const nodes = journeyMap.regions.find(r => r.id === 'first-aid')!.nodes;
+  // Explicit pure-model fixtures, not real medical gameplay or player-save completions.
+  for (let count = 0; count <= nodes.length; count++) {
+    const scores = Object.freeze(Object.fromEntries(nodes.slice(0, count).map(n => [n.id, 3])));
+    for (const [index, node] of nodes.entries()) {
+      const entry = journeyEntryFor(node.id, scores)!;
+      assert.equal(entry.status, !implementedFirstAid.has(node.id) ? 'locked' : index < count ? 'complete' : index === count ? 'available' : 'locked');
+      if (entry.status === 'locked' && implementedFirstAid.has(node.id)) {
+        assert.equal(entry.lockedLabel, '尚未解锁');
+        assert(entry.lockedReason!.includes(firstAidChapter.levels[index - 1].title));
+      }
+      if (entry.status === 'complete') assert.equal(entry.startLabel, '再玩一次');
+      assert.equal(entry.canStart, implementedFirstAid.has(node.id) && entry.status !== 'locked', 'only implemented CPR/AED can start; other previews remain unavailable');
+    }
+    assert.equal(flowerTotal(scores), count * 3);
+    assert.equal(regionProgress(journeyMap.regions.find(r => r.id === 'first-aid')!, scores), count);
+    if (count > 0 && count < nodes.length && implementedFirstAid.has(nodes[count].id)) assert.equal(nextNode(nodes[count - 1].id, scores)?.id, nodes[count].id);
+  }
+  assert.equal(journeyEntryFor('oil-fire', {})!.canStart, true);
+  assert.equal(journeyEntryFor('charging-bedroom', {})!.canStart, false);
+  assert.equal(journeyEntryFor('charging-bedroom', {'oil-fire': 3})!.canStart, true);
+  assert.equal(journeyEntryFor('oil-fire', {'oil-fire': 3})!.startLabel, '再玩一次');
+  assert.equal(journeyEntryFor('unknown-level', {}), undefined);
+});
+
+void test('chapter four has eight distinct offline-safe corner motifs and authored restoration positions', () => {
+  const motifs = firstAidChapter.levels.map(level => signMotifFor(level.id));
+  assert.equal(new Set(motifs).size, 8);
+  for (const motif of motifs) {
+    assert(motif);
+    assert(motif.endsWith('.svg'));
+    const svg = fs.readFileSync(path.join(process.cwd(), 'public', motif.slice(1)), 'utf8');
+    assert(svg.includes('viewBox="0 0 32 32"'));
+    assert(svg.includes('stroke="#d4b17a"'));
+    assert(!/<script|<image|<foreignObject/.test(svg));
+  }
+  const region = journeyMap.regions.find(r => r.id === 'first-aid')!;
+  assert.equal(region.restoration.flowers.length, 16);
+  assert(region.restoration.lights.length > 0);
+});
+
+void test('unimplemented first-aid levels cannot mint real completion rewards', async () => {
+  const storage = new Map<string, string>();
+  const caps = Object.fromEntries(levels.filter(l => l.playable).map(l => [l.id, 3]));
+  const provider = createLocalLeaderboard({storage: () => ({getItem: k => storage.get(k) ?? null, setItem: (k,v) => { storage.set(k,v); }}), caps, id: () => 'first-aid-qa', canEnter});
+  const before = await provider.read();
+  for (const level of firstAidChapter.levels) await assert.rejects(() => provider.claimCompletion(level.id, before.current.id), /未开放|上一关/);
+  assert.deepEqual((await provider.read()).current.completed, before.current.completed);
+});
+
+void test('AED formal settlement has readable contextual knowledge, not preview-only rewards', () => {
+  const lesson = lessonFor('first-aid-aed');
+  assert.equal(lesson.points.length, 3);
+  assert.equal(lesson.publisher, '美国红十字会');
+  assert(lesson.points.some(p => p.body.includes('不是每次开机都要电击')));
+  assert(lesson.message.includes('不代表患者已经恢复'));
+  assert.equal(journeyEntryFor('first-aid-aed', {})!.canStart, false);
+  assert.equal(journeyEntryFor('first-aid-aed', {'first-aid-cpr':3})!.canStart, true);
+});
+
+void test('removed ninth first-aid stop no longer has an entry or progress slot', () => {
+  assert.equal(firstAidPreview('first-aid-comprehensive'), undefined);
+  assert.equal(journeyEntryFor('first-aid-comprehensive', {}), undefined);
+  assert.equal(canEnter('first-aid-comprehensive', {}), false);
+  assert(!ids.includes('first-aid-comprehensive'));
+  assert.equal(journeyMap.regions.find(r => r.id === 'first-aid')!.nodes.at(-1)!.id, 'first-aid-aed');
+});
+
+
 test('unlock all opens every map node without changing completion or rewards', () => {
   const completed = Object.freeze({ 'typhoon-home': 3 });
   for (const node of journeyMap.regions.flatMap(region => region.nodes)) {
-    assert.equal(canEnter(node.id, completed, true), true);
-    assert.equal(nodeStatus(node.id, completed, true), node.id === 'typhoon-home' ? 'complete' : 'available');
+    assert.equal(canEnter(node.id, completed, true), levels.some(l=>l.id===node.id&&l.playable));
+    assert.equal(nodeStatus(node.id, completed, true), !levels.some(l=>l.id===node.id&&l.playable) ? 'locked' : node.id === 'typhoon-home' ? 'complete' : 'available');
   }
   assert.equal(nodeStatus('unknown-level', completed, true), 'locked');
   assert.equal(canEnter('unknown-level', completed, true), false);
@@ -473,4 +597,17 @@ test('unlock all opens every map node without changing completion or rewards', (
   const last = journeyMap.regions.at(-1)!.nodes.at(-1)!.id;
   assert.equal(resumeNode({}, { levelId: last, visitedAt: 1 }, true), last);
   assert.equal(nodeStatus(last, {}), 'locked');
+});
+
+void test('persistent unlock keeps the local first-aid availability gate', () => {
+  assert.equal(journeyEntryFor('first-aid-cpr', {}, true)?.canStart, true);
+  assert.equal(journeyEntryFor('first-aid-aed', {}, true)?.canStart, true);
+  assert.equal(journeyEntryFor('first-aid-abrasion', {}, true)?.status, 'locked');
+  assert.equal(journeyEntryFor('first-aid-abrasion', {}, true)?.canStart, false);
+});
+
+test('unimplemented nodes stay locked even with overrides or historical scores',()=>{
+ for(const node of journeyMap.regions.flatMap(r=>r.nodes).filter(n=>!levels.find(l=>l.id===n.id)?.playable)){
+  for(const scores of [{},{[node.id]:3}]){assert.equal(nodeStatus(node.id,withTestUnlock(scores,true),true),'locked');const entry=journeyEntryFor(node.id,scores,true);assert.equal(entry?.canStart,false);assert.equal(entry?.lockedLabel,'玩法待开放');}
+ }
 });

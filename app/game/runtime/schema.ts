@@ -25,6 +25,8 @@ export type Conversation = {
 export type Rules = {
   schemaVersion: 1; id: string; kind: 'prevention' | 'response'; title: string;
   order: number; location: string; description: string; safety: string; briefing?: string;
+  /** Device/environment conditions, selected once at entry; never chosen by a gameplay action. */
+  scenarios?: { id: string; initialGoals: string[] }[];
   objects: ObjectSpec[]; goals: { id: string; label: string; object: string; showTarget?: boolean }[];
   interactions: Interaction[];
   inventory?: InventorySpec;
@@ -63,6 +65,8 @@ export type Skin = {
   presentation?: {
     durationMs: number;
     timer?: 'countdown';
+    /** Scene-integrated text without a notice panel; mechanics and live announcements stay intact. */
+    noticeAppearance?: 'scene';
     /** Lock immediately on fatal input, then show its authored non-interactive aftermath. */
     failureReveal?: true;
     roomSmoke?: import('./room-smoke').RoomSmokeSpec;
@@ -77,6 +81,8 @@ export type Skin = {
     }[];
     actors?: { object: string; amplitude: number; until?: string[]; performance?: {
       lean: number; periodMs: number;
+      /** Restrict idle movement to authored contact states, not clear/withdrawn poses. */
+      activeAssets?: string[];
       /** Same full-canvas framing and foot anchor in every frame; no pose resizing. */
       cycle?: { frames: string[]; periodMs: number; when?: Condition };
       cough?: { asset: string; w: number; h: number; everyMs: number; durationMs: number; until: string[] };
@@ -89,6 +95,7 @@ export type Skin = {
 export type LevelPackage = { rules: Rules; skin: Skin };
 export type Notice = { text: string; remaining: number };
 export type Run = {
+  scenarioId?: string;
   phase: 'playing' | 'settling' | 'complete' | 'failed'; resolved: string[];
   inventory?: string[]; departed?: boolean; inventoryRejected?: boolean;
   /** Committed action times, used by opt-in continuous presentation only. */

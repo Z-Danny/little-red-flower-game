@@ -20,8 +20,11 @@ export const enabled = (object: ObjectSpec, run: Run) => object.input !== 'none'
   && hasAll(run.stages ?? [], object.stages)
   && !run.inventory?.includes(object.id)
   && !(object.disabledWhen ?? []).some(id => run.resolved.includes(id));
-export function createRun(pack: LevelPackage): Run {
-  return { ...(pack.rules.inventory ? { inventory: [], departed: false } : {}), phase: 'playing', resolved: [], stages: [], stageAges: {}, action: null, elapsed: 0, risk: pack.rules.risk.initial, mistakes: 0,
+export function createRun(pack: LevelPackage, scenarioId?: string): Run {
+  const cases = pack.rules.scenarios;
+  const scenario = scenarioId === undefined ? cases?.[Math.floor(Math.random() * cases.length)] : cases?.find(value => value.id === scenarioId);
+  if (scenarioId !== undefined && !scenario) throw new Error('Unknown scenario: ' + scenarioId);
+  return { ...(pack.rules.inventory ? { inventory: [], departed: false } : {}), ...(scenario ? { scenarioId: scenario.id } : {}), phase: 'playing', resolved: [...(scenario?.initialGoals ?? [])], stages: [], stageAges: {}, action: null, elapsed: 0, risk: pack.rules.risk.initial, mistakes: 0,
     peakSeen: false, settleAge: 0, reaction: null, reactionMs: 0, boost: 0,
     notice: pack.rules.briefing ? { text: pack.rules.briefing, remaining: 5500 } : null, stars: 0 };
 }

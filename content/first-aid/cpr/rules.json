@@ -1,0 +1,23 @@
+{
+  "id": "first-aid-cpr",
+  "title": "心肺复苏实战",
+  "number": "4-7",
+  "rateMin": 100,
+  "rateMax": 120,
+  "guideRate": 110,
+  "sampleIntervals": 12,
+  "aedTravelMs": 8000,
+  "maxIntervalMs": 2000,
+  "minInputMs": 180,
+  "goals": [
+    "call",
+    "aed",
+    "position",
+    "hands",
+    "posture",
+    "rhythm",
+    "handover"
+  ],
+  "safety": "屏幕仅记录游戏输入，不测量真实按压深度或救助能力；不能替代线下实操培训。",
+  "reviewMs": 3000
+}
