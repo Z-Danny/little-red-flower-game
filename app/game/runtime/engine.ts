@@ -1,3 +1,4 @@
+import { activeConversation } from './coaching';
 import type { Condition, Emotion, Event, Input, LevelPackage, ObjectSpec, Run } from './schema';
 import { huntMissCaption, penalizedElapsed } from '../challenge/rules';
 
@@ -27,7 +28,9 @@ export function createRun(pack: LevelPackage): Run {
 export function findRule(pack: LevelPackage, run: Run, input: Input) {
   const object = pack.rules.objects.find(o => o.id === input.source);
   if (!object || !enabled(object, run) || (object.input !== 'both' && (object.input === 'tap' ? input.mode !== 'tap' : input.mode !== 'drop'))) return undefined;
-  return pack.rules.interactions.find(rule => rule.source === input.source && rule.mode === input.mode
+  const conversation = activeConversation(pack, run);
+  if (input.choice ? !conversation?.choices.includes(input.choice) : !!conversation) return undefined;
+  return pack.rules.interactions.find(rule => (rule.choice ? input.choice === rule.id : input.choice === undefined) && rule.source === input.source && rule.mode === input.mode
     && (rule.mode !== 'drop' || rule.target === input.target) && hasAll(run.resolved, rule.requires)
     && hasAll(run.stages ?? [], rule.stages)
     && (rule.mode !== 'drop' || !pack.skin.zoneConditions?.[rule.target!] || matches(pack, run, pack.skin.zoneConditions[rule.target!]))
@@ -76,10 +79,12 @@ export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
   }
   if (event.type === 'hint') {
     if (run.phase !== 'playing' || run.action) return run;
+    const card = activeConversation(pack, run);
+    if (card) return { ...run, notice: { text: card.reference + ' ' + card.prompt, remaining: 5000 } };
     const rule = pack.rules.interactions.find(rule => rule.outcome === 'correct' && rule.grants.some(g => !run.resolved.includes(g))
       && findRule(pack, run, { source: rule.source, mode: rule.mode, target: rule.target })?.id === rule.id);
     const label = pack.rules.objects.find(o => o.id === rule?.source)?.label;
-    return rule ? { ...run, notice: { text: `观察${label}，试着${rule.mode === 'tap' ? '点击它' : '把它移到合适的位置'}。`, remaining: 2800 } } : run;
+    return rule ? { ...run, notice: { text: rule.hint ?? `观察${label}，试着${rule.mode === 'tap' ? '点击它' : '把它移到合适的位置'}。`, remaining: 2800 } } : run;
   }
   if (event.type === 'tick') {
     if (event.paused || !Number.isFinite(event.ms) || event.ms <= 0 || run.phase === 'complete') return run;
@@ -118,6 +123,8 @@ export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
           next.reaction = 'focused'; next.reactionMs = 1800;
           next.risk = pack.rules.risk.mode === 'elapsed' ? 0 : Math.max(0, Math.min(100, next.risk + (rule.riskDelta ?? -8)));
           if (rule.feedback) next.notice = { text: rule.feedback, remaining: 4000 };
+          else if (pack.rules.kind === 'prevention' && pack.rules.risk.timeout === 'fail') next.notice = { text: '已收好：' + (pack.rules.objects.find(o => o.id === rule.source)?.label ?? '物品'), remaining: 2000 };
+          else if (rule.mode === 'drop') next.notice = { text: '已放置：' + (pack.rules.objects.find(o => o.id === rule.source)?.label ?? '物品'), remaining: 2000 };
         }
       }
     }
@@ -151,8 +158,9 @@ export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
   if (spec?.items.includes(object.id) && (run.inventory ?? []).length >= spec.capacity) return { ...run,
     notice: { text: '背包已满，最多放 ' + spec.capacity + ' 件。点背包取出物品后再装。', remaining: 2800 } };
   const rule = findRule(pack, run, event.input);
+  if (!rule && (event.input.choice || activeConversation(pack, run))) return run;
   const action = { rule: rule?.id ?? null, source: object.id, age: 0, duration: rule ? pack.skin.animations[rule.animation].durationMs : 450, point: event.input.point };
-  if (!rule) return { ...run, action };
+  if (!rule) return { ...run, action, notice: { text: event.input.mode === 'drop' ? (object.missFeedback ?? '未放入可用目标区域，物品已回原位。请重新选中，再移到目标框内。') : '这里暂时不能操作。', remaining: 2800 } };
   // Explicit authored fatal choices only; other levels retain recoverable errors.
   if (rule.failure) return { ...run, phase: 'failed', action: null, stars: 0, mistakes: run.mistakes + 1,
     ...(pack.skin.presentation?.failureReveal ? { failure: { rule: rule.id, age: 0, duration: action.duration } } : {}),
@@ -162,5 +170,6 @@ export function reduceRun(pack: LevelPackage, run: Run, event: Event): Run {
     risk: pack.rules.risk.mode === 'elapsed' ? 0 : danger ? Math.max(0, Math.min(100, run.risk + (rule.riskDelta ?? 15))) : run.risk,
     reaction: danger ? 'panicked' : run.reaction, reactionMs: danger ? 2500 : run.reactionMs,
     boost: danger ? Math.min(1, run.boost + .7) : run.boost,
-    notice: rule.outcome !== 'correct' && rule.feedback ? { text: rule.feedback, remaining: 2300 } : null };
+    notice: rule.outcome !== 'correct' && rule.feedback ? { text: rule.feedback, remaining: 2300 }
+      : pack.rules.kind === 'prevention' && pack.rules.risk.timeout === 'fail' && rule.outcome === 'correct' ? { text: '已选中' + object.label + '，正在收纳…', remaining: action.duration } : null };
 }

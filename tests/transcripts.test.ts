@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { validatePackage } from '../app/game/runtime/validate';
-import { createRun, reduceRun, emotion } from '../app/game/runtime/engine';
+import { createRun, reduceRun, emotion, findRule } from '../app/game/runtime/engine';
 import { scenePoses, pickObject, cameraFor, toWorld } from '../app/game/runtime/scene';
 import { ConfiguredPlayer } from '../components/game/configured/player';
 import type { LevelPackage, Run, Interaction } from '../app/game/runtime/schema';
@@ -13,7 +13,7 @@ const ids=['flood-kit','clear-corridor','lift-wait','well-call'];
 const json=(p:string)=>JSON.parse(readFileSync(join(process.cwd(),p),'utf8'));
 const pack=(id:string)=>validatePackage(json(`content/levels/${id}/level.json`),json(`content/levels/${id}/skins/paperbook.json`));
 const tick=(p:LevelPackage,r:Run,ms:number)=>{for(let n=0;n<ms;n+=100)r=reduceRun(p,r,{type:'tick',ms:Math.min(100,ms-n)});return r;};
-const start=(p:LevelPackage,r:Run,i:Interaction)=>reduceRun(p,r,{type:'interact',input:{source:i.source,mode:i.mode,target:i.target}});
+const start=(p:LevelPackage,r:Run,i:Interaction)=>reduceRun(p,r,{type:'interact',input:{source:i.source,mode:i.mode,target:i.target,choice:i.choice?i.id:undefined}});
 const act=(p:LevelPackage,r:Run,i:Interaction)=>tick(p,start(p,r,i),p.skin.animations[i.animation].durationMs);
 const depart=(p:LevelPackage,r:Run)=>{if(p.rules.inventory){assert.equal(r.phase,'playing','packing all items must not auto-complete');return reduceRun(p,r,{type:'depart'});}return r;};
 const permutations=<T,>(a:T[]):T[][]=>a.length?a.flatMap((v,i)=>permutations(a.filter((_,j)=>i!==j)).map(rest=>[v,...rest])):[[]];
@@ -23,8 +23,9 @@ test('all 53 manuscripts have explicit dispositions; missing14 and specialist ga
 });
 for(const id of ids){
  const p=pack(id),correct=p.rules.interactions.filter(i=>i.outcome==='correct');
- const legalOrders=permutations(correct).filter(order=>{const done=new Set<string>();return order.every(rule=>{const object=p.rules.objects.find(o=>o.id===rule.source)!;if([...object.requires??[],...rule.requires??[]].some(id=>!done.has(id)))return false;rule.grants.forEach(id=>done.add(id));return true;});});
- for(const [n,order] of legalOrders.entries())test(`${id}: legal order ${n+1}/${legalOrders.length}`,()=>{
+ const orders=permutations(correct).filter(order=>{let r=createRun(p);for(const i of order){if(findRule(p,r,{source:i.source,mode:i.mode,target:i.target,choice:i.choice?i.id:undefined})?.id!==i.id)return false;r=act(p,r,i);}return true;});
+ test(`${id}: at least one legal complete route`,()=>assert.ok(orders.length));
+ for(const [n,order] of orders.entries())test(`${id}: legal order ${n+1}/${orders.length}`,()=>{
   let r=createRun(p);for(const i of order)r=act(p,r,i);r=tick(p,depart(p,r),2000);
   assert.equal(r.phase,'complete');assert.deepEqual([...r.resolved].sort(),[...p.rules.completion.requires].sort());assert.equal(r.stars,3);
  });
@@ -65,7 +66,7 @@ test('waiting/rescue endings never open elevator doors or remove the open hazard
 });
 test('phone call targets remain distinct and tapping one cannot produce the other goal',()=>{
  const p=pack('well-call'),r=createRun(p);for(const id of ['fire-call','medical-call']){const b=p.skin.poses[id];assert.equal(pickObject(p,r,{x:b.x+b.w/2,y:b.y+b.h/2},()=>true),id);}
- const first=p.rules.interactions.find(i=>i.source==='medical-call')!;const after=act(p,r,first);assert.deepEqual(after.resolved,['medical-called']);
+ const first=p.rules.interactions.find(i=>i.source==='medical-call')!;const after=act(p,r,first);assert.deepEqual(after.resolved,['medical-connected']);assert.ok(!after.resolved.includes('medical-called'));const reported=act(p,after,p.rules.interactions.find(i=>i.id==='report-medical')!);assert.deepEqual(reported.resolved,['medical-connected','medical-called']);
 });
 test('new optional schema fields fail closed on typos or invalid references',()=>{
  for(const mutate of [(p:any)=>p.skin.zoneLabels={nope:'x'},(p:any)=>p.skin.zoneLabels='bad',(p:any)=>p.skin.labels[0].object='nope',(p:any)=>p.skin.labels[0].color='red',(p:any)=>p.skin.labels[0].when={all:['nope']},(p:any)=>p.rules.risk.mode='countdown',(p:any)=>p.rules.risk.initial=50]){const p=pack('lift-wait');mutate(p);assert.throws(()=>validatePackage(p.rules,p.skin));}

@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-27",
+  "scope": "User requested bystander feedback, interactive calls, observation without punishment, unobscured feedback and final perimeter confirmation. Art, poses, zones and framing unchanged.",
+  "files": {
+    "content/levels/well-call/level.json": {
+      "beforeSha256": "5a28fcafd06d9665f8b9498d4032351c8d3bbd272b533efe160272bc6820d5bf",
+      "approvedSha256": "9514d7c390d00cb405bb2096e68944ae541e582c79825f874ededdc84d2aa9ee"
+    },
+    "content/levels/well-call/skins/paperbook.json": {
+      "beforeSha256": "07df80e38765a9468a8df65ba6f28507ce814dacb8a6f341caa9e72631228fc5",
+      "approvedSha256": "6b6bda615bcc1a7c7b3123a1f08693e4d6f4cf15fa12ffab6d50cbd02a94b196"
+    }
+  }
+}

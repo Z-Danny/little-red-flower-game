@@ -1,6 +1,7 @@
+import { paintDropFeedback } from './drop-feedback';
+import { resolveDragPlacement } from '@/app/game/runtime/drop-zones';
 import { scenePoses } from '@/app/game/runtime/scene';
 import { canvasLabelFont } from '@/app/game/typography';
-import { relevantZones } from '@/app/game/runtime/drop-zones';
 import { matches } from '@/app/game/runtime/engine';
 import type { LevelPackage, Point, Run } from '@/app/game/runtime/schema';
 import type { Art } from './art';
@@ -11,13 +12,6 @@ export function render(ctx: CanvasRenderingContext2D, pack: LevelPackage, art: A
   const { width, height } = pack.skin.world;
   const backgroundBox = pack.skin.assets[pack.skin.background].sceneBounds ?? { x: 0, y: 0, w: width, h: height };
   ctx.drawImage(art[pack.skin.background].image, backgroundBox.x, backgroundBox.y, backgroundBox.w, backgroundBox.h);
-  const source = drag?.id ?? selected;
-  if (source) for (const id of relevantZones(pack, run, source)) {
-    const label = pack.skin.zoneLabels?.[id] ?? id;
-    const b=pack.skin.zones[id]; ctx.save(); ctx.strokeStyle='#f6d89b'; ctx.fillStyle='#24493b55'; ctx.lineWidth=3; ctx.setLineDash([10,8]);
-    ctx.beginPath(); ctx.roundRect(b.x,b.y,b.w,b.h,18); ctx.fill(); ctx.stroke(); ctx.setLineDash([]);
-    ctx.fillStyle='#fff4d9'; ctx.font=canvasLabelFont(20); ctx.textAlign='center'; ctx.fillText(label,b.x+b.w/2,b.y+b.h-15,b.w-12); ctx.restore();
-  }
   const checkingRule = run.action && pack.rules.interactions.find(rule => rule.id === run.action?.rule);
   const checks = checkingRule ? pack.skin.animations[checkingRule.animation].checks : undefined;
   if (checks && run.action) {
@@ -29,10 +23,15 @@ export function render(ctx: CanvasRenderingContext2D, pack: LevelPackage, art: A
     }
   }
   const poses = scenePoses(pack, run, reduced);
+  const source = drag?.id ?? selected;
+  const activePose = drag?.moved ? poses.find(p => p.id === drag.id) : undefined;
+  const activeZone = drag && activePose ? resolveDragPlacement(pack, run, drag.id, drag.point, drag.offset, activePose).target : undefined;
+  const paintZones = () => paintDropFeedback(ctx, pack, run, source, activeZone);
   const response = pack.skin.response, pressure = configuredPressure(pack, run); let smokeDrawn = false;
   // One pose per object; moving/dragged object is not also painted at home.
   if (drag?.moved) { const index = poses.findIndex(p => p.id === drag.id); if (index >= 0) poses.push(...poses.splice(index, 1)); }
   for (const original of poses) {
+    if (drag?.moved && original.id === drag.id) paintZones();
     if (response && !smokeDrawn && original.depth >= response.smokeDepth) { smokePlume(ctx, pressure, response.smokeOrigin, run.elapsed, width, reduced); smokeDrawn = true; }
     const pose = drag?.id === original.id && drag.moved ? { ...original, x: drag.point.x - drag.offset.x, y: drag.point.y - drag.offset.y } : original;
     if ((pose.opacity ?? 1) <= 0) continue;
@@ -48,6 +47,7 @@ export function render(ctx: CanvasRenderingContext2D, pack: LevelPackage, art: A
     }
     ctx.restore();
   }
+  if (!drag?.moved) paintZones();
   if (run.phase !== 'playing') { ctx.fillStyle = `rgba(255,214,141,${Math.min(.12, run.settleAge / 18000)})`; ctx.fillRect(0, 0, width, height); }
   if (response) heatEdges(ctx, pressure, width, height, run.elapsed, reduced);
 }

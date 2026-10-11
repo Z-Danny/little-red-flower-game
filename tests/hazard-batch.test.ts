@@ -31,7 +31,7 @@ test('batch: exact seven additions and preserved original identities',()=>{
   assert.equal(getHunt('charging-bedroom')?.performance,undefined);assert.equal(getHunt('typhoon-home')?.performance,undefined);
   assert.equal(huntPacks.length,9);
 });
-test('batch: original art/config bytes remain frozen; only explicitly recorded HUD/display and user-approved collection updates may differ',()=>{
+test('batch: original art/config bytes remain frozen; only explicitly recorded HUD/display and user-approved collection/coaching updates may differ',()=>{
   const audit=JSON.parse(readFileSync('docs/hazard-batch-v2/baseline-source-hashes.json','utf8')) as {files:{path:string;sha256:string}[]};
   const files=audit.files.filter(f=>f.path.startsWith('content/scenes/')||f.path.startsWith('public/levels/')||f.path.startsWith('content/levels/'));
   assert.ok(files.length>10,'Insufficient baseline evidence');
@@ -45,6 +45,12 @@ test('batch: original art/config bytes remain frozen; only explicitly recorded H
     const corridorUpdate=JSON.parse(readFileSync('docs/corridor-learning-v2/config-change-record.json','utf8')).files;
     if (['content/levels/clear-corridor/level.json','content/levels/clear-corridor/skins/paperbook.json'].includes(file.path)) {
       assert.equal(createHash('sha256').update(readFileSync(file.path)).digest('hex'),corridorUpdate[file.path],file.path+' differs from the explicit corridor update');
+      continue;
+    }
+    const coachingReview={...JSON.parse(readFileSync('docs/lift-coaching/config-review.json','utf8')).files,...JSON.parse(readFileSync('docs/well-coaching/config-review.json','utf8')).files}[file.path];
+    if(coachingReview){
+      assert.ok(['content/levels/lift-wait/level.json','content/levels/lift-wait/skins/paperbook.json','content/levels/well-call/level.json','content/levels/well-call/skins/paperbook.json'].includes(file.path));
+      assert.equal(createHash('sha256').update(readFileSync(file.path)).digest('hex'),coachingReview.approvedSha256,file.path+' reviewed coaching change');
       continue;
     }
     const review=JSON.parse(readFileSync('docs/challenge-hud/config-review.json','utf8')).files[file.path];

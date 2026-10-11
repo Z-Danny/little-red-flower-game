@@ -23,7 +23,7 @@
       "opening": "scene-ready-click",
       "pickup": "object-pickup",
       "back": "footstep-retreat",
-      "enter": "unsafe-return",
+      "inspect": "scene-ready-click",
       "pull-in": "unsafe-return",
       "dial-119": "telephone-connect",
       "dial-120": "medical-connect",

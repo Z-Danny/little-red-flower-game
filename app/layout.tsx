@@ -8,6 +8,7 @@ import './painted-hud.css';
 import './painted-settlement.css';
 import './painted-failure.css';
 import './painted-journal.css';
+import './painted-settings.css';
 import './pause-menu.css';
 
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, viewportFit: 'cover' };

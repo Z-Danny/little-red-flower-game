@@ -70,7 +70,7 @@ test('wrong water visibly enlarges fire and changes expression without blocking 
 });
 test('neutral prop/miss does not mutate risk or mistake count at release', () => {
   const p=response(), initial=createRun(p), r=reduceRun(p,initial,{type:'interact',input:{source:'plate',mode:'drop',target:'pan'}});
-  assert.equal(r.risk,initial.risk); assert.equal(r.mistakes,0); assert.equal(r.notice,null); assert.equal(r.action?.rule,null);
+  assert.equal(r.risk,initial.risk); assert.equal(r.mistakes,0); assert.match(r.notice!.text,/未放入可用目标区域/); assert.equal(r.action?.rule,null);
 });
 test('water cannot reignite a covered pan in this scenario', () => {
   const p=response(), r=perform(p,createRun(p),lid), after=perform(p,r,{source:'water',mode:'drop',target:'pan'});

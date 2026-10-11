@@ -145,6 +145,7 @@ css += '\n' + readFileSync(join(root, 'app', 'painted-hud.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'painted-settlement.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'painted-failure.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'painted-journal.css'), 'utf8');
+css += '\n' + readFileSync(join(root, 'app', 'painted-settings.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'pause-menu.css'), 'utf8');
 // Keep the OFL notices in the single-file distribution as well as in source.
 for (const license of ['WenKai-OFL.txt', 'NotoSansSC-OFL.txt']) {
@@ -158,6 +159,8 @@ for (const license of ['WenKai-OFL.txt', 'NotoSansSC-OFL.txt']) {
     ) +
     '\n*/';
 }
+// A UTF-8 BOM inside concatenated styles would become part of the first selector.
+css = css.replace(/^\uFEFF/gm, '');
 // The game components use authored CSS, not Tailwind utility classes.
 css =
   'html{line-height:1.5;-webkit-text-size-adjust:100%}svg{display:block;vertical-align:middle}button{color:inherit}button:disabled{cursor:default}\n' +

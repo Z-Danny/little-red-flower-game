@@ -1,3 +1,4 @@
+import { paintDropFeedback } from './drop-feedback';
 import { canvasLabelFont } from '@/app/game/typography';
 import { scenePoses } from '@/app/game/runtime/scene';
 import { matches } from '@/app/game/runtime/engine';
@@ -5,7 +6,7 @@ import type { LevelPackage, Point, Run } from '@/app/game/runtime/schema';
 import type { Art } from './art';
 import { configuredPressure } from '@/app/game/runtime/response';
 import { smokePlume, heatEdges } from '@/app/game/response/effects';
-import { relevantZones, resolveDragPlacement } from '@/app/game/runtime/drop-zones';
+import { resolveDragPlacement } from '@/app/game/runtime/drop-zones';
 import { drawPresentation } from './presentation';
 import { drawRoomSmoke } from './room-smoke';
 export type Drag = { id: string; point: Point; offset: Point; start: Point; pointerId: number; moved: boolean };
@@ -17,13 +18,7 @@ export function render(ctx: CanvasRenderingContext2D, pack: LevelPackage, art: A
   const poses = scenePoses(pack, run, reduced);
   const activePose=drag?.moved?poses.find(p=>p.id===drag.id):undefined;
   const activeZone=drag&&activePose?resolveDragPlacement(pack,run,drag.id,drag.point,drag.offset,activePose).target:undefined;
-  const zones = source ? relevantZones(pack, run, source) : [];
-  const paintZones = () => { if (source) for (const [id,label] of Object.entries(pack.skin.zoneLabels ?? {})) {
-    if (!zones.includes(id) || (pack.skin.zoneConditions?.[id] && !matches(pack,run,pack.skin.zoneConditions[id]))) continue;
-    const b=pack.skin.zones[id]; ctx.save(); ctx.strokeStyle='#f6d89b'; ctx.fillStyle=id===activeZone?'#67b17f88':'#24493b55'; ctx.lineWidth=id===activeZone?5:3; ctx.setLineDash([10,8]);
-    ctx.beginPath(); ctx.roundRect(b.x,b.y,b.w,b.h,18); ctx.fill(); ctx.stroke(); ctx.setLineDash([]);
-    ctx.fillStyle='#fff4d9'; ctx.font=canvasLabelFont(20); ctx.textAlign='center'; ctx.fillText(label,b.x+b.w/2,b.y+b.h-15,b.w-12); ctx.restore();
-  } };
+  const paintZones = () => paintDropFeedback(ctx, pack, run, source, activeZone);
   const response = pack.skin.response, pressure = configuredPressure(pack, run); let smokeDrawn = false;
   // World effects are interleaved by depth; carrying an item must not reorder
   // smoke, foreground occluders or the rest of the scene.

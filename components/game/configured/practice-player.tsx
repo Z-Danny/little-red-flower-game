@@ -3,9 +3,11 @@ import type { CompletionTiming } from '@/app/game/journey/time-reward';
 import { levelTitle } from '@/app/game/journey/presentation';
 import { useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import { completedForReward, createRun, emotion, enabled, failureRevealing, findRule, reduceRun } from '@/app/game/runtime/engine';
-import { cameraFor, pickObject, pickZone, scenePoses, toWorld } from '@/app/game/runtime/scene';
+import { cameraFor, pickObjectNear, pickZone, scenePoses, toWorld } from '@/app/game/runtime/scene';
 import type { Input, LevelPackage } from '@/app/game/runtime/schema';
 import { configuredPauseHint } from '@/app/game/runtime/pause-hint';
+import { pointerRadius } from '@/app/game/display/pointer-hit';
+import { dragFeedback } from '@/app/game/runtime/drag-feedback';
 import { alphaAt, loadArt, type Art } from './art';
 import { render, type Drag } from './practice-renderer';
 import { configuredAudioFrame } from '@/app/game/runtime/response';
@@ -34,6 +36,9 @@ export function PracticePlayer({ pack, onBack, onFinish, journey=false, autoStar
   const [error, setError] = useState(''), [retry, setRetry] = useState(0), [selected, setSelected] = useState<string | null>(null);
   const canvas = useRef<HTMLCanvasElement>(null), art = useRef<Art | null>(null), drag = useRef<Drag | null>(null), dialog = useRef<HTMLDivElement>(null);
   const reported = useRef(false), reduced = useRef(false), latest = useRef({ run, paused, selected, ready, entered });
+  const [dropTarget, setDropTarget] = useState<string | null>(null);
+  const [moving, setMoving] = useState(false);
+  useEffect(() => { setDropTarget(null); setMoving(false); }, [selected, paused]);
   const resetClock = useRef(true);
   latest.current = { run, paused, selected, ready, entered };
   const revealingFailure = failureRevealing(run);
@@ -116,17 +121,18 @@ export function PracticePlayer({ pack, onBack, onFinish, journey=false, autoStar
   }, [modal, paused, entry]);
   const pointAt = (e: ReactPointerEvent<HTMLCanvasElement>) => toWorld(pack, { x: e.clientX, y: e.clientY }, e.currentTarget.getBoundingClientRect(), cameraObstacles.current);
   const down = (e: ReactPointerEvent<HTMLCanvasElement>) => {
-    if (!ready || !entered || paused || run.phase !== 'playing' || run.action || drag.current || !art.current) return;
+    if (e.button !== 0 || !e.isPrimary || !ready || !entered || paused || run.phase !== 'playing' || run.action || drag.current || !art.current) return;
     const point = pointAt(e);
-    // Tap-to-place must win over a tappable actor drawn on the destination.
+    const id = pickObjectNear(pack, run, point, (asset, local) => alphaAt(art.current!, asset, local), pointerRadius(e.pointerType, cameraFor(pack, e.currentTarget.getBoundingClientRect().width, e.currentTarget.getBoundingClientRect().height, cameraObstacles.current).scale), reduced.current, false);
+    // A second press on the selected prop starts a drag, not a drop into its backdrop.
+    // Other tappable actors on a destination must not steal tap-to-place.
     const selectedZone=practice&&selected?pickRelevantZone(pack,run,point,selected):undefined;
-    if(selected&&selectedZone){interact({source:selected,mode:'drop',target:selectedZone,point});return;}
-    const id = pickObject(pack, run, point, (asset, local) => alphaAt(art.current!, asset, local), reduced.current);
+    if(selected&&selectedZone&&id!==selected){interact({source:selected,mode:'drop',target:selectedZone,point});return;}
     const object = pack.rules.objects.find(o => o.id === id);
     if (object?.input === 'tap') { interact({ source: object.id, mode: 'tap' }); return; }
     const zone = selected ? (practice?pickRelevantZone(pack,run,point,selected):pickZone(pack, point,run)) : undefined;
-    if (selected && zone) { interact({ source: selected, mode: 'drop', target: zone, point }); return; }
-    if (!id || !object) { setSelected(null); return; }
+    if (selected && zone && id !== selected) { interact({ source: selected, mode: 'drop', target: zone, point }); return; }
+    if (!id || !object) { if (selected) interact({ source: selected, mode: 'drop', point }); else setSelected(null); return; }
     const pose = scenePoses(pack, run, reduced.current).find(p => p.id === id)!;
     drag.current = { id, point, offset: { x: point.x - pose.x, y: point.y - pose.y }, start: point, moved: false, pointerId: e.pointerId };
     if(practice)practiceAudio.pickup();
@@ -135,6 +141,9 @@ export function PracticePlayer({ pack, onBack, onFinish, journey=false, autoStar
   const move = (e: ReactPointerEvent<HTMLCanvasElement>) => {
     const d = drag.current; if (!d || d.pointerId !== e.pointerId || !entered || paused || run.action) return;
     d.point = pointAt(e); d.moved ||= Math.hypot(d.point.x - d.start.x, d.point.y - d.start.y) > 8;
+    const pose = scenePoses(pack, run, reduced.current).find(p => p.id === d.id);
+    setMoving(d.moved);
+    setDropTarget(pose && d.moved ? resolveDragPlacement(pack, run, d.id, d.point, d.offset, pose).target ?? null : null);
   };
   const up = (e: ReactPointerEvent<HTMLCanvasElement>) => {
     const d = drag.current; if (!d || d.pointerId !== e.pointerId) return;
@@ -169,7 +178,7 @@ export function PracticePlayer({ pack, onBack, onFinish, journey=false, autoStar
       {countdown && <CountdownBar elapsed={run.elapsed} seconds={pack.rules.risk.seconds} resolved={run.phase === 'settling' || run.phase === 'complete'} training />}
     </header>
     {pack.rules.kind === 'prevention' && <div className="configured-targets" inert={modal} aria-label="需要寻找的物件">{pack.rules.goals.filter(g => g.showTarget !== false).map(goal => <div key={goal.id} className={run.resolved.includes(goal.id) ? 'done' : ''} aria-label={`${goal.label}${run.resolved.includes(goal.id) ? '已完成' : '待寻找'}`}><img src={pack.skin.assets[pack.skin.poses[goal.object].asset].src} alt={goal.label} draggable={false} />{run.resolved.includes(goal.id) && <b>✓</b>}</div>)}</div>}
-    {run.notice && !modal && <div className="configured-notice" role="status">{run.notice.text}</div>}
+    {(selected || run.notice) && !modal && <div className="configured-notice" data-feedback={selected ? dropTarget ? (findRule(pack, run, { source: selected, mode: 'drop', target: dropTarget })?.outcome === 'danger' ? 'danger' : 'target') : moving ? 'outside' : 'picked' : 'notice'} role="status">{selected ? dragFeedback(pack, selected, dropTarget, moving, run) : run.notice?.text}</div>}
     <nav className="configured-keyboard" aria-label="键盘辅助操作" inert={modal}>
       {pack.rules.objects.filter(o => enabled(o, run) && (!practice || scenePoses(pack,run,true).some(p=>p.id===o.id&&(p.opacity??1)>.05))).map(o => <button key={o.id} disabled={!ready || !entered || !!run.action || run.phase !== 'playing'} onClick={() => (o.input === 'tap' || (o.input==='both' && findRule(pack,run,{source:o.id,mode:'tap'}))) ? interact({ source: o.id, mode: 'tap' }) : selectObject(o.id)}>{o.label}</button>)}
       {selected && (practice?relevantZones(pack,run,selected):Object.keys(pack.skin.zones)).map(id => {const box=pack.skin.zones[id];return <button key={id} disabled={!ready || !entered || !!run.action || run.phase !== 'playing'} onClick={() => interact({ source: selected, mode: 'drop', target: id, point: { x: box.x + box.w / 2, y: box.y + box.h / 2 } })}>放到 {pack.skin.zoneLabels?.[id] ?? id}</button>;})}

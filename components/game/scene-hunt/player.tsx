@@ -1,5 +1,6 @@
 'use client';
 import type { CompletionTiming } from '@/app/game/journey/time-reward';
+import { nearestPixelHit, pointerRadius } from '@/app/game/display/pointer-hit';
 import { huntMissCaption } from '@/app/game/challenge/rules';
 import {levelTitle,journeyTiming} from '@/app/game/journey/presentation';
 import { useEffect, useReducer, useRef, useState } from 'react';
@@ -409,7 +410,7 @@ export function SceneHuntPlayer({ pack, onBack, onFinish, journey=false, autoSta
             if (x < 0 || y < 0 || x >= pack.skin.width || y >= pack.skin.height)
               return;
             if (e.button === 0 && e.isPrimary && art.current)
-              tap(hitMask(pack.skin, art.current.mask, x, y), x, y);
+              tap(nearestPixelHit({ x, y }, pointerRadius(e.pointerType, Math.max(rect.width / pack.skin.width, rect.height / pack.skin.height)), point => hitMask(pack.skin, art.current!.mask, point.x, point.y)), x, y);
           }}
         />
         {!ready && !autoStart && (

@@ -5,23 +5,31 @@ export type Point = { x: number; y: number };
 export type Box = Point & { w: number; h: number };
 export type Emotion = 'worried' | 'panicked' | 'focused' | 'relieved';
 export type Condition = { all?: string[]; any?: string[]; not?: string[]; stages?: string[]; notStages?: string[]; emotion?: Emotion; riskAtLeast?: number };
-export type ObjectSpec = { id: string; label: string; input: 'tap' | 'drag' | 'both' | 'none'; hudAction?: boolean; requires?: string[]; disabledWhen?: string[]; stages?: string[] };
+export type ObjectSpec = { id: string; label: string; input: 'tap' | 'drag' | 'both' | 'none'; hudAction?: boolean; missFeedback?: string; requires?: string[]; disabledWhen?: string[]; stages?: string[] };
 export type Interaction = {
   id: string; source: string; mode: 'tap' | 'drop'; target?: string;
   requires?: string[]; unless?: string[]; stages?: string[]; grants: string[];
   outcome: 'correct' | 'danger' | 'neutral'; animation: string;
-  riskDelta?: number; feedback?: string; failure?: boolean;
+  riskDelta?: number; feedback?: string; hint?: string; failure?: boolean;
+  /** Label of an explicit conversation choice; never triggered by a scene tap. */
+  choice?: string;
   /** Safe early exit, not completion: no goals, score, or journey reward. */
   escape?: true;
 };
 /** Opt-in capacity-limited packing; possession and departure are separate from goals. */
 export type InventorySpec = { container: string; capacity: number; items: string[]; required: string[]; failureReasons: Record<string, string> };
+export type Conversation = {
+  id: string; requires: string[]; unless: string[]; title: string; prompt: string;
+  reference: string; choices: string[]; caption?: string;
+};
 export type Rules = {
   schemaVersion: 1; id: string; kind: 'prevention' | 'response'; title: string;
   order: number; location: string; description: string; safety: string; briefing?: string;
   objects: ObjectSpec[]; goals: { id: string; label: string; object: string; showTarget?: boolean }[];
   interactions: Interaction[];
   inventory?: InventorySpec;
+  /** Opt-in teaching UI. Progress is still awarded by ordinary engine rules. */
+  coaching?: { context?: string; tasks: string[]; reminders: string[]; conversations: Conversation[] };
   /** Monotone teaching time slices, never a real-world survival deadline. */
   stages?: { id: string; requires: string[]; afterMs: number; feedback?: string }[];
   risk: { mode?: 'risk' | 'elapsed'; timeout?: 'continue' | 'fail'; seconds: number; initial: number; warningAt: number; peakFeedback: string };
@@ -47,6 +55,8 @@ export type Skin = {
   labels?: { object: string; text: string; x: number; y: number; size: number; color: string; align?: 'left' | 'center' | 'right'; background?: string; when?: Condition }[];
   /** Only shown while carrying/selecting an object; keys reference zones. */
   zoneLabels?: Record<string, string>;
+  /** Visual-only feedback placement; does not expand or move interaction zones. */
+  feedback?: { noticePosition: 'top' | 'bottom'; zoneLabelPosition: 'above' | 'inside' };
   /** The same condition gates both the visible zone and drop matching. */
   zoneConditions?: Record<string, Condition>;
   /** Read-only presentation. No effect can award a goal or modify a timer. */
@@ -92,5 +102,5 @@ export type Run = {
   elapsed: number; risk: number; mistakes: number; peakSeen: boolean; settleAge: number;
   reaction: Emotion | null; reactionMs: number; boost: number; notice: Notice | null; stars: number;
 };
-export type Input = { source: string; mode: 'tap' | 'drop'; target?: string; point?: Point };
+export type Input = { source: string; mode: 'tap' | 'drop'; choice?: string; target?: string; point?: Point };
 export type Event = { type: 'unpack'; source: string } | { type: 'depart' } | { type: 'reset' } | { type: 'hint' } | { type: 'miss' } | { type: 'tick'; ms: number; paused?: boolean } | { type: 'interact'; input: Input };

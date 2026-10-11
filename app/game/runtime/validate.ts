@@ -36,8 +36,8 @@ function box(value: unknown, p: string, partial = false) {
 /** Fail closed, before a package is registered or exported. All messages include a JSON field path. */
 export function validatePackage(rulesInput: unknown, skinInput: unknown, options: { embedded?: boolean } = {}): LevelPackage {
   const r = obj(rulesInput, 'level'), s = obj(skinInput, 'skin');
-  exactKeys(r, ['schemaVersion','id','kind','title','order','location','description','safety','briefing','objects','goals','interactions','risk','completion','stages','inventory'], 'level');
-  exactKeys(s, ['schemaVersion','id','world','framing','assets','background','poses','zones','states','animations','effects','labels','zoneLabels','response','presentation','zoneConditions'], 'skin');
+  exactKeys(r, ['schemaVersion','id','kind','title','order','location','description','safety','briefing','objects','goals','interactions','risk','completion','stages','inventory','coaching'], 'level');
+  exactKeys(s, ['schemaVersion','id','world','framing','assets','background','poses','zones','states','animations','effects','labels','zoneLabels','response','presentation','zoneConditions','feedback'], 'skin');
   oneOf(r.schemaVersion, [1], 'level.schemaVersion'); oneOf(s.schemaVersion, [1], 'skin.schemaVersion');
   id(r.id, 'level.id'); id(s.id, 'skin.id'); oneOf(r.kind, ['prevention', 'response'], 'level.kind');
   ['title','location','description','safety'].forEach(k => text(r[k], `level.${k}`));
@@ -70,7 +70,8 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
     return when;
   };
   for (const o of objects) {
-    exactKeys(o, ['id','label','input','requires','disabledWhen','stages','hudAction'], `objects.${o.id}`);
+    exactKeys(o, ['id','label','input','requires','disabledWhen','stages','hudAction','missFeedback'], `objects.${o.id}`);
+    if (o.missFeedback !== undefined) text(o.missFeedback, `objects.${o.id}.missFeedback`);
     text(o.label, `objects.${o.id}.label`); oneOf(o.input, ['tap','drag','both','none'], `objects.${o.id}.input`);
     if (o.hudAction !== undefined && (typeof o.hudAction !== 'boolean' || o.input !== 'tap')) fail(`objects.${o.id}.hudAction`, '只适用于点击动作的布尔标记');
     refs(o.requires, goalIds, `objects.${o.id}.requires`); refs(o.disabledWhen, goalIds, `objects.${o.id}.disabledWhen`);
@@ -181,7 +182,7 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
   }
   const zoneIds = new Set(Object.keys(zones)), animationIds = new Set(Object.keys(motions));
   for (const rule of rules) {
-    const p = `interactions.${rule.id}`; exactKeys(rule, ['id','source','mode','target','requires','unless','stages','grants','outcome','animation','riskDelta','feedback','failure','escape'], p);
+    const p = `interactions.${rule.id}`; exactKeys(rule, ['id','source','mode','target','requires','unless','stages','grants','outcome','animation','riskDelta','feedback','failure','escape','choice','hint'], p);
     refs([rule.source], objectIds, `${p}.source`); oneOf(rule.mode, ['tap','drop'], `${p}.mode`); oneOf(rule.outcome, ['correct','danger','neutral'], `${p}.outcome`);
     const object = objects.find(o => o.id === rule.source);
     if (object.input !== 'both' && object.input !== (rule.mode === 'tap' ? 'tap' : 'drag')) fail(p, '规则与对象输入方式不一致');
@@ -198,9 +199,40 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
       if (rule.escape !== true || rule.outcome !== 'neutral' || rule.grants.length || rule.failure || r.kind !== 'response') fail(p, '提前避险仅允许处置关无奖励的中性交互');
       text(rule.feedback, `${p}.feedback`);
     }
+    if (rule.choice !== undefined) {
+      text(rule.choice, p + '.choice');
+      if (rule.mode !== 'tap') fail(p + '.choice', '对话选择必须使用点击规则');
+    }
+    if (rule.hint !== undefined) text(rule.hint, p + '.hint');
     if (rule.feedback !== undefined) text(rule.feedback, `${p}.feedback`);
     if (rule.riskDelta !== undefined) number(rule.riskDelta, `${p}.riskDelta`, rule.outcome === 'danger' ? 0 : -100, 100);
   }
+  const conversations = r.coaching === undefined ? [] : (() => {
+    const c = obj(r.coaching, 'level.coaching');
+    exactKeys(c, ['tasks','reminders','conversations','context'], 'level.coaching');
+    if (r.kind !== 'response' || s.presentation) fail('level.coaching', '仅用于传统处置运行器');
+    if (c.context !== undefined) text(c.context, 'coaching.context');
+    const tasks = refs(c.tasks, goalIds, 'coaching.tasks', false);
+    if (!tasks.length || tasks.length > 4) fail('coaching.tasks', '需要1～4项可见任务');
+    const reminders = array(c.reminders, 'coaching.reminders');
+    if (!reminders.length) fail('coaching.reminders', '需要可回看的提示');
+    reminders.forEach((line, i) => text(line, 'coaching.reminders.' + i));
+    const cards = array(c.conversations, 'coaching.conversations'); uniqueIds(cards, 'coaching.conversations');
+    const choices = new Set<string>();
+    for (const card of cards) {
+      const p = 'coaching.conversations.' + card.id;
+      exactKeys(card, ['id','requires','unless','title','prompt','reference','choices','caption'], p);
+      refs(card.requires, goalIds, p + '.requires', false); refs(card.unless, goalIds, p + '.unless', false);
+      if (card.caption !== undefined) text(card.caption, p + '.caption');
+      for (const key of ['title','prompt','reference']) text(card[key], p + '.' + key);
+      const ids = refs(card.choices, new Set(rules.filter(rule => rule.choice).map(rule => rule.id)), p + '.choices', false);
+      if (ids.length < 2 || ids.length > 4) fail(p, '每张卡需要2～4个选择');
+      for (const value of ids) { if (choices.has(value)) fail(p, '选择不能被多个对话复用'); choices.add(value); }
+    }
+    for (const rule of rules) if (rule.choice && !choices.has(rule.id)) fail('interactions.' + rule.id, '选择缺少可见对话入口');
+    return cards;
+  })();
+  if (!r.coaching && rules.some(rule => rule.choice)) fail('level.coaching', '选择需要对话配置');
   const risk = obj(r.risk, 'level.risk'); exactKeys(risk, ['mode','timeout','seconds','initial','warningAt','peakFeedback'], 'level.risk');
   if (risk.timeout !== undefined) oneOf(risk.timeout, ['continue','fail'], 'risk.timeout');
   if (risk.mode !== undefined) oneOf(risk.mode, ['risk','elapsed'], 'risk.mode');
@@ -219,6 +251,12 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
   for (const [key,value] of Object.entries(s.zoneLabels === undefined ? {} : obj(s.zoneLabels,'skin.zoneLabels'))) { refs([key],zoneIds,`zoneLabels.${key}`); text(value,`zoneLabels.${key}`); }
   for (const [key, value] of Object.entries(s.zoneConditions === undefined ? {} : obj(s.zoneConditions, 'skin.zoneConditions'))) {
     refs([key], zoneIds, `zoneConditions.${key}`); condition(value, `zoneConditions.${key}`);
+  }
+  if (s.feedback !== undefined) {
+    const f = obj(s.feedback, 'skin.feedback');
+    exactKeys(f, ['noticePosition','zoneLabelPosition'], 'skin.feedback');
+    oneOf(f.noticePosition, ['top','bottom'], 'skin.feedback.noticePosition');
+    oneOf(f.zoneLabelPosition, ['above','inside'], 'skin.feedback.zoneLabelPosition');
   }
   const hexColor = (v: unknown,p: string) => { if (!/^#[0-9a-fA-F]{6}(?:[0-9a-fA-F]{2})?$/.test(text(v,p))) fail(p,'颜色必须为6或8位十六进制'); };
   for (const [i,raw] of array(s.labels ?? [],'skin.labels').entries()) {
@@ -390,12 +428,14 @@ export function validatePackage(rulesInput: unknown, skinInput: unknown, options
         && !(risk.mode === 'elapsed' && (c.riskAtLeast ?? 0) > 0));
     };
     if ([...done].sort().join('|') === full) { fullFound = true; continue; }
+    const conversation = conversations.find(card => all(card.requires) && !any(card.unless));
     let outgoing = false;
     for (const o of objects) {
       if (!all(o.requires) || any(o.disabledWhen) || !stageReady(o.stages)) continue;
       const inputs = rules.filter(rule => rule.source === o.id);
       for (const input of inputs) {
-        const first = rules.find(rule => rule.source === o.id && rule.mode === input.mode && rule.target === input.target && all(rule.requires) && !any(rule.unless) && stageReady(rule.stages) && zoneReady(rule.target) && (!rule.grants.length || !all(rule.grants)));
+        if (conversation ? !conversation.choices.includes(input.id) : !!input.choice) continue;
+        const first = rules.find(rule => rule.source === o.id && (input.choice ? rule.id === input.id : !rule.choice) && rule.mode === input.mode && rule.target === input.target && all(rule.requires) && !any(rule.unless) && stageReady(rule.stages) && zoneReady(rule.target) && (!rule.grants.length || !all(rule.grants)));
         if (!first || first.outcome !== 'correct' || !first.grants.length) continue;
         outgoing = true;
         const next = [...new Set([...done, ...first.grants])].sort(), key = next.join('|');

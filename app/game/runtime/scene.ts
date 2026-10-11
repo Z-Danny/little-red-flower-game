@@ -1,4 +1,5 @@
 import { enabled, hasAll, matches } from './engine';
+import { nearestPixelHit } from '../display/pointer-hit';
 import type { Box, LevelPackage, Point, Pose, Run } from './schema';
 import { configuredPressure } from './response';
 import { actorMotion } from '../response/pressure';
@@ -73,15 +74,27 @@ export function localPoint(pose: Pose, point: Point): Point {
   return { x: (c * dx + s * dy) / pose.w + pivot.x, y: (-s * dx + c * dy) / pose.h + pivot.y };
 }
 export function pickObject(pack: LevelPackage, run: Run, point: Point, alpha: (asset: string, point: Point) => boolean, reduced = false, includeDisabled = false) {
-  for (const pose of scenePoses(pack, run, reduced).reverse()) {
-    if ((pose.opacity ?? 1) <= .05) continue;
-    const local = localPoint(pose, point);
-    if (local.x < 0 || local.y < 0 || local.x > 1 || local.y > 1 || !alpha(pose.asset, local)) continue;
-    const object = pack.rules.objects.find(o => o.id === pose.id);
-    if (object && (includeDisabled || enabled(object, run))) return object.id;
-    if (pose.blockInput !== false) return null;
-  }
-  return null;
+  return pickObjectNear(pack, run, point, alpha, 0, reduced, includeDisabled);
+}
+export function pickObjectNear(pack: LevelPackage, run: Run, point: Point, alpha: (asset: string, point: Point) => boolean, radius: number, reduced = false, includeDisabled = false, allowTapTolerance = false) {
+  const poses = scenePoses(pack, run, reduced).reverse();
+  return nearestPixelHit(point, radius, sample => {
+    const exact = sample === point;
+    for (const pose of poses) {
+      if ((pose.opacity ?? 1) <= .05) continue;
+      const local = localPoint(pose, sample);
+      if (local.x < 0 || local.y < 0 || local.x > 1 || local.y > 1 || !alpha(pose.asset, local)) continue;
+      const object = pack.rules.objects.find(o => o.id === pose.id);
+      if (object && (includeDisabled || enabled(object, run))) {
+        // Response tap choices keep exact picking; forgiving drag pickup must
+        // not turn a near miss into an unintended dangerous button press.
+        if (!exact && !allowTapTolerance && !['drag', 'both'].includes(object.input)) return false;
+        return object.id;
+      }
+      if (pose.blockInput !== false) return false;
+    }
+    return null;
+  });
 }
 export function pickZone(pack: LevelPackage, point: Point, run?: Run) {
   return Object.entries(pack.skin.zones).find(([id, box]) => contains(box, point)

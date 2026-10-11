@@ -143,11 +143,11 @@ try {
       assert((await state(page)).position >= frozen - 0.3);
       assert.equal(await page.evaluate(() => window.__journeyMusicProbe.maxActive), 1);
       await settings(page);
-      await page.getByRole('button', { name: '关闭首页和地图音乐', exact: true }).click();
+      await page.getByRole('switch', { name: '背景音乐：首页与地图', exact: true }).click();
       await waitPlaying(page, false);
       assert.equal(await page.evaluate(() => localStorage.getItem('red-flower:journey-music-muted')), 'true');
-      assert.equal(await page.getByRole('button', { name: '打开首页和地图音乐', exact: true }).getAttribute('aria-pressed'), 'false');
-      await page.getByRole('button', { name: '关闭按钮和奖励音效', exact: true }).waitFor();
+      assert.equal(await page.getByRole('switch', { name: '背景音乐：首页与地图', exact: true }).getAttribute('aria-checked'), 'false');
+      await page.getByRole('switch', { name: '游戏音效：按钮与奖励', exact: true }).waitFor();
       await page.screenshot({ path: path.join(output, `music-settings-${width}.png`) });
       pass(`${width}: return resumes position, one source only, independent persistent music toggle visible`);
       await page.reload({ waitUntil: 'load', timeout: 60000 });
@@ -159,7 +159,7 @@ try {
       assert.equal((await state(page)).playing, false);
       assert.equal((await state(page)).decoded, false);
       await settings(page);
-      await page.getByRole('button', { name: '打开首页和地图音乐', exact: true }).click();
+      await page.getByRole('switch', { name: '背景音乐：首页与地图', exact: true }).click();
       await waitPlaying(page, true);
       await closeDialog(page);
       pass(`${width}: muted preference survives reload; explicit unmute starts playback`);

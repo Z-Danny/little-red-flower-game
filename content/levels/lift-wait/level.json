@@ -19,7 +19,7 @@
       "label": "报警通话按钮",
       "input": "tap",
       "disabledWhen": [
-        "alarm-contacted"
+        "wait-confirmed"
       ]
     },
     {
@@ -43,14 +43,29 @@
   ],
   "goals": [
     {
+      "id": "call-started",
+      "label": "接通对讲",
+      "object": "bell"
+    },
+    {
+      "id": "location-reported",
+      "label": "报告位置",
+      "object": "bell"
+    },
+    {
       "id": "alarm-contacted",
-      "label": "报警通话按钮",
+      "label": "联络外界",
       "object": "bell"
     },
     {
       "id": "person-waiting",
-      "label": "被困乘客",
+      "label": "移至等待区",
       "object": "person"
+    },
+    {
+      "id": "wait-confirmed",
+      "label": "保持联系",
+      "object": "bell"
     }
   ],
   "interactions": [
@@ -59,11 +74,47 @@
       "source": "bell",
       "mode": "tap",
       "grants": [
-        "alarm-contacted"
+        "call-started"
       ],
       "outcome": "correct",
       "animation": "call",
-      "feedback": "模拟通话：阳光小区1栋2号梯，有1人被困，无人受伤。已联络，请等待专业救援。"
+      "feedback": "对讲已接通。请查看电梯标识，向值守人员说明你的位置。"
+    },
+    {
+      "id": "report-location",
+      "source": "bell",
+      "mode": "tap",
+      "choice": "阳光小区 · 1栋2号梯",
+      "requires": [
+        "call-started"
+      ],
+      "unless": [
+        "location-reported"
+      ],
+      "grants": [
+        "location-reported"
+      ],
+      "outcome": "correct",
+      "animation": "reply",
+      "feedback": "位置已确认。接下来如实报告人数和当前状况。"
+    },
+    {
+      "id": "report-status",
+      "source": "bell",
+      "mode": "tap",
+      "choice": "1人被困，目前无人受伤",
+      "requires": [
+        "location-reported"
+      ],
+      "unless": [
+        "alarm-contacted"
+      ],
+      "grants": [
+        "alarm-contacted"
+      ],
+      "outcome": "correct",
+      "animation": "reply",
+      "feedback": "值守人员：已记录位置和情况。请留在轿厢内，远离门边，保持联系。"
     },
     {
       "id": "wait",
@@ -74,7 +125,27 @@
         "person-waiting"
       ],
       "outcome": "correct",
-      "animation": "wait"
+      "animation": "wait",
+      "feedback": "已移至远离门边的等待区。完成联络后，继续保持联系。"
+    },
+    {
+      "id": "confirm-wait",
+      "source": "bell",
+      "mode": "tap",
+      "choice": "我会保持联系，有不适及时报告",
+      "requires": [
+        "alarm-contacted",
+        "person-waiting"
+      ],
+      "unless": [
+        "wait-confirmed"
+      ],
+      "grants": [
+        "wait-confirmed"
+      ],
+      "outcome": "correct",
+      "animation": "reply",
+      "feedback": "已确认继续待援。本次完成的是求助练习，不代表救援已经到达。"
     },
     {
       "id": "pry",
@@ -94,6 +165,88 @@
       "outcome": "danger",
       "animation": "stay-inside",
       "feedback": "不要尝试从门缝离开，可能坠入井道。请留在轿厢内等候专业救援。"
+    },
+    {
+      "id": "guess-location",
+      "source": "bell",
+      "mode": "tap",
+      "choice": "看见楼层键“2”，就报告在2楼",
+      "requires": [
+        "call-started"
+      ],
+      "unless": [
+        "location-reported"
+      ],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "reply",
+      "feedback": "楼层按钮上的数字不是当前停靠位置。请按照电梯标识报告，不猜测楼层。"
+    },
+    {
+      "id": "guess-status",
+      "source": "bell",
+      "mode": "tap",
+      "choice": "不看现场，先说有人受伤",
+      "requires": [
+        "location-reported"
+      ],
+      "unless": [
+        "alarm-contacted"
+      ],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "reply",
+      "feedback": "请如实说明观察到的情况。本次模拟只有1人被困，无人受伤。"
+    },
+    {
+      "id": "rush-door",
+      "source": "bell",
+      "mode": "tap",
+      "choice": "既然已联系，就到门缝旁等着出去",
+      "requires": [
+        "alarm-contacted",
+        "person-waiting"
+      ],
+      "unless": [
+        "wait-confirmed"
+      ],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "reply",
+      "feedback": "联络成功不代表已经可以离开。继续留在等待区，保持联系。"
+    },
+    {
+      "id": "explain-floor-1",
+      "source": "floor-1",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "reply",
+      "feedback": "楼层键没有响应。请使用带铃铛标记的报警通话按钮联络外界，不要反复尝试开门。"
+    },
+    {
+      "id": "explain-floor-2",
+      "source": "floor-2",
+      "mode": "tap",
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "reply",
+      "feedback": "楼层键没有响应。请使用带铃铛标记的报警通话按钮联络外界，不要反复尝试开门。"
+    },
+    {
+      "id": "contact-status",
+      "source": "bell",
+      "mode": "tap",
+      "requires": [
+        "alarm-contacted"
+      ],
+      "unless": [
+        "wait-confirmed"
+      ],
+      "grants": [],
+      "outcome": "neutral",
+      "animation": "reply",
+      "feedback": "求助已经记录。请移至远离门边的等待区，并继续保持联系。"
     }
   ],
   "risk": {
@@ -105,12 +258,78 @@
   },
   "completion": {
     "requires": [
+      "call-started",
+      "location-reported",
       "alarm-contacted",
-      "person-waiting"
+      "person-waiting",
+      "wait-confirmed"
     ],
     "settleMs": 1800,
     "title": "已联络，安心等待",
     "status": "待援",
     "summary": "普通故障被困时，用报警装置或手机与外界联络，说明位置。不要扒门、攀爬或跳跃；留在轿厢内等待专业人员救援。"
+  },
+  "coaching": {
+    "tasks": [
+      "alarm-contacted",
+      "person-waiting",
+      "wait-confirmed"
+    ],
+    "reminders": [
+      "楼层键不响应时，使用报警通话装置联络。按电梯标识报告位置，如实说明人数和状况。",
+      "不要扒门或尝试从门缝离开。把乘客移至远离门边的等待区。",
+      "联络后继续保持联系，有不适及时报告。练习用时不是救援到达时间。"
+    ],
+    "conversations": [
+      {
+        "id": "location",
+        "requires": [
+          "call-started"
+        ],
+        "unless": [
+          "location-reported"
+        ],
+        "title": "模拟通话 · 报告位置",
+        "prompt": "值守人员：请问你被困在哪部电梯？",
+        "reference": "电梯标识：阳光小区 · 1栋2号梯。楼层按钮不是位置指示器。",
+        "choices": [
+          "report-location",
+          "guess-location"
+        ]
+      },
+      {
+        "id": "status",
+        "requires": [
+          "location-reported"
+        ],
+        "unless": [
+          "alarm-contacted"
+        ],
+        "title": "模拟通话 · 说明状况",
+        "prompt": "值守人员：有几人被困？是否有人受伤？",
+        "reference": "本次场景：轿厢内有1名乘客，无烟火，无人受伤。",
+        "choices": [
+          "guess-status",
+          "report-status"
+        ]
+      },
+      {
+        "id": "waiting",
+        "requires": [
+          "alarm-contacted",
+          "person-waiting"
+        ],
+        "unless": [
+          "wait-confirmed"
+        ],
+        "title": "保持联系 · 继续待援",
+        "prompt": "值守人员：已记录你的求助。请保持联系，情况有变化及时告诉我们。你会怎样回应？",
+        "reference": "你已联络外界，也已移至等待区。现在仍在待援，不代表救援已经到达。",
+        "choices": [
+          "confirm-wait",
+          "rush-door"
+        ]
+      }
+    ]
   }
 }

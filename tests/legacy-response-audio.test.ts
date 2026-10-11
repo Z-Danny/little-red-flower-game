@@ -66,7 +66,7 @@ for (const pack of packs) void test(`${pack.rules.id}: real interactions produce
   const bounce = act(pack, timeline, run, { source: 'person', mode: 'drop', target: 'nowhere' });
   assert.equal(bounce.cues.filter(cue => cue.id === 'invalid-return').length, 1); run = bounce.run;
   for (const rule of pack.rules.interactions.filter(rule => rule.outcome === 'correct')) {
-    const result = act(pack, timeline, run, { source: rule.source, mode: rule.mode, target: rule.target });
+    const result = act(pack, timeline, run, { source: rule.source, mode: rule.mode, target: rule.target, choice: rule.choice ? rule.id : undefined });
     assert.equal(result.cues.filter(cue => cue.event === rule.id).length, 1);
     assert.equal(result.cues.filter(cue => cue.event === 'goal').length, 1); run = result.run;
   }

@@ -6,14 +6,29 @@
     "height": 1280
   },
   "framing": {
-    "sceneBounds": { "x": 0, "y": 0, "w": 720, "h": 1320 },
-    "critical": { "x": 70, "y": 260, "w": 600, "h": 966 }
+    "sceneBounds": {
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 1320
+    },
+    "critical": {
+      "x": 70,
+      "y": 260,
+      "w": 600,
+      "h": 966
+    }
   },
   "assets": {
     "well-room": {
       "src": "/levels/display-adaptation/well-call-backdrop.webp",
       "alpha": false,
-      "sceneBounds": { "x": 0, "y": 0, "w": 720, "h": 1320 }
+      "sceneBounds": {
+        "x": 0,
+        "y": 0,
+        "w": 720,
+        "h": 1320
+      }
     },
     "well-opening": {
       "src": "/levels/transcript-v1/well-opening.png",
@@ -247,6 +262,78 @@
           ]
         }
       ]
+    },
+    "observe": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "well",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "opacity": 0.8
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "reply-fire": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "fire-call",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "opacity": 0.8
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "reply-medical": {
+      "durationMs": 500,
+      "tracks": [
+        {
+          "object": "medical-call",
+          "keyframes": [
+            {
+              "at": 0.5,
+              "opacity": 0.8
+            },
+            {
+              "at": 1,
+              "opacity": 1
+            }
+          ]
+        }
+      ]
+    },
+    "acknowledge": {
+      "durationMs": 600,
+      "tracks": [
+        {
+          "object": "person",
+          "keyframes": [
+            {
+              "at": 0.4,
+              "rotation": 0.015
+            },
+            {
+              "at": 1,
+              "rotation": 0
+            }
+          ]
+        }
+      ]
     }
   },
   "effects": [],
@@ -325,6 +412,11 @@
     }
   ],
   "zoneLabels": {
-    "perimeter": "退到更远处 · 劝阻靠近"
+    "perimeter": "外围区 · 提醒他退开",
+    "well": "井口不可进入"
+  },
+  "feedback": {
+    "noticePosition": "top",
+    "zoneLabelPosition": "above"
   }
 }

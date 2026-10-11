@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-27",
+  "scope": "User requested elevator feedback, interactive reporting and waiting acknowledgement. No art, framing, score persistence or other level data changes.",
+  "files": {
+    "content/levels/lift-wait/level.json": {
+      "beforeSha256": "9c2cb79f252754a09345e5f222a854dea6486a47a877d43351e791c34effd15b",
+      "approvedSha256": "e4a33f065ba2b37052330bb6e2035226cc5b6a54be165ce831b1a51c56530ae3"
+    },
+    "content/levels/lift-wait/skins/paperbook.json": {
+      "beforeSha256": "77345420cdb29dcfc709a45117f89f63ef54ef9c6d2a6c7470d440834255a613",
+      "approvedSha256": "9e488d232b8c72c585b9bc0fa02ed76895994e355a606ece05c752d592345d32"
+    }
+  }
+}
