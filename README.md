@@ -1,5 +1,7 @@
 # 小红花应急行动
 
+> **九岛选图界面（2026-11-01）：** 已接入9张居中文字木牌岛屿，固定9:16竖屏，支持手动沿弧线滑动、鼠标拖动及点击岛屿切换；已移除岛屿下方说明和导航控件。开始游戏直接进入选岛，岛屿已缩小；点击岛屿进入沿用原游戏绘本场景、木牌及小红花风格的完整关卡选择页。原有关卡及存档保留，未实现主题明确标注筹备中。见 [九岛接入说明](docs/nine-islands/README.md)。
+
 一款面向手机竖屏的绘本风应急科普游戏。在三张场景地图中寻找隐患、练习正确处置，让危险区域恢复安全，再种下一朵小红花。
 
 **[在线试玩](https://play.origingame.dev/7ukyctdhbk/) · [GitHub 源码](https://github.com/Z-Danny/little-red-flower-game) · [离线版本](https://github.com/Z-Danny/little-red-flower-game/releases) · [反馈问题](https://github.com/Z-Danny/little-red-flower-game/issues)**

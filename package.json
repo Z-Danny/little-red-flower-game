@@ -8,6 +8,7 @@
     "node": ">=22.13.0"
   },
   "scripts": {
+    "test:nine-islands-browser": "node scripts/test-nine-islands-browser.mjs",
     "test:corridor-browser": "node scripts/test-corridor-learning-browser.mjs",
     "test:home-sound-browser": "node scripts/test-home-sound-browser.mjs",
     "test:unlock-all-browser": "node scripts/test-unlock-all-browser.mjs",

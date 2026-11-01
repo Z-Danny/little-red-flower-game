@@ -1,5 +1,5 @@
 'use client';
-import { useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { PlantingSoundStage } from './journey/reward-sound';
 import type { Planting } from '@/app/game/journey/progress';
 import { useMapJourney } from './journey/use-map-journey';
@@ -9,13 +9,14 @@ import { LevelEntry } from './journey/level-entry';
 import { JourneySettings } from './journey/settings';
 import { Archipelago } from './journey/archipelago';
 import {
-  archipelagoDestinationId,
+  islandForLevel,
   type ArchipelagoSound,
 } from '@/app/game/journey/archipelago';
-import { categoryForRegion } from '@/app/game/journey/categories';
+
 type Props = {
   /** Paint the destination beneath the departing cover without accepting input. */
   entering?: boolean;
+  initialIslandPage?: 'islands' | 'levels';
   completed: Record<string, number>;
   allLevelsUnlocked?: boolean;
   onStart: (id: string) => void;
@@ -48,11 +49,16 @@ export function LevelHub(props: Props) {
   } = props;
   const [inspect, setInspect] = useState<string | null>(null),
     [settings, setSettings] = useState(false);
-  const [archipelagoOpen, setArchipelagoOpen] = useState(false);
+  const [archipelagoOpen, setArchipelagoOpen] = useState(!planting);
   const layer = useRef<HTMLDivElement>(null);
   const wasOpen = useRef(false);
+  const wasPlanting = useRef(!!planting);
+  useEffect(() => {
+    if (wasPlanting.current && !planting) setArchipelagoOpen(true);
+    wasPlanting.current = !!planting;
+  }, [planting]);
   const view = useMapJourney(props);
-  const categoryId = categoryForRegion(view.region.id)?.id ?? 'nature';
+  const [categoryId, setCategoryId] = useState(() => islandForLevel(props.focusId ?? view.current?.id ?? '')?.id ?? 'emergency');
   useLayoutEffect(() => {
     if (wasOpen.current && !archipelagoOpen) {
       layer.current
@@ -124,17 +130,16 @@ export function LevelHub(props: Props) {
       {archipelagoOpen && (
         <Archipelago
           currentCategoryId={categoryId}
-          onBack={() => setArchipelagoOpen(false)}
+          initialShowLevels={props.initialIslandPage === 'levels'}
+          obscured={!!inspect || !!props.entering}
+          completed={completed}
+          allLevelsUnlocked={props.allLevelsUnlocked}
+          onBack={props.onHome}
           onSound={props.onArchipelagoSound}
-          onSelect={(nextCategory) => {
-            const destination = archipelagoDestinationId(
-              nextCategory,
-              completed,
-            );
-            if (!destination) return;
-            if (nextCategory !== categoryId)
-              view.focus(destination, false, 0.78);
-            setArchipelagoOpen(false);
+          onSelect={(levelId) => {
+            setCategoryId(islandForLevel(levelId)?.id ?? 'emergency');
+            view.focus(levelId, false, 0.78);
+            setInspect(levelId);
           }}
         />
       )}

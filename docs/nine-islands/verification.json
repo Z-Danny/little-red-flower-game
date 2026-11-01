@@ -1,0 +1,18 @@
+{
+    "status":  "passed",
+    "feature":  "title-to-islands-smaller-art-storybook-level-selector",
+    "html":  "outputs/本地离线版/小红花应急行动.html",
+    "htmlSha256":  "dbdac1a13bf46fc0dc34b722756240374b66376912578f893ddbed4e3ff782b8",
+    "fullUnitTests":  2098,
+    "journeyUnitTests":  142,
+    "typecheck":  "passed",
+    "build":  "passed",
+    "offlineExport":  "passed",
+    "browserReport":  "outputs/nine-islands-entry-verification/report.json",
+    "browserChecks":  21,
+    "browserClosed":  true,
+    "contextClosed":  true,
+    "physicalDevice":  "not_run",
+    "humanAudio":  "not_run",
+    "published":  false
+}

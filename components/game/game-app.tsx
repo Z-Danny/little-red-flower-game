@@ -77,6 +77,7 @@ export function GameApp() {
   );
 }
 function MainGameApp() {
+  const [hubEntry, setHubEntry] = useState<'islands' | 'levels'>('islands');
   const [showSaveManager, setShowSaveManager] = useState(false);
   const [showTitle, setShowTitle] = useState(true);
   const [departingTitle, setDepartingTitle] = useState(false);
@@ -126,6 +127,7 @@ function MainGameApp() {
     if (!next) sound.current?.unlock();
   };
   const leaveTitle = () => {
+    setHubEntry('islands');
     sound.current?.unlock();
     departurePending.current = true;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -225,6 +227,7 @@ function MainGameApp() {
       setReceipt(undefined);
       setFinished(false);
       setPlanting(null);
+      setHubEntry('levels');
       setActiveId(id);
       setFocusId(id);
       setShowLeaderboard(false);
@@ -459,6 +462,7 @@ function MainGameApp() {
     {(!showTitle || departingTitle) && <LevelHub
       key={playerId}
       entering={departingTitle}
+      initialIslandPage={hubEntry}
       completed={completed}
       allLevelsUnlocked={allLevelsUnlocked}
       onStart={startLevel}

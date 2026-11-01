@@ -1,0 +1,47 @@
+﻿[
+    {
+        "file":  "01-campus-signed.png",
+        "sha256":  "0BDFD2B5A019396636BE01DB53B76CB6C08858C0E41E6066F4D39EFF4C9D018B",
+        "source":  "outputs/islands-nine-signs-centered-v1/islands/01-campus-signed.png"
+    },
+    {
+        "file":  "02-home-signed.png",
+        "sha256":  "57418225A952DDDAFBB067FDF0715067402E2545AD0AE08FC721CB563E3EB0C5",
+        "source":  "outputs/islands-nine-signs-centered-v1/islands/02-home-signed.png"
+    },
+    {
+        "file":  "03-traffic-signed.png",
+        "sha256":  "28F6CDBFA819FC8E2F8F7964938DED23B47A0B0CE263687A7CF8B22298142B70",
+        "source":  "outputs/islands-nine-signs-centered-v1/islands/03-traffic-signed.png"
+    },
+    {
+        "file":  "04-water-signed.png",
+        "sha256":  "2162FCEFD4E1AB01151F7E7BFEF322D17B3E22F3CC55FA5F1350FA7BF79F8A9F",
+        "source":  "outputs/islands-nine-signs-centered-v1/islands/04-water-signed.png"
+    },
+    {
+        "file":  "05-network-signed.png",
+        "sha256":  "12B18F3520D23752103DE30AB65EB435B249EFCF3E65A1DB9B6DE4F95C109274",
+        "source":  "outputs/islands-nine-signs-centered-v1/islands/05-network-signed.png"
+    },
+    {
+        "file":  "06-emergency-signed.png",
+        "sha256":  "CC07EB48A98B669155A592AA293D9F04D03D5F59B83A118BF91AD49ECC98FD1B",
+        "source":  "outputs/islands-nine-signs-centered-v1/islands/06-emergency-signed.png"
+    },
+    {
+        "file":  "07-social-signed.png",
+        "sha256":  "C03631017FBF2B8838D8B2541889C599148AD6E0BB6669A220BE47BCFF3A11F4",
+        "source":  "outputs/islands-nine-signs-centered-v1/islands/07-social-signed.png"
+    },
+    {
+        "file":  "08-food-signed.png",
+        "sha256":  "96710C0D79819441B4CFD42E8B8025FBF84117FEF2EAE7795B2D635C1E1EE778",
+        "source":  "outputs/islands-nine-signs-centered-v1/islands/08-food-signed.png"
+    },
+    {
+        "file":  "09-outdoor-signed.png",
+        "sha256":  "B668E54B44107D3FD0D76AC595707CF6E063FC9419F0779E21DB68CB7648153F",
+        "source":  "outputs/islands-nine-signs-centered-v1/islands/09-outdoor-signed.png"
+    }
+]
