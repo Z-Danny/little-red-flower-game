@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 /* oxlint-disable next/no-img-element -- Original embedded map artwork, not a new composition. */
 import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { ArrowLeft } from 'lucide-react';

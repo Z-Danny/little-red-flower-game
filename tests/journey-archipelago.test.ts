@@ -47,3 +47,18 @@ void test('arc positions stay on one circle, rise to both sides and keep stable 
   }
   assert.equal(islandArcPose(4).visible, false, 'far islands must not wrap around behind the arc');
 });
+
+void test('restored scene views preserve island membership and original node geometry', async () => {
+  const { originalScenesForIsland } = await import('../app/game/journey/island-scenes');
+  for (const island of archipelagoIslands) {
+    const scenes = originalScenesForIsland(island.id);
+    assert.deepEqual(scenes.flatMap(scene => scene.levelIds).sort(), [...island.levelIds].sort());
+    for (const scene of scenes) {
+      const original = journeyMap.regions.find(region => region.id === scene.region.id)!;
+      assert.equal(scene.region, original, 'use the exact original map, not reconstructed coordinates');
+      for (const id of scene.levelIds) assert(original.nodes.some(node => node.id === id));
+    }
+  }
+  assert.deepEqual(originalScenesForIsland('network'), []);
+  assert.deepEqual(originalScenesForIsland('food'), []);
+});

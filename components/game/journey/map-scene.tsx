@@ -21,6 +21,8 @@ import {
 } from '@/app/game/journey/progress';
 type Props = {
   region: Region;
+  /** Presentation-only island filter; never changes original coordinates or rules. */
+  visibleLevelIds?: readonly string[];
   progress: Progress;
   allLevelsUnlocked?: boolean;
   planting: Planting | null;
@@ -34,6 +36,7 @@ type Props = {
 };
 export function MapScene({
   region,
+  visibleLevelIds,
   progress,
   allLevelsUnlocked = false,
   planting,
@@ -44,8 +47,9 @@ export function MapScene({
   world,
   onInspect,
 }: Props) {
+  const visibleNodes = visibleLevelIds ? region.nodes.filter(node => visibleLevelIds.includes(node.id)) : region.nodes;
   const { pressedId, pressHandlers } = useSignalPress();
-  const { activeId, sceneHandlers } = useSceneHover(region, !!planting);
+  const { activeId, sceneHandlers } = useSceneHover(visibleLevelIds ? { ...region, nodes: visibleNodes } : region, !!planting);
   const signOffsets = useHudSafeSigns(scroller, world, region.id);
   const { reveal, finishReveal } = useSignCelebration(
     region,
@@ -64,6 +68,7 @@ export function MapScene({
   return (
     <div
       className="garden-scroll"
+      data-island-level-scroll={visibleLevelIds ? true : undefined}
       ref={scroller}
       // oxlint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- Keyboard users must be able to focus and scroll this scene map.
       tabIndex={0}
@@ -96,7 +101,7 @@ export function MapScene({
                 : 'growing'
           }
         >
-          {region.nodes.map((node) => {
+          {visibleNodes.map((node) => {
             const area = fogAreas[node.id];
             if (nodeStatus(node.id, progress, allLevelsUnlocked) !== 'locked' || !area)
               return null;
@@ -154,6 +159,7 @@ export function MapScene({
             const prev = region.nodes[i],
               live = nodeStatus(n.id, progress, allLevelsUnlocked) !== 'locked',
               route = routeFor(region, prev, n);
+            if (visibleLevelIds && (!visibleLevelIds.includes(prev.id) || !visibleLevelIds.includes(n.id))) return null;
             return (
               <g
                 key={n.id}
@@ -170,7 +176,7 @@ export function MapScene({
             );
           })}
         </svg>
-        {region.nodes.map((n, i) => {
+        {visibleNodes.map((n, i) => {
           const signLayout = signOffsets.get(n.id);
           const state = nodeStatus(n.id, progress, allLevelsUnlocked),
             plant = planting?.levelId === n.id,
@@ -190,6 +196,7 @@ export function MapScene({
             <button
               key={n.id}
               data-map-node={n.id}
+              data-island-level={visibleLevelIds ? n.id : undefined}
               data-status={state}
               data-preview-only={!!preview && !getLevel(n.id)?.playable}
               data-sign-side={signSide}
