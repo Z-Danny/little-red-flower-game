@@ -1,0 +1,135 @@
+{
+  "width": 724,
+  "height": 2172,
+  "model": "gpt-image-2.6-sunburst",
+  "styleReference": {
+    "file": "public/levels/journey-map/home-v3-handpainted.png",
+    "sha256": "458438411449d8f5574fa88c814530b6f8486d0bf67c428c77bcd51737d45e7a"
+  },
+  "maps": [
+    {
+      "id": "campus",
+      "title": "校园安全",
+      "theme": "曲折石路将八处校园场景依次左右交错串联，不再对称并排。",
+      "file": "campus-staggered-v2.png",
+      "height": 2171,
+      "editTaskId": "media_20261122103149a0fac78f151c2a3a8aa6",
+      "source": {
+        "file": "campus.png",
+        "generationId": "be25a926-2d21-482f-89ab-1f503762a6eb",
+        "sha256": "f4607c052ac950843a809a92b84eedb154a1095cc7c8b20e84506725491f2908"
+      },
+      "sha256": "5ef10a70969bd83f7eebf919c386c1a85fa9f2a26bfe81eafee5cbae11168726",
+      "stops": [
+        ["first-aid-abrasion", 25, 17, "清洁小站：白色洗盆、纱布和绷带。"],
+        ["first-aid-nosebleed", 75, 28, "紫瓦校医室：靠背椅、纸巾和护理图。"],
+        ["campus-classroom-check-v1", 25, 39, "放学教室：黑板和成排的课桌。"],
+        ["campus-lab-check-v1", 75, 51, "课前实验室：护目镜、试管架与实验台。"],
+        ["campus-playground-check-v1", 25, 63, "校园操场：红跑道、球门和练习器材。"],
+        ["campus-stairs-check-v1", 75, 74, "教学楼楼梯间：连续的折返楼梯和扶手。"],
+        ["campus-rain-check-v1", 25, 85, "雨天校园入口：伞架、湿台阶和积水。"],
+        ["campus-canteen-check-v1", 75, 95, "餐前洗手廊：成排水龙头与皂液瓶。"]
+      ]
+    },
+    {
+      "id": "home",
+      "title": "居家安全",
+      "theme": "果树与花园小路穿过左右错落的九处家庭空间，不再成排对称。",
+      "file": "home-staggered-v2.png",
+      "editTaskId": "media_20261122103220bdf0b76effe60b4b3178",
+      "source": {
+        "file": "home.png",
+        "generationId": "13985020-5cc8-463e-94c7-d07535e134b5",
+        "sha256": "cd0e7df4046d13263db6a876fdf12f7d3cef369686d246bc1f216603e8dff60b"
+      },
+      "sha256": "2d2d1d1197f1ff066c1d9efbcb26336d6bcc3237502e247b17e2448e759efe0d",
+      "stops": [
+        ["oil-fire", 24, 17, "绿瓦灶间：油锅在灶上，锅盖单独靠放。"],
+        ["charging-bedroom", 76, 25, "充电卧室：桃色床铺，书桌上有手机、插座和充电线。"],
+        ["bedroom-night-check-v2", 24, 35, "冬夜卧室：夜窗、床头灯和取暖设备。"],
+        ["kitchen-before-cooking-v2", 76, 42, "开火检查厨房：砧板、备菜篮与灶台。"],
+        ["fire-shelter-practice", 24, 54, "隔烟待援住宅：起居室电话和有烟的外走廊。"],
+        ["fire-stairs-practice", 76, 62, "楼梯撤离住宅：独立楼梯间直通室外。"],
+        ["first-aid-burn", 24, 70, "烫伤练习水槽：流水、水壶和擦拭用品。"],
+        ["home-kitchen-hygiene-v1", 76, 79, "备餐台：生食托盘、即食菜和不同砧板。"],
+        ["home-food-storage-v1", 42, 91, "家庭储藏间：常温置物架、冷藏柜与独立冷冻箱。"]
+      ]
+    },
+    {
+      "id": "traffic",
+      "title": "交通安全",
+      "theme": "同一条城镇步行线穿过雨天路口、施工围挡与夜间过街点。",
+      "generationId": "08ee2d9e-fee2-4001-ba68-f36f907fdab4",
+      "sha256": "c3f7ffa731e0d40dd6e34cfb67827886ba94fcaf5d5a9455c77c60e3e2578e7b",
+      "stops": [
+        ["storm-street-check-v2", 83, 17, "风雨街口：湿路面、信号灯、斑马线和室内观察点。"],
+        ["collapse-signal-practice", 83, 44, "塌陷路段：封闭围挡、路面断层和应急联络亭。"],
+        ["home-commute-visibility-v1", 85, 79, "夜间路口：路灯、人行信号、护栏和斑马线。"]
+      ]
+    },
+    {
+      "id": "water",
+      "title": "防溺水安全",
+      "theme": "沿河岸高处的干燥步道，分辨训练水池、河岸、正规泳池与漫水桥。",
+      "generationId": "df363b02-77b5-4e2e-8145-6607ab2863c9",
+      "sha256": "17612653eef5aaa4f59b16feaed5367b8e92cfdc5bc44f642b1ce4164bc3d90d",
+      "stops": [
+        ["car-window-practice", 61, 24, "车辆训练棚：独立演示水槽和露出侧窗的汽车。"],
+        ["water-riverside-check-v1", 61, 44, "河岸观察台：护栏、救生圈和河边凉亭。"],
+        ["water-pool-check-v1", 53, 67, "正规泳池：泳道、入水梯和救生员座椅。"],
+        ["water-rainy-crossing-v1", 53, 93, "雨后高岸：有封闭围挡的漫水桥和干燥绕行台阶。"]
+      ]
+    },
+    {
+      "id": "emergency",
+      "title": "应急防灾",
+      "theme": "由海边住宅、地震洪水训练区一路走到山下四处急救实训站。",
+      "generationId": "aaa89c89-9302-478e-abc6-d17f2539f57a",
+      "sha256": "7cf478ed8bc6a83a7243f400120d9726998031048e3265ba3fdbbe501676c99c",
+      "stops": [
+        ["typhoon-home", 24, 17, "临海客厅：百叶窗、阳台和迎风的绿植。"],
+        ["flood-kit", 77, 17, "防汛物资棚：黄色应急背包、饮水、收音机和手电。"],
+        ["quake-bedroom-v2", 24, 32, "防震卧室：床和绑带固定的高柜。"],
+        ["rain-street-preparation-v1", 77, 32, "暴雨街道观察点：湿路面、雨水箅子和沙袋。"],
+        ["flood-house-response-v1", 24, 46, "受淹住宅：水围住底层，剖面能看见上楼梯。"],
+        ["quake-cover-practice", 77, 47, "地震室内演示客厅：结实桌子和靠垫。"],
+        ["quake-exit-practice", 24, 62, "震后撤离楼：室外折返楼梯和集合小广场。"],
+        ["flood-highground-practice", 77, 60, "高处待援平台：观望塔、高台和醒目的信号旗。"],
+        ["first-aid-fainting", 24, 78, "树荫休息站：担架、叠好的毯子和联络设备。"],
+        ["first-aid-airway", 77, 78, "气道训练屋：餐桌和竖立的训练模型。"],
+        ["first-aid-cpr", 24, 93, "按压练习廊：蓝垫上平躺的心肺复苏训练模型。"],
+        ["first-aid-aed", 77, 93, "AED 训练站：有心形闪电图案的橙色设备箱。"]
+      ]
+    },
+    {
+      "id": "social",
+      "title": "人身社会安全",
+      "theme": "穿过红砖社区的楼道、电梯、设施院和物业前广场。",
+      "generationId": "87dbc00c-8b4d-44e4-9c59-92561ab6d50c",
+      "sha256": "f30693879ef1a3f3f3b121a3321f6207f060fe8494ec00727358366c927b8012",
+      "stops": [
+        ["clear-corridor", 23, 33, "住宅楼道：鞋柜和堆在通道边的纸箱。"],
+        ["lift-wait", 77, 33, "电梯轿厢：金属门、扶手和报警通话面板。"],
+        ["well-call", 23, 62, "井口设施院：围住的圆形井台和井外求助电话。"],
+        ["clear-corridor-check-v2", 77, 62, "消防通道：单车、红色消防箱和灭火器。"],
+        ["lift-contact-practice", 23, 90, "电梯联络前厅：位置面板、联络卡和电话。"],
+        ["social-neighborhood-check-v1", 77, 90, "物业和公共空间：电动车充电设施、地面通道标线。"]
+      ]
+    },
+    {
+      "id": "outdoor",
+      "title": "文旅户外安全",
+      "theme": "木栈道串起雨中公园、林缘、山径、夜营与晴日补水站。",
+      "generationId": "125df7b6-51e3-4607-9d32-9645b4670b0c",
+      "sha256": "31949e3ce7021a415eb2623e78310580fc0cad442c21ef01e0bed20600a584af",
+      "stops": [
+        ["thunder-park-v2", 35, 16, "公园观察地标：临水亭子和远处雷雨。只用于辨认场景，不表示亭子能避雷。"],
+        ["forest-fire-sources-v2", 78, 30, "林缘防火点：松林、消防器材和训练用火源情境。"],
+        ["first-aid-sprain", 26, 46, "山径救护角：长椅、拐杖、绷带与冷敷袋。"],
+        ["outdoor-trail-check-v1", 78, 58, "山径岔路：木护栏、封闭支路与可见步道。"],
+        ["outdoor-camp-check-v1", 35, 75, "夜间营地：暖灯帐篷、营灯和通行路径。"],
+        ["outdoor-sun-check-v1", 74, 93, "晴日补水歇脚地：遮阴棚、饮水处、长椅和水壶。"]
+      ]
+    }
+  ]
+}

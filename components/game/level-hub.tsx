@@ -1,4 +1,5 @@
 'use client';
+import { MapCornerTools } from './journey/map-corner-tools';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import type { PlantingSoundStage } from './journey/reward-sound';
 import type { Planting } from '@/app/game/journey/progress';
@@ -8,15 +9,20 @@ import { MapChrome } from './journey/map-chrome';
 import { LevelEntry } from './journey/level-entry';
 import { JourneySettings } from './journey/settings';
 import { Archipelago } from './journey/archipelago';
+import { islandPreviewFor } from '@/app/game/journey/island-previews';
 import {
+  archipelagoIslands,
   islandForLevel,
   type ArchipelagoSound,
 } from '@/app/game/journey/archipelago';
 
+export type HubEntry = 'new-game' | 'continue' | 'level-return';
+
 type Props = {
   /** Paint the destination beneath the departing cover without accepting input. */
   entering?: boolean;
-  initialIslandPage?: 'islands' | 'levels';
+  externalOverlayOpen?: boolean;
+  entry: HubEntry;
   completed: Record<string, number>;
   allLevelsUnlocked?: boolean;
   onStart: (id: string) => void;
@@ -58,7 +64,11 @@ export function LevelHub(props: Props) {
     wasPlanting.current = !!planting;
   }, [planting]);
   const view = useMapJourney(props);
-  const [categoryId, setCategoryId] = useState(() => islandForLevel(props.focusId ?? view.current?.id ?? '')?.id ?? 'emergency');
+  const [categoryId, setCategoryId] = useState(() =>
+    props.entry === 'new-game'
+      ? archipelagoIslands[0].id
+      : (islandForLevel(props.focusId ?? view.current?.id ?? '')?.id ?? 'emergency'),
+  );
   useLayoutEffect(() => {
     if (wasOpen.current && !archipelagoOpen) {
       layer.current
@@ -107,6 +117,8 @@ export function LevelHub(props: Props) {
             setArchipelagoOpen(true);
           }}
         />
+
+      </div>
         {settings && (
           <JourneySettings
             onClose={() => setSettings(false)}
@@ -119,7 +131,6 @@ export function LevelHub(props: Props) {
             navigationLocked={!!planting}
           />
         )}
-      </div>
       <LevelEntry
         inspect={inspect}
         setInspect={setInspect}
@@ -130,15 +141,18 @@ export function LevelHub(props: Props) {
       {archipelagoOpen && (
         <Archipelago
           currentCategoryId={categoryId}
-          initialShowLevels={props.initialIslandPage === 'levels'}
-          obscured={!!inspect || !!props.entering}
+          initialShowLevels={props.entry === 'new-game' || props.entry === 'level-return'}
+          obscured={!!inspect || settings || !!props.externalOverlayOpen || !!props.entering}
+          levelTools={<MapCornerTools wallet={view.wallet} onHome={props.onHome} onArchive={onLeaderboard} onSettings={() => setSettings(true)} />}
           completed={completed}
           allLevelsUnlocked={props.allLevelsUnlocked}
           onBack={props.onHome}
           onSound={props.onArchipelagoSound}
           onSelect={(levelId) => {
-            setCategoryId(islandForLevel(levelId)?.id ?? 'emergency');
-            view.focus(levelId, false, 0.78);
+            if (!islandPreviewFor(levelId)) {
+              setCategoryId(islandForLevel(levelId)?.id ?? 'emergency');
+              view.focus(levelId, false, 0.78);
+            }
             setInspect(levelId);
           }}
         />

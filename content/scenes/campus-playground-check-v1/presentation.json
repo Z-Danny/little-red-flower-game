@@ -1,0 +1,16 @@
+{
+  "location": "TODO 场所",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "观察场景，圈出隐患。",
+  "reveal": "TODO 另一个时点的规范结果",
+  "completeTitle": "观察完成",
+  "pauseNote": "只观察、不触碰。红圈只表示识别，不代表完成现实处置。未命中也不证明其他位置安全。",
+  "endingNote": "TODO 由谁、在什么条件下完成处理；不能画成风险凭空消失",
+  "preview": "TODO 关卡预览描述",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}

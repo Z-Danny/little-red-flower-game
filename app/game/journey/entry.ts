@@ -1,9 +1,16 @@
 import { getLevel } from '@/app/game/levels';
 import { firstAidPreview } from './first-aid';
+import { islandPreviewFor } from './island-previews';
 import { canEnter, nodeFor, nodeStatus, type Progress } from './progress';
 
 /** One prerequisite and replay policy for every map, including not-yet-playable entries. */
 export function journeyEntryFor(id: string, completed: Progress, allLevelsUnlocked = false) {
+  const draft = islandPreviewFor(id);
+  if (draft) return {
+    id, title: draft.title, status: 'locked' as const, canStart: false,
+    lockedReason: `${draft.preview} 本关为地图预告，玩法尚未开放。`,
+    lockedLabel: '玩法待开放', startLabel: undefined, note: undefined,
+  };
   const level = getLevel(id);
   const preview = firstAidPreview(id);
   if (!level && !preview) return undefined;

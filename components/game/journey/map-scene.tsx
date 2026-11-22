@@ -9,6 +9,7 @@ import { MapSignal, useSignalPress, useSceneHover } from './map-signal';
 import { useHudSafeSigns } from './use-hud-safe-signs';
 import { MapSign } from './map-sign';
 import { firstAidPreview } from '@/app/game/journey/first-aid';
+import { islandPreviewFor } from '@/app/game/journey/island-previews';
 import { useSignCelebration } from './use-sign-celebration';
 import { signMotion } from '@/app/game/journey/signs';
 import {
@@ -21,8 +22,9 @@ import {
 } from '@/app/game/journey/progress';
 type Props = {
   region: Region;
-  /** Presentation-only island filter; never changes original coordinates or rules. */
+  /** Filter within this composition; saved prerequisites stay in the journey graph. */
   visibleLevelIds?: readonly string[];
+  authoredMap?: boolean;
   progress: Progress;
   allLevelsUnlocked?: boolean;
   planting: Planting | null;
@@ -32,11 +34,13 @@ type Props = {
   current?: MapNode;
   scroller: RefObject<HTMLDivElement | null>;
   world: RefObject<HTMLDivElement | null>;
+  scrollViewport?: RefObject<HTMLDivElement | null>;
   onInspect: (id: string) => void;
 };
 export function MapScene({
   region,
   visibleLevelIds,
+  authoredMap = false,
   progress,
   allLevelsUnlocked = false,
   planting,
@@ -46,11 +50,12 @@ export function MapScene({
   scroller,
   world,
   onInspect,
+  scrollViewport,
 }: Props) {
   const visibleNodes = visibleLevelIds ? region.nodes.filter(node => visibleLevelIds.includes(node.id)) : region.nodes;
   const { pressedId, pressHandlers } = useSignalPress();
-  const { activeId, sceneHandlers } = useSceneHover(visibleLevelIds ? { ...region, nodes: visibleNodes } : region, !!planting);
-  const signOffsets = useHudSafeSigns(scroller, world, region.id);
+  const { activeId, sceneHandlers } = useSceneHover(visibleLevelIds ? { ...region, nodes: visibleNodes } : region, !!planting || authoredMap);
+  const signOffsets = useHudSafeSigns(scrollViewport ?? scroller, world, region.id, !authoredMap);
   const { reveal, finishReveal } = useSignCelebration(
     region,
     progress,
@@ -67,16 +72,17 @@ export function MapScene({
       : {};
   return (
     <div
-      className="garden-scroll"
-      data-island-level-scroll={visibleLevelIds ? true : undefined}
+      className={scrollViewport ? "garden-scroll garden-scroll-embedded" : "garden-scroll"}
+      data-island-level-scroll={visibleLevelIds && !scrollViewport ? true : undefined}
       ref={scroller}
       // oxlint-disable-next-line jsx-a11y/no-noninteractive-tabindex -- Keyboard users must be able to focus and scroll this scene map.
-      tabIndex={0}
+      tabIndex={scrollViewport ? -1 : 0}
       aria-label={`${region.name}场景地图，可上下探索`}
-      style={{ overflowY: planting ? 'hidden' : 'auto' }}
+      style={{ overflowY: scrollViewport ? 'visible' : planting ? 'hidden' : 'auto' }}
     >
       <div
         className="garden-world"
+        data-authored-map={authoredMap || undefined}
         {...sceneHandlers}
         ref={world}
         key={region.id}
@@ -149,7 +155,7 @@ export function MapScene({
                 />
               ))}
         </div>
-        <svg
+        {!authoredMap && <svg
           className="garden-paths"
           viewBox={`0 0 ${region.width} ${region.height}`}
           preserveAspectRatio="none"
@@ -175,13 +181,14 @@ export function MapScene({
               </g>
             );
           })}
-        </svg>
+        </svg>}
         {visibleNodes.map((n, i) => {
           const signLayout = signOffsets.get(n.id);
           const state = nodeStatus(n.id, progress, allLevelsUnlocked),
             plant = planting?.levelId === n.id,
             preview = firstAidPreview(n.id),
-            title = getLevel(n.id)?.title ?? preview?.title,
+            draft = islandPreviewFor(n.id),
+            title = getLevel(n.id)?.title ?? preview?.title ?? draft?.title,
             signSide =
               signLayout?.side ??
               n.signSide ??
@@ -197,8 +204,9 @@ export function MapScene({
               key={n.id}
               data-map-node={n.id}
               data-island-level={visibleLevelIds ? n.id : undefined}
+              data-label-layout={authoredMap ? n.x < region.width / 2 && n.y > region.height * .84 ? 'above' : 'below' : undefined}
               data-status={state}
-              data-preview-only={!!preview && !getLevel(n.id)?.playable}
+              data-preview-only={!!draft || (!!preview && !getLevel(n.id)?.playable)}
               data-sign-side={signSide}
               data-sign-return-side={'signReturnSide' in n ? n.signReturnSide : undefined}
               data-sign-adjusted={signAdjusted}
@@ -206,7 +214,7 @@ export function MapScene({
               data-pressed={pressedId === n.id}
               data-scene-active={activeId === n.id}
               {...pressHandlers(n.id)}
-              aria-label={`${preview ? `${preview.number} ${title}，${preview.difficulty}${getLevel(n.id)?.playable ? '' : '，地图预览，玩法待开放'}` : title}，${state === 'complete' ? '已完成' : state === 'available' ? (preview && !getLevel(n.id)?.playable ? '已解锁，玩法待开放' : '可进入') : '未解锁'}`}
+              aria-label={draft ? `${title}，地图预告，玩法待开放` : `${preview ? `${preview.number} ${title}，${preview.difficulty}${getLevel(n.id)?.playable ? '' : '，地图预览，玩法待开放'}` : title}，${state === 'complete' ? '已完成' : state === 'available' ? (preview && !getLevel(n.id)?.playable ? '已解锁，玩法待开放' : '可进入') : '未解锁'}`}
               aria-disabled={!!planting}
               className={`garden-node ${state} ${plant ? 'planting' : ''}`}
               style={
@@ -216,7 +224,9 @@ export function MapScene({
                   '--sign-room': `${((signSide === 'left' ? n.x : region.width - n.x) / region.width) * 100}cqw`,
                   '--sign-offset-x': `${signLayout?.offsetX ?? 0}px`,
                   '--sign-offset-y': `${signLayout?.offsetY ?? 0}px`,
-                  '--sign-width': signLayout
+                  '--sign-width': authoredMap
+                    ? `min(152px, calc(${Math.min(n.x, region.width - n.x) * 200 / region.width}cqw - 20px))`
+                    : signLayout
                     ? `${signLayout.width}px`
                     : undefined,
                   '--sign-bud-ms': `${signMotion.budResponseMs}ms`,
@@ -241,11 +251,12 @@ export function MapScene({
                   />
                 </svg>
               )}
-              <MapSignal levelId={n.id} status={state} paused={!!planting} />
+              {!authoredMap && <MapSignal levelId={n.id} status={state} paused={!!planting} />}
               <MapSign
                 levelId={n.id}
                 regionId={region.id}
                 title={title ?? ''}
+                subtitle={draft ? '筹备中' : preview && !getLevel(n.id)?.playable ? '玩法待开放' : undefined}
                 status={state}
                 revealNonce={revealing ? reveal.nonce : undefined}
                 stampNonce={

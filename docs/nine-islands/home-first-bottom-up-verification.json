@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "date": "2026-11-22",
+  "feature": "home-first-direct-map-entry-and-bottom-up-numbering",
+  "defaultIsland": "home",
+  "newGamePage": "levels",
+  "scrollStart": "bottom",
+  "numbering": "bottom-to-top",
+  "artworkChanged": false,
+  "progressionChanged": false,
+  "htmlSha256": "127ebf22b7e47fd10845262a028126d4887b9eec40056e819f5ce3534b8f3f02",
+  "bytes": 360428293,
+  "typecheck": "passed",
+  "build": "passed",
+  "fullUnitCommands": 24,
+  "journeyUnitTests": 146,
+  "reports": {
+    "browser": {
+      "file": "outputs/home-first-bottom-up/browser/report.json",
+      "checks": 30
+    },
+    "scroll": {
+      "file": "outputs/home-first-bottom-up/scroll/report.json",
+      "checks": 3
+    },
+    "layout": {
+      "file": "outputs/home-first-bottom-up/layout/report.json",
+      "checks": 54
+    }
+  },
+  "copies": [
+    {
+      "file": "outputs/本地离线版/小红花应急行动.html",
+      "sha256": "127ebf22b7e47fd10845262a028126d4887b9eec40056e819f5ce3534b8f3f02"
+    },
+    {
+      "file": "outputs/island-level-maps/离线预览/小红花应急行动.html",
+      "sha256": "127ebf22b7e47fd10845262a028126d4887b9eec40056e819f5ce3534b8f3f02"
+    }
+  ],
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "published": false
+}

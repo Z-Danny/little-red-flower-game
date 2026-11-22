@@ -1,6 +1,6 @@
 'use client';
 /* oxlint-disable next/no-img-element -- Local art is embedded in the standalone HTML. */
-import { useEffect, useRef, useState, type PointerEvent } from 'react';
+import { useEffect, useRef, useState, type ReactNode, type PointerEvent } from 'react';
 import { X } from 'lucide-react';
 import { archipelagoArt, archipelagoCategory, archipelagoIslands, type ArchipelagoSound } from '@/app/game/journey/archipelago';
 import { getLevel } from '@/app/game/levels';
@@ -18,10 +18,11 @@ type Props = {
   onSelect: (levelId: string) => void;
   onBack: () => void;
   onSound?: (cue: ArchipelagoSound) => void;
+  levelTools?: ReactNode;
 };
 
 /** Nine themed destinations; selecting a level retains its original ID and rules. */
-export function Archipelago({ currentCategoryId, completed, initialShowLevels = false, obscured = false, allLevelsUnlocked = false, onSelect, onBack, onSound }: Props) {
+export function Archipelago({ currentCategoryId, completed, initialShowLevels = false, obscured = false, allLevelsUnlocked = false, onSelect, onBack, onSound, levelTools }: Props) {
   const [index, setIndex] = useState(() => archipelagoIslands.indexOf(archipelagoCategory(currentCategoryId)));
   const [showLevels, setShowLevels] = useState(initialShowLevels);
   const [dragOffset, setDragOffset] = useState(0);
@@ -96,7 +97,13 @@ export function Archipelago({ currentCategoryId, completed, initialShowLevels = 
     const start = drag.current;
     if (!start || start.id !== event.pointerId) return;
     const dx = event.clientX - start.x, dy = event.clientY - start.y;
-    if (!start.moved && Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 10) { drag.current = null; return; }
+    if (!start.moved && Math.abs(dy) > Math.abs(dx) && Math.abs(dy) > 10) {
+      // Native vertical panning is disabled here. Do not turn an ignored
+      // vertical swipe into a tap on the island when the finger is lifted.
+      suppressClick.current = true;
+      drag.current = null;
+      return;
+    }
     if (Math.abs(dx) > 8) {
       start.moved = true; suppressClick.current = true;
       if (!event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.setPointerCapture(event.pointerId);
@@ -164,7 +171,7 @@ export function Archipelago({ currentCategoryId, completed, initialShowLevels = 
       </div>
       <p id="archipelago-instruction" className="garden-sr-only">左右滑动沿弧线切换岛屿，点击中央岛屿查看关卡；也可点击两侧岛屿或使用方向键切换。</p>
       <output className="garden-sr-only" aria-live="polite" aria-atomic="true">第{index + 1}座，共9座：{selected.name}，{playable}关已开放</output>
-      {showLevels && <IslandLevelSelect island={selected} completed={completed}
+      {showLevels && <IslandLevelSelect island={selected} completed={completed} tools={levelTools}
         allLevelsUnlocked={allLevelsUnlocked} onBack={() => setShowLevels(false)} onSelect={id => callbacks.current.onSelect(id)} />}
     </dialog>
   );

@@ -35,6 +35,7 @@ export function useHudSafeSigns(
   scroller: RefObject<HTMLDivElement | null>,
   world: RefObject<HTMLDivElement | null>,
   regionId: string,
+  enabled = true,
 ): ReadonlyMap<string, SignLayout> {
   const [layouts, setLayouts] = useState<ReadonlyMap<string, SignLayout>>(
     () => new Map(),
@@ -43,10 +44,10 @@ export function useHudSafeSigns(
   const recheck = useRef<(() => void) | null>(null);
 
   useLayoutEffect(() => {
+    if (!enabled) return;
     const scroll = scroller.current;
     const painting = world.current;
-    const tools = scroll
-      ?.closest('.garden-shell')
+    const tools = (scroll?.closest('[data-island-levels]') ?? scroll?.closest('.garden-shell'))
       ?.querySelector<HTMLElement>('.map-corner-tools');
     if (!scroll || !painting || !tools) return;
     let frame: number | null = null;
@@ -402,7 +403,7 @@ export function useHudSafeSigns(
       scroll.removeEventListener('scroll', schedule);
       window.removeEventListener('resize', schedule);
     };
-  }, [scroller, world, regionId]);
+  }, [scroller, world, regionId, enabled]);
 
   useLayoutEffect(() => {
     recheck.current?.();

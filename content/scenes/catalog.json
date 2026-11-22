@@ -52,5 +52,145 @@
     "skin": "skin.json",
     "enabled": true,
     "migrated": true
+  },
+  {
+    "id": "campus-classroom-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "campus-lab-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "campus-playground-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "campus-stairs-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "campus-rain-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "campus-canteen-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "home-kitchen-hygiene-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "home-food-storage-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "home-commute-visibility-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "water-riverside-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "water-pool-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "water-rainy-crossing-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "network-chat-privacy-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "network-link-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "network-account-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "network-device-share-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "network-purchase-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "network-message-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "social-neighborhood-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "food-table-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "food-fridge-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "food-market-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "food-picnic-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "food-leftovers-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "food-school-lunch-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "outdoor-trail-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "outdoor-camp-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
+  },
+  {
+    "id": "outdoor-sun-check-v1",
+    "skin": "skins/paperbook.json",
+    "enabled": false
   }
 ]

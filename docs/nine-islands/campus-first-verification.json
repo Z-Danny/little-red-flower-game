@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "date": "2026-11-22",
+  "feature": "campus-first-bottom-up",
+  "defaultIsland": "campus",
+  "newGamePage": "levels",
+  "direction": "bottom-to-top",
+  "artworkChanged": false,
+  "progressionChanged": false,
+  "htmlSha256": "ef7d60cc26137f2985843259fab825dc4e44ccf29c7226291bd37ee446673ab5",
+  "typecheck": "passed",
+  "build": "passed",
+  "fullUnitCommands": 24,
+  "journeyUnitTests": 146,
+  "reports": {
+    "browser": {
+      "file": "outputs/campus-first-bottom-up/browser/report.json",
+      "checks": 30
+    },
+    "scroll": {
+      "file": "outputs/campus-first-bottom-up/scroll/report.json",
+      "checks": 3
+    },
+    "layout": {
+      "file": "outputs/campus-first-bottom-up/layout/report.json",
+      "checks": 54
+    }
+  },
+  "copies": [
+    {
+      "file": "outputs/本地离线版/小红花应急行动.html",
+      "sha256": "ef7d60cc26137f2985843259fab825dc4e44ccf29c7226291bd37ee446673ab5"
+    },
+    {
+      "file": "outputs/island-level-maps/离线预览/小红花应急行动.html",
+      "sha256": "ef7d60cc26137f2985843259fab825dc4e44ccf29c7226291bd37ee446673ab5"
+    }
+  ],
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "published": false
+}

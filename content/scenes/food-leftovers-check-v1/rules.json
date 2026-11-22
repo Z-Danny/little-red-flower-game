@@ -1,0 +1,33 @@
+{
+  "feedbackVersion": 2,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "summary": "TODO 核实后的结算知识",
+  "timeout": "fail",
+  "id": "food-leftovers-check-v1",
+  "title": "剩菜处理找险",
+  "order": 56,
+  "targets": [
+    {
+      "id": "target-1",
+      "name": "TODO 目标名称",
+      "lesson": "TODO 经核实的知识"
+    },
+    {
+      "id": "target-2",
+      "name": "TODO 目标名称",
+      "lesson": "TODO 经核实的知识"
+    },
+    {
+      "id": "target-3",
+      "name": "TODO 目标名称",
+      "lesson": "TODO 经核实的知识"
+    },
+    {
+      "id": "target-4",
+      "name": "TODO 目标名称",
+      "lesson": "TODO 经核实的知识"
+    }
+  ]
+}

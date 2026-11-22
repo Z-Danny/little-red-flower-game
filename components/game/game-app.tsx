@@ -15,7 +15,7 @@ import {
   type Planting,
 } from '@/app/game/journey/progress';
 import type { CompletionReceipt } from '@/app/game/leaderboard/model';
-import { LevelHub } from './level-hub';
+import { LevelHub, type HubEntry } from './level-hub';
 import type { ArchipelagoSound } from '@/app/game/journey/archipelago';
 import { CprPlayer } from './first-aid/cpr-player';
 import { KitchenPlayer } from './kitchen/kitchen-player';
@@ -77,7 +77,7 @@ export function GameApp() {
   );
 }
 function MainGameApp() {
-  const [hubEntry, setHubEntry] = useState<'islands' | 'levels'>('islands');
+  const [hubEntry, setHubEntry] = useState<HubEntry>('new-game');
   const [showSaveManager, setShowSaveManager] = useState(false);
   const [showTitle, setShowTitle] = useState(true);
   const [departingTitle, setDepartingTitle] = useState(false);
@@ -126,8 +126,8 @@ function MainGameApp() {
     try { localStorage.setItem(UI_MUTE_KEY, String(next)); } catch { /* optional preference */ }
     if (!next) sound.current?.unlock();
   };
-  const leaveTitle = () => {
-    setHubEntry('islands');
+  const leaveTitle = (entry: 'new-game' | 'continue') => {
+    setHubEntry(entry);
     sound.current?.unlock();
     departurePending.current = true;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -180,7 +180,7 @@ function MainGameApp() {
     const id = resume ? continueId : entryNode(completed);
     bookmark.remember(id);
     setFocusId(id);
-    leaveTitle();
+    leaveTitle(resume ? 'continue' : 'new-game');
   };
   const startNewGame = async () => {
     if (!playerId || board.busy || startingNewGame.current || departurePending.current) return;
@@ -211,7 +211,7 @@ function MainGameApp() {
       setShowLeaderboard(false);
       bookmark.remember(id);
       setFocusId(id);
-      leaveTitle();
+      leaveTitle('new-game');
     } finally {
       startingNewGame.current = false;
     }
@@ -227,7 +227,7 @@ function MainGameApp() {
       setReceipt(undefined);
       setFinished(false);
       setPlanting(null);
-      setHubEntry('levels');
+      setHubEntry('level-return');
       setActiveId(id);
       setFocusId(id);
       setShowLeaderboard(false);
@@ -462,7 +462,8 @@ function MainGameApp() {
     {(!showTitle || departingTitle) && <LevelHub
       key={playerId}
       entering={departingTitle}
-      initialIslandPage={hubEntry}
+      entry={hubEntry}
+      externalOverlayOpen={showLeaderboard || showSaveManager}
       completed={completed}
       allLevelsUnlocked={allLevelsUnlocked}
       onStart={startLevel}

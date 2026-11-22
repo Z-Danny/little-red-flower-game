@@ -1,0 +1,107 @@
+{
+  "status": "passed",
+  "feature": "nine-authored-island-maps-with-disabled-placeholders",
+  "date": "2026-11-22",
+  "htmlSha256": "a69d447286814324f0f99e945c4c9f44097ce3443256eeafb396afe6e57a71ac",
+  "bytes": 360428492,
+  "maps": [
+    {
+      "id": "campus",
+      "stops": 8,
+      "placeholders": 6,
+      "image": "/levels/journey-map/campus-island-v2-staggered.png",
+      "sha256": "5ef10a70969bd83f7eebf919c386c1a85fa9f2a26bfe81eafee5cbae11168726"
+    },
+    {
+      "id": "home",
+      "stops": 9,
+      "placeholders": 2,
+      "image": "/levels/journey-map/home-island-v2-staggered.png",
+      "sha256": "2d2d1d1197f1ff066c1d9efbcb26336d6bcc3237502e247b17e2448e759efe0d"
+    },
+    {
+      "id": "traffic",
+      "stops": 3,
+      "placeholders": 1,
+      "image": "/levels/journey-map/traffic-island-v1.png",
+      "sha256": "c3f7ffa731e0d40dd6e34cfb67827886ba94fcaf5d5a9455c77c60e3e2578e7b"
+    },
+    {
+      "id": "water",
+      "stops": 4,
+      "placeholders": 3,
+      "image": "/levels/journey-map/water-island-v1.png",
+      "sha256": "17612653eef5aaa4f59b16feaed5367b8e92cfdc5bc44f642b1ce4164bc3d90d"
+    },
+    {
+      "id": "network",
+      "stops": 6,
+      "placeholders": 6,
+      "image": "/levels/journey-map/network-v1-handpainted.png",
+      "sha256": "04e1049c80a3dcdecdb8931c190937e43b43e710be27c75200a0a74c7bfe2cdf"
+    },
+    {
+      "id": "emergency",
+      "stops": 12,
+      "placeholders": 0,
+      "image": "/levels/journey-map/emergency-island-v1.png",
+      "sha256": "7cf478ed8bc6a83a7243f400120d9726998031048e3265ba3fdbbe501676c99c"
+    },
+    {
+      "id": "social",
+      "stops": 6,
+      "placeholders": 1,
+      "image": "/levels/journey-map/social-island-v1.png",
+      "sha256": "f30693879ef1a3f3f3b121a3321f6207f060fe8494ec00727358366c927b8012"
+    },
+    {
+      "id": "food",
+      "stops": 6,
+      "placeholders": 6,
+      "image": "/levels/journey-map/food-v1-handpainted.png",
+      "sha256": "d54093d2e1a0c341d9704639bdfeb827c506e5487f016c9bb12afed40e744d99"
+    },
+    {
+      "id": "outdoor",
+      "stops": 6,
+      "placeholders": 3,
+      "image": "/levels/journey-map/outdoor-island-v1.png",
+      "sha256": "31949e3ce7021a415eb2623e78310580fc0cad442c21ef01e0bed20600a584af"
+    }
+  ],
+  "playable": 26,
+  "existingPreviews": 6,
+  "newPlaceholders": 28,
+  "totalStops": 60,
+  "typecheck": "passed",
+  "build": "passed",
+  "fullUnitCommands": 24,
+  "journeyUnitTests": 145,
+  "reports": {
+    "browser": {
+      "file": "outputs/nine-islands-all-integration/browser/report.json",
+      "checks": 30
+    },
+    "layout": {
+      "file": "outputs/nine-islands-all-integration/layout/report.json",
+      "checks": 54
+    },
+    "scroll": {
+      "file": "outputs/nine-islands-all-integration/scroll/report.json",
+      "checks": 3
+    }
+  },
+  "copies": [
+    {
+      "file": "outputs/本地离线版/小红花应急行动.html",
+      "sha256": "a69d447286814324f0f99e945c4c9f44097ce3443256eeafb396afe6e57a71ac"
+    },
+    {
+      "file": "outputs/island-level-maps/离线预览/小红花应急行动.html",
+      "sha256": "a69d447286814324f0f99e945c4c9f44097ce3443256eeafb396afe6e57a71ac"
+    }
+  ],
+  "physicalDevice": "not_run",
+  "humanAudio": "not_run",
+  "published": false
+}

@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "familyBox": {
+    "x": 280,
+    "y": 570,
+    "w": 200,
+    "h": 400
+  },
+  "criticalRegions": [
+    {
+      "x": 300,
+      "y": 590,
+      "w": 140,
+      "h": 150
+    }
+  ],
+  "scene": "/levels/hunts/food-leftovers-check-v1/paperbook/scene.webp",
+  "clean": "/levels/hunts/food-leftovers-check-v1/paperbook/clean.webp",
+  "safe": "/levels/hunts/food-leftovers-check-v1/paperbook/ending.webp",
+  "mask": "/levels/hunts/food-leftovers-check-v1/paperbook/id-mask.png",
+  "family": "/levels/hunts/food-leftovers-check-v1/paperbook/family.png",
+  "effects": {
+    "characterMask": "/levels/hunts/food-leftovers-check-v1/paperbook/character-mask.png"
+  },
+  "targets": {
+    "target-1": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
+      },
+      "icon": "/levels/hunts/food-leftovers-check-v1/paperbook/target-1.png"
+    },
+    "target-2": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
+      },
+      "icon": "/levels/hunts/food-leftovers-check-v1/paperbook/target-2.png"
+    },
+    "target-3": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
+      },
+      "icon": "/levels/hunts/food-leftovers-check-v1/paperbook/target-3.png"
+    },
+    "target-4": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "w": 1,
+        "h": 1
+      },
+      "icon": "/levels/hunts/food-leftovers-check-v1/paperbook/target-4.png"
+    }
+  }
+}

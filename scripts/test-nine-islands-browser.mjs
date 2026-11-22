@@ -8,8 +8,8 @@ import { pathToFileURL } from 'node:url';
 const root = path.resolve(import.meta.dirname, '..');
 const require = createRequire(import.meta.url);
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || path.join(path.dirname(process.execPath), 'node_modules/playwright'));
-const html = path.join(root, 'outputs/本地离线版/小红花应急行动.html');
-const output = path.join(root, 'outputs/nine-islands-original-verification');
+const html = path.resolve(root, process.env.NINE_ISLANDS_HTML || 'outputs/本地离线版/小红花应急行动.html');
+const output = path.resolve(root, process.env.NINE_ISLANDS_REPORT || 'outputs/nine-islands-corner-verification');
 fs.mkdirSync(output, { recursive: true });
 const ids = ['campus','home','traffic','water','network','emergency','social','food','outdoor'];
 const report = { status:'running', html, sha256:createHash('sha256').update(fs.readFileSync(html)).digest('hex'), checks:[], errors:[], failedRequests:[], externalRequests:[], physicalDevice:'not_run', humanAudio:'not_run', browserClosed:false, contextClosed:false };
@@ -24,18 +24,25 @@ try {
   await page.goto(pathToFileURL(html).href, {waitUntil:'load',timeout:120000});
   await page.locator('[data-home-start]:enabled').click();
   await page.locator('[data-archipelago]:not([aria-hidden])').waitFor();
-  report.checks.push({name:'start game opens island picker directly, no legacy map click'});
   const current = () => page.locator('[data-archipelago]').getAttribute('data-current-category');
+  assert.equal(await current(),'campus','Start Game must select Campus Safety first');
+  assert.equal(await page.locator('[data-island][data-selected="true"]').getAttribute('data-island'),ids[0]);
+  const bottomGap=()=>page.locator('[data-island-level-scroll]').evaluate(el=>el.scrollHeight-el.clientHeight-el.scrollTop);
+  await page.locator('[data-island-levels="campus"]').waitFor();
+  assert.equal(await page.locator('[data-archipelago]').getAttribute('data-page'),'levels');
+  assert(Math.abs(await bottomGap())<=2,'new games must show the bottom of the campus map');
+  await page.locator('[data-island-levels="campus"]').screenshot({path:path.join(output,'campus-initial-bottom.png'),animations:'disabled'});
+  report.checks.push({name:'Start Game opens Campus Safety directly, at the bottom of the first map'});
+  await page.locator('[data-levels-close]').click();
+  await page.locator('[data-archipelago][data-page="islands"]').waitFor();
   const select = async id => {
     const index = ids.indexOf(await current()), target = ids.indexOf(id);
     for (let n=0;n<Math.abs(target-index);n++) await page.keyboard.press(target>index?'ArrowRight':'ArrowLeft');
     await page.waitForFunction(id=>document.querySelector('[data-archipelago]').dataset.currentCategory===id,id);
   };
-  const originalMap = JSON.parse(fs.readFileSync(path.join(root,'content/journey-map.json'),'utf8'));
+  const authoredMaps = JSON.parse(fs.readFileSync(path.join(root,'content/island-level-maps.json'),'utf8')).maps;
   const chooseSource = async levelId => {
-    const region=originalMap.regions.find(r=>r.nodes.some(n=>n.id===levelId));
-    const tab=page.locator(`[data-island-scene-tab="${region.id}"]`);
-    if(await tab.count()) await tab.click();
+    await page.locator(`[data-island-level="${levelId}"] .garden-node-label`).evaluate(sign => sign.scrollIntoView({block:'center',behavior:'instant'}));
   };
   const island = id => page.locator(`[data-island="${id}"]`);
   const saved = () => page.evaluate(() => localStorage.getItem('little-red-flower-leaderboard-v1'));
@@ -71,37 +78,100 @@ try {
     assert(await page.locator('[data-island-level="first-aid-burn"]').isVisible());
     await chooseSource('oil-fire');
     await page.waitForTimeout(120);
-    await page.locator('#island-levels-title').click();
+    await page.locator('[data-island-level="oil-fire"] .garden-node-title').click();
+    await page.locator('[data-painted-intro][data-level-id="oil-fire"]').waitFor();
+    await page.keyboard.press('Escape');
+    await page.locator('[data-painted-intro]').waitFor({state:'detached'});
+    assert.equal(await page.locator('.island-level-header').count(),0,'yellow top header is removed');
+    const chrome=await page.locator('[data-island-levels]').evaluate(root=>{
+      const frame=root.getBoundingClientRect(), map=root.querySelector('.island-original-map').getBoundingClientRect();
+      const button=root.querySelector('[data-levels-close]').getBoundingClientRect();
+      const painting=[...root.querySelectorAll('.garden-world')].at(-1).getBoundingClientRect();
+      return {paintedToBottom:painting.bottom>=frame.bottom-1,topInset:map.top-frame.top,leftInset:button.left-frame.left,bottomInset:frame.bottom-button.bottom,buttonWidth:button.width};
+    });
+    assert(Math.abs(chrome.topInset)<1,'map must extend to the top');
+    assert(chrome.paintedToBottom,'do not introduce a blank navigation strip at the bottom');
+    assert(chrome.leftInset<25&&chrome.bottomInset<40&&chrome.buttonWidth>=100,'original bottom-left map entrance');
+    report.checks.push({name:'no top strip, original corner map entrance restored',viewport,chrome});
+    await page.mouse.move(0,0);
+    await page.locator('[data-levels-close]').evaluate(button=>button.blur());
     await page.screenshot({path:path.join(output,`levels-${viewport.width}x${viewport.height}.png`),animations:'disabled'});
     if(viewport.width===390) await page.locator('[data-island-levels]').screenshot({path:path.join(output,'level-selection-portrait.png'),animations:'disabled'});
     await page.locator('[data-levels-close]').click();
   }
   await page.setViewportSize({width:390,height:844});
+  const seenLevels=new Set();
   for (const id of ids) {
     await select(id); await island(id).click();
     await page.locator(`[data-island-levels="${id}"]`).waitFor();
+    assert(Math.abs(await bottomGap())<=2,`${id}: maps always open at the bottom`);
+    assert.equal(await page.locator('.island-level-header').count(),0);
+    assert(await page.locator('[data-levels-close] .map-fan-current-art').isVisible());
     const levels=[];
-    const tabs=await page.locator('[data-island-scene-tab]').evaluateAll(elements=>elements.map(e=>e.dataset.islandSceneTab));
-    for (const source of tabs.length?tabs:[await page.locator('[data-island-levels]').getAttribute('data-original-scene')]) {
-      if(!source) continue;
-      if(tabs.length) await page.locator(`[data-island-scene-tab="${source}"]`).click();
-      const original=originalMap.regions.find(r=>r.id===source);
-      const nodes=await page.locator('[data-island-level]').evaluateAll(elements=>elements.map(e=>({id:e.dataset.islandLevel,left:parseFloat(e.style.left),top:parseFloat(e.style.top)})));
-      for(const node of nodes){
-        const old=original.nodes.find(n=>n.id===node.id);
-        assert(old);assert(Math.abs(node.left-old.x/original.width*100)<.01);assert(Math.abs(node.top-old.y/original.height*100)<.01);
-        levels.push(node.id);
+    assert.equal(await page.locator('[data-island-scene-tab]').count(),0,'bottom-right scene buttons removed');
+    assert.equal(await page.locator('[data-island-levels] [data-map-corner-tools] button').count(),3);
+    const map=authoredMaps.find(map=>map.id===id);
+    const scene=page.locator(`[data-island-authored-scene="${id}"]`);
+    assert.equal(await page.locator('[data-island-authored-scene]').count(),1);
+    const image=scene.locator('.garden-map-art');
+    assert.deepEqual(await image.evaluate(async img=>{await img.decode();return [img.naturalWidth,img.naturalHeight,img.src.startsWith('data:image/png;')];}),[map.width,map.height,true]);
+    const dimensions=await scene.locator('.garden-world').boundingBox();
+    assert(Math.abs(dimensions.width/dimensions.height-map.width/map.height)<.0001);
+    assert.equal(await scene.locator('[data-route-from],.map-signal,.garden-location-fog').count(),0,'old coordinate overlays cannot be reused on new paintings');
+    const stops=scene.locator('[data-island-level]');
+    assert.deepEqual(await stops.evaluateAll(es=>es.map(e=>e.dataset.islandLevel)),map.stops.map(stop=>stop.id));
+    const numbered=await stops.evaluateAll(es=>es.map(e=>({number:e.querySelector('.garden-node-number').textContent.trim(),y:parseFloat(e.style.top)})));
+    assert.deepEqual(numbered.map(node=>node.number),map.stops.map((_,i)=>String(i+1).padStart(2,'0')));
+    for(let i=1;i<numbered.length;i++)assert(numbered[i].y<=numbered[i-1].y,`${id}: numbering must run upward`);
+    for(const item of map.stops) {
+      assert(!seenLevels.has(item.id),'every stop appears exactly once across all islands');
+      seenLevels.add(item.id);
+      const stop=scene.locator(`[data-island-level="${item.id}"]`);
+      const position=await stop.evaluate(el=>({x:parseFloat(el.style.left),y:parseFloat(el.style.top)}));
+      assert(Math.abs(position.x-item.x/map.width*100)<.001 && Math.abs(position.y-item.y/map.height*100)<.001);
+      await chooseSource(item.id);
+      const sign=stop.locator('.garden-node-label');
+      const bounds=await sign.boundingBox();
+      assert(bounds.width>=72 && bounds.height>=44 && bounds.x>=0 && bounds.x+bounds.width<=390+1,`${item.id}: readable sign bounds`);
+      await sign.click();
+      const intro=page.locator(`[data-painted-intro][data-level-id="${item.id}"]`);
+      await intro.waitFor();
+      if(item.placeholder || await stop.getAttribute('data-preview-only')==='true'){
+        assert.equal(await stop.getAttribute('data-status'),'locked');
+        assert(await intro.locator('[data-painted-primary]').isDisabled());
       }
-      const dimensions=await page.locator('[data-island-levels] .garden-world').boundingBox();
-      assert(Math.abs(dimensions.width/dimensions.height-original.width/original.height)<.002);
-      const edges=await page.locator('[data-island-levels] [data-route-from]').evaluateAll(es=>es.map(e=>[e.dataset.routeFrom,e.dataset.routeTo]));
-      for(const [from,to] of edges){const i=original.nodes.findIndex(n=>n.id===from);assert.equal(original.nodes[i+1]?.id,to,'only retain original adjacent routes');}
+      if(item.placeholder){
+        assert.match(await intro.locator('.painted-intro-description').textContent(),/地图预告/);
+        assert.match(await sign.textContent(),/筹备中/);
+      }
+      await page.keyboard.press('Escape');
+      await intro.waitFor({state:'detached'});
+      assert.equal(await current(),id);
+      levels.push(item.id);
     }
-    if(['network','food'].includes(id)) {assert.equal(levels.length,0);assert(await page.locator('[data-island-empty]').isVisible());}
-    report.checks.push({name:'direct island click opens levels or explicit empty state',id,levels});
+    await page.locator('[data-island-level-scroll]').evaluate(el=>el.scrollTop=el.scrollHeight);
+    await page.locator('[data-island-levels]').screenshot({path:path.join(output,`${id}-map.png`),animations:'disabled'});
+    assert.equal(await saved(),before);
+    report.checks.push({name:'authored map uses surveyed coordinates; all entries open correct introductions; placeholders never start',id,levels});
     await page.keyboard.press('Escape');
     assert.equal(await page.evaluate(()=>document.activeElement?.dataset.island),id);
   }
+  assert.equal(seenLevels.size,60);
+  await select('home'); await island('home').click();
+  const corners=page.locator('[data-island-levels] [data-map-corner-tools]');
+  assert.equal(await corners.locator('[data-wallet]').textContent(),'0');
+  await corners.locator('[data-map-settings]').click();
+  const settings=page.getByRole('dialog',{name:'游戏设置',exact:true});await settings.waitFor();
+  const music=settings.getByRole('switch',{name:'背景音乐：首页与地图'});const muted=await music.getAttribute('aria-checked');
+  await music.click();assert.notEqual(await music.getAttribute('aria-checked'),muted);await music.click();
+  await page.keyboard.press('Escape');await settings.waitFor({state:'detached'});
+  assert.equal(await page.locator('[data-archipelago]').getAttribute('data-page'),'levels');
+  await corners.locator('[data-journal-open]').click();
+  const journal=page.getByRole('dialog',{name:'我的闯关进度',exact:true});await journal.waitFor();
+  await page.keyboard.press('Escape');await journal.waitFor({state:'detached'});
+  assert.equal(await page.locator('[data-archipelago]').getAttribute('data-page'),'levels');
+  await page.locator('[data-levels-close]').click();
+  report.checks.push({name:'original corner settings, sound toggles, flower count and progress journal work'});
   // Choose the visible portion of the neighboring island, not its offscreen center.
   await select('home');
   const point=await island('traffic').evaluate(button=>{
@@ -143,7 +213,7 @@ try {
   await cdp.send('Input.dispatchTouchEvent',{type:'touchCancel',touchPoints:[]});await page.waitForTimeout(120);
   assert.equal(await current(),'network');
   assert.equal(await page.locator('.archipelago-track').getAttribute('data-dragging'),'false');
-  await island('network').tap();await page.locator('[data-island-empty]').waitFor();await page.keyboard.press('Escape');
+  await island('network').tap();await page.locator('[data-island-authored-scene="network"]').waitFor();await page.keyboard.press('Escape');
   report.checks.push({name:'real browser touch swipe, cancellation and tap'});
   await page.keyboard.press('Home');await page.keyboard.press('ArrowLeft');assert.equal(await current(),'campus');
   await page.keyboard.press('End');await page.keyboard.press('ArrowRight');assert.equal(await current(),'outdoor');
@@ -174,14 +244,80 @@ try {
   await page.locator('[data-island-levels="emergency"]').waitFor();
   assert.equal(await page.locator('[data-archipelago]').getAttribute('data-page'),'levels');
   assert.equal(await page.locator('[data-archipelago]').getAttribute('inert'),null);
-  await page.locator('[data-levels-close]').click();
-  await page.locator('[data-carousel-close]').click();
+  await page.locator('[data-island-levels] [data-map-home]').click();
   await page.locator('[data-home-start]:enabled').waitFor();
   await page.locator('[data-home-start]').click();
+  await page.locator('[data-archipelago]').waitFor();
+  assert.equal(await current(),ids[0],'the first island must be selected during the cover transition');
   await page.locator('[data-archipelago]:not([aria-hidden])').waitFor();
-  assert.equal(await page.locator('[data-archipelago]').getAttribute('data-page'),'islands');
+  assert.equal(await page.locator('[data-archipelago]').getAttribute('data-page'),'levels');
+  assert.equal(await current(),ids[0]);
+  assert(Math.abs(await bottomGap())<=2);
   assert.equal(await saved(),before);
-  report.checks.push({name:'game returns to level selector; selector returns home; animated title entry opens islands again'});
+  report.checks.push({name:'game returns to level selector; a new game opens the campus map bottom again'});
+  await page.locator('[data-levels-close]').click();
+
+  // Seed progress only in this disposable browser's save.
+  const progressedSave=await page.evaluate(()=>{
+    const key='little-red-flower-leaderboard-v1', state=JSON.parse(localStorage.getItem(key));
+    const player=state.players.find(p=>p.id===state.activePlayerId);
+    player.completed={'oil-fire':1};
+    const json=JSON.stringify(state);
+    localStorage.setItem(key,json);
+    localStorage.setItem('little-red-flower-journey-location-v1',JSON.stringify({
+      [player.id]:{levelId:'typhoon-home',visitedAt:1},
+    }));
+    return json;
+  });
+  await page.emulateMedia({reducedMotion:'reduce'});
+  await page.reload({waitUntil:'load',timeout:120000});
+  await page.locator('[data-home-continue]:enabled').click();
+  await page.locator('[data-archipelago]:not([aria-hidden])').waitFor();
+  assert.equal(await current(),'emergency');
+  assert.equal(await saved(),progressedSave);
+  report.checks.push({name:'Continue still opens the saved island without changing the save'});
+  await select('home');
+  await island('home').click();
+  assert.equal(await page.locator('[data-island-level="oil-fire"]').getAttribute('data-status'),'complete');
+  await page.locator('[data-levels-close]').click();
+
+  await page.locator('[data-carousel-close]').click();
+  page.once('dialog',dialog=>dialog.accept());
+  await page.locator('[data-home-start]:enabled').click();
+  await page.locator('[data-archipelago]:not([aria-hidden])').waitFor();
+  assert.equal(await current(),ids[0]);
+  assert.equal(await page.locator('[data-archipelago]').getAttribute('data-page'),'levels');
+  assert(Math.abs(await bottomGap())<=2);
+  report.checks.push({name:'confirmed restart also opens Campus Safety at the bottom'});
+  await page.locator('[data-levels-close]').click();
+
+  await page.locator('[data-carousel-close]').click();
+  const beforeUnlock=await saved();
+  await page.locator('[data-home-unlock-all]').click();
+  await page.locator('[data-home-continue]:enabled').click();
+  await page.locator('[data-archipelago]:not([aria-hidden])').waitFor();
+  let playable=0,previews=0,placeholders=0;
+  for(const map of authoredMaps) {
+    await select(map.id);await island(map.id).click();
+    for(const item of map.stops) {
+      const stop=page.locator(`[data-island-level="${item.id}"]`);
+      const preview=await stop.getAttribute('data-preview-only')==='true';
+      assert.equal(await stop.getAttribute('data-status'),preview?'locked':'available',item.id);
+      if(preview)previews++;else playable++;
+      if(item.placeholder) {
+        placeholders++;
+        await chooseSource(item.id);
+        await stop.locator('.garden-node-label').click();
+        assert(await page.locator('[data-painted-primary]').isDisabled());
+        await page.keyboard.press('Escape');
+        await page.locator('[data-painted-intro]').waitFor({state:'detached'});
+      }
+    }
+    await page.locator('[data-levels-close]').click();
+  }
+  assert.equal(playable,26);assert.equal(previews,34);assert.equal(placeholders,28);
+  assert.equal(await saved(),beforeUnlock);
+  report.checks.push({name:'Unlock All only opens the 26 implemented games; 28 new placeholders and six existing previews stay unavailable',playable,previews,placeholders});
   assert.deepEqual(report.errors,[]);assert.deepEqual(report.failedRequests,[]);assert.deepEqual(report.externalRequests,[]);
   report.status='passed';
 } catch(error){report.status='failed';report.failure=error.stack;process.exitCode=1;}

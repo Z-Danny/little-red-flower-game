@@ -1,0 +1,576 @@
+{
+  "version": 2,
+  "direction": "bottom-to-top",
+  "maps": [
+    {
+      "id": "campus",
+      "name": "校园安全",
+      "image": "/levels/journey-map/campus-island-v2-staggered.png",
+      "width": 724,
+      "height": 2171,
+      "sha256": "5ef10a70969bd83f7eebf919c386c1a85fa9f2a26bfe81eafee5cbae11168726",
+      "stops": [
+        {
+          "id": "campus-canteen-check-v1",
+          "title": "校园餐前卫生巡查",
+          "preview": "餐前洗手廊：成排水龙头与皂液瓶。",
+          "placeholder": true,
+          "x": 543,
+          "y": 2041
+        },
+        {
+          "id": "campus-rain-check-v1",
+          "title": "雨天校园找险",
+          "preview": "雨天校园入口：伞架、湿台阶和积水。",
+          "placeholder": true,
+          "x": 181,
+          "y": 1845
+        },
+        {
+          "id": "campus-stairs-check-v1",
+          "title": "教学楼梯巡查",
+          "preview": "教学楼楼梯间：连续的折返楼梯和扶手。",
+          "placeholder": true,
+          "x": 543,
+          "y": 1607
+        },
+        {
+          "id": "campus-playground-check-v1",
+          "title": "操场活动找险",
+          "preview": "校园操场：红跑道、球门和练习器材。",
+          "placeholder": true,
+          "x": 181,
+          "y": 1368
+        },
+        {
+          "id": "campus-lab-check-v1",
+          "title": "实验室课前巡查",
+          "preview": "课前实验室：护目镜、试管架与实验台。",
+          "placeholder": true,
+          "x": 543,
+          "y": 1107
+        },
+        {
+          "id": "campus-classroom-check-v1",
+          "title": "教室放学巡查",
+          "preview": "放学教室：黑板和成排的课桌。",
+          "placeholder": true,
+          "x": 181,
+          "y": 847
+        },
+        {
+          "id": "first-aid-nosebleed",
+          "title": "鼻血应急处置",
+          "preview": "紫瓦校医室：靠背椅、纸巾和护理图。",
+          "placeholder": false,
+          "x": 543,
+          "y": 608
+        },
+        {
+          "id": "first-aid-abrasion",
+          "title": "擦伤处理入门",
+          "preview": "清洁小站：白色洗盆、纱布和绷带。",
+          "placeholder": false,
+          "x": 181,
+          "y": 369
+        }
+      ]
+    },
+    {
+      "id": "home",
+      "name": "居家安全",
+      "image": "/levels/journey-map/home-island-v2-staggered.png",
+      "width": 724,
+      "height": 2172,
+      "sha256": "2d2d1d1197f1ff066c1d9efbcb26336d6bcc3237502e247b17e2448e759efe0d",
+      "stops": [
+        {
+          "id": "home-food-storage-v1",
+          "title": "家庭食材储存巡查",
+          "preview": "家庭储藏间：常温置物架、冷藏柜与独立冷冻箱。",
+          "placeholder": true,
+          "x": 471,
+          "y": 1977
+        },
+        {
+          "id": "home-kitchen-hygiene-v1",
+          "title": "家中备餐卫生巡查",
+          "preview": "备餐台：生食托盘、即食菜和不同砧板。",
+          "placeholder": true,
+          "x": 550,
+          "y": 1716
+        },
+        {
+          "id": "first-aid-burn",
+          "title": "烫伤紧急处理",
+          "preview": "烫伤练习水槽：流水、水壶和擦拭用品。",
+          "placeholder": false,
+          "x": 174,
+          "y": 1520
+        },
+        {
+          "id": "fire-stairs-practice",
+          "title": "火灾楼梯撤离",
+          "preview": "楼梯撤离住宅：独立楼梯间直通室外。",
+          "placeholder": false,
+          "x": 550,
+          "y": 1347
+        },
+        {
+          "id": "fire-shelter-practice",
+          "title": "火灾隔烟待援",
+          "preview": "隔烟待援住宅：起居室电话和有烟的外走廊。",
+          "placeholder": false,
+          "x": 174,
+          "y": 1173
+        },
+        {
+          "id": "kitchen-before-cooking-v2",
+          "title": "厨房开火检查",
+          "preview": "开火检查厨房：砧板、备菜篮与灶台。",
+          "placeholder": false,
+          "x": 550,
+          "y": 912
+        },
+        {
+          "id": "bedroom-night-check-v2",
+          "title": "睡前防火巡查",
+          "preview": "冬夜卧室：夜窗、床头灯和取暖设备。",
+          "placeholder": false,
+          "x": 174,
+          "y": 760
+        },
+        {
+          "id": "charging-bedroom",
+          "title": "卧室充电巡查",
+          "preview": "充电卧室：桃色床铺，书桌上有手机、插座和充电线。",
+          "placeholder": false,
+          "x": 550,
+          "y": 543
+        },
+        {
+          "id": "oil-fire",
+          "title": "油锅起火处置",
+          "preview": "绿瓦灶间：油锅在灶上，锅盖单独靠放。",
+          "placeholder": false,
+          "x": 174,
+          "y": 369
+        }
+      ]
+    },
+    {
+      "id": "traffic",
+      "name": "交通安全",
+      "image": "/levels/journey-map/traffic-island-v1.png",
+      "width": 724,
+      "height": 2172,
+      "sha256": "c3f7ffa731e0d40dd6e34cfb67827886ba94fcaf5d5a9455c77c60e3e2578e7b",
+      "stops": [
+        {
+          "id": "home-commute-visibility-v1",
+          "title": "夜路出行找险",
+          "preview": "夜间路口：路灯、人行信号、护栏和斑马线。",
+          "placeholder": true,
+          "x": 615,
+          "y": 1716
+        },
+        {
+          "id": "collapse-signal-practice",
+          "title": "塌陷被困求救",
+          "preview": "塌陷路段：封闭围挡、路面断层和应急联络亭。",
+          "placeholder": false,
+          "x": 601,
+          "y": 956
+        },
+        {
+          "id": "storm-street-check-v2",
+          "title": "风雨街口找险",
+          "preview": "风雨街口：湿路面、信号灯、斑马线和室内观察点。",
+          "placeholder": false,
+          "x": 601,
+          "y": 369
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "name": "防溺水安全",
+      "image": "/levels/journey-map/water-island-v1.png",
+      "width": 724,
+      "height": 2172,
+      "sha256": "17612653eef5aaa4f59b16feaed5367b8e92cfdc5bc44f642b1ce4164bc3d90d",
+      "stops": [
+        {
+          "id": "water-rainy-crossing-v1",
+          "title": "雨后水边找险",
+          "preview": "雨后高岸：有封闭围挡的漫水桥和干燥绕行台阶。",
+          "placeholder": true,
+          "x": 384,
+          "y": 2020
+        },
+        {
+          "id": "water-pool-check-v1",
+          "title": "泳池边找险",
+          "preview": "正规泳池：泳道、入水梯和救生员座椅。",
+          "placeholder": true,
+          "x": 384,
+          "y": 1455
+        },
+        {
+          "id": "water-riverside-check-v1",
+          "title": "河岸游玩找险",
+          "preview": "河岸观察台：护栏、救生圈和河边凉亭。",
+          "placeholder": true,
+          "x": 442,
+          "y": 956
+        },
+        {
+          "id": "car-window-practice",
+          "title": "汽车落水离车",
+          "preview": "车辆训练棚：独立演示水槽和露出侧窗的汽车。",
+          "placeholder": false,
+          "x": 442,
+          "y": 521
+        }
+      ]
+    },
+    {
+      "id": "network",
+      "name": "网络安全",
+      "image": "/levels/journey-map/network-v1-handpainted.png",
+      "sha256": "04e1049c80a3dcdecdb8931c190937e43b43e710be27c75200a0a74c7bfe2cdf",
+      "stops": [
+        {
+          "id": "network-message-check-v1",
+          "title": "群聊传言找险",
+          "preview": "在公告亭对照学校公告和群聊消息，未经核实先不转。",
+          "placeholder": true,
+          "x": 471,
+          "y": 2040
+        },
+        {
+          "id": "network-purchase-check-v1",
+          "title": "游戏充值找险",
+          "preview": "在游戏小铺识别可疑充值退款消息，不点击、不付款。",
+          "placeholder": true,
+          "x": 389,
+          "y": 1710
+        },
+        {
+          "id": "network-device-share-v1",
+          "title": "共用设备找险",
+          "preview": "在图书角查看模拟共用终端，学会退出自己的账号。",
+          "placeholder": true,
+          "x": 323,
+          "y": 1392
+        },
+        {
+          "id": "network-account-check-v1",
+          "title": "账号保护巡查",
+          "preview": "在锁盒小屋识别虚构设置中的密码和验证码风险。",
+          "placeholder": true,
+          "x": 398,
+          "y": 1076
+        },
+        {
+          "id": "network-link-check-v1",
+          "title": "陌生链接找险",
+          "preview": "在核验亭辨认未经核实的通知，再选择从已知官方入口核实。",
+          "placeholder": true,
+          "x": 378,
+          "y": 772
+        },
+        {
+          "id": "network-chat-privacy-v1",
+          "title": "聊天信息找险",
+          "preview": "在聊天小屋识别索取住址、学校等个人信息的模拟消息。",
+          "placeholder": true,
+          "x": 371,
+          "y": 454
+        }
+      ],
+      "width": 724,
+      "height": 2172
+    },
+    {
+      "id": "emergency",
+      "name": "应急防灾",
+      "image": "/levels/journey-map/emergency-island-v1.png",
+      "width": 724,
+      "height": 2172,
+      "sha256": "7cf478ed8bc6a83a7243f400120d9726998031048e3265ba3fdbbe501676c99c",
+      "stops": [
+        {
+          "id": "first-aid-cpr",
+          "title": "心肺复苏实战",
+          "preview": "按压练习廊：蓝垫上平躺的心肺复苏训练模型。",
+          "placeholder": false,
+          "x": 174,
+          "y": 2020
+        },
+        {
+          "id": "first-aid-aed",
+          "title": "自动除颤协作",
+          "preview": "AED 训练站：有心形闪电图案的橙色设备箱。",
+          "placeholder": false,
+          "x": 557,
+          "y": 2020
+        },
+        {
+          "id": "first-aid-airway",
+          "title": "气道异物急救",
+          "preview": "气道训练屋：餐桌和竖立的训练模型。",
+          "placeholder": false,
+          "x": 557,
+          "y": 1694
+        },
+        {
+          "id": "first-aid-fainting",
+          "title": "晕倒现场应对",
+          "preview": "树荫休息站：担架、叠好的毯子和联络设备。",
+          "placeholder": false,
+          "x": 174,
+          "y": 1662
+        },
+        {
+          "id": "quake-exit-practice",
+          "title": "震后楼梯撤离",
+          "preview": "震后撤离楼：室外折返楼梯和集合小广场。",
+          "placeholder": false,
+          "x": 174,
+          "y": 1347
+        },
+        {
+          "id": "flood-highground-practice",
+          "title": "洪水高处待援",
+          "preview": "高处待援平台：观望塔、高台和醒目的信号旗。",
+          "placeholder": false,
+          "x": 557,
+          "y": 1303
+        },
+        {
+          "id": "quake-cover-practice",
+          "title": "地震室内避险",
+          "preview": "地震室内演示客厅：结实桌子和靠垫。",
+          "placeholder": false,
+          "x": 557,
+          "y": 1021
+        },
+        {
+          "id": "flood-house-response-v1",
+          "title": "洪水居家避险",
+          "preview": "受淹住宅：水围住底层，剖面能看见上楼梯。",
+          "placeholder": false,
+          "x": 174,
+          "y": 999
+        },
+        {
+          "id": "quake-bedroom-v2",
+          "title": "家庭防震准备",
+          "preview": "防震卧室：床和绑带固定的高柜。",
+          "placeholder": false,
+          "x": 174,
+          "y": 695
+        },
+        {
+          "id": "rain-street-preparation-v1",
+          "title": "暴雨街道找险",
+          "preview": "暴雨街道观察点：湿路面、雨水箅子和沙袋。",
+          "placeholder": false,
+          "x": 557,
+          "y": 695
+        },
+        {
+          "id": "typhoon-home",
+          "title": "台风居家准备",
+          "preview": "临海客厅：百叶窗、阳台和迎风的绿植。",
+          "placeholder": false,
+          "x": 174,
+          "y": 369
+        },
+        {
+          "id": "flood-kit",
+          "title": "汛期应急包",
+          "preview": "防汛物资棚：黄色应急背包、饮水、收音机和手电。",
+          "placeholder": false,
+          "x": 557,
+          "y": 369
+        }
+      ]
+    },
+    {
+      "id": "social",
+      "name": "人身社会安全",
+      "image": "/levels/journey-map/social-island-v1.png",
+      "width": 724,
+      "height": 2172,
+      "sha256": "f30693879ef1a3f3f3b121a3321f6207f060fe8494ec00727358366c927b8012",
+      "stops": [
+        {
+          "id": "lift-contact-practice",
+          "title": "电梯定位求助",
+          "preview": "电梯联络前厅：位置面板、联络卡和电话。",
+          "placeholder": false,
+          "x": 167,
+          "y": 1955
+        },
+        {
+          "id": "social-neighborhood-check-v1",
+          "title": "社区公共空间巡查",
+          "preview": "物业和公共空间：电动车充电设施、地面通道标线。",
+          "placeholder": true,
+          "x": 557,
+          "y": 1955
+        },
+        {
+          "id": "well-call",
+          "title": "井口遇险求助",
+          "preview": "井口设施院：围住的圆形井台和井外求助电话。",
+          "placeholder": false,
+          "x": 167,
+          "y": 1347
+        },
+        {
+          "id": "clear-corridor-check-v2",
+          "title": "楼道隐患巡查",
+          "preview": "消防通道：单车、红色消防箱和灭火器。",
+          "placeholder": false,
+          "x": 557,
+          "y": 1347
+        },
+        {
+          "id": "clear-corridor",
+          "title": "楼道杂物清理",
+          "preview": "住宅楼道：鞋柜和堆在通道边的纸箱。",
+          "placeholder": false,
+          "x": 167,
+          "y": 717
+        },
+        {
+          "id": "lift-wait",
+          "title": "电梯故障待援",
+          "preview": "电梯轿厢：金属门、扶手和报警通话面板。",
+          "placeholder": false,
+          "x": 557,
+          "y": 717
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "name": "食品安全",
+      "image": "/levels/journey-map/food-v1-handpainted.png",
+      "sha256": "d54093d2e1a0c341d9704639bdfeb827c506e5487f016c9bb12afed40e744d99",
+      "stops": [
+        {
+          "id": "food-school-lunch-check-v1",
+          "title": "校园午餐找险",
+          "preview": "在学校食堂检查模拟餐盒封装和食用时限。",
+          "placeholder": true,
+          "x": 471,
+          "y": 2034
+        },
+        {
+          "id": "food-leftovers-check-v1",
+          "title": "剩菜处理找险",
+          "preview": "在剩菜厨房对比保存记录，不靠闻或尝来判断。",
+          "placeholder": true,
+          "x": 437,
+          "y": 1668
+        },
+        {
+          "id": "food-picnic-check-v1",
+          "title": "野餐食品找险",
+          "preview": "在野餐棚看物资卡和保存记录，选安全的食物与饮水。",
+          "placeholder": true,
+          "x": 274,
+          "y": 1340
+        },
+        {
+          "id": "food-market-check-v1",
+          "title": "市集采购找险",
+          "preview": "在市集比较食品包装、标签和保质期。",
+          "placeholder": true,
+          "x": 398,
+          "y": 1047
+        },
+        {
+          "id": "food-fridge-check-v1",
+          "title": "冰箱存放找险",
+          "preview": "在冷藏小屋观察生熟食物有没有分开存放。",
+          "placeholder": true,
+          "x": 345,
+          "y": 737
+        },
+        {
+          "id": "food-table-check-v1",
+          "title": "餐桌卫生巡查",
+          "preview": "在团圆餐厅辨认合餐时的卫生问题，对比分餐和公筷公勺。",
+          "placeholder": true,
+          "x": 409,
+          "y": 416
+        }
+      ],
+      "width": 724,
+      "height": 2172
+    },
+    {
+      "id": "outdoor",
+      "name": "文旅户外安全",
+      "image": "/levels/journey-map/outdoor-island-v1.png",
+      "width": 724,
+      "height": 2172,
+      "sha256": "31949e3ce7021a415eb2623e78310580fc0cad442c21ef01e0bed20600a584af",
+      "stops": [
+        {
+          "id": "outdoor-sun-check-v1",
+          "title": "晴日出游找险",
+          "preview": "晴日补水歇脚地：遮阴棚、饮水处、长椅和水壶。",
+          "placeholder": true,
+          "x": 536,
+          "y": 2020
+        },
+        {
+          "id": "outdoor-camp-check-v1",
+          "title": "营地夜间找险",
+          "preview": "夜间营地：暖灯帐篷、营灯和通行路径。",
+          "placeholder": true,
+          "x": 253,
+          "y": 1629
+        },
+        {
+          "id": "outdoor-trail-check-v1",
+          "title": "徒步山径找险",
+          "preview": "山径岔路：木护栏、封闭支路与可见步道。",
+          "placeholder": true,
+          "x": 565,
+          "y": 1260
+        },
+        {
+          "id": "first-aid-sprain",
+          "title": "扭伤现场救护",
+          "preview": "山径救护角：长椅、拐杖、绷带与冷敷袋。",
+          "placeholder": false,
+          "x": 188,
+          "y": 999
+        },
+        {
+          "id": "forest-fire-sources-v2",
+          "title": "林缘火源识别",
+          "preview": "林缘防火点：松林、消防器材和训练用火源情境。",
+          "placeholder": false,
+          "x": 565,
+          "y": 652
+        },
+        {
+          "id": "thunder-park-v2",
+          "title": "雷雨公园找险",
+          "preview": "公园观察地标：临水亭子和远处雷雨。只用于辨认场景，不表示亭子能避雷。",
+          "placeholder": false,
+          "x": 253,
+          "y": 348
+        }
+      ]
+    }
+  ]
+}
