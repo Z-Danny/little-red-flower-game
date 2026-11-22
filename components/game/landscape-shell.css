@@ -1,0 +1,1085 @@
+.landscape-game {
+  --ink: #183d35;
+  --deep: #0c3029;
+  --red: #ae4c36;
+  --gold: #e7b45d;
+  --paper: #fff6dd;
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  color: var(--ink);
+  font-family: 'Noto Serif SC', STSong, SimSun, serif;
+  background: #e5e3c6;
+}
+.landscape-game * {
+  box-sizing: border-box;
+}
+.landscape-game button {
+  font: inherit;
+  cursor: pointer;
+}
+.landscape-game button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+.landscape-home,
+.landscape-map {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  isolation: isolate;
+}
+.landscape-home {
+  background:
+    linear-gradient(90deg, rgba(255, 249, 222, 0.55), transparent 75%),
+    url('/landscape/home.png') center/cover no-repeat;
+}
+.landscape-home:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 248, 219, 0.64) 0%,
+      rgba(255, 248, 219, 0.22) 38%,
+      transparent 70%
+    ),
+    linear-gradient(0deg, rgba(18, 55, 42, 0.35), transparent 22%);
+}
+.landscape-masthead,
+.home-bottom,
+.landscape-map-header,
+.landscape-map-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.landscape-masthead {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(20px, 3vw, 48px) 5.2%;
+  font-size: clamp(13px, 1.05vw, 18px);
+  font-weight: 800;
+  letter-spacing: 0.11em;
+}
+.brand-mark {
+  display: block;
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  margin-right: 13px;
+}
+.masthead-right {
+  margin-left: auto;
+  letter-spacing: 0.18em;
+  font:
+    700 12px 'DM Sans',
+    sans-serif;
+  text-transform: uppercase;
+}
+.landscape-home-content {
+  position: absolute;
+  left: 8.3%;
+  top: 50%;
+  transform: translateY(-47%);
+  max-width: 590px;
+}
+.home-eyebrow,
+.chapter-kicker,
+.nav-caption,
+.trail-index,
+.trail-status,
+.trail-card-bottom,
+.home-meta,
+.home-bottom,
+.landscape-map-footer {
+  font-family: 'DM Sans', 'Noto Serif SC', serif;
+}
+.home-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: clamp(11px, 1vw, 15px);
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: #647762;
+}
+.short-line {
+  display: inline-block;
+  width: 36px;
+  height: 1px;
+  background: #aa5237;
+}
+.landscape-home h1 {
+  position: relative;
+  margin: 24px 0 21px;
+  font-size: clamp(64px, 7.3vw, 138px);
+  line-height: 1.12;
+  letter-spacing: -0.065em;
+  font-weight: 900;
+  text-shadow: 0 3px 0 rgba(255, 255, 255, 0.25);
+}
+.landscape-home h1 em {
+  font-style: normal;
+  color: #af4936;
+}
+.landscape-home-content p {
+  font-size: clamp(15px, 1.2vw, 20px);
+  line-height: 2;
+  color: #3f6457;
+  font-weight: 600;
+}
+.landscape-home-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+.landscape-action {
+  height: 60px;
+  min-width: 180px;
+  border-radius: 7px;
+  padding: 0 23px;
+  border: 1px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 27px;
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: 0 9px 22px #22432827;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+.landscape-action:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px #22432840;
+}
+.landscape-action.primary {
+  background: #1e5540;
+  color: #fff8da;
+}
+.landscape-action.secondary {
+  background: #fff8e0dd;
+  color: var(--ink);
+}
+.home-meta {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-top: 36px;
+  color: #536e5f;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.home-meta i {
+  width: 3px;
+  height: 3px;
+  background: #a7543d;
+  border-radius: 100%;
+}
+.home-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 5.2%;
+  color: #fff9e9;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.home-bottom > div {
+  display: flex;
+  gap: 20px;
+}
+.home-bottom button {
+  border: 0;
+  color: inherit;
+  background: none;
+  font-size: 12px;
+}
+.home-bottom button:hover {
+  text-decoration: underline;
+}
+.landscape-map {
+  display: flex;
+  flex-direction: column;
+  background: #e7ead6;
+}
+.landscape-map-header {
+  height: 115px;
+  flex: none;
+  padding: 18px 4%;
+  background: #fdf7e6;
+  border-bottom: 1px solid #b5b6a255;
+  gap: 20px;
+}
+.back-home {
+  color: #375d4b;
+  background: transparent;
+  border: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+.chapter-heading {
+  text-align: center;
+}
+.chapter-kicker {
+  color: #8a846f;
+  font-size: 11px;
+  letter-spacing: 0.23em;
+}
+.chapter-heading h2 {
+  margin: 2px 0;
+  font-size: clamp(25px, 2.3vw, 38px);
+  letter-spacing: 0.05em;
+}
+.chapter-heading h2 span {
+  color: #ad523a;
+}
+.map-account {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #53645a;
+  font-size: 12px;
+}
+.map-account strong {
+  font-family: 'DM Sans', sans-serif;
+  color: #af4d38;
+  font-size: 22px;
+}
+.map-account button {
+  border: 1px solid #809f8a;
+  border-radius: 7px;
+  background: transparent;
+  color: #254c38;
+  padding: 9px 12px;
+  font-size: 12px;
+}
+.chapter-nav {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 4%;
+  background: #e5e9d8;
+  border-bottom: 1px solid #c2cdb7;
+}
+.nav-caption {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  margin-right: 16px;
+  color: #567565;
+  white-space: nowrap;
+}
+.chapter-nav button {
+  border: 0;
+  background: transparent;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #4b6e5d;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.chapter-nav button small {
+  font-family: 'DM Sans', sans-serif;
+  margin-right: 9px;
+  color: #9b9682;
+  font-size: 11px;
+}
+.chapter-nav button.active {
+  background: #245843;
+  color: #fff9df;
+  box-shadow: 0 4px 12px #1c52362a;
+}
+.chapter-nav button.active small {
+  color: #d6c59c;
+}
+.chapter-nav .unlock-preview {
+  margin-left: auto;
+  border: 1px solid #bbba9f;
+  padding: 9px 13px;
+  font-size: 11px;
+  color: #607466;
+}
+.map-stage {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  isolation: isolate;
+  overflow: hidden;
+}
+.map-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    url('/landscape/map.png') center/cover no-repeat,
+    #a3c8be;
+}
+.map-stage:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, #ecf5eebb 0%, transparent 30%, #173f31a3 100%),
+    linear-gradient(
+      90deg,
+      #d6ead4aa,
+      transparent 33%,
+      transparent 67%,
+      #d6ead4aa
+    );
+  pointer-events: none;
+}
+.map-stage-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  color: #193e31;
+  font-size: 13px;
+  font-weight: 800;
+  text-shadow: 0 1px 8px #fff;
+}
+.map-stage-top > span:first-child {
+  font-size: 19px;
+}
+.map-stage-top b {
+  font-weight: 400;
+  color: #8c6f53;
+  margin: 0 8px;
+}
+.trail-rail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-height: 0;
+  padding: 0 3.5%;
+}
+.trail-arrow {
+  flex: none;
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  border: 1px solid #fff9d8a9;
+  background: #173c31cc;
+  color: #fffae8;
+  font:
+    700 21px 'DM Sans',
+    sans-serif !important;
+  backdrop-filter: blur(5px);
+}
+.trail-arrow:hover {
+  background: #af503a;
+}
+.trail-window {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  flex: 1;
+  height: 100%;
+  padding: 10px 18px 18px;
+}
+.trail-window::-webkit-scrollbar {
+  display: none;
+}
+.trail-card {
+  scroll-snap-align: center;
+  position: relative;
+  flex: 0 0 clamp(185px, 19vw, 280px);
+  height: min(65%, 290px);
+  min-height: 195px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 14px;
+  text-align: left;
+  border: 1px solid #eedab8;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #fffaf0f5, #f4e8c8f0);
+  box-shadow:
+    0 13px 0 #5f56324a,
+    0 20px 35px #183b3988;
+  transition:
+    transform 0.24s,
+    box-shadow 0.24s;
+}
+.trail-card:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 19px 0 #5f56324a,
+    0 27px 35px #183b3988;
+}
+.trail-card.locked {
+  filter: saturate(0.55);
+}
+.trail-index {
+  font-size: 11px;
+  color: #a95c44;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+}
+.trail-illustration {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 10px 0;
+  border-radius: 7px;
+  background:
+    linear-gradient(140deg, #d1e0c0a8, #a8c4ad88),
+    url('/landscape/map.png') center/cover;
+  color: #e4c88a;
+}
+.trail-art-copy {
+  display: grid;
+  gap: 6px;
+  text-align: center;
+  color: #fff9e9;
+  text-shadow: 0 2px 6px #173c31;
+}
+.trail-art-copy small {
+  font:
+    700 11px Georgia,
+    serif;
+  letter-spacing: 0.17em;
+}
+.trail-art-copy b {
+  font-size: clamp(27px, 2.7vw, 38px);
+  letter-spacing: 0.1em;
+}
+.trail-status {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: #214e3bcc;
+  border-radius: 4px;
+  color: #fffbe8;
+  padding: 5px 7px;
+  font-size: 10px;
+}
+.trail-card.locked .trail-status {
+  background: #5a6155c9;
+}
+.trail-card.complete .trail-status {
+  background: #a84a35;
+}
+.trail-card strong {
+  font-size: clamp(14px, 1.15vw, 17px);
+  line-height: 1.5;
+  color: #234937;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.trail-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #dccab1;
+  margin-top: 9px;
+  padding-top: 9px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #a0543c;
+}
+.trail-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 5% 20px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  color: #fffdf1;
+  text-shadow: 0 1px 5px #153d32;
+}
+.trail-track {
+  font-size: 16px;
+  letter-spacing: 0;
+}
+.landscape-map-footer {
+  flex: none;
+  height: 38px;
+  padding: 0 4%;
+  background: #1d4737;
+  color: #eee9cc;
+  font:
+    700 10px 'DM Sans',
+    sans-serif;
+  letter-spacing: 0.12em;
+}
+@media (max-width: 900px) {
+  .landscape-map-header {
+    height: 83px;
+  }
+  .chapter-nav {
+    overflow-x: auto;
+  }
+  .chapter-heading h2 {
+    font-size: 22px;
+  }
+  .map-account > span {
+    display: none;
+  }
+  .trail-card {
+    flex-basis: 210px;
+    height: 68%;
+  }
+  .trail-footer .trail-track {
+    display: none;
+  }
+  .landscape-home-content {
+    left: 6%;
+  }
+  .landscape-home h1 {
+    font-size: clamp(55px, 9vw, 90px);
+  }
+}
+@media (max-height: 560px) {
+  .landscape-map-header {
+    height: 68px;
+    padding: 7px 3%;
+  }
+  .chapter-nav {
+    padding: 4px 3%;
+  }
+  .map-stage-top {
+    padding: 8px 5%;
+  }
+  .trail-card {
+    height: 85%;
+    min-height: 160px;
+  }
+  .trail-illustration {
+    margin: 5px 0;
+  }
+  .trail-footer {
+    padding: 7px 5%;
+  }
+  .landscape-home-content p {
+    line-height: 1.6;
+    margin: 8px 0;
+  }
+  .landscape-home h1 {
+    margin: 6px 0;
+    font-size: clamp(50px, 6vw, 80px);
+  }
+  .landscape-home-actions {
+    margin-top: 14px;
+  }
+  .home-meta {
+    margin-top: 14px;
+  }
+}
+@media (max-width: 640px) and (orientation: portrait) {
+  .landscape-home-content {
+    left: 7%;
+    right: 7%;
+    top: 48%;
+  }
+  .landscape-home h1 {
+    font-size: clamp(54px, 12vw, 82px);
+  }
+  .landscape-home-content p {
+    font-size: 13px;
+  }
+  .home-bottom {
+    gap: 10px;
+    align-items: flex-end;
+  }
+  .home-bottom > span {
+    max-width: 45%;
+  }
+  .home-bottom > div {
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .home-bottom button {
+    font-size: 10px;
+  }
+  .landscape-map-header {
+    gap: 5px;
+    padding: 7px;
+  }
+  .back-home {
+    font-size: 11px;
+  }
+  .chapter-kicker,
+  .map-account > span {
+    display: none;
+  }
+  .chapter-heading h2 {
+    font-size: 17px;
+  }
+  .map-account {
+    gap: 6px;
+  }
+  .map-account strong {
+    font-size: 13px;
+  }
+  .map-account button {
+    padding: 5px;
+    font-size: 10px;
+  }
+  .chapter-nav {
+    padding: 4px;
+  }
+  .nav-caption {
+    display: none;
+  }
+  .chapter-nav button {
+    font-size: 11px;
+    padding: 7px;
+  }
+  .chapter-nav .unlock-preview {
+    display: none;
+  }
+  .trail-rail {
+    padding: 0 2%;
+    gap: 2px;
+  }
+  .trail-arrow {
+    width: 26px;
+    height: 30px;
+    font-size: 15px !important;
+  }
+  .trail-window {
+    padding: 8px 5px;
+  }
+  .trail-card {
+    flex-basis: min(65vw, 250px);
+    height: min(55%, 270px);
+  }
+  .trail-footer {
+    font-size: 9px;
+  }
+  .landscape-map-footer {
+    font-size: 8px;
+  }
+}
+
+.landscape-message {
+  display: block;
+  margin-top: 12px;
+  color: #9c3b2e;
+  font-weight: 700;
+  font-size: 13px;
+}
+.landscape-home h1 em {
+  display: inline-block;
+  white-space: nowrap;
+}
+.landscape-home-content {
+  max-width: 670px;
+  transform: translateY(-52%);
+}
+.landscape-game .landscape-home-actions > .landscape-action {
+  min-width: 220px;
+  min-height: 60px;
+  padding: 15px 22px;
+  white-space: nowrap;
+}
+.landscape-home-content .home-meta {
+  margin-top: 42px;
+}
+@media (max-height: 700px) {
+  .landscape-home-content {
+    transform: translateY(-49%);
+  }
+  .landscape-home-content .home-meta {
+    margin-top: 14px;
+  }
+}
+
+/* Four complete painted maps; only the chapter selector changes the artwork. */
+.landscape-map {
+  font-family: var(--font-game-body);
+}
+.landscape-map-header {
+  background: #f6efdb;
+  border-bottom: 3px solid #d4c3a2;
+}
+.chapter-heading h2 {
+  font-family: var(--font-game-title);
+  color: #254c3b;
+}
+.heading-flower {
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-left: 0.3em;
+  vertical-align: -0.05em;
+  object-fit: contain;
+}
+.map-account .landscape-flower-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #9c3e30;
+  font: 800 16px var(--font-game-body);
+  white-space: nowrap;
+}
+.landscape-flower-icon {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex: none;
+}
+.landscape-flower-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.landscape-flower-icon span {
+  position: absolute;
+  color: #2e5745;
+  font: 900 13px/1 var(--font-game-body);
+  font-variant-numeric: tabular-nums;
+}
+.map-stop-flower {
+  display: block;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.chapter-nav {
+  background: #eee7cd;
+  border-bottom-color: #c9bb98;
+}
+.chapter-nav button.active {
+  background: #244b37;
+  border-radius: 12px;
+  box-shadow:
+    inset 0 0 0 2px #bd9a65,
+    0 4px 0 #7b6645;
+}
+.map-stage {
+  background: #8fb6a2;
+}
+.map-stage::before {
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    #f7f1d8b5 0,
+    transparent 20%,
+    transparent 78%,
+    #153b31ac 100%
+  );
+}
+.map-stage-top,
+.trail-footer {
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-game-body);
+}
+.map-panel {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  isolation: isolate;
+  overflow: hidden;
+  margin: 0 4.5%;
+  border: 3px solid #f5eacb;
+  border-radius: 15px;
+  background: #8fc4ac;
+  box-shadow: 0 8px 20px #143c3280;
+}
+.map-panel-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+.landscape-road-flower {
+  position: absolute;
+  z-index: 1;
+  width: clamp(22px, 3vw, 39px);
+  height: clamp(22px, 3vw, 39px);
+  object-fit: contain;
+  transform: translate(-50%, -65%);
+  filter: drop-shadow(0 3px 3px #254d3b80);
+  pointer-events: none;
+}
+.landscape-road-flower.just-planted {
+  animation: landscape-flower-bloom 0.85s both;
+}
+@keyframes landscape-flower-bloom {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -65%) scale(0.25);
+  }
+  65% {
+    opacity: 1;
+    transform: translate(-50%, -65%) scale(1.2);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -65%) scale(1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .landscape-road-flower.just-planted {
+    animation: none;
+  }
+}
+.trail-card.map-stop {
+  position: absolute;
+  width: clamp(124px, 13vw, 195px);
+  max-width: 20%;
+  min-height: 0;
+  height: auto;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  border: 3px solid #b68d54;
+  border-radius: 12px;
+  color: #fff8dd;
+  background: linear-gradient(#29563f, #183e31);
+  box-shadow:
+    inset 0 0 0 1px #e4c98d,
+    0 5px 0 #493f2d8c,
+    0 9px 16px #112c2773;
+  transform: translate(-50%, -50%);
+  transition:
+    filter 0.2s,
+    transform 0.2s;
+  z-index: 2;
+}
+.trail-card.map-stop:hover,
+.trail-card.map-stop:focus-visible {
+  transform: translate(-50%, -54%);
+  filter: brightness(1.16);
+  z-index: 3;
+}
+.trail-card.map-stop.locked {
+  filter: saturate(0.5);
+}
+.trail-card.map-stop.complete {
+  border-color: #c77754;
+  background: linear-gradient(#ab4f3e, #713b2e);
+}
+.trail-card.map-stop strong {
+  min-width: 0;
+  flex: 1;
+  color: #fff8dd;
+  font: 800 clamp(11px, 1.05vw, 15px)/1.2 var(--font-game-body);
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  text-shadow: 0 2px 2px #102a21;
+}
+.map-stop-number {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #f5ecd1;
+  color: #2c5943;
+  font: 800 11px var(--font-game-body);
+}
+.map-stop-state {
+  flex: none;
+  color: #f4c473;
+}
+/* Each position belongs to the new landscape artwork, never to the portrait map. */
+[data-map-chapter='nature'] .map-stop-1 {
+  left: 17%;
+  top: 80%;
+}
+[data-map-chapter='nature'] .map-stop-2 {
+  left: 37%;
+  top: 77%;
+}
+[data-map-chapter='nature'] .map-stop-3 {
+  left: 57%;
+  top: 73%;
+}
+[data-map-chapter='nature'] .map-stop-4 {
+  left: 83%;
+  top: 67%;
+}
+[data-map-chapter='nature'] .map-stop-5 {
+  left: 28%;
+  top: 54%;
+}
+[data-map-chapter='nature'] .map-stop-6 {
+  left: 15%;
+  top: 30%;
+}
+[data-map-chapter='nature'] .map-stop-7 {
+  left: 39%;
+  top: 32%;
+}
+[data-map-chapter='nature'] .map-stop-8 {
+  left: 62%;
+  top: 30%;
+}
+[data-map-chapter='nature'] .map-stop-9 {
+  left: 85%;
+  top: 29%;
+}
+[data-map-chapter='nature'] .map-stop-10 {
+  left: 65%;
+  top: 12%;
+}
+[data-map-chapter='nature'] .map-stop-11 {
+  left: 87%;
+  top: 11%;
+}
+[data-map-chapter='public'] .map-stop-1 {
+  left: 14%;
+  top: 34%;
+}
+[data-map-chapter='public'] .map-stop-2 {
+  left: 34%;
+  top: 27%;
+}
+[data-map-chapter='public'] .map-stop-3 {
+  left: 58%;
+  top: 47%;
+}
+[data-map-chapter='public'] .map-stop-4 {
+  left: 78%;
+  top: 41%;
+}
+[data-map-chapter='public'] .map-stop-5 {
+  left: 27%;
+  top: 74%;
+}
+[data-map-chapter='public'] .map-stop-6 {
+  left: 57%;
+  top: 74%;
+}
+[data-map-chapter='public'] .map-stop-7 {
+  left: 83%;
+  top: 73%;
+}
+[data-map-chapter='home'] .map-stop-1 {
+  left: 14%;
+  top: 77%;
+}
+[data-map-chapter='home'] .map-stop-2 {
+  left: 43%;
+  top: 72%;
+}
+[data-map-chapter='home'] .map-stop-3 {
+  left: 78%;
+  top: 72%;
+}
+[data-map-chapter='home'] .map-stop-4 {
+  left: 21%;
+  top: 29%;
+}
+[data-map-chapter='home'] .map-stop-5 {
+  left: 49%;
+  top: 25%;
+}
+[data-map-chapter='home'] .map-stop-6 {
+  left: 82%;
+  top: 26%;
+}
+[data-map-chapter='first-aid'] .map-stop-1 {
+  left: 15%;
+  top: 74%;
+}
+[data-map-chapter='first-aid'] .map-stop-2 {
+  left: 35%;
+  top: 74%;
+}
+[data-map-chapter='first-aid'] .map-stop-3 {
+  left: 57%;
+  top: 75%;
+}
+[data-map-chapter='first-aid'] .map-stop-4 {
+  left: 83%;
+  top: 75%;
+}
+[data-map-chapter='first-aid'] .map-stop-5 {
+  left: 15%;
+  top: 31%;
+}
+[data-map-chapter='first-aid'] .map-stop-6 {
+  left: 37%;
+  top: 31%;
+}
+[data-map-chapter='first-aid'] .map-stop-7 {
+  left: 61%;
+  top: 31%;
+}
+[data-map-chapter='first-aid'] .map-stop-8 {
+  left: 84%;
+  top: 31%;
+}
+.trail-footer {
+  text-shadow: 0 2px 4px #092b25;
+}
+@media (max-width: 900px) {
+  .trail-card.map-stop {
+    width: 18%;
+    padding: 4px;
+  }
+  .trail-card.map-stop strong {
+    font-size: 11px;
+  }
+}
+@media (max-width: 640px) and (orientation: portrait) {
+  .map-panel {
+    margin: 0 2%;
+  }
+  .trail-card.map-stop {
+    width: 29%;
+    max-width: 29%;
+    padding: 3px;
+    gap: 2px;
+  }
+  .trail-card.map-stop strong {
+    font-size: 10px;
+  }
+  .map-stop-number {
+    width: 18px;
+    height: 18px;
+    font-size: 9px;
+  }
+  .landscape-flower-icon {
+    width: 27px;
+    height: 27px;
+  }
+  .landscape-flower-icon span {
+    font-size: 10px;
+  }
+  .map-account .landscape-flower-count {
+    font-size: 11px;
+  }
+}

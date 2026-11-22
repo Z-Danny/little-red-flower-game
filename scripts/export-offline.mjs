@@ -1,4 +1,4 @@
-import assert from 'node:assert/strict';
+﻿import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import {
   existsSync,
@@ -20,8 +20,14 @@ import {
 } from './hunts.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const gameTitle = JSON.parse(readFileSync(join(root, 'content', 'journey-home.json'), 'utf8')).title.join('');
-const escapedGameTitle = gameTitle.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+const gameTitle = JSON.parse(
+  readFileSync(join(root, 'content', 'journey-home.json'), 'utf8'),
+).title.join('');
+const escapedGameTitle = gameTitle
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;');
 execFileSync(process.execPath, [join(root, 'scripts/levels.mjs'), 'sync'], {
   cwd: root,
   stdio: 'inherit',
@@ -37,18 +43,39 @@ const responseIndex = process.argv.indexOf('--preview-response');
 const responseId = responseIndex < 0 ? null : process.argv[responseIndex + 1];
 let responseSource;
 if (responseIndex >= 0) {
-  assert.ok(responseId && /^[a-z][a-z0-9-]+$/.test(responseId) && outputArg >= 0 && output.includes('response-preview'), '处置预览必须指定有效ID和独立 response-preview 输出目录');
+  assert.ok(
+    responseId &&
+      /^[a-z][a-z0-9-]+$/.test(responseId) &&
+      outputArg >= 0 &&
+      output.includes('response-preview'),
+    '处置预览必须指定有效ID和独立 response-preview 输出目录',
+  );
   const rulesFile = join(root, 'content/levels', responseId, 'level.json');
   const responseSkinIndex = process.argv.indexOf('--response-skin');
-  const responseSkin = responseSkinIndex < 0 ? 'illustrated' : process.argv[responseSkinIndex + 1];
-  assert.ok(responseSkin && /^[a-z][a-z0-9-]+$/.test(responseSkin), '非法处置预览皮肤 ID');
-  const skinFile = join(root, 'content/levels', responseId, 'skins', responseSkin + '.json');
+  const responseSkin =
+    responseSkinIndex < 0 ? 'illustrated' : process.argv[responseSkinIndex + 1];
+  assert.ok(
+    responseSkin && /^[a-z][a-z0-9-]+$/.test(responseSkin),
+    '非法处置预览皮肤 ID',
+  );
+  const skinFile = join(
+    root,
+    'content/levels',
+    responseId,
+    'skins',
+    responseSkin + '.json',
+  );
   const { getRuntime, checkArt } = await import('./lib/packages.mjs');
-  await checkArt((await getRuntime()).validatePackage(JSON.parse(readFileSync(rulesFile,'utf8')), JSON.parse(readFileSync(skinFile,'utf8'))));
+  await checkArt(
+    (await getRuntime()).validatePackage(
+      JSON.parse(readFileSync(rulesFile, 'utf8')),
+      JSON.parse(readFileSync(skinFile, 'utf8')),
+    ),
+  );
   responseSource = `import {createRoot} from 'react-dom/client';
     import {ResponsePreview} from './components/game/response-preview';
-    import rules from ${JSON.stringify(rulesFile.replaceAll('\\','/'))};
-    import skin from ${JSON.stringify(skinFile.replaceAll('\\','/'))};
+    import rules from ${JSON.stringify(rulesFile.replaceAll('\\', '/'))};
+    import skin from ${JSON.stringify(skinFile.replaceAll('\\', '/'))};
     createRoot(document.getElementById('game-root')).render(<ResponsePreview rules={rules} skin={skin}/>);`;
 }
 const previewIndex = process.argv.indexOf('--preview-hunt');
@@ -121,20 +148,33 @@ const result = await esbuild.build({
   metafile: true,
   legalComments: 'inline',
   logLevel: 'silent',
-  plugins: responseSource ? [{ name: 'isolated-response-preview', setup(build) { build.onLoad({ filter: /offline[\\/]main\.tsx$/ }, () => ({ contents: responseSource, loader: 'tsx', resolveDir: root })); } }] : previewSource
+  plugins: responseSource
     ? [
         {
-          name: 'isolated-hunt-preview',
+          name: 'isolated-response-preview',
           setup(build) {
-            build.onLoad({ filter: /scene-hunt[\\/]generated\.ts$/ }, () => ({
-              contents: previewSource,
-              loader: 'ts',
+            build.onLoad({ filter: /offline[\\/]main\.tsx$/ }, () => ({
+              contents: responseSource,
+              loader: 'tsx',
               resolveDir: root,
             }));
           },
         },
       ]
-    : [],
+    : previewSource
+      ? [
+          {
+            name: 'isolated-hunt-preview',
+            setup(build) {
+              build.onLoad({ filter: /scene-hunt[\\/]generated\.ts$/ }, () => ({
+                contents: previewSource,
+                loader: 'ts',
+                resolveDir: root,
+              }));
+            },
+          },
+        ]
+      : [],
 });
 
 let javascript = result.outputFiles[0].text;
@@ -165,6 +205,9 @@ css += '\n' + readFileSync(join(root, 'app', 'painted-failure.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'painted-journal.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'painted-settings.css'), 'utf8');
 css += '\n' + readFileSync(join(root, 'app', 'pause-menu.css'), 'utf8');
+css +=
+  '\n' +
+  readFileSync(join(root, 'components', 'game', 'landscape-shell.css'), 'utf8');
 // Keep the OFL notices in the single-file distribution as well as in source.
 for (const license of ['WenKai-OFL.txt', 'NotoSansSC-OFL.txt']) {
   css +=
@@ -188,7 +231,7 @@ const embeddedAssets = [];
 const assetUrls = [
   ...new Set(
     (javascript + css).match(
-      /\/(?:(?:levels|audio|fonts|ui)\/[A-Za-z0-9_./-]+|emergency-home)\.(?:png|webp|svg|wav|mp3|ogg|woff2)/g,
+      /\/(?:(?:levels|audio|fonts|ui|landscape)\/[A-Za-z0-9_./-]+|emergency-home)\.(?:png|webp|svg|wav|mp3|ogg|woff2)/g,
     ) ?? [],
   ),
 ];
@@ -227,7 +270,9 @@ assert.ok(
   '离线版必须包含排行榜及其样式。',
 );
 assert.ok(
-  !/url\(\s*['"]?(?:https?:|\/levels\/|\/fonts\/|\/ui\/|\/emergency-home)/i.test(css),
+  !/url\(\s*['"]?(?:https?:|\/levels\/|\/fonts\/|\/ui\/|\/landscape\/|\/emergency-home)/i.test(
+    css,
+  ),
   '离线样式不能依赖外部图片或字体。',
 );
 assert.ok(
@@ -285,7 +330,7 @@ const htmlPath = join(output, '小红花应急行动.html');
 writeFileSync(htmlPath, html, 'utf8');
 copyFileSync(join(root, 'offline', 'README.md'), join(output, '使用说明.md'));
 const manifest = {
-  mode: (previewId || responseId) ? 'draft-preview-not-production' : 'production',
+  mode: previewId || responseId ? 'draft-preview-not-production' : 'production',
   previewId: previewId || responseId,
   file: '小红花应急行动.html',
   bytes: Buffer.byteLength(html),
@@ -294,9 +339,14 @@ const manifest = {
   networkPolicy: 'connect-src none',
   embeddedAssets,
   sources: Object.keys(result.metafile.inputs)
-    .filter(path => !path.replaceAll('\\', '/').includes('node_modules/'))
-    .filter(path => existsSync(resolve(root, path)))
-    .map(path => ({ path: path.replaceAll('\\', '/'), sha256: createHash('sha256').update(readFileSync(resolve(root, path))).digest('hex') })),
+    .filter((path) => !path.replaceAll('\\', '/').includes('node_modules/'))
+    .filter((path) => existsSync(resolve(root, path)))
+    .map((path) => ({
+      path: path.replaceAll('\\', '/'),
+      sha256: createHash('sha256')
+        .update(readFileSync(resolve(root, path)))
+        .digest('hex'),
+    })),
   checks: [
     'JavaScript syntax',
     'No external module imports',

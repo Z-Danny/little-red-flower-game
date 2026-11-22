@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 import {
   useCallback,
   useEffect,
@@ -15,7 +15,8 @@ import {
   type Planting,
 } from '@/app/game/journey/progress';
 import type { CompletionReceipt } from '@/app/game/leaderboard/model';
-import { LevelHub } from './level-hub';
+import { LandscapeShell } from './landscape-shell';
+import { COVER_DEPARTURE_MS } from '@/app/game/journey/cover-motion';
 import type { ArchipelagoSound } from '@/app/game/journey/archipelago';
 import { CprPlayer } from './first-aid/cpr-player';
 import { KitchenPlayer } from './kitchen/kitchen-player';
@@ -27,22 +28,47 @@ import { PlayerJournal } from './journey/player-journal';
 import { journalEntries } from '@/app/game/journey/journal';
 import { SaveManager } from './journey/save-manager';
 import { Settlement } from './journey/settlement';
-import type { RewardSound, PlantingSoundStage, InterfaceCue } from './journey/reward-sound';
+import type {
+  RewardSound,
+  PlantingSoundStage,
+  InterfaceCue,
+} from './journey/reward-sound';
 import { useInterfaceSound } from './use-interface-sound';
-import { LevelInterfaceSoundContext, selectInterfaceSoundPolicy, type LevelInterfaceSoundPolicy } from './level-interface-sound-context';
+import {
+  LevelInterfaceSoundContext,
+  selectInterfaceSoundPolicy,
+  type LevelInterfaceSoundPolicy,
+} from './level-interface-sound-context';
 import { useJourneyMusic } from './journey/use-journey-music';
 import { PlacementLab } from './placement/placement-lab';
-import { COVER_DEPARTURE_MS, TitleScreen } from './journey/title-screen';
 import { useJourneyLocation } from './journey/use-journey-location';
-import { entryNode, hasJourneyRecord, resumeNode } from '@/app/game/journey/resume';
+import {
+  entryNode,
+  hasJourneyRecord,
+  resumeNode,
+} from '@/app/game/journey/resume';
 import home from '@/content/journey-home.json';
-import { primeLevelAudioContext, releaseLevelAudioContext } from '@/app/game/level-audio-context';
-import { timeReward, type CompletionTiming, type TimeReward } from '@/app/game/journey/time-reward';
+import {
+  primeLevelAudioContext,
+  releaseLevelAudioContext,
+} from '@/app/game/level-audio-context';
+import {
+  timeReward,
+  type CompletionTiming,
+  type TimeReward,
+} from '@/app/game/journey/time-reward';
 import { rewardReferenceSeconds } from '@/app/game/journey/level-reward';
 const EMPTY: Record<string, number> = {};
 const UI_MUTE_KEY = 'red-flower:interface-muted';
 function readInterfaceMuted() {
-  try { return typeof window !== 'undefined' && localStorage.getItem(UI_MUTE_KEY) === 'true'; } catch { return false; }
+  try {
+    return (
+      typeof window !== 'undefined' &&
+      localStorage.getItem(UI_MUTE_KEY) === 'true'
+    );
+  } catch {
+    return false;
+  }
 }
 type ModelContext = {
   registerTool: (
@@ -78,10 +104,6 @@ export function GameApp() {
 }
 function MainGameApp() {
   const [showSaveManager, setShowSaveManager] = useState(false);
-  const [showTitle, setShowTitle] = useState(true);
-  const [departingTitle, setDepartingTitle] = useState(false);
-  const [departureCanContinue, setDepartureCanContinue] = useState(false);
-  const departurePending = useRef(false);
   const [allLevelsUnlocked, setAllLevelsUnlocked] = useState(false);
   const board = useLeaderboard(undefined, allLevelsUnlocked),
     [activeId, setActiveId] = useState<string | null>(null),
@@ -91,11 +113,25 @@ function MainGameApp() {
     [planting, setPlanting] = useState<Planting | null>(null),
     [focusId, setFocusId] = useState<string | null>(null),
     [muted, setMuted] = useState(readInterfaceMuted);
-  const [levelInterfacePolicy, setLevelInterfacePolicy] = useState<LevelInterfaceSoundPolicy>({ muted: false, volume: 1 });
-  const reportLevelInterfacePolicy = useCallback((policy: LevelInterfaceSoundPolicy) => {
-    setLevelInterfacePolicy(current => current.muted === policy.muted && current.volume === policy.volume ? current : policy);
-  }, []);
-  const session = useRef<{playerId: string; levelId: string; finished: boolean; flowers?: number; result?: TimeReward}>({ playerId: '', levelId: '', finished: false }),
+  const [levelInterfacePolicy, setLevelInterfacePolicy] =
+    useState<LevelInterfaceSoundPolicy>({ muted: false, volume: 1 });
+  const reportLevelInterfacePolicy = useCallback(
+    (policy: LevelInterfaceSoundPolicy) => {
+      setLevelInterfacePolicy((current) =>
+        current.muted === policy.muted && current.volume === policy.volume
+          ? current
+          : policy,
+      );
+    },
+    [],
+  );
+  const session = useRef<{
+      playerId: string;
+      levelId: string;
+      finished: boolean;
+      flowers?: number;
+      result?: TimeReward;
+    }>({ playerId: '', levelId: '', finished: false }),
     sound = useRef<RewardSound | null>(null);
   const launchingLevel = useRef(false);
   const completed = board.snapshot?.current.completed ?? EMPTY;
@@ -103,92 +139,68 @@ function MainGameApp() {
     totalFlowers = flowerTotal(completed),
     active = activeId ? getLevel(activeId) : undefined;
   const music = useJourneyMusic(!active);
-  const setInterfaceSession = useCallback((session: RewardSound | null) => { sound.current = session; }, []);
-  const interfacePolicy = selectInterfaceSoundPolicy(muted, levelInterfacePolicy, !!active && finished);
-  const interfaceSound = useInterfaceSound(interfacePolicy.muted, interfacePolicy.volume, setInterfaceSession, !active || finished);
-  const onJournalCue = useCallback((kind: InterfaceCue) => {
-    if (muted) return;
-    sound.current?.unlock();
-    sound.current?.ui(kind);
-  }, [muted]);
+  const setInterfaceSession = useCallback((session: RewardSound | null) => {
+    sound.current = session;
+  }, []);
+  const interfacePolicy = selectInterfaceSoundPolicy(
+    muted,
+    levelInterfacePolicy,
+    !!active && finished,
+  );
+  const interfaceSound = useInterfaceSound(
+    interfacePolicy.muted,
+    interfacePolicy.volume,
+    setInterfaceSession,
+    !active || finished,
+  );
+  const onJournalCue = useCallback(
+    (kind: InterfaceCue) => {
+      if (muted) return;
+      sound.current?.unlock();
+      sound.current?.ui(kind);
+    },
+    [muted],
+  );
   const bookmark = useJourneyLocation(playerId);
   const startingNewGame = useRef(false);
   const remember = bookmark.remember;
   // Explicit session opt-in. Old saved unlock flags never change normal play.
-  useEffect(() => { setAllLevelsUnlocked(false); }, [playerId]);
-  const continueId = resumeNode(completed, bookmark.location, allLevelsUnlocked);
-  const canContinue = allLevelsUnlocked || hasJourneyRecord(completed, bookmark.location);
+  useEffect(() => {
+    setAllLevelsUnlocked(false);
+  }, [playerId]);
+  const continueId = resumeNode(
+    completed,
+    bookmark.location,
+    allLevelsUnlocked,
+  );
+  const canContinue =
+    allLevelsUnlocked || hasJourneyRecord(completed, bookmark.location);
   const toggleMute = () => {
     const next = !muted;
     setMuted(next);
     sound.current?.setMuted(next);
-    try { localStorage.setItem(UI_MUTE_KEY, String(next)); } catch { /* optional preference */ }
+    try {
+      localStorage.setItem(UI_MUTE_KEY, String(next));
+    } catch {
+      /* optional preference */
+    }
     if (!next) sound.current?.unlock();
   };
-  const leaveTitle = () => {
-    sound.current?.unlock();
-    departurePending.current = true;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setShowTitle(false);
-      return;
-    }
-    // Remembering the destination must not swap the menu labels mid-transition.
-    setDepartureCanContinue(canContinue);
-    setDepartingTitle(true);
-  };
-  useEffect(() => {
-    if (!showTitle) departurePending.current = false;
-  }, [showTitle]);
-  useEffect(() => {
-    if (!departingTitle) return;
-    let elapsed = 0;
-    let previous = performance.now();
-    let frame = 0;
-    const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const finish = () => {
-      cancelAnimationFrame(frame);
-      setShowTitle(false);
-      setDepartingTitle(false);
-      departurePending.current = false;
-    };
-    const advance = (now: number) => {
-      if (document.hidden) return;
-      elapsed += now - previous;
-      previous = now;
-      if (elapsed >= COVER_DEPARTURE_MS || preference.matches) finish();
-      else frame = requestAnimationFrame(advance);
-    };
-    const visibility = () => {
-      cancelAnimationFrame(frame);
-      previous = performance.now();
-      if (!document.hidden) frame = requestAnimationFrame(advance);
-    };
-    const motion = () => { if (preference.matches) finish(); };
-    visibility();
-    document.addEventListener('visibilitychange', visibility);
-    preference.addEventListener('change', motion);
-    return () => {
-      cancelAnimationFrame(frame);
-      document.removeEventListener('visibilitychange', visibility);
-      preference.removeEventListener('change', motion);
-    };
-  }, [departingTitle]);
-  const enterMap = (resume: boolean) => {
-    if (!playerId || board.busy || departurePending.current) return;
+  const enterMap = (resume: boolean): boolean => {
+    if (!playerId || board.busy) return false;
     const id = resume ? continueId : entryNode(completed);
     bookmark.remember(id);
     setFocusId(id);
-    leaveTitle();
+    return true;
   };
-  const startNewGame = async () => {
-    if (!playerId || board.busy || startingNewGame.current || departurePending.current) return;
+  const startNewGame = async (): Promise<boolean> => {
+    if (!playerId || board.busy || startingNewGame.current) return false;
     startingNewGame.current = true;
     try {
       // Without completed levels, starting over only navigates. Never erase
       // a newer result written by another tab while this snapshot was empty.
       if (!Object.values(completed).some((score) => score > 0)) {
-        enterMap(false);
-        return;
+        return enterMap(false);
       }
       if (
         !window.confirm(
@@ -197,9 +209,9 @@ function MainGameApp() {
             .replace('{flowers}', String(totalFlowers)),
         )
       )
-        return;
+        return false;
       // Only leave the title after the current player's reset succeeds.
-      if (!(await board.resetProgress())) return;
+      if (!(await board.resetProgress())) return false;
       const id = entryNode(EMPTY);
       session.current = { playerId: '', levelId: '', finished: false };
       setActiveId(null);
@@ -209,7 +221,7 @@ function MainGameApp() {
       setShowLeaderboard(false);
       bookmark.remember(id);
       setFocusId(id);
-      leaveTitle();
+      return true;
     } finally {
       startingNewGame.current = false;
     }
@@ -217,7 +229,12 @@ function MainGameApp() {
   useEffect(() => () => releaseLevelAudioContext(), []);
   const startLevel = useCallback(
     (id: string) => {
-      if (launchingLevel.current || !playerId || !getLevel(id)?.playable || !canEnter(id, completed, allLevelsUnlocked))
+      if (
+        launchingLevel.current ||
+        !playerId ||
+        !getLevel(id)?.playable ||
+        !canEnter(id, completed, allLevelsUnlocked)
+      )
         return;
       launchingLevel.current = true;
       primeLevelAudioContext();
@@ -228,7 +245,6 @@ function MainGameApp() {
       setActiveId(id);
       setFocusId(id);
       setShowLeaderboard(false);
-      setShowTitle(false);
       remember(id);
       sound.current?.unlock();
     },
@@ -258,13 +274,17 @@ function MainGameApp() {
         !Number.isInteger(stars) ||
         stars < 1 ||
         stars > 3 ||
-        !timing || !Number.isFinite(timing.elapsedMs) || timing.elapsedMs < 0 ||
+        !timing ||
+        !Number.isFinite(timing.elapsedMs) ||
+        timing.elapsedMs < 0 ||
         session.current.finished
       )
         return;
       // Keep the local, untimed CPR exercise: its existing rhythm/hand-off goals are not a speed challenge.
-      session.current.result = getLevel(id)?.engine === 'first-aid-cpr'
-        ? undefined : timeReward(timing.elapsedMs, rewardReferenceSeconds(id));
+      session.current.result =
+        getLevel(id)?.engine === 'first-aid-cpr'
+          ? undefined
+          : timeReward(timing.elapsedMs, rewardReferenceSeconds(id));
       session.current.flowers = session.current.result?.flowers ?? stars;
       session.current.finished = true;
       setFinished(true);
@@ -289,7 +309,10 @@ function MainGameApp() {
     setReceipt(undefined);
   };
   const onPlanted = useCallback(() => setPlanting(null), []);
-  const onPlantSound = useCallback((stage: PlantingSoundStage) => sound.current?.plant(stage), []);
+  const onPlantSound = useCallback(
+    (stage: PlantingSoundStage) => sound.current?.plant(stage),
+    [],
+  );
   const onArchipelagoSound = useCallback((cue: ArchipelagoSound) => {
     sound.current?.unlock();
     sound.current?.ui(cue === 'select' ? 'tap' : 'confirm');
@@ -332,7 +355,10 @@ function MainGameApp() {
             const candidate = (input as { levelId?: unknown })?.levelId;
             const id = typeof candidate === 'string' ? candidate : '';
             if (!playerId) throw new Error('存档正在载入');
-            if (!getLevel(id)?.playable || !canEnter(id, completed, allLevelsUnlocked))
+            if (
+              !getLevel(id)?.playable ||
+              !canEnter(id, completed, allLevelsUnlocked)
+            )
               throw new Error('该关卡尚未解锁');
             startLevel(id);
             return { status: 'opened', levelId: id };
@@ -368,7 +394,10 @@ function MainGameApp() {
       ref={music.containerRef}
       className="game-page"
       data-active-player-id={playerId}
-      onPointerDownCapture={() => { if (!active) sound.current?.unlock(); music.unlock(); }}
+      onPointerDownCapture={() => {
+        if (!active) sound.current?.unlock();
+        music.unlock();
+      }}
       onKeyDownCapture={(event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           if (!active) sound.current?.unlock();
@@ -377,12 +406,23 @@ function MainGameApp() {
       }}
     >
       {content}
-      {showSaveManager && board.snapshot && <SaveManager board={board} onClose={()=>setShowSaveManager(false)} onImported={()=>{setFocusId(null);setPlanting(null);setShowTitle(true);}} />}
-      {!showSaveManager && !finished && (board.error || board.snapshot?.notice) && (
-        <output className="game-save-notice">
-          {board.error || board.snapshot?.notice}
-        </output>
+      {showSaveManager && board.snapshot && (
+        <SaveManager
+          board={board}
+          onClose={() => setShowSaveManager(false)}
+          onImported={() => {
+            setFocusId(null);
+            setPlanting(null);
+          }}
+        />
       )}
+      {!showSaveManager &&
+        !finished &&
+        (board.error || board.snapshot?.notice) && (
+          <output className="game-save-notice">
+            {board.error || board.snapshot?.notice}
+          </output>
+        )}
     </main>
   );
   if (!board.snapshot || !bookmark.ready)
@@ -396,45 +436,46 @@ function MainGameApp() {
     const hunt = getHunt(active.id),
       disaster = getDisaster(active.id),
       pack = getPackage(active.id);
-    const player = active.engine === 'first-aid-cpr' ? (
-      <CprPlayer key={active.id} onBack={returnMap} onFinish={finishLevel} />
-    ) : disaster ? (
-      <DisasterPlayer
-        key={active.id}
-        pack={disaster}
-        journey
-        autoStart
-        onBack={returnMap}
-        onFinish={finishLevel}
-      />
-    ) : hunt ? (
-      <SceneHuntPlayer
-        key={active.id}
-        pack={hunt}
-        journey
-        autoStart
-        onBack={returnMap}
-        onFinish={finishLevel}
-      />
-    ) : pack ? (
-      <ConfiguredPlayer
-        key={active.id}
-        pack={pack}
-        journey
-        autoStart
-        onBack={returnMap}
-        onFinish={finishLevel}
-      />
-    ) : (
-      <KitchenPlayer
-        key={active.id}
-        totalFlowers={totalFlowers}
-        journey
-        autoStart
-        onBack={returnMap}
-        onFinish={finishLevel}
-      />
-    );
+    const player =
+      active.engine === 'first-aid-cpr' ? (
+        <CprPlayer key={active.id} onBack={returnMap} onFinish={finishLevel} />
+      ) : disaster ? (
+        <DisasterPlayer
+          key={active.id}
+          pack={disaster}
+          journey
+          autoStart
+          onBack={returnMap}
+          onFinish={finishLevel}
+        />
+      ) : hunt ? (
+        <SceneHuntPlayer
+          key={active.id}
+          pack={hunt}
+          journey
+          autoStart
+          onBack={returnMap}
+          onFinish={finishLevel}
+        />
+      ) : pack ? (
+        <ConfiguredPlayer
+          key={active.id}
+          pack={pack}
+          journey
+          autoStart
+          onBack={returnMap}
+          onFinish={finishLevel}
+        />
+      ) : (
+        <KitchenPlayer
+          key={active.id}
+          totalFlowers={totalFlowers}
+          journey
+          autoStart
+          onBack={returnMap}
+          onFinish={finishLevel}
+        />
+      );
     return shell(
       <>
         <LevelInterfaceSoundContext.Provider value={reportLevelInterfacePolicy}>
@@ -456,69 +497,48 @@ function MainGameApp() {
   }
   return shell(
     <>
-    {(!showTitle || departingTitle) && <LevelHub
-      key={playerId}
-      entering={departingTitle}
-      completed={completed}
-      allLevelsUnlocked={allLevelsUnlocked}
-      onStart={startLevel}
-      onReset={resetProgress}
-      onLeaderboard={() => {
-        if (planting) return;
-        setShowLeaderboard(true);
-      }}
-      playerName={board.snapshot.current.name}
-      planting={planting}
-      onPlanted={onPlanted}
-      onPlantSound={onPlantSound}
-      onArchipelagoSound={onArchipelagoSound}
-      onHome={() => setShowTitle(true)}
-      onManageSave={()=>setShowSaveManager(true)}
-      onVisit={bookmark.remember}
-      focusId={focusId}
-      muted={muted}
-      onMute={toggleMute}
-      musicMuted={music.muted}
-      onMusicMute={music.toggle}
-    />}
-    {showTitle && (
-      <TitleScreen
-        key="cover"
-        canContinue={departingTitle ? departureCanContinue : canContinue}
-        onStart={() => void startNewGame()}
-        muted={muted}
-        onMute={toggleMute}
-        musicMuted={music.muted}
-        onMusicMute={music.toggle}
+      <LandscapeShell
+        completed={completed}
+        focusId={focusId}
+        planting={planting}
         allLevelsUnlocked={allLevelsUnlocked}
-        onUnlockAll={() => { if (playerId && !board.busy) setAllLevelsUnlocked(true); }}
-        onManageSave={() => setShowSaveManager(true)}
-        busy={board.busy || departingTitle}
-        departing={departingTitle}
-        error={board.error}
+        playerName={board.snapshot.current.name}
+        flowers={totalFlowers}
+        canContinue={canContinue}
+        busy={board.busy}
+        onNew={startNewGame}
         onContinue={() => enterMap(true)}
-      />
-    )}
-    {!showTitle && showLeaderboard && (
-      <PlayerJournal
-        board={{
-          ...board,
-          switchPlayer: async (id) => {
-            const ok = await board.switchPlayer(id);
-            if (ok) setFocusId(null);
-            return ok;
-          },
-          createPlayer: async (profile) => {
-            const ok = await board.createPlayer(profile);
-            if (ok) setFocusId(null);
-            return ok;
-          },
+        onStart={startLevel}
+        onManageSave={() => setShowSaveManager(true)}
+        onJournal={() => setShowLeaderboard(true)}
+        onUnlockAll={() => {
+          if (playerId && !board.busy) setAllLevelsUnlocked(true);
         }}
-        entries={journalEntries(board.snapshot)}
-        onClose={() => setShowLeaderboard(false)}
-        onCue={onJournalCue}
+        onMute={toggleMute}
+        muted={muted}
+        onMusicMute={music.toggle}
+        musicMuted={music.muted}
       />
-    )}
+      {showLeaderboard && (
+        <PlayerJournal
+          board={{
+            ...board,
+            switchPlayer: async (id) => {
+              const ok = await board.switchPlayer(id);
+              if (ok) setFocusId(null);
+              return ok;
+            },
+            createPlayer: async (profile) => {
+              const ok = await board.createPlayer(profile);
+              if (ok) setFocusId(null);
+              return ok;
+            },
+          }}
+          entries={journalEntries(board.snapshot)}
+          onClose={() => setShowLeaderboard(false)}
+          onCue={onJournalCue}
+        />
+      )}
     </>,
   );
 }
