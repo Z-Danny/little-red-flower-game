@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.png binary
+*.webp binary
+*.wav binary
+*.mp3 binary
+*.woff2 binary
+# Retain the upstream font license bytes, including their spacing.
+*-OFL.txt -text whitespace=-blank-at-eol

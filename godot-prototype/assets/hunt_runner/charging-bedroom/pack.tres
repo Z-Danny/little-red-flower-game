@@ -1,0 +1,171 @@
+[gd_resource type="Resource" load_steps=9 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/charging-bedroom/scene.webp" id="1"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/charging-bedroom/clean.webp" id="2"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/charging-bedroom/ending.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/charging-bedroom/family.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/charging-bedroom/id-mask.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/charging-bedroom/covered_phone.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/charging-bedroom/damaged_lead.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/charging-bedroom/swollen_bank.png" id="8"]
+
+[resource]
+metadata/rules = {
+  "id": "charging-bedroom",
+  "title": "充电中的卧室",
+  "order": 13,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "covered_phone",
+      "name": "被枕头盖住的充电手机",
+      "lesson": "充电手机不能埋在枕头下。"
+    },
+    {
+      "id": "damaged_lead",
+      "name": "破损充电组件",
+      "lesson": "破损充电线应停用。"
+    },
+    {
+      "id": "swollen_bank",
+      "name": "鼓胀充电宝",
+      "lesson": "鼓胀的充电宝不能继续用。"
+    }
+  ],
+  "summary": "充电设备不要被枕头、被褥覆盖；破损充电线应停用。异常电池已停用，交专业人员处理，不拆壳、不挤压。儿童只识别并告知成人；出现烟火等危险，先远离求助。",
+  "timeout": "fail"
+}
+metadata/skin = {
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/charging-bedroom-v1/scene.webp",
+  "clean": "/levels/charging-bedroom-v1/clean.webp",
+  "safe": "/levels/charging-bedroom-v1/ending.webp",
+  "mask": "/levels/charging-bedroom-v1/id-mask.png",
+  "family": "/levels/charging-bedroom-v1/family.png",
+  "familyBox": {
+    "x": 307,
+    "y": 80,
+    "w": 169,
+    "h": 402
+  },
+  "targets": {
+    "covered_phone": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 301,
+        "w": 185,
+        "h": 119
+      },
+      "icon": "/levels/charging-bedroom-v1/covered_phone.png"
+    },
+    "damaged_lead": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 89,
+        "y": 1012,
+        "w": 201,
+        "h": 116
+      },
+      "icon": "/levels/charging-bedroom-v1/damaged_lead.png"
+    },
+    "swollen_bank": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 528,
+        "y": 648,
+        "w": 153,
+        "h": 95
+      },
+      "icon": "/levels/charging-bedroom-v1/swollen_bank.png"
+    }
+  }
+}
+metadata/presentation = {
+  "location": "卧室",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "睡前检查：哪些充电设备存在隐患？",
+  "reveal": "识别完成。异常电池已停用，交专业人员处理。",
+  "completeTitle": "识别完成，交给专业人员",
+  "pauseNote": "只识别，不操作。红圈不代表现实处置；儿童发现问题应告知成人。误点只表示未命中本关目标，不证明其他地方安全。计时是训练用时，不是事故倒计时。",
+  "endingNote": "这是另一时点的结果示意。鼓胀电池仍异常，停用不等于风险消失。",
+  "preview": "睡前检查卧室，圈出 3 处充电隐患。只识别、不触碰，再看看停用后的情景。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}
+metadata/source = {
+  "rules": {
+    "path": "content/scenes/charging-bedroom/rules.json",
+    "sha256": "6b1c5aac943f3ff97fdea747a7b2f9e9f7133ffe2b5a21aef15516528532006c"
+  },
+  "skin": {
+    "path": "content/scenes/charging-bedroom/skin.json",
+    "sha256": "a7e85fc2e01db77a1d838d327898bd35b1780a560965d21982aa9fe700a184a7"
+  },
+  "presentation": {
+    "path": "content/scenes/charging-bedroom/presentation.json",
+    "sha256": "d59fa3db3c672d2db982affbed9e66b637e076879d59c29d424c36ed713553d1"
+  },
+  "scene": {
+    "path": "public/levels/charging-bedroom-v1/scene.webp",
+    "sha256": "b1dc11dbd678a8dc1f032b998d3f3cd6f2b761a4812f838712a8bc92b4efcb19"
+  },
+  "clean": {
+    "path": "public/levels/charging-bedroom-v1/clean.webp",
+    "sha256": "772d9fb65e5823aac6bb349165f9911f9738817d03fa2b7c62a73cea76c6b8cb"
+  },
+  "safe": {
+    "path": "public/levels/charging-bedroom-v1/ending.webp",
+    "sha256": "8325d1d3f214c2eb4fd7c9f1c5cd7f4c39249303d2e8cbb866384b8269c8be7c"
+  },
+  "family": {
+    "path": "public/levels/charging-bedroom-v1/family.png",
+    "sha256": "8bbc8dcc5f729fedf82301254534d0dc41bf67aedf699b9be6259a4b2094c395"
+  },
+  "mask": {
+    "path": "public/levels/charging-bedroom-v1/id-mask.png",
+    "sha256": "cd0ec74aeaeba78cbad471c62cddd4291b48c212c50c12bc856917ccd41b540a"
+  },
+  "icon:covered_phone": {
+    "path": "public/levels/charging-bedroom-v1/covered_phone.png",
+    "sha256": "444143976e7314e1c8ae822d2a4d8960d6828d12357b0d820ae9be2b4c1e9cf2"
+  },
+  "icon:damaged_lead": {
+    "path": "public/levels/charging-bedroom-v1/damaged_lead.png",
+    "sha256": "a1e04b0240c4c17ea9b23ea96b40ddf404bb670572f04254b087d1cece1f3c08"
+  },
+  "icon:swollen_bank": {
+    "path": "public/levels/charging-bedroom-v1/swollen_bank.png",
+    "sha256": "fbc0ab7a39e82c8eb4639bfb28597d5a0d79ea6984ebc76974f08713d0d5a77e"
+  }
+}
+metadata/resources = {
+"scene": ExtResource("1"),
+"clean": ExtResource("2"),
+"safe": ExtResource("3"),
+"family": ExtResource("4"),
+"mask": ExtResource("5"),
+"icon:covered_phone": ExtResource("6"),
+"icon:damaged_lead": ExtResource("7"),
+"icon:swollen_bank": ExtResource("8")
+}

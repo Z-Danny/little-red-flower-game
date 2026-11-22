@@ -1,0 +1,238 @@
+[gd_resource type="Resource" load_steps=11 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/typhoon-home/scene.webp" id="1"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/typhoon-home/clean.webp" id="2"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/typhoon-home/safe.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/typhoon-home/family.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/typhoon-home/targets-mask.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/typhoon-home/plant-icon.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/typhoon-home/window-icon.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/typhoon-home/rail-icon.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/typhoon-home/powerstrip-icon.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/typhoon-home/cabinet-icon.png" id="10"]
+
+[resource]
+metadata/rules = {
+  "id": "typhoon-home",
+  "title": "台风前的家",
+  "order": 1,
+  "seconds": 50,
+  "timeout": "fail",
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "plant",
+      "name": "阳台花盆",
+      "lesson": "阳台边缘的花盆可能坠落，应提前收回室内。"
+    },
+    {
+      "id": "window",
+      "name": "敞开的窗门",
+      "lesson": "台风来临前关好门窗，避免风雨进入。"
+    },
+    {
+      "id": "rail",
+      "name": "伸出的晾衣杆",
+      "lesson": "把阳台晾晒物和伸出的晾衣杆提前收好。"
+    },
+    {
+      "id": "powerstrip",
+      "name": "闲置插线板",
+      "lesson": "在手和环境干燥、安全的情况下，断开不必要的电源。"
+    },
+    {
+      "id": "cabinet",
+      "name": "敞开的柜门",
+      "lesson": "关好柜门，并提前固定容易倾倒的高柜。"
+    }
+  ],
+  "summary": "台风来临前，及时收回阳台物品，关好门窗，安全断开不必要的电源，并固定容易倾倒的家具。红圈只是识别标记，不代表现实隐患已被处理。"
+}
+metadata/skin = {
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/typhoon-scene-v3/scene.webp",
+  "safe": "/levels/typhoon-scene-v3/safe.webp",
+  "clean": "/levels/typhoon-scene-v3/clean.webp",
+  "mask": "/levels/typhoon-scene-v3/targets-mask.png",
+  "family": "/levels/typhoon-scene-v3/family.png",
+  "familyBox": {
+    "x": 393,
+    "y": 357,
+    "w": 197,
+    "h": 477
+  },
+  "outside": {
+    "x": 225,
+    "y": 79,
+    "w": 323,
+    "h": 452
+  },
+  "entry": {
+    "x": 235,
+    "y": 511,
+    "w": 166,
+    "h": 109
+  },
+  "targets": {
+    "plant": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 431,
+        "y": 250,
+        "w": 80,
+        "h": 108
+      },
+      "icon": "/levels/typhoon-scene-v3/plant-icon.png"
+    },
+    "window": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 105,
+        "y": 44,
+        "w": 117,
+        "h": 523
+      },
+      "icon": "/levels/typhoon-scene-v3/window-icon.png"
+    },
+    "rail": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 222,
+        "y": 158,
+        "w": 109,
+        "h": 190
+      },
+      "icon": "/levels/typhoon-scene-v3/rail-icon.png"
+    },
+    "powerstrip": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 127,
+        "y": 984,
+        "w": 132,
+        "h": 78
+      },
+      "icon": "/levels/typhoon-scene-v3/powerstrip-icon.png"
+    },
+    "cabinet": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 585,
+        "y": 175,
+        "w": 66,
+        "h": 327
+      },
+      "icon": "/levels/typhoon-scene-v3/cabinet-icon.png"
+    }
+  }
+}
+metadata/presentation = {
+  "location": "客厅 · 阳台",
+  "environment": "storm",
+  "characters": "storm",
+  "audio": "storm",
+  "timer": "pressure-bar",
+  "clues": "on-demand",
+  "characterAudio": "none",
+  "opening": "在50秒内找齐五处隐患。需要线索时，点右上角灯泡。",
+  "reveal": "五处已识别 · 正在展示规范处置后的情景",
+  "completeTitle": "做好准备，家更安心",
+  "pauseNote": "请在50秒内找齐五处隐患；超时未找齐，本次挑战失败，可重新挑战。暂停不计时。这是识别训练，现实中应提前准备；风雨猛烈或电器周围潮湿时，不要冒险操作。",
+  "endingNote": "画面为规范处置后的效果示意",
+  "preview": "在50秒内找齐五处隐患。需要线索时点灯泡；未找齐可重新挑战。",
+  "warnings": [
+    "风正在增强，还有隐患没有找到。",
+    "雨开始飘入室内，风声更强了。",
+    "时间快到了，再仔细看看还有哪些隐患。"
+  ],
+  "celebration": true
+}
+metadata/source = {
+  "rules": {
+    "path": "content/scenes/typhoon-home/rules.json",
+    "sha256": "1ce05ce6b6e15596c483caf2e22e57a5d93061d27f8b985c1b69e8b4d669ae34"
+  },
+  "skin": {
+    "path": "content/scenes/typhoon-home/skin.json",
+    "sha256": "2d8c3da8a3e36949a0c2c5046543bc547c689a11efdbbe455a1213dc706916e6"
+  },
+  "presentation": {
+    "path": "content/scenes/typhoon-home/presentation.json",
+    "sha256": "7af2e2974e9cfc6e69f3fd8c77dd63259f2c537cbfabfd6252c766a253503e9a"
+  },
+  "scene": {
+    "path": "public/levels/typhoon-scene-v3/scene.webp",
+    "sha256": "9e1d7caeb997aa19a8d7a6c598e4db1f2d048ce504264cd09f140972da539c21"
+  },
+  "clean": {
+    "path": "public/levels/typhoon-scene-v3/clean.webp",
+    "sha256": "5d22a6f8407b731efea8091ed1d51d8d063981d7121222474ea45410a6a70b7c"
+  },
+  "safe": {
+    "path": "public/levels/typhoon-scene-v3/safe.webp",
+    "sha256": "7c1547d1df2766645a9bb76b8a5f03d3cdc38f65f3772a3d168062012fb1966a"
+  },
+  "family": {
+    "path": "public/levels/typhoon-scene-v3/family.png",
+    "sha256": "1b3cd33ced7df67a8c7367d54f40a3710dcc7144bea71a8fef932cd2383aae2c"
+  },
+  "mask": {
+    "path": "public/levels/typhoon-scene-v3/targets-mask.png",
+    "sha256": "85d0b77f318c8f60e404e43601957479ef3fb819d89d4ee3e11f2585bbfca126"
+  },
+  "icon:plant": {
+    "path": "public/levels/typhoon-scene-v3/plant-icon.png",
+    "sha256": "348d1fc3708f980a1a2a358104a0bdada8863d195bf596279158380f4d4de38c"
+  },
+  "icon:window": {
+    "path": "public/levels/typhoon-scene-v3/window-icon.png",
+    "sha256": "5cd707d0c6227e9644283112aa37460ab5c0d148ebebc15bdcb55fc1daecfb70"
+  },
+  "icon:rail": {
+    "path": "public/levels/typhoon-scene-v3/rail-icon.png",
+    "sha256": "7e03372bf05ddb8c4df63e6d0ffd2dbcee1205b3227669144724b5f364320f6e"
+  },
+  "icon:powerstrip": {
+    "path": "public/levels/typhoon-scene-v3/powerstrip-icon.png",
+    "sha256": "8fe846013d50eec110e0f3d06373c3357d0c60cec0a422ca4e90b5075778997d"
+  },
+  "icon:cabinet": {
+    "path": "public/levels/typhoon-scene-v3/cabinet-icon.png",
+    "sha256": "930950cda2ee5ae87cd84641d48f4a9bead259b9737df20f7b1cfa89a79fb7ae"
+  }
+}
+metadata/resources = {
+"scene": ExtResource("1"),
+"clean": ExtResource("2"),
+"safe": ExtResource("3"),
+"family": ExtResource("4"),
+"mask": ExtResource("5"),
+"icon:plant": ExtResource("6"),
+"icon:window": ExtResource("7"),
+"icon:rail": ExtResource("8"),
+"icon:powerstrip": ExtResource("9"),
+"icon:cabinet": ExtResource("10")
+}

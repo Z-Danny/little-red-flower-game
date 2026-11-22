@@ -1,0 +1,345 @@
+[gd_resource type="Resource" load_steps=14 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/scene.webp" id="1"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/clean.webp" id="2"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/ending.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/family.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/id-mask.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/forest_grill.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/smouldering_cigarette.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/forest_campfire.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/burning_paper.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/forest_fireworks.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/character-mask.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/fire-mask.png" id="12"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/forest-fire-sources-v2/smoke-mask.png" id="13"]
+
+[resource]
+metadata/rules = {
+  "feedbackVersion": 2,
+  "id": "forest-fire-sources-v2",
+  "title": "林缘的五处火源",
+  "order": 20,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "forest_grill",
+      "name": "禁火区炭烤炉",
+      "lesson": "禁火林区不能生火烧烤。"
+    },
+    {
+      "id": "smouldering_cigarette",
+      "name": "未熄烟头",
+      "lesson": "林区吸烟和遗留火种很危险。"
+    },
+    {
+      "id": "forest_campfire",
+      "name": "禁火区篝火",
+      "lesson": "禁火林区不能点篝火取暖。"
+    },
+    {
+      "id": "burning_paper",
+      "name": "林缘烧纸盆",
+      "lesson": "禁火林区不能烧纸用火。"
+    },
+    {
+      "id": "forest_fireworks",
+      "name": "林缘燃放的烟花",
+      "lesson": "禁火林区不能燃放烟花。"
+    }
+  ],
+  "summary": "禁火林区不能烧烤、吸烟遗留火种、点篝火、烧纸或燃放烟花。发现火情应立即远离并报告，不靠近捡拾火种或冒险扑救。",
+  "timeout": "fail"
+}
+metadata/skin = {
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/forest-fire-sources-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/forest-fire-sources-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/forest-fire-sources-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/forest-fire-sources-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/forest-fire-sources-v2/family.png",
+  "familyBox": {
+    "x": 0,
+    "y": 715,
+    "w": 720,
+    "h": 565
+  },
+  "targets": {
+    "forest_grill": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 70,
+        "y": 198,
+        "w": 218,
+        "h": 170
+      },
+      "icon": "/levels/hazard-batch-v2/forest-fire-sources-v2/forest_grill.png"
+    },
+    "smouldering_cigarette": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 20,
+        "y": 671,
+        "w": 184,
+        "h": 108
+      },
+      "icon": "/levels/hazard-batch-v2/forest-fire-sources-v2/smouldering_cigarette.png"
+    },
+    "forest_campfire": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 430,
+        "y": 315,
+        "w": 249,
+        "h": 101
+      },
+      "icon": "/levels/hazard-batch-v2/forest-fire-sources-v2/forest_campfire.png"
+    },
+    "burning_paper": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 85,
+        "y": 426,
+        "w": 201,
+        "h": 103
+      },
+      "icon": "/levels/hazard-batch-v2/forest-fire-sources-v2/burning_paper.png"
+    },
+    "forest_fireworks": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 562,
+        "y": 610,
+        "w": 36,
+        "h": 77
+      },
+      "icon": "/levels/hazard-batch-v2/forest-fire-sources-v2/forest_fireworks.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/forest-fire-sources-v2/character-mask.png",
+    "fireMask": "/levels/hazard-batch-v2/forest-fire-sources-v2/fire-mask.png",
+    "smokeMask": "/levels/hazard-batch-v2/forest-fire-sources-v2/smoke-mask.png",
+    "fireSources": [
+      {
+        "kind": "ember",
+        "x": 99,
+        "y": 185,
+        "w": 130,
+        "h": 125
+      },
+      {
+        "kind": "ember",
+        "x": 64,
+        "y": 657,
+        "w": 120,
+        "h": 122
+      },
+      {
+        "kind": "flame",
+        "x": 490,
+        "y": 240,
+        "w": 130,
+        "h": 114
+      },
+      {
+        "kind": "flame",
+        "x": 100,
+        "y": 365,
+        "w": 146,
+        "h": 102
+      },
+      {
+        "kind": "fountain",
+        "x": 504,
+        "y": 408,
+        "w": 150,
+        "h": 208
+      }
+    ],
+    "smokeDrift": -1
+  }
+}
+metadata/presentation = {
+  "location": "禁火林缘 · 教学观察",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "教学观察：五处火源。现实应立即远离报告。",
+  "reveal": "图示为管理人员处置并检查后的状态。",
+  "completeTitle": "五处已识别，远离火源并报告",
+  "pauseNote": "这是虚构禁火林缘的教学观察图，人物已远离火源与烟气。现实中发现火情应立即远离并报告，不在现场等待找齐，不让儿童扑火。分档演出不是实际火灾增长模型，计时不是安全等待时间。",
+  "endingNote": "完整结果图表示另一个时点：专业管理人员已处置五处火源并完成检查，人物仍在入口外。点击和红圈只记录识别，不会熄灭现实火源，也不能仅凭没有烟或红光判断余火已灭。",
+  "preview": "在虚构禁火林缘的教学图中识别五种不当火源。现实遇见火情应立即远离报告，而不是停留观察。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}
+metadata/performance = {
+  "version": 2,
+  "atmosphere": "fire",
+  "sound": "forest_edge",
+  "retreatDirection": 1,
+  "missCaption": "这里没有识别目标，隐患仍未找齐。",
+  "stages": [
+    {
+      "atMs": 0,
+      "breathMs": 2800,
+      "breathPx": 2,
+      "retractPx": 0,
+      "vignette": 0,
+      "bpm": 66,
+      "rainCount": 0,
+      "smokeCount": 16,
+      "smokeAlpha": 0.16,
+      "flameScale": 1
+    },
+    {
+      "atMs": 30000,
+      "breathMs": 2300,
+      "breathPx": 2.4,
+      "retractPx": 4,
+      "vignette": 0.06,
+      "bpm": 75,
+      "rainCount": 0,
+      "smokeCount": 32,
+      "smokeAlpha": 0.26,
+      "flameScale": 1.25
+    },
+    {
+      "atMs": 60000,
+      "breathMs": 1900,
+      "breathPx": 2.8,
+      "retractPx": 7,
+      "vignette": 0.12,
+      "bpm": 83,
+      "rainCount": 0,
+      "smokeCount": 52,
+      "smokeAlpha": 0.36,
+      "flameScale": 1.55
+    },
+    {
+      "atMs": 90000,
+      "breathMs": 1700,
+      "breathPx": 3.2,
+      "retractPx": 10,
+      "vignette": 0.16,
+      "bpm": 92,
+      "rainCount": 0,
+      "smokeCount": 64,
+      "smokeAlpha": 0.42,
+      "flameScale": 1.8
+    }
+  ],
+  "timing": "quarters"
+}
+metadata/source = {
+  "rules": {
+    "path": "content/scenes/forest-fire-sources-v2/rules.json",
+    "sha256": "202fcb50917deb0e40d67a79e8d5791a5298e8e0dbe507f33fe26631435a4e79"
+  },
+  "skin": {
+    "path": "content/scenes/forest-fire-sources-v2/skin.json",
+    "sha256": "9318283155357e52cc49184815a474db5ec2eb0a009363c58afb2da7d634a77d"
+  },
+  "presentation": {
+    "path": "content/scenes/forest-fire-sources-v2/presentation.json",
+    "sha256": "5d2121f95bf6cb9cf00a6630f2da11bd461b1146f7ee26a32e22bd5bc1724f83"
+  },
+  "performance": {
+    "path": "content/scenes/forest-fire-sources-v2/performance.json",
+    "sha256": "fa2d679c9e8e784203030eb08a184b030dc9b9f5b3ea5fdca6f16f29880d3ddd"
+  },
+  "scene": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/scene.webp",
+    "sha256": "242405e7b4d4532e4a22375ecc4b1c244096be3754b7db404623ac4710b97d5d"
+  },
+  "clean": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/clean.webp",
+    "sha256": "9ed580bf6e3d041b439246265edec18062365456946ef2e7503de73302f46400"
+  },
+  "safe": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/ending.webp",
+    "sha256": "9e6be8538f3ea88a4a8ec0f3782292aab0eadbe35d58917fd40d8e558f3a21a3"
+  },
+  "family": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/family.png",
+    "sha256": "1a620d84d48ab70e188c698004772c13cb8a09b5e306b13d2526576cf2b90589"
+  },
+  "mask": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/id-mask.png",
+    "sha256": "182788b600a169686fea19efc310fca7d687087fe3a324d23da7006caf47570e"
+  },
+  "icon:forest_grill": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/forest_grill.png",
+    "sha256": "48dabf9882ef560b0139853f54bb1872f86381d7260c2ed69024dd656f7b481f"
+  },
+  "icon:smouldering_cigarette": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/smouldering_cigarette.png",
+    "sha256": "bb89285cc2140683d453c08fa34b7bdb821d5b3b587a0b17516e1d1372b70ed5"
+  },
+  "icon:forest_campfire": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/forest_campfire.png",
+    "sha256": "422c21e4d74c2f16b1bafb67e2d37b037eda3b397a7bd3f82b2307a62a3a6a10"
+  },
+  "icon:burning_paper": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/burning_paper.png",
+    "sha256": "f99cd4190ee7a14e599246b5a4a1db0657beccfbc65c77f9a3c3c35109ee9701"
+  },
+  "icon:forest_fireworks": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/forest_fireworks.png",
+    "sha256": "1349819fdfb6c4a97e2528ce6edc3473c267679fcfeb7e29771a9e82d86f1192"
+  },
+  "characterMask": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/character-mask.png",
+    "sha256": "07fd6dd3310cd5b5440631f85a939433fec22a8cd543f12d689b922029b6cb2a"
+  },
+  "fireMask": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/fire-mask.png",
+    "sha256": "6c49039a3e8dbff4615a9fde91df1872ecfd17303f3d55bc615195cd7bbfca8a"
+  },
+  "smokeMask": {
+    "path": "public/levels/hazard-batch-v2/forest-fire-sources-v2/smoke-mask.png",
+    "sha256": "25b6dea3e547c9b2296f687803ea719a7b86154da9644553046927ed9ef9eaef"
+  }
+}
+metadata/resources = {
+"scene": ExtResource("1"),
+"clean": ExtResource("2"),
+"safe": ExtResource("3"),
+"family": ExtResource("4"),
+"mask": ExtResource("5"),
+"icon:forest_grill": ExtResource("6"),
+"icon:smouldering_cigarette": ExtResource("7"),
+"icon:forest_campfire": ExtResource("8"),
+"icon:burning_paper": ExtResource("9"),
+"icon:forest_fireworks": ExtResource("10"),
+"characterMask": ExtResource("11"),
+"fireMask": ExtResource("12"),
+"smokeMask": ExtResource("13")
+}

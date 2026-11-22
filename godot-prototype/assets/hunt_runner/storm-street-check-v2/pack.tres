@@ -1,0 +1,307 @@
+[gd_resource type="Resource" load_steps=14 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/scene.webp" id="1"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/clean.webp" id="2"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/ending.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/family.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/id-mask.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/flooded_underpass.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/wet_power_box.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/missing_cover.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/loose_sign.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/leaning_fence.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/character-mask.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/weather-mask.png" id="12"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/storm-street-check-v2/water-mask.png" id="13"]
+
+[resource]
+metadata/rules = {
+  "feedbackVersion": 2,
+  "id": "storm-street-check-v2",
+  "title": "风雨中的街口",
+  "order": 18,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "flooded_underpass",
+      "name": "积水的地下通道",
+      "lesson": "积水的地下通道不要进入。"
+    },
+    {
+      "id": "wet_power_box",
+      "name": "积水中的配电箱",
+      "lesson": "积水电力设施要远离。"
+    },
+    {
+      "id": "missing_cover",
+      "name": "缺失井盖的检查井",
+      "lesson": "缺失井盖，不能靠近。"
+    },
+    {
+      "id": "loose_sign",
+      "name": "连接脱开的广告牌",
+      "lesson": "大风天远离松动广告牌。"
+    },
+    {
+      "id": "leaning_fence",
+      "name": "倾斜的轻质围挡",
+      "lesson": "大风天要远离不稳围挡。"
+    }
+  ],
+  "summary": "暴雨大风时远离积水地下通道、受淹电力设施、缺失井盖、松动广告牌和不稳围挡；不要涉水靠近或自行处理。",
+  "timeout": "fail"
+}
+metadata/skin = {
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/storm-street-check-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/storm-street-check-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/storm-street-check-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/storm-street-check-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/storm-street-check-v2/family.png",
+  "familyBox": {
+    "x": 406,
+    "y": 743,
+    "w": 314,
+    "h": 537
+  },
+  "targets": {
+    "flooded_underpass": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 55,
+        "y": 126,
+        "w": 263,
+        "h": 228
+      },
+      "icon": "/levels/hazard-batch-v2/storm-street-check-v2/flooded_underpass.png"
+    },
+    "wet_power_box": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 458,
+        "y": 373,
+        "w": 205,
+        "h": 273
+      },
+      "icon": "/levels/hazard-batch-v2/storm-street-check-v2/wet_power_box.png"
+    },
+    "missing_cover": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 138,
+        "y": 440,
+        "w": 229,
+        "h": 79
+      },
+      "icon": "/levels/hazard-batch-v2/storm-street-check-v2/missing_cover.png"
+    },
+    "loose_sign": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 408,
+        "y": 41,
+        "w": 258,
+        "h": 138
+      },
+      "icon": "/levels/hazard-batch-v2/storm-street-check-v2/loose_sign.png"
+    },
+    "leaning_fence": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 59,
+        "y": 533,
+        "w": 278,
+        "h": 285
+      },
+      "icon": "/levels/hazard-batch-v2/storm-street-check-v2/leaning_fence.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/storm-street-check-v2/character-mask.png",
+    "weatherMask": "/levels/hazard-batch-v2/storm-street-check-v2/weather-mask.png",
+    "waterMask": "/levels/hazard-batch-v2/storm-street-check-v2/water-mask.png"
+  }
+}
+metadata/presentation = {
+  "location": "风雨街口 · 室内观察",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "人在安全建筑内，找出街口五处危险。",
+  "reveal": "人员已避险。积水和危险区域仍须远离。",
+  "completeTitle": "五处已识别，继续远离危险",
+  "pauseNote": "人物已在干燥、较高处的坚固建筑内并远离窗玻璃。这是教学观察，不建议在户外停留找隐患；现实中应优先避险。画面演出不是水位或灾害预测，计时不是可安全等待的时间。",
+  "endingNote": "图示为管理人员设置隔离、人员继续避险后的状态。积水、缺失井盖和松动设施仍待专业处置，找到目标不代表可以外出或涉水。",
+  "preview": "从人员已避险的教学视角观察风雨街口，识别五处危险。结局仍保留积水和待处置区域。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}
+metadata/performance = {
+  "version": 2,
+  "atmosphere": "rain",
+  "sound": "rain_street",
+  "retreatDirection": 1,
+  "missCaption": "这里没有识别目标，隐患仍未找齐。",
+  "stages": [
+    {
+      "atMs": 0,
+      "breathMs": 2800,
+      "breathPx": 2,
+      "retractPx": 0,
+      "vignette": 0,
+      "bpm": 66,
+      "rainCount": 36,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 30000,
+      "breathMs": 2300,
+      "breathPx": 2.4,
+      "retractPx": 4,
+      "vignette": 0.06,
+      "bpm": 73,
+      "rainCount": 80,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 60000,
+      "breathMs": 1900,
+      "breathPx": 2.8,
+      "retractPx": 7,
+      "vignette": 0.12,
+      "bpm": 81,
+      "rainCount": 130,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 90000,
+      "breathMs": 1700,
+      "breathPx": 3.2,
+      "retractPx": 10,
+      "vignette": 0.16,
+      "bpm": 88,
+      "rainCount": 170,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    }
+  ],
+  "timing": "quarters"
+}
+metadata/source = {
+  "rules": {
+    "path": "content/scenes/storm-street-check-v2/rules.json",
+    "sha256": "aa0f89ae498ce074b0a964030ee624018ce35434995b544211530b122fcec02b"
+  },
+  "skin": {
+    "path": "content/scenes/storm-street-check-v2/skin.json",
+    "sha256": "1fb39930b728f66aec5b33449e20733b0b2c24a59cb95742154503a77db3b644"
+  },
+  "presentation": {
+    "path": "content/scenes/storm-street-check-v2/presentation.json",
+    "sha256": "52375ed64d5702716109bc87b42dc97666a867061814123c9205e633052d67d6"
+  },
+  "performance": {
+    "path": "content/scenes/storm-street-check-v2/performance.json",
+    "sha256": "a827b1426e70fbdbe07787669d2780d5262db521790fe3a9abdf17e099eed5d0"
+  },
+  "scene": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/scene.webp",
+    "sha256": "5db5d6cae3fb0f280bc1f8c50634f9b42f7fdeb89f7c0d02d14928cf39e41a38"
+  },
+  "clean": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/clean.webp",
+    "sha256": "90fb4f56ad626e8c08748735e3e5ab467f12298d87271616d1131836d3cab3f0"
+  },
+  "safe": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/ending.webp",
+    "sha256": "e8a950bcb5446e684557e1a1e2ce18d58723d53110e5e626c1680effbbee3721"
+  },
+  "family": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/family.png",
+    "sha256": "f9dc737e114e768742f7bca7b8e2cfb6bb663df1375d2a18096822437f631075"
+  },
+  "mask": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/id-mask.png",
+    "sha256": "ad9a5c64226fadfe9997c9058d556888e9e3ac05e2f34e7f9901ca069a312e88"
+  },
+  "icon:flooded_underpass": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/flooded_underpass.png",
+    "sha256": "7e6c479e83decc2c636837244c4c56f6e485915403946793ad0df4e33018c35e"
+  },
+  "icon:wet_power_box": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/wet_power_box.png",
+    "sha256": "5ac68ec42dd2d4fba80745d57614c0dc5c66f79bd0b28c42d01cc6b446728d58"
+  },
+  "icon:missing_cover": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/missing_cover.png",
+    "sha256": "170c6e9ded949669ae592d9f3f2a217b6506cf0d6c38b18231d8987375fc3dfd"
+  },
+  "icon:loose_sign": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/loose_sign.png",
+    "sha256": "9a44924531345e096d86565fca8db2ac795b1ef0a96786dc7973469a37d3967f"
+  },
+  "icon:leaning_fence": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/leaning_fence.png",
+    "sha256": "b8ca597bbff2e47ab63cc1a033a646f1ec4012a50d037d1def57f7757e10b49b"
+  },
+  "characterMask": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/character-mask.png",
+    "sha256": "d7b717d00550c88c1df5972453f4bd613f3ce0a4c97ba031d1e57a7b934625cc"
+  },
+  "weatherMask": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/weather-mask.png",
+    "sha256": "f1bad590a56b939bb9e9bb2783accffdb543858935d3a5e3bcd9b3a310c6644d"
+  },
+  "waterMask": {
+    "path": "public/levels/hazard-batch-v2/storm-street-check-v2/water-mask.png",
+    "sha256": "2f69ce8adcc38c9b82af4272c1ffb6b7c87072c1952ee79bd697826b94c72159"
+  }
+}
+metadata/resources = {
+"scene": ExtResource("1"),
+"clean": ExtResource("2"),
+"safe": ExtResource("3"),
+"family": ExtResource("4"),
+"mask": ExtResource("5"),
+"icon:flooded_underpass": ExtResource("6"),
+"icon:wet_power_box": ExtResource("7"),
+"icon:missing_cover": ExtResource("8"),
+"icon:loose_sign": ExtResource("9"),
+"icon:leaning_fence": ExtResource("10"),
+"characterMask": ExtResource("11"),
+"weatherMask": ExtResource("12"),
+"waterMask": ExtResource("13")
+}

@@ -1,0 +1,102 @@
+{
+  "button-cue.wav": {
+    "godotSha256": "d5bdc2b64e6d8595b54cec0fd91175b6ccfeefbcaff3519320004ea17e39a3c9",
+    "source": "art-source/settlement-audio-v1/approved/03-button-a-warm.wav",
+    "sourceSha256": "d5bdc2b64e6d8595b54cec0fd91175b6ccfeefbcaff3519320004ea17e39a3c9"
+  },
+  "entry-button.webp": {
+    "godotSha256": "c4c6246f3974640538a88aa98b918db2e20e6b3c0eb37a5825e932227c88148c",
+    "source": "public/ui/painted-v1/modal-button-v2.webp",
+    "sourceSha256": "c4c6246f3974640538a88aa98b918db2e20e6b3c0eb37a5825e932227c88148c"
+  },
+  "entry-panel.webp": {
+    "godotSha256": "ce7e7b814bf443e5521b7bc5762345e3dca459ac68b946fb7e9c1be61828b55e",
+    "source": "public/ui/painted-v1/modal-panel-v2.webp",
+    "sourceSha256": "ce7e7b814bf443e5521b7bc5762345e3dca459ac68b946fb7e9c1be61828b55e"
+  },
+  "hud-back.webp": {
+    "godotSha256": "c2286e81384e10fd6febd924c7081b0be6257acdcc48cc4429b20811b83bfc48",
+    "source": "public/ui/painted-v1/back.webp",
+    "sourceSha256": "c2286e81384e10fd6febd924c7081b0be6257acdcc48cc4429b20811b83bfc48"
+  },
+  "hud-hint.webp": {
+    "godotSha256": "a226dbf91fa29ee850cb834051123346f3636114767e20ccfb3728d7c6c3b08c",
+    "source": "public/ui/painted-v1/hint.webp",
+    "sourceSha256": "a226dbf91fa29ee850cb834051123346f3636114767e20ccfb3728d7c6c3b08c"
+  },
+  "hud-pause.webp": {
+    "godotSha256": "22df2dce22dca006ad70845e89f5b9b518a5c7127e9ed16fb987f1dbd7f210c2",
+    "source": "public/ui/painted-v1/pause.webp",
+    "sourceSha256": "22df2dce22dca006ad70845e89f5b9b518a5c7127e9ed16fb987f1dbd7f210c2"
+  },
+  "journal-avatar.webp": {
+    "godotSha256": "08cdb4c06b705525679017fe3e7b4eb8442d338c39d675d748caae63df9d332c",
+    "source": "public/ui/painted-journal-v1/avatar.webp",
+    "sourceSha256": "08cdb4c06b705525679017fe3e7b4eb8442d338c39d675d748caae63df9d332c"
+  },
+  "journal-frame-body.webp": {
+    "godotSha256": "f0bda2b9409aa3491ade40ad09cd8d45297d829b63693936ef1cc301f1dfc99c",
+    "source": "public/ui/painted-journal-v1/frame-body.webp",
+    "sourceSha256": "f0bda2b9409aa3491ade40ad09cd8d45297d829b63693936ef1cc301f1dfc99c"
+  },
+  "journal-frame-footer.webp": {
+    "godotSha256": "7c51e248694e60a4c4c3d917f6451ff090ad3da1a18a718f30146932407c0947",
+    "source": "public/ui/painted-journal-v1/frame-footer.webp",
+    "sourceSha256": "7c51e248694e60a4c4c3d917f6451ff090ad3da1a18a718f30146932407c0947"
+  },
+  "journal-frame-header.webp": {
+    "godotSha256": "cb912d83f57bb0371526588904858b4a0eff1742bba43f75d9bc6fff1c61d674",
+    "source": "public/ui/painted-journal-v1/frame-header.webp",
+    "sourceSha256": "cb912d83f57bb0371526588904858b4a0eff1742bba43f75d9bc6fff1c61d674"
+  },
+  "journal-island-home.webp": {
+    "godotSha256": "f278e2880ef5a3bc15f23733cb8fd87a009db6029d8e8b5f65337337ce1a6f6b",
+    "source": "public/ui/painted-journal-v1/island-home.webp",
+    "sourceSha256": "f278e2880ef5a3bc15f23733cb8fd87a009db6029d8e8b5f65337337ce1a6f6b"
+  },
+  "journal-island-nature.webp": {
+    "godotSha256": "31c2e8edd2b655ee52834f2a593fdaabee97c12952a28b120da3a645af328837",
+    "source": "public/ui/painted-journal-v1/island-nature.webp",
+    "sourceSha256": "31c2e8edd2b655ee52834f2a593fdaabee97c12952a28b120da3a645af328837"
+  },
+  "journal-island-public.webp": {
+    "godotSha256": "eee6cee079686cd6706780ed561da838aed4281b1a5f43ecf1daa18f4e8deaf9",
+    "source": "public/ui/painted-journal-v1/island-public.webp",
+    "sourceSha256": "eee6cee079686cd6706780ed561da838aed4281b1a5f43ecf1daa18f4e8deaf9"
+  },
+  "journal-island-sign.webp": {
+    "godotSha256": "89ff4b2b12deef06f1214f2fdcbe9da547065632a908b001cb7869be73ba4d98",
+    "source": "public/ui/painted-journal-v1/island-sign.webp",
+    "sourceSha256": "89ff4b2b12deef06f1214f2fdcbe9da547065632a908b001cb7869be73ba4d98"
+  },
+  "journal-stat-flowers.webp": {
+    "godotSha256": "3d62dcd234bf0a329efb40da6263f76a9f34d3538839c374669d2dd4bf2c614e",
+    "source": "public/ui/painted-journal-v1/stat-flowers.webp",
+    "sourceSha256": "3d62dcd234bf0a329efb40da6263f76a9f34d3538839c374669d2dd4bf2c614e"
+  },
+  "journey-music.mp3": {
+    "godotSha256": "d2152a382a66e727fbd2789fd62479343a3ff8277ce998ae6e1801ddb98da6c5",
+    "source": "public/audio/journey-v1/busy-rescue-loop.mp3",
+    "sourceSha256": "d2152a382a66e727fbd2789fd62479343a3ff8277ce998ae6e1801ddb98da6c5"
+  },
+  "level-introductions.json": {
+    "godotSha256": "91ed504af73a505b20e8ebd9c01d278f51173365d15211593a45a6b2b2103756",
+    "source": "content/level-introductions.json",
+    "sourceSha256": "91ed504af73a505b20e8ebd9c01d278f51173365d15211593a45a6b2b2103756"
+  },
+  "settings-panel.webp": {
+    "godotSha256": "6c0fa8f26e6c796bcd356fe4fc9e21b6530ab4c838023fa3603326f56f55a109",
+    "source": "public/ui/painted-settings-v1/panel.png",
+    "sourceSha256": "835bde94e55b6136c4f1bf40b1adba639db3c77b9835d38dda9987218a9a5cd9"
+  },
+  "title-primary.webp": {
+    "godotSha256": "9288d22082398eb5bae74e75d75ce6ab79a9090ef00b742ff5e5f08b6a7083a1",
+    "source": "public/levels/journey-map/cover-v2/button-primary.png",
+    "sourceSha256": "142d047bbd5e9c124427e83756b2a73c95c5b81eff7c491bea8b6c0a463655b2"
+  },
+  "title-secondary.webp": {
+    "godotSha256": "a5fbbcbeb8b2e1c8ade5c90625e33fd683ba49ac1a0e3c23a9fd54de78eb2f3f",
+    "source": "public/levels/journey-map/cover-v2/button-secondary.png",
+    "sourceSha256": "71bfc4b278519e3c3f53cd0990452d7b6bb854ad2e18edd33ad4ff37ad743c0b"
+  }
+}

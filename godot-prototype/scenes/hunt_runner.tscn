@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/hunt_runner/hunt_runner.gd" id="1_runner"]
+[ext_resource type="Theme" path="res://theme/storybook.tres" id="2_theme"]
+
+[node name="HuntRunner" type="Control"]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 1024.0
+clip_contents = true
+mouse_filter = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_runner")

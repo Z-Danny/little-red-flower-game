@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "levels": {
+    "typhoon-home": {
+      "ready": true,
+      "checks": ["5 original mask targets via native GUI", "verified success, time and penalty failure, hint, pause/retry and exit", "legacy storm, no character audio, original safe painting"],
+      "limitations": ["Native storm rendering/audio mix, not pixel- or sample-identical to Canvas/WebAudio", "Device and listening checks not_run"]
+    },
+    "charging-bedroom": {
+      "ready": true,
+      "checks": ["3 original mask targets via native GUI", "verified success, time and penalty failure, hint, pause/retry and exit", "legacy breathing and quiet_electric, original safe painting"],
+      "limitations": ["Native rendering/audio mix, not pixel- or sample-identical to Canvas/WebAudio", "Device and listening checks not_run"]
+    },
+    "bedroom-night-check-v2": {
+      "ready": true,
+      "checks": ["5 original mask targets via native GUI", "verified success, time and penalty failure, hint, pause/retry and exit", "quarter stages, electrical anchor and original safe painting"],
+      "limitations": ["Native rendering/audio mix, not pixel- or sample-identical to Canvas/WebAudio", "Device and listening checks not_run"]
+    },
+    "kitchen-before-cooking-v2": {
+      "ready": true,
+      "checks": ["5 original mask targets via native GUI", "verified success, time and penalty failure, hint, pause/retry and exit", "kitchen_check quarter stages and original safe painting"],
+      "limitations": ["Native rendering/audio mix, not pixel- or sample-identical to Canvas/WebAudio", "Device and listening checks not_run"]
+    },
+    "clear-corridor-check-v2": {
+      "ready": true,
+      "checks": ["5 original mask targets via native GUI", "verified success, time and penalty failure, hint, pause/retry and exit", "corridor quarter stages and original safe painting"],
+      "limitations": ["Native rendering/audio mix, not pixel- or sample-identical to Canvas/WebAudio", "Device and listening checks not_run"]
+    },
+    "quake-bedroom-v2": {
+      "ready": true,
+      "checks": ["5 original mask targets via native GUI", "verified success, time and penalty failure, hint, pause/retry and exit", "preparedness quarter stages and original safe painting"],
+      "limitations": ["Native rendering/audio mix, not pixel- or sample-identical to Canvas/WebAudio", "Device and listening checks not_run"]
+    },
+    "storm-street-check-v2": {
+      "ready": true,
+      "checks": ["5 original mask targets via native GUI", "verified success, time and penalty failure, hint, pause/retry and exit", "rain_street quarter stages, weather/water masks and original safe painting"],
+      "limitations": ["Existing high sign partly overlaps the default HUD; lower original mask pixels remain reachable", "Native rendering/audio mix, not pixel- or sample-identical to Canvas/WebAudio", "Device and listening checks not_run"]
+    },
+    "thunder-park-v2": {
+      "ready": true,
+      "checks": ["5 original mask targets via native GUI", "verified success, time and penalty failure, hint, pause/retry and exit", "thunder_park quarter stages, weather/water/sky masks and original safe painting"],
+      "limitations": ["Native rendering/audio mix, not pixel- or sample-identical to Canvas/WebAudio", "Device and listening checks not_run"]
+    },
+    "forest-fire-sources-v2": {
+      "ready": true,
+      "checks": ["5 original mask targets via native GUI", "verified success, time and penalty failure, hint, pause/retry and exit", "forest_edge quarter stages, authored flame/smoke anchors and original safe painting"],
+      "limitations": ["Native flame geometry/audio mix, not pixel- or sample-identical to Canvas/WebAudio", "Device and listening checks not_run"]
+    }
+  }
+}

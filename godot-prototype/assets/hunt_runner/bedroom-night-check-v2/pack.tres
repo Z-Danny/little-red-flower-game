@@ -1,0 +1,302 @@
+[gd_resource type="Resource" load_steps=12 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/scene.webp" id="1"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/clean.webp" id="2"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/ending.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/family.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/id-mask.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/covered_phone.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/damaged_lead.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/swollen_bank.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/folded_blanket.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/covered_heater.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/bedroom-night-check-v2/character-mask.png" id="11"]
+
+[resource]
+metadata/rules = {
+  "feedbackVersion": 2,
+  "id": "bedroom-night-check-v2",
+  "title": "睡前的卧室",
+  "order": 14,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "covered_phone",
+      "name": "被枕头盖住的充电手机",
+      "lesson": "充电手机不能埋在枕头下。"
+    },
+    {
+      "id": "damaged_lead",
+      "name": "破损充电组件",
+      "lesson": "破损充电线应停用。"
+    },
+    {
+      "id": "swollen_bank",
+      "name": "鼓胀充电宝",
+      "lesson": "鼓胀的充电宝不能继续用。"
+    },
+    {
+      "id": "folded_blanket",
+      "name": "折叠通电的电热毯",
+      "lesson": "电热毯不能折叠通电。"
+    },
+    {
+      "id": "covered_heater",
+      "name": "被衣服覆盖的取暖器",
+      "lesson": "取暖器上不能盖衣服。"
+    }
+  ],
+  "summary": "充电设备不要被枕头覆盖；破损充电组件和鼓胀电池应停用。电热毯不能折叠通电，取暖器上不能覆盖衣服。",
+  "timeout": "fail"
+}
+metadata/skin = {
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/bedroom-night-check-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/bedroom-night-check-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/bedroom-night-check-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/bedroom-night-check-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/bedroom-night-check-v2/family.png",
+  "familyBox": {
+    "x": 229,
+    "y": 353,
+    "w": 360,
+    "h": 482
+  },
+  "targets": {
+    "covered_phone": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 168,
+        "w": 172,
+        "h": 176
+      },
+      "icon": "/levels/hazard-batch-v2/bedroom-night-check-v2/covered_phone.png"
+    },
+    "damaged_lead": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 50,
+        "y": 736,
+        "w": 242,
+        "h": 224
+      },
+      "icon": "/levels/hazard-batch-v2/bedroom-night-check-v2/damaged_lead.png"
+    },
+    "swollen_bank": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 571,
+        "y": 327,
+        "w": 149,
+        "h": 109
+      },
+      "icon": "/levels/hazard-batch-v2/bedroom-night-check-v2/swollen_bank.png"
+    },
+    "folded_blanket": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 211,
+        "y": 215,
+        "w": 280,
+        "h": 223
+      },
+      "icon": "/levels/hazard-batch-v2/bedroom-night-check-v2/folded_blanket.png"
+    },
+    "covered_heater": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 418,
+        "y": 744,
+        "w": 302,
+        "h": 496
+      },
+      "icon": "/levels/hazard-batch-v2/bedroom-night-check-v2/covered_heater.png"
+    }
+  },
+  "effects": {
+    "electricSparks": [
+      {
+        "x": 264,
+        "y": 940,
+        "radius": 30,
+        "periodMs": 4200,
+        "offsetMs": 900
+      }
+    ],
+    "characterMask": "/levels/hazard-batch-v2/bedroom-night-check-v2/character-mask.png"
+  }
+}
+metadata/presentation = {
+  "location": "卧室 · 取暖与充电",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "睡前检查：找出五处充电和取暖隐患。",
+  "reveal": "识别完成。异常设备停用，交专业人员处理。",
+  "completeTitle": "五处已识别，异常设备停用",
+  "pauseNote": "这是平时的识别训练，只观察、不触碰。儿童发现异常应告诉成人，鼓胀电池由专业人员处理。红圈不代表完成现实处置；未命中也不证明其他位置安全。计时仅为训练用时，不是事故倒计时。",
+  "endingNote": "图示为另一个时点的处理结果。鼓胀电池仍属异常，停用不等于风险消失；破损组件和异常电池须由专业人员处理。",
+  "preview": "冬夜的卧室里有五处充电与取暖隐患。观察同一幅场景，圈出问题，不操作设备。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}
+metadata/performance = {
+  "version": 2,
+  "atmosphere": "indoor",
+  "sound": "quiet_electric",
+  "retreatDirection": -1,
+  "missCaption": "这里没有识别目标，隐患仍未找齐。",
+  "stages": [
+    {
+      "atMs": 0,
+      "breathMs": 2800,
+      "breathPx": 2,
+      "retractPx": 0,
+      "vignette": 0,
+      "bpm": 64,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 30000,
+      "breathMs": 2300,
+      "breathPx": 2.4,
+      "retractPx": 4,
+      "vignette": 0.06,
+      "bpm": 71,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 60000,
+      "breathMs": 1900,
+      "breathPx": 2.8,
+      "retractPx": 7,
+      "vignette": 0.12,
+      "bpm": 77,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 90000,
+      "breathMs": 1700,
+      "breathPx": 3.2,
+      "retractPx": 10,
+      "vignette": 0.16,
+      "bpm": 84,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    }
+  ],
+  "timing": "quarters"
+}
+metadata/source = {
+  "rules": {
+    "path": "content/scenes/bedroom-night-check-v2/rules.json",
+    "sha256": "6f9c8b929ca3bbf9607340d8e0241b2f8eeb0b888d4555292813ca22db7d72d2"
+  },
+  "skin": {
+    "path": "content/scenes/bedroom-night-check-v2/skin.json",
+    "sha256": "a23131e5783b259a1a03757cee0fc6380f2e9ec121572acc136a6088896f4ccb"
+  },
+  "presentation": {
+    "path": "content/scenes/bedroom-night-check-v2/presentation.json",
+    "sha256": "d6de404f9bd5fa40f52deef48fe84f64c2bea377d5832ba82d004468148fbb64"
+  },
+  "performance": {
+    "path": "content/scenes/bedroom-night-check-v2/performance.json",
+    "sha256": "dad1497419de71feeff64cc1c6f39ac9c10ec1b9fe21df177e1258042df52606"
+  },
+  "scene": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/scene.webp",
+    "sha256": "3ccd4a1c59c10734a7bc977cc5a65790a320f9aa0b8cd8f2a6d4c404ec6bf537"
+  },
+  "clean": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/clean.webp",
+    "sha256": "f08aeb90916c8d2ca5d979e913b01911edf6d4bcf0e4636ac473107a998345ff"
+  },
+  "safe": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/ending.webp",
+    "sha256": "e6e8066b57fae14ed38f9d501c1d52d2f227b9527e05f069f714591c950f32cd"
+  },
+  "family": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/family.png",
+    "sha256": "52e8e8d780d9f45c683befc70bfd5af43050389cdf7d784e46d12115b68820a1"
+  },
+  "mask": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/id-mask.png",
+    "sha256": "02f3c324f2b80f60287f4820d6987b9be33b52be626a9f70380e1e8b3df57daa"
+  },
+  "icon:covered_phone": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/covered_phone.png",
+    "sha256": "ba668371f1e428a3b0789bf8dccab3aa1f4060d542e4293e40d4fff7e90a00bf"
+  },
+  "icon:damaged_lead": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/damaged_lead.png",
+    "sha256": "36dd59a57212d95d18178d65debd40da78f75ec86c8cb3f38952e81dfb636778"
+  },
+  "icon:swollen_bank": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/swollen_bank.png",
+    "sha256": "442c98cb830e5965fa8c700726772b06ccc385851abf87be613db786048600ce"
+  },
+  "icon:folded_blanket": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/folded_blanket.png",
+    "sha256": "d91a9408e1b8b428e1e37229895d59dd97f61750698917e3cc438b7f90f59838"
+  },
+  "icon:covered_heater": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/covered_heater.png",
+    "sha256": "ea84dce3c0bac0714b7fc079453937844ddd01868c31569ddbf96452d20b2a0e"
+  },
+  "characterMask": {
+    "path": "public/levels/hazard-batch-v2/bedroom-night-check-v2/character-mask.png",
+    "sha256": "7582bffc17222327d15529fdbe57f71811b76bd48daca7c36080db5e9b2b33d0"
+  }
+}
+metadata/resources = {
+"scene": ExtResource("1"),
+"clean": ExtResource("2"),
+"safe": ExtResource("3"),
+"family": ExtResource("4"),
+"mask": ExtResource("5"),
+"icon:covered_phone": ExtResource("6"),
+"icon:damaged_lead": ExtResource("7"),
+"icon:swollen_bank": ExtResource("8"),
+"icon:folded_blanket": ExtResource("9"),
+"icon:covered_heater": ExtResource("10"),
+"characterMask": ExtResource("11")
+}

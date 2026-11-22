@@ -1,0 +1,201 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scripts/map_level_stop.gd" id="1"]
+[ext_resource type="Shader" path="res://assets/map_ui/map_muted_art.gdshader" id="2"]
+[ext_resource type="FontFile" path="res://assets/ui/flower-ui.woff2" id="3"]
+
+[sub_resource type="StyleBoxEmpty" id="Empty"]
+
+[sub_resource type="StyleBoxFlat" id="Focus"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.98, 0.87, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 3.0
+expand_margin_top = 2.0
+expand_margin_right = 3.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="Shadow"]
+bg_color = Color(0.16, 0.17, 0.10, 0.5)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0.16, 0.17, 0.10, 0.42)
+shadow_size = 5
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="AvailableRim"]
+bg_color = Color(0.87, 0.67, 0.32, 0.75)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.927, 0.67, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(1, 0.81, 0.37, 0.82)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="NumberBadge"]
+bg_color = Color(1, 0.964, 0.862, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.60, 0.45, 0.30, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+shadow_color = Color(0.16, 0.17, 0.10, 0.32)
+shadow_size = 3
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="FontVariation" id="SignFont"]
+base_font = ExtResource("3")
+variation_opentype = {2003265652: 750}
+
+[sub_resource type="ShaderMaterial" id="MutedPlaque"]
+shader = ExtResource("2")
+shader_parameter/saturation = 0.6
+shader_parameter/brightness = 0.82
+
+[sub_resource type="ShaderMaterial" id="MutedPlant"]
+shader = ExtResource("2")
+shader_parameter/saturation = 0.17
+shader_parameter/brightness = 0.91
+
+[node name="MapLevelStop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1")
+plaque_rim = SubResource("AvailableRim")
+plaque_shadow = SubResource("Shadow")
+muted_plaque = SubResource("MutedPlaque")
+muted_plant = SubResource("MutedPlant")
+
+[node name="Plant" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -40.0
+offset_top = -82.0
+offset_right = 40.0
+focus_mode = 0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Number" type="Label" parent="Plant"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 51.0
+offset_top = 52.0
+offset_right = 79.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.204, 0.373, 0.282, 1)
+theme_override_fonts/font = SubResource("SignFont")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("NumberBadge")
+text = "01"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Plaque" type="Button" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(216, 60)
+layout_mode = 0
+offset_right = 216.0
+offset_bottom = 60.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("Empty")
+theme_override_styles/pressed = SubResource("Empty")
+theme_override_styles/hover = SubResource("Empty")
+theme_override_styles/disabled = SubResource("Empty")
+theme_override_styles/focus = SubResource("Focus")
+
+[node name="Rim" type="Panel" parent="Plaque"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 0.0
+offset_top = 1.0
+offset_right = 216.0
+offset_bottom = 59.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Shadow")
+
+[node name="Face" type="TextureRect" parent="Plaque"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 2.0
+offset_right = 216.0
+offset_bottom = 58.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Plaque"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 203.0
+offset_bottom = 35.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.996, 0.965, 1)
+theme_override_colors/font_shadow_color = Color(0.11, 0.17, 0.13, 0.85)
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = SubResource("SignFont")
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Status" type="Label" parent="Plaque"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 13.0
+offset_top = 34.0
+offset_right = 203.0
+offset_bottom = 54.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.96, 0.90, 0.76, 1)
+theme_override_colors/font_shadow_color = Color(0.11, 0.17, 0.13, 0.8)
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 15
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Motif" type="TextureRect" parent="Plaque"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 185.0
+offset_top = 8.0
+offset_right = 205.0
+offset_bottom = 28.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="StateMark" type="TextureRect" parent="Plaque"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 186.0
+offset_top = 32.0
+offset_right = 205.0
+offset_bottom = 51.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5

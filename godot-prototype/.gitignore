@@ -1,0 +1,9 @@
+.godot/
+/export_credentials.cfg
+/build/
+/exports/
+*.pck
+*.wasm
+*.exe
+*.tpz
+*.zip

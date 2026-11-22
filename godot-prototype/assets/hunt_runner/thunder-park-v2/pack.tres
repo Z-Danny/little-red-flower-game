@@ -1,0 +1,314 @@
+[gd_resource type="Resource" load_steps=15 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/scene.webp" id="1"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/clean.webp" id="2"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/ending.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/family.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/id-mask.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/isolated_tree.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/open_gazebo.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/pond_platform.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/open_cart.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/camping_tent.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/character-mask.png" id="11"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/weather-mask.png" id="12"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/water-mask.png" id="13"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/thunder-park-v2/sky-mask.png" id="14"]
+
+[resource]
+metadata/rules = {
+  "feedbackVersion": 2,
+  "id": "thunder-park-v2",
+  "title": "雷雨来临的公园",
+  "order": 19,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "isolated_tree",
+      "name": "孤立高树下方",
+      "lesson": "雷雨时不要在孤立高树下避雨。"
+    },
+    {
+      "id": "open_gazebo",
+      "name": "四面敞开的凉亭",
+      "lesson": "开敞凉亭不是安全避雷处。"
+    },
+    {
+      "id": "pond_platform",
+      "name": "池塘边的钓台",
+      "lesson": "雷雨时应离开水边。"
+    },
+    {
+      "id": "open_cart",
+      "name": "开放式高尔夫球车",
+      "lesson": "开放式球车不能当避雷处。"
+    },
+    {
+      "id": "camping_tent",
+      "name": "普通露营帐篷",
+      "lesson": "帐篷能挡雨，不能作为避雷处。"
+    }
+  ],
+  "summary": "雷雨中不要把孤立高树、开敞凉亭、水边钓台、开放式球车或普通帐篷当作安全避雷处，应进入合适的坚固建筑避险并远离窗户。",
+  "timeout": "fail"
+}
+metadata/skin = {
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/thunder-park-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/thunder-park-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/thunder-park-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/thunder-park-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/thunder-park-v2/family.png",
+  "familyBox": {
+    "x": 255,
+    "y": 707,
+    "w": 465,
+    "h": 361
+  },
+  "targets": {
+    "isolated_tree": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 18,
+        "y": 69,
+        "w": 245,
+        "h": 271
+      },
+      "icon": "/levels/hazard-batch-v2/thunder-park-v2/isolated_tree.png"
+    },
+    "open_gazebo": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 346,
+        "y": 269,
+        "w": 202,
+        "h": 131
+      },
+      "icon": "/levels/hazard-batch-v2/thunder-park-v2/open_gazebo.png"
+    },
+    "pond_platform": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 103,
+        "y": 464,
+        "w": 256,
+        "h": 109
+      },
+      "icon": "/levels/hazard-batch-v2/thunder-park-v2/pond_platform.png"
+    },
+    "open_cart": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 385,
+        "y": 466,
+        "w": 163,
+        "h": 147
+      },
+      "icon": "/levels/hazard-batch-v2/thunder-park-v2/open_cart.png"
+    },
+    "camping_tent": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 52,
+        "y": 616,
+        "w": 265,
+        "h": 128
+      },
+      "icon": "/levels/hazard-batch-v2/thunder-park-v2/camping_tent.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/thunder-park-v2/character-mask.png",
+    "weatherMask": "/levels/hazard-batch-v2/thunder-park-v2/weather-mask.png",
+    "waterMask": "/levels/hazard-batch-v2/thunder-park-v2/water-mask.png",
+    "skyMask": "/levels/hazard-batch-v2/thunder-park-v2/sky-mask.png"
+  }
+}
+metadata/presentation = {
+  "location": "公园 · 室内教学观察",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "教学观察：找出五处不能避雷的位置。",
+  "reveal": "人员已在安全建筑内，雷雨中继续避免户外活动。",
+  "completeTitle": "五处已识别，雷雨中不去户外",
+  "pauseNote": "人物已经进入具备水电设施的坚固服务建筑，并远离窗户。雷雨中户外没有安全位置，本关五个目标不是全部危险位置；不要在户外等候或找目标。计时仅为训练用时，不表示雷雨结束时间。",
+  "endingNote": "图示中人员继续留在安全建筑内，五处户外位置仍无人停留，雷雨并未因识别完成而停止。本关不提供重新外出的倒计时。",
+  "preview": "人员已在建筑内。认识五种不能当作安全避雷处的位置，不把未命中的户外地点误当安全区。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}
+metadata/performance = {
+  "version": 2,
+  "atmosphere": "thunder",
+  "sound": "thunder_park",
+  "retreatDirection": 1,
+  "missCaption": "这里不是本关目标；雷雨中户外都不安全。",
+  "stages": [
+    {
+      "atMs": 0,
+      "breathMs": 2800,
+      "breathPx": 2,
+      "retractPx": 0,
+      "vignette": 0,
+      "bpm": 66,
+      "rainCount": 36,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 30000,
+      "breathMs": 2300,
+      "breathPx": 2.4,
+      "retractPx": 4,
+      "vignette": 0.06,
+      "bpm": 73,
+      "rainCount": 80,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 60000,
+      "breathMs": 1900,
+      "breathPx": 2.8,
+      "retractPx": 7,
+      "vignette": 0.12,
+      "bpm": 79,
+      "rainCount": 130,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 90000,
+      "breathMs": 1700,
+      "breathPx": 3.2,
+      "retractPx": 10,
+      "vignette": 0.16,
+      "bpm": 86,
+      "rainCount": 170,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    }
+  ],
+  "timing": "quarters"
+}
+metadata/source = {
+  "rules": {
+    "path": "content/scenes/thunder-park-v2/rules.json",
+    "sha256": "2f1af3e428e24a962f3819ca774ff24f1ad252d1e3ee6ea8ee6ca74468ffacf7"
+  },
+  "skin": {
+    "path": "content/scenes/thunder-park-v2/skin.json",
+    "sha256": "572888f11c5d50fb7e368ec13335a828ec481713ca7e10dc1080d85758b4f987"
+  },
+  "presentation": {
+    "path": "content/scenes/thunder-park-v2/presentation.json",
+    "sha256": "6164d6464e7ac3365ad100163f7adf7fcabc2bf51e2df002f5d3cc78fc1a6a71"
+  },
+  "performance": {
+    "path": "content/scenes/thunder-park-v2/performance.json",
+    "sha256": "100167279b7c6eff6a8324fbbf322b6acf90df9e7240e7a8da26bb773aa32e0f"
+  },
+  "scene": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/scene.webp",
+    "sha256": "44d01a16ccde0cac1a5d44cdce1678bbeebd0e86645a3971698c4e160537afc0"
+  },
+  "clean": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/clean.webp",
+    "sha256": "6d340e221d917378d3d9e7080c287a9c18acb4bfade16db6b5935067f5715d8c"
+  },
+  "safe": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/ending.webp",
+    "sha256": "5a086b6dc5d812f121264a6826002a40d59118daa7d8a2f5b40d1cebb30a50cd"
+  },
+  "family": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/family.png",
+    "sha256": "ad0dbb19c932b313ceb9210396ebddcbb53dee33a8c63188961c82d7344fefb1"
+  },
+  "mask": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/id-mask.png",
+    "sha256": "209b0290c9dc03b7441b38a808c487a5ecd26b55396874491e9e3477a2484dfe"
+  },
+  "icon:isolated_tree": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/isolated_tree.png",
+    "sha256": "9717d079aa4ea76cfd75ab6d11e5f09de02971c36f29f8174fbe581dc72143c7"
+  },
+  "icon:open_gazebo": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/open_gazebo.png",
+    "sha256": "d7fdef34233efd51e88cdd69fe20f356cd221038cb461dd7a3fec8a59fc99d94"
+  },
+  "icon:pond_platform": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/pond_platform.png",
+    "sha256": "a23e77f07079dd21c0c16f593b61896fa1431c447dfcbd254c114c4ef0ed2953"
+  },
+  "icon:open_cart": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/open_cart.png",
+    "sha256": "ea39b73056bcf25834e99547a42202a86ce2e483433f17b903c9ba2679fb17ab"
+  },
+  "icon:camping_tent": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/camping_tent.png",
+    "sha256": "527a2c8108790f1ab186fd45da9e00abd624323ad5876fb7f3037b6420f8bc22"
+  },
+  "characterMask": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/character-mask.png",
+    "sha256": "1b1aa2ffdb9d5e07f4cfbf2889e070e5a3e1a370ff5a76935e4252f48b01af08"
+  },
+  "weatherMask": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/weather-mask.png",
+    "sha256": "8cc3e405c6b662795667e08505152f44009f43a71d5ec619bb19d22cf2af029b"
+  },
+  "waterMask": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/water-mask.png",
+    "sha256": "cb6c1a697739d4f2248d50f6523287805f8b9a7822065ed4c3a7dfaa48f0bbc7"
+  },
+  "skyMask": {
+    "path": "public/levels/hazard-batch-v2/thunder-park-v2/sky-mask.png",
+    "sha256": "615a1d698e0877d1ac6842e3311734afb84ccf53a29cdab5176696770a81ab26"
+  }
+}
+metadata/resources = {
+"scene": ExtResource("1"),
+"clean": ExtResource("2"),
+"safe": ExtResource("3"),
+"family": ExtResource("4"),
+"mask": ExtResource("5"),
+"icon:isolated_tree": ExtResource("6"),
+"icon:open_gazebo": ExtResource("7"),
+"icon:pond_platform": ExtResource("8"),
+"icon:open_cart": ExtResource("9"),
+"icon:camping_tent": ExtResource("10"),
+"characterMask": ExtResource("11"),
+"weatherMask": ExtResource("12"),
+"waterMask": ExtResource("13"),
+"skyMask": ExtResource("14")
+}

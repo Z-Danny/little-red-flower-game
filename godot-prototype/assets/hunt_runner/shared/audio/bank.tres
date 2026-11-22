@@ -1,0 +1,324 @@
+[gd_resource type="Resource" load_steps=82 format=3]
+
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/victory.wav" id="1"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/failure.wav" id="2"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/tap.wav" id="3"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-found.wav" id="4"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-wrong.wav" id="5"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-resolve.wav" id="6"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-quiet_electric-found.wav" id="7"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-quiet_electric-wrong.wav" id="8"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-quiet_electric-resolve.wav" id="9"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-found.wav" id="10"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-wrong.wav" id="11"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-quiet_electric-resolve.wav" id="12"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-kitchen_check-resolve.wav" id="13"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-corridor-resolve.wav" id="14"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-preparedness-resolve.wav" id="15"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-rain_street-resolve.wav" id="16"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-thunder_park-resolve.wav" id="17"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-forest_edge-resolve.wav" id="18"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-quiet_electric-note0.wav" id="19"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-quiet_electric-note1.wav" id="20"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-quiet_electric-note2.wav" id="21"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-quiet_electric-hold.wav" id="22"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-quiet_electric-urgent.wav" id="23"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-kitchen_check-note0.wav" id="24"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-kitchen_check-note1.wav" id="25"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-kitchen_check-note2.wav" id="26"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-kitchen_check-hold.wav" id="27"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-kitchen_check-urgent.wav" id="28"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-corridor-note0.wav" id="29"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-corridor-note1.wav" id="30"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-corridor-note2.wav" id="31"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-corridor-hold.wav" id="32"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-corridor-urgent.wav" id="33"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-preparedness-note0.wav" id="34"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-preparedness-note1.wav" id="35"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-preparedness-note2.wav" id="36"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-preparedness-hold.wav" id="37"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-preparedness-urgent.wav" id="38"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-rain_street-note0.wav" id="39"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-rain_street-note1.wav" id="40"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-rain_street-note2.wav" id="41"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-rain_street-hold.wav" id="42"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-rain_street-urgent.wav" id="43"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-thunder_park-note0.wav" id="44"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-thunder_park-note1.wav" id="45"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-thunder_park-note2.wav" id="46"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-thunder_park-hold.wav" id="47"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-thunder_park-urgent.wav" id="48"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-forest_edge-note0.wav" id="49"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-forest_edge-note1.wav" id="50"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-forest_edge-note2.wav" id="51"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-forest_edge-hold.wav" id="52"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/perf-forest_edge-urgent.wav" id="53"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-quiet_electric-note0.wav" id="54"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-quiet_electric-note1.wav" id="55"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-quiet_electric-note2.wav" id="56"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-note0.wav" id="57"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-note1.wav" id="58"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-note2.wav" id="59"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-note3.wav" id="60"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-note4.wav" id="61"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-note5.wav" id="62"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-note6.wav" id="63"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-note7.wav" id="64"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-hold0.wav" id="65"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-hold4.wav" id="66"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-heartbeat.wav" id="67"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-heartbeat-echo.wav" id="68"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-thunder-tone.wav" id="69"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/electric-tone.wav" id="70"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/ambience-room.wav" id="71"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/ambience-wind.wav" id="72"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/ambience-rain.wav" id="73"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/ambience-fire.wav" id="74"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/ambience-storm-wind.wav" id="75"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/ambience-storm-rain.wav" id="76"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/thunder.wav" id="77"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/legacy-storm-thunder.wav" id="78"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/fire-crackle.wav" id="79"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/electric-noise.wav" id="80"]
+[ext_resource type="AudioStream" path="res://assets/hunt_runner/shared/audio/electric-echo.wav" id="81"]
+
+[resource]
+metadata/quiet = {
+  "bpm": [
+    60,
+    72
+  ],
+  "notes": [
+    164.8138,
+    246.9417,
+    391.9954
+  ],
+  "ending": [
+    329.6276,
+    391.9954,
+    493.8833
+  ],
+  "master": 0.45,
+  "musicGain": [
+    0.025,
+    0.055
+  ],
+  "ambienceGain": 0,
+  "markMs": 800,
+  "foundMs": 90,
+  "missMs": 70,
+  "sfxMax": 0.08
+}
+metadata/profiles = {
+  "quiet_electric": {
+    "notes": [
+      164.8138,
+      246.9417,
+      391.9954
+    ],
+    "ending": [
+      329.6276,
+      391.9954,
+      493.8833
+    ],
+    "ambience": "none",
+    "wave": "sine",
+    "tail": 0.6
+  },
+  "kitchen_check": {
+    "notes": [
+      195.9977,
+      293.6648,
+      440
+    ],
+    "ending": [
+      391.9954,
+      493.8833,
+      587.3295
+    ],
+    "ambience": "room",
+    "wave": "triangle",
+    "tail": 0.45
+  },
+  "corridor": {
+    "notes": [
+      130.8128,
+      195.9977,
+      293.6648
+    ],
+    "ending": [
+      261.6256,
+      329.6276,
+      391.9954
+    ],
+    "ambience": "none",
+    "wave": "triangle",
+    "tail": 0.32
+  },
+  "preparedness": {
+    "notes": [
+      195.9977,
+      246.9417,
+      293.6648
+    ],
+    "ending": [
+      391.9954,
+      493.8833,
+      587.3295
+    ],
+    "ambience": "none",
+    "wave": "sine",
+    "tail": 0.85
+  },
+  "rain_street": {
+    "notes": [
+      146.8324,
+      220,
+      261.6256
+    ],
+    "ending": [
+      349.2282,
+      440,
+      523.2511
+    ],
+    "ambience": "rain",
+    "wave": "triangle",
+    "tail": 0.55
+  },
+  "thunder_park": {
+    "notes": [
+      164.8138,
+      246.9417,
+      293.6648
+    ],
+    "ending": [
+      391.9954,
+      493.8833,
+      587.3295
+    ],
+    "ambience": "rain",
+    "wave": "sine",
+    "tail": 0.65
+  },
+  "forest_edge": {
+    "notes": [
+      146.8324,
+      195.9977,
+      220
+    ],
+    "ending": [
+      391.9954,
+      440,
+      587.3295
+    ],
+    "ambience": "fire",
+    "wave": "triangle",
+    "tail": 0.6
+  }
+}
+metadata/mix = {
+  "master": 0.45,
+  "music": [
+    0.025,
+    0.035,
+    0.045,
+    0.055
+  ],
+  "ambience": [
+    0.02,
+    0.035,
+    0.05,
+    0.07
+  ],
+  "sfxMax": 0.08,
+  "missMs": 160,
+  "foundMs": 90,
+  "markMs": 800
+}
+metadata/approved_pcm_sha256 = {
+  "victory": "a7db14d342fa5f60135a68fed1f7107832fb750877101808853c8544a601fb49",
+  "failure": "cebab52c64fb06bcfaf20ad858f8419fbf593a2569a9b11eb0264bba036e3ef8"
+}
+metadata/resources = {
+"victory": ExtResource("1"),
+"failure": ExtResource("2"),
+"tap": ExtResource("3"),
+"legacy/storm/found": ExtResource("4"),
+"legacy/storm/wrong": ExtResource("5"),
+"legacy/storm/resolve": ExtResource("6"),
+"legacy/quiet_electric/found": ExtResource("7"),
+"legacy/quiet_electric/wrong": ExtResource("8"),
+"legacy/quiet_electric/resolve": ExtResource("9"),
+"perf/found": ExtResource("10"),
+"perf/wrong": ExtResource("11"),
+"perf/quiet_electric/resolve": ExtResource("12"),
+"perf/kitchen_check/resolve": ExtResource("13"),
+"perf/corridor/resolve": ExtResource("14"),
+"perf/preparedness/resolve": ExtResource("15"),
+"perf/rain_street/resolve": ExtResource("16"),
+"perf/thunder_park/resolve": ExtResource("17"),
+"perf/forest_edge/resolve": ExtResource("18"),
+"perf/quiet_electric/note0": ExtResource("19"),
+"perf/quiet_electric/note1": ExtResource("20"),
+"perf/quiet_electric/note2": ExtResource("21"),
+"perf/quiet_electric/hold": ExtResource("22"),
+"perf/quiet_electric/urgent": ExtResource("23"),
+"perf/kitchen_check/note0": ExtResource("24"),
+"perf/kitchen_check/note1": ExtResource("25"),
+"perf/kitchen_check/note2": ExtResource("26"),
+"perf/kitchen_check/hold": ExtResource("27"),
+"perf/kitchen_check/urgent": ExtResource("28"),
+"perf/corridor/note0": ExtResource("29"),
+"perf/corridor/note1": ExtResource("30"),
+"perf/corridor/note2": ExtResource("31"),
+"perf/corridor/hold": ExtResource("32"),
+"perf/corridor/urgent": ExtResource("33"),
+"perf/preparedness/note0": ExtResource("34"),
+"perf/preparedness/note1": ExtResource("35"),
+"perf/preparedness/note2": ExtResource("36"),
+"perf/preparedness/hold": ExtResource("37"),
+"perf/preparedness/urgent": ExtResource("38"),
+"perf/rain_street/note0": ExtResource("39"),
+"perf/rain_street/note1": ExtResource("40"),
+"perf/rain_street/note2": ExtResource("41"),
+"perf/rain_street/hold": ExtResource("42"),
+"perf/rain_street/urgent": ExtResource("43"),
+"perf/thunder_park/note0": ExtResource("44"),
+"perf/thunder_park/note1": ExtResource("45"),
+"perf/thunder_park/note2": ExtResource("46"),
+"perf/thunder_park/hold": ExtResource("47"),
+"perf/thunder_park/urgent": ExtResource("48"),
+"perf/forest_edge/note0": ExtResource("49"),
+"perf/forest_edge/note1": ExtResource("50"),
+"perf/forest_edge/note2": ExtResource("51"),
+"perf/forest_edge/hold": ExtResource("52"),
+"perf/forest_edge/urgent": ExtResource("53"),
+"legacy/quiet_electric/note0": ExtResource("54"),
+"legacy/quiet_electric/note1": ExtResource("55"),
+"legacy/quiet_electric/note2": ExtResource("56"),
+"legacy/storm/note0": ExtResource("57"),
+"legacy/storm/note1": ExtResource("58"),
+"legacy/storm/note2": ExtResource("59"),
+"legacy/storm/note3": ExtResource("60"),
+"legacy/storm/note4": ExtResource("61"),
+"legacy/storm/note5": ExtResource("62"),
+"legacy/storm/note6": ExtResource("63"),
+"legacy/storm/note7": ExtResource("64"),
+"legacy/storm/hold0": ExtResource("65"),
+"legacy/storm/hold4": ExtResource("66"),
+"legacy/storm/heartbeat": ExtResource("67"),
+"legacy/storm/heartbeat-echo": ExtResource("68"),
+"legacy/storm/thunder-tone": ExtResource("69"),
+"electric-tone": ExtResource("70"),
+"ambience/room": ExtResource("71"),
+"ambience/wind": ExtResource("72"),
+"ambience/rain": ExtResource("73"),
+"ambience/fire": ExtResource("74"),
+"ambience/storm-wind": ExtResource("75"),
+"ambience/storm-rain": ExtResource("76"),
+"thunder": ExtResource("77"),
+"legacy/storm/thunder": ExtResource("78"),
+"fire-crackle": ExtResource("79"),
+"electric-noise": ExtResource("80"),
+"electric-echo": ExtResource("81")
+}

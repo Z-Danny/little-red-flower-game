@@ -1,0 +1,293 @@
+[gd_resource type="Resource" load_steps=12 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/scene.webp" id="1"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/clean.webp" id="2"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/ending.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/family.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/id-mask.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/blocked_path.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/ebike_charging.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/wedged_fire_door.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/locked_exit.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/blocked_hydrant.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/clear-corridor-check-v2/character-mask.png" id="11"]
+
+[resource]
+metadata/rules = {
+  "feedbackVersion": 2,
+  "id": "clear-corridor-check-v2",
+  "title": "让生命通道畅通",
+  "order": 16,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "blocked_path",
+      "name": "堵路纸箱",
+      "lesson": "纸箱挡住了疏散通道。"
+    },
+    {
+      "id": "ebike_charging",
+      "name": "楼道充电的电动自行车",
+      "lesson": "电动自行车不能在楼道充电。"
+    },
+    {
+      "id": "wedged_fire_door",
+      "name": "被顶开的常闭防火门",
+      "lesson": "常闭防火门不能被顶住。"
+    },
+    {
+      "id": "locked_exit",
+      "name": "被链锁锁闭的安全出口",
+      "lesson": "安全出口不能被链锁锁住。"
+    },
+    {
+      "id": "blocked_hydrant",
+      "name": "被柜子挡住的消火栓",
+      "lesson": "消火栓前不能堆放物品。"
+    }
+  ],
+  "summary": "疏散通道和消火栓前不得堆物，电动自行车不能在楼道充电。常闭防火门不能被顶住，安全出口不能被链锁锁闭。",
+  "timeout": "fail"
+}
+metadata/skin = {
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/clear-corridor-check-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/clear-corridor-check-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/clear-corridor-check-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/clear-corridor-check-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/clear-corridor-check-v2/family.png",
+  "familyBox": {
+    "x": 32,
+    "y": 337,
+    "w": 256,
+    "h": 408
+  },
+  "targets": {
+    "blocked_path": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 0,
+        "y": 668,
+        "w": 361,
+        "h": 607
+      },
+      "icon": "/levels/hazard-batch-v2/clear-corridor-check-v2/blocked_path.png"
+    },
+    "ebike_charging": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 483,
+        "y": 577,
+        "w": 228,
+        "h": 443
+      },
+      "icon": "/levels/hazard-batch-v2/clear-corridor-check-v2/ebike_charging.png"
+    },
+    "wedged_fire_door": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 367,
+        "y": 199,
+        "w": 86,
+        "h": 445
+      },
+      "icon": "/levels/hazard-batch-v2/clear-corridor-check-v2/wedged_fire_door.png"
+    },
+    "locked_exit": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 513,
+        "y": 240,
+        "w": 170,
+        "h": 307
+      },
+      "icon": "/levels/hazard-batch-v2/clear-corridor-check-v2/locked_exit.png"
+    },
+    "blocked_hydrant": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 178,
+        "y": 293,
+        "w": 149,
+        "h": 323
+      },
+      "icon": "/levels/hazard-batch-v2/clear-corridor-check-v2/blocked_hydrant.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/clear-corridor-check-v2/character-mask.png"
+  }
+}
+metadata/presentation = {
+  "location": "住宅公共楼道",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "平时巡查：找出楼道里的五处隐患。",
+  "reveal": "识别完成。通道畅通，防火门正常闭合。",
+  "completeTitle": "五处已识别，让通道畅通",
+  "pauseNote": "这是平时的楼道隐患识别，不是火场撤离演练。发现问题应告知成人或物业，不自行操作消防、电气设施。误点只表示未命中本关目标；计时仅为训练用时。",
+  "endingNote": "图示为物业和相关责任人整改后的另一个时点。常闭防火门恢复正常闭合但能按疏散方向开启，安全出口解除链锁；不是要求所有门始终敞开。",
+  "preview": "巡查一段住宅公共楼道，圈出五处影响通行、消防设施使用或用电安全的问题。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}
+metadata/performance = {
+  "version": 2,
+  "atmosphere": "indoor",
+  "sound": "corridor",
+  "retreatDirection": -1,
+  "missCaption": "这里没有识别目标，隐患仍未找齐。",
+  "stages": [
+    {
+      "atMs": 0,
+      "breathMs": 2800,
+      "breathPx": 2,
+      "retractPx": 0,
+      "vignette": 0,
+      "bpm": 64,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 30000,
+      "breathMs": 2300,
+      "breathPx": 2.4,
+      "retractPx": 4,
+      "vignette": 0.06,
+      "bpm": 70,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 60000,
+      "breathMs": 1900,
+      "breathPx": 2.8,
+      "retractPx": 7,
+      "vignette": 0.12,
+      "bpm": 76,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 90000,
+      "breathMs": 1700,
+      "breathPx": 3.2,
+      "retractPx": 10,
+      "vignette": 0.16,
+      "bpm": 82,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    }
+  ],
+  "timing": "quarters"
+}
+metadata/source = {
+  "rules": {
+    "path": "content/scenes/clear-corridor-check-v2/rules.json",
+    "sha256": "2f23a6fda0af02c0dc4075b420687767f445a1ebca36cb962112a08311141b89"
+  },
+  "skin": {
+    "path": "content/scenes/clear-corridor-check-v2/skin.json",
+    "sha256": "4531401417d007beaaa05e01f219f659ec6f63e7fedf44e9c2d6e96c3c4afd1c"
+  },
+  "presentation": {
+    "path": "content/scenes/clear-corridor-check-v2/presentation.json",
+    "sha256": "e8653f58188ec7809b32c06e02314f1141dd47adbaccbc19ab25939446e62e8f"
+  },
+  "performance": {
+    "path": "content/scenes/clear-corridor-check-v2/performance.json",
+    "sha256": "c516962251fdb5b48236f39548230e627ee9305ce2bba94bb958f750082a30f8"
+  },
+  "scene": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/scene.webp",
+    "sha256": "efd3da0e8034e51aa6e798f1703d123b6a67ea7f3232c3e6a2ea0534de57495a"
+  },
+  "clean": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/clean.webp",
+    "sha256": "775eadd596daa715d7a55ff793155c830a559bb626145c23ed342279c4566f2e"
+  },
+  "safe": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/ending.webp",
+    "sha256": "4454269e9e085fbaf651dc9116c2c24b771f8552945d56ef164d69409a005dfb"
+  },
+  "family": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/family.png",
+    "sha256": "4be6bc96780e71098449bb4186d291d18869344a637c033eecb6a3c8483c56b6"
+  },
+  "mask": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/id-mask.png",
+    "sha256": "47f8fade8b31ebf21c9d015a4469d550928b98136bb4437f6f712cc6b9be75c1"
+  },
+  "icon:blocked_path": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/blocked_path.png",
+    "sha256": "c4318d946a1b91cbdefd473b9c262f7b459d7e0a16b748ccd71043b5f12ad2c6"
+  },
+  "icon:ebike_charging": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/ebike_charging.png",
+    "sha256": "0894b29177960037da08395f53d9685c786180bb922038cee2a0cd7340c6dc09"
+  },
+  "icon:wedged_fire_door": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/wedged_fire_door.png",
+    "sha256": "c0450c5183ba9e37e11a8ec4e9223a9d5e6c42878a05ee7508b6619a07618c42"
+  },
+  "icon:locked_exit": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/locked_exit.png",
+    "sha256": "5cbbff31e61a87d8272f4eccde7f35e1128b8be80c1f405f95e91d3901367063"
+  },
+  "icon:blocked_hydrant": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/blocked_hydrant.png",
+    "sha256": "c6349e480ae45311b5f3e5aafe239cd77814571c12c1b1ab9b8d29ff7f3cb9b4"
+  },
+  "characterMask": {
+    "path": "public/levels/hazard-batch-v2/clear-corridor-check-v2/character-mask.png",
+    "sha256": "9f1bc2559238e855dea4ff66f55b9fa5f99492dc7023e51e2c000b9f19bb0ef4"
+  }
+}
+metadata/resources = {
+"scene": ExtResource("1"),
+"clean": ExtResource("2"),
+"safe": ExtResource("3"),
+"family": ExtResource("4"),
+"mask": ExtResource("5"),
+"icon:blocked_path": ExtResource("6"),
+"icon:ebike_charging": ExtResource("7"),
+"icon:wedged_fire_door": ExtResource("8"),
+"icon:locked_exit": ExtResource("9"),
+"icon:blocked_hydrant": ExtResource("10"),
+"characterMask": ExtResource("11")
+}

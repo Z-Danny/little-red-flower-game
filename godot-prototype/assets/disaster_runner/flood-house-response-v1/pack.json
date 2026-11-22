@@ -1,0 +1,724 @@
+{
+  "rules": {
+    "version": 1,
+    "id": "flood-house-response-v1",
+    "title": "洪水围困",
+    "order": 22,
+    "kind": "response",
+    "seconds": 120,
+    "missPenalty": 0,
+    "goals": [
+      {
+        "id": "stairs",
+        "label": "靠近向上转移路线",
+        "lesson": "靠近向上转移路线"
+      },
+      {
+        "id": "power",
+        "label": "安全断电",
+        "lesson": "安全断电"
+      },
+      {
+        "id": "rescue",
+        "label": "发送位置求救",
+        "lesson": "发送位置求救"
+      },
+      {
+        "id": "drinking",
+        "label": "备好饮水",
+        "lesson": "备好饮水"
+      },
+      {
+        "id": "lighting",
+        "label": "备好照明",
+        "lesson": "备好照明"
+      },
+      {
+        "id": "aid",
+        "label": "整理备用浮材",
+        "lesson": "整理备用浮材"
+      },
+      {
+        "id": "roof",
+        "label": "转移至高处",
+        "lesson": "转移至高处"
+      }
+    ],
+    "actions": [
+      {
+        "id": "approach",
+        "source": "person",
+        "target": "stairs",
+        "input": "drop",
+        "goal": "stairs",
+        "requires": [],
+        "duration": 1100,
+        "outcome": "correct",
+        "feedback": "已沿干燥路线靠近楼梯，随时可以继续向高处转移。",
+        "motion": "move"
+      },
+      {
+        "id": "power-off",
+        "source": "breaker",
+        "target": "breaker",
+        "input": "tap",
+        "goal": "power",
+        "duration": 700,
+        "outcome": "correct",
+        "feedback": "在干燥、完好、可安全到达的位置关闭电闸。不能涉水去断电。",
+        "motion": "switch"
+      },
+      {
+        "id": "rescue-call",
+        "source": "phone",
+        "target": "person",
+        "input": "drop",
+        "goal": "rescue",
+        "requires": [
+          "stairs",
+          "power"
+        ],
+        "duration": 1000,
+        "outcome": "correct",
+        "feedback": "模拟求救信息已发出：位置、人数、被困情况。请留在高处等待救援。",
+        "motion": "call"
+      },
+      {
+        "id": "pack-water",
+        "source": "water",
+        "target": "bag",
+        "input": "drop",
+        "goal": "drinking",
+        "requires": [
+          "stairs",
+          "power"
+        ],
+        "duration": 850,
+        "outcome": "correct",
+        "feedback": "饮水已装入背包；不为取物耽误转移。",
+        "motion": "pack"
+      },
+      {
+        "id": "pack-light",
+        "source": "flashlight",
+        "target": "bag",
+        "input": "drop",
+        "goal": "lighting",
+        "requires": [
+          "stairs",
+          "power"
+        ],
+        "duration": 850,
+        "outcome": "correct",
+        "feedback": "照明已备好，不依赖可能中断的室内电源。",
+        "motion": "pack"
+      },
+      {
+        "id": "assemble-foam",
+        "source": "foam",
+        "target": "panel",
+        "input": "drop",
+        "goal": "aid",
+        "requires": [
+          "stairs",
+          "power"
+        ],
+        "duration": 1100,
+        "outcome": "correct",
+        "feedback": "已在干燥处整理备用漂浮材料。留在高处等救援，不能靠它盲目下水。",
+        "motion": "assemble"
+      },
+      {
+        "id": "assemble-panel",
+        "source": "panel",
+        "target": "foam",
+        "input": "drop",
+        "goal": "aid",
+        "requires": [
+          "stairs",
+          "power"
+        ],
+        "duration": 1100,
+        "outcome": "correct",
+        "feedback": "已在干燥处整理备用漂浮材料。留在高处等救援，不能靠它盲目下水。",
+        "motion": "assemble"
+      },
+      {
+        "id": "assemble-rope",
+        "source": "rope",
+        "target": "panel",
+        "input": "drop",
+        "goal": "aid",
+        "requires": [
+          "stairs",
+          "power"
+        ],
+        "duration": 1100,
+        "outcome": "correct",
+        "feedback": "已在干燥处整理备用漂浮材料。留在高处等救援，不能靠它盲目下水。",
+        "motion": "assemble"
+      },
+      {
+        "id": "reach-roof",
+        "source": "person",
+        "target": "roof",
+        "input": "drop",
+        "goal": "roof",
+        "requires": [
+          "stairs",
+          "power",
+          "rescue",
+          "drinking",
+          "lighting",
+          "aid"
+        ],
+        "duration": 1300,
+        "outcome": "correct",
+        "feedback": "人员和随手可取的物资已转移到高处，等待专业救援。",
+        "motion": "exit"
+      },
+      {
+        "id": "early-escape",
+        "source": "person",
+        "target": "roof",
+        "input": "drop",
+        "duration": 1000,
+        "outcome": "escape",
+        "feedback": "已先行转移到高处。训练未全部完成，不发放新花；现实中不能为了取齐物资耽误避险。",
+        "motion": "exit"
+      },
+      {
+        "id": "danger-outside",
+        "source": "person",
+        "target": "outside",
+        "input": "drop",
+        "duration": 900,
+        "outcome": "danger",
+        "feedback": "洪水浑浊、流速和水深难以判断，不要盲目涉水或游泳。",
+        "motion": "move"
+      },
+      {
+        "id": "danger-wire",
+        "source": "person",
+        "target": "wire",
+        "input": "drop",
+        "duration": 900,
+        "outcome": "danger",
+        "feedback": "发现电线落水要立即远离，不能靠近试探。",
+        "motion": "move"
+      },
+      {
+        "id": "danger-car",
+        "source": "person",
+        "target": "car",
+        "input": "drop",
+        "duration": 900,
+        "outcome": "danger",
+        "feedback": "汽车不是洪水中的安全避难处，不要返回被淹车辆或留在车里等待。",
+        "motion": "move"
+      }
+    ],
+    "summary": "洪水来临时向高处转移，准备饮水、照明和通信设备；不要盲目涉水或游泳，发现电线落水要立即远离。",
+    "opening": "拖动物品到场景中的合适位置，点击干燥墙上的电闸关闭电源。随时可把人物移到楼上先行避险。",
+    "safety": "仅在干燥、安全、来得及的条件下准备。不要涉水操作电器，不要为取物耽误转移；游戏时限不代表真实水位变化。",
+    "timeout": "外部水位已达到危险线。停止搜集物资，现实中应立即向高处转移并求救。",
+    "finishTitle": "高处等待，平安相守",
+    "revealMs": 3500
+  },
+  "skin": {
+    "framing": {
+      "sceneBounds": {
+        "x": -40,
+        "y": -281,
+        "w": 760,
+        "h": 1561
+      },
+      "backdrop": "res://assets/disaster_runner/flood-house-response-v1/flood-house-response-v1-backdrop.webp",
+      "critical": {
+        "x": 0,
+        "y": 143,
+        "w": 718,
+        "h": 1062
+      },
+      "criticalRegions": [
+        {
+          "x": 237,
+          "y": 242,
+          "w": 116,
+          "h": 113
+        },
+        {
+          "x": 163,
+          "y": 537,
+          "w": 109,
+          "h": 322
+        },
+        {
+          "x": 236,
+          "y": 629,
+          "w": 111,
+          "h": 206
+        },
+        {
+          "x": 235,
+          "y": 804,
+          "w": 96,
+          "h": 63
+        },
+        {
+          "x": 229,
+          "y": 478,
+          "w": 44,
+          "h": 22
+        },
+        {
+          "x": 282,
+          "y": 472,
+          "w": 52,
+          "h": 23
+        },
+        {
+          "x": 275,
+          "y": 530,
+          "w": 25,
+          "h": 69
+        },
+        {
+          "x": 335,
+          "y": 333,
+          "w": 160,
+          "h": 555
+        },
+        {
+          "x": 448,
+          "y": 628,
+          "w": 160,
+          "h": 206
+        },
+        {
+          "x": 473,
+          "y": 778,
+          "w": 245,
+          "h": 427
+        },
+        {
+          "x": 493,
+          "y": 170,
+          "w": 174,
+          "h": 140
+        },
+        {
+          "x": 500,
+          "y": 393,
+          "w": 188,
+          "h": 410
+        },
+        {
+          "x": 29,
+          "y": 201,
+          "w": 85,
+          "h": 118
+        },
+        {
+          "x": 17,
+          "y": 439,
+          "w": 126,
+          "h": 53
+        },
+        {
+          "x": 0,
+          "y": 381,
+          "w": 150,
+          "h": 455
+        },
+        {
+          "x": 518,
+          "y": 218,
+          "w": 112,
+          "h": 388
+        },
+        {
+          "x": 552,
+          "y": 143,
+          "w": 77,
+          "h": 264
+        }
+      ]
+    },
+    "width": 720,
+    "height": 1280,
+    "scene": "res://assets/disaster_runner/flood-house-response-v1/scene.webp",
+    "clean": "res://assets/disaster_runner/flood-house-response-v1/clean.webp",
+    "ending": "res://assets/disaster_runner/flood-house-response-v1/ending.webp",
+    "mask": "res://assets/disaster_runner/flood-house-response-v1/mask.png",
+    "sprites": {
+      "breaker": {
+        "src": "res://assets/disaster_runner/flood-house-response-v1/breaker.png",
+        "icon": "res://assets/disaster_runner/flood-house-response-v1/breaker-icon.png",
+        "box": {
+          "x": 237,
+          "y": 242,
+          "w": 116,
+          "h": 113
+        },
+        "color": [
+          255,
+          0,
+          128
+        ],
+        "label": "干燥墙上的电闸",
+        "input": "tap",
+        "fixed": true
+      },
+      "panel": {
+        "src": "res://assets/disaster_runner/flood-house-response-v1/panel.png",
+        "icon": "res://assets/disaster_runner/flood-house-response-v1/panel-icon.png",
+        "box": {
+          "x": 163,
+          "y": 537,
+          "w": 109,
+          "h": 322
+        },
+        "color": [
+          255,
+          0,
+          255
+        ],
+        "label": "备用木门板",
+        "input": "drag",
+        "fixed": false,
+        "repair": {
+          "src": "res://assets/disaster_runner/flood-house-response-v1/panel-repair.png",
+          "box": {
+            "x": 147,
+            "y": 521,
+            "w": 141,
+            "h": 354
+          }
+        }
+      },
+      "foam": {
+        "src": "res://assets/disaster_runner/flood-house-response-v1/foam.png",
+        "icon": "res://assets/disaster_runner/flood-house-response-v1/foam-icon.png",
+        "box": {
+          "x": 236,
+          "y": 629,
+          "w": 111,
+          "h": 206
+        },
+        "color": [
+          0,
+          255,
+          255
+        ],
+        "label": "泡沫板",
+        "input": "drag",
+        "fixed": false,
+        "repair": {
+          "src": "res://assets/disaster_runner/flood-house-response-v1/foam-repair.png",
+          "box": {
+            "x": 220,
+            "y": 613,
+            "w": 143,
+            "h": 238
+          }
+        }
+      },
+      "rope": {
+        "src": "res://assets/disaster_runner/flood-house-response-v1/rope.png",
+        "icon": "res://assets/disaster_runner/flood-house-response-v1/rope-icon.png",
+        "box": {
+          "x": 235,
+          "y": 804,
+          "w": 96,
+          "h": 63
+        },
+        "color": [
+          255,
+          128,
+          0
+        ],
+        "label": "绳子",
+        "input": "drag",
+        "fixed": false,
+        "repair": {
+          "src": "res://assets/disaster_runner/flood-house-response-v1/rope-repair.png",
+          "box": {
+            "x": 219,
+            "y": 788,
+            "w": 128,
+            "h": 95
+          }
+        }
+      },
+      "phone": {
+        "src": "res://assets/disaster_runner/flood-house-response-v1/phone.png",
+        "icon": "res://assets/disaster_runner/flood-house-response-v1/phone-icon.png",
+        "box": {
+          "x": 229,
+          "y": 478,
+          "w": 44,
+          "h": 22
+        },
+        "color": [
+          255,
+          0,
+          0
+        ],
+        "label": "手机",
+        "input": "drag",
+        "fixed": false,
+        "repair": {
+          "src": "res://assets/disaster_runner/flood-house-response-v1/phone-repair.png",
+          "box": {
+            "x": 213,
+            "y": 462,
+            "w": 76,
+            "h": 54
+          }
+        }
+      },
+      "flashlight": {
+        "src": "res://assets/disaster_runner/flood-house-response-v1/flashlight.png",
+        "icon": "res://assets/disaster_runner/flood-house-response-v1/flashlight-icon.png",
+        "box": {
+          "x": 282,
+          "y": 472,
+          "w": 52,
+          "h": 23
+        },
+        "color": [
+          0,
+          255,
+          0
+        ],
+        "label": "手电筒",
+        "input": "drag",
+        "fixed": false,
+        "repair": {
+          "src": "res://assets/disaster_runner/flood-house-response-v1/flashlight-repair.png",
+          "box": {
+            "x": 266,
+            "y": 456,
+            "w": 84,
+            "h": 55
+          }
+        }
+      },
+      "water": {
+        "src": "res://assets/disaster_runner/flood-house-response-v1/water.png",
+        "icon": "res://assets/disaster_runner/flood-house-response-v1/water-icon.png",
+        "box": {
+          "x": 275,
+          "y": 530,
+          "w": 25,
+          "h": 69
+        },
+        "color": [
+          0,
+          0,
+          255
+        ],
+        "label": "饮用水",
+        "input": "drag",
+        "fixed": false,
+        "repair": {
+          "src": "res://assets/disaster_runner/flood-house-response-v1/water-repair.png",
+          "box": {
+            "x": 259,
+            "y": 514,
+            "w": 57,
+            "h": 101
+          }
+        }
+      },
+      "person": {
+        "src": "res://assets/disaster_runner/flood-house-response-v1/person.png",
+        "icon": "res://assets/disaster_runner/flood-house-response-v1/person-icon.png",
+        "box": {
+          "x": 335,
+          "y": 333,
+          "w": 160,
+          "h": 555
+        },
+        "color": [
+          255,
+          255,
+          255
+        ],
+        "label": "被困家人",
+        "input": "drag",
+        "fixed": false,
+        "repair": {
+          "src": "res://assets/disaster_runner/flood-house-response-v1/person-repair.png",
+          "box": {
+            "x": 319,
+            "y": 317,
+            "w": 192,
+            "h": 587
+          }
+        }
+      },
+      "bag": {
+        "src": "res://assets/disaster_runner/flood-house-response-v1/bag.png",
+        "icon": "res://assets/disaster_runner/flood-house-response-v1/bag-icon.png",
+        "box": {
+          "x": 448,
+          "y": 628,
+          "w": 160,
+          "h": 206
+        },
+        "color": [
+          255,
+          255,
+          0
+        ],
+        "label": "应急背包",
+        "input": "drag",
+        "fixed": false,
+        "repair": {
+          "src": "res://assets/disaster_runner/flood-house-response-v1/bag-repair.png",
+          "box": {
+            "x": 432,
+            "y": 612,
+            "w": 192,
+            "h": 238
+          }
+        }
+      },
+      "chair": {
+        "src": "res://assets/disaster_runner/flood-house-response-v1/chair.png",
+        "icon": "res://assets/disaster_runner/flood-house-response-v1/chair-icon.png",
+        "box": {
+          "x": 473,
+          "y": 778,
+          "w": 245,
+          "h": 427
+        },
+        "color": [
+          128,
+          0,
+          255
+        ],
+        "label": "普通椅子",
+        "input": "drag",
+        "fixed": false,
+        "repair": {
+          "src": "res://assets/disaster_runner/flood-house-response-v1/chair-repair.png",
+          "box": {
+            "x": 457,
+            "y": 762,
+            "w": 263,
+            "h": 459
+          }
+        }
+      }
+    },
+    "zones": {
+      "roof": {
+        "box": {
+          "x": 493,
+          "y": 170,
+          "w": 174,
+          "h": 140
+        },
+        "label": "楼上安全出口"
+      },
+      "stairs": {
+        "box": {
+          "x": 500,
+          "y": 393,
+          "w": 188,
+          "h": 410
+        },
+        "label": "干燥楼梯"
+      },
+      "wire": {
+        "box": {
+          "x": 29,
+          "y": 201,
+          "w": 85,
+          "h": 118
+        },
+        "label": "门外断线",
+        "danger": true
+      },
+      "car": {
+        "box": {
+          "x": 17,
+          "y": 439,
+          "w": 126,
+          "h": 53
+        },
+        "label": "被淹汽车",
+        "danger": true
+      },
+      "outside": {
+        "box": {
+          "x": 0,
+          "y": 381,
+          "w": 150,
+          "h": 455
+        },
+        "label": "门外洪水",
+        "danger": true
+      }
+    },
+    "poses": {
+      "personStairs": {
+        "x": 518,
+        "y": 218,
+        "w": 112,
+        "h": 388
+      },
+      "personRoof": {
+        "x": 552,
+        "y": 143,
+        "w": 77,
+        "h": 264
+      },
+      "panelStored": {
+        "x": 330,
+        "y": 615,
+        "w": 65.4,
+        "h": 193.2
+      },
+      "foamStored": {
+        "x": 373.8,
+        "y": 670.2,
+        "w": 66.6,
+        "h": 123.6
+      },
+      "ropeStored": {
+        "x": 373.2,
+        "y": 775.2,
+        "w": 57.6,
+        "h": 37.8
+      }
+    },
+    "weather": [
+      [
+        {
+          "x": 0,
+          "y": 61
+        },
+        {
+          "x": 167,
+          "y": 154
+        },
+        {
+          "x": 145,
+          "y": 822
+        },
+        {
+          "x": 0,
+          "y": 911
+        }
+      ]
+    ],
+    "faces": {
+      "alert": "res://assets/disaster_runner/flood-house-response-v1/person-alert.png"
+    }
+  },
+  "safe_hold_ms": 650
+}

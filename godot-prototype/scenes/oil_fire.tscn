@@ -1,0 +1,516 @@
+[gd_scene load_steps=34 format=3]
+
+[ext_resource type="Script" path="res://scripts/oil_fire.gd" id="1_scene"]
+[ext_resource type="Script" path="res://scripts/oil_fire_timing.gd" id="2_timing"]
+[ext_resource type="Script" path="res://scripts/oil_fire_thermometer.gd" id="3_meter"]
+[ext_resource type="Script" path="res://scripts/oil_fire_effects.gd" id="4_fx"]
+[ext_resource type="Script" path="res://scripts/oil_fire_audio.gd" id="5_audio"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/room.png" id="6_room"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/pan.png" id="7_pan"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/flame.png" id="8_flame"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/gas.png" id="9_gas"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/lid.png" id="10_lid"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/water.png" id="11_water"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/cloth.png" id="12_cloth"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/plate.png" id="13_plate"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/knife.png" id="14_knife"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/worried.png" id="15_worried"]
+[ext_resource type="Texture2D" path="res://assets/oil_fire/thermometer-shell.png" id="16_shell"]
+[ext_resource type="AudioStream" path="res://assets/oil_fire/music-bed.wav" id="17_music"]
+[ext_resource type="AudioStream" path="res://assets/oil_fire/fire.wav" id="18_fire"]
+[ext_resource type="AudioStream" path="res://assets/oil_fire/gas.wav" id="19_knob_sfx"]
+[ext_resource type="AudioStream" path="res://assets/oil_fire/lid.wav" id="20_lid_sfx"]
+[ext_resource type="AudioStream" path="res://assets/oil_fire/water.wav" id="21_water_sfx"]
+[ext_resource type="AudioStream" path="res://assets/oil_fire/cloth.wav" id="22_cloth_sfx"]
+[ext_resource type="AudioStream" path="res://assets/oil_fire/flare.wav" id="23_flare"]
+[ext_resource type="AudioStream" path="res://assets/oil_fire/success.wav" id="24_success"]
+[ext_resource type="Theme" path="res://theme/storybook.tres" id="25_theme"]
+
+[sub_resource type="Resource" id="Resource_Timing"]
+resource_local_to_scene = true
+script = ExtResource("2_timing")
+duration_seconds = 50.0
+initial_risk = 0.22
+risk_relief = 0.12
+knob_seconds = 0.65
+lid_seconds = 0.85
+evacuation_seconds = 1.0
+return_seconds = 0.45
+wrong_motion_seconds = 0.9
+failure_feedback_seconds = 1.9
+safe_hold_seconds = 0.65
+focused_seconds = 2.2
+
+[sub_resource type="AtlasTexture" id="Atlas_Thermometer"]
+atlas = ExtResource("16_shell")
+region = Rect2(312, 32, 400, 1476)
+filter_clip = true
+
+[sub_resource type="StyleBoxFlat" id="Style_Header"]
+bg_color = Color(0.10, 0.18, 0.15, 0.93)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.94, 0.85, 0.64, 0.55)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="Style_Button"]
+bg_color = Color(0.25, 0.34, 0.25, 0.94)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.89, 0.81, 0.61, 0.48)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="Style_ButtonHover"]
+bg_color = Color(0.35, 0.45, 0.32, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="Style_ButtonPressed"]
+bg_color = Color(0.17, 0.25, 0.19, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="Style_Notice"]
+content_margin_left = 15.0
+content_margin_top = 9.0
+content_margin_right = 15.0
+content_margin_bottom = 9.0
+bg_color = Color(0.18, 0.22, 0.15, 0.93)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.91, 0.82, 0.57, 0.73)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="Style_Pause"]
+bg_color = Color(0.13, 0.22, 0.17, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.92, 0.82, 0.60, 0.76)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="OilFire" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+mouse_filter = 0
+theme = ExtResource("25_theme")
+script = ExtResource("1_scene")
+timing = SubResource("Resource_Timing")
+
+[node name="World" type="Node2D" parent="."]
+position = Vector2(0, -88)
+scale = Vector2(0.8, 0.8)
+
+[node name="Room" type="TextureRect" parent="World"]
+offset_right = 720.0
+offset_bottom = 1440.0
+mouse_filter = 2
+texture = ExtResource("6_room")
+expand_mode = 1
+
+[node name="RoomShade" type="ColorRect" parent="World"]
+unique_name_in_owner = true
+offset_right = 720.0
+offset_bottom = 1440.0
+mouse_filter = 2
+color = Color(0.19, 0.12, 0.12, 0.077)
+
+[node name="Burner" type="Polygon2D" parent="World"]
+unique_name_in_owner = true
+position = Vector2(244, 555)
+antialiased = true
+color = Color(1, 0.61, 0.28, 0.72)
+polygon = PackedVector2Array(-58, 0, -52, -3, -40, -5, -22, -6.5, 0, -7, 22, -6.5, 40, -5, 52, -3, 58, 0, 52, 3, 40, 5, 22, 6.5, 0, 7, -22, 6.5, -40, 5, -52, 3)
+
+[node name="Pan" type="TextureRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 146.0
+offset_top = 470.0
+offset_right = 388.0
+offset_bottom = 560.0
+mouse_filter = 2
+texture = ExtResource("7_pan")
+expand_mode = 1
+
+[node name="Flame" type="TextureRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 160.0
+offset_top = 332.0
+offset_right = 312.0
+offset_bottom = 520.0
+mouse_filter = 2
+texture = ExtResource("8_flame")
+expand_mode = 1
+
+[node name="Knob" type="TextureRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 231.0
+offset_top = 578.0
+offset_right = 271.0
+offset_bottom = 618.0
+mouse_filter = 2
+texture = ExtResource("9_gas")
+expand_mode = 1
+
+[node name="Lid" type="TextureRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 96.0
+offset_top = 927.0
+offset_right = 284.0
+offset_bottom = 1016.0
+mouse_filter = 2
+texture = ExtResource("10_lid")
+expand_mode = 1
+
+[node name="Water" type="TextureRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 355.0
+offset_top = 906.0
+offset_right = 432.0
+offset_bottom = 974.0
+mouse_filter = 2
+texture = ExtResource("11_water")
+expand_mode = 1
+
+[node name="Cloth" type="TextureRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 397.0
+offset_top = 518.0
+offset_right = 479.0
+offset_bottom = 560.0
+mouse_filter = 2
+texture = ExtResource("12_cloth")
+expand_mode = 1
+
+[node name="Plate" type="TextureRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 93.0
+offset_top = 1102.0
+offset_right = 212.0
+offset_bottom = 1166.0
+mouse_filter = 2
+texture = ExtResource("13_plate")
+expand_mode = 1
+
+[node name="Knife" type="TextureRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 272.0
+offset_top = 1036.0
+offset_right = 369.0
+offset_bottom = 1126.0
+mouse_filter = 2
+texture = ExtResource("14_knife")
+expand_mode = 1
+
+[node name="Person" type="TextureRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 395.0
+offset_top = 400.0
+offset_right = 755.33
+offset_bottom = 860.0
+mouse_filter = 2
+texture = ExtResource("15_worried")
+expand_mode = 1
+
+[node name="PanZone" type="ReferenceRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 135.0
+offset_top = 458.0
+offset_right = 400.0
+offset_bottom = 576.0
+mouse_filter = 2
+border_color = Color(0.98, 0.82, 0.53, 1)
+border_width = 2.0
+editor_only = true
+
+[node name="ExitZone" type="ReferenceRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 530.0
+offset_top = 450.0
+offset_right = 680.0
+offset_bottom = 690.0
+mouse_filter = 2
+border_color = Color(0.54, 0.88, 0.54, 1)
+border_width = 2.0
+editor_only = true
+
+[node name="SealedLidPose" type="ReferenceRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 146.0
+offset_top = 456.0
+offset_right = 322.0
+offset_bottom = 534.0
+mouse_filter = 2
+border_color = Color(0.92, 0.59, 0.33, 1)
+editor_only = true
+
+[node name="EvacuatedPose" type="ReferenceRect" parent="World"]
+unique_name_in_owner = true
+offset_left = 485.0
+offset_top = 347.0
+offset_right = 720.0
+offset_bottom = 647.0
+mouse_filter = 2
+border_color = Color(0.55, 0.78, 0.9, 1)
+editor_only = true
+
+[node name="Effects" type="Node2D" parent="World" node_paths=PackedStringArray("pan_art")]
+unique_name_in_owner = true
+z_index = 1
+script = ExtResource("4_fx")
+pan_art = NodePath("../Pan")
+
+[node name="Hud" type="Control" parent="."]
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PauseOverlay" type="Control" parent="Hud"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dim" type="ColorRect" parent="Hud/PauseOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.05, 0.10, 0.08, 0.53)
+
+[node name="PauseCard" type="Panel" parent="Hud/PauseOverlay"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 328.0
+offset_right = 490.0
+offset_bottom = 696.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Style_Pause")
+
+[node name="PausedText" type="Label" parent="Hud/PauseOverlay/PauseCard"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 16.0
+offset_right = 310.0
+offset_bottom = 70.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.78, 1)
+theme_override_font_sizes/font_size = 33
+text = "游戏暂停"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Copy" type="Label" parent="Hud/PauseOverlay/PauseCard"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 115.0
+offset_right = 351.0
+offset_bottom = 208.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 22
+text = "继续后恢复练习。油锅起火时切勿泼水。"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Resume" type="Button" parent="Hud/PauseOverlay/PauseCard"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 237.0
+offset_right = 321.0
+offset_bottom = 294.0
+theme_override_font_sizes/font_size = 24
+text = "继续练习"
+
+[node name="Header" type="Panel" parent="Hud"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 15.0
+offset_right = 562.0
+offset_bottom = 85.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Style_Header")
+
+[node name="BackButton" type="Button" parent="Hud"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 88.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 0.94, 0.78, 1)
+theme_override_colors/font_hover_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_focus_color = Color(1, 0.96, 0.84, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("Style_Button")
+theme_override_styles/hover = SubResource("Style_ButtonHover")
+theme_override_styles/pressed = SubResource("Style_ButtonPressed")
+text = "返回"
+
+[node name="PauseButton" type="Button" parent="Hud"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 96.0
+offset_top = 22.0
+offset_right = 162.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 0.94, 0.78, 1)
+theme_override_colors/font_hover_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_focus_color = Color(1, 0.96, 0.84, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("Style_Button")
+theme_override_styles/hover = SubResource("Style_ButtonHover")
+theme_override_styles/pressed = SubResource("Style_ButtonPressed")
+text = "暂停"
+
+[node name="Title" type="Label" parent="Hud"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 22.0
+offset_right = 466.0
+offset_bottom = 78.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.81, 1)
+theme_override_font_sizes/font_size = 30
+text = "油锅起火处置"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HintButton" type="Button" parent="Hud"]
+layout_mode = 0
+offset_left = 482.0
+offset_top = 22.0
+offset_right = 554.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 0.94, 0.78, 1)
+theme_override_colors/font_hover_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.96, 0.84, 1)
+theme_override_colors/font_focus_color = Color(1, 0.96, 0.84, 1)
+theme_override_font_sizes/font_size = 23
+theme_override_styles/normal = SubResource("Style_Button")
+theme_override_styles/hover = SubResource("Style_ButtonHover")
+theme_override_styles/pressed = SubResource("Style_ButtonPressed")
+text = "提示"
+
+[node name="Thermometer" type="TextureRect" parent="Hud"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 105.0
+offset_right = 70.0
+offset_bottom = 311.64
+mouse_filter = 2
+texture = SubResource("Atlas_Thermometer")
+expand_mode = 1
+
+[node name="Liquid" type="Control" parent="Hud/Thermometer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_meter")
+
+[node name="Notice" type="PanelContainer" parent="Hud"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 86.0
+offset_top = 105.0
+offset_right = 552.0
+offset_bottom = 158.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Style_Notice")
+
+[node name="NoticeText" type="Label" parent="Hud/Notice"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.79, 1)
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource("5_audio")
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("17_music")
+volume_db = -23.0
+
+[node name="Burning" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("18_fire")
+volume_db = -23.0
+
+[node name="KnobSfx" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("19_knob_sfx")
+volume_db = -8.0
+
+[node name="LidSfx" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("20_lid_sfx")
+volume_db = -8.0
+
+[node name="WaterSfx" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("21_water_sfx")
+volume_db = -6.0
+
+[node name="ClothSfx" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("22_cloth_sfx")
+volume_db = -6.0
+
+[node name="FlareSfx" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("23_flare")
+volume_db = -11.0
+
+[node name="EvacuatedSfx" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("24_success")
+volume_db = -8.0
+
+[connection signal="pressed" from="Hud/BackButton" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Hud/PauseButton" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Hud/HintButton" to="." method="_on_hint_pressed"]

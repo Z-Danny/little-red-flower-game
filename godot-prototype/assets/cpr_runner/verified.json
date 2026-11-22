@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "levels": {
+    "first-aid-cpr": {
+      "ready": true,
+      "checks": ["test scene lifecycle, order guards, review lock, wrong choices, interval sampling, uninterrupted handover and single completion"],
+      "limitations": ["Godot presents the original artwork and in-scene steps with native controls; browser-only UI and audio mixer are not carried over verbatim."]
+    }
+  }
+}

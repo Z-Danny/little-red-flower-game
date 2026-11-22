@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "catalogSha256": "911eca1f6b2eb15f15b0edcde699c1ea9609d8944c1467fc217dcdae3823a078",
+  "levels": {
+    "flood-kit": {
+      "skinId": "paperbook",
+      "adapter": "legacy",
+      "sourceHashes": {
+        "rules": "c51f70004c63cae35e36e6ed302b0e00b851ad54b5e6d824aded1b83ad9154b4",
+        "skin": "9881a65f96f4e35bcb586dd356086ee55fc738fb15262db22b8d7a25d7eb0c1b"
+      },
+      "packageSha256": "ad4926d32f6acd3aca90a254afa084294784e7a84eac0ccea70ff372d83b6c05",
+      "path": "res://assets/configured_runner/levels/flood-kit.json"
+    },
+    "clear-corridor": {
+      "skinId": "paperbook",
+      "adapter": "legacy",
+      "sourceHashes": {
+        "rules": "5dd24abfd9c6a43ca061cc2c3c98bbddabd322a29ea7a1d5ebc2fc7802188491",
+        "skin": "c8e62c3dd9206831403bcd6f0ec192d98353f26c4d48ddc07d39dd75554514d4"
+      },
+      "packageSha256": "102d5000ec71b8b8e65635c3bb908c325802ef9c0b096f8f09444bd55020609b",
+      "path": "res://assets/configured_runner/levels/clear-corridor.json"
+    },
+    "lift-wait": {
+      "skinId": "paperbook",
+      "adapter": "legacy",
+      "sourceHashes": {
+        "rules": "e4a33f065ba2b37052330bb6e2035226cc5b6a54be165ce831b1a51c56530ae3",
+        "skin": "9e488d232b8c72c585b9bc0fa02ed76895994e355a606ece05c752d592345d32"
+      },
+      "packageSha256": "cd362423aa36a2d9df471d1fa842edf70fb75e5f0096d60aedd9d3813eb31a77",
+      "path": "res://assets/configured_runner/levels/lift-wait.json"
+    },
+    "well-call": {
+      "skinId": "paperbook",
+      "adapter": "legacy",
+      "sourceHashes": {
+        "rules": "9514d7c390d00cb405bb2096e68944ae541e582c79825f874ededdc84d2aa9ee",
+        "skin": "6b6bda615bcc1a7c7b3123a1f08693e4d6f4cf15fa12ffab6d50cbd02a94b196"
+      },
+      "packageSha256": "92a5d95c9903d6c459e3a8cca1c70a6a65513b9fb5cc99e9b3ac24ac79d4fea9",
+      "path": "res://assets/configured_runner/levels/well-call.json"
+    },
+    "quake-cover-practice": {
+      "skinId": "paper-gouache",
+      "adapter": "staged-practice",
+      "sourceHashes": {
+        "rules": "4ce5d9175a267ffffad1af9f019447125d6c08498cf94ec0aaa2c77857bb1581",
+        "skin": "ee0d27d8ecf7490c021383fc79bb45f6b317a9a75a582dcdd9dcd04285b1a9c3"
+      },
+      "packageSha256": "90d8a1f2a92dd6c34a943cd7ec08582b9d94666ad3c17ede955882f0484bdba4",
+      "path": "res://assets/configured_runner/levels/quake-cover-practice.json"
+    },
+    "quake-exit-practice": {
+      "skinId": "paper-gouache",
+      "adapter": "staged-practice",
+      "sourceHashes": {
+        "rules": "3f869c7a9c782279ef14094a3bcc46087a3edaa62379cdc85ff86006711662fc",
+        "skin": "12db8d0a4a1412dda3ce984c6c0619cd193654fba262b2a868a278c172f9f292"
+      },
+      "packageSha256": "60a0441c513e1ec395b740f1be512826ab5128af308b3c90c72207ee5253b309",
+      "path": "res://assets/configured_runner/levels/quake-exit-practice.json"
+    },
+    "collapse-signal-practice": {
+      "skinId": "paper-gouache",
+      "adapter": "staged-practice",
+      "sourceHashes": {
+        "rules": "909f1d8cf8af4f14f07bcc09eb85410ec03901b7864b4a5439625497c3ff20fe",
+        "skin": "c8c4b9cb08438a2f46dc11f30cbde582adaf3d6f51ac41ef21c137b782142337"
+      },
+      "packageSha256": "53005c1a5d21108950ccc3c7290c110d9c279aa26e55cfaeb2bf9b4add5d1a10",
+      "path": "res://assets/configured_runner/levels/collapse-signal-practice.json"
+    },
+    "flood-highground-practice": {
+      "skinId": "paper-gouache",
+      "adapter": "staged-practice",
+      "sourceHashes": {
+        "rules": "7896d532dee7e04db4ba65cecf9454d57c7e5ce90f64fbdc269521ae621a471e",
+        "skin": "eeb5096e26c817a81a1821b63d005ef05e8d52d7d508ab01398801400ea6765d"
+      },
+      "packageSha256": "8370fd612196817e39aca3b8de2ac4140d815b4fd4ea4f703ff3d9745e9e61c6",
+      "path": "res://assets/configured_runner/levels/flood-highground-practice.json"
+    },
+    "car-window-practice": {
+      "skinId": "paper-gouache",
+      "adapter": "staged-practice",
+      "sourceHashes": {
+        "rules": "e04df3ed213ab62fc2737dad30a11792cbfda3c287130d54dc78d5e5a2b1af70",
+        "skin": "bccf7c2acfd98b90dac86f051c969c883c6133804d9980f8bae32e59c94533f4"
+      },
+      "packageSha256": "aa552266005ce4e7d97df372bc4508ef40e93c6ed129df087606aeae7f9b54ca",
+      "path": "res://assets/configured_runner/levels/car-window-practice.json"
+    },
+    "lift-contact-practice": {
+      "skinId": "paper-gouache",
+      "adapter": "staged-practice",
+      "sourceHashes": {
+        "rules": "3d419880dd280ef6504b4c60d3df7625d13f196d171e5dccc1f7c35d922e89ad",
+        "skin": "0d023c88f165e4e8d64e18116ce265825da4c8757bd1d5fffb2d7046f1c187b5"
+      },
+      "packageSha256": "7c6d765617fcef356115c018317e2b1f9526bfefda4a8cc5402c7ac5e89d96db",
+      "path": "res://assets/configured_runner/levels/lift-contact-practice.json"
+    },
+    "fire-shelter-practice": {
+      "skinId": "paper-gouache",
+      "adapter": "staged-practice",
+      "sourceHashes": {
+        "rules": "addda695485fa0998dee924954b1a13128d2ec0452f4fce704ea2634ba4291e5",
+        "skin": "7052a36c0dd330bfea8c310de7eca117225ce49038db22e3dacace4b77a9b321"
+      },
+      "packageSha256": "a3e834987e01ea2a7ca2c86992f77c43c5d39811aecd1f80ef4f18e153dcb953",
+      "path": "res://assets/configured_runner/levels/fire-shelter-practice.json"
+    },
+    "fire-stairs-practice": {
+      "skinId": "paper-gouache",
+      "adapter": "staged-practice",
+      "sourceHashes": {
+        "rules": "dedc0796987d830866e521615bf6e2bcc44b792ee962aee7d6101cbb3955c111",
+        "skin": "319afaa24f1c89c9162be26a0ddedac2ee4edc5876ceba77bd4871e8c2a1499d"
+      },
+      "packageSha256": "7bb9d5d6307d5531ac13d75c7d687ce6d2db507a39ff278c2566725a90d44343",
+      "path": "res://assets/configured_runner/levels/fire-stairs-practice.json"
+    },
+    "first-aid-aed": {
+      "skinId": "realistic-v2",
+      "adapter": "scenario-practice",
+      "sourceHashes": {
+        "rules": "c16a55a5dfbbe632f5b4412a4a28fab6bd0bbdd800d3402a2002a6b5e7d832c6",
+        "skin": "d164db7627d54bec7f845a467419382852da00453d77fee48755834713383348"
+      },
+      "packageSha256": "91b85f2483bc0ae39340f9999fc50010fa2a23eb7ec890381dc84a0944f14cbf",
+      "path": "res://assets/configured_runner/levels/first-aid-aed.json"
+    }
+  }
+}

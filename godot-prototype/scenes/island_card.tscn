@@ -1,0 +1,60 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/ui/island-campus.webp" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="Badge"]
+bg_color = Color(1, 0.929, 0.724, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.60, 0.375, 0.17, 1)
+corner_radius_top_left = 29
+corner_radius_top_right = 29
+corner_radius_bottom_right = 29
+corner_radius_bottom_left = 29
+shadow_color = Color(0.14, 0.29, 0.24, 0.42)
+shadow_size = 4
+shadow_offset = Vector2(0, 3)
+
+[node name="IslandCard" type="Control"]
+layout_mode = 0
+offset_right = 404.0
+offset_bottom = 404.0
+pivot_offset = Vector2(202, 202)
+mouse_filter = 2
+
+[node name="Art" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Badge" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 404.0
+offset_right = 231.0
+offset_bottom = 462.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Badge")
+
+[node name="Number" type="Label" parent="Badge"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.365, 0.208, 0.122, 1)
+theme_override_font_sizes/font_size = 24
+text = "01"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "levels": {
+    "rain-street-preparation-v1": {
+      "ready": true,
+      "checks": ["seven original masks, 50 seconds, five-second miss penalty, committed marks, timeout, elapsed plus penalty at finish"],
+      "limitations": ["Native HUD and weather presentation are not pixel-identical to the web edition."]
+    },
+    "flood-house-response-v1": {
+      "ready": true,
+      "checks": ["verified actual registry pack, tested original sprite-alpha touch paths and all seven goals, safe early exit without reward, hazardous placement failure"],
+      "limitations": ["Native poses and authored backdrop retained; procedural water and music layering are simplified."]
+    }
+  }
+}

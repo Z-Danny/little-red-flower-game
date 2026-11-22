@@ -1,0 +1,173 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://scripts/journey_progress.gd" id="1"]
+[ext_resource type="Theme" path="res://theme/storybook.tres" id="2"]
+[ext_resource type="Texture2D" path="res://assets/restored_ui/journal-frame-header.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/restored_ui/journal-frame-body.webp" id="4"]
+[ext_resource type="Texture2D" path="res://assets/restored_ui/journal-frame-footer.webp" id="5"]
+[ext_resource type="Texture2D" path="res://assets/restored_ui/journal-avatar.webp" id="6"]
+[ext_resource type="Texture2D" path="res://assets/restored_ui/journal-stat-flowers.webp" id="7"]
+
+[node name="JourneyProgress" type="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.098, 0.18, 0.136, 0.52)
+theme = ExtResource("2")
+script = ExtResource("1")
+
+[node name="Card" type="Control" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 98.0
+offset_right = 553.0
+offset_bottom = 925.0
+
+[node name="Header" type="TextureRect" parent="Card"]
+layout_mode = 0
+offset_right = 530.0
+offset_bottom = 123.7
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+
+[node name="Paper" type="TextureRect" parent="Card"]
+layout_mode = 0
+offset_top = 123.5
+offset_right = 530.0
+offset_bottom = 741.0
+mouse_filter = 2
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="Footer" type="TextureRect" parent="Card"]
+layout_mode = 0
+offset_top = 740.5
+offset_right = 530.0
+offset_bottom = 827.0
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Card"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 17.0
+offset_right = 426.0
+offset_bottom = 73.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.95, 0.80, 1)
+theme_override_colors/font_outline_color = Color(0.31, 0.15, 0.07, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 34
+text = "我的进度"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Close" type="Button" parent="Card"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 450.0
+offset_top = 68.0
+offset_right = 499.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 28
+text = "×"
+tooltip_text = "关闭我的进度"
+
+[node name="Avatar" type="TextureRect" parent="Card"]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 132.0
+offset_right = 177.0
+offset_bottom = 241.0
+mouse_filter = 2
+texture = ExtResource("6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Player" type="Label" parent="Card"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 141.0
+offset_right = 455.0
+offset_bottom = 179.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 25
+text = "我的守护旅程"
+
+[node name="Badge" type="TextureRect" parent="Card"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 177.0
+offset_right = 449.0
+offset_bottom = 240.0
+mouse_filter = 2
+texture = ExtResource("7")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="Card"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 254.0
+offset_top = 184.0
+offset_right = 435.0
+offset_bottom = 228.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.94, 0.78, 1)
+theme_override_colors/font_outline_color = Color(0.10, 0.18, 0.12, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 24
+text = "0 朵小红花"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Totals" type="Label" parent="Card"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 60.0
+offset_top = 248.0
+offset_right = 470.0
+offset_bottom = 289.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 21
+text = "已完成 0 / 26 关"
+horizontal_alignment = 1
+
+[node name="IslandScroll" type="ScrollContainer" parent="Card"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 54.0
+offset_top = 300.0
+offset_right = 476.0
+offset_bottom = 675.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Islands" type="VBoxContainer" parent="Card/IslandScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6
+
+[node name="Note" type="Label" parent="Card"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 690.0
+offset_right = 473.0
+offset_bottom = 733.0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 17
+text = "重玩只补发超过原成绩的小红花。"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="Card"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 143.0
+offset_top = 744.0
+offset_right = 387.0
+offset_bottom = 801.0
+theme_override_font_sizes/font_size = 22
+text = "返回地图"

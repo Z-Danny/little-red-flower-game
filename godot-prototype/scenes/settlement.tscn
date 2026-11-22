@@ -1,0 +1,395 @@
+[gd_scene load_steps=13 format=3]
+
+[ext_resource type="Script" path="res://scripts/settlement.gd" id="1"]
+[ext_resource type="Theme" path="res://theme/storybook.tres" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/sky.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/settlement_ui/success/header.webp" id="4"]
+[ext_resource type="Texture2D" path="res://assets/settlement_ui/success/body.webp" id="5"]
+[ext_resource type="Texture2D" path="res://assets/settlement_ui/success/footer.webp" id="6"]
+[ext_resource type="Texture2D" path="res://assets/settlement_ui/failure/mascot.webp" id="7"]
+[ext_resource type="Texture2D" path="res://assets/ui/flower.webp" id="8"]
+[ext_resource type="Texture2D" path="res://assets/settlement_ui/success/petal.webp" id="9"]
+[ext_resource type="FontFile" path="res://assets/settlement_ui/flower-display.woff2" id="10"]
+
+[sub_resource type="StyleBoxLine" id="Rule"]
+color = Color(0.49, 0.55, 0.27, 0.68)
+thickness = 2
+
+[sub_resource type="StyleBoxLine" id="FailureRule"]
+color = Color(0.58, 0.55, 0.36, 0.55)
+thickness = 1
+
+[node name="Settlement" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2")
+script = ExtResource("1")
+
+[node name="Sky" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Shade" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.08, 0.16, 0.13, 0.17)
+
+[node name="Paper" type="Control" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 304.0
+offset_right = 556.0
+offset_bottom = 1008.0
+mouse_filter = 2
+
+[node name="HeaderArt" type="TextureRect" parent="Paper"]
+unique_name_in_owner = true
+offset_right = 536.0
+offset_bottom = 139.0
+mouse_filter = 2
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="BodyArt" type="TextureRect" parent="Paper"]
+unique_name_in_owner = true
+offset_top = 139.0
+offset_right = 536.0
+offset_bottom = 566.0
+mouse_filter = 2
+texture = ExtResource("5")
+expand_mode = 1
+
+[node name="FooterArt" type="TextureRect" parent="Paper"]
+unique_name_in_owner = true
+offset_top = 566.0
+offset_right = 536.0
+offset_bottom = 704.0
+mouse_filter = 2
+texture = ExtResource("6")
+expand_mode = 1
+
+[node name="Mascot" type="TextureRect" parent="Paper"]
+unique_name_in_owner = true
+visible = false
+mouse_filter = 2
+texture = ExtResource("7")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Heading" type="Label" parent="Paper"]
+unique_name_in_owner = true
+offset_left = 129.0
+offset_top = 26.0
+offset_right = 407.0
+offset_bottom = 99.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 0.957, 0.808, 1)
+theme_override_colors/font_shadow_color = Color(0.064, 0.156, 0.101, 0.68)
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("10")
+theme_override_font_sizes/font_size = 49
+text = "还得是你！"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContentScroll" type="ScrollContainer" parent="Paper"]
+unique_name_in_owner = true
+offset_left = 51.0
+offset_top = 144.0
+offset_right = 485.0
+offset_bottom = 473.0
+focus_mode = 2
+mouse_force_pass_scroll_events = false
+accessibility_name = "结算详情与安全科普"
+follow_focus = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+scroll_deadzone = 10
+
+[node name="ScrollMargin" type="MarginContainer" parent="Paper/ContentScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 6
+
+[node name="Content" type="VBoxContainer" parent="Paper/ContentScroll/ScrollMargin"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/separation = 6
+
+[node name="LevelTitle" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.07, 0.243, 0.157, 1)
+theme_override_fonts/font = ExtResource("10")
+theme_override_font_sizes/font_size = 34
+text = "关卡名称"
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="OutcomeTitle" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 19
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/font = ExtResource("10")
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="Reward" type="Control" parent="Paper/ContentScroll/ScrollMargin/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 68)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Flowers" type="HBoxContainer" parent="Paper/ContentScroll/ScrollMargin/Content/Reward"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="FlowerOne" type="TextureRect" parent="Paper/ContentScroll/ScrollMargin/Content/Reward/Flowers"]
+custom_minimum_size = Vector2(60, 62)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+texture = ExtResource("8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FlowerTwo" type="TextureRect" parent="Paper/ContentScroll/ScrollMargin/Content/Reward/Flowers"]
+custom_minimum_size = Vector2(68, 68)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+texture = ExtResource("8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FlowerThree" type="TextureRect" parent="Paper/ContentScroll/ScrollMargin/Content/Reward/Flowers"]
+custom_minimum_size = Vector2(60, 62)
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+texture = ExtResource("8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Petal" type="TextureRect" parent="Paper/ContentScroll/ScrollMargin/Content/Reward"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 50.0
+offset_top = -4.0
+offset_right = 69.0
+offset_bottom = 16.0
+mouse_filter = 2
+texture = ExtResource("9")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FailureReview" type="VBoxContainer" parent="Paper/ContentScroll/ScrollMargin/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/separation = 5
+
+[node name="Roast" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content/FailureReview"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.66, 0.263, 0.157, 1)
+theme_override_fonts/font = ExtResource("10")
+theme_override_font_sizes/font_size = 34
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="ReviewTopRule" type="HSeparator" parent="Paper/ContentScroll/ScrollMargin/Content/FailureReview"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("FailureRule")
+
+[node name="FailureTitle" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content/FailureReview"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.56, 0.294, 0.20, 1)
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 3
+
+[node name="FailureProgress" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content/FailureReview"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.34, 0.40, 0.28, 1)
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+
+[node name="FailureReason" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content/FailureReview"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/line_spacing = 4
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3
+
+[node name="FailureHint" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content/FailureReview"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.37, 0.37, 0.26, 1)
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+
+[node name="ReviewBottomRule" type="HSeparator" parent="Paper/ContentScroll/ScrollMargin/Content/FailureReview"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("FailureRule")
+
+[node name="Summary" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.71, 0.20, 0.18, 1)
+theme_override_font_sizes/font_size = 23
+text = "用时 8.0 秒  /  本次 3 朵"
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="Progress" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 19
+text = "新增 3 朵  /  累计 3 朵\n进度已保存"
+autowrap_mode = 3
+horizontal_alignment = 1
+
+[node name="Advice" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/line_spacing = 4
+theme_override_font_sizes/font_size = 19
+autowrap_mode = 3
+
+[node name="Knowledge" type="VBoxContainer" parent="Paper/ContentScroll/ScrollMargin/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/separation = 8
+
+[node name="KnowledgeRule" type="HSeparator" parent="Paper/ContentScroll/ScrollMargin/Content/Knowledge"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/separator = SubResource("Rule")
+
+[node name="KnowledgeTitle" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content/Knowledge"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.07, 0.243, 0.157, 1)
+theme_override_fonts/font = ExtResource("10")
+theme_override_font_sizes/font_size = 28
+text = "这招，记住了"
+
+[node name="Points" type="VBoxContainer" parent="Paper/ContentScroll/ScrollMargin/Content/Knowledge"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/separation = 11
+
+[node name="Sources" type="HFlowContainer" parent="Paper/ContentScroll/ScrollMargin/Content/Knowledge"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 1
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 2
+
+[node name="SourceCaption" type="Label" parent="Paper/ContentScroll/ScrollMargin/Content/Knowledge/Sources"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.32, 0.39, 0.28, 1)
+theme_override_font_sizes/font_size = 17
+text = "科普参考："
+
+[node name="FailureScore" type="HBoxContainer" parent="Paper"]
+unique_name_in_owner = true
+visible = false
+mouse_filter = 2
+alignment = 1
+theme_override_constants/separation = 18
+
+[node name="FailureReward" type="Label" parent="Paper/FailureScore"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.66, 0.263, 0.157, 1)
+theme_override_font_sizes/font_size = 21
+vertical_alignment = 1
+
+[node name="FailureTotal" type="Label" parent="Paper/FailureScore"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/font_size = 18
+vertical_alignment = 1
+
+[node name="Replay" type="Button" parent="Paper"]
+unique_name_in_owner = true
+offset_left = 104.0
+offset_top = 481.0
+offset_right = 432.0
+offset_bottom = 561.0
+theme_override_fonts/font = ExtResource("10")
+theme_override_font_sizes/font_size = 29
+text = "再练一次"
+mouse_default_cursor_shape = 2
+
+[node name="Map" type="Button" parent="Paper"]
+unique_name_in_owner = true
+offset_left = 60.0
+offset_top = 574.0
+offset_right = 448.0
+offset_bottom = 663.0
+theme_override_fonts/font = ExtResource("10")
+theme_override_font_sizes/font_size = 35
+text = "返回地图"
+mouse_default_cursor_shape = 2

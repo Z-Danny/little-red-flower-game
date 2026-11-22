@@ -1,0 +1,149 @@
+[gd_scene load_steps=24 format=3]
+
+[ext_resource type="Script" path="res://scripts/archipelago.gd" id="1"]
+[ext_resource type="Theme" path="res://theme/storybook.tres" id="14"]
+[ext_resource type="Texture2D" path="res://assets/ui/sky.webp" id="2"]
+[ext_resource type="Script" path="res://scripts/island_info.gd" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/island_card.tscn" id="4"]
+[ext_resource type="Texture2D" path="res://assets/ui/island-campus.webp" id="5"]
+[ext_resource type="Texture2D" path="res://assets/ui/island-home.webp" id="6"]
+[ext_resource type="Texture2D" path="res://assets/ui/island-traffic.webp" id="7"]
+[ext_resource type="Texture2D" path="res://assets/ui/island-water.webp" id="8"]
+[ext_resource type="Texture2D" path="res://assets/ui/island-network.webp" id="9"]
+[ext_resource type="Texture2D" path="res://assets/ui/island-emergency.webp" id="10"]
+[ext_resource type="Texture2D" path="res://assets/ui/island-social.webp" id="11"]
+[ext_resource type="Texture2D" path="res://assets/ui/island-food.webp" id="12"]
+[ext_resource type="Texture2D" path="res://assets/ui/island-outdoor.webp" id="13"]
+
+[sub_resource type="Resource" id="Campus"]
+script = ExtResource("3")
+island_id = &"campus"
+title = "校园安全"
+art = ExtResource("5")
+
+[sub_resource type="Resource" id="House"]
+script = ExtResource("3")
+island_id = &"home"
+title = "居家安全"
+art = ExtResource("6")
+
+[sub_resource type="Resource" id="Traffic"]
+script = ExtResource("3")
+island_id = &"traffic"
+title = "交通安全"
+art = ExtResource("7")
+
+[sub_resource type="Resource" id="Water"]
+script = ExtResource("3")
+island_id = &"water"
+title = "防溺水安全"
+art = ExtResource("8")
+
+[sub_resource type="Resource" id="Network"]
+script = ExtResource("3")
+island_id = &"network"
+title = "网络安全"
+art = ExtResource("9")
+
+[sub_resource type="Resource" id="Emergency"]
+script = ExtResource("3")
+island_id = &"emergency"
+title = "应急防灾"
+art = ExtResource("10")
+
+[sub_resource type="Resource" id="Social"]
+script = ExtResource("3")
+island_id = &"social"
+title = "人身社会安全"
+art = ExtResource("11")
+
+[sub_resource type="Resource" id="Food"]
+script = ExtResource("3")
+island_id = &"food"
+title = "食品安全"
+art = ExtResource("12")
+
+[sub_resource type="Resource" id="Outdoor"]
+script = ExtResource("3")
+island_id = &"outdoor"
+title = "文旅户外安全"
+art = ExtResource("13")
+
+[node name="Archipelago" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14")
+script = ExtResource("1")
+islands = Array[Resource]([SubResource("Campus"), SubResource("House"), SubResource("Traffic"), SubResource("Water"), SubResource("Network"), SubResource("Emergency"), SubResource("Social"), SubResource("Food"), SubResource("Outdoor")])
+
+[node name="Sky" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Track" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 177.0
+clip_contents = true
+
+[node name="EditorPreview" parent="Track" instance=ExtResource("4")]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 86.0
+offset_top = 221.5
+offset_right = 490.0
+offset_bottom = 625.5
+
+[node name="Back" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 130.0
+offset_bottom = 80.0
+text = "首页"
+
+[node name="Counter" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 430.0
+offset_top = 26.0
+offset_right = 550.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 24
+text = "01 / 09"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Eyebrow" type="Label" parent="."]
+layout_mode = 0
+offset_top = 102.0
+offset_right = 576.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 18
+text = "小红花  /  安全群岛"
+horizontal_alignment = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_top = 136.0
+offset_right = 576.0
+offset_bottom = 194.0
+theme_override_font_sizes/font_size = 39
+text = "选择你的下一站"
+horizontal_alignment = 1

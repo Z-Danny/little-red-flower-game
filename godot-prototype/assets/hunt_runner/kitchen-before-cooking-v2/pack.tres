@@ -1,0 +1,293 @@
+[gd_resource type="Resource" load_steps=12 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/scene.webp" id="1"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/clean.webp" id="2"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/ending.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/family.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/id-mask.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/gas_hose.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/paper_near_hob.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/greasy_filter.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/sideways_cylinder.png" id="9"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/damaged_kettle.png" id="10"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/kitchen-before-cooking-v2/character-mask.png" id="11"]
+
+[resource]
+metadata/rules = {
+  "feedbackVersion": 2,
+  "id": "kitchen-before-cooking-v2",
+  "title": "开火前的厨房",
+  "order": 15,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "targets": [
+    {
+      "id": "gas_hose",
+      "name": "老化开裂的燃气软管",
+      "lesson": "燃气软管开裂，应停用报修。"
+    },
+    {
+      "id": "paper_near_hob",
+      "name": "炉头旁的纸巾",
+      "lesson": "开火前先移开炉边纸巾。"
+    },
+    {
+      "id": "greasy_filter",
+      "name": "油垢积聚的油烟机滤网",
+      "lesson": "油烟机积油要及时清理。"
+    },
+    {
+      "id": "sideways_cylinder",
+      "name": "横卧的液化气钢瓶",
+      "lesson": "液化气钢瓶不能卧放使用。"
+    },
+    {
+      "id": "damaged_kettle",
+      "name": "电热水壶的破损电源线",
+      "lesson": "电源线破损，应停止使用。"
+    }
+  ],
+  "summary": "开火前移开炉边可燃物，及时清理油烟机积油。燃气软管开裂应停用报修，液化气钢瓶不能卧放使用，电源线破损的电器应停用。",
+  "timeout": "fail"
+}
+metadata/skin = {
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/scene.webp",
+  "clean": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/clean.webp",
+  "safe": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/ending.webp",
+  "mask": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/id-mask.png",
+  "family": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/family.png",
+  "familyBox": {
+    "x": 560,
+    "y": 179,
+    "w": 160,
+    "h": 499
+  },
+  "targets": {
+    "gas_hose": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 151,
+        "y": 497,
+        "w": 183,
+        "h": 189
+      },
+      "icon": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/gas_hose.png"
+    },
+    "paper_near_hob": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 182,
+        "y": 402,
+        "w": 93,
+        "h": 57
+      },
+      "icon": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/paper_near_hob.png"
+    },
+    "greasy_filter": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 106,
+        "y": 161,
+        "w": 251,
+        "h": 62
+      },
+      "icon": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/greasy_filter.png"
+    },
+    "sideways_cylinder": {
+      "color": [
+        255,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 334,
+        "y": 606,
+        "w": 224,
+        "h": 136
+      },
+      "icon": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/sideways_cylinder.png"
+    },
+    "damaged_kettle": {
+      "color": [
+        255,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 432,
+        "y": 780,
+        "w": 283,
+        "h": 283
+      },
+      "icon": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/damaged_kettle.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hazard-batch-v2/kitchen-before-cooking-v2/character-mask.png"
+  }
+}
+metadata/presentation = {
+  "location": "厨房 · 开火前检查",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "开火前，找出厨房的五处隐患。",
+  "reveal": "图示为专业维护后。开火前应完成检查。",
+  "completeTitle": "五处已识别，开火前先检查",
+  "pauseNote": "这是未开火、未出现泄漏征兆时的识别训练，不是燃气泄漏处置演练。儿童只观察并告知成人，成人也不要自行修理燃气设施。计时仅为训练用时，不是事故倒计时。",
+  "endingNote": "图示为燃气服务专业人员维护、检查后的另一个时点。成人不应自行修理燃气设施，应联系有资质的燃气服务人员；破损电器已停用待修，不因圈出问题就恢复使用。",
+  "preview": "灶台尚未开火。找出厨房里五处可见隐患，区分日常检查与应由专业人员完成的维护。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}
+metadata/performance = {
+  "version": 2,
+  "atmosphere": "indoor",
+  "sound": "kitchen_check",
+  "retreatDirection": 1,
+  "missCaption": "这里没有识别目标，隐患仍未找齐。",
+  "stages": [
+    {
+      "atMs": 0,
+      "breathMs": 2800,
+      "breathPx": 2,
+      "retractPx": 0,
+      "vignette": 0,
+      "bpm": 64,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 30000,
+      "breathMs": 2300,
+      "breathPx": 2.4,
+      "retractPx": 4,
+      "vignette": 0.06,
+      "bpm": 70,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 60000,
+      "breathMs": 1900,
+      "breathPx": 2.8,
+      "retractPx": 7,
+      "vignette": 0.12,
+      "bpm": 76,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 90000,
+      "breathMs": 1700,
+      "breathPx": 3.2,
+      "retractPx": 10,
+      "vignette": 0.16,
+      "bpm": 82,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    }
+  ],
+  "timing": "quarters"
+}
+metadata/source = {
+  "rules": {
+    "path": "content/scenes/kitchen-before-cooking-v2/rules.json",
+    "sha256": "bbb34a8bc29cb7e6d7f69f37d59a9c9f31464c4779110567a5c034294f9c78c0"
+  },
+  "skin": {
+    "path": "content/scenes/kitchen-before-cooking-v2/skin.json",
+    "sha256": "f072e65279d1c14842b90a8054a71553a2e6dad60c5f432e64a1a98414768871"
+  },
+  "presentation": {
+    "path": "content/scenes/kitchen-before-cooking-v2/presentation.json",
+    "sha256": "decaeff4f4db648e2020e1fbae23e29e80b3942c6a278f4ff6f061c7552531ef"
+  },
+  "performance": {
+    "path": "content/scenes/kitchen-before-cooking-v2/performance.json",
+    "sha256": "32892b327e085bf3ecce1a5a704db644f8e913292ac342727ca449a5b421d4b7"
+  },
+  "scene": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/scene.webp",
+    "sha256": "431021839f820878cce325c825eeb0f403d1de188a674abd5035ab6d9ee0ddb3"
+  },
+  "clean": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/clean.webp",
+    "sha256": "3e8fb90926743fcc81d8d7414120758fc94438bb449aee0e3857d20fdfa853ad"
+  },
+  "safe": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/ending.webp",
+    "sha256": "45d8c4749c5c53b00d1193e99d6d761d0c7fd0f1cdfb95343946f91d3bf74556"
+  },
+  "family": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/family.png",
+    "sha256": "09d7b66fe24e26a401210fce7f568d5111ec7a48c35dedc8dcc9264496cdeb6e"
+  },
+  "mask": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/id-mask.png",
+    "sha256": "ee01c55641ff31639b1b038acea0b0de902aae57dae366667b5b21ed518add21"
+  },
+  "icon:gas_hose": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/gas_hose.png",
+    "sha256": "7e209a6f7166147b554baffa678c15bce094482411d5b8996ee9e2564ec9736e"
+  },
+  "icon:paper_near_hob": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/paper_near_hob.png",
+    "sha256": "0f761ed9b3128cac1b9cfaef91ac4d359e8c0b25418c6c5b4e4d14e9f1002c1d"
+  },
+  "icon:greasy_filter": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/greasy_filter.png",
+    "sha256": "a5493ef8fcbdb3573ee6bf99e38749358054db397875533e85432232b8e5f940"
+  },
+  "icon:sideways_cylinder": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/sideways_cylinder.png",
+    "sha256": "fb4b2335db50a944897626b3e9d4f8b13c21c2a460e3c74fac4319638d2e183c"
+  },
+  "icon:damaged_kettle": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/damaged_kettle.png",
+    "sha256": "44e4f122d55aa6dd5bde52385883f9938464f6b1b13b00443e18a3623c2aa5a2"
+  },
+  "characterMask": {
+    "path": "public/levels/hazard-batch-v2/kitchen-before-cooking-v2/character-mask.png",
+    "sha256": "9beb33bf19fdcb637e5e5b1719a3721546220dc6495a7715d59080a0ddb0603c"
+  }
+}
+metadata/resources = {
+"scene": ExtResource("1"),
+"clean": ExtResource("2"),
+"safe": ExtResource("3"),
+"family": ExtResource("4"),
+"mask": ExtResource("5"),
+"icon:gas_hose": ExtResource("6"),
+"icon:paper_near_hob": ExtResource("7"),
+"icon:greasy_filter": ExtResource("8"),
+"icon:sideways_cylinder": ExtResource("9"),
+"icon:damaged_kettle": ExtResource("10"),
+"characterMask": ExtResource("11")
+}
