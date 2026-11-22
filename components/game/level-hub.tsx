@@ -11,7 +11,6 @@ import { JourneySettings } from './journey/settings';
 import { Archipelago } from './journey/archipelago';
 import { islandPreviewFor } from '@/app/game/journey/island-previews';
 import {
-  archipelagoIslands,
   islandForLevel,
   type ArchipelagoSound,
 } from '@/app/game/journey/archipelago';
@@ -66,7 +65,7 @@ export function LevelHub(props: Props) {
   const view = useMapJourney(props);
   const [categoryId, setCategoryId] = useState(() =>
     props.entry === 'new-game'
-      ? archipelagoIslands[0].id
+      ? 'campus'
       : (islandForLevel(props.focusId ?? view.current?.id ?? '')?.id ?? 'emergency'),
   );
   useLayoutEffect(() => {
@@ -141,7 +140,7 @@ export function LevelHub(props: Props) {
       {archipelagoOpen && (
         <Archipelago
           currentCategoryId={categoryId}
-          initialShowLevels={props.entry === 'new-game' || props.entry === 'level-return'}
+          initialShowLevels={props.entry === 'level-return'}
           obscured={!!inspect || settings || !!props.externalOverlayOpen || !!props.entering}
           levelTools={<MapCornerTools wallet={view.wallet} onHome={props.onHome} onArchive={onLeaderboard} onSettings={() => setSettings(true)} />}
           completed={completed}

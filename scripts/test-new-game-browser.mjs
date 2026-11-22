@@ -38,6 +38,10 @@ try{
  await p.evaluate(id=>{const k='little-red-flower-leaderboard-v1',s=JSON.parse(localStorage.getItem(k));s.activePlayerId=id;localStorage.setItem(k,JSON.stringify(s));},id);
  await p.reload();await p.locator('[data-home-start]').waitFor();
  await answer(true);await p.locator('.garden-shell').waitFor();
+ const overview=p.locator('[data-archipelago][data-page="islands"][data-current-category="campus"]');
+ await overview.waitFor();
+ assert.equal(await overview.locator('[data-island]').first().getAttribute('data-island'),'campus');
+ check('new game opens the archipelago overview with Campus Safety first');
  assert.equal(await p.locator('[data-wallet]').innerText(),'0');
  assert.equal(await p.locator('[data-status="completed"]').count(),0);
  assert.equal(await p.locator('[data-map-node="flood-kit"]').getAttribute('data-status'),'locked');
