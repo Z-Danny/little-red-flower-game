@@ -13,8 +13,10 @@ const IDs := [
 	"typhoon-home", "charging-bedroom", "bedroom-night-check-v2",
 	"kitchen-before-cooking-v2", "clear-corridor-check-v2", "quake-bedroom-v2",
 	"storm-street-check-v2", "thunder-park-v2", "forest-fire-sources-v2",
+	"campus-classroom-check-v1", "campus-lab-check-v1",
 ]
-const VARIANTS := ["storm", "legacy/quiet_electric", "quiet_electric", "kitchen_check", "corridor", "preparedness", "rain_street", "thunder_park", "forest_edge"]
+const THREE_TARGET_IDS := ["charging-bedroom", "campus-classroom-check-v1", "campus-lab-check-v1"]
+const VARIANTS := ["storm", "legacy/quiet_electric", "quiet_electric", "kitchen_check", "corridor", "preparedness", "rain_street", "thunder_park", "forest_edge", "quiet_electric", "quiet_electric"]
 
 var _errors: Array[String] = []
 var _context := ""
@@ -27,7 +29,7 @@ func _initialize() -> void:
 	_run.call_deferred()
 
 func _run() -> void:
-	_check(Pack.contract_ids() == IDs, "only the nine original getHunt IDs are present")
+	_check(Pack.contract_ids() == IDs, "original hunt IDs plus the two authored campus packs")
 	for key in ["victory", "failure"]:
 		var wave := AudioBank.get_meta("resources")[key] as AudioStreamWAV
 		var digest := HashingContext.new()
@@ -50,7 +52,7 @@ func _run() -> void:
 			continue
 		_check(runner.size.is_equal_approx(Vector2(576, 1024)), "root has exactly the native reference size")
 		_check(runner.pack.rules["id"] == _context and runner.pack.rules["seconds"] == 50, "identity and authored limit")
-		_check(runner.run.target_count() == (3 if _context == "charging-bedroom" else 5), "authored target count")
+		_check(runner.run.target_count() == (3 if _context in THREE_TARGET_IDS else 5), "authored target count")
 		_check(runner.pack.texture("safe").resource_path.begins_with(Pack.BASE + _context + "/"), "the pack's own original ending is loaded")
 		if runner.pack.performance.is_empty():
 			var variant: String = runner.pack.presentation["audio"]
@@ -62,6 +64,8 @@ func _run() -> void:
 			_check(runner.pack.presentation["characterAudio"] == "none", "typhoon never re-enables voice startles")
 		var ids := _world_probes(runner)
 		if ids.size() == runner.run.target_count() and _empty != Vector2.ZERO:
+			if _context == "campus-lab-check-v1":
+				_check_touch_gestures(runner, _probes[ids[0]])
 			_win_from_pointers(runner, ids)
 			await process_frame
 			runner.free()
@@ -80,14 +84,14 @@ func _run() -> void:
 		if _errors.size() == before:
 			print("PASS hunt ", _context, " (", ids.size(), " exact-mask targets; win, natural/penalty failure, pause, hints, exit)")
 	_context = "unsupported"
-	var invalid := await _launch("campus-classroom-check-v1")
+	var invalid := await _launch("campus-playground-check-v1")
 	_check(invalid.run == null and not invalid.pack.error.is_empty(), "disabled drafts cannot be configured")
 	_click_control(invalid.get_node("Modal/Back"))
 	_check(_results.is_empty() and _exits.size() == 1, "bad configuration can leave without an outcome")
 	invalid.free()
 	_context = "summary"
 	if _errors.is_empty():
-		print("All nine hunt runner packs passed native GUI and terminal tests.")
+		print("All eleven hunt runner packs passed native GUI and terminal tests.")
 	else:
 		printerr("Native hunt failures: ", _errors.size())
 	quit(0 if _errors.is_empty() else 1)
@@ -204,6 +208,45 @@ func _exit_without_result(page: Runner) -> void:
 	_advance(page, 50000.0)
 	_check(_results.is_empty() and _exits.size() == 1, "back emits one exit and no reward or failure")
 
+func _check_touch_gestures(page: Runner, target: Vector2) -> void:
+	var scene_target := _viewport_point(page, target)
+	var hint := (page.get_node("HUD/Hint") as Control).get_global_rect().get_center()
+	# The web backend forwards the browser's identifier, which need not be zero.
+	_screen_touch(hint, 813, true)
+	_mouse_click(hint, InputEvent.DEVICE_ID_EMULATION)
+	_screen_touch(hint, 813, false)
+	_check(page._hud.hints_visible() and page.run.elapsed_ms == 0.0, "HUD touch opens hints without a scene penalty")
+	_click_control(page.get_node("HUD/Hint"))
+
+	var accumulated_before := Input.use_accumulated_input
+	_screen_touch(scene_target, 814, true)
+	_check(page.run.marking_id.is_empty() and not Input.use_accumulated_input, "touch down waits for release and preserves drag samples")
+	_screen_drag(scene_target + Vector2(28, 0), 814)
+	_screen_drag(scene_target, 814)
+	_screen_touch(scene_target, 814, false)
+	_check(page.run.marking_id.is_empty() and page.run.elapsed_ms == 0.0, "a drag back to its starting point has no outcome")
+	_check(Input.use_accumulated_input == accumulated_before, "touch release restores input accumulation")
+
+	_screen_touch(scene_target, 815, true)
+	_screen_touch(scene_target, 815, false, true)
+	_check(page.run.marking_id.is_empty() and page.run.elapsed_ms == 0.0, "a canceled tap has no outcome")
+
+	_screen_touch(scene_target, 816, true)
+	page.notification(Node.NOTIFICATION_APPLICATION_FOCUS_OUT)
+	_check(Input.use_accumulated_input == accumulated_before, "focus loss restores input accumulation")
+	page.notification(Node.NOTIFICATION_APPLICATION_FOCUS_IN)
+	_screen_touch(scene_target, 816, false)
+	_check(page.run.marking_id.is_empty() and page.run.elapsed_ms == 0.0, "focus loss cancels a pending tap")
+
+	var at := _viewport_point(page, _empty)
+	_screen_touch(at, 817, true)
+	_mouse_click(at, InputEvent.DEVICE_ID_EMULATION)
+	_check(page.run.elapsed_ms == 0.0, "an emulated click cannot act before touch release")
+	_screen_touch(at + Vector2(2, 2), 817, false)
+	_check(page.run.elapsed_ms == 5000.0, "one nonzero touch plus its emulated mouse costs only one penalty")
+	_click_control(page.get_node("HUD/Pause"))
+	_click_control(page.get_node("Modal/Restart"))
+
 func _world_probes(page: Runner) -> Array[String]:
 	_probes.clear()
 	_empty = Vector2.ZERO
@@ -249,19 +292,30 @@ func _click_control(control: Control) -> void:
 	_mouse_click(control.get_global_rect().get_center(), 0)
 
 func _tap_at(page: Runner, point: Vector2, touch := false) -> void:
-	var viewport_point := page._world.get_global_transform_with_canvas() * (page._world.camera * point)
+	var viewport_point := _viewport_point(page, point)
 	if touch:
-		var event := InputEventScreenTouch.new()
-		event.position = viewport_point
-		event.index = 0
-		event.pressed = true
-		root.push_input(event, true)
+		_screen_touch(viewport_point, 517, true)
 		_mouse_click(viewport_point, InputEvent.DEVICE_ID_EMULATION)
-		var release := event.duplicate() as InputEventScreenTouch
-		release.pressed = false
-		root.push_input(release, true)
+		_screen_touch(viewport_point, 517, false)
 	else:
 		_mouse_click(viewport_point, 0)
+
+func _viewport_point(page: Runner, point: Vector2) -> Vector2:
+	return page._world.get_global_transform_with_canvas() * (page._world.camera * point)
+
+func _screen_touch(point: Vector2, index: int, pressed: bool, canceled := false) -> void:
+	var event := InputEventScreenTouch.new()
+	event.position = point
+	event.index = index
+	event.pressed = pressed
+	event.canceled = canceled
+	root.push_input(event, true)
+
+func _screen_drag(point: Vector2, index: int) -> void:
+	var event := InputEventScreenDrag.new()
+	event.position = point
+	event.index = index
+	root.push_input(event, true)
 
 func _mouse_click(point: Vector2, device: int) -> void:
 	var event := InputEventMouseButton.new()

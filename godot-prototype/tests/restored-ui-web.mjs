@@ -74,20 +74,22 @@ async function visit(view,{full}) {
     await page.locator('#status').waitFor({state:'detached',timeout:70000});
     assert.equal(report.media.length,firstMedia,'initial title does not prefetch level media');
     await shot('01-painted-title');
-    await tap(288,865);await page.keyboard.press('ArrowRight');await page.waitForTimeout(430);
-    const map=pack('map-home');await tap(288,829);await map;await page.waitForTimeout(820);
+    await tap(101,879);await shot('01b-painted-ranking');await tap(288,50);
+    await tap(475,879);
+    await tap(208,786);await page.waitForTimeout(420);
+    const map=pack('map-home');await tap(348,530);await map;await page.waitForTimeout(820);
     await shot('02-painted-map');
     // Real journal and settings controls must not reload the map or start gameplay.
-    await tap(527,121);await shot('03-painted-journal');await tap(288,870);
-    await tap(527,199);await shot('04-painted-settings');
+    await tap(527,121);await shot('03-painted-journal');await tap(288,950);
+    await tap(527,43);await tap(59,55);await shot('04-painted-settings');
     const pre=report.media.length;
-    await tap(399,423);
+    await tap(399,467);
     await waitSave('journey-audio-v1.cfg',text=>/music_muted=true/.test(text));
-    await tap(399,500);
+    await tap(399,533);
     await waitSave('journey-audio-v1.cfg',text=>/effects_muted=true/.test(text));
-    await tap(288,735);
+    await tap(288,124);
+    await tap(288,879);await page.waitForTimeout(500);
     assert.equal(report.media.length,pre);
-    await tap(419,49);await page.waitForTimeout(260);
     await tap(138,429);await shot('05-painted-intro');
     if(!full) {
       await tap(23,545);await tap(527,43);await shot('06-home-return');
@@ -117,7 +119,7 @@ async function visit(view,{full}) {
     await waitSave('prototype-progress-v1.cfg',text=>/\[charging-bedroom\][\s\S]*flowers=3/.test(text));
     await shot('12-painted-success-hunt');
     await tap(274,922);await page.waitForTimeout(450);
-    await tap(527,121);await shot('13-painted-journal-progress');await tap(288,870);
+    await tap(527,121);await shot('13-painted-journal-progress');await tap(288,950);
     await tap(527,43);await shot('14-home-return');
     report.checks.push('actual old hunt success picture and new credit; real journal reflects both finished levels');
     report.widths.push(view.width);

@@ -1,4 +1,4 @@
-// Node >=22.13. Only the original enabled getHunt packs are inputs; no drafts.
+// Node >=22.13. Import the original shipped packs and reviewed native candidates.
 // Rebuild: node godot-prototype/tools/prepare_hunt_assets.mjs
 // Verify (does not write): add --check.
 import { createHash } from 'node:crypto';
@@ -15,6 +15,10 @@ const ORIGINAL_IDS = [
   'kitchen-before-cooking-v2', 'clear-corridor-check-v2', 'quake-bedroom-v2',
   'storm-street-check-v2', 'thunder-park-v2', 'forest-fire-sources-v2',
 ];
+const NATIVE_SKINS = {
+  'campus-classroom-check-v1': 'skins/realistic-campus.json',
+  'campus-lab-check-v1': 'skins/realistic-campus-v2.json',
+};
 const args = process.argv.slice(2);
 if (args.length > 1 || (args.length && args[0] !== '--check')) throw Error('Usage: prepare_hunt_assets.mjs [--check]');
 const check = args[0] === '--check';
@@ -58,20 +62,27 @@ const groups = [...registryArray[1].matchAll(/\{([^{}]+)\}/g)].map(([, group]) =
   if (Object.keys(chosen).length !== entries.length || !chosen.rules || !chosen.skin || !chosen.presentation) throw Error(`Incomplete registry pack: ${group}`);
   return chosen;
 });
-const enabled = json('content/scenes/catalog.json').filter(entry => entry.enabled);
+const catalog = json('content/scenes/catalog.json');
+const enabled = catalog.filter(entry => entry.enabled);
 const chosenIds = groups.map(group => json(group.rules).id);
 const sorted = ids => [...ids].sort().join(',');
 if (sorted(chosenIds) !== sorted(ORIGINAL_IDS) || sorted(enabled.map(entry => entry.id)) !== sorted(ORIGINAL_IDS)) {
   throw Error('Enabled getHunt selections drifted. Review scope before generating Godot assets.');
 }
+const nativeGroups = Object.entries(NATIVE_SKINS).map(([id, skin]) => {
+  if (!catalog.some(entry => entry.id === id && !entry.enabled)) throw Error(`Unknown native candidate: ${id}`);
+  const base = `content/scenes/${id}/`;
+  return { rules: base + 'rules.json', skin: base + skin, presentation: base + 'presentation.json', performance: base + 'performance.json' };
+});
 
 const allowedProfiles = new Set();
-for (const paths of groups) {
+for (const paths of [...groups, ...nativeGroups]) {
   const values = Object.fromEntries(Object.entries(paths).map(([key, path]) => [key, json(path)]));
   const { rules, skin, presentation, performance } = values;
   const base = `content/scenes/${rules.id}/`;
-  if (Object.values(paths).some(path => !path.startsWith(base)) || paths.skin !== base + enabled.find(entry => entry.id === rules.id).skin) {
-    throw Error(`Generated skin/section selection differs from the enabled catalog: ${rules.id}`);
+  const skinSelection = enabled.find(entry => entry.id === rules.id)?.skin ?? NATIVE_SKINS[rules.id];
+  if (Object.values(paths).some(path => !path.startsWith(base)) || paths.skin !== base + skinSelection) {
+    throw Error(`Selected skin or section does not match: ${rules.id}`);
   }
   if (rules.timeout !== 'fail' || rules.seconds !== 50 || rules.markMs !== 800 || presentation.clues !== 'on-demand' || presentation.timer !== 'pressure-bar') {
     throw Error(`Unexpected runtime policy: ${rules.id}`);
@@ -126,7 +137,7 @@ const b = await import(pureModule('app/game/scene-hunt/audio-profiles.ts'));
 const { renderScore } = await import(pureModule('app/game/audio/note-score.ts'));
 const { synthesiseHuntFeedback } = await import(pureModule('app/game/scene-hunt/feedback-score.ts'));
 resource('shared/contract.tres', {
-  ids: chosenIds,
+  ids: [...chosenIds, ...Object.keys(NATIVE_SKINS)],
   miss_penalty_ms: challenge.HUNT_MISS_PENALTY_SECONDS * 1000,
   miss_caption: challenge.huntMissCaption(),
   safe_hold_ms: json('content/journey-timing.json').safeHold,
@@ -249,4 +260,4 @@ for (const [path, bytes] of outputs) {
 }
 if (issues.length) throw Error(`Missing or stale native hunt resources: ${issues.join(', ')}`);
 const size = [...outputs.values()].reduce((bytes, outputBytes) => bytes + outputBytes.length, 0);
-console.log(`Native hunt assets: ${chosenIds.length} original packs, ${outputs.size} files, ${size} bytes (${check ? 'verified' : 'prepared'}).`);
+console.log(`Native hunt assets: ${chosenIds.length} original and ${nativeGroups.length} authored packs, ${outputs.size} files, ${size} bytes (${check ? 'verified' : 'prepared'}).`);

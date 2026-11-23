@@ -11,7 +11,9 @@ metadata/ids = [
   "quake-bedroom-v2",
   "storm-street-check-v2",
   "thunder-park-v2",
-  "forest-fire-sources-v2"
+  "forest-fire-sources-v2",
+  "campus-classroom-check-v1",
+  "campus-lab-check-v1"
 ]
 metadata/miss_penalty_ms = 5000
 metadata/miss_caption = "点错了，剩余时间 −5 秒。"

@@ -1,0 +1,328 @@
+{
+  "schema_version": 1,
+  "levels": {
+    "home-commute-visibility-v1": {
+      "background": "res://assets/safety_choices/street.webp",
+      "summary": "走过街设施，按人行信号通行，过街时持续观察。",
+      "sources": [
+        "https://jtgl.beijing.gov.cn/jgj/jgxx/94246/95332/166233/index.html"
+      ],
+      "rounds": [
+        {
+          "context": "路口有斑马线，人行灯是红色。对面正好是公交站。",
+          "question": "现在怎么走？",
+          "options": [
+            {
+              "label": "留在人行道等绿灯",
+              "correct": true,
+              "feedback": "对，站在安全位置等候。"
+            },
+            {
+              "label": "跟着先过的人走",
+              "correct": false,
+              "feedback": "别人的动作不能代替信号判断。"
+            },
+            {
+              "label": "翻护栏去对面",
+              "correct": false,
+              "feedback": "护栏用于分隔交通，不能翻越。"
+            }
+          ],
+          "heading": "过街决策"
+        },
+        {
+          "context": "灯变绿了，一辆车仍在转弯，司机没有减速。",
+          "question": "先做什么？",
+          "options": [
+            {
+              "label": "低头看导航往前走",
+              "correct": false,
+              "feedback": "过街时要观察车辆。"
+            },
+            {
+              "label": "等转弯车辆让行，确认安全再走",
+              "correct": true,
+              "feedback": "对，绿灯时也要看清来车。"
+            },
+            {
+              "label": "加速从车前跑过",
+              "correct": false,
+              "feedback": "别在车辆前抢行。"
+            }
+          ],
+          "heading": "过街决策"
+        }
+      ]
+    },
+    "water-rainy-crossing-v1": {
+      "background": "res://assets/safety_choices/riverside.webp",
+      "summary": "避开漫水桥、泄洪区和封闭通道，走已确认开放的高处路线。",
+      "sources": [
+        "https://yjglj.beijing.gov.cn/art/2022/11/19/art_3950_244120.html",
+        "https://swj.beijing.gov.cn/swdt/ztzl/fnsbaqztxc/fnszlxx/202607/t20260722_4778064.html",
+        "https://fujian.gov.cn/xwdt/mszx/202609/t20260904_7208976.htm"
+      ],
+      "rounds": [
+        {
+          "context": "福建一次暴雨中，河水漫过桥面，居民被困后在屋内求助。练习中的便桥也已被水淹没，河边小路拉起了警戒带。",
+          "question": "哪条路可以走？",
+          "options": [
+            {
+              "label": "踩着水过便桥",
+              "correct": false,
+              "feedback": "水流和水下情况无法凭外观判断。"
+            },
+            {
+              "label": "钻过警戒带走河边",
+              "correct": false,
+              "feedback": "封闭通道应保持禁入。"
+            },
+            {
+              "label": "走工作人员确认开放的高路",
+              "correct": true,
+              "feedback": "对，远离河道和封闭区域。"
+            }
+          ],
+          "heading": "真实案例改编"
+        },
+        {
+          "context": "同伴提议用树枝试一下便桥的水深。",
+          "question": "该怎么回应？",
+          "options": [
+            {
+              "label": "继续按开放路线绕行",
+              "correct": true,
+              "feedback": "对，从安全处提醒同伴一起绕开。"
+            },
+            {
+              "label": "走近桥面试深浅",
+              "correct": false,
+              "feedback": "近水探查也可能滑倒或被冲走。"
+            },
+            {
+              "label": "等水面平静就走便桥",
+              "correct": false,
+              "feedback": "水面平静也不能证明可以通行。"
+            }
+          ],
+          "heading": "路线选择"
+        }
+      ]
+    },
+    "social-neighborhood-check-v1": {
+      "background": "res://assets/safety_choices/community.webp",
+      "summary": "发现楼内充电或消防通道被占，从安全处报告物业。",
+      "sources": [
+        "https://kfqgw.beijing.gov.cn/ywdt/gzdt/202603/t20260325_4565790.html",
+        "https://www.spp.gov.cn/spp/dfjcdt/202507/t20250728_702293.shtml"
+      ],
+      "rounds": [
+        {
+          "context": "北京朝阳曾发生电动自行车飞线充电起火。练习中，甲车停在室外车棚，乙车接线在楼道充电，丙车停在规定车位。",
+          "question": "哪一项需要报告？",
+          "options": [
+            {
+              "label": "室外车棚里的甲车",
+              "correct": false,
+              "feedback": "仅停在指定车棚，没有题面所示隐患。"
+            },
+            {
+              "label": "在楼道里充电的乙车",
+              "correct": true,
+              "feedback": "对，楼道也是疏散通道。"
+            },
+            {
+              "label": "在规定车位的丙车",
+              "correct": false,
+              "feedback": "正常停放不需当作异常。"
+            }
+          ],
+          "heading": "真实案例改编"
+        },
+        {
+          "context": "一根线从住户窗户垂下来，接到车上。旁边的车挡住了标有消防通道的入口。",
+          "question": "现在怎么做？",
+          "options": [
+            {
+              "label": "拔掉线解决问题",
+              "correct": false,
+              "feedback": "让工作人员处置，别直接碰线。"
+            },
+            {
+              "label": "自己推开挡路车辆",
+              "correct": false,
+              "feedback": "从安全处提供位置，由物业协调。"
+            },
+            {
+              "label": "从安全处把两种情况报给物业",
+              "correct": true,
+              "feedback": "对，说明楼栋、位置和看到的情况。"
+            }
+          ],
+          "heading": "证据辨识"
+        }
+      ]
+    },
+    "food-market-check-v1": {
+      "background": "res://assets/safety_choices/counter.webp",
+      "summary": "买包装食品时核对日期、包装和标示的保存条件。",
+      "sources": [
+        "https://scjgj.beijing.gov.cn/zwxx/scjgdt/202604/t20260430_4628434.html"
+      ],
+      "rounds": [
+        {
+          "context": "模拟日期是 6 月 12 日。同一货架上的三袋食品都按标签要求存放。",
+          "question": "哪个包装日期已过期？",
+          "options": [
+            {
+              "label": "保质期至 6 月 13 日",
+              "correct": false,
+              "feedback": "6 月 12 日还在标示期限内。"
+            },
+            {
+              "label": "保质期至 6 月 11 日",
+              "correct": true,
+              "feedback": "对，已超过标签日期。"
+            },
+            {
+              "label": "保质期至 6 月 20 日",
+              "correct": false,
+              "feedback": "6 月 12 日还在标示期限内。"
+            }
+          ],
+          "heading": "包装标签核对"
+        },
+        {
+          "context": "日期正常的一袋食品封口破了，另外两袋封口完整。",
+          "question": "对破袋怎么做？",
+          "options": [
+            {
+              "label": "放下并告诉店员",
+              "correct": true,
+              "feedback": "对，避开破损包装。"
+            },
+            {
+              "label": "挤出空气就买",
+              "correct": false,
+              "feedback": "挤压无法恢复包装的保护作用。"
+            },
+            {
+              "label": "买回去尝一点",
+              "correct": false,
+              "feedback": "试吃无法确认食品安全。"
+            }
+          ],
+          "heading": "包装标签核对"
+        }
+      ]
+    },
+    "first-aid-sprain": {
+      "background": "res://assets/safety_choices/trail.webp",
+      "summary": "扭伤先停止活动，可隔布冷敷。无法负重或疼痛严重时及时就医。",
+      "sources": [
+        "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jzjj/202501/t20250124_3998160.html"
+      ],
+      "rounds": [
+        {
+          "context": "同伴在平坦步道崴了脚，已经站到安全处，脚踝开始肿。",
+          "question": "先做什么？",
+          "options": [
+            {
+              "label": "按揉脚踝，活动几圈",
+              "correct": false,
+              "feedback": "揉搓和转动可能加重损伤。"
+            },
+            {
+              "label": "停止活动，找安全位置休息",
+              "correct": true,
+              "feedback": "对，避免继续负重。"
+            },
+            {
+              "label": "忍着疼继续往前走",
+              "correct": false,
+              "feedback": "继续负重可能加重伤情。"
+            }
+          ],
+          "heading": "分步急救"
+        },
+        {
+          "context": "他坐下后仍无法踩地，疼得很厉害。你们有布和冷袋。",
+          "question": "接下来怎么做？",
+          "options": [
+            {
+              "label": "协助求医，等待时可隔布冷敷",
+              "correct": true,
+              "feedback": "对，别强行踩地或自行复位。"
+            },
+            {
+              "label": "让他站起来多试几次",
+              "correct": false,
+              "feedback": "不能负重需要就医判断。"
+            },
+            {
+              "label": "用力把脚踝扳回去",
+              "correct": false,
+              "feedback": "自行复位可能造成进一步损伤。"
+            }
+          ],
+          "heading": "分步急救"
+        }
+      ]
+    },
+    "first-aid-fainting": {
+      "background": "res://assets/safety_choices/hall.webp",
+      "summary": "发现无反应者立即呼救和拨打 120，观察呼吸并听调度指引。",
+      "sources": [
+        "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jzjj/202608/t20260821_4831705.html",
+        "https://www.beijing.gov.cn/fuwu/bmfw/jhsyfwzdzx/2021nsjrkr/2021sjrkrjkzs/202107/t20210707_2431055.html",
+        "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jzjj/202608/t20260821_4831705.html"
+      ],
+      "rounds": [
+        {
+          "context": "北京 120 曾接到一名驾驶员突发晕厥的救援指令。练习把地点改在活动室。现场安全，一名成人倒地，呼唤和轻拍后没有反应，周围有人。",
+          "question": "现在怎么做？",
+          "options": [
+            {
+              "label": "请旁人立即拨打 120，随即观察呼吸",
+              "correct": true,
+              "feedback": "对，告诉调度员地点和患者状态。"
+            },
+            {
+              "label": "先喂水试试",
+              "correct": false,
+              "feedback": "无反应者可能呛咳或窒息。"
+            },
+            {
+              "label": "自己扶起来走一走",
+              "correct": false,
+              "feedback": "不要随意扶起或搬动。"
+            }
+          ],
+          "heading": "真实案例改编"
+        },
+        {
+          "context": "调度电话已接通。患者没有正常呼吸，只有偶尔的喘息。",
+          "question": "现在该怎么做？",
+          "options": [
+            {
+              "label": "当作正常呼吸等一等",
+              "correct": false,
+              "feedback": "偶尔喘息不能当作正常呼吸。"
+            },
+            {
+              "label": "按调度指导启动心肺复苏，请旁人拿 AED",
+              "correct": true,
+              "feedback": "对，正常呼吸缺失时马上行动。"
+            },
+            {
+              "label": "先等患者自行清醒",
+              "correct": false,
+              "feedback": "这种情况需要立即急救。"
+            }
+          ],
+          "heading": "急救分流"
+        }
+      ]
+    }
+  }
+}

@@ -22,6 +22,7 @@ offset_left = 52.0
 offset_top = 282.0
 offset_right = 524.0
 offset_bottom = 713.0
+mouse_filter = 0
 focus_mode = 2
 
 [node name="Art" type="TextureRect" parent="Card"]
@@ -79,17 +80,6 @@ offset_right = 392.0
 offset_bottom = 384.0
 theme_override_font_sizes/font_size = 25
 text = "开始练习"
-
-[node name="Close" type="Button" parent="Card"]
-layout_mode = 0
-offset_left = 406.0
-offset_top = 73.0
-offset_right = 455.0
-offset_bottom = 122.0
-flat = true
-theme_override_font_sizes/font_size = 27
-text = "×"
-tooltip_text = "关闭关卡介绍"
 
 [node name="Note" type="Label" parent="."]
 layout_mode = 0

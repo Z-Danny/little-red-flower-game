@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "positions": {
+    "campus-canteen-check-v1": {
+      "x": 491,
+      "y": 2054
+    },
+    "campus-stairs-check-v1": {
+      "x": 533,
+      "y": 1583
+    },
+    "first-aid-abrasion": {
+      "x": 216,
+      "y": 330
+    },
+    "food-table-check-v1": {
+      "x": 380,
+      "y": 390
+    }
+  }
+}

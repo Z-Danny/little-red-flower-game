@@ -1,0 +1,246 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/safety_choices.gd" id="1"]
+[ext_resource type="Theme" path="res://theme/storybook.tres" id="2"]
+[ext_resource type="Texture2D" path="res://assets/safety_choices/title.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/safety_choices/card.webp" id="4"]
+
+[sub_resource type="StyleBoxTexture" id="Header"]
+texture = ExtResource("3")
+texture_margin_left = 24.0
+texture_margin_top = 12.0
+texture_margin_right = 24.0
+texture_margin_bottom = 12.0
+
+[sub_resource type="StyleBoxTexture" id="Card"]
+content_margin_left = 27.0
+content_margin_top = 24.0
+content_margin_right = 27.0
+content_margin_bottom = 24.0
+texture = ExtResource("4")
+texture_margin_left = 42.0
+texture_margin_top = 38.0
+texture_margin_right = 42.0
+texture_margin_bottom = 38.0
+
+[sub_resource type="StyleBoxTexture" id="Evidence"]
+content_margin_left = 16.0
+content_margin_top = 13.0
+content_margin_right = 16.0
+content_margin_bottom = 13.0
+texture = ExtResource("4")
+texture_margin_left = 29.0
+texture_margin_top = 24.0
+texture_margin_right = 29.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.82, 0.9, 0.83, 1)
+
+[sub_resource type="StyleBoxTexture" id="Response"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+texture = ExtResource("4")
+texture_margin_left = 29.0
+texture_margin_top = 24.0
+texture_margin_right = 29.0
+texture_margin_bottom = 24.0
+modulate_color = Color(0.91, 0.87, 0.73, 1)
+
+[node name="SafetyChoices" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+clip_contents = true
+theme = ExtResource("2")
+script = ExtResource("1")
+
+[node name="Base" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color(0.33, 0.49, 0.43, 1)
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Interface" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Header" type="Panel" parent="Interface"]
+layout_mode = 1
+anchor_right = 1.0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = -18.0
+offset_bottom = 106.0
+theme_override_styles/panel = SubResource("Header")
+
+[node name="Back" type="Button" parent="Interface/Header"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 90.0
+offset_bottom = 86.0
+
+[node name="Title" type="Label" parent="Interface/Header"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_right = -94.0
+theme_override_colors/font_color = Color(0.99, 0.97, 0.91, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Pause" type="Button" parent="Interface/Header"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -90.0
+offset_top = 4.0
+offset_right = -8.0
+offset_bottom = 86.0
+
+[node name="Card" type="PanelContainer" parent="Interface"]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_top = 0.255
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_right = -22.0
+offset_bottom = -32.0
+theme_override_styles/panel = SubResource("Card")
+
+[node name="Scroll" type="ScrollContainer" parent="Interface/Card"]
+unique_name_in_owner = true
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="Content" type="VBoxContainer" parent="Interface/Card/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="TopLine" type="HBoxContainer" parent="Interface/Card/Scroll/Content"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Heading" type="Label" parent="Interface/Card/Scroll/Content/TopLine"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.12, 0.35, 0.28, 1)
+theme_override_font_sizes/font_size = 26
+text_overrun_behavior = 3
+
+[node name="Step" type="Label" parent="Interface/Card/Scroll/Content/TopLine"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25, 0.39, 0.33, 1)
+theme_override_font_sizes/font_size = 21
+
+[node name="Evidence" type="PanelContainer" parent="Interface/Card/Scroll/Content"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("Evidence")
+
+[node name="Context" type="Label" parent="Interface/Card/Scroll/Content/Evidence"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.13, 0.24, 0.20, 1)
+theme_override_constants/line_spacing = 6
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+
+[node name="Question" type="Label" parent="Interface/Card/Scroll/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+autowrap_mode = 3
+
+[node name="Feedback" type="PanelContainer" parent="Interface/Card/Scroll/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("Response")
+
+[node name="FeedbackText" type="VBoxContainer" parent="Interface/Card/Scroll/Content/Feedback"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="FeedbackTitle" type="Label" parent="Interface/Card/Scroll/Content/Feedback/FeedbackText"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.16, 0.31, 0.21, 1)
+theme_override_font_sizes/font_size = 23
+
+[node name="FeedbackBody" type="Label" parent="Interface/Card/Scroll/Content/Feedback/FeedbackText"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.23, 0.23, 0.17, 1)
+theme_override_font_sizes/font_size = 23
+autowrap_mode = 3
+
+[node name="Actions" type="VBoxContainer" parent="Interface/Card/Scroll/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="Paused" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="PauseCard" type="PanelContainer" parent="Paused"]
+custom_minimum_size = Vector2(330, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("Card")
+
+[node name="PauseContent" type="VBoxContainer" parent="Paused/PauseCard"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="PauseTitle" type="Label" parent="Paused/PauseCard/PauseContent"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "练习已暂停"
+horizontal_alignment = 1
+
+[node name="Resume" type="Button" parent="Paused/PauseCard/PauseContent"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "继续练习"
+
+[node name="PauseBack" type="Button" parent="Paused/PauseCard/PauseContent"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+text = "返回地图"

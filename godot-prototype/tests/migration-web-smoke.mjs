@@ -72,8 +72,8 @@ try {
   await ready();
   assert.equal(report.media.length,0);
   await screenshot('01-title');
-  await tap(285,860);
-  const campus=pack('map-campus');await tap(288,829);await campus;await page.waitForTimeout(650);
+  await tap(475,879);
+  const campus=pack('map-campus');await tap(348,530);await campus;await page.waitForTimeout(650);
   await tap(450,971);
   await screenshot('02-campus-locked');
   await tap(370,650);
@@ -81,11 +81,9 @@ try {
   assert.equal(await page.evaluate(savedProgress),'');
   await tap(152,645);
   await tap(78,50);
-  await drag([470,651],[113,651]);
-  await page.waitForTimeout(380);
-  const home=pack('map-home');await tap(288,829);await home;await page.waitForTimeout(650);
+  await tap(208,786);await page.waitForTimeout(420);
+  const home=pack('map-home');await tap(348,530);await home;await page.waitForTimeout(650);
   await screenshot('03-home-map');
-  await tap(494,49);  // Go to first available level without changing unlocks.
   await tap(137,433);
   const oil=pack('oil-fire');await tap(375,650);await oil;await page.waitForTimeout(1000);
   await screenshot('04-oil-fire');
@@ -112,8 +110,9 @@ try {
   const totalRequests=report.media.length;
   await page.reload({waitUntil:'domcontentloaded'});await ready();
   assert.equal(await page.evaluate(savedProgress),second);
-  await tap(285,860);await page.keyboard.press('ArrowRight');await page.waitForTimeout(350);await tap(288,829);await page.waitForTimeout(800);
-  await tap(494,49);await screenshot('09-cached-home-map');
+  await tap(475,879);await tap(208,786);await page.waitForTimeout(420);
+  await tap(348,530);await page.waitForTimeout(800);
+  await screenshot('09-cached-home-map');
   assert.equal(report.media.length,totalRequests,'page reload must reuse the cached island instead of downloading again');
   assert.deepEqual(report.errors,[]);
   assert.deepEqual(report.failedRequests,[]);

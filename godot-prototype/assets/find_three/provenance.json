@@ -1,0 +1,79 @@
+{
+  "model": "Origin MCP · GPT Image 2.6 Sunburst",
+  "preparation": {
+    "backgrounds": "原图按竖幅比例保留，编码为 WebP。",
+    "props": "沿透明像素间隙切开 25 件道具，逐件裁到像素包围盒。",
+    "ui": "从独立生成的透明图集中切出 6 项界面素材。返回和暂停沿用已有 restored_ui 手绘素材。"
+  },
+  "sources": {
+    "canteen": {
+      "prompt": "Use case: photorealistic-natural. Original full-bleed vertical photograph for a Chinese school canteen handwashing educational game, extreme portrait 9:16. Natural morning light. Photograph from an elevated, slightly oblique overhead perspective, looking onto a single large clean unoccupied light wood canteen activity workbench dominating the bottom 70 percent of the entire frame as one smooth flat surface for composited play props. Workbench extends all the way toward camera, no visible front edge. In the top 30 percent behind it, realistic stainless sink fixtures and cream tile of a sunny contemporary Chinese school canteen; low-detail. Soft shadows, tactile believable materials, warm teal classroom colors. Game developer will composite all small movable objects later. Keep the whole workbench completely clear of objects, leave the work surface uninterrupted. No people, no words, no logos, no UI, no border.",
+      "media_id": "1897ee6c12cd0f4b68424fa5796cbbe1",
+      "source_sha256": "a1c2b936cdb65edf591442f149e5168ae9883b60087733bd54511f38e8ff6665",
+      "assets": {
+        "canteen.webp": "9cdd2822611a75cd55bce11906e2b161774380460dff3a4a0fb326fbb5581994"
+      }
+    },
+    "storage": {
+      "prompt": "Use case: photorealistic-natural. Original full-bleed vertical environmental photograph for a Chinese home food-storage educational game, extreme portrait 9:16. Natural afternoon window light. Photograph from an elevated, slightly oblique overhead perspective, looking onto a single large clear wood-toned kitchen island dominating the bottom 72 percent of the entire frame as one nearly flat surface for composited play props. Island counter extends all the way toward camera with no visible front edge. Top quarter behind it shows a domestic open refrigerator with clean naturally grey racks, a wall of pale green cabinet fronts and subdued home details. Credible appliance materials, soft ambient shadows, earthy olive and amber warmth, moderate brightness. Game developer will composite all movable objects later. Keep counter area uninterrupted and entirely clear of objects. No people, no words, no logos, no UI, no border.",
+      "media_id": "cc1fce1a22d761144a78d5259e91fd6d",
+      "source_sha256": "353ad252b197e7a2f6ba82f669023e2e341edef2044a0287071cd68d86022d4b",
+      "assets": {
+        "storage.webp": "76893fa917b29e0f341e4d7bce2ca411ec38e0d6ffa2f4d518759702d68feb6a"
+      }
+    },
+    "serving": {
+      "prompt": "Use case: photorealistic-natural. Original full-bleed vertical environmental photograph for a Chinese family dining hygiene educational game, extreme portrait 9:16. High-angle slightly oblique overhead photograph looking onto one large pale walnut rectangular dining table dominating lower 72 percent of entire frame as one nearly flat uninterrupted table surface for composited play props. Table extends all the way toward camera, no front edge. Top quarter behind it shows a single chair, realistic window and subtle linen curtain in a lived-in contemporary Chinese family apartment. Gentle warm daylight at lunch, refined warmth but documentary realism, subdued color with plenty of contrast for layered colorful props. Game developer will composite all dishes and small movable objects later. Keep the entire visible table surface absolutely clear of all objects. No human, text, logos, UI or border.",
+      "media_id": "8534f9615f022ae009aae73b8338d1f5",
+      "source_sha256": "8f8697727d524424aa37849a6298bc5dab2d31456c946363083d03a67ee9edbf",
+      "assets": {
+        "serving.webp": "8c95fe21cf54e0771d01bcdf1a6ea0b0edf57f496ea9c68a001565940c27208a"
+      }
+    },
+    "props": {
+      "prompt": "Use case: illustration-story. Produce one square game prop sprite atlas of 25 isolated charming Chinese children's picture-book objects, each depicted at same slightly oblique top-down angle, soft gouache texture with dark thin outline and clean readable silhouette. True transparency (or perfectly pure #FF00FF if you cannot return alpha), no shadows outside object silhouettes. EXACT 5 rows by 5 columns, centered at 10,30,50,70,90 percent along both axes, large blank gutters in each cell. Every object must fit entirely within the central 75 percent of its own cell, no object spanning cells, no lettering, no grid marks. Row 1 left to right: teal pump liquid soap bottle; standalone short chrome tap with a clearly flowing stream of blue water; white tissue sticking out of a salmon paper dispenser; yellow reusable water bottle; green dusting cloth. Row 2: small pink yoghurt cup; white sealed milk bottle; opaque smooth-front blue cheese wrapper; turquoise frozen dumplings package with two dumpling motifs; rectangular frozen vegetable bag with green pea motif. Row 3: square pink raw fish package with fish silhouette motif; beige bag of dry rice; tan dry noodle packet with noodle motif; green bag of oats; compact round red hard candy tin. Row 4: long pair of green chopsticks arranged diagonally to fit; wide round green-bowled serving ladle arranged diagonally to fit; cream deep serving platter pale blue rim; white soup tureen with lid and twin handles; round yellow rice bowl. Row 5: red short pair of chopsticks diagonal; small pink tea spoon diagonal; orange rectangular cosmetics bottle with round cap; blue zipped pencil pouch; cream phone with blank black glass screen. Use exactly this sequence. High contrast and clear silhouettes. Do not draw grid cells, labels, textures or any extra decoration or objects between sprites.",
+      "media_id": "d4288498f970af1e23bb3a993a883591",
+      "source_sha256": "6f5cb7603dec939142b83e8eb75026923e5719a8a492f22ca4f5b10fe63ce33e",
+      "assets": {
+        "props/bottle.webp": "387e2b9186550ffa3c157659e98131c4cf8ae44bbcd81090fc2f8731963d4d68",
+        "props/bowl.webp": "ce3017bb301d183fb80906279d17f70b18cf33c5319e36e768fc1a5e571ec60c",
+        "props/candy.webp": "a2893f2bb0e2427d64971de96bbe60454256983e1bcd73e57140d014418a34a7",
+        "props/cheese.webp": "893d3dafece6f8ffced3ab608f319e357573b71a3c37292bddfed36eaef77462",
+        "props/chopsticks.webp": "7f528ef204a4f677429db4d175a023d7dd212beee1044aa3da268da75d35ca26",
+        "props/cloth.webp": "179e48b09e144aa4e4a013b7a18e1b12bf4fef012a16863bdc9c82461da62df3",
+        "props/cosmetic.webp": "abc57fd8ad1c7462299261d57889b564cb8fb641447dddb42ee6fbb7a6cb3bb2",
+        "props/dumplings.webp": "81c98abe8833e99c661e2b92f8b2773a5b80bfca4532801bea16d9f633b59e7e",
+        "props/fish.webp": "a430483ef2f168ad2762b4a2846e188785434d3d70c7b8e8930a4f82c1aacd20",
+        "props/ladle.webp": "adaa27c10198281658f160074656d7d0a4d2c0b5f710ab02e59ce3725fa8ce3c",
+        "props/milk.webp": "004a77e5fa0d63ab4fbeeaf0604c1cc89ddf29ae7763f66af2b43bc846f3a961",
+        "props/noodles.webp": "5cbf1f610ed00f441a419ce960d13cc6b7707a04727eb79d84fa4f6133099b6a",
+        "props/oats.webp": "ad7b5ca8c28f08e9d99ee3da4f27220dc74ebaa713f7cb1436eb1afd1c9b95a0",
+        "props/peas.webp": "abe65643d8b60e1d372fcdcaed7d553b05c50e3f37580ea24ac5d142dc6f4ff2",
+        "props/phone.webp": "5c888c677f7a67f7c6d28385f007f6a7fc61414497c4244d6f06e78367b2e38e",
+        "props/plate.webp": "8519d428b1b4b72319c77cc649ba0af34f6e74909a8c91d82d9cdf007f8a6513",
+        "props/pouch.webp": "325f6a92c148b22e012a1564a8d507e765422afbf20b5be57f87801251e0a6a0",
+        "props/rice.webp": "ee247ce4f9e14343a87e47a5ad321cf0f6b57faddefa5a14f4cfb1d1675c7be1",
+        "props/serving_chopsticks.webp": "9df33649d047b78cf9b5a5c573b7f3b6c12ab40ac192f0eb595fa8814878205a",
+        "props/soap.webp": "d2825d81b60cb63eb671eee4cd20ea63cbd177f6493571a61e49378b89000887",
+        "props/spoon.webp": "3f2f7c7bfbfa937b73ffe6a9fd6c28d902905fd00d5573b6dc810c1b674a2515",
+        "props/tissue.webp": "0905153cd4a441447136b421b82d30c30cf718f47ced1e1d4913d471695824a6",
+        "props/tureen.webp": "3bfe3a08708ef93bc236b1157afdfb82a9dd3a9f4d525a8e08358985e2854cd3",
+        "props/water.webp": "dc95f407e1d89ff8a570b18c660954b034480f2828e87ef3163e12c967ca7903",
+        "props/yoghurt.webp": "45c6a93a192c42b780f9aa89f5fc433b624e2811ead0f06b8cae728554d3cd18"
+      }
+    },
+    "ui": {
+      "prompt": "Use case: illustration-story. Create a 2x3 grid atlas of six original isolated user-interface graphic plates only, no words, letters, numerals, symbols, controls or stickers. True alpha transparency or plain #FF00FF magenta if impossible; clean empty gutters between six different pieces. 3 rows by 2 columns, centered in independent 50%-width by 33.3%-height cells. Pieces designed like a gently hand-painted children's picture book, subdued shaded materials in cream, amber and deep spruce green, soft narrow natural edges. Row one left: wide shallow roughly 5:1 header/title plate in flat dark spruce with very thin gold edge, no floral motif. Row one right: wide 3.4:1 light warm ivory recipe label paper with thin moss border, clean center. Row two left: wide roughly 3:1 dark spruce serving tray backing with very soft oval corners and gold edge, absolutely empty no slots or compartments. Row two right: single nearly square cream shallow card slot with tan shadowed rim, absolutely empty. Row three left: muted light parchment near-rectangular large 1.4:1 dialog card with rounded corners, thin moss edge and completely empty center. Row three right: warm yellow 5.8:1 simple capsule button with thin brown edge and blank center. Generously separate all six plates. No shadows outside sprites, no text, no logos, no numerals, no characters. These assets will be resized and composited in a mobile game HUD.",
+      "media_id": "8c991b56030adc946d1a3375cc52a52a",
+      "source_sha256": "ec8ba498f9e22e593a0f3c4e90a0a5b9633ff83266ef6dc1afaaa21c4e67b907",
+      "assets": {
+        "ui/button.webp": "31c39b9fff901ff89323efc6842fe763b0f3f27537bddbdced54afae5e5f586c",
+        "ui/dialog.webp": "98a38a9d7642fbec1af7d7f72392da320fd564db9a2a38bd8394fe13f10ac101",
+        "ui/header.webp": "e133e7607a40bd2c058d8bafe699bb6f8eb8b28596a092a362821a53db9e125b",
+        "ui/recipe.webp": "857a5f69bc514b0ff2f1db267f333eccb481de63066073634ebd5e7019701226",
+        "ui/slot.webp": "0547f1a2afcf1c28495b118a27a2db18b8dbfaefda55df943f96ee80667b8600",
+        "ui/tray.webp": "80ea4af809a16646cdfdd7a5b9c314317797394cc67b9b2d02d18b4313334bfc"
+      }
+    }
+  }
+}

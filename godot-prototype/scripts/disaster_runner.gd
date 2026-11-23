@@ -2,6 +2,12 @@ extends Control
 
 signal finished(won: bool, elapsed_seconds: float)
 signal exited
+signal cue_requested(cue: String)
+
+const ACTION_CUES := {
+	"move": "flood-high-step", "switch": "flood-power-off", "call": "flood-message-sent",
+	"pack": "flood-pack-zip", "assemble": "put-together", "exit": "flood-high-step",
+}
 
 const Catalog = preload("res://scripts/level_catalog.gd")
 const Layout = preload("res://scripts/scene_layout.gd")
@@ -135,8 +141,9 @@ func _gui_input(event: InputEvent) -> void:
 		accept_event()
 	elif event is InputEventMouseMotion and _down:
 		_pointer = _tx.affine_inverse() * event.position
-		if not _street and not _pressed.is_empty() and _skin.sprites[_pressed].input == "drag" and _pointer.distance_to(_start) >= 14.0:
+		if not _street and _drag.is_empty() and not _pressed.is_empty() and _skin.sprites[_pressed].input == "drag" and _pointer.distance_to(_start) >= 14.0:
 			_drag = _pressed
+			_action_cue("pickup")
 		queue_redraw()
 
 func after_input() -> void:
@@ -145,6 +152,8 @@ func after_input() -> void:
 
 func _take(cue: String) -> void:
 	match cue:
+		"start": _action_cue("mark" if _street else ACTION_CUES.get(_sim.pending.get("motion"), "confirm"))
+		"notice": _action_cue("putback")
 		"found": _play("goal-confirm")
 		"wrong": _play("wrong-warning")
 		"failed":
@@ -155,10 +164,15 @@ func _take(cue: String) -> void:
 		"escaped":
 			_terminal = true
 			_drag = ""
+			_action_cue("flood-high-step")
 			_modal("已先行转移", _sim.notice, "返回地图")
 		"complete":
 			_terminal = true
 			finished.emit(true, (_sim.elapsed + _sim.penalty) / 1000.0)
+
+func _action_cue(cue: String) -> void:
+	if not audio_muted:
+		cue_requested.emit(cue)
 
 func _play(cue: String) -> void:
 	if audio_muted: return

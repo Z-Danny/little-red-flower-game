@@ -57,10 +57,12 @@ func build(pack: Pack, silent: bool) -> void:
 	for i in range(6):
 		_effects.append(_player())
 	for i in range(4):
-		_music.append(_player())
+		_music.append(_player("HuntMusic" + str(i)))
 
-func _player() -> AudioStreamPlayer:
+func _player(player_name := "") -> AudioStreamPlayer:
 	var player := AudioStreamPlayer.new()
+	if not player_name.is_empty():
+		player.name = player_name
 	add_child(player)
 	return player
 

@@ -1,0 +1,72 @@
+{
+  "model": "Origin MCP · GPT Image 2.6 Sunburst",
+  "preparation": "背景保留 9:16 竖幅。图集沿空隙裁出道具，移除洋红底并保留边缘透明度。开场运动、落位和蒸汽由透明切图分层播放。沿用找物合成的已生成界面素材及手绘导航图标。",
+  "sources": {
+    "props": {
+      "prompt": "Use case illustration-story. Generate one square game prop sprite atlas of EXACTLY 25 separate isolated storybook gouache objects, each with natural texture, clear fine line edges and robust silhouettes. True RGBA transparency, large empty clear gutters; no shadows outside silhouettes. Exactly 5 rows and 5 columns, centers at 10/30/50/70/90 percent, keep each object confined to central 72 percent of its own cell. Match all requested artwork order exactly. Row1: blue rolled gym foam mat viewed side-on; snapped lightweight athletic practice hurdle with one visibly bent broken leg; round orange basketball; one Chinese schoolboy seen in profile facing right wearing teal sports top and black shorts, feet visible, arms naturally ready to start warm-up; triangular freestanding orange plastic caution cone. Row2: small blue mesh sports equipment rack; clean teal whistle on short loop; lidded transparent food container with raw pink meat visible inside; clear sealed box of ready-to-eat green salad; clear food container of cooked orange vegetables with one red splash on the outer top edge. Row3: right-facing stainless microwave with black unlabelled glass door; blue dark kitchen trash can with lid; upright white mini-refrigerator with closed door; lidded glass leftovers box holding cooked rice and mixed vegetables; small wispy pale steam puff with alpha transparency. Row4: closed unbranded kraft-colored lunch carton with intact seal tape; similar closed green school lunch carton with intact seal tape; similar kraft lunch carton with the seal torn and flap just ajar; small unmarked clipboard with blank cream paper; green check station tray with no text. Row5: blue sealed factory water bottle; unbranded blue narrow flask with dull brown river water visible; dirt-covered wild mushrooms with two differently shaped brown caps growing side by side; unopened yellow packet of shelf-stable biscuits with cookie motifs but no words; empty wicker picnic basket. No text, numbers, UI, cell lines, logos or extra art. Slight oblique top-down view for objects, full feet on the one human sprite.",
+      "media_id": "cd69a429757d33d1f82bd983699bf364",
+      "source_sha256": "6c29850a7a3e50f3914f80c2ec7144addac38a4929b37d25200bc3cfcfc0da19",
+      "assets": {
+        "shared/basket.webp": "9c294f8f7b8d325067a8ee7d8d3d70ab33aaf457e90b389ded9f77961cb815be",
+        "shared/basketball.webp": "a30df56e13330413972917269a5602946037d1c40360c5de15adbfcca5b858bc",
+        "shared/bin.webp": "f95fe25e7d295357802b67e48202395414e4a940361c86124bbe5e88dd3cf362",
+        "shared/biscuit.webp": "7c43b039cf0fc1cd04226f01b81b73836b038510a2039850c6887ab553d844de",
+        "shared/boy.webp": "caa410a29eeebc0cee03dc0213d18587f1fb88aa04a04a667954357dc68e13f3",
+        "shared/clipboard.webp": "cd83f28c59084a62fba7836edd965157037229f2d7afe7409f982713b4e633d6",
+        "shared/cone.webp": "6ff86fa604fa286499fcaed4581be0243ce1cdfe5e601afe1efb36e4115e8cb8",
+        "shared/dripped.webp": "25b81a89955321f3a70f9d6e8ab827270eb7ca7a439f0111d5bd15855369bcad",
+        "shared/hurdle.webp": "bb7ed17e11ddfbc479214f13b6341c2386252ed6fd22b03fe2bb98f0a8145ad7",
+        "shared/leftovers.webp": "e36de550911915f0612802299252834e17d7d849837ae46bc4e2724ab37445c1",
+        "shared/lunch_late.webp": "e59589857f55ac566a1c1a68b09d414df81b22a658aca641a99bc8e34ebc52dd",
+        "shared/lunch_ripped.webp": "5b72b6cbc0564f2e17d85c118e23accf8396ab24fa34486eb353a6713b95f0c8",
+        "shared/lunch_sealed.webp": "3aaace8570656cb39d9acb89913185ea21c2be19803904d17831736750d2e5eb",
+        "shared/mat.webp": "fda498b0c7b6f749a551e8f33230cdaab14d6b8d4b88e18d44fc96b1a1609ddc",
+        "shared/microwave.webp": "ce32118c32d1369b8d5ca0f4b0ec07fde0fc050831b1a2784a9a530666325c29",
+        "shared/mini_fridge.webp": "e680678ab69a61e42b8ccc2f66ec8476a87079467fd0b41f2efa19c095a7efe3",
+        "shared/mushroom.webp": "9cff80d26ce4ee41127afffc1b573ab936badd2cc0096347ad8eedca4f8e963a",
+        "shared/rack.webp": "864b58b0f77cf4581b1875f112690cb615c62b7ffc3884710984eefb83f37d31",
+        "shared/raw.webp": "c7e88c787ec99cb81cc765a533d835ff777651195c29ef26d049b248384e15ed",
+        "shared/review.webp": "6bf7333a463af9accab4f5b470b5e99ccbb533de1c669094f7289e03df3cc2f8",
+        "shared/river.webp": "2105600eab23f600bf704bc2f6ef429fea0c5df74e21274113f94373ae609597",
+        "shared/salad.webp": "1df6010582de291b2af0f5c53d74fc75ab30230d50bd52a73e0f47bf8d610d50",
+        "shared/steam.webp": "56521799494127fb7f7d842adca140364284e2f47a73a040e30b128baaeda7f2",
+        "shared/water.webp": "00cacd7475350fd96540a4a981314dd3c0d2a9e6bd9fe03b65ffafcb839dfc9d",
+        "shared/whistle.webp": "29e8f98a6e408c8952f5c7525e36121aab64d46c0333b9dd6e71695609de0233"
+      }
+    },
+    "playground": {
+      "prompt": "Use case photorealistic-natural. 9:16 vertical full-bleed in-game background photograph. A realistic Chinese urban elementary school outdoor athletics yard, completely empty and clean. View elevated oblique looking downhill over one flat rust-colored rubber running track lane leading toward the camera, covering bottom seventy percent with a wide mostly uniform textured flat area as play space. Subtle painted running lane stripes on extreme edges, distant green turf and wire fence, school building and poplar trees in the top quarter, morning sun. There are no foreground props, sports equipment, obstacles, furniture, people, logos, text, UI or borders. Props will be composited later. Quiet natural atmosphere, soft contrasts, deliberately low detail in bottom 68 percent.",
+      "media_id": "adb8da807bf789bb9f075dcf153ddf83",
+      "source_sha256": "a198eee2189a49c45f94e6533cdb309bbe5d8bc763c7b02ae9fbc564b0397cf1",
+      "assets": {
+        "campus-playground-check-v1/background.webp": "28cedf499a088a4e6984c7174f981ae42ec2ece5935cb5e90b4db6377e6507c1"
+      }
+    },
+    "fridge": {
+      "prompt": "Use case photorealistic-natural. Original 9:16 vertical photo background for Chinese household refrigerator hygiene training game. Medium over-the-counter frontal snapshot with an open full height domestic fridge in the mid-upper center of frame, sparse modern beige kitchen. Fridge with two broad transparent glass shelf levels and empty white interior clearly showing the two levels, no drawers blocking view, from 15% to 52% vertically. Free open amber blonde wood kitchen counter across the entire bottom half from frame edge to edge, which is close to camera and smoothly flat for later composited textures. True daylight soft pale green tones, credible materials everyday home. No food or props on counter or inside fridge. No markings, no people, no UI no text and no border. Keep bottom half mostly low detail warm wood.",
+      "media_id": "38afd46dceb4f1ea81f6ae367594597c",
+      "source_sha256": "4a468d4bb68754c40663891d3b5a6139f1cabff7022549ed38cba20fe42fd230",
+      "assets": {
+        "food-fridge-check-v1/background.webp": "d797cb0cf8623f25890873ef8ca6019e20d0e35dda914ca714e84259b937e844"
+      }
+    },
+    "picnic": {
+      "prompt": "Use case photorealistic-natural. 9:16 full bleed game background photograph of outdoor summer picnic at a Chinese country park. High slightly oblique view over a large laid-flat natural linen and muted golden picnic blanket extending from about y=26% all the way to bottom edge, dominates lower 74% from edge to edge with no foreground props. Quiet blurred green meadow and a very distant small calm river, outside the picnic spot, along top quarter. No people or animals. Bright diffuse daylight and gentle meadow shade, photograph by documentary still-life photographer. Add no objects, food, boxes, baskets, cables or bottles to the blanket. Low contrast texture on blanket for interactive props later. No words, no logos, no UI, no border.",
+      "media_id": "681048be59db667d059cc93e467e4b3b",
+      "source_sha256": "52ad398c65754a7f316b2aa239325ca9be7fd18ddf1c34da032ff5f157b6247e",
+      "assets": {
+        "food-picnic-check-v1/background.webp": "886e63d90afdf2c5d703fbb4ff08a2b06851ea009112b24b549f1c14b9bfc4d9"
+      }
+    }
+  },
+  "reused_backgrounds": {
+    "food-leftovers-check-v1/background.webp": {
+      "path": "assets/find_three/serving.webp",
+      "sha256": "8c95fe21cf54e0771d01bcdf1a6ea0b0edf57f496ea9c68a001565940c27208a"
+    },
+    "food-school-lunch-check-v1/background.webp": {
+      "path": "assets/find_three/canteen.webp",
+      "sha256": "9cdd2822611a75cd55bce11906e2b161774380460dff3a4a0fb326fbb5581994"
+    }
+  }
+}

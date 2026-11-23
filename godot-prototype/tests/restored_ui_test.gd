@@ -23,12 +23,33 @@ func _run() -> void:
 	var home := app._screen as Control
 	var play := home.get_node("%Play") as Button
 	var skin := play.get_theme_stylebox("normal") as StyleBoxTexture
-	_check(skin != null and skin.texture.resource_path.ends_with("title-primary.webp"), "homepage uses original green-leaf gold frame")
+	_check(skin != null and skin.texture.resource_path.ends_with("home_menu/primary.webp"), "homepage uses the generated bevelled gold frame")
+	_check(home.get_node("%SeedCount").text == "× 5", "home displays the provisional initial five seeds")
+	var baseline := play.position.y
+	play.button_down.emit()
+	await home._press_motion.finished
+	_check(play.position.y > baseline + 4.0, "the play button depresses under the pointer")
+	play.button_up.emit()
+	await home._press_motion.finished
+	_check(is_equal_approx(play.position.y, baseline), "the play button rises after release")
 	await _shot("01-title")
-	play.pressed.emit()
+	home.get_node("%Ranking").pressed.emit()
+	_check(app._dialog != null and app._dialog.get_node("%RankBody").visible, "home ranking button opens the ranking tab directly")
+	_check(not app._dialog.has_node("%Back") and not app._dialog.has_node("%Close"), "the leaderboard has no close buttons")
+	_mouse_tap(Vector2(288, 224))
+	_check(app._dialog != null, "clicking blank space on the card leaves the leaderboard open")
+	app._dialog.get_node("%ProgressTab").pressed.emit()
+	_check(app._dialog.get_node("%Totals").visible and not app._dialog.has_node("%Back"), "the home leaderboard keeps both tabs without a return-to-map button")
+	_mouse_tap(Vector2(59, 54))
+	_check(app._dialog == null and home.process_mode == Node.PROCESS_MODE_INHERIT, "a backdrop click closes the leaderboard without activating the covered settings button")
+	home.get_node("%Ranking").pressed.emit()
+	_touch_tap(Vector2(288, 50))
+	_check(app._dialog == null, "the leaderboard can also close from a backdrop touch")
+	home.get_node("%ChooseIsland").pressed.emit()
 	await process_frame
 	var picker: Control = app._screen
-	picker.island_opened.emit(1, picker.islands[1])
+	picker.set_current(1)
+	picker.get_node("%SelectedIsland").pressed.emit()
 	await process_frame
 	await process_frame
 	var map: Control = app._screen
@@ -36,25 +57,37 @@ func _run() -> void:
 	var scroll: ScrollContainer = map.get_node("%Map")
 	var before := scroll.scroll_vertical
 	var journal_button := toolbar.find_child("ProgressButton", true, false) as BaseButton
-	var settings_button := toolbar.find_child("SettingsButton", true, false) as BaseButton
 	var home_button := toolbar.find_child("HomeButton", true, false) as BaseButton
-	_check(journal_button != null and settings_button != null and home_button != null, "three original map tools exist")
-	if journal_button == null or settings_button == null or home_button == null:
+	_check(journal_button != null and home_button != null and not toolbar.has_node("SettingsButton"), "settings moved to the home screen")
+	if journal_button == null or home_button == null:
 		quit(1)
 		return
 	await _shot("02-map")
 	journal_button.pressed.emit()
 	await process_frame
-	_check(app._dialog != null and app._dialog.get_node("%Totals").text == "已完成 0 / 26 关", "journal counts real playable IDs rather than placeholders")
+	var playable: int = app._catalog.playable_ids().size()
+	_check(app._dialog != null and app._dialog.get_node("%Totals").text == "已完成 0 / %d 关" % playable, "journal counts real playable IDs rather than placeholders")
+	app._dialog.get_node("%RankTab").pressed.emit()
+	_check(app._dialog.get_node("%RankBody").visible and not app._dialog.get_node("%Totals").visible, "ranking is the second real tab")
+	_check(not app._dialog.has_node("%Back") and not app._dialog.has_node("%Close"), "the map leaderboard tab uses backdrop dismissal")
+	app._dialog.get_node("%ProgressTab").pressed.emit()
+	_check(app._dialog.get_node("%Totals").visible and not app._dialog.has_node("%Close"), "both map dialog tabs use the same backdrop dismissal")
 	_check(map.process_mode == Node.PROCESS_MODE_DISABLED, "map is inert while journal is open")
 	await _shot("03-journal")
-	app._dialog.get_node("%Back").pressed.emit()
+	_touch_tap(Vector2(288, 950))
 	_check(app._dialog == null and scroll.scroll_vertical == before, "closing progress returns to the previous scroll")
 	var seeded: Dictionary = app._save.claim("oil-fire", 10.0, 50.0)
 	_check(seeded.delta == 3, "fixture saves only inside test path")
 	map.refresh_progress()
-	settings_button.pressed.emit()
+	home_button.pressed.emit()
+	await process_frame
+	home = app._screen
+	home.get_node("%Settings").pressed.emit()
 	var panel: Control = app._dialog
+	_check(not panel.has_node("%Close") and not panel.has_node("%Back"), "settings uses its backdrop as the close control")
+	_check(panel.get_node("Card").size.y <= 400 and not panel.has_node("%Note") and not panel.get_node("%Status").visible, "the sound card is compact and opens without a footer note")
+	_click_at(Vector2(288, 575))
+	_check(app._dialog == panel, "tapping inside the settings card leaves it open")
 	panel.get_node("%Music").pressed.emit()
 	panel.get_node("%Effects").pressed.emit()
 	_check(app._journey_audio.music_muted and app._journey_audio.effects_muted, "audio controls separately toggle music and effects")
@@ -62,22 +95,50 @@ func _run() -> void:
 	_check(prefs.load(sound_path) == OK and prefs.get_value("audio", "music_muted", false) and prefs.get_value("audio", "effects_muted", false), "both toggles persist")
 	await _shot("04-settings")
 	panel.get_node("%Reset").pressed.emit()
+	_check(panel.get_node("Card/ConfirmReset").visible and app._save.flowers_for("oil-fire") == 3, "the reset action first shows a confirmation")
 	panel.get_node("Card/CancelReset").pressed.emit()
 	_check(app._save.flowers_for("oil-fire") == 3, "cancel leaves progress intact")
 	panel.get_node("%Reset").pressed.emit()
 	panel.get_node("Card/ConfirmReset").pressed.emit()
 	_check(app._save.flowers_for("oil-fire") == 0 and Save.new(save_path).flowers_for("oil-fire") == 0, "confirmed reset clears only test progress")
 	_check(app._journey_audio.music_muted and app._journey_audio.effects_muted, "reset leaves audio preferences intact")
-	panel.get_node("%Back").pressed.emit()
-	map.inspect("home-food-storage-v1")
+	_check(home.get_node("%Play").text == "开始游戏", "reset refreshes the home screen")
+	_touch_tap(Vector2(288, 752))
+	_check(app._dialog == null and home.process_mode == Node.PROCESS_MODE_INHERIT, "tapping the backdrop closes settings and restores the home screen")
+	home.get_node("%Play").pressed.emit()
+	await home._press_motion.finished
+	await process_frame
+	map = app._screen
+	map.inspect("first-aid-burn")
 	_check(map._intro.start_button.disabled and map.get_node("%Map").process_mode == Node.PROCESS_MODE_DISABLED, "painted modal retains draft gate and traps map input")
+	var intro: Control = map._intro
+	var card: Control = intro.get_node("Card")
+	var card_blank := card.get_global_rect().position + Vector2(40.0, 45.0)
+	var backdrop := intro.get_global_rect().position + Vector2(12.0, 12.0)
+	_check(not card.has_node("Close"), "level intro has no close button")
+	_mouse_tap(card_blank)
+	_touch_tap(card_blank)
+	_check(intro.visible, "mouse and touch keep the intro open on blank card space")
 	map._intro.start_button.pressed.emit()
 	_check(app._screen == map, "disabled popup cannot launch a draft even if triggered manually")
-	map._intro.closed.emit()
+	_mouse_tap(backdrop)
+	_check(not intro.visible and map.get_node("%Map").process_mode == Node.PROCESS_MODE_INHERIT, "mouse backdrop dismisses the intro and restores map input")
+	map.inspect("first-aid-burn")
+	_touch_tap(backdrop)
+	_check(not intro.visible, "touch backdrop dismisses the intro")
+	_intro_duplicate_close(map, intro)
+	map.inspect("first-aid-burn")
+	var escape := InputEventKey.new()
+	escape.keycode = KEY_ESCAPE
+	escape.pressed = true
+	root.push_input(escape, true)
+	_check(not intro.visible, "Escape still dismisses the intro")
+	app._test_unlock = true
+	map._test_unlock = true
 	map.inspect("oil-fire")
 	_check(map._intro.start_button.text == "开始应对锅火", "intro restores the original per-level action")
 	await _shot("05-intro")
-	map._intro.start_button.pressed.emit()
+	_mouse_tap(map._intro.start_button.get_global_rect().get_center())
 	var oil: Control = app._screen
 	_check(oil.scene_file_path.ends_with("/oil_fire.tscn"), "original intro opens the real oil-fire runner")
 	# This stage verifies presenting the terminal state, not the gameplay input.
@@ -123,6 +184,37 @@ func _run() -> void:
 	await create_timer(0.25).timeout
 	if _failures == 0: print("PASS: restored artwork, real popup actions, two settlement backgrounds, modal focus and persistence")
 	quit(_failures)
+
+func _click_at(point: Vector2) -> void:
+	for down: bool in [true, false]:
+		var click := InputEventMouseButton.new()
+		click.button_index = MOUSE_BUTTON_LEFT
+		click.position = point
+		click.pressed = down
+		root.push_input(click, true)
+
+func _intro_duplicate_close(map: Control, intro: Control) -> void:
+	var state := {"navigated": false}
+	var count_back := func() -> void: state.navigated = true
+	map.back_requested.connect(count_back)
+	intro.closed.emit()
+	_check(not state.navigated, "duplicate touch dismiss stays on the island map")
+	map.back_requested.disconnect(count_back)
+
+func _mouse_tap(point: Vector2) -> void:
+	for pressed in [true, false]:
+		var event := InputEventMouseButton.new()
+		event.position = point
+		event.button_index = MOUSE_BUTTON_LEFT
+		event.pressed = pressed
+		root.push_input(event, true)
+
+func _touch_tap(point: Vector2) -> void:
+	for pressed in [true, false]:
+		var event := InputEventScreenTouch.new()
+		event.position = point
+		event.pressed = pressed
+		root.push_input(event, true)
 
 func _shot(name: String) -> void:
 	if _capture.is_empty(): return

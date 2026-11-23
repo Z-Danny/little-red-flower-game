@@ -1,5 +1,5 @@
 extends Control
-## One portrait runner for the original getHunt packs. The route owner calls
+## Shared portrait hunt runner. The route owner calls
 ## configure() before adding this scene and owns settlement, save and navigation.
 
 signal finished(won: bool, elapsed_seconds: float)
@@ -81,6 +81,7 @@ func _add_full(control: Control) -> void:
 func _start_attempt() -> void:
 	if _exit_sent or _terminal_sent or _audio == null:
 		return
+	_world.cancel_touch()
 	run = Rules.new(pack.rules, float(Pack.CONTRACT.get_meta("miss_penalty_ms")), float(Pack.CONTRACT.get_meta("safe_hold_ms")))
 	run.start() # the parent already handled the player's single entry action
 	_paused = false
@@ -224,6 +225,7 @@ func _report_terminal(won: bool) -> void:
 	if _terminal_sent or _exit_sent:
 		return
 	_terminal_sent = true
+	_world.cancel_touch()
 	set_process(false)
 	_audio.stop_all()
 	finished.emit(won, run.elapsed_ms / 1000.0)
@@ -255,6 +257,7 @@ func _toggle_pause() -> void:
 			return
 		_previous_focus = get_viewport().gui_get_focus_owner()
 		_paused = true
+		_world.cancel_touch()
 		_hud.set_interactive(false)
 		_audio.stop_all()
 		_modal.show_pause(pack.presentation["pauseNote"], audio_muted, audio_music)
@@ -274,6 +277,8 @@ func _exit_to_parent() -> void:
 	if _exit_sent or _terminal_sent or (run != null and run.phase == Rules.Phase.FAILED):
 		return
 	_exit_sent = true
+	if _world != null:
+		_world.cancel_touch()
 	set_process(false)
 	if _audio != null:
 		_audio.stop_all()
@@ -293,6 +298,7 @@ func _notification(what: int) -> void:
 			return
 	if _audio != null:
 		if _suspended():
+			_world.cancel_touch()
 			_hud.close_hints()
 			_audio.stop_all()
 		else:

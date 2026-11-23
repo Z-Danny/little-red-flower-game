@@ -1,0 +1,33 @@
+{
+  "sources": [
+    {
+      "atlas": "actors",
+      "task_id": "media_2026112218480382079545838ccb1e2806",
+      "model": "Origin GPT Image 2.6 Sunburst",
+      "prompt": "A production sprite sheet for an original Chinese child safety educational game used in a photorealistic background. Exactly 4 columns × 3 rows of separate isolated storybook painterly cutout props, each item centered in its own equally sized grid tile with substantial clear margins, no panels, dividers, shadows, letters or overlap across tiles. Truly transparent backdrop. Bold dark sepia contour, soft gouache color. Read left to right and top to bottom. Row 1: full body schoolchild wearing a blue jacket and yellow backpack facing right walking; full body female school teacher in sage cardigan; full body pool lifeguard in orange uniform facing left; full body adult hiker yellow jacket and red backpack facing right. Row 2: triangular orange traffic cone; wet floor sign yellow with universal slip pictogram only; pair of foam swim kickboards aqua and apricot; big orange lifebuoy white stripes. Row 3: smartphone with generic empty dark screen; clean white folded gauze square; white rolled bandage; transparent blue bottle of water. Tiny lively book illustration for isolated touch targets. Transparent alpha, no color matte. Each independent item confined to its own cell. Overall square-ish landscape."
+    },
+    {
+      "atlas": "objects",
+      "task_id": "media_20261122184802975ec2d8f02e632f27d7",
+      "model": "Origin GPT Image 2.6 Sunburst",
+      "prompt": "An original mobile educational game production sprite atlas, exactly 4 columns × 3 rows, individual children's book gouache cutout props in each same sized grid tile, no lines separating cells, on true transparent background. Items with big margins around each so can extract. Read left to right, top to bottom. Row one: closed red lunchbox with raw chicken icon (no text); green chopping board with two apples; blue plastic cutting board; round portable camping lantern with warm glowing glass. Row two: navy folded sleeping bag; brimmed ochre sun hat; personal pale green water bottle; folded navy umbrella. Row three: molded orange life-vest; sealed sterile dressing packet without text; simple medical training bust head and shoulders in neutral pose; full body adult seated leaning slightly forward in a wooden chair. Soft painterly contour, clear silhouettes, no labels, shadows or background, no grid rules. Exact 4 columns and 3 rows, each cell a single cutout."
+    },
+    {
+      "atlas": "school",
+      "task_id": "media_202611221848038e887fc7493e9f1081f8",
+      "model": "Origin GPT Image 2.6 Sunburst",
+      "prompt": "Three equally wide, separate VERTICAL 9:16 portrait location photos side by side in a contact sheet with exact thirds. No gaps, text labels, logos or people. Realistic Chinese locations, natural photography not an illustration. Left: a rainy, covered modern school entry corridor with a window open to a rainy courtyard, cream tiled floor, canopy visible, side route into a dry hallway. Middle: real light filled Chinese teaching building stairway seen from the landing slightly above, silver handrails, bright plaster walls, quiet and safe. Right: small clinic school first-aid room, seat next to an accessible clean sink, fresh white curtains, pale green walls, clean counter. Control areas at scene mid-height open for independently composited hand painted props. Room details and strong perspective. 3 frames exact width thirds; no label, no overlay."
+    },
+    {
+      "atlas": "outdoors",
+      "task_id": "media_2026112218480452387cca69e067df1cba",
+      "model": "Origin GPT Image 2.6 Sunburst",
+      "prompt": "Three equally wide, separate VERTICAL 9:16 portrait location photos side by side in a contact sheet with exact thirds. No gaps, text labels, logos or people. Realistic Chinese recreational locations, like documentary location scouting photographs. Left: organized public campsite in Chinese foothills at early dusk, large green tent and clear flat deck, electric guide light, no open fire. Middle: summer outdoor trailhead in wooded Chinese foothills with shaded bench, opening into a sunlit trail and big trees, no text or obvious landmarks. Right: river park embankment in China, wide paved safe walkway and steel fence with river beyond. Control areas across foreground with enough floor space, live natural perspective. Realistic light and texture. No labels."
+    }
+  ],
+  "processing": {
+    "venues": "Portrait panels cropped independently to 576×1024 WebP",
+    "props": "Actual alpha in actor atlas or chroma removal for objects atlas followed by independent trim",
+    "faucet": "Approved find_three water sprite in godot-prototype/assets/find_three/props/water.webp"
+  }
+}

@@ -49,6 +49,12 @@ node --experimental-vm-modules godot-prototype/tools/check-wechat-runtime.mjs $o
 
 ## 包体与资源托管
 
+### iOS 兼容试玩包
+
+复用已经在 iPhone 启动的 AnranS 4.6.1 微信运行时目录，可以用 `python -B godot-prototype/tools/stage-wechat-preview.py --runtime <已验证目录> --core <分包的 core.pck> --output <新目录>` 更新游戏。脚本保留已配置的 AppID 与引擎 WASM，并校验游戏 ZIP 和本地包体。运行 `node godot-prototype/tests/wechat-audio.mjs <新目录>` 检查输出包内的音频接线。
+
+该试玩包的主包内带背景音乐和共用按钮、关卡反馈、种花音效，使用微信的 `InnerAudioContext`。Godot 关内专用音轨使用采样播放，停用微信端的浏览器 `eval` 路径。用微信开发者工具生成预览码后，真机日志中的 `[RedFlowerAudio] playing music`、`button` 与 `plant-unlock` 可分别确认微信已开始播放三类声音。
+
 [微信分包文档](https://developers.weixin.qq.com/minigame/dev/guide/base-ability/subPackage/useSubPackage.html)规定主包不超过 4M，主包与分包合计不超过 30M，单个普通分包无单独上限，独立分包不超过 4M。脚本按十进制 4,000,000／30,000,000 字节保守核算，计入目录里的配置和许可证。此数值用于本地验收；开发者工具编译后的计数仍需实测。
 
 模板的 `engine/godot.wasm.br` 是 7,881,201 B，放在普通 `engine/` 分包，不能挪进主包或标成独立分包。WASM 解压后约 67.8 MB，磁盘包体通过不代表首次下载或内存峰值已验证。单关原型可随包交付；26 关版需外置地图和关卡大资源。

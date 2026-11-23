@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "pages": {
+    "map/campus": {
+      "Header/Timber": {
+        "offset": {
+          "x": -4,
+          "y": 1
+        }
+      },
+      "Header/TitlePlate/Title": {
+        "offset": {
+          "x": 1,
+          "y": 2
+        }
+      }
+    }
+  }
+}

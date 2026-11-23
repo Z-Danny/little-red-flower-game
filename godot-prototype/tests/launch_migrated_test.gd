@@ -18,13 +18,17 @@ func _run() -> void:
 	await process_frame
 	var catalog := Catalog.new()
 	var unlocked := 0
+	var original_unlocked := 0
+	var new_unlocked := 0
 	var locked := 0
 	var source := Catalog.read_json(Catalog.MANIFEST)
+	var additions: Dictionary = Catalog.read_json(Catalog.NEW_LEVELS).get("levels", {})
 	for i in source.maps.size():
 		app._enter_islands(true)
 		await process_frame
 		var picker := _page(app)
-		picker.island_opened.emit(i, picker.islands[i])
+		picker.set_current(i)
+		picker.get_node("%SelectedIsland").pressed.emit()
 		await process_frame
 		var map := _page(app)
 		var stops: Array = source.maps[i].stops
@@ -45,18 +49,24 @@ func _run() -> void:
 			var player := _page(app)
 			_check(player.scene_file_path == runner and app._active.id == entry.id, "loads the true runner by ID: " + entry.id)
 			_check(player.has_signal("finished") and player.has_signal("exited"), "runner has launch contract: " + entry.id)
+			_check(not app._journey_audio._navigating, "navigation music is off inside " + entry.id)
 			if player != map and player.has_signal("exited"):
 				unlocked += 1
+				original_unlocked += int(entry.was_playable)
+				new_unlocked += int(not entry.was_playable)
 				player.exited.emit()
 				await process_frame
 				map = _page(app)
+				_check(app._journey_audio._navigating, "returning from " + entry.id + " restores map music")
 			else:
 				map._back()
-	_check(locked == 34, "all six old previews and 28 new drafts remain locked")
-	_check(app._save.total(catalog.original_playable_ids()) == 0, "entering and exiting a level never awards flowers")
+	_check(new_unlocked == additions.size(), "every explicitly added level launches")
+	_check(locked == 34 - new_unlocked, "remaining draft entries stay locked")
+	_check(unlocked == catalog.playable_ids().size(), "map and progress agree on eligible levels")
+	_check(app._save.total(catalog.playable_ids()) == 0, "entering and exiting a level never awards flowers")
 	var expected := OS.get_environment("GODOT_MIGRATION_EXPECTED").to_int()
 	if expected > 0:
-		_check(unlocked == expected, "expected %d verified old levels, found %d" % [expected, unlocked])
+		_check(original_unlocked == expected, "expected %d verified old levels, found %d" % [expected, original_unlocked])
 	if FileAccess.file_exists(file): DirAccess.remove_absolute(file)
 	root.remove_child(app)
 	app.queue_free()
@@ -65,7 +75,7 @@ func _run() -> void:
 	# from scenes that have just exited. Let it tick before shutting down Godot.
 	await create_timer(0.25).timeout
 	if _failures == 0:
-		print("PASS: %d original levels opened through actual maps; %d unfinished entries locked; no rewards on exit" % [unlocked, locked])
+		print("PASS: %d original and %d new levels opened through actual maps; %d unfinished entries locked; no rewards on exit" % [original_unlocked, new_unlocked, locked])
 	quit(_failures)
 
 func _page(app: Node) -> Control:

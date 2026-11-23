@@ -3,6 +3,7 @@ extends Control
 
 signal finished(won: bool, elapsed_seconds: float)
 signal exited
+signal cue_requested(cue: String)
 
 const Rules = preload("res://scripts/oil_fire_rules.gd")
 const Timing = preload("res://scripts/oil_fire_timing.gd")
@@ -150,6 +151,8 @@ func _grab(point: Vector2) -> void:
 		_held_center = _homes[item].get_center()
 		_grab_offset = point - _held_center
 		_moved = false
+		if item not in [Rules.Item.KNOB, Rules.Item.PERSON]:
+			cue_requested.emit("pickup")
 		if item == Rules.Item.KNIFE:
 			_show_notice(_feedback_text(Rules.Feedback.KNIFE))
 		return
@@ -175,6 +178,8 @@ func _release(point: Vector2) -> void:
 		var feedback := _run.drop(item, _zone_at(_release_center))
 		if feedback != Rules.Feedback.NONE:
 			_show_notice(_feedback_text(feedback))
+		if _run.action == Rules.Action.RETURN or feedback == Rules.Feedback.SEALED:
+			cue_requested.emit("putback")
 		_audio.action_cue(_run.action)
 
 

@@ -1,0 +1,251 @@
+[gd_resource type="Resource" load_steps=10 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-classroom-check-v1/scene.webp" id="1"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-classroom-check-v1/clean.webp" id="2"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-classroom-check-v1/ending.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-classroom-check-v1/family.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-classroom-check-v1/id-mask.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-classroom-check-v1/target-1.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-classroom-check-v1/target-2.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-classroom-check-v1/target-3.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-classroom-check-v1/character-mask.png" id="9"]
+
+[resource]
+metadata/rules = {
+  "feedbackVersion": 2,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "summary": "保持出口和消防器材周围通畅。发现破损电线，要退开并告诉老师。",
+  "timeout": "fail",
+  "id": "campus-classroom-check-v1",
+  "title": "教室放学巡查",
+  "order": 33,
+  "targets": [
+    {
+      "id": "target-1",
+      "name": "堵住出口的纸箱",
+      "lesson": "纸箱挡住了通往门外的路。请老师安排清理，保持出口通畅。"
+    },
+    {
+      "id": "target-2",
+      "name": "露出线芯的电线",
+      "lesson": "电线护套破损，线芯已经露出。退开并告诉老师，由校方停用设备并安排检修。"
+    },
+    {
+      "id": "target-3",
+      "name": "挡住灭火器的体育垫",
+      "lesson": "体育垫挡住了灭火器，紧急时会妨碍取用。请老师安排挪开。"
+    }
+  ]
+}
+metadata/skin = {
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hunts/campus-classroom-check-v1/realistic-campus/scene.webp",
+  "clean": "/levels/hunts/campus-classroom-check-v1/realistic-campus/clean.webp",
+  "safe": "/levels/hunts/campus-classroom-check-v1/realistic-campus/ending.webp",
+  "mask": "/levels/hunts/campus-classroom-check-v1/realistic-campus/id-mask.png",
+  "family": "/levels/hunts/campus-classroom-check-v1/realistic-campus/family.png",
+  "familyBox": {
+    "x": 132,
+    "y": 537,
+    "w": 131,
+    "h": 447
+  },
+  "targets": {
+    "target-1": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 125,
+        "y": 331,
+        "w": 137,
+        "h": 242
+      },
+      "icon": "/levels/hunts/campus-classroom-check-v1/realistic-campus/target-1.png"
+    },
+    "target-2": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 536,
+        "y": 674,
+        "w": 114,
+        "h": 49
+      },
+      "icon": "/levels/hunts/campus-classroom-check-v1/realistic-campus/target-2.png"
+    },
+    "target-3": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 296,
+        "y": 390,
+        "w": 145,
+        "h": 249
+      },
+      "icon": "/levels/hunts/campus-classroom-check-v1/realistic-campus/target-3.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hunts/campus-classroom-check-v1/realistic-campus/character-mask.png"
+  },
+  "criticalRegions": [
+    {
+      "x": 165,
+      "w": 57,
+      "y": 539,
+      "h": 77
+    }
+  ]
+}
+metadata/presentation = {
+  "location": "小学教室",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "观察放学后的教室，圈出 3 处隐患。",
+  "reveal": "老师已安排清障和设备检修。",
+  "completeTitle": "观察完成",
+  "pauseNote": "在画面中找线索。现实中遇到危险物，先退开，再告诉老师。",
+  "endingNote": "校方移走了门口纸箱和灭火器前的体育垫，停用并收走了电线破损的风扇。",
+  "preview": "查看教室出口、电线和灭火器周围，找出影响通行、用电和紧急取用的线索。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}
+metadata/performance = {
+  "version": 2,
+  "atmosphere": "indoor",
+  "sound": "quiet_electric",
+  "retreatDirection": -1,
+  "missCaption": "这里没有识别目标，隐患仍未找齐。",
+  "stages": [
+    {
+      "atMs": 0,
+      "breathMs": 2800,
+      "breathPx": 2,
+      "retractPx": 0,
+      "vignette": 0,
+      "bpm": 64,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 30000,
+      "breathMs": 2300,
+      "breathPx": 2.4,
+      "retractPx": 4,
+      "vignette": 0.06,
+      "bpm": 70,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 60000,
+      "breathMs": 1900,
+      "breathPx": 2.8,
+      "retractPx": 7,
+      "vignette": 0.12,
+      "bpm": 76,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 90000,
+      "breathMs": 1700,
+      "breathPx": 3.2,
+      "retractPx": 10,
+      "vignette": 0.16,
+      "bpm": 82,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    }
+  ],
+  "timing": "quarters"
+}
+metadata/source = {
+  "rules": {
+    "path": "content/scenes/campus-classroom-check-v1/rules.json",
+    "sha256": "aece2744084da16ea3cc9ce3f5e0492a3412ee854d262ddd62f3b623012456d1"
+  },
+  "skin": {
+    "path": "content/scenes/campus-classroom-check-v1/skins/realistic-campus.json",
+    "sha256": "8ba896bb5f5f2976212772bdbba4f430527dda34680f9457145210019e566746"
+  },
+  "presentation": {
+    "path": "content/scenes/campus-classroom-check-v1/presentation.json",
+    "sha256": "06bd8524a92d5bc2eb34e35fc0648d258f237a3ca484af9e0f8bb69af7c9dd1f"
+  },
+  "performance": {
+    "path": "content/scenes/campus-classroom-check-v1/performance.json",
+    "sha256": "33660c167e9f23ef5f99ff5cbbaf8d992e38347787cc1c9a2a801d3e4085e52e"
+  },
+  "scene": {
+    "path": "public/levels/hunts/campus-classroom-check-v1/realistic-campus/scene.webp",
+    "sha256": "e667e61fabd82148e36cc6d60aa9cf9aa222c1c04914bc6ae0723db4740cad51"
+  },
+  "clean": {
+    "path": "public/levels/hunts/campus-classroom-check-v1/realistic-campus/clean.webp",
+    "sha256": "d08a5341c2f6fea5460312e3630dd4f2d9e02ff29304cfd5940d889c0cf8252a"
+  },
+  "safe": {
+    "path": "public/levels/hunts/campus-classroom-check-v1/realistic-campus/ending.webp",
+    "sha256": "2ff06ea3d959948ac53dca77f68c404f32933083a26cd1dc1e23c3b2179e6dc9"
+  },
+  "family": {
+    "path": "public/levels/hunts/campus-classroom-check-v1/realistic-campus/family.png",
+    "sha256": "d35773e00728889f17db29a3bbae75a009ec9563b2f90f5df852cdd7a72a066a"
+  },
+  "mask": {
+    "path": "public/levels/hunts/campus-classroom-check-v1/realistic-campus/id-mask.png",
+    "sha256": "af82b4df4f567eadd50803729616f78294cd03426094013ef9db8cb088e61221"
+  },
+  "icon:target-1": {
+    "path": "public/levels/hunts/campus-classroom-check-v1/realistic-campus/target-1.png",
+    "sha256": "23fdb2ef25fd001731f7a10afbf606433bd3e9e40be4c4cf27b0b8729a2d9379"
+  },
+  "icon:target-2": {
+    "path": "public/levels/hunts/campus-classroom-check-v1/realistic-campus/target-2.png",
+    "sha256": "845b2b8ec33cdded65f3b2fb8d64b922d79e67bbc91fcfd1a58ea2ace65fe95d"
+  },
+  "icon:target-3": {
+    "path": "public/levels/hunts/campus-classroom-check-v1/realistic-campus/target-3.png",
+    "sha256": "04850832071d5fca9d2ec3f5a152059455a038f18a4bf3496d50f843d6e6867e"
+  },
+  "characterMask": {
+    "path": "public/levels/hunts/campus-classroom-check-v1/realistic-campus/character-mask.png",
+    "sha256": "5d1181efde24cb33eb6a3e02c036daa7ff203600f8443f9af074a56f175e45cd"
+  }
+}
+metadata/resources = {
+"scene": ExtResource("1"),
+"clean": ExtResource("2"),
+"safe": ExtResource("3"),
+"family": ExtResource("4"),
+"mask": ExtResource("5"),
+"icon:target-1": ExtResource("6"),
+"icon:target-2": ExtResource("7"),
+"icon:target-3": ExtResource("8"),
+"characterMask": ExtResource("9")
+}

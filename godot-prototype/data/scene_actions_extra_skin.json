@@ -1,0 +1,588 @@
+{
+  "levels": {
+    "campus-rain-check-v1": {
+      "background": "res://assets/scene_actions_extra/venues/rain-school.webp",
+      "zones": {
+        "blocked": {
+          "rect": [
+            39,
+            478,
+            202,
+            134
+          ]
+        },
+        "dry": {
+          "rect": [
+            332,
+            520,
+            202,
+            140
+          ]
+        }
+      },
+      "items": {
+        "cone": {
+          "rect": [
+            81,
+            706,
+            89,
+            105
+          ],
+          "art": "res://assets/scene_actions_extra/props/cone.webp"
+        },
+        "student": {
+          "rect": [
+            395,
+            691,
+            104,
+            130
+          ],
+          "art": "res://assets/scene_actions_extra/props/student.webp"
+        }
+      },
+      "intro": {
+        "art": "res://assets/scene_actions_extra/props/teacher.webp",
+        "from": [
+          480,
+          340,
+          100,
+          180
+        ],
+        "to": [
+          418,
+          340,
+          100,
+          180
+        ],
+        "seconds": 1.5,
+        "text": "老师从连廊赶了过来。"
+      }
+    },
+    "campus-stairs-check-v1": {
+      "background": "res://assets/scene_actions_extra/venues/stairs.webp",
+      "zones": {
+        "rail": {
+          "rect": [
+            347,
+            528,
+            190,
+            131
+          ]
+        }
+      },
+      "items": {
+        "teacher": {
+          "rect": [
+            364,
+            283,
+            116,
+            173
+          ],
+          "art": "res://assets/scene_actions_extra/props/teacher.webp"
+        },
+        "student": {
+          "rect": [
+            110,
+            684,
+            104,
+            134
+          ],
+          "art": "res://assets/scene_actions_extra/props/student.webp"
+        }
+      },
+      "intro": {
+        "art": "res://assets/scene_actions_extra/props/student.webp",
+        "from": [
+          48,
+          311,
+          89,
+          130
+        ],
+        "to": [
+          150,
+          341,
+          89,
+          130
+        ],
+        "seconds": 1.25,
+        "text": "铃响了，一名同学追着队伍跑来。"
+      }
+    },
+    "first-aid-abrasion": {
+      "background": "res://assets/scene_actions_extra/venues/clinic.webp",
+      "zones": {
+        "wash": {
+          "rect": [
+            47,
+            524,
+            197,
+            126
+          ]
+        },
+        "cover": {
+          "rect": [
+            327,
+            526,
+            201,
+            131
+          ]
+        }
+      },
+      "items": {
+        "rinse": {
+          "rect": [
+            92,
+            690,
+            89,
+            110
+          ],
+          "art": "res://assets/scene_actions_extra/props/water.webp"
+        },
+        "dressing": {
+          "rect": [
+            370,
+            686,
+            102,
+            107
+          ],
+          "art": "res://assets/scene_actions_extra/props/dressing.webp"
+        }
+      },
+      "decor": [
+        {
+          "art": "res://assets/scene_actions_extra/props/seated.webp",
+          "rect": [
+            170,
+            252,
+            145,
+            203
+          ]
+        }
+      ]
+    },
+    "first-aid-nosebleed": {
+      "background": "res://assets/scene_actions_extra/venues/clinic.webp",
+      "zones": {
+        "seat": {
+          "rect": [
+            40,
+            526,
+            207,
+            133
+          ]
+        }
+      },
+      "items": {
+        "posture": {
+          "rect": [
+            76,
+            698,
+            127,
+            138
+          ],
+          "art": "res://assets/scene_actions_extra/props/seated.webp"
+        },
+        "pressure": {
+          "rect": [
+            368,
+            439,
+            104,
+            131
+          ],
+          "art": "res://assets/scene_actions_extra/props/bust.webp"
+        }
+      }
+    },
+    "first-aid-burn": {
+      "background": "res://assets/safety_choices/kitchen.webp",
+      "zones": {
+        "wash": {
+          "rect": [
+            45,
+            468,
+            194,
+            139
+          ]
+        },
+        "cover": {
+          "rect": [
+            327,
+            472,
+            202,
+            135
+          ]
+        }
+      },
+      "items": {
+        "faucet": {
+          "rect": [
+            86,
+            703,
+            111,
+            114
+          ],
+          "art": "res://assets/scene_actions_extra/props/faucet.webp"
+        },
+        "dress": {
+          "rect": [
+            369,
+            698,
+            109,
+            116
+          ],
+          "art": "res://assets/scene_actions_extra/props/dressing.webp"
+        }
+      }
+    },
+    "water-riverside-check-v1": {
+      "background": "res://assets/scene_actions_extra/venues/river.webp",
+      "zones": {
+        "alarm": {
+          "rect": [
+            42,
+            507,
+            198,
+            136
+          ]
+        }
+      },
+      "items": {
+        "staff": {
+          "rect": [
+            361,
+            329,
+            121,
+            174
+          ],
+          "art": "res://assets/scene_actions_extra/props/guard.webp"
+        },
+        "phone": {
+          "rect": [
+            100,
+            695,
+            92,
+            110
+          ],
+          "art": "res://assets/scene_actions_extra/props/phone.webp"
+        }
+      },
+      "intro": {
+        "art": "res://assets/scene_actions_extra/props/guard.webp",
+        "from": [
+          560,
+          317,
+          118,
+          170
+        ],
+        "to": [
+          423,
+          317,
+          118,
+          170
+        ],
+        "seconds": 1.35,
+        "text": "附近有工作人员，站在栏内向他呼救。"
+      }
+    },
+    "outdoor-sun-check-v1": {
+      "background": "res://assets/scene_actions_extra/venues/sun.webp",
+      "zones": {
+        "shade": {
+          "rect": [
+            41,
+            501,
+            199,
+            135
+          ]
+        },
+        "kit": {
+          "rect": [
+            328,
+            500,
+            201,
+            135
+          ]
+        }
+      },
+      "items": {
+        "walk": {
+          "rect": [
+            84,
+            669,
+            103,
+            145
+          ],
+          "art": "res://assets/scene_actions_extra/props/hiker.webp"
+        },
+        "hat": {
+          "rect": [
+            321,
+            716,
+            91,
+            86
+          ],
+          "art": "res://assets/scene_actions_extra/props/hat.webp"
+        },
+        "bottle": {
+          "rect": [
+            436,
+            695,
+            79,
+            107
+          ],
+          "art": "res://assets/scene_actions_extra/props/bottle.webp"
+        }
+      }
+    },
+    "outdoor-camp-check-v1": {
+      "background": "res://assets/scene_actions_extra/venues/camp.webp",
+      "zones": {
+        "path": {
+          "rect": [
+            45,
+            537,
+            197,
+            137
+          ]
+        },
+        "tent": {
+          "rect": [
+            330,
+            481,
+            195,
+            133
+          ]
+        }
+      },
+      "items": {
+        "lamp": {
+          "rect": [
+            96,
+            706,
+            99,
+            116
+          ],
+          "art": "res://assets/scene_actions_extra/props/lantern.webp"
+        },
+        "bag": {
+          "rect": [
+            372,
+            681,
+            118,
+            127
+          ],
+          "art": "res://assets/scene_actions_extra/props/sleeping.webp"
+        }
+      },
+      "intro": {
+        "art": "res://assets/scene_actions_extra/props/lantern.webp",
+        "from": [
+          326,
+          645,
+          56,
+          69
+        ],
+        "to": [
+          203,
+          607,
+          86,
+          105
+        ],
+        "seconds": 1.55,
+        "text": "日光渐暗，营地准备启用电灯。"
+      }
+    },
+    "home-kitchen-hygiene-v1": {
+      "background": "res://assets/safety_choices/kitchen.webp",
+      "zones": {
+        "raw": {
+          "rect": [
+            43,
+            489,
+            202,
+            141
+          ]
+        },
+        "ready": {
+          "rect": [
+            326,
+            488,
+            207,
+            142
+          ]
+        }
+      },
+      "items": {
+        "raw-box": {
+          "rect": [
+            88,
+            690,
+            105,
+            110
+          ],
+          "art": "res://assets/scene_actions_extra/props/rawbox.webp"
+        },
+        "fruit": {
+          "rect": [
+            372,
+            690,
+            105,
+            109
+          ],
+          "art": "res://assets/scene_actions_extra/props/apples.webp"
+        }
+      }
+    },
+    "water-pool-check-v1": {
+      "background": "res://assets/safety_choices/pool.webp",
+      "zones": {
+        "walk": {
+          "rect": [
+            42,
+            508,
+            204,
+            139
+          ]
+        },
+        "storage": {
+          "rect": [
+            326,
+            505,
+            205,
+            140
+          ]
+        }
+      },
+      "items": {
+        "guard": {
+          "rect": [
+            355,
+            263,
+            102,
+            151
+          ],
+          "art": "res://assets/scene_actions_extra/props/guard.webp"
+        },
+        "child": {
+          "rect": [
+            87,
+            688,
+            106,
+            136
+          ],
+          "art": "res://assets/scene_actions_extra/props/student.webp"
+        },
+        "board": {
+          "rect": [
+            364,
+            687,
+            117,
+            104
+          ],
+          "art": "res://assets/scene_actions_extra/props/kickboards.webp"
+        }
+      },
+      "intro": {
+        "art": "res://assets/scene_actions_extra/props/guard.webp",
+        "from": [
+          465,
+          279,
+          94,
+          137
+        ],
+        "to": [
+          377,
+          279,
+          94,
+          137
+        ],
+        "seconds": 1.4,
+        "text": "救生员指出池边的安全通道。"
+      }
+    },
+    "first-aid-airway": {
+      "background": "res://assets/safety_choices/hall.webp",
+      "zones": {
+        "call": {
+          "rect": [
+            319,
+            515,
+            225,
+            138
+          ]
+        }
+      },
+      "items": {
+        "observe": {
+          "rect": [
+            77,
+            385,
+            131,
+            188
+          ],
+          "art": "res://assets/scene_actions_extra/props/seated.webp",
+          "state_art": "res://assets/scene_actions_extra/props/bust.webp"
+        },
+        "phone": {
+          "rect": [
+            386,
+            695,
+            89,
+            112
+          ],
+          "art": "res://assets/scene_actions_extra/props/phone.webp"
+        }
+      },
+      "intro": {
+        "art": "res://assets/scene_actions_extra/props/seated.webp",
+        "from": [
+          52,
+          438,
+          120,
+          174
+        ],
+        "to": [
+          112,
+          385,
+          120,
+          174
+        ],
+        "seconds": 1.35,
+        "text": "同伴呛到了，先看他还能不能有力咳嗽。"
+      }
+    },
+    "outdoor-trail-check-v1": {
+      "background": "res://assets/safety_choices/trail.webp",
+      "zones": {
+        "open": {
+          "rect": [
+            326,
+            515,
+            203,
+            143
+          ]
+        }
+      },
+      "items": {
+        "notice": {
+          "rect": [
+            90,
+            445,
+            98,
+            121
+          ],
+          "art": "res://assets/scene_actions_extra/props/cone.webp"
+        },
+        "hiker": {
+          "rect": [
+            390,
+            684,
+            103,
+            151
+          ],
+          "art": "res://assets/scene_actions_extra/props/hiker.webp"
+        }
+      }
+    }
+  }
+}

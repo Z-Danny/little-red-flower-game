@@ -5,6 +5,9 @@ from pathlib import Path
 import re
 from shutil import copy2, copytree
 
+MUSIC = Path(__file__).resolve().parent.parent / 'assets/restored_ui/journey-music.mp3'
+EFFECTS = MUSIC.parent.parent / 'journey_sfx'
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -21,7 +24,14 @@ def main():
     settings = json.loads(config[1])
     settings['fileSizes']['index.pck'] = core.stat().st_size
     shell = shell[:config.start(1)] + json.dumps(settings, separators=(',', ':')) + shell[config.end(1):]
+    shell = shell.replace('</head>', '<meta name="red-flower-music" content="journey-music.mp3">\n'
+                          '<meta name="red-flower-sfx" content="journey-sfx/">\n</head>', 1)
     (args.output / 'index.html').write_text(shell, encoding='utf-8')
+    copy2(MUSIC, args.output / 'journey-music.mp3')
+    effects = args.output / 'journey-sfx'
+    effects.mkdir()
+    for wav in EFFECTS.glob('*.wav'):
+        copy2(wav, effects / wav.name)
     copy2(core, args.output / 'index.pck')
     for file in args.web.iterdir():
         if file.is_file() and re.fullmatch(r'index\.(?:png|js|wasm|audio\.[a-z.]+\.js)', file.name):

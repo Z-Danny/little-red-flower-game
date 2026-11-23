@@ -22,6 +22,8 @@ const HUD_APPROACH := 48.0
 @onready var _face: TextureRect = %Face
 @onready var _title: Label = %Title
 var _plaque_home_x := 0.0
+var _ground_x := 0.0
+var _map_width := 0.0
 
 func _ready() -> void:
 	_plaque.pressed.connect(selected.emit)
@@ -31,7 +33,6 @@ func _ready() -> void:
 		button.button_up.connect(_show_press.bind(false))
 
 func place(entry: Dictionary, island_id: String, ground: Vector2, map_size: Vector2) -> void:
-	position = ground
 	_title.text = entry.title
 	%Number.text = "%02d" % int(entry.number)
 	_face.texture = WOOD_HOME if island_id == "home" else WOOD_NATURE
@@ -40,8 +41,17 @@ func place(entry: Dictionary, island_id: String, ground: Vector2, map_size: Vect
 	if ResourceLoader.exists(motif_path, "Texture2D"):
 		motif.texture = load(motif_path) as Texture2D
 		_title.offset_right = motif.offset_left - 4.0
+	move_to_ground(ground, map_size)
+
+func move_to_ground(ground: Vector2, map_size: Vector2) -> void:
+	position = ground
+	_ground_x = ground.x
+	_map_width = map_size.x
 	_plaque_home_x = clampf(ground.x - _plaque.size.x * 0.5, 8.0, map_size.x - _plaque.size.x - 8.0)
 	_plaque.position = Vector2(_plaque_home_x, clampf(ground.y + 12.0, 8.0, map_size.y - _plaque.size.y - 8.0)) - ground
+
+func contains_point(point: Vector2) -> bool:
+	return _plaque.get_global_rect().has_point(point) or _plant.get_global_rect().has_point(point)
 
 func set_status(status: String, caption: String) -> void:
 	var complete := status == "complete"
@@ -63,18 +73,43 @@ func set_status(status: String, caption: String) -> void:
 func avoid_hud(hud: Rect2) -> void:
 	# Recompute from the authored rest position, never from the last scroll frame.
 	# The 48px approach makes the signs move aside before they meet the tools.
-	var clear_y := hud.end.y + HUD_GAP
-	var clearance := 1.0 - smoothstep(clear_y, clear_y + HUD_APPROACH, plaque_top())
-	var safe_x := minf(_plaque_home_x, hud.position.x - HUD_GAP - _plaque.size.x)
-	_plaque.position.x = roundf(lerpf(_plaque_home_x, maxf(8.0, safe_x), clearance) - position.x)
-	# Keep the map number clear of the toolbar on far-right stops as well.
-	%Number.position.x = 1.0 if position.x + 40.0 > hud.position.x - HUD_GAP else 51.0
+	var clearance_rect := hud.grow(HUD_GAP)
+	var vertical_gap := maxf(clearance_rect.position.y - plaque_top() - _plaque.size.y, plaque_top() - clearance_rect.end.y)
+	var clearance := 1.0 - smoothstep(0.0, HUD_APPROACH, vertical_gap)
+	var max_x := _map_width - _plaque.size.x - 8.0
+	var home_x := clampf(_plaque_home_x + position.x - _ground_x, 8.0, max_x)
+	var safe_x := home_x
+	if home_x < clearance_rect.end.x and home_x + _plaque.size.x > clearance_rect.position.x:
+		safe_x = clearance_rect.end.x if hud.get_center().x < _map_width * 0.5 else clearance_rect.position.x - _plaque.size.x
+	_plaque.position.x = roundf(lerpf(home_x, clampf(safe_x, 8.0, max_x), clearance) - position.x)
+
+	var badge: Label = %Number
+	var badge_origin := position + _plant.position + Vector2(51.0, badge.position.y)
+	var right_badge := Rect2(badge_origin, badge.size)
+	var left_badge := Rect2(badge_origin - Vector2(50.0, 0.0), badge.size)
+	badge.position.x = 1.0 if right_badge.intersects(clearance_rect) and not left_badge.intersects(clearance_rect) else 51.0
 
 func plaque_top() -> float:
 	return position.y + _plaque.position.y
 
 func focus_plaque() -> void:
 	_plaque.grab_focus()
+
+func highlight_unlock() -> void:
+	var glow := create_tween()
+	glow.tween_property(_face, "self_modulate", Color(1.38, 1.28, 1.08), 0.24)
+	glow.tween_property(_face, "self_modulate", Color.WHITE, 0.46)
+
+func animate_plant() -> void:
+	_plant.texture_normal = BUD
+	_plant.pivot_offset = Vector2(_plant.size.x * 0.5, _plant.size.y)
+	_plant.scale = Vector2(0.7, 0.55)
+	var growth := create_tween()
+	growth.tween_interval(0.20)
+	growth.tween_property(_plant, "scale", Vector2.ONE, 0.50).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	growth.tween_callback(func() -> void: _plant.texture_normal = FLOWER)
+	growth.tween_property(_plant, "scale", Vector2(1.13, 1.13), 0.10)
+	growth.tween_property(_plant, "scale", Vector2.ONE, 0.10)
 
 func _show_press(pressed: bool) -> void:
 	_face.self_modulate = Color(0.88, 0.88, 0.88) if pressed else Color.WHITE

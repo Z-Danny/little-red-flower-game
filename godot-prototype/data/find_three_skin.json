@@ -1,0 +1,49 @@
+{
+  "props": {
+    "soap": "洗手液",
+    "water": "流动水",
+    "tissue": "擦手纸",
+    "bottle": "水杯",
+    "cloth": "抹布",
+    "yoghurt": "酸奶",
+    "milk": "鲜奶",
+    "cheese": "奶酪",
+    "dumplings": "冻饺子",
+    "peas": "冷冻青豆",
+    "fish": "冷冻鱼",
+    "rice": "大米",
+    "noodles": "干面条",
+    "oats": "燕麦",
+    "candy": "糖盒",
+    "serving_chopsticks": "公筷",
+    "ladle": "公勺",
+    "plate": "公盘",
+    "tureen": "汤盆",
+    "bowl": "饭碗",
+    "chopsticks": "个人筷",
+    "spoon": "个人勺",
+    "cosmetic": "护手霜",
+    "pouch": "笔袋",
+    "phone": "手机"
+  },
+  "levels": {
+    "campus-canteen-check-v1": {
+      "background": "canteen",
+      "ink": "184c47",
+      "objects": ["spoon", "bottle", "plate", "milk", "tissue", "candy", "bowl", "phone", "pouch", "chopsticks", "soap", "serving_chopsticks", "cloth", "tureen", "ladle", "cosmetic", "yoghurt", "water", "rice", "noodles"],
+      "labels": {}
+    },
+    "home-food-storage-v1": {
+      "background": "storage",
+      "ink": "484c2b",
+      "objects": ["noodles", "pouch", "yoghurt", "tissue", "fish", "bottle", "peas", "bowl", "milk", "soap", "chopsticks", "rice", "dumplings", "candy", "phone", "cheese", "tureen", "cloth", "oats", "plate"],
+      "labels": {"yoghurt": "冷藏", "milk": "冷藏", "cheese": "冷藏", "dumplings": "冷冻", "peas": "冷冻", "fish": "冷冻", "rice": "干燥", "noodles": "干燥", "oats": "干燥"}
+    },
+    "food-table-check-v1": {
+      "background": "serving",
+      "ink": "593c34",
+      "objects": ["tissue", "phone", "plate", "chopsticks", "pouch", "tureen", "candy", "bottle", "serving_chopsticks", "milk", "cloth", "bowl", "spoon", "cosmetic", "cheese", "oats", "rice", "yoghurt", "ladle", "noodles"],
+      "labels": {"serving_chopsticks": "公筷", "ladle": "公勺", "plate": "公盘", "bowl": "饭碗", "chopsticks": "个人筷", "spoon": "个人勺"}
+    }
+  }
+}

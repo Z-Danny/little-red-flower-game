@@ -7,6 +7,7 @@ const Rules = preload("res://scripts/hunt_runner/hunt_rules.gd")
 const Camera = preload("res://scripts/hunt_runner/hunt_viewport.gd")
 const Direction = preload("res://scripts/hunt_runner/hunt_performance.gd")
 const Permission = preload("res://scripts/hunt_runner/hunt_permission.gdshader")
+const TOUCH_SLOP := 14.0
 
 signal pressed_at(point: Vector2, is_touch: bool)
 
@@ -30,6 +31,11 @@ var _tier := 0
 var _glow: GradientTexture2D
 var _font: Font
 var _reduced_motion := false
+var _touch_active := false
+var _touch_index := 0
+var _touch_start := Vector2.ZERO
+var _touch_dragged := false
+var _restore_touch_accumulation := false
 
 func build(pack: Pack, reduced_motion: bool) -> void:
 	_pack = pack
@@ -64,6 +70,7 @@ func build(pack: Pack, reduced_motion: bool) -> void:
 	_layout()
 
 func _layout() -> void:
+	cancel_touch()
 	if size.x <= 0.0 or size.y <= 0.0:
 		return
 	camera = Camera.cover(size, _art_size)
@@ -84,16 +91,50 @@ func target_at(point: Vector2, touch: bool) -> String:
 
 func _gui_input(event: InputEvent) -> void:
 	if event.device == InputEvent.DEVICE_ID_EMULATION:
-		return # don't receive both a physical tap and its emulated event
-	var touch := event is InputEventScreenTouch
-	var point: Vector2
-	if event is InputEventScreenTouch and event.index == 0 and event.pressed and not event.canceled:
-		point = event.position
+		return # The native touch owns the gesture. HUD buttons still use emulated mouse.
+	if event is InputEventScreenTouch:
+		_handle_touch(event)
+	elif event is InputEventScreenDrag and _touch_active and event.index == _touch_index:
+		accept_event()
+		if _touch_start.distance_to(event.position) > TOUCH_SLOP:
+			_touch_dragged = true
 	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed and not event.canceled:
-		point = event.position
-	else:
-		return
+		accept_event()
+		_emit_press(event.position, false)
+
+func _handle_touch(event: InputEventScreenTouch) -> void:
 	accept_event()
+	if event.pressed and not event.canceled:
+		# The web backend passes through the browser's touch identifier.
+		if not _touch_active:
+			_touch_active = true
+			_touch_index = event.index
+			_touch_start = event.position
+			_touch_dragged = false
+			# Accumulation can collapse a swipe out and back into a single
+			# stationary sample. Preserve the path only while this finger is down.
+			_restore_touch_accumulation = Input.use_accumulated_input
+			Input.use_accumulated_input = false
+		elif event.index != _touch_index:
+			_touch_dragged = true
+		return
+	if not _touch_active or event.index != _touch_index:
+		return
+	var is_tap := not event.canceled and not _touch_dragged and _touch_start.distance_to(event.position) <= TOUCH_SLOP
+	cancel_touch()
+	if is_tap:
+		_emit_press(_touch_start, true)
+
+func cancel_touch() -> void:
+	if not _touch_active:
+		return
+	_touch_active = false
+	Input.use_accumulated_input = _restore_touch_accumulation
+
+func _exit_tree() -> void:
+	cancel_touch()
+
+func _emit_press(point: Vector2, touch: bool) -> void:
 	var at := camera.affine_inverse() * point
 	if Rect2(Vector2.ZERO, _art_size).has_point(at):
 		pressed_at.emit(at, touch)

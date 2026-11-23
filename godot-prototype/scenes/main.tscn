@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1"]
 [ext_resource type="Theme" path="res://theme/storybook.tres" id="2"]
+[ext_resource type="Texture2D" path="res://assets/home_menu/loading-lantern.webp" id="3"]
+[ext_resource type="Shader" path="res://theme/loading_lantern.gdshader" id="4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lantern"]
+resource_local_to_scene = true
+shader = ExtResource("4")
+shader_parameter/lantern_light = 0.5
 
 [node name="LittleRedFlower" type="Control"]
 layout_mode = 3
@@ -31,7 +38,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
-[node name="Loading" type="ColorRect" parent="."]
+[node name="ModalOverlay" type="CanvasLayer" parent="."]
+layer = 20
+
+[node name="Loading" type="ColorRect" parent="ModalOverlay"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
@@ -40,29 +50,50 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.086, 0.137, 0.113, 0.72)
+mouse_filter = 0
+color = Color(0.029, 0.084, 0.096, 0.66)
+focus_mode = 2
 
-[node name="Paper" type="Panel" parent="Loading"]
-offset_left = 57.0
-offset_top = 359.0
-offset_right = 519.0
-offset_bottom = 665.0
-
-[node name="LoadingText" type="Label" parent="Loading/Paper"]
+[node name="LanternCard" type="TextureRect" parent="ModalOverlay/Loading"]
 unique_name_in_owner = true
-offset_left = 34.0
-offset_top = 40.0
-offset_right = 428.0
-offset_bottom = 159.0
-autowrap_mode = 3
+material = SubResource("ShaderMaterial_lantern")
+theme = ExtResource("2")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -84.0
+offset_right = 178.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3")
+expand_mode = 1
+
+[node name="LoadingTitle" type="Label" parent="ModalOverlay/Loading/LanternCard"]
+unique_name_in_owner = true
+offset_left = 20.0
+offset_top = 68.0
+offset_right = 336.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(1, 0.951, 0.804, 1)
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
-text = "正在准备关卡素材…"
+text = "正在加载素材"
 
-[node name="CloseLoading" type="Button" parent="Loading/Paper"]
+[node name="LoadingText" type="Label" parent="ModalOverlay/Loading/LanternCard"]
 unique_name_in_owner = true
-offset_left = 88.0
-offset_top = 196.0
-offset_right = 374.0
-offset_bottom = 265.0
-text = "返回"
+offset_left = 20.0
+offset_top = 101.0
+offset_right = 336.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.877, 0.918, 0.842, 1)
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "正在连接…"

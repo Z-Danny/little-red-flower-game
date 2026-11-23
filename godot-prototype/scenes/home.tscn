@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=13 format=3]
 
 [ext_resource type="Script" path="res://scripts/home.gd" id="1"]
 [ext_resource type="Theme" path="res://theme/storybook.tres" id="4"]
 [ext_resource type="Texture2D" path="res://assets/ui/cover.webp" id="2"]
 [ext_resource type="Texture2D" path="res://assets/ui/cover-title.webp" id="3"]
+[ext_resource type="Shader" path="res://theme/home_title_shine.gdshader" id="5"]
+[ext_resource type="Texture2D" path="res://assets/home_menu/settings-gear.webp" id="6"]
+[ext_resource type="Texture2D" path="res://assets/home_menu/seed-counter.webp" id="7"]
+[ext_resource type="Texture2D" path="res://assets/home_menu/seed.webp" id="8"]
+[ext_resource type="Texture2D" path="res://assets/home_menu/glint.webp" id="9"]
+[ext_resource type="Texture2D" path="res://assets/home_menu/ranking.webp" id="10"]
+[ext_resource type="Texture2D" path="res://assets/home_menu/island-map-icon.webp" id="11"]
+
+[sub_resource type="ShaderMaterial" id="TitleLight"]
+resource_local_to_scene = true
+shader = ExtResource("5")
 
 [node name="Home" type="Control"]
 layout_mode = 3
@@ -27,7 +38,9 @@ texture = ExtResource("2")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="TitleArt" type="TextureRect" parent="."]
+[node name="TitleArt" type="TextureRect" parent="." groups=["wechat_content_top"]]
+unique_name_in_owner = true
+material = SubResource("TitleLight")
 layout_mode = 0
 offset_left = 54.0
 offset_top = 106.0
@@ -40,35 +53,119 @@ stretch_mode = 5
 
 [node name="Play" type="Button" parent="."]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 107.0
-offset_top = 815.0
-offset_right = 469.0
-offset_bottom = 910.0
-theme_override_font_sizes/font_size = 36
+layout_mode = 1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 159.0
+offset_top = -187.0
+offset_right = 417.0
+offset_bottom = -103.0
+pivot_offset = Vector2(129, 42)
+theme_override_font_sizes/font_size = 33
 text = "开始游戏"
 
-[node name="Progress" type="Label" parent="."]
+[node name="PlayShine" type="TextureRect" parent="Play"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 72.0
-offset_top = 929.0
-offset_right = 504.0
-offset_bottom = 977.0
-theme_override_colors/font_color = Color(1, 0.97, 0.836, 1)
-theme_override_colors/font_outline_color = Color(0.17, 0.27, 0.18, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/font_size = 23
-text = "已收集 0 朵小红花"
-horizontal_alignment = 1
+modulate = Color(1, 1, 1, 0)
+offset_left = 50.0
+offset_top = 7.0
+offset_right = 182.0
+offset_bottom = 24.0
+texture = ExtResource("9")
+expand_mode = 1
+mouse_filter = 2
 
-[node name="PlayMigrated" type="Button" parent="."]
+[node name="Ranking" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = -188.0
+offset_right = 147.0
+offset_bottom = -102.0
+texture_normal = ExtResource("10")
+ignore_texture_size = true
+stretch_mode = 5
+mouse_default_cursor_shape = 2
+tooltip_text = "排行榜"
+accessibility_name = "排行榜"
+
+[node name="ChooseIsland" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 429.0
+offset_top = -188.0
+offset_right = 521.0
+offset_bottom = -102.0
+texture_normal = ExtResource("11")
+ignore_texture_size = true
+stretch_mode = 5
+mouse_default_cursor_shape = 2
+tooltip_text = "岛屿选择"
+accessibility_name = "岛屿选择"
+
+[node name="Settings" type="TextureButton" parent="." groups=["wechat_top"]]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 149.0
-offset_top = 973.0
-offset_right = 427.0
-offset_bottom = 1018.0
-theme_override_font_sizes/font_size = 18
-text = "试玩已迁移关卡"
+offset_left = 22.0
+offset_top = 20.0
+offset_right = 96.0
+offset_bottom = 94.0
+ignore_texture_size = true
+stretch_mode = 5
+mouse_default_cursor_shape = 2
+tooltip_text = "游戏设置"
+accessibility_name = "游戏设置"
+texture_normal = ExtResource("6")
+
+[node name="SeedCounter" type="TextureRect" parent="." groups=["wechat_left_of_capsule"]]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -179.0
+offset_top = 28.0
+offset_right = -23.0
+offset_bottom = 88.0
+mouse_filter = 2
+expand_mode = 1
+texture = ExtResource("7")
+
+[node name="SeedArt" type="TextureRect" parent="SeedCounter"]
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 58.0
+offset_bottom = 52.0
+texture = ExtResource("8")
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+
+[node name="SeedCount" type="Label" parent="SeedCounter"]
+unique_name_in_owner = true
+offset_left = 57.0
+offset_top = 5.0
+offset_right = 142.0
+offset_bottom = 52.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.128, 0.249, 0.164, 1)
+theme_override_font_sizes/font_size = 30
+text = "× 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayMigrated" type="Button" parent="." groups=["wechat_bottom"]]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 158.0
+offset_top = -48.0
+offset_right = 418.0
+offset_bottom = -7.0
+theme_override_font_sizes/font_size = 17
+text = "测试模式  解锁全部"
 tooltip_text = "仅本次临时跳过前置条件，预告不会解锁。"

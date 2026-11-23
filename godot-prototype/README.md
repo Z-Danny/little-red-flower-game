@@ -12,9 +12,9 @@ git clone --branch godot-mini-game https://github.com/Z-Danny/little-red-flower-
 
 用 [Godot 4.6.2 标准版](https://github.com/godotengine/godot-builds/releases/tag/4.6.2-stable)导入 `project.godot`。首次导入素材结束后按 F5。编辑器和 Windows 完整导出自带素材，不依赖网页或资源服务器。渲染用 Compatibility，逻辑画布为 576 × 1024。
 
-- 「开始游戏」按老版的前置条件解锁；岛内可点「去首关」定位第一个可玩的入口。
-- 「试玩已迁移关卡」只对本次从首页进入的旅程临时跳过前置条件，可到不同岛逐关验证。没有玩法的 6 个旧预告和 28 个新占位仍只能看介绍。
-- 小红花按稳定关卡 ID 保存在 `user://prototype-progress-v1.cfg`。油锅原型的记录仍有效，每关补发超过旧成绩的差额。旧网页版的多人存档与本工程分开。
+- 「开始游戏」按各岛的地标编号逐关解锁。从结算返回地图时，镜头移到下一关。点「去首关」可定位当前岛第一个尚未完成且可进入的关卡。
+- 首页「测试模式 · 解锁全部关卡」对本次旅程临时跳过前置条件，60 个地标均可进入。新增和重做的关卡见[九岛新增关卡与玩法表](../docs/nine-islands/new-levels.md)。
+- 小红花按稳定关卡 ID 保存。守护档案包含闯关进度与小红花排行榜，可在本机添加或切换玩家。原有玩家记录继续使用 `user://prototype-progress-v1.cfg`，每关补发超过旧成绩的差额。
 
 ## 旧关来历
 
@@ -31,14 +31,17 @@ git clone --branch godot-mini-game https://github.com/Z-Danny/little-red-flower-
 | 九张地图、右上角工具和关卡木牌 | `scenes/island_map.tscn`、`scenes/map_corner_tools.tscn`、`scenes/map_level_stop.tscn`；地标坐标在 `data/original_levels.json` |
 | 关卡介绍、我的进度、游戏设置 | `scenes/painted_map_intro.tscn`、`scenes/journey_progress.tscn`、`scenes/journey_settings.tscn` |
 | 油锅关 | `scenes/oil_fire.tscn`；[交互和美术](assets/oil_fire/README.md) |
-| 找隐患类九关 | `scenes/hunt_runner.tscn`、`scripts/hunt_runner/`、`assets/hunt_runner/` |
+| 找隐患类十一关 | `scenes/hunt_runner.tscn`、`scripts/hunt_runner/`、`assets/hunt_runner/` |
 | 背包、收纳、分步处置及 AED | `scenes/configured_runner.tscn`、`scripts/configured_runner/`、`assets/configured_runner/levels/` |
+| 找三件合成 | `scenes/find_three.tscn`、`data/find_three.json`、`data/find_three_skin.json`、`assets/find_three/` |
+| 情境判断、过街与路线选择、急救分流 | `scenes/safety_choices.tscn`、`data/safety_choices.json`、`data/safety_choices_more.json`、`assets/safety_choices/` |
+| 情境点击、拖放和入场演绎 | `scenes/scene_actions.tscn`、`data/scene_actions*.json`、`assets/scene_actions/` 与 `assets/scene_actions_extra/` |
 | 暴雨街道、洪水居家避险 | `scenes/disaster_runner.tscn`、`scripts/disaster_rules.gd`、`assets/disaster_runner/` |
 | 心肺复苏 | `scenes/cpr_runner.tscn`、`scripts/cpr_rules.gd`、`assets/cpr_runner/` |
 | 结算、评分、小红花和存档 | `scenes/settlement.tscn`、`scripts/journey_save.gd` |
 | 界面字体、按钮及配色 | `theme/storybook.tres` |
 
-`scenes/main.tscn` 通过 ID 调用各类场景，共用地图和结算。原版手绘界面的素材来源见 `assets/restored_ui/sources.json` 和[结算美术索引](tools/settlement_art_sources.md)。找隐患和灾害关共 11 关有独立的原过关图；其他 15 关让原有场景停在处置完成的状态，放在结算卡后。同一玩法只改一套运行器；关卡的规则、美术和坐标单独改。`assets/*/verified.json` 是迁移验收记录；确认旧版曾可玩、迁移通过且有对应场景才允许开始。`tools/` 的旧版素材导入命令用于追溯和批量重导，日常改 Godot 工程无需重跑；重导会替换对应快照。导出的 HTML、WASM、PCK 和微信目录都不是编辑入口。
+`scenes/main.tscn` 通过 ID 调用各类场景，共用地图和结算。原版手绘界面的素材来源见 `assets/restored_ui/sources.json` 和[结算美术索引](tools/settlement_art_sources.md)。同一玩法共用运行器，关卡规则、美术和坐标按关配置。`assets/*/verified.json` 记录 26 个旧关的迁移验收，`data/new_island_levels.json` 记录新增关的运行器和配置。同一地标启用玩法后沿用原 ID。`tools/` 的旧版素材导入命令用于追溯和批量重导，日常改 Godot 工程无需重跑。导出的 HTML、WASM、PCK 和微信目录用于试玩和分发。
 
 ## 导出
 
@@ -57,3 +60,16 @@ godot --headless --path godot-prototype --script res://tests/restored_ui_test.gd
 分包网页版的触控回归为 `node godot-prototype/tests/restored-ui-web.mjs`。运行前将 `GODOT_PREVIEW_URL` 设为实际的 HTTPS 预览地址，`GODOT_UI_WEB` 设为对应的导出目录，`PLAYWRIGHT_MODULE` 设为本机已安装的 Playwright 模块路径。可用 `BROWSER_EXECUTABLE` 指定 Chromium 或 Edge 可执行文件。
 
 微信包体的静态检查独立于浏览器测试。正式微信测试需要可配置的 HTTPS 资源域名、可用的小游戏 AppID 或测试号，并在开发者工具与 iOS、Android 真机上分别核验。运行条件见[微信导出说明](tools/wechat-export.md)。
+
+## 游戏音效
+
+Godot 用独立的音乐和音效总线。首页和地图共用背景音乐，进入关卡和结算时暂停，返回地图时接着播放。关卡按各自配置播放音乐与环境声。游戏设置里的音效开关控制按钮、关内动作和小红花奖励。固定音效来自原工程，重新生成 `assets/journey_sfx/` 可运行 `node godot-prototype/tools/prepare_journey_sfx.mjs`。
+
+| 玩家动作 | 音效 |
+| --- | --- |
+| 开始、打开关卡卡片、关弹窗、点提示 | 点击、打开、收起和提示 |
+| 找隐患、三件合成、拖放、情景练习 | 圈选、拾取、放回、合成、正确和错误。找隐患和旧处置继续使用各关的专用音轨 |
+| 暴雨圈选、洪水处置 | 起笔、拾取、上楼、断电、求救、装包和整理材料 |
+| 结算、点「种下小红花」 | 胜负短音。首次通关返回地图时播放落地、冒芽、开花和计数，实际解锁下一关时加解锁声 |
+
+Web 分包导出会保留 iPhone 浏览器使用的同源 WAV。原生 Godot 和微信导出使用内置音效。导出回归运行 `node godot-prototype/tests/mobile-music-web.mjs <HTTPS试玩地址> chromium sfx`，检查实际播放和种花声完整播完。同一关等分重玩时的奖励边界由 `res://tests/progression_board_test.gd` 检查。

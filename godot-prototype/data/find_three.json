@@ -1,0 +1,43 @@
+{
+  "levels": {
+    "campus-canteen-check-v1": {
+      "play_type": "找物合成 · 洗手排序",
+      "task": "备好餐前洗手台，再按顺序洗手。",
+      "summary": "吃饭前，用流动水和洗手液或肥皂洗手，冲干净后擦干。",
+      "result": "洗好手，开饭了",
+      "recipes": [
+        {"name": "洗手台", "clue": "找流水、洗手液、干净擦手纸", "items": ["water", "soap", "tissue"], "feedback": "洗手台备好了。按顺序洗手，再去吃饭。"}
+      ],
+      "sequence": [
+        {"id": "wet", "name": "流水湿手", "detail": "先用流动水把手打湿。"},
+        {"id": "scrub", "name": "抹皂搓洗，再冲净", "detail": "抹皂揉搓双手至少 20 秒，手心、手背、指缝和指尖都要洗，再用流动水冲净。"},
+        {"id": "dry", "name": "用干净纸巾擦干", "detail": "洗干净后，用干净的擦手纸擦干。"}
+      ],
+      "sequence_order": ["scrub", "dry", "wet"],
+      "source": {"publisher": "北京市疾控中心", "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202610/t20261015_4903342.html"}
+    },
+    "home-food-storage-v1": {
+      "play_type": "按标签找三件 · 食材归类",
+      "task": "读包装上的保存说明，给食材找对位置。",
+      "summary": "以包装标注的保存条件为准。冷藏和冷冻分开，干货放在标签要求的阴凉干燥处。",
+      "result": "食材各就各位",
+      "recipes": [
+        {"name": "冷藏区", "clue": "找 3 件标有「冷藏」的食材", "items": ["yoghurt", "milk", "cheese"], "feedback": "冷藏食材放好了。继续找标有「冷冻」的食材。"},
+        {"name": "冷冻区", "clue": "找 3 件标有「冷冻」的食材", "items": ["dumplings", "peas", "fish"], "feedback": "冷冻食材放好了。接着找标有「干燥」的干货。"},
+        {"name": "储物柜", "clue": "找 3 件标有「干燥」的干货", "items": ["rice", "noodles", "oats"], "feedback": "干货放进了阴凉干燥的储物柜。"}
+      ],
+      "source": {"publisher": "北京市疾控中心", "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202402/t20240210_3561570.html"}
+    },
+    "food-table-check-v1": {
+      "play_type": "找三物成套 · 公用和个人餐具",
+      "task": "布置公用餐具和个人餐具，可以开饭了。",
+      "summary": "夹公盘的菜、舀公盆的汤时用公筷公勺，盛到自己碗里，再用个人餐具吃。",
+      "result": "公用和个人餐具都摆好了",
+      "recipes": [
+        {"name": "公用餐具", "clue": "找公筷、公勺和公盘", "items": ["serving_chopsticks", "ladle", "plate"], "feedback": "公筷夹菜，公勺舀汤。再准备自己用的餐具。"},
+        {"name": "个人餐具", "clue": "找个人筷、个人勺和饭碗", "items": ["chopsticks", "spoon", "bowl"], "feedback": "先用公筷公勺盛到自己的碗里，再用个人餐具吃。"}
+      ],
+      "source": {"publisher": "北京市卫生健康委（北京地坛医院）", "url": "https://wjw.beijing.gov.cn/bmfw_20143/jkzs/jksh/202304/t20230423_3063821.html"}
+    }
+  }
+}

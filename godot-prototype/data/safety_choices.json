@@ -1,0 +1,417 @@
+{
+  "schema_version": 1,
+  "levels": {
+    "network-chat-privacy-v1": {
+      "mode": "device",
+      "background": "res://assets/safety_choices/network.webp",
+      "summary": "拒绝发送住址、学校和实时位置。遇到反复索要信息的私聊，退出并请可信的大人帮忙。",
+      "sources": [
+        "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260914_4863398.html"
+      ],
+      "stages": [
+        {
+          "title": "模拟私聊",
+          "instruction": "点亮两条索要个人信息的消息。",
+          "controls": [
+            {
+              "id": "exhibition",
+              "kind": "reject",
+              "label": "同学｜图书角有漫画展。",
+              "feedback": "这里说的是公开活动。留意哪些消息在问具体地点。"
+            },
+            {
+              "id": "address",
+              "kind": "mark",
+              "label": "陌生网友｜发个住址，我寄漫画给你。",
+              "feedback": "住址会透露家庭位置。"
+            },
+            {
+              "id": "comic",
+              "kind": "reject",
+              "label": "同学｜你最喜欢哪本漫画？",
+              "feedback": "这是在聊阅读偏好。"
+            },
+            {
+              "id": "location",
+              "kind": "mark",
+              "label": "陌生网友｜把实时定位发过来。",
+              "feedback": "定位会告诉对方你此时在哪儿。"
+            },
+            {
+              "id": "dismiss",
+              "kind": "advance",
+              "label": "退出私聊",
+              "feedback": "",
+              "blocked": "先圈出两条索要个人信息的消息。"
+            }
+          ]
+        },
+        {
+          "title": "隐私设置",
+          "instruction": "检查位置权限，再把情况告诉家长。",
+          "note": "陌生消息已关闭。",
+          "controls": [
+            {
+              "id": "location_share",
+              "kind": "switch",
+              "label": "向陌生人共享位置",
+              "feedback": "现在只有你知道自己的实时位置。",
+              "initial": true,
+              "goal": false,
+              "undo": "共享一打开，陌生人就可能看到位置。"
+            },
+            {
+              "id": "tell_adult",
+              "kind": "advance",
+              "label": "和家长看刚才的消息",
+              "feedback": "",
+              "blocked": "先关闭向陌生人共享位置。"
+            }
+          ]
+        }
+      ]
+    },
+    "network-link-check-v1": {
+      "mode": "device",
+      "background": "res://assets/safety_choices/network.webp",
+      "summary": "发现来路不明的登录通知，关闭消息，独立打开已知入口核实。",
+      "sources": [
+        "https://www.baiyinqu.gov.cn/XZJDBMDW/bmdw/byqwhtyhlyj/fdzdgknr/zczxwdk/art/2026/art_8cd50d52ccf141ddb442ff5187a01fe4.html",
+        "https://gaj.beijing.gov.cn/xxfb/jwbd/202507/t20250704_4142141.html"
+      ],
+      "stages": [
+        {
+          "title": "模拟收件箱",
+          "instruction": "核对这封通知，点出两处需要查证的线索。",
+          "controls": [
+            {
+              "id": "sender",
+              "kind": "mark",
+              "label": "发件人｜陌生的临时账号",
+              "feedback": "发件人身份未经确认。"
+            },
+            {
+              "id": "greeting",
+              "kind": "reject",
+              "label": "称呼｜同学您好",
+              "feedback": "礼貌的问候无法证明来源。"
+            },
+            {
+              "id": "login",
+              "kind": "mark",
+              "label": "正文｜借阅号异常，请用随信入口登录。",
+              "feedback": "消息要求另开入口登录，先从已知渠道核实。"
+            },
+            {
+              "id": "close",
+              "kind": "advance",
+              "label": "关掉通知",
+              "feedback": "",
+              "blocked": "标记发送来源和登录要求。"
+            }
+          ]
+        },
+        {
+          "title": "本机应用",
+          "instruction": "从手机桌面打开图书角常用的核验入口。",
+          "controls": [
+            {
+              "id": "attachment",
+              "kind": "reject",
+              "label": "最近收到｜陌生的登录附件",
+              "feedback": "这里来自刚才那封通知。用平时认识的入口。"
+            },
+            {
+              "id": "catalog",
+              "kind": "advance",
+              "label": "校园借阅｜本机常用应用",
+              "feedback": ""
+            }
+          ]
+        },
+        {
+          "title": "校园借阅",
+          "instruction": "核验完成。",
+          "note": "状态显示账号可以正常借阅。若仍有疑问，可以请图书角的值班老师确认。",
+          "controls": [
+            {
+              "id": "received",
+              "kind": "advance",
+              "label": "关闭核验页",
+              "feedback": ""
+            }
+          ]
+        }
+      ]
+    },
+    "network-purchase-check-v1": {
+      "mode": "device",
+      "background": "res://assets/safety_choices/network.webp",
+      "summary": "游戏退款私聊要求先付款或交出验证码时，先离开私聊，由家长陪同到原平台核实。",
+      "sources": [
+        "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260914_4863398.html",
+        "https://www.zjg.gov.cn/zjgszwz/yjxx/202303/2d66f7f034314a329fac03c4a7cffca8.shtml"
+      ],
+      "stages": [
+        {
+          "title": "警方通报记录",
+          "instruction": "2022 年 12 月，无锡",
+          "note": "一位家长收到退游戏充值款的短信。对方要求安装陌生应用、转钱，最终损失近两万五千元。",
+          "controls": [
+            {
+              "id": "open_case",
+              "kind": "advance",
+              "label": "打开一段模拟退款私聊",
+              "feedback": ""
+            }
+          ]
+        },
+        {
+          "title": "模拟退款私聊",
+          "instruction": "把客服私聊中的两种警讯标出来。",
+          "controls": [
+            {
+              "id": "nickname",
+              "kind": "reject",
+              "label": "昵称｜游戏客服",
+              "feedback": "单看昵称无法确认身份。"
+            },
+            {
+              "id": "deposit",
+              "kind": "mark",
+              "label": "私聊｜先付钱才退款",
+              "feedback": "原平台外索要转账，先停下。"
+            },
+            {
+              "id": "verify",
+              "kind": "mark",
+              "label": "私聊｜再把验证码发来。",
+              "feedback": "验证码可能被用来登录或确认操作。"
+            },
+            {
+              "id": "leave_chat",
+              "kind": "advance",
+              "label": "退出私聊",
+              "feedback": "",
+              "blocked": "先标记转账和索要验证码的消息。"
+            }
+          ]
+        },
+        {
+          "title": "原平台订单",
+          "instruction": "家长已在旁边。打开原平台的订单，核对有没有退款申请。",
+          "controls": [
+            {
+              "id": "private_pay",
+              "kind": "reject",
+              "label": "私聊窗口｜去付款",
+              "feedback": "已退出私聊。通过原平台查证。"
+            },
+            {
+              "id": "orders",
+              "kind": "advance",
+              "label": "原平台｜打开充值订单",
+              "feedback": ""
+            }
+          ]
+        }
+      ]
+    },
+    "network-account-check-v1": {
+      "mode": "device",
+      "background": "res://assets/safety_choices/network.webp",
+      "summary": "重要账号分别设置长且独立的密码，在可用时启用二次验证。验证码只用于自己发起并核实的操作。",
+      "sources": [
+        "https://www.baiyinqu.gov.cn/XZJDBMDW/bmdw/byqwhtyhlyj/fdzdgknr/zczxwdk/art/2026/art_8cd50d52ccf141ddb442ff5187a01fe4.html",
+        "https://www.cisa.gov/sites/default/files/2024-09/Secure-Our-World-4-Easy-Ways-Stay-Safe-Online-Tip-Sheet.pdf"
+      ],
+      "stages": [
+        {
+          "title": "模拟账号设置",
+          "instruction": "给重要账号分别配置独立长口令，开启二次验证，关掉共享。",
+          "controls": [
+            {
+              "id": "unique",
+              "kind": "switch",
+              "label": "各账号使用独立长口令",
+              "feedback": "单个账号泄露时，其他账号有自己的口令。",
+              "initial": false,
+              "goal": true,
+              "undo": "账号又会复用口令。"
+            },
+            {
+              "id": "two_step",
+              "kind": "switch",
+              "label": "二次验证",
+              "feedback": "只靠一条密码已经不能完成登录。",
+              "initial": false,
+              "goal": true,
+              "undo": "二次验证已关闭。"
+            },
+            {
+              "id": "sharing",
+              "kind": "switch",
+              "label": "在公共桌面展示口令",
+              "feedback": "旁人看不到桌面上的口令。",
+              "initial": true,
+              "goal": false,
+              "undo": "公共桌面重新展示口令。"
+            },
+            {
+              "id": "save",
+              "kind": "advance",
+              "label": "保存安全设置",
+              "feedback": "",
+              "blocked": "三项设置都需要检查。"
+            }
+          ]
+        },
+        {
+          "title": "验证码消息",
+          "instruction": "设置生效后，一位自称客服的人索要验证码。关闭这条消息。",
+          "controls": [
+            {
+              "id": "send",
+              "kind": "reject",
+              "label": "分享验证码",
+              "feedback": "验证码可能授权登录或其他操作，留在自己手里。"
+            },
+            {
+              "id": "close_message",
+              "kind": "advance",
+              "label": "关闭陌生私聊",
+              "feedback": ""
+            }
+          ]
+        }
+      ]
+    },
+    "network-device-share-v1": {
+      "mode": "device",
+      "background": "res://assets/safety_choices/network.webp",
+      "summary": "用完自己的共用终端会话就退出，避免在设备上保存登录。发现他人账号留在屏幕上，告知工作人员。",
+      "sources": [
+        "https://www.baiyinqu.gov.cn/XZJDBMDW/bmdw/byqwhtyhlyj/fdzdgknr/zczxwdk/art/2026/art_8cd50d52ccf141ddb442ff5187a01fe4.html"
+      ],
+      "stages": [
+        {
+          "title": "图书角的共用终端",
+          "instruction": "查完了借阅记录。先取消保存登录，再退出自己的账号。",
+          "note": "当前登录的是自己的借阅账号。",
+          "controls": [
+            {
+              "id": "remember",
+              "kind": "switch",
+              "label": "下次自动登录",
+              "feedback": "这台终端下次不会自动进入当前账号。",
+              "initial": true,
+              "goal": false,
+              "undo": "如果保留自动登录，下一位读者可能进入当前账号。"
+            },
+            {
+              "id": "close_window",
+              "kind": "reject",
+              "label": "关闭窗口",
+              "feedback": "关闭窗口可能保留会话。请用退出功能。"
+            },
+            {
+              "id": "sign_out",
+              "kind": "advance",
+              "label": "退出当前账号",
+              "feedback": "",
+              "blocked": "先关掉自动登录。"
+            }
+          ]
+        },
+        {
+          "title": "另一台终端",
+          "instruction": "桌面保留着前一位读者的会话，值班老师就在一旁。",
+          "note": "自己的账号已退出。",
+          "controls": [
+            {
+              "id": "browse",
+              "kind": "reject",
+              "label": "打开对方的借阅详情",
+              "feedback": "详情可能含私人信息，让值班老师处理。"
+            },
+            {
+              "id": "report",
+              "kind": "advance",
+              "label": "请值班老师处理",
+              "feedback": ""
+            }
+          ]
+        }
+      ]
+    },
+    "network-message-check-v1": {
+      "mode": "device",
+      "background": "res://assets/safety_choices/network.webp",
+      "summary": "比对原文、发布方和日期。没有核实出处的截图先放入待核实，避免转发。",
+      "sources": [
+        "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202609/t20260914_4863398.html",
+        "https://gaj.beijing.gov.cn/xxfb/jfts/201912/t20191220_1367431.html"
+      ],
+      "stages": [
+        {
+          "title": "班群里的开放通知",
+          "instruction": "点开学校公告与群聊截图里的时间，比较是不是同一周。",
+          "controls": [
+            {
+              "id": "original",
+              "kind": "mark",
+              "label": "学校原公告｜本周六图书角开放。",
+              "feedback": "公告说的是本周六。"
+            },
+            {
+              "id": "snapshot",
+              "kind": "mark",
+              "label": "群截图｜上周六图书角暂停开放。",
+              "feedback": "截图说的是上周六，不能用来判断这周的安排。"
+            },
+            {
+              "id": "check_new",
+              "kind": "advance",
+              "label": "查看另一条群消息",
+              "feedback": "",
+              "blocked": "两个日期都需要核对。"
+            }
+          ]
+        },
+        {
+          "title": "群截图归档",
+          "instruction": "把来源不明的截图拖进「待核实」。也可以先点截图，再点文件夹。",
+          "note": "学校的通知页暂时没有对应消息。",
+          "controls": [
+            {
+              "id": "screenshot",
+              "kind": "carry",
+              "label": "匿名截图｜明天停课，请快转！",
+              "feedback": "截图缺少日期和发布方，先留待核实。"
+            },
+            {
+              "id": "pending",
+              "kind": "drop",
+              "label": "待核实文件夹",
+              "feedback": "已放入待核实。可以请老师从学校的正式渠道确认。",
+              "accept": "screenshot"
+            },
+            {
+              "id": "forward",
+              "kind": "reject",
+              "label": "转发到班级群",
+              "feedback": "信息没有核实，继续转发容易误传。"
+            },
+            {
+              "id": "finish",
+              "kind": "advance",
+              "label": "请老师核实",
+              "feedback": "",
+              "blocked": "先把截图放进待核实文件夹。"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

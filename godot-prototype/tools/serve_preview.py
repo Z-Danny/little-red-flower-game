@@ -2,6 +2,8 @@
 import argparse
 import functools
 import gzip
+import io
+import re
 import shutil
 from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
@@ -10,7 +12,8 @@ from urllib.parse import urlsplit
 
 
 class Handler(SimpleHTTPRequestHandler):
-    extensions_map = {**SimpleHTTPRequestHandler.extensions_map, '.wasm': 'application/wasm', '.pck': 'application/octet-stream'}
+    audio_types = {'.mp3': 'audio/mpeg', '.wav': 'audio/wav'}
+    extensions_map = {**SimpleHTTPRequestHandler.extensions_map, '.wasm': 'application/wasm', '.pck': 'application/octet-stream', **audio_types}
 
     def list_directory(self, path):
         self.send_error(404)
@@ -26,6 +29,8 @@ class Handler(SimpleHTTPRequestHandler):
             self.end_headers()
             return None
         path = Path(self.translate_path(self.path))
+        if path.suffix in self.audio_types and path.is_file() and self.headers.get('Range'):
+            return self.send_audio_range(path, self.headers['Range'])
         zipped = path.with_name(path.name + '.gz')
         encodings = {item.strip() for item in self.headers.get('Accept-Encoding', '').lower().split(',')}
         if path.suffix == '.wasm' and 'gzip' in encodings and path.is_file() and zipped.is_file():
@@ -39,6 +44,32 @@ class Handler(SimpleHTTPRequestHandler):
                 self.end_headers()
                 return stream
         return super().send_head()
+
+    def send_audio_range(self, path: Path, header: str):
+        size = path.stat().st_size
+        match = re.fullmatch(r'bytes=(\d*)-(\d*)', header)
+        start, end = size, size - 1
+        if match and match[1]:
+            start = int(match[1])
+            end = min(end, int(match[2])) if match[2] else end
+        elif match and match[2]:
+            start = max(0, size - int(match[2]))
+        if not 0 <= start <= end < size:
+            self.send_response(HTTPStatus.REQUESTED_RANGE_NOT_SATISFIABLE)
+            self.send_header('Content-Range', f'bytes */{size}')
+            self.send_header('Content-Length', '0')
+            self.end_headers()
+            return None
+        with path.open('rb') as source:
+            source.seek(start)
+            content = source.read(end - start + 1)
+        self.send_response(HTTPStatus.PARTIAL_CONTENT)
+        self.send_header('Content-Type', self.audio_types[path.suffix])
+        self.send_header('Accept-Ranges', 'bytes')
+        self.send_header('Content-Range', f'bytes {start}-{end}/{size}')
+        self.send_header('Content-Length', str(len(content)))
+        self.end_headers()
+        return io.BytesIO(content)
 
 
 def gzip_wasm(root: Path) -> None:

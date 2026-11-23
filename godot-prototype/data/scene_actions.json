@@ -1,0 +1,264 @@
+{
+  "levels": {
+    "campus-playground-check-v1": {
+      "opening": "体育老师巡场。先把跑道清出来，再带学生热身。",
+      "result": "操场检查完毕",
+      "summary": "体育活动前由老师检查场地和器材，处理障碍，让学生远离损坏器材，再组织热身。",
+      "source": [
+        {
+          "publisher": "教育部",
+          "url": "https://www.moe.gov.cn/srcsite/A17/moe_943/moe_946/201505/t20150515_189495.html"
+        },
+        {
+          "publisher": "北京市人大常委会",
+          "url": "https://www.beijing.gov.cn/zhengce/dfxfg/202103/t20210313_2306746.html"
+        }
+      ],
+      "zones": [
+        {
+          "id": "rack",
+          "label": "器材架"
+        },
+        {
+          "id": "stop",
+          "label": "损坏跨栏"
+        },
+        {
+          "id": "warmup",
+          "label": "热身区"
+        }
+      ],
+      "items": [
+        {
+          "id": "mat",
+          "label": "跑道上的垫子",
+          "zone": "rack",
+          "success": "垫子收上器材架，跑道空出来了。",
+          "wrong": "把跑道上的垫子收进器材架。"
+        },
+        {
+          "id": "cone",
+          "label": "停用警示锥",
+          "zone": "stop",
+          "success": "损坏的跨栏已做停用标记，等老师处理。",
+          "wrong": "把警示锥放到损坏的跨栏旁。"
+        },
+        {
+          "id": "boy",
+          "label": "等老师的学生",
+          "zone": "warmup",
+          "success": "老师带学生到安全区热身。",
+          "wrong": "带学生去热身区。",
+          "needs": [
+            "mat",
+            "cone"
+          ],
+          "blocked": "先清理跑道，在损坏的跨栏旁放上警示锥。"
+        }
+      ]
+    },
+    "food-fridge-check-v1": {
+      "opening": "看每盒食物的状态，再整理冰箱。",
+      "result": "冰箱分层整理好了",
+      "summary": "密封生肉放下层，熟食和即食食物分开存放。被生肉汁污染的即食食物应丢弃，并清洁污染处。",
+      "source": [
+        {
+          "publisher": "北京市疾控中心",
+          "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202402/t20240210_3561570.html"
+        },
+        {
+          "publisher": "北京市市场监督管理局",
+          "url": "https://scjgj.beijing.gov.cn/zwxx/scjgdt/202602/t20260218_4525227.html"
+        }
+      ],
+      "zones": [
+        {
+          "id": "upper",
+          "label": "冷藏上层"
+        },
+        {
+          "id": "lower",
+          "label": "冷藏下层"
+        },
+        {
+          "id": "discard",
+          "label": "丢弃"
+        }
+      ],
+      "items": [
+        {
+          "id": "raw",
+          "label": "密封生肉",
+          "zone": "lower",
+          "success": "生肉独立密封，放冷藏下层。",
+          "wrong": "密封生肉放下层，避免肉汁滴到其他食物上。"
+        },
+        {
+          "id": "salad",
+          "label": "密封即食沙拉",
+          "zone": "upper",
+          "success": "即食沙拉与生肉分开，放冷藏上层。",
+          "wrong": "即食食物和生肉分开，放在冷藏上层。"
+        },
+        {
+          "id": "dripped",
+          "label": "被生肉汁滴到\n即食熟菜",
+          "zone": "discard",
+          "success": "受污染的即食熟菜已丢弃。还要请大人清洁漏汁处。",
+          "wrong": "这盒即食熟菜已经沾到生肉汁，应丢弃。"
+        }
+      ]
+    },
+    "food-leftovers-check-v1": {
+      "opening": "看三份熟菜的保存记录。哪盒该冷藏、哪盒该复热？",
+      "result": "剩菜分好了",
+      "summary": "熟菜尽快冷藏，吃前彻底热透。常温放了一整夜的熟菜应丢弃。",
+      "source": [
+        {
+          "publisher": "北京市市场监督管理局",
+          "url": "https://scjgj.beijing.gov.cn/zwxx/scjgdt/202602/t20260218_4525227.html"
+        },
+        {
+          "publisher": "北京市疾控中心",
+          "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202402/t20240210_3561570.html"
+        }
+      ],
+      "zones": [
+        {
+          "id": "chill",
+          "label": "冷藏"
+        },
+        {
+          "id": "heat",
+          "label": "彻底热透"
+        },
+        {
+          "id": "discard",
+          "label": "丢弃"
+        }
+      ],
+      "items": [
+        {
+          "id": "fresh",
+          "label": "午餐刚收桌",
+          "zone": "chill",
+          "success": "刚收桌的熟菜及时密封冷藏。",
+          "wrong": "这盒刚收桌，密封后及时冷藏。"
+        },
+        {
+          "id": "cold",
+          "label": "昨晚及时冷藏\n下一餐准备吃",
+          "zone": "heat",
+          "success": "这盒及时冷藏，吃前由大人彻底热透。",
+          "wrong": "已及时冷藏的熟菜，准备吃时要热透。"
+        },
+        {
+          "id": "overnight",
+          "label": "昨晚至今\n一直放室温",
+          "zone": "discard",
+          "success": "这盒在室温放了一整夜，应该丢弃。",
+          "wrong": "室温放了一整夜的熟菜该丢弃，加热也不能补救。"
+        }
+      ]
+    },
+    "food-school-lunch-check-v1": {
+      "opening": "现在 12:10。\n看封口和食用时限，再分餐盒。",
+      "result": "午餐记录已整理",
+      "summary": "发现餐盒封口破损或超过食用时限，先停吃并告诉老师。食用前由学校指定人员核对配送记录。",
+      "source": [
+        {
+          "publisher": "北京市教委等五部门",
+          "url": "https://www.beijing.gov.cn/zhengce/zhengcefagui/202501/t20250103_3980410.html"
+        }
+      ],
+      "zones": [
+        {
+          "id": "review",
+          "label": "待老师验收"
+        },
+        {
+          "id": "hold",
+          "label": "暂停供应"
+        }
+      ],
+      "items": [
+        {
+          "id": "sealed",
+          "label": "封口完整\n12:30 前食用",
+          "zone": "review",
+          "success": "封口完整、未过时限，交老师核验配送记录。",
+          "wrong": "符合题面的两项条件，交老师继续核验。"
+        },
+        {
+          "id": "late",
+          "label": "封口完整\n12:00 前食用",
+          "zone": "hold",
+          "success": "12:10 已过食用时限，暂停发放并向老师报告。",
+          "wrong": "现在 12:10。这盒已经过了食用时限。"
+        },
+        {
+          "id": "ripped",
+          "label": "封口破损\n12:30 前食用",
+          "zone": "hold",
+          "success": "封口破损，先不吃，也别拆开。老师会处理。",
+          "wrong": "这盒封口破损，应暂停发放并告诉老师。"
+        }
+      ]
+    },
+    "food-picnic-check-v1": {
+      "opening": "能带走的放进野餐篮，其余划掉。",
+      "result": "野餐篮准备好了",
+      "summary": "户外带安全饮水和能按标签妥善保存的食物。野生蘑菇留在原处，未经处理的河水不饮用。",
+      "source": [
+        {
+          "publisher": "北京市疾控中心",
+          "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202402/t20240210_3561570.html"
+        },
+        {
+          "publisher": "北京市市场监督管理局",
+          "url": "https://scjgj.beijing.gov.cn/zwxx/scjgdt/202607/t20260706_4749522.html"
+        }
+      ],
+      "zones": [
+        {
+          "id": "basket",
+          "label": "装进野餐篮"
+        },
+        {
+          "id": "leave",
+          "label": "划掉备选"
+        }
+      ],
+      "items": [
+        {
+          "id": "bottle",
+          "label": "未开封瓶装水",
+          "zone": "basket",
+          "success": "用未开封的安全饮用水。",
+          "wrong": "这瓶水封口完好，可以装篮。"
+        },
+        {
+          "id": "biscuit",
+          "label": "原包装饼干\n标注可常温",
+          "zone": "basket",
+          "success": "这包饼干可按标签在常温存放，装进篮了。",
+          "wrong": "包装完好、标注可常温存放，可以装篮。"
+        },
+        {
+          "id": "river",
+          "label": "未经处理\n河水",
+          "zone": "leave",
+          "success": "从清单划掉河水。看着清澈也不能直接喝。",
+          "wrong": "这项是未经处理的河水，应该从清单划掉。"
+        },
+        {
+          "id": "mushroom",
+          "label": "路边的野生菌",
+          "zone": "leave",
+          "success": "野生菌留在原地，不能试吃。",
+          "wrong": "野生菌留在原地，从野餐清单划掉。"
+        }
+      ]
+    }
+  }
+}

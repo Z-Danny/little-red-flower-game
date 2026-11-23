@@ -1,0 +1,448 @@
+{
+  "levels": {
+    "campus-rain-check-v1": {
+      "opening": "校门外有积水。先标出封闭入口，再带同学绕进老师确认开放的干燥连廊。",
+      "summary": "校园暴雨过后，从安全处遵循校方指引，绕开积水和未开放路段。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "blocked",
+          "label": "封闭的积水入口"
+        },
+        {
+          "id": "dry",
+          "label": "教学楼内连廊"
+        }
+      ],
+      "items": [
+        {
+          "id": "cone",
+          "label": "封闭标识",
+          "zone": "blocked",
+          "success": "老师标出了积水入口。",
+          "wrong": "标识应放在积水入口前。"
+        },
+        {
+          "id": "student",
+          "label": "带同学返回",
+          "zone": "dry",
+          "success": "大家按指引留在干燥且开放的通道里。",
+          "wrong": "走老师确认开放的干燥连廊。",
+          "needs": [
+            "cone"
+          ]
+        }
+      ],
+      "source": {
+        "publisher": "北京市应急管理局",
+        "url": "https://yjglj.beijing.gov.cn/art/2022/11/19/art_3950_244120.html"
+      }
+    },
+    "campus-stairs-check-v1": {
+      "opening": "放学铃响，有同学准备从楼梯上追跑。先请老师提醒，再引导有序下楼。",
+      "summary": "在楼梯上慢走、保持间距。遇到拥挤时先停稳，避免追跑和推挤。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "rail",
+          "label": "扶手侧有序通行"
+        }
+      ],
+      "items": [
+        {
+          "id": "teacher",
+          "label": "请老师提醒",
+          "mode": "tap",
+          "success": "老师叫停了追跑，队伍在平台上站稳。",
+          "wrong": "先请老师叫停追跑。"
+        },
+        {
+          "id": "student",
+          "label": "引导同学",
+          "zone": "rail",
+          "success": "大家在扶手侧间隔下楼。",
+          "wrong": "在扶手侧按队伍顺序慢走。",
+          "needs": [
+            "teacher"
+          ]
+        }
+      ],
+      "source": {
+        "publisher": "北京市应急管理局",
+        "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202603/t20260304_4549600.html"
+      }
+    },
+    "first-aid-abrasion": {
+      "opening": "同学在操场擦伤膝盖，老师已到场。和老师一起处理轻微擦伤。",
+      "summary": "轻微浅表擦伤可以用干净的水清洗，再用洁净敷料覆盖。明显出血时先压迫止血并求助。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "wash",
+          "label": "清洗小擦伤"
+        },
+        {
+          "id": "cover",
+          "label": "覆盖小擦伤"
+        }
+      ],
+      "items": [
+        {
+          "id": "rinse",
+          "label": "干净的冲洗水",
+          "zone": "wash",
+          "success": "表浅擦伤上的污物冲掉了。",
+          "wrong": "先用洁净水清洗小擦伤。"
+        },
+        {
+          "id": "dressing",
+          "label": "洁净敷料",
+          "zone": "cover",
+          "success": "老师用洁净敷料保护了擦伤。",
+          "wrong": "清洗后再盖上洁净敷料。",
+          "needs": [
+            "rinse"
+          ]
+        }
+      ],
+      "source": {
+        "publisher": "红十字会急救科普",
+        "url": "https://www.fzcl.gov.cn/xjwz/zwgk/zfxxgkzdgz/zhsgjy/yjczyjy/202005/t20200509_3273552.htm"
+      }
+    },
+    "first-aid-nosebleed": {
+      "opening": "同学没有撞伤，但流了鼻血。先让他坐稳前倾，再用持续压迫止血。",
+      "summary": "流鼻血时坐下、稍向前倾，持续捏紧鼻翼软处。出血多或持续不止时及时求医。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "seat",
+          "label": "坐下稍向前倾"
+        }
+      ],
+      "items": [
+        {
+          "id": "posture",
+          "label": "调整坐姿",
+          "zone": "seat",
+          "success": "同学已坐稳，并稍微向前倾。",
+          "wrong": "先让同学坐稳、稍向前倾。"
+        },
+        {
+          "id": "pressure",
+          "label": "持续捏紧鼻翼",
+          "mode": "tap",
+          "success": "同学持续压迫鼻翼软处，等待止血。",
+          "wrong": "先坐稳前倾，再按压鼻翼软处。",
+          "needs": [
+            "posture"
+          ]
+        }
+      ],
+      "source": {
+        "publisher": "红十字会急救科普",
+        "url": "https://www.fzcl.gov.cn/xjwz/zwgk/zfxxgkzdgz/zhsgjy/yjczyjy/202005/t20200509_3273552.htm"
+      }
+    },
+    "first-aid-burn": {
+      "opening": "热水溅到前臂，出现小块发红。家长在场，附近有水龙头。协助完成降温和保护。",
+      "summary": "尽快用清洁的流动凉水降温。充分降温后可用干净敷料轻盖，粘住的衣物不强扯。严重烫伤立即就医。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "wash",
+          "label": "持续流动凉水"
+        },
+        {
+          "id": "cover",
+          "label": "降温后轻盖"
+        }
+      ],
+      "items": [
+        {
+          "id": "faucet",
+          "label": "流动凉水",
+          "zone": "wash",
+          "success": "已马上开始用流动凉水持续冲洗。",
+          "wrong": "先用流动的凉水降温，别直接用冰。"
+        },
+        {
+          "id": "dress",
+          "label": "洁净敷料",
+          "zone": "cover",
+          "success": "完成充分降温后，家长轻轻覆盖伤处。",
+          "wrong": "先充分降温，再用洁净敷料轻盖。",
+          "needs": [
+            "faucet"
+          ]
+        }
+      ],
+      "source": {
+        "publisher": "国家卫生健康委员会",
+        "url": "https://www.nhc.gov.cn/xcs/c100122/202606/ea9d8d2493f84cbf802f6ebb6155fa55.shtml"
+      }
+    },
+    "water-riverside-check-v1": {
+      "opening": "你在护栏内，看到有人落水。岸边有一位工作人员，手机能正常通话。",
+      "summary": "看到有人落水，从安全处立刻呼救报警，说明位置。儿童不要翻栏、下水或手拉手施救。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "alarm",
+          "label": "安全处报警"
+        }
+      ],
+      "items": [
+        {
+          "id": "staff",
+          "label": "高声呼救",
+          "mode": "tap",
+          "success": "工作人员听见呼救并赶来，你留在护栏内。",
+          "wrong": "留在安全处，通过喊叫引起注意。"
+        },
+        {
+          "id": "phone",
+          "label": "拨打求救电话",
+          "zone": "alarm",
+          "success": "电话接通，已说清河岸地标和落水的位置。",
+          "wrong": "在护栏内立即求助报警，不要下水。"
+        }
+      ],
+      "source": {
+        "publisher": "北京市教育委员会",
+        "url": "https://jw.beijing.gov.cn/xxgk/2024zcwj/2024qtwj/202407/t20240722_3756487.html"
+      }
+    },
+    "outdoor-sun-check-v1": {
+      "opening": "中午天气转热，有同伴头晕出汗。先停止活动，带他到旁边阴凉处求助。",
+      "summary": "高温时减少暴晒，准备水及防晒。出现头晕出汗先停下，到阴凉处并求助。意识异常立即拨打 120。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "shade",
+          "label": "树荫下休息"
+        },
+        {
+          "id": "kit",
+          "label": "出游随身装备"
+        }
+      ],
+      "items": [
+        {
+          "id": "walk",
+          "label": "带同伴休息",
+          "zone": "shade",
+          "success": "同伴在阴凉处停下，已请工作人员来看看。",
+          "wrong": "先停下来，就近找阴凉处。"
+        },
+        {
+          "id": "hat",
+          "label": "遮阳帽",
+          "zone": "kit",
+          "success": "遮阳帽已放进随身装备。",
+          "wrong": "把遮阳帽放进出游装备。",
+          "needs": [
+            "walk"
+          ]
+        },
+        {
+          "id": "bottle",
+          "label": "便携水壶",
+          "zone": "kit",
+          "success": "出发前备水，沿途安排休息。",
+          "wrong": "把水壶放进随身装备。",
+          "needs": [
+            "walk"
+          ]
+        }
+      ],
+      "source": {
+        "publisher": "北京市卫生健康委员会",
+        "url": "https://wjw.beijing.gov.cn/xwzx_20031/xwfb/202606/t20260603_4683944.html"
+      }
+    },
+    "outdoor-camp-check-v1": {
+      "opening": "天快黑了。把照明放到营地通道，把保暖装备放进帐篷。",
+      "summary": "夜里沿营地开放通道走，使用电筒或电灯照明。帐篷内避免烧炭或使用燃烧设备取暖。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "path",
+          "label": "营地通道照明"
+        },
+        {
+          "id": "tent",
+          "label": "帐篷内保暖"
+        }
+      ],
+      "items": [
+        {
+          "id": "lamp",
+          "label": "露营灯",
+          "zone": "path",
+          "success": "电灯照亮了营地通道。",
+          "wrong": "灯要照到开放通道的路面。"
+        },
+        {
+          "id": "bag",
+          "label": "保暖睡袋",
+          "zone": "tent",
+          "success": "帐篷内用睡袋保暖。",
+          "wrong": "把保暖睡袋放进帐篷。"
+        }
+      ],
+      "source": {
+        "publisher": "北京市文化和旅游局",
+        "url": "https://whlyj.beijing.gov.cn/zwgk/2024zcwj/202605/t20260515_4653045.html"
+      }
+    },
+    "home-kitchen-hygiene-v1": {
+      "opening": "红盒是生鸡肉，苹果洗净后要直接吃。准备两块分开的操作台面。",
+      "summary": "生熟分开，用两套洁净工具，避免生肉汁污染即食食物。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "raw",
+          "label": "生肉备餐区"
+        },
+        {
+          "id": "ready",
+          "label": "即食食材区"
+        }
+      ],
+      "items": [
+        {
+          "id": "raw-box",
+          "label": "生鸡肉盒",
+          "zone": "raw",
+          "success": "生鸡肉放到独立操作区。",
+          "wrong": "生肉应放在单独备餐区。"
+        },
+        {
+          "id": "fruit",
+          "label": "洗净的苹果",
+          "zone": "ready",
+          "success": "苹果放在另一套洁净工具上。",
+          "wrong": "苹果直接食用，应放到独立洁净区。"
+        }
+      ],
+      "source": {
+        "publisher": "北京市疾病预防控制中心",
+        "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202402/t20240210_3561570.html"
+      }
+    },
+    "water-pool-check-v1": {
+      "opening": "泳池开放，救生员在值守。跟老师沿池边慢走，把浮板送到指定区域。",
+      "summary": "在开放的正规场馆跟随成人和救生员指引。湿滑池边慢走，禁跳处不跳水。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "walk",
+          "label": "护栏内慢走线"
+        },
+        {
+          "id": "storage",
+          "label": "指定器材区"
+        }
+      ],
+      "items": [
+        {
+          "id": "guard",
+          "label": "听救生员提醒",
+          "mode": "tap",
+          "success": "救生员指出湿地和场馆指定的入水位置。",
+          "wrong": "注意场馆指引，别越过围栏。"
+        },
+        {
+          "id": "child",
+          "label": "带同学慢走",
+          "zone": "walk",
+          "success": "同学沿护栏内的通道慢走。",
+          "wrong": "湿滑地面慢走，别抄近路。",
+          "needs": [
+            "guard"
+          ]
+        },
+        {
+          "id": "board",
+          "label": "取放浮板",
+          "zone": "storage",
+          "success": "浮板放在器材区，没有挡在通道上。",
+          "wrong": "把浮板归入指定器材区。"
+        }
+      ],
+      "source": {
+        "publisher": "北京市人民政府",
+        "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202608/t20260806_4811512.html"
+      }
+    },
+    "first-aid-airway": {
+      "opening": "成人进食后呛咳。观察他的反应，若情况变重，立即请受训者来并报警。",
+      "summary": "还能有力咳嗽时鼓励继续咳嗽，留在身边观察。无法说话、有效咳嗽或呼吸时，立即求助并拨打 120。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "call",
+          "label": "请受训者来并拨打 120"
+        }
+      ],
+      "items": [
+        {
+          "id": "observe",
+          "label": "观察咳嗽与呼吸",
+          "mode": "tap",
+          "success": "刚才能有力咳嗽，现在他已无法讲话和有效咳嗽。立即求助。",
+          "wrong": "观察能否说话和有力咳嗽。"
+        },
+        {
+          "id": "phone",
+          "label": "模拟呼救",
+          "zone": "call",
+          "success": "已请受训者到场并联系 120，按调度指导行动。",
+          "wrong": "情况转重时立即求助并拨打 120。",
+          "needs": [
+            "observe"
+          ]
+        }
+      ],
+      "source": {
+        "publisher": "国家卫生健康委员会",
+        "url": "https://www.gov.cn/lianbo/bumen/202405/P020240530783730074981.pdf"
+      }
+    },
+    "outdoor-trail-check-v1": {
+      "opening": "前方野径因落石封闭。先确认管理提示，再沿开放步道返回。",
+      "summary": "徒步走已开放的标记线路。遇到封闭或天气变坏，结伴按管理指引回到安全地点。",
+      "result": "练习完成",
+      "zones": [
+        {
+          "id": "open",
+          "label": "标记的开放步道"
+        }
+      ],
+      "items": [
+        {
+          "id": "notice",
+          "label": "确认关闭标识",
+          "mode": "tap",
+          "success": "前方山径已关闭，沿开放的返回步道下山。",
+          "wrong": "先确认管理方的提示。"
+        },
+        {
+          "id": "hiker",
+          "label": "引导同伴返回",
+          "zone": "open",
+          "success": "同伴沿开放的步道安全返回。",
+          "wrong": "远离封闭的野径，走开放步道。",
+          "needs": [
+            "notice"
+          ]
+        }
+      ],
+      "source": {
+        "publisher": "北京市文化和旅游局",
+        "url": "https://whlyj.beijing.gov.cn/zwgk/tzgg/202407/t20240709_3741340.html"
+      }
+    }
+  }
+}

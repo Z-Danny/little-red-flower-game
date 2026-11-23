@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "levels": {
+    "home-kitchen-hygiene-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "把生肉盒和洗净的苹果拖到分开的操作台面。",
+      "knowledge": "生熟分开，用两套洁净工具，避免生肉汁污染即食食物。"
+    },
+    "home-commute-visibility-v1": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices_more.json",
+      "description": "看人行灯和来车，选安全的过街时机。",
+      "knowledge": "走过街设施，按人行信号通行，过街时持续观察。"
+    },
+    "water-rainy-crossing-v1": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices_more.json",
+      "description": "避开被水漫过的便桥和河边封闭路，选择开放的高处绕行。",
+      "knowledge": "避开漫水桥、泄洪区和封闭通道，走已确认开放的高处路线。"
+    },
+    "water-pool-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "听救生员指引，沿池边慢走，把浮板归到指定区域。",
+      "knowledge": "在开放的正规场馆跟随成人和救生员指引。湿滑池边慢走，禁跳处不跳水。"
+    },
+    "social-neighborhood-check-v1": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices_more.json",
+      "description": "从社区巡查记录找出入楼充电、飞线和被堵的通道。",
+      "knowledge": "发现楼内充电或消防通道被占，从安全处报告物业。"
+    },
+    "food-market-check-v1": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices_more.json",
+      "description": "把当天日期与包装保质期比对，再检查封口。",
+      "knowledge": "买包装食品时核对日期、包装和标示的保存条件。"
+    },
+    "outdoor-trail-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "确认封闭标识，把同伴引到开放的返回步道。",
+      "knowledge": "徒步走已开放的标记线路。遇到封闭或天气变坏，结伴按管理指引回到安全地点。"
+    },
+    "first-aid-sprain": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices_more.json",
+      "description": "选停止负重、隔布冷敷和需要求医的条件。",
+      "knowledge": "扭伤先停止活动，可隔布冷敷。无法负重或疼痛严重时及时就医。"
+    },
+    "first-aid-fainting": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices_more.json",
+      "description": "根据有无反应、是否正常呼吸选择报警和后续行动。",
+      "knowledge": "发现无反应者立即呼救和拨打 120，观察呼吸并听调度指引。"
+    },
+    "first-aid-airway": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "先观察能否说话和咳嗽，情况转重后立即模拟呼救。",
+      "knowledge": "还能有力咳嗽时鼓励继续咳嗽，留在身边观察。无法说话、有效咳嗽或呼吸时，立即求助并拨打 120。"
+    },
+    "campus-canteen-check-v1": {
+      "engine": "find-three",
+      "content_path": "res://data/find_three.json",
+      "description": "在洗手廊搜集流动水、洗手液和擦手纸，组好洗手站再练洗手。"
+    },
+    "home-food-storage-v1": {
+      "engine": "find-three",
+      "content_path": "res://data/find_three.json",
+      "description": "按标签找齐冷藏、冷冻和干货各三件，再分别收好。"
+    },
+    "food-table-check-v1": {
+      "engine": "find-three",
+      "content_path": "res://data/find_three.json",
+      "description": "在餐桌找齐公筷、公勺和公盘，再为个人餐位配成一组。"
+    },
+    "network-chat-privacy-v1": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices.json",
+      "description": "拒绝发送住址、学校和实时位置。遇到反复索要信息的私聊，退出并请可信的大人帮忙。"
+    },
+    "network-link-check-v1": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices.json",
+      "description": "发现来路不明的登录通知，关闭消息，独立打开已知入口核实。"
+    },
+    "network-purchase-check-v1": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices.json",
+      "description": "游戏退款私聊要求先付款或交出验证码时，先离开私聊，由家长陪同到原平台核实。"
+    },
+    "campus-classroom-check-v1": {
+      "engine": "scene-hunt",
+      "content_path": "res://assets/hunt_runner/campus-classroom-check-v1/pack.tres",
+      "description": "观察放学后的教室，找出影响通行、用电和紧急取用的线索。",
+      "knowledge": "先避开危险，再告诉老师，由校方处理障碍和损坏的电线。"
+    },
+    "campus-lab-check-v1": {
+      "engine": "scene-hunt",
+      "content_path": "res://assets/hunt_runner/campus-lab-check-v1/pack.tres",
+      "description": "观察试剂标签、容器和实验台上的随身物品，找出有证据的异常。",
+      "knowledge": "发现标签缺失、器具破损或饮料留在实验台，应暂停操作并告知老师。"
+    },
+    "campus-rain-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "标出封闭的积水入口，再把同学带往老师确认开放的连廊。",
+      "knowledge": "校园暴雨过后，从安全处遵循校方指引，绕开积水和未开放路段。"
+    },
+    "campus-stairs-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "叫停楼梯追跑，再把队伍引到扶手一侧有序通行。",
+      "knowledge": "在楼梯上慢走、保持间距。遇到拥挤时先停稳，避免追跑和推挤。"
+    },
+    "first-aid-abrasion": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "把洁净冲洗水和敷料用在小擦伤上，练习先清洗再覆盖。",
+      "knowledge": "轻微浅表擦伤可以用干净的水清洗，再用洁净敷料覆盖。明显出血时先压迫止血并求助。"
+    },
+    "first-aid-nosebleed": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "先让流鼻血的同学坐稳前倾，再点选鼻翼压迫动作。",
+      "knowledge": "流鼻血时坐下、稍向前倾，持续捏紧鼻翼软处。出血多或持续不止时及时求医。"
+    },
+    "first-aid-burn": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "把流动凉水用在烫伤处，充分降温后加上洁净敷料。",
+      "knowledge": "尽快用清洁的流动凉水降温。充分降温后可用干净敷料轻盖，粘住的衣物不强扯。严重烫伤立即就医。"
+    },
+    "water-riverside-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "从护栏内喊工作人员，并用模拟手机报清落水位置。",
+      "knowledge": "看到有人落水，从安全处立刻呼救报警，说明位置。儿童不要翻栏、下水或手拉手施救。"
+    },
+    "outdoor-sun-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "把不适的同伴带到树荫下求助，再整理防晒和饮水装备。",
+      "knowledge": "高温时减少暴晒，准备水及防晒。出现头晕出汗先停下，到阴凉处并求助。意识异常立即拨打 120。"
+    },
+    "outdoor-camp-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions_extra.json",
+      "skin_path": "res://data/scene_actions_extra_skin.json",
+      "description": "给开放通道布置电灯，把保暖睡袋拖进帐篷。",
+      "knowledge": "夜里沿营地开放通道走，使用电筒或电灯照明。帐篷内避免烧炭或使用燃烧设备取暖。"
+    },
+    "campus-playground-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions.json",
+      "description": "体育老师巡场。先把跑道清出来，再带学生热身。",
+      "knowledge": "体育活动前由老师检查场地和器材，处理障碍，让学生远离损坏器材，再组织热身。"
+    },
+    "food-fridge-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions.json",
+      "description": "检查三盒食物，把需要分开的食物放到合适的位置。",
+      "knowledge": "密封生肉放下层，熟食和即食食物分开存放。被生肉汁污染的即食食物应丢弃，并清洁污染处。"
+    },
+    "food-leftovers-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions.json",
+      "description": "看三份熟菜的保存记录。哪盒该冷藏、哪盒该复热？",
+      "knowledge": "熟菜尽快冷藏，吃前彻底热透。常温放了一整夜的熟菜应丢弃。"
+    },
+    "food-school-lunch-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions.json",
+      "description": "现在 12:10。看封口和食用时限，把餐盒分给老师复核。",
+      "knowledge": "发现餐盒封口破损或超过食用时限，先停吃并告诉老师。食用前由学校指定人员核对配送记录。"
+    },
+    "food-picnic-check-v1": {
+      "engine": "scene-actions",
+      "content_path": "res://data/scene_actions.json",
+      "description": "野餐出发前，把可以带走的食物和饮水装进篮子。",
+      "knowledge": "户外带安全饮水和能按标签妥善保存的食物。野生蘑菇留在原处，未经处理的河水不饮用。"
+    },
+    "network-account-check-v1": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices.json",
+      "description": "重要账号分别设置长且独立的密码，在可用时启用二次验证。验证码只用于自己发起并核实的操作。"
+    },
+    "network-device-share-v1": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices.json",
+      "description": "用完自己的共用终端会话就退出，避免在设备上保存登录。发现他人账号留在屏幕上，告知工作人员。"
+    },
+    "network-message-check-v1": {
+      "engine": "safety-choices",
+      "content_path": "res://data/safety_choices.json",
+      "description": "比对原文、发布方和日期。没有核实出处的截图先放入待核实，避免转发。"
+    }
+  }
+}

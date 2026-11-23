@@ -13,6 +13,7 @@ const GOLD = preload("res://assets/settlement_ui/success/button.webp")
 const GREEN = preload("res://assets/settlement_ui/failure/secondary-button.webp")
 const DEFAULT_SKY = preload("res://assets/ui/sky.webp")
 const LESSON_PATH := "res://assets/settlement_ui/lessons.json"
+const JourneyAudio = preload("res://scripts/journey_audio.gd")
 const INK := Color("123e28")
 const CREAM := Color("fff4ce")
 const OIL_SUCCESS := "火灭后保持锅盖覆盖，等待冷却。\n若火势失控，立即撤离并拨打 119。"
@@ -89,7 +90,7 @@ func show_outcome(won: bool, elapsed_seconds: float, result: Dictionary, entry: 
 	_scroll.grab_focus()
 
 	var reduced: bool = detail.get("reduced_motion") == true or entry.get("reduced_motion") == true
-	if not reduced and OS.has_feature("web") and Engine.has_singleton("JavaScriptBridge"):
+	if not reduced and OS.has_feature("web") and not JourneyAudio.is_wechat() and Engine.has_singleton("JavaScriptBridge"):
 		reduced = JavaScriptBridge.eval("typeof matchMedia === 'function' && matchMedia('(prefers-reduced-motion: reduce)').matches") == true
 	_decorate(score, delta, reduced)
 

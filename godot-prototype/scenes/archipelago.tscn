@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=3]
+[gd_scene load_steps=27 format=3]
 
 [ext_resource type="Script" path="res://scripts/archipelago.gd" id="1"]
 [ext_resource type="Theme" path="res://theme/storybook.tres" id="14"]
 [ext_resource type="Texture2D" path="res://assets/ui/sky.webp" id="2"]
 [ext_resource type="Script" path="res://scripts/island_info.gd" id="3"]
-[ext_resource type="PackedScene" path="res://scenes/island_card.tscn" id="4"]
+[ext_resource type="Texture2D" path="res://assets/home_menu/island-selection-title.webp" id="4"]
 [ext_resource type="Texture2D" path="res://assets/ui/island-campus.webp" id="5"]
 [ext_resource type="Texture2D" path="res://assets/ui/island-home.webp" id="6"]
 [ext_resource type="Texture2D" path="res://assets/ui/island-traffic.webp" id="7"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" path="res://assets/ui/island-social.webp" id="11"]
 [ext_resource type="Texture2D" path="res://assets/ui/island-food.webp" id="12"]
 [ext_resource type="Texture2D" path="res://assets/ui/island-outdoor.webp" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/island_card.tscn" id="15"]
+[ext_resource type="Texture2D" path="res://assets/map_ui/map_corner_home.webp" id="16"]
+[ext_resource type="Texture2D" path="res://assets/map_ui/map_corner_focus.svg" id="17"]
 
 [sub_resource type="Resource" id="Campus"]
 script = ExtResource("3")
@@ -92,58 +95,43 @@ texture = ExtResource("2")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Track" type="Control" parent="."]
+[node name="Carousel" type="Control" parent="."]
 unique_name_in_owner = true
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 177.0
-clip_contents = true
+mouse_default_cursor_shape = 6
 
-[node name="EditorPreview" parent="Track" instance=ExtResource("4")]
+[node name="SelectedIsland" parent="Carousel" instance=ExtResource("15")]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 86.0
-offset_top = 221.5
-offset_right = 490.0
-offset_bottom = 625.5
 
-[node name="Back" type="Button" parent="."]
+[node name="Back" type="TextureButton" parent="." groups=["wechat_below_capsule"]]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 130.0
-offset_bottom = 80.0
-text = "首页"
+layout_mode = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -92.0
+offset_top = 35.0
+offset_right = -20.0
+offset_bottom = 107.0
+mouse_default_cursor_shape = 2
+tooltip_text = "返回游戏首页"
+accessibility_name = "返回游戏首页"
+texture_normal = ExtResource("16")
+texture_focused = ExtResource("17")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Counter" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 430.0
-offset_top = 26.0
-offset_right = 550.0
-offset_bottom = 78.0
-theme_override_font_sizes/font_size = 24
-text = "01 / 09"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="Eyebrow" type="Label" parent="."]
-layout_mode = 0
-offset_top = 102.0
-offset_right = 576.0
-offset_bottom = 133.0
-theme_override_font_sizes/font_size = 18
-text = "小红花  /  安全群岛"
-horizontal_alignment = 1
-
-[node name="Title" type="Label" parent="."]
-layout_mode = 0
-offset_top = 136.0
-offset_right = 576.0
-offset_bottom = 194.0
-theme_override_font_sizes/font_size = 39
-text = "选择你的下一站"
-horizontal_alignment = 1
+[node name="Title" type="TextureRect" parent="." groups=["wechat_left_of_capsule"]]
+layout_mode = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -422.0
+offset_top = 32.0
+offset_right = -102.0
+offset_bottom = 110.0
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 5
+mouse_filter = 2
+accessibility_name = "选择你的下一站"

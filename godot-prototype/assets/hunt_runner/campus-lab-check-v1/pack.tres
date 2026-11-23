@@ -1,0 +1,251 @@
+[gd_resource type="Resource" load_steps=10 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-lab-check-v1/scene.webp" id="1"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-lab-check-v1/clean.webp" id="2"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-lab-check-v1/ending.webp" id="3"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-lab-check-v1/family.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-lab-check-v1/id-mask.png" id="5"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-lab-check-v1/target-1.png" id="6"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-lab-check-v1/target-2.png" id="7"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-lab-check-v1/target-3.png" id="8"]
+[ext_resource type="Texture2D" path="res://assets/hunt_runner/campus-lab-check-v1/character-mask.png" id="9"]
+
+[resource]
+metadata/rules = {
+  "feedbackVersion": 2,
+  "seconds": 50,
+  "markMs": 800,
+  "revealMs": 5500,
+  "summary": "实验前检查标签和器具。异常物品交给老师处理。饮料放在实验室外。",
+  "timeout": "fail",
+  "id": "campus-lab-check-v1",
+  "title": "实验室课前巡查",
+  "order": 34,
+  "targets": [
+    {
+      "id": "target-1",
+      "name": "无标签的分装试剂瓶",
+      "lesson": "分装试剂要贴清楚的标签。发现瓶子没有标签，先停下，请老师核实。"
+    },
+    {
+      "id": "target-2",
+      "name": "破裂的烧杯",
+      "lesson": "杯口有缺口，杯身有裂纹。请老师收走并换用完好的器具。"
+    },
+    {
+      "id": "target-3",
+      "name": "实验台上的饮料",
+      "lesson": "实验台可能沾有试剂。饮料留在实验室外，离开实验室前洗手。"
+    }
+  ]
+}
+metadata/skin = {
+  "version": 1,
+  "width": 720,
+  "height": 1280,
+  "scene": "/levels/hunts/campus-lab-check-v1/realistic-campus-v2/scene.webp",
+  "clean": "/levels/hunts/campus-lab-check-v1/realistic-campus-v2/clean.webp",
+  "safe": "/levels/hunts/campus-lab-check-v1/realistic-campus-v2/ending.webp",
+  "mask": "/levels/hunts/campus-lab-check-v1/realistic-campus-v2/id-mask.png",
+  "family": "/levels/hunts/campus-lab-check-v1/realistic-campus-v2/family.png",
+  "familyBox": {
+    "x": 29,
+    "y": 370,
+    "w": 142,
+    "h": 527
+  },
+  "targets": {
+    "target-1": {
+      "color": [
+        255,
+        0,
+        0
+      ],
+      "bounds": {
+        "x": 235,
+        "y": 519,
+        "w": 83,
+        "h": 188
+      },
+      "icon": "/levels/hunts/campus-lab-check-v1/realistic-campus-v2/target-1.png"
+    },
+    "target-2": {
+      "color": [
+        0,
+        255,
+        0
+      ],
+      "bounds": {
+        "x": 477,
+        "y": 596,
+        "w": 172,
+        "h": 244
+      },
+      "icon": "/levels/hunts/campus-lab-check-v1/realistic-campus-v2/target-2.png"
+    },
+    "target-3": {
+      "color": [
+        0,
+        0,
+        255
+      ],
+      "bounds": {
+        "x": 409,
+        "y": 841,
+        "w": 120,
+        "h": 253
+      },
+      "icon": "/levels/hunts/campus-lab-check-v1/realistic-campus-v2/target-3.png"
+    }
+  },
+  "effects": {
+    "characterMask": "/levels/hunts/campus-lab-check-v1/realistic-campus-v2/character-mask.png"
+  },
+  "criticalRegions": [
+    {
+      "x": 72,
+      "w": 64,
+      "y": 373,
+      "h": 85
+    }
+  ]
+}
+metadata/presentation = {
+  "location": "中学化学实验室",
+  "environment": "none",
+  "characters": "breathing",
+  "audio": "quiet_electric",
+  "timer": "pressure-bar",
+  "opening": "化学课即将开始。观察实验室，圈出 3 处隐患。",
+  "reveal": "老师已暂停操作，检查实验台。",
+  "completeTitle": "观察完成",
+  "pauseNote": "先观察。遇到不明试剂或破损器具，停手并告诉老师。",
+  "endingNote": "老师已收走待核查的试剂瓶、破损烧杯和实验台上的饮料。由老师确认后再开始实验。",
+  "preview": "观察试剂瓶、烧杯和实验台上的随身物品，找出有证据的异常。",
+  "warnings": [],
+  "celebration": false,
+  "clues": "on-demand"
+}
+metadata/performance = {
+  "version": 2,
+  "atmosphere": "indoor",
+  "sound": "quiet_electric",
+  "retreatDirection": -1,
+  "missCaption": "这里没有识别目标，隐患仍未找齐。",
+  "stages": [
+    {
+      "atMs": 0,
+      "breathMs": 2800,
+      "breathPx": 2,
+      "retractPx": 0,
+      "vignette": 0,
+      "bpm": 64,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 30000,
+      "breathMs": 2300,
+      "breathPx": 2.4,
+      "retractPx": 4,
+      "vignette": 0.06,
+      "bpm": 70,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 60000,
+      "breathMs": 1900,
+      "breathPx": 2.8,
+      "retractPx": 7,
+      "vignette": 0.12,
+      "bpm": 76,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    },
+    {
+      "atMs": 90000,
+      "breathMs": 1700,
+      "breathPx": 3.2,
+      "retractPx": 10,
+      "vignette": 0.16,
+      "bpm": 82,
+      "rainCount": 0,
+      "smokeCount": 0,
+      "smokeAlpha": 0,
+      "flameScale": 1
+    }
+  ],
+  "timing": "quarters"
+}
+metadata/source = {
+  "rules": {
+    "path": "content/scenes/campus-lab-check-v1/rules.json",
+    "sha256": "56de63d2ec935ea168c59d110df022f9b8f71f31647dc922051ac259ef72c96d"
+  },
+  "skin": {
+    "path": "content/scenes/campus-lab-check-v1/skins/realistic-campus-v2.json",
+    "sha256": "436ed39a6bf84965c8bc826c6c802adeea8a480fd66a4558dbeaeda8ad4be52d"
+  },
+  "presentation": {
+    "path": "content/scenes/campus-lab-check-v1/presentation.json",
+    "sha256": "1cd3e9f2e3fa1a1a8ba014d4b9245a088f02bd49528885a4c0e00feaa1867cc7"
+  },
+  "performance": {
+    "path": "content/scenes/campus-lab-check-v1/performance.json",
+    "sha256": "33660c167e9f23ef5f99ff5cbbaf8d992e38347787cc1c9a2a801d3e4085e52e"
+  },
+  "scene": {
+    "path": "public/levels/hunts/campus-lab-check-v1/realistic-campus-v2/scene.webp",
+    "sha256": "680e858972e957b2ddd6cda519d4cf1fdcdaabd286d18473d494128c2bf79fc7"
+  },
+  "clean": {
+    "path": "public/levels/hunts/campus-lab-check-v1/realistic-campus-v2/clean.webp",
+    "sha256": "6dda8acac83c61f0f7d3563606eaceca5a4f49a938c23d5e09111d09e4366e7d"
+  },
+  "safe": {
+    "path": "public/levels/hunts/campus-lab-check-v1/realistic-campus-v2/ending.webp",
+    "sha256": "9e8d0d6e66025964ec9c6679af4e9ce71fa3f21f604c265eb8032b9a1acbad3f"
+  },
+  "family": {
+    "path": "public/levels/hunts/campus-lab-check-v1/realistic-campus-v2/family.png",
+    "sha256": "90473a582db1fb314c431513226b28d61514f4b71769228c3093ac1f507830eb"
+  },
+  "mask": {
+    "path": "public/levels/hunts/campus-lab-check-v1/realistic-campus-v2/id-mask.png",
+    "sha256": "528973c1e064a53f6440a3bdba4050bfab31c5e322417eeeee2ec1b2b4f3d275"
+  },
+  "icon:target-1": {
+    "path": "public/levels/hunts/campus-lab-check-v1/realistic-campus-v2/target-1.png",
+    "sha256": "f13438a82424655145c2a115ed80ee7ffd6c84d55d9c244dbb5ec99ca2d98421"
+  },
+  "icon:target-2": {
+    "path": "public/levels/hunts/campus-lab-check-v1/realistic-campus-v2/target-2.png",
+    "sha256": "9d53c1683d79b95e9e1175ea86e8466a2f3b479fca0a8010895fb3aab4ab4ed3"
+  },
+  "icon:target-3": {
+    "path": "public/levels/hunts/campus-lab-check-v1/realistic-campus-v2/target-3.png",
+    "sha256": "806d5045cc72cfd76d59d09c0c4348825944254f58265995294c393be0b73f91"
+  },
+  "characterMask": {
+    "path": "public/levels/hunts/campus-lab-check-v1/realistic-campus-v2/character-mask.png",
+    "sha256": "223bd0257c00418f79de732fe85ffd760e467291498c62ef971d6c926fa9efb6"
+  }
+}
+metadata/resources = {
+"scene": ExtResource("1"),
+"clean": ExtResource("2"),
+"safe": ExtResource("3"),
+"family": ExtResource("4"),
+"mask": ExtResource("5"),
+"icon:target-1": ExtResource("6"),
+"icon:target-2": ExtResource("7"),
+"icon:target-3": ExtResource("8"),
+"characterMask": ExtResource("9")
+}

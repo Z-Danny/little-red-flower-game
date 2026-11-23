@@ -1,0 +1,525 @@
+{
+  "levels": {
+    "campus-playground-check-v1": {
+      "background": "res://assets/scene_actions/campus-playground-check-v1/background.webp",
+      "zones": {
+        "rack": {
+          "art": "res://assets/scene_actions/shared/rack.webp",
+          "rect": [
+            40,
+            283,
+            157,
+            178
+          ],
+          "label_rect": [
+            38,
+            428,
+            157,
+            49
+          ]
+        },
+        "warmup": {
+          "art": "res://assets/scene_actions/shared/whistle.webp",
+          "rect": [
+            205,
+            289,
+            146,
+            166
+          ],
+          "label_rect": [
+            207,
+            426,
+            147,
+            49
+          ]
+        },
+        "stop": {
+          "art": "res://assets/scene_actions/shared/hurdle.webp",
+          "rect": [
+            366,
+            288,
+            167,
+            172
+          ],
+          "label_rect": [
+            367,
+            427,
+            165,
+            49
+          ]
+        }
+      },
+      "items": {
+        "mat": {
+          "art": "res://assets/scene_actions/shared/mat.webp",
+          "rect": [
+            34,
+            607,
+            174,
+            150
+          ],
+          "arrive": [
+            72,
+            342,
+            110,
+            63
+          ]
+        },
+        "cone": {
+          "art": "res://assets/scene_actions/shared/cone.webp",
+          "rect": [
+            215,
+            627,
+            137,
+            126
+          ],
+          "arrive": [
+            461,
+            336,
+            67,
+            80
+          ]
+        },
+        "boy": {
+          "art": "res://assets/scene_actions/shared/boy.webp",
+          "rect": [
+            367,
+            558,
+            150,
+            198
+          ],
+          "arrive": [
+            242,
+            297,
+            91,
+            125
+          ]
+        }
+      },
+      "intro": {
+        "art": "res://assets/scene_actions/shared/basketball.webp",
+        "from": [
+          466,
+          633,
+          88,
+          88
+        ],
+        "to": [
+          52,
+          661,
+          88,
+          88
+        ],
+        "seconds": 1.35,
+        "angle": -315,
+        "text": "体育课前，一颗球从跑道上滚过。老师开始检查场地。"
+      }
+    },
+    "food-fridge-check-v1": {
+      "background": "res://assets/scene_actions/food-fridge-check-v1/background.webp",
+      "zones": {
+        "upper": {
+          "rect": [
+            175,
+            227,
+            239,
+            113
+          ],
+          "label_rect": [
+            190,
+            296,
+            166,
+            47
+          ]
+        },
+        "lower": {
+          "rect": [
+            170,
+            387,
+            237,
+            113
+          ],
+          "label_rect": [
+            190,
+            472,
+            166,
+            47
+          ]
+        },
+        "discard": {
+          "art": "res://assets/scene_actions/shared/bin.webp",
+          "rect": [
+            420,
+            468,
+            130,
+            133
+          ],
+          "label_rect": [
+            427,
+            568,
+            108,
+            48
+          ]
+        }
+      },
+      "items": {
+        "raw": {
+          "art": "res://assets/scene_actions/shared/raw.webp",
+          "rect": [
+            39,
+            642,
+            160,
+            134
+          ],
+          "arrive": [
+            229,
+            405,
+            103,
+            61
+          ]
+        },
+        "salad": {
+          "art": "res://assets/scene_actions/shared/salad.webp",
+          "rect": [
+            210,
+            663,
+            156,
+            115
+          ],
+          "arrive": [
+            229,
+            241,
+            105,
+            57
+          ]
+        },
+        "dripped": {
+          "art": "res://assets/scene_actions/shared/dripped.webp",
+          "rect": [
+            379,
+            645,
+            158,
+            132
+          ],
+          "arrive": [
+            466,
+            500,
+            65,
+            55
+          ],
+          "remove": true
+        }
+      }
+    },
+    "food-leftovers-check-v1": {
+      "background": "res://assets/scene_actions/food-leftovers-check-v1/background.webp",
+      "zones": {
+        "chill": {
+          "art": "res://assets/scene_actions/shared/mini_fridge.webp",
+          "rect": [
+            39,
+            322,
+            154,
+            175
+          ],
+          "label_rect": [
+            38,
+            464,
+            156,
+            49
+          ]
+        },
+        "heat": {
+          "art": "res://assets/scene_actions/shared/microwave.webp",
+          "rect": [
+            204,
+            327,
+            166,
+            170
+          ],
+          "label_rect": [
+            202,
+            464,
+            170,
+            49
+          ]
+        },
+        "discard": {
+          "art": "res://assets/scene_actions/shared/bin.webp",
+          "rect": [
+            383,
+            327,
+            141,
+            170
+          ],
+          "label_rect": [
+            384,
+            464,
+            141,
+            49
+          ]
+        }
+      },
+      "items": {
+        "fresh": {
+          "art": "res://assets/scene_actions/shared/leftovers.webp",
+          "rect": [
+            32,
+            626,
+            160,
+            155
+          ],
+          "arrive": [
+            79,
+            374,
+            69,
+            59
+          ]
+        },
+        "cold": {
+          "art": "res://assets/scene_actions/shared/leftovers.webp",
+          "rect": [
+            210,
+            620,
+            157,
+            156
+          ],
+          "arrive": [
+            252,
+            359,
+            75,
+            56
+          ],
+          "effect": {
+            "art": "res://assets/scene_actions/shared/steam.webp",
+            "rect": [
+              241,
+              305,
+              95,
+              80
+            ],
+            "offset": [
+              10,
+              -54
+            ],
+            "seconds": 0.76
+          }
+        },
+        "overnight": {
+          "art": "res://assets/scene_actions/shared/leftovers.webp",
+          "rect": [
+            384,
+            628,
+            160,
+            154
+          ],
+          "arrive": [
+            429,
+            381,
+            70,
+            58
+          ],
+          "remove": true
+        }
+      },
+      "intro": {
+        "art": "res://assets/scene_actions/shared/leftovers.webp",
+        "from": [
+          472,
+          644,
+          129,
+          97
+        ],
+        "to": [
+          53,
+          633,
+          139,
+          110
+        ],
+        "seconds": 1.1,
+        "text": "三盒饭菜看起来一样。看看它们分别是怎么保存的。"
+      }
+    },
+    "food-school-lunch-check-v1": {
+      "background": "res://assets/scene_actions/food-school-lunch-check-v1/background.webp",
+      "zones": {
+        "review": {
+          "art": "res://assets/scene_actions/shared/review.webp",
+          "rect": [
+            47,
+            296,
+            215,
+            176
+          ],
+          "label_rect": [
+            56,
+            430,
+            191,
+            50
+          ]
+        },
+        "hold": {
+          "art": "res://assets/scene_actions/shared/clipboard.webp",
+          "rect": [
+            319,
+            296,
+            204,
+            175
+          ],
+          "label_rect": [
+            325,
+            430,
+            191,
+            50
+          ]
+        }
+      },
+      "items": {
+        "sealed": {
+          "art": "res://assets/scene_actions/shared/lunch_sealed.webp",
+          "rect": [
+            33,
+            606,
+            156,
+            169
+          ],
+          "arrive": [
+            102,
+            326,
+            102,
+            77
+          ]
+        },
+        "late": {
+          "art": "res://assets/scene_actions/shared/lunch_late.webp",
+          "rect": [
+            210,
+            606,
+            156,
+            169
+          ],
+          "arrive": [
+            312,
+            365,
+            91,
+            60
+          ]
+        },
+        "ripped": {
+          "art": "res://assets/scene_actions/shared/lunch_ripped.webp",
+          "rect": [
+            388,
+            606,
+            156,
+            169
+          ],
+          "arrive": [
+            447,
+            365,
+            93,
+            60
+          ]
+        }
+      }
+    },
+    "food-picnic-check-v1": {
+      "background": "res://assets/scene_actions/food-picnic-check-v1/background.webp",
+      "zones": {
+        "basket": {
+          "art": "res://assets/scene_actions/shared/basket.webp",
+          "rect": [
+            51,
+            275,
+            204,
+            173
+          ],
+          "label_rect": [
+            46,
+            415,
+            204,
+            52
+          ]
+        },
+        "leave": {
+          "art": "res://assets/scene_actions/shared/clipboard.webp",
+          "rect": [
+            325,
+            272,
+            200,
+            175
+          ],
+          "label_rect": [
+            324,
+            415,
+            202,
+            52
+          ]
+        }
+      },
+      "items": {
+        "bottle": {
+          "art": "res://assets/scene_actions/shared/water.webp",
+          "rect": [
+            63,
+            492,
+            159,
+            125
+          ],
+          "arrive": [
+            103,
+            313,
+            61,
+            95
+          ]
+        },
+        "river": {
+          "art": "res://assets/scene_actions/shared/river.webp",
+          "rect": [
+            347,
+            490,
+            154,
+            129
+          ],
+          "arrive": [
+            356,
+            325,
+            72,
+            72
+          ],
+          "remove": true
+        },
+        "biscuit": {
+          "art": "res://assets/scene_actions/shared/biscuit.webp",
+          "rect": [
+            58,
+            657,
+            166,
+            134
+          ],
+          "arrive": [
+            142,
+            339,
+            88,
+            65
+          ]
+        },
+        "mushroom": {
+          "art": "res://assets/scene_actions/shared/mushroom.webp",
+          "rect": [
+            346,
+            671,
+            158,
+            120
+          ],
+          "arrive": [
+            429,
+            325,
+            76,
+            74
+          ],
+          "remove": true
+        }
+      }
+    }
+  }
+}
