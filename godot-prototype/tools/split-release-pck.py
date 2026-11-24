@@ -285,7 +285,7 @@ def make(args):
     core = selections['']
     core['data/asset-packs.json'] = json.dumps(manifest, sort_keys=True, separators=(',', ':')).encode('utf-8')
     core_pack = encode(core)
-    report = WECHAT['validate_pck'](core_pack)
+    report = WECHAT['validate_pck'](core_pack, allow_web_relative=args.base_url == './packs/')
     (output / 'core.pck').write_bytes(core_pack)
     report.update(original_bytes=len(original), core_bytes=len(core_pack), remote_bytes=sum(d['bytes'] for d in details.values()), packs=len(details),
                   embedded_maps=sorted(embedded_maps), embedded_levels=sorted(embedded_levels),
@@ -300,7 +300,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--pck', required=True, type=Path)
     parser.add_argument('--output', required=True, type=Path)
-    parser.add_argument('--base-url', required=True, help='Trusted HTTPS folder, ending in a slash.')
+    parser.add_argument('--base-url', required=True,
+                        help='Trusted HTTPS folder ending in a slash, or ./packs/ for same-origin Web hosting.')
     maps = parser.add_mutually_exclusive_group()
     maps.add_argument('--embed-maps', action='store_true', help='Bundle all island maps in the core.')
     maps.add_argument('--embed-map', action='append', default=[], help='Bundle the given island map in the core. Repeat to include more maps.')
@@ -312,8 +313,11 @@ def main():
                         help='Maximum texture side in pixels for reimported maps. Default: 0 (preserve original setting).')
     args = parser.parse_args()
     endpoint = urlsplit(args.base_url)
-    if endpoint.scheme != 'https' or not endpoint.hostname or endpoint.username or endpoint.query or endpoint.fragment or not endpoint.path.endswith('/'):
-        parser.error('use an HTTPS origin and the exact packs directory with trailing slash')
+    if args.base_url != './packs/' and (
+        endpoint.scheme != 'https' or not endpoint.hostname or endpoint.username
+        or endpoint.query or endpoint.fragment or not endpoint.path.endswith('/')
+    ):
+        parser.error('use an HTTPS packs directory with trailing slash, or ./packs/ for Web')
     if args.map_import_godot and not (args.embed_maps or args.embed_map):
         parser.error('--map-import-godot requires --embed-maps or --embed-map')
     if not 0 <= args.embedded_map_webp_quality <= 1:

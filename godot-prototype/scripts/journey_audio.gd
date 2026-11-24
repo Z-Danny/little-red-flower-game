@@ -149,7 +149,9 @@ func _ready() -> void:
 			_wechat_audio = JavaScriptBridge.get_interface("redFlowerWechatAudio")
 		else:
 			JavaScriptBridge.eval(MOBILE_BROWSER_MUSIC, true)
-			_browser_music = JavaScriptBridge.get_interface("redFlowerMusic")
+			var browser := JavaScriptBridge.get_interface("window")
+			if browser != null:
+				_browser_music = browser.redFlowerMusic
 	if _wechat_audio != null:
 		_browser_error = JavaScriptBridge.create_callback(_start_native_music)
 		_browser_effect_error = JavaScriptBridge.create_callback(_native_effect_fallback)

@@ -70,7 +70,7 @@ def project_settings(data):
     return settings
 
 
-def validate_pck(pck):
+def validate_pck(pck, *, allow_web_relative=False):
     # PCK v3 header and index layout from Godot 4.6.2 EditorExportPlatform.
     stream = io.BytesIO(pck)
     signature, pack_version, major, minor, patch, flags, filebase, directory = struct.unpack(
@@ -127,10 +127,12 @@ def validate_pck(pck):
     pack_manifest = entries.get("data/asset-packs.json")
     if pack_manifest:
         external = json.loads(pck[slice(*pack_manifest)])
-        require(external.get("schemaVersion") == 1 and isinstance(external.get("base_url"), str)
-                and external["base_url"].startswith("https://") and isinstance(external.get("packs"), dict),
+        base_url = external.get("base_url")
+        require(external.get("schemaVersion") == 1 and isinstance(base_url, str)
+                and (base_url.startswith("https://") or (allow_web_relative and base_url == "./packs/"))
+                and isinstance(external.get("packs"), dict),
                 "Invalid external media manifest")
-        media_host = external["base_url"]
+        media_host = base_url
     return {"format_version": pack_version, "engine_version": f"{major}.{minor}.{patch}",
             "file_count": count, "main_scene": scene, "renderer": renderer, "all_file_md5": "pass",
              "external_media_base_url": media_host}

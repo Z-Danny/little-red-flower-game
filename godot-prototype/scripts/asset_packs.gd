@@ -8,6 +8,7 @@ signal _mount_finished
 
 const Catalog = preload("res://scripts/level_catalog.gd")
 const MANIFEST := "res://data/asset-packs.json"
+const WEB_PACKS_PATH := "./packs/"
 const CACHE := "user://level-media-v1/"
 const PACK_SIZE_LIMIT := 80_000_000
 const DOWNLOAD_TIMEOUT_MS := 40_000
@@ -15,6 +16,7 @@ const RETRY_DELAY := 0.45
 
 var sequential_downloads := false
 var _details: Dictionary = {}
+var _download_base_url := ""
 var _mounted: Dictionary = {}
 var _mounting: Dictionary = {}
 var _closing := false
@@ -47,7 +49,8 @@ func ensure_for(id: String) -> bool:
 		return false
 	var groups: Array = _details.get("levels", {}).get(id, [])
 	if groups.is_empty(): return true
-	if int(_details.get("schemaVersion", 0)) != 1 or not str(_details.get("base_url", "")).begins_with("https://"):
+	_download_base_url = _resolve_base_url(str(_details.get("base_url", "")))
+	if int(_details.get("schemaVersion", 0)) != 1 or _download_base_url.is_empty():
 		push_warning("Media pack manifest has an invalid version or base URL.")
 		return false
 	if DirAccess.make_dir_recursive_absolute(CACHE) != OK:
@@ -66,6 +69,26 @@ func ensure_for(id: String) -> bool:
 	while int(batch.remaining) > 0:
 		await _pack_finished
 	return batch.ok
+
+func _resolve_base_url(configured: String) -> String:
+	if configured.begins_with("https://"):
+		return configured
+	if configured != WEB_PACKS_PATH or not OS.has_feature("web"):
+		return ""
+	var browser := JavaScriptBridge.get_interface("window")
+	if browser == null:
+		return ""
+	var location: JavaScriptObject = browser.location
+	if location == null:
+		return ""
+	var protocol := str(location.protocol)
+	var loopback := protocol == "http:" and str(location.hostname) in ["localhost", "127.0.0.1", "[::1]"]
+	if protocol != "https:" and not loopback:
+		return ""
+	var resolved: JavaScriptObject = JavaScriptBridge.create_object("URL", WEB_PACKS_PATH, str(location.href))
+	if resolved == null or str(resolved.origin) != str(location.origin):
+		return ""
+	return str(resolved.href)
 
 func _finish_pack(group: String, batch: Dictionary) -> void:
 	var succeeded := await _mount(group)
@@ -110,7 +133,7 @@ func _load_verified_pack(group: String) -> bool:
 	var cache_file := CACHE + file
 	if not _matches_hash(cache_file, expected_hash):
 		var deadline := Time.get_ticks_msec() + DOWNLOAD_TIMEOUT_MS
-		var url := str(_details.base_url) + file
+		var url := _download_base_url + file
 		var result := await _download(url, cache_file, bytes, expected_hash, DOWNLOAD_TIMEOUT_MS / 1000.0)
 		if _closing:
 			return false
